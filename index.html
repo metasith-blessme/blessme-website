@@ -29,6 +29,7 @@
 <!-- Google Search Console verification — replace content value with your actual code from GSC -->
 <meta name="google-site-verification" content="UVEz5zLEbupofKQS5r0ZuEjL6qamoKbh7E6L6M-kvCA" />
 <!-- Sitemap hint -->
+<script src="https://unpkg.com/react-router-dom@6.23.1/dist/umd/react-router-dom.production.min.js"></script>
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <style>
 /* ---- Google Fonts ---- */
@@ -451,8 +452,9 @@ html,body{margin:0;padding:0;background:var(--ci-sky-soft);color:var(--ci-sky-in
 <body>
 <div id="root"></div>
 <script type="text/babel">
-/* global React */
-const { useState } = React;
+/* global React, ReactRouterDOM */
+const { useState, useEffect } = React;
+const { BrowserRouter, Routes, Route, Link, useNavigate, useLocation, useParams, Navigate } = ReactRouterDOM;
 
 /* ===== TRANSLATIONS (EN / TH) ===== */
 const T = {
@@ -685,25 +687,36 @@ const ARTICLES = [
 ];
 
 /* ===== NAV ===== */
-function Nav({ page, setPage, lang, setLang }) {
-  const [menuOpen, setMenuOpen] = React.useState(false);
+function Nav({ lang, setLang }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
   const t = T[lang];
-  const navigate = (p) => { setMenuOpen(false); setPage(p); };
+  const pages = [
+    { name: t.nav[0], path: '/' },
+    { name: t.nav[1], path: '/solutions' },
+    { name: t.nav[2], path: '/about' },
+    { name: t.nav[3], path: '/blog' },
+    { name: t.nav[4], path: '/faq' },
+  ];
+
+  const isActive = (path) => {
+    if (path === '/' && location.pathname === '/') return true;
+    if (path !== '/' && location.pathname.startsWith(path)) return true;
+    return false;
+  };
+
   return (
     <>
       <header className="bm-nav-shell">
         <nav className="bm-nav" role="navigation" aria-label="Main navigation">
-          <a className="bm-brand" href="#" aria-label="BlessMe — go to homepage" onClick={(e) => { e.preventDefault(); navigate('Products'); }}>
+          <Link to="/" className="bm-brand" aria-label="BlessMe — go to homepage" onClick={() => setMenuOpen(false)}>
             <img src="assets/logo-full.png" alt="BlessMe Thailand" />
-          </a>
+          </Link>
           <div className="bm-links" role="menubar">
-            {t.nav.map((l, i) => {
-              const key = ['Products','Solutions','About us','Blog','FAQ'][i];
-              return (
-                <a key={key} role="menuitem" className={page === key ? 'active' : ''} onClick={() => navigate(key)}
-                  aria-current={page === key ? 'page' : undefined}>{l}</a>
-              );
-            })}
+            {pages.map(p => (
+              <Link key={p.path} to={p.path} role="menuitem" className={isActive(p.path) ? 'active' : ''}
+                aria-current={isActive(p.path) ? 'page' : undefined}>{p.name}</Link>
+            ))}
           </div>
           <div className="bm-nav-right">
             <span className="bm-nav-contact-line">+66 (0) 82-896-5199</span>
@@ -711,7 +724,7 @@ function Nav({ page, setPage, lang, setLang }) {
               <button className={`bm-lang-btn${lang==='en'?' active':''}`} onClick={() => setLang('en')} aria-pressed={lang==='en'}>EN</button>
               <button className={`bm-lang-btn${lang==='th'?' active':''}`} onClick={() => setLang('th')} aria-pressed={lang==='th'}>TH</button>
             </div>
-            <button className="bm-btn bm-btn--primary bm-btn--sm" onClick={() => navigate('Solutions')}>{t.wholesale}</button>
+            <Link to="/solutions" className="bm-btn bm-btn--primary bm-btn--sm" onClick={() => setMenuOpen(false)}>{t.wholesale}</Link>
             <button className={`bm-hamburger${menuOpen?' is-open':''}`} aria-label={menuOpen?'Close menu':'Open menu'}
               aria-expanded={menuOpen} aria-controls="mobile-menu" onClick={() => setMenuOpen(!menuOpen)}>
               <span/><span/><span/>
@@ -720,15 +733,14 @@ function Nav({ page, setPage, lang, setLang }) {
         </nav>
       </header>
       <div id="mobile-menu" className={`bm-mobile-menu${menuOpen?' is-open':''}`} role="dialog" aria-modal="true" aria-label="Mobile navigation">
-        {t.nav.map((l, i) => {
-          const key = ['Products','Solutions','About us','Blog','FAQ'][i];
-          return <a key={key} onClick={() => navigate(key)} aria-current={page===key?'page':undefined}>{l}</a>;
-        })}
+        {pages.map(p => (
+          <Link key={p.path} to={p.path} onClick={() => setMenuOpen(false)} aria-current={isActive(p.path)?'page':undefined}>{p.name}</Link>
+        ))}
         <div className="bm-lang-toggle" role="group" aria-label="Language" style={{marginTop:8}}>
           <button className={`bm-lang-btn${lang==='en'?' active':''}`} onClick={() => setLang('en')}>EN</button>
           <button className={`bm-lang-btn${lang==='th'?' active':''}`} onClick={() => setLang('th')}>TH</button>
         </div>
-        <button className="bm-btn bm-btn--primary" onClick={() => navigate('Solutions')}>{t.wholesale}</button>
+        <Link to="/solutions" className="bm-btn bm-btn--primary" onClick={() => setMenuOpen(false)}>{t.wholesale}</Link>
       </div>
     </>
   );
@@ -837,8 +849,9 @@ function ProductDetail({ product, onClose, lang }) {
 }
 
 /* ===== PRODUCTS PAGE ===== */
-function ProductsPage({ onOpen, setPage, lang }) {
+function ProductsPage({ onOpen, lang }) {
   const t = T[lang];
+  const navigate = useNavigate();
   return (
     <>
       <section className="bm-hero bm-hero--sky">
@@ -849,8 +862,8 @@ function ProductsPage({ onOpen, setPage, lang }) {
           </h1>
           <p className="bm-hero-sub">{t.heroSub}</p>
           <div className="bm-hero-actions">
-            <button className="bm-btn bm-btn--primary" onClick={() => setPage('Solutions')}>{t.heroCta1}</button>
-            <button className="bm-btn bm-btn--ghost" onClick={() => setPage('About us')}>{t.heroCta2}</button>
+            <button className="bm-btn bm-btn--primary" onClick={() => navigate('/solutions')}>{t.heroCta1}</button>
+            <button className="bm-btn bm-btn--ghost" onClick={() => navigate('/about')}>{t.heroCta2}</button>
           </div>
           <div className="bm-hero-meta">
             <span className="bm-checks">✓ ✓ ✓</span>
@@ -1020,7 +1033,8 @@ function ContactForm({ lang, t }) {
 }
 
 /* ===== SOLUTIONS PAGE ===== */
-function SolutionsPage({ setPage }) {
+function SolutionsPage() {
+  const navigate = useNavigate();
   const steps = [
     { n: '01', t: 'Client Request',
       d: 'Our clients are looking for a new experience — a true point of difference from existing products in the market. We start every engagement by listening.' },
@@ -1063,7 +1077,7 @@ function SolutionsPage({ setPage }) {
             Wholesale enquiries, sample requests, and partnership conversations welcome.
           </p>
         </div>
-        <button className="bm-btn bm-btn--sky" onClick={() => setPage('About us')}>Contact our team</button>
+        <button className="bm-btn bm-btn--sky" onClick={() => navigate('/about')}>Contact our team</button>
       </div>
     </section>
   );
@@ -1207,9 +1221,8 @@ function FAQPage() {
 }
 
 /* ===== FOOTER ===== */
-function Footer({ setPage, lang }) {
+function Footer({ lang }) {
   const t = T[lang];
-  const navKeys = ['Products','Solutions','About us','Blog','FAQ'];
   const blessing = t.footerBlessing.split('\n');
   return (
     <footer className="bm-footer">
@@ -1224,14 +1237,14 @@ function Footer({ setPage, lang }) {
       <div className="bm-footer-cols">
         <div>
           <div className="bm-eyebrow">{t.footerCatalogue}</div>
-          <a onClick={() => setPage('Products')}>{t.nav[0]}</a>
-          <a onClick={() => setPage('Solutions')}>{t.nav[1]}</a>
+          <Link to="/">{t.nav[0]}</Link>
+          <Link to="/solutions">{t.nav[1]}</Link>
         </div>
         <div>
           <div className="bm-eyebrow">{t.footerCompany}</div>
-          <a onClick={() => setPage('About us')}>{t.nav[2]}</a>
-          <a onClick={() => setPage('Blog')}>{t.footerJournal}</a>
-          <a onClick={() => setPage('FAQ')}>{t.nav[4]}</a>
+          <Link to="/about">{t.nav[2]}</Link>
+          <Link to="/blog">{t.footerJournal}</Link>
+          <Link to="/faq">{t.nav[4]}</Link>
         </div>
         <div>
           <div className="bm-eyebrow">{t.footerContact}</div>
@@ -1245,65 +1258,63 @@ function Footer({ setPage, lang }) {
   );
 }
 
+/* ===== SCROLL TO TOP HELPER ===== */
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
+
+/* ===== BLOG ROUTING HELPER ===== */
+function BlogRouter({ lang, onOpenDetail }) {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  if (id) {
+    return <ArticlePage articleId={id} onBack={() => navigate('/blog')} onOpenArticle={(newId) => navigate(`/blog/${newId}`)} />;
+  }
+  return <BlogPage onOpenArticle={(id) => navigate(`/blog/${id}`)} lang={lang} />;
+}
+
 /* ===== APP ===== */
 function App() {
-  const [page, setPage] = useState('Products');
   const [detail, setDetail] = useState(null);
-  const [articleId, setArticleId] = useState(null);
   const [lang, setLang] = useState('en');
 
-  const VALID_PAGES = ['Products', 'Solutions', 'About us', 'Blog', 'FAQ'];
-  React.useEffect(() => {
-    const storedPage = localStorage.getItem('bm-page');
+  useEffect(() => {
     const storedLang = localStorage.getItem('bm-lang');
-    if (storedPage && VALID_PAGES.includes(storedPage)) setPage(storedPage);
     if (storedLang === 'th' || storedLang === 'en') setLang(storedLang);
   }, []);
-  React.useEffect(() => { localStorage.setItem('bm-page', page); }, [page]);
-  React.useEffect(() => { localStorage.setItem('bm-lang', lang); }, [lang]);
-
-  const goToPage = (p) => {
-    setArticleId(null);
-    setPage(p);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-  const openArticle = (id) => {
-    setArticleId(id);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-  const closeArticle = () => {
-    setArticleId(null);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  useEffect(() => { localStorage.setItem('bm-lang', lang); }, [lang]);
 
   return (
-    <div className="bm-page">
-      <a href="#main-content" className="bm-skip-link">Skip to content</a>
-      <Nav page={page} setPage={goToPage} lang={lang} setLang={setLang} />
-      <main id="main-content">
-        {articleId ? (
-          <ArticlePage articleId={articleId} onBack={closeArticle} onOpenArticle={openArticle} />
-        ) : (
-          <>
-            {page === 'Products'  && <ProductsPage onOpen={setDetail} setPage={goToPage} lang={lang} />}
-            {page === 'About us'  && <AboutPage lang={lang} />}
-            {page === 'Blog'      && <BlogPage onOpenArticle={openArticle} lang={lang} />}
-            {page === 'Solutions' && <SolutionsPage setPage={goToPage} lang={lang} />}
-            {page === 'FAQ'       && <FAQPage lang={lang} />}
-          </>
-        )}
-      </main>
-      <Footer setPage={goToPage} lang={lang} />
-      {detail && <ProductDetail product={detail} onClose={() => setDetail(null)} lang={lang} />}
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="bm-page">
+        <a href="#main-content" className="bm-skip-link">Skip to content</a>
+        <Nav lang={lang} setLang={setLang} />
+        <main id="main-content">
+          <Routes>
+            <Route path="/" element={<ProductsPage onOpen={setDetail} lang={lang} />} />
+            <Route path="/about" element={<AboutPage lang={lang} />} />
+            <Route path="/blog" element={<BlogRouter lang={lang} />} />
+            <Route path="/blog/:id" element={<BlogRouter lang={lang} />} />
+            <Route path="/solutions" element={<SolutionsPage lang={lang} />} />
+            <Route path="/faq" element={<FAQPage lang={lang} />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </main>
+        <Footer lang={lang} />
+        {detail && <ProductDetail product={detail} onClose={() => setDetail(null)} lang={lang} />}
 
-      {/* LINE floating action button */}
-      <a href="https://line.me/R/ti/p/@591dzhsr" target="_blank" rel="noopener noreferrer"
-        className="bm-line-fab" aria-label="Contact us on LINE">
-        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M24 4C13 4 4 11.8 4 21.4c0 6.6 4.4 12.4 11 15.6-.5 1.7-1.6 6.1-1.8 7 0 0-.1.4.2.6.3.2.6 0 .6 0 .8-.1 9.3-6.1 10.7-7.1.8.1 1.5.1 2.3.1 11 0 20-7.8 20-17.4C44 11.8 35 4 24 4z" fill="white"/>
-        </svg>
-      </a>
-    </div>
+        {/* LINE floating action button */}
+        <a href="https://line.me/R/ti/p/@591dzhsr" target="_blank" rel="noopener noreferrer"
+          className="bm-line-fab" aria-label="Contact us on LINE">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M24 4C13 4 4 11.8 4 21.4c0 6.6 4.4 12.4 11 15.6-.5 1.7-1.6 6.1-1.8 7 0 0-.1.4.2.6.3.2.6 0 .6 0 .8-.1 9.3-6.1 10.7-7.1.8.1 1.5.1 2.3.1 11 0 20-7.8 20-17.4C44 11.8 35 4 24 4z" fill="white"/>
+          </svg>
+        </a>
+      </div>
+    </BrowserRouter>
   );
 }
 
