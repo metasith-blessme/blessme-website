@@ -36,9 +36,9 @@ export default function ProductDetail({ product, onClose, lang }) {
           <p className="bm-product-flavor" style={{ marginTop: 4 }}>{product.flavor}</p>
           <p className="bm-body" style={{ marginTop: 16 }}>{displayNote}</p>
           <div className="bm-spec-grid" role="list" aria-label="Product specifications">
-            <div role="listitem"><div className="k">PACK</div><div className="v">500 g</div></div>
+            <div role="listitem"><div className="k">PACK</div><div className="v">500g</div></div>
             <div role="listitem"><div className="k">SHELF LIFE</div><div className="v">12 months</div></div>
-            <div role="listitem"><div className="k">STORAGE</div><div className="v">Room temp, dry</div></div>
+            <div role="listitem"><div className="k">STORAGE</div><div className="v">Room Temperature, dry</div></div>
             <div role="listitem"><div className="k">{t.modalOrigin}</div><div className="v">Asia · trusted factory</div></div>
           </div>
           <div className="bm-buy-row">

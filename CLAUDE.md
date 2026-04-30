@@ -78,7 +78,7 @@ Shared: `Nav`, `Footer`, `ProductDetail` (modal), `TrustBar`, `ContactItem`
 | cheese | Cheese | Salty · Rich · Savory-sweet |
 | osmanthus | Osmanthus | Floral · Honeyed · Elegant |
 
-Pack size: 3.3 kg tub. Shelf life: 12 months. Storage: cool, dry.
+Pack size: 500g. Shelf life: 12 months. Storage: Room Temperature, dry.
 
 ## Brand Colours
 

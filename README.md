@@ -18,7 +18,7 @@ BlessMe (Thailand) discovers, imports, and distributes specialty food products t
 
 Current product range: **6 signature popping boba flavors**
 - Barley · Oat · Red Bean · Water Chestnut · Cheese · Osmanthus
-- Pack size: 3.3 kg tub · Shelf life: 12 months · Stock in Bangkok
+- Pack size: 500g · Shelf life: 12 months · Stock in Bangkok
 
 ---
 
