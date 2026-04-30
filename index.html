@@ -15,14 +15,14 @@
 <meta property="og:url" content="https://blessmethailand.com" />
 <meta property="og:title" content="BlessMe Thailand — Specialty Food Wholesale" />
 <meta property="og:description" content="Discover premium popping boba wholesale for cafés, restaurants, and dessert brands in Thailand. 6 curated flavors · Stock in Bangkok · 12-month shelf life." />
-<meta property="og:image" content="https://blessmethailand.com/assets/og-image.png" />
+<meta property="og:image" content="https://blessmethailand.com//assets/og-image.png" />
 <meta property="og:locale" content="th_TH" />
 <meta property="og:locale:alternate" content="en_US" />
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="BlessMe Thailand — Specialty Food Wholesale" />
 <meta name="twitter:description" content="Premium popping boba wholesale for cafés and dessert brands in Thailand." />
-<meta name="twitter:image" content="https://blessmethailand.com/assets/og-image.png" />
+<meta name="twitter:image" content="https://blessmethailand.com//assets/og-image.png" />
 <!-- Favicon (inline SVG) -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2338b6ff'/><text y='46' x='32' text-anchor='middle' font-size='38' font-family='Georgia,serif' font-weight='900' fill='white'>B</text></svg>" />
 <link rel="apple-touch-icon" href="assets/logo-full.png" />
@@ -585,27 +585,27 @@ function getInitialState() {
 /* ===== PRODUCTS DATA ===== */
 const PRODUCTS = [
   { id: 'barley',    name: 'Barley',         nameTh: 'บาร์เลย์',       tag: 'Signature flavor', flavor: 'Toasty · Nutty · Refined',
-    img: 'assets/products/barley.webp',    imgFallback: 'assets/products/barley.png',
+    img: '/assets/products/barley.webp',    imgFallback: '/assets/products/barley.png',
     note: 'Roasted Asian barley, captured in a bursting pearl. A grown-up topping for desserts, drinks, and bakery applications.',
     noteTh: 'บาร์เลย์อบจากเอเชีย ถูกกักไว้ในเม็ดบีดแตกกระจาย เป็นท็อปปิ้งพรีเมียมสำหรับของหวาน เครื่องดื่ม และเบเกอรี' },
   { id: 'oat',       name: 'Oat',            nameTh: 'โอ๊ต',           tag: 'Signature flavor', flavor: 'Creamy · Mellow · Modern',
-    img: 'assets/products/oat.webp',       imgFallback: 'assets/products/oat.png',
+    img: '/assets/products/oat.webp',       imgFallback: '/assets/products/oat.png',
     note: 'A clean, plant-forward oat profile sealed in a delicate pearl. Designed for the modern wellness category.',
     noteTh: 'รสโอ๊ตบริสุทธิ์ที่เน้นพืชเป็นหลัก ปิดผนึกในเม็ดบีดละเอียด ออกแบบมาสำหรับตลาดสุขภาพยุคใหม่' },
   { id: 'redbean',   name: 'Red Bean',       nameTh: 'ถั่วแดง',        tag: 'Signature flavor', flavor: 'Sweet · Earthy · Heritage',
-    img: 'assets/products/redbean.webp',   imgFallback: 'assets/products/redbean.png',
+    img: '/assets/products/redbean.webp',   imgFallback: 'assets/products/redbean.png',
     note: 'A heritage Asian flavor profile, elevated. Pairs naturally with cold desserts, shaved ice, and pastries.',
     noteTh: 'รสชาติดั้งเดิมของเอเชียที่ยกระดับขึ้น เข้ากันได้ดีกับของหวานเย็น น้ำแข็งไส และขนมอบ' },
   { id: 'chestnut',  name: 'Water Chestnut', nameTh: 'แห้วน้ำ',        tag: 'Signature flavor', flavor: 'Crisp · Cool · Clean',
-    img: 'assets/products/chestnut.webp',  imgFallback: 'assets/products/chestnut.png',
+    img: '/assets/products/chestnut.webp',  imgFallback: 'assets/products/chestnut.png',
     note: 'A signature crunch in pearl form — subtle, hydrating, distinctly Asian.',
     noteTh: 'ความกรุบกรอบเอกลักษณ์ในรูปแบบเม็ดบีด — ละเอียดอ่อน ให้ความชุ่มชื้น มีกลิ่นอายเอเชียชัดเจน' },
   { id: 'cheese',    name: 'Cheese',         nameTh: 'ชีส',            tag: 'Signature flavor', flavor: 'Salty · Rich · Savory-sweet',
-    img: 'assets/products/cheese.webp',    imgFallback: 'assets/products/cheese.jpg',
+    img: '/assets/products/cheese.webp',    imgFallback: '/assets/products/cheese.jpg',
     note: 'A salted cream-cheese core. The trend-forward topping reshaping cold dessert and beverage menus.',
     noteTh: 'แกนครีมชีสเค็ม ท็อปปิ้งล้ำสมัยที่กำลังเปลี่ยนเมนูของหวานเย็นและเครื่องดื่ม' },
   { id: 'osmanthus', name: 'Osmanthus',      nameTh: 'ดอกออสมันทัส',   tag: 'Signature flavor', flavor: 'Floral · Honeyed · Elegant',
-    img: 'assets/products/osmanthus.webp', imgFallback: 'assets/products/osmanthus.png',
+    img: '/assets/products/osmanthus.webp', imgFallback: 'assets/products/osmanthus.png',
     note: 'Tiny gold flowers, steeped and sealed. A whisper of honey for the premium dessert tier.',
     noteTh: 'ดอกไม้สีทองขนาดเล็ก ชงแล้วปิดผนึก กลิ่นน้ำผึ้งอ่อนๆ สำหรับของหวานระดับพรีเมียม' },
 ];
@@ -826,7 +826,7 @@ function Nav({ page, setPage, lang, setLang }) {
       <header className="bm-nav-shell">
         <nav className="bm-nav" role="navigation" aria-label="Main navigation">
           <a className="bm-brand" href="#" aria-label="BlessMe — go to homepage" onClick={(e) => { e.preventDefault(); navigate('Products'); }}>
-            <img src="assets/logo-full.png" alt="BlessMe Thailand" />
+            <img src="/assets/logo-full.png" alt="BlessMe Thailand" />
           </a>
           <div className="bm-links" role="menubar">
             {t.nav.map((l, i) => {
@@ -990,7 +990,7 @@ function ProductsPage({ onOpen, setPage, lang }) {
           </div>
         </div>
         <div className="bm-hero-deco">
-          <div className="bm-hero-mark"><img src="assets/logo-full.png" alt="BlessMe Thailand" /></div>
+          <div className="bm-hero-mark"><img src="/assets/logo-full.png" alt="BlessMe Thailand" /></div>
         </div>
       </section>
 
@@ -1347,7 +1347,7 @@ function Footer({ setPage, lang }) {
     <footer className="bm-footer">
       <div className="bm-footer-main">
         <div className="bm-brand bm-brand--lg">
-          <img src="assets/logo-full.png" alt="BlessMe" />
+          <img src="/assets/logo-full.png" alt="BlessMe" />
         </div>
         <p className="bm-footer-blessing">
           {blessing[0]}<br/>{blessing[1]}
