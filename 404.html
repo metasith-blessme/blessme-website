@@ -1226,9 +1226,15 @@ function BlogPage({ onOpenArticle }) {
         Insights for partners and customers — on the category, our process, and the products we bring to market.
       </p>
       <article className="bm-feature-article" onClick={() => onOpenArticle(featured.id)}>
-        <div className="bm-feature-cover" style={{ background: featured.cover }}>
-          <span className="bm-blog-cat">{featured.cat}</span>
-        </div>
+        {featured.img ? (
+          <div className="bm-feature-cover" style={{ backgroundImage: `url(${featured.img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <span className="bm-blog-cat">{featured.cat}</span>
+          </div>
+        ) : (
+          <div className="bm-feature-cover" style={{ background: featured.cover }}>
+            <span className="bm-blog-cat">{featured.cat}</span>
+          </div>
+        )}
         <div className="bm-feature-body">
           <div className="bm-meta">FEATURED · {featured.date.toUpperCase()} · {featured.read.toUpperCase()}</div>
           <h2 className="bm-feature-title">{featured.title}</h2>
@@ -1239,9 +1245,15 @@ function BlogPage({ onOpenArticle }) {
       <div className="bm-blog-grid">
         {rest.map((a) => (
           <article key={a.id} className="bm-blog-card" onClick={() => onOpenArticle(a.id)}>
-            <div className="bm-blog-img" style={{ background: a.cover }}>
-              <span className="bm-blog-cat">{a.cat}</span>
-            </div>
+            {a.img ? (
+              <div className="bm-blog-img" style={{ backgroundImage: `url(${a.img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                <span className="bm-blog-cat">{a.cat}</span>
+              </div>
+            ) : (
+              <div className="bm-blog-img" style={{ background: a.cover }}>
+                <span className="bm-blog-cat">{a.cat}</span>
+              </div>
+            )}
             <div className="bm-blog-body">
               <div className="bm-meta">{a.date.toUpperCase()} · {a.read.toUpperCase()}</div>
               <h3 className="bm-blog-title">{a.title}</h3>
@@ -1296,9 +1308,15 @@ function ArticlePage({ articleId, onBack, onOpenArticle }) {
         <div className="bm-related-grid">
           {others.map(o => (
             <article key={o.id} className="bm-blog-card" onClick={() => onOpenArticle(o.id)}>
-              <div className="bm-blog-img" style={{ background: o.cover }}>
-                <span className="bm-blog-cat">{o.cat}</span>
-              </div>
+              {o.img ? (
+                <div className="bm-blog-img" style={{ backgroundImage: `url(${o.img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                  <span className="bm-blog-cat">{o.cat}</span>
+                </div>
+              ) : (
+                <div className="bm-blog-img" style={{ background: o.cover }}>
+                  <span className="bm-blog-cat">{o.cat}</span>
+                </div>
+              )}
               <div className="bm-blog-body">
                 <div className="bm-meta">{o.date.toUpperCase()} · {o.read.toUpperCase()}</div>
                 <h3 className="bm-blog-title">{o.title}</h3>
