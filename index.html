@@ -548,6 +548,33 @@ const T = {
   },
 };
 
+/* ===== URL ROUTING ===== */
+const PATH_TO_PAGE = {
+  '/':          'Products',
+  '/solutions': 'Solutions',
+  '/about':     'About us',
+  '/blog':      'Blog',
+  '/faq':       'FAQ',
+};
+
+const PAGE_TO_PATH = {
+  'Products':  '/',
+  'Solutions': '/solutions',
+  'About us':  '/about',
+  'Blog':      '/blog',
+  'FAQ':       '/faq',
+};
+
+function getInitialState() {
+  const path = window.location.pathname;
+  // Handle /blog/:articleId
+  if (path.startsWith('/blog/')) {
+    return { page: 'Blog', articleId: path.replace('/blog/', '') };
+  }
+  const page = PATH_TO_PAGE[path] || 'Products';
+  return { page, articleId: null };
+}
+
 /* ===== PRODUCTS DATA ===== */
 const PRODUCTS = [
   { id: 'barley',    name: 'Barley',         nameTh: 'บาร์เลย์',       tag: 'Signature flavor', flavor: 'Toasty · Nutty · Refined',
@@ -1247,31 +1274,44 @@ function Footer({ setPage, lang }) {
 
 /* ===== APP ===== */
 function App() {
-  const [page, setPage] = useState('Products');
+  const initial = getInitialState();
+  const [page, setPage] = useState(initial.page);
   const [detail, setDetail] = useState(null);
-  const [articleId, setArticleId] = useState(null);
+  const [articleId, setArticleId] = useState(initial.articleId);
   const [lang, setLang] = useState('en');
 
-  const VALID_PAGES = ['Products', 'Solutions', 'About us', 'Blog', 'FAQ'];
+  // Load language preference from localStorage
   React.useEffect(() => {
-    const storedPage = localStorage.getItem('bm-page');
     const storedLang = localStorage.getItem('bm-lang');
-    if (storedPage && VALID_PAGES.includes(storedPage)) setPage(storedPage);
     if (storedLang === 'th' || storedLang === 'en') setLang(storedLang);
   }, []);
-  React.useEffect(() => { localStorage.setItem('bm-page', page); }, [page]);
   React.useEffect(() => { localStorage.setItem('bm-lang', lang); }, [lang]);
 
+  // Handle browser back/forward buttons
+  React.useEffect(() => {
+    const onPop = () => {
+      const { page: p, articleId: aid } = getInitialState();
+      setPage(p);
+      setArticleId(aid);
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
+
   const goToPage = (p) => {
+    const path = PAGE_TO_PATH[p] || '/';
+    window.history.pushState({}, '', path);
     setArticleId(null);
     setPage(p);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   const openArticle = (id) => {
+    window.history.pushState({}, '', `/blog/${id}`);
     setArticleId(id);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   const closeArticle = () => {
+    window.history.pushState({}, '', '/blog');
     setArticleId(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
