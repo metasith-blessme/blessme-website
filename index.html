@@ -321,6 +321,7 @@ html,body{margin:0;padding:0;background:var(--ci-sky-soft);color:var(--ci-sky-in
 .bm-article-meta{display:flex;gap:12px;align-items:center;font-family:var(--font-mono);font-size:12px;letter-spacing:0.06em;color:rgba(12,42,61,0.55);padding-top:20px;border-top:1px solid rgba(12,42,61,0.1);}
 .bm-article-meta .dot{color:rgba(12,42,61,0.3);}
 .bm-article-cover{width:100%;height:380px;border-radius:18px;margin:16px 0 48px;box-shadow:0 20px 50px rgba(12,42,61,0.16);}
+.bm-article-hero-img{width:100%;height:380px;object-fit:cover;border-radius:18px;display:block;}
 .bm-article-body{max-width:64ch;margin:0 auto;}
 .bm-article-h2{font-family:var(--font-display);font-weight:600;font-size:26px;line-height:1.2;letter-spacing:-0.015em;color:var(--ci-sky-ink);margin:44px 0 14px;}
 .bm-article-p{font-size:17px;line-height:1.75;color:rgba(12,42,61,0.84);margin:0 0 18px;font-family:var(--font-body);text-wrap:pretty;}
@@ -617,6 +618,8 @@ const ARTICLES = [
     excerpt: 'A practical framework for spotting categories that exist abroad but are missing from the Thai consumer landscape — and how to evaluate whether the gap is worth pursuing.',
     date: 'April 12, 2026', isoDate: '2026-04-12', read: '6 min read', cat: 'Category', author: 'BlessMe Team',
     cover: 'linear-gradient(140deg,#38b6ff 0%,#1d6fa8 60%,#0c2a3d 100%)',
+    img: 'https://images.unsplash.com/photo-1767424412548-1a1ac7f4b9bc?w=1080&q=80',
+    imgAlt: 'Market research and business strategy analysis',
     body: [
       ['p', 'Most specialty food businesses in Thailand begin with a product they love and a hope that consumers will love it too. We have always preferred to start the other way around: by looking carefully at the gap.'],
       ['h2', 'A category-first lens'],
@@ -635,6 +638,8 @@ const ARTICLES = [
     excerpt: 'A walkthrough of the sourcing checklist BlessMe runs on every supplier — from food-safety paperwork to a personal visit on the production floor.',
     date: 'March 28, 2026', isoDate: '2026-03-28', read: '9 min read', cat: 'Sourcing', author: 'BlessMe Team',
     cover: 'linear-gradient(140deg,#f6dfae 0%,#e8a83a 60%,#b9831f 100%)',
+    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1080&q=80',
+    imgAlt: 'Quality control inspector checking production in food manufacturing',
     body: [
       ['p', 'A specialty food brand is only ever as good as the factory behind it. The quickest way to lose a wholesale partner is to ship one inconsistent batch.'],
       ['h2', 'The paperwork stage'],
@@ -654,6 +659,8 @@ const ARTICLES = [
     excerpt: 'How successful cafés and dessert brands launch a specialty product without disrupting their existing best-sellers — drawn from what our wholesale partners actually do.',
     date: 'March 15, 2026', isoDate: '2026-03-15', read: '4 min read', cat: 'Partners', author: 'BlessMe Team',
     cover: 'linear-gradient(140deg,#e8a83a 0%,#d8536b 60%,#5a2a47 100%)',
+    img: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1080&q=80',
+    imgAlt: 'Modern café interior with menu board and specialty drinks',
     body: [
       ['p', 'Adding a new product to an established menu is harder than it looks. Existing customers have habits, staff have routines, and a new SKU competes with everything already working. The partners who succeed do five things consistently.'],
       ['h2', '01 · Pair, do not replace'],
@@ -674,6 +681,8 @@ const ARTICLES = [
     excerpt: 'Most distributors compete on breadth. We have chosen to compete on judgement. Here is why a deliberately small catalogue serves our partners better than an endless one.',
     date: 'February 22, 2026', isoDate: '2026-02-22', read: '5 min read', cat: 'Philosophy', author: 'BlessMe Team',
     cover: 'linear-gradient(140deg,#1d6fa8 0%,#0c2a3d 100%)',
+    img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1080&q=80',
+    imgAlt: 'Carefully curated collection of premium artisanal products',
     body: [
       ['p', 'Walk into any food trade show and the offer is the same: hundreds of SKUs, every flavor, every format, every certification. Distributors compete on the size of the catalogue. We have chosen to compete on the opposite thing.'],
       ['h2', 'Why narrow is faster'],
@@ -690,6 +699,8 @@ const ARTICLES = [
     excerpt: 'Thai weather is unforgiving on temperature-sensitive food products. A short summary of how we keep texture, shelf life, and stock consistent regardless of season.',
     date: 'February 8, 2026', isoDate: '2026-02-08', read: '7 min read', cat: 'Operations', author: 'BlessMe Team',
     cover: 'linear-gradient(140deg,#8dbfd6 0%,#38b6ff 60%,#1d6fa8 100%)',
+    img: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1080&q=80',
+    imgAlt: 'Cold storage warehouse with temperature-controlled environment',
     body: [
       ['p', 'Bangkok is hot for most of the year. Thai weather is not unusual for the region, but it is unforgiving for any product that depends on temperature. Cold-chain integrity is not a checkbox — it is the work.'],
       ['h2', 'Three failure points'],
@@ -706,6 +717,8 @@ const ARTICLES = [
     excerpt: 'A 12-month shelf life is a number on a label. The real question for partners is what the product actually tastes like in month nine, month ten, month eleven. Here is what we have learned.',
     date: 'January 18, 2026', isoDate: '2026-01-18', read: '5 min read', cat: 'Craft', author: 'BlessMe Team',
     cover: 'linear-gradient(140deg,#ece4d0 0%,#8dbfd6 100%)',
+    img: 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=1080&q=80',
+    imgAlt: 'Organized pantry shelves with packaged food products',
     body: [
       ['p', 'Every food product carries a printed shelf life. The number is meaningful, but it is also incomplete. The number tells you when the product is no longer guaranteed safe and consistent. It does not tell you what the product is like at month nine, eleven, or thirteen.'],
       ['h2', 'How we set the date'],
@@ -1261,7 +1274,11 @@ function ArticlePage({ articleId, onBack, onOpenArticle }) {
           <span>{a.read}</span>
         </div>
       </header>
-      <div className="bm-article-cover" style={{ background: a.cover }} />
+      {a.img ? (
+        <img src={a.img} alt={a.imgAlt} className="bm-article-hero-img" />
+      ) : (
+        <div className="bm-article-cover" style={{ background: a.cover }} />
+      )}
       <div className="bm-article-body">
         {a.body.map(([tag, text], i) => {
           if (tag === 'h2') return <h2 key={i} className="bm-article-h2">{text}</h2>;
