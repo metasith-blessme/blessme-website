@@ -12,9 +12,8 @@ This is the **public-facing wholesale website** for the domain `blessmethailand.
 
 | Layer | Technology |
 |-------|-----------|
-| Framework | React 18 (via CDN, no build step) |
-| JSX transpiler | Babel Standalone (runtime, in-browser) |
-| Styling | Inline CSS in `<style>` tag (design tokens + BEM-like classes) |
+| Framework | React 18 + Vite 6 |
+| Styling | Plain CSS in `src/styles/index.css` (design tokens + BEM-like classes) |
 | Fonts | Google Fonts — Fraunces (display), Instrument Serif (editorial), Inter (body), JetBrains Mono (labels) |
 | Hosting | Cloudflare Pages (free tier) |
 | Domain | blessmethailand.com |
@@ -24,28 +23,36 @@ This is the **public-facing wholesale website** for the domain `blessmethailand.
 
 ```
 blessme-web-ui/
-├── index.html          ← THE ENTIRE SITE (all CSS + JSX inline, with Web3Forms + Thai/EN)
-├── CLAUDE.md           ← this file (tech reference for next Claude session)
-├── PLAN.md             ← deployment roadmap (updated with completion status)
-├── README.md           ← human-readable project guide
-├── robots.txt          ← SEO: search engine crawler instructions
-├── sitemap.xml         ← SEO: page hierarchy for Google
-├── og-image.png        ← Social sharing image (1200×630px)
-└── assets/
-    ├── logo-full.png   ← BlessMe logo (641 KB)
-    └── products/
-        ├── barley.webp         (121 KB, ~94% smaller)
-        ├── barley.png          (1.9 MB, fallback)
-        ├── oat.webp            (95 KB, ~94% smaller)
-        ├── oat.png             (1.6 MB, fallback)
-        ├── redbean.webp        (114 KB, ~93% smaller)
-        ├── redbean.png         (1.6 MB, fallback)
-        ├── chestnut.webp       (173 KB, ~92% smaller)
-        ├── chestnut.png        (2.1 MB, fallback)
-        ├── cheese.webp         (97 KB, ~87% smaller)
-        ├── cheese.jpg          (726 KB, fallback)
-        ├── osmanthus.webp      (168 KB, ~93% smaller)
-        └── osmanthus.png       (2.3 MB, fallback)
+├── index.html              ← Entry point (no inline CSS/JS)
+├── vite.config.js          ← Vite configuration
+├── package.json            ← Dependencies (React 18, Vite 6)
+├── dist/                   ← Built output (deploy this to Cloudflare Pages)
+├── src/
+│   ├── main.jsx            ← App entry
+│   ├── App.jsx             ← Root component, routing logic
+│   ├── styles/
+│   │   └── index.css       ← All CSS (migrated from inline <style>)
+│   ├── data/
+│   │   ├── translations.js  ← T object (EN/TH translations)
+│   │   ├── products.js     ← PRODUCTS array
+│   │   └── articles.js     ← ARTICLES array
+│   └── components/
+│       ├── Nav.jsx
+│       ├── TrustBar.jsx
+│       ├── ProductCard.jsx
+│       ├── ProductDetail.jsx
+│       ├── ProductsPage.jsx
+│       ├── AboutPage.jsx   ← Also contains ContactItem + ContactForm
+│       ├── SolutionsPage.jsx
+│       ├── BlogPage.jsx
+│       ├── ArticlePage.jsx
+│       ├── FAQPage.jsx
+│       └── Footer.jsx
+├── public/
+│   └── assets/             ← images (logo, products)
+├── robots.txt
+├── sitemap.xml
+└── CLAUDE.md
 ```
 
 ## Pages (all in index.html)
