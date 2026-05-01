@@ -1,159 +1,309 @@
-# PLAN.md — BlessMe Website Deployment & Roadmap
+# Plan: Full Thai Localization + SEO + Modern Font
 
-## Project Goal
+## Context
+The website has EN/TH toggle but Thai is half-finished — blog articles have no Thai content, SolutionsPage and FAQPage ignore `lang` entirely, product names have errors (osmanthus, chestnut), and meta tags never switch to Thai. This plan completes the full Thai experience and adds SEO-targeted Thai meta tags for: ท็อปปิ่ง, ป็อปปิ่งโบบา.
 
-Launch `blessmethailand.com` as a professional B2B wholesale website for BlessMe (Thailand) Co., Ltd.
-Target audience: cafés, restaurants, dessert brands, retailers in Thailand.
+**Single file:** `/Users/metasithjumpatip/Desktop/Blessme/blessme-web-ui/index.html`
+**Sync after every change:** `cp index.html 404.html`
 
 ---
 
-## Phase 1 — Launch (Deploy to live domain) ✅ READY NOW
+## Step 1 — Replace Thai Font with Sarabun (Google Fonts)
 
-### Step 1: Push to GitHub
+**Why Sarabun:** Weights 300–700, geometric, modern, web-optimized, same CDN as existing fonts. More readable than DBHelvethaica at screen sizes.
 
-```bash
-cd /Users/metasithjumpatip/Desktop/Blessme/blessme-web-ui
-git init
-git add .
-git commit -m "feat: initial BlessMe website"
-git remote add origin https://github.com/metasith-blessme/blessme-website.git
-git branch -M main
-git push -u origin main
+**Line ~39 — Extend existing @import** — add before `&display=swap`:
+```
+&family=Sarabun:wght@300;400;500;600;700
 ```
 
-Repository: `github.com/metasith-blessme/blessme-website`
-GitHub account: `metasith-blessme` (Metasith@gmail.com)
+**Lines ~42–47 — Delete entire `@font-face` block** for DBHelvethaica.
 
-### Step 2: Deploy on Cloudflare Pages
-
-1. Go to dash.cloudflare.com → sign up with Metasith@gmail.com
-2. Workers & Pages → Create → Pages → Connect to Git
-3. Select `metasith-blessme/blessme-website`
-4. Build settings:
-   - Framework preset: None
-   - Build command: (leave empty)
-   - Build output directory: /
-5. Deploy → live at `blessme-website.pages.dev`
-
-### Step 3: Buy domain blessmethailand.com
-
-- Cloudflare Registrar → Domain Registration → blessmethailand.com
-- Cost: ~$10–12 USD/year (at-cost, no markup)
-
-### Step 4: Connect domain
-
-- Cloudflare Pages → project → Custom domains → blessmethailand.com
-- DNS set automatically (since domain is at Cloudflare)
-- SSL auto-provisioned (~5 min)
-
-**Result:** Site live at https://blessmethailand.com, auto-deploys on every git push.
+**Lines ~122–124 — Update CSS Thai rule:**
+```css
+[lang="th"], .lang-th {
+  font-family: 'Sarabun', 'Inter', ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+```
 
 ---
 
-## Phase 2 — Improve (Post-launch optimization) ✅ COMPLETE
+## Step 2 — Fix Product Data (PRODUCTS array, lines ~600–625)
 
-### 2A: OG image ✅
-- ✅ Created `assets/og-image.png` (1200×630px)
-- ✅ Shows: BlessMe logo circle + "Specialty Food Wholesale" + flavor pills
-- ✅ Used by Facebook, LINE, Twitter when link is shared
-- ✅ Meta tags ready in `<head>`
+**a) Fix Thai product names:**
+- `osmanthus.nameTh`: `'ดอกออสมันทัส'` → `'ดอกหอมหมื่นลี้'`
+- `chestnut.nameTh`: `'แห้วน้ำ'` → `'แห้ว'`
 
-### 2B: Image optimization ✅
-- ✅ All 6 products converted to WebP (87-94% size reduction)
-- ✅ `<picture>` tags with WebP source + PNG/JPG fallback
-- ✅ Modern browsers use WebP (faster) · older browsers use PNG/JPG
-- ✅ Barley: 1.9 MB → 121 KB | Oat: 1.6 MB → 95 KB | etc.
+**b) Add `flavorTh` to all 6 products:**
+| id | flavorTh |
+|---|---|
+| barley | `'คั่ว · กลิ่นถั่ว · ประณีต'` |
+| oat | `'ครีมมี่ · นุ่มนวล · ทันสมัย'` |
+| redbean | `'หวาน · ดินดั้งเดิม · คลาสสิก'` |
+| chestnut | `'กรอบ · เย็นสดชื่น · สะอาด'` |
+| cheese | `'เค็ม · เข้มข้น · เค็มหวาน'` |
+| osmanthus | `'ดอกไม้ · น้ำผึ้ง · หรูหรา'` |
 
-### 2C: Contact form ✅
-- ✅ Web3Forms integrated (free, 250 submissions/month)
-- ✅ Form POSTs to Web3Forms API → emails Blessme.team@gmail.com
-- ✅ Access key added (line 944 in index.html)
-- ✅ Live on About us page (under "Request a wholesale quote")
+**c) Fix T.th.formProducts (line ~552):**
+- Index 3 (chestnut): `'แห้วน้ำ'` → `'แห้ว'`
+- Index 5 (osmanthus): `'ดอกออสมันทัส'` → `'ดอกหอมหมื่นลี้'`
 
-### 2D: Google Search Console ⏳
-- ✅ Meta tag placeholder added (line ~30 in index.html)
-- ⏳ **User action**: Get GSC verification code at search.google.com/search-console and paste into meta tag
+**d) ProductCard (~line 929) — use flavorTh:**
+```jsx
+{lang === 'th' && product.flavorTh ? product.flavorTh : product.flavor}
+```
 
----
-
-## Phase 3 — Analytics & Growth (Week 2–4)
-
-### 3A: Cloudflare Web Analytics (free, already included)
-- Cloudflare Dashboard → Analytics → Web Analytics
-- Add 1 script tag to index.html
-- Shows: visitors, page views, countries, top pages
-- Privacy-first, no cookies, no GDPR issues
-
-### 3B: Google Analytics 4 (optional, more detailed)
-- GA4 shows user behavior, time-on-page, scroll depth
-- Add gtag.js snippet to index.html
-- Connect to Google Search Console for full picture
-
-### 3C: LINE Notify for lead alerts
-- When someone clicks "Request wholesale quote", send LINE notification
-- Requires a simple Cloudflare Worker (serverless function, free tier)
-- Alert appears on phone instantly
+**e) ProductDetail modal spec grid (~lines 974–978) — use T keys:**
+```jsx
+<div className="k">{t.modalPack}</div><div className="v">500g</div>
+<div className="k">{t.modalShelf}</div><div className="v">{lang==='th'?'12 เดือน':'12 months'}</div>
+<div className="k">{t.modalStorage}</div><div className="v">{lang==='th'?'อุณหภูมิห้อง ที่แห้ง':'Room Temperature, dry'}</div>
+<div className="k">{t.modalOrigin}</div><div className="v">{lang==='th'?'เอเชีย · โรงงานมาตรฐาน':'Asia · trusted factory'}</div>
+```
+(T.th keys already exist: `modalPack='ขนาดบรรจุ'`, `modalShelf='อายุผลิตภัณฑ์'`, `modalStorage='การเก็บรักษา'`, `modalOrigin='แหล่งกำเนิด'`)
 
 ---
 
-## Phase 4 — Content & SEO (Month 2) ✅ COMPLETE
+## Step 3 — Add Thai Content to ARTICLES Array (lines ~627–745)
 
-### 4A: Blog content strategy ✅
-- ✅ 6 articles currently live
-- 📅 **Future**: Add Thai-language article versions
-- 📅 **Future**: Recipe ideas using BlessMe products
-- 📅 **Future**: "How to store popping boba" practical guide
-- 📅 **Future**: Partner spotlight features
+Add 6 fields to every article object: `titleTh`, `excerptTh`, `bodyTh`, `dateTh`, `readTh`, `catTh`.
 
-### 4B: Thai-language version ✅
-- ✅ Full language toggle (TH / EN) in Nav
-- ✅ Translation object `T` with 100+ UI strings (Nav, hero, products, FAQ, footer)
-- ✅ Language preference saved to localStorage (persists on refresh)
-- ✅ Blog articles currently EN-only (can be translated by adding `titleTh`, `bodyTh` fields)
-- ✅ Thai language improves SEO for Thai search terms
+**catTh / dateTh / readTh for all 6:**
+| id | catTh | dateTh | readTh |
+|---|---|---|---|
+| specialty-category | `'หมวดหมู่'` | `'12 เมษายน 2569'` | `'6 นาที'` |
+| sourcing-audit | `'การจัดหา'` | `'28 มีนาคม 2569'` | `'9 นาที'` |
+| introduce-new-product | `'พาร์ทเนอร์'` | `'15 มีนาคม 2569'` | `'4 นาที'` |
+| curation-philosophy | `'ปรัชญา'` | `'22 กุมภาพันธ์ 2569'` | `'5 นาที'` |
+| cold-chain | `'การดำเนินงาน'` | `'8 กุมภาพันธ์ 2569'` | `'7 นาที'` |
+| shelf-life | `'คราฟต์'` | `'18 มกราคม 2569'` | `'5 นาที'` |
 
-### 4C: SEO files ✅
-- ✅ `sitemap.xml` created (5 pages with priorities)
-- ✅ `robots.txt` created (allow all + sitemap pointer)
-- ✅ Canonical URL: `https://blessmethailand.com/`
-- ✅ OG tags: title, description, image (1200×630)
-- ✅ Twitter Card tags
+### Article 1: specialty-category
+```js
+titleTh: 'การระบุหมวดหมู่อาหารพิเศษถัดไปสำหรับตลาดไทย',
+excerptTh: 'กรอบการทำงานเชิงปฏิบัติสำหรับการค้นหาหมวดหมู่ที่มีในต่างประเทศแต่ขาดหายไปจากตลาดไทย — และวิธีประเมินว่าช่องว่างนั้นคุ้มค่าแก่การดำเนินการหรือไม่',
+bodyTh: [
+  ['p','ธุรกิจอาหารพิเศษส่วนใหญ่ในไทยเริ่มต้นด้วยผลิตภัณฑ์ที่ตัวเองรัก และหวังว่าผู้บริโภคจะรักด้วยเช่นกัน เราเลือกเริ่มต้นในทิศทางตรงกันข้ามเสมอ นั่นคือการมองหาช่องว่างในตลาดอย่างละเอียด'],
+  ['h2','มองจากมุมมองหมวดหมู่ก่อน'],
+  ['p','ก่อนที่เบลสมีจะนำเข้าสินค้าแม้แต่ถังเดียว เราถามคำถามสามข้อ หนึ่ง หมวดหมู่นี้มีอยู่ที่อื่นในระดับใหญ่หรือไม่ สอง การที่ไม่มีในไทยเป็นเพราะปัญหาด้านกฎระเบียบ การขนส่ง หรือเพียงแค่ยังไม่มีใครลอง สาม ผู้บริโภคพร้อมแล้วหรือยัง'],
+  ['p','คำถามเหล่านี้ดูเหมือนชัดเจน แต่ในทางปฏิบัติพบได้น้อยมาก ความล้มเหลวที่พบบ่อยที่สุดคือการสันนิษฐานว่าสินค้าที่ขายดีในโตเกียวหรือไทเปจะแปลงมาสู่กรุงเทพได้โดยง่าย'],
+  ['h2','สามสัญญาณที่เรามองหา'],
+  ['p','หมวดหมู่หนึ่งน่าสนใจสำหรับเราเมื่อสัญญาณสามอย่างปรากฏพร้อมกัน ความต้องการระดับสากลที่สม่ำเสมอ มีเทรนด์ท้องถิ่นอย่างน้อยหนึ่งอย่างที่บ่งชี้ว่าผู้บริโภคไทยเปิดรับ และเส้นทางการจัดหาสามารถแก้ไขได้'],
+  ['p','เราผ่านหมวดหมู่ที่มีสัญญาณเพียงหนึ่งอย่าง สองอย่างคือ "อาจจะ" สามอย่างคือเวลาที่เราลงมือทำ'],
+  ['h2','สิ่งที่เรากำลังจับตามอง'],
+  ['p','เราไม่ประกาศหมวดหมู่ก่อนที่จะพร้อม สิ่งที่บอกได้คือสายผลิตภัณฑ์ถัดไปของเบลสมีอยู่ในขั้นทดสอบสุดท้าย และเราตื่นเต้นที่จะแบ่งปันกับพาร์ทเนอร์ค้าส่งเมื่อสินค้าถึงกรุงเทพ'],
+],
+```
+
+### Article 2: sourcing-audit
+```js
+titleTh: 'เบื้องหลังการจัดหา: เราตรวจสอบโรงงานอย่างไรก่อนนำเข้าแม้แต่ล็อตเดียว',
+excerptTh: 'รายละเอียดรายการตรวจสอบการจัดหาที่เบลสมีใช้กับซัพพลายเออร์ทุกราย — ตั้งแต่เอกสารความปลอดภัยด้านอาหารจนถึงการเยี่ยมชมพื้นที่การผลิตด้วยตนเอง',
+bodyTh: [
+  ['p','แบรนด์อาหารพิเศษดีได้แค่โรงงานที่อยู่เบื้องหลัง วิธีที่เร็วที่สุดในการสูญเสียพาร์ทเนอร์ค้าส่งคือการส่งสินค้าล็อตที่ไม่สม่ำเสมอแม้แค่ครั้งเดียว'],
+  ['h2','ขั้นตอนเอกสาร'],
+  ['p','ก่อนการสนทนาใดๆ เรื่องราคา เราขอเอกสาร ใบรับรอง HACCP ISO 22000 หากมี และผลการตรวจสอบจากบุคคลที่สามล่าสุด หากซัพพลายเออร์ลังเลเรื่องเอกสาร เราก็เดินหน้าต่อ มีซัพพลายเออร์รายอื่นเสมอ'],
+  ['h2','การเยี่ยมชม'],
+  ['p','เราเยี่ยมชมทุกโรงงานที่ร่วมงานด้วย — อย่างน้อยหนึ่งครั้งก่อนออร์เดอร์แรก และอย่างน้อยปีละหนึ่งครั้งหลังจากนั้น รูปภาพและการโทรวิดีโอไม่เพียงพอ เราดูสายการผลิต ชิมสินค้าตรงจากสายการผลิต'],
+  ['p','พื้นที่การผลิตที่สะอาดพร้อมโปรโตคอลการแต่งกายที่ชัดเจนบอกเราได้มากกว่าในสิบห้านาที มากกว่ารายงานการตรวจสอบใดๆ'],
+  ['h2','แบทช์แรก'],
+  ['p','การนำเข้าครั้งแรกจากซัพพลายเออร์ใหม่จะเป็นปริมาณน้อยเสมอ เราทดสอบในคลังสินค้า ส่งตัวอย่างให้พาร์ทเนอร์ที่ไว้ใจได้ และรวบรวมฟีดแบ็กที่ตรงไปตรงมา'],
+  ['h2','ทำไมสิ่งนี้สำคัญสำหรับพาร์ทเนอร์'],
+  ['p','เมื่อคาเฟ่สั่งซื้อเบลสมี พวกเขากำลังซื้อการรับประกันว่าสิ่งที่ได้รับเดือนนี้จะรสชาติเหมือนกับที่ได้รับเดือนที่แล้วทุกประการ การรับประกันนั้นสร้างขึ้นก่อนที่สินค้าใดจะถึงกรุงเทพ'],
+],
+```
+
+### Article 3: introduce-new-product
+```js
+titleTh: 'ห้าวิธีในการแนะนำผลิตภัณฑ์ใหม่สู่เมนูที่มีอยู่แล้ว',
+excerptTh: 'วิธีที่คาเฟ่และแบรนด์ขนมหวานที่ประสบความสำเร็จเปิดตัวผลิตภัณฑ์พิเศษโดยไม่รบกวนสินค้าขายดีที่มีอยู่ — จากสิ่งที่พาร์ทเนอร์ค้าส่งของเราทำจริง',
+bodyTh: [
+  ['p','การเพิ่มผลิตภัณฑ์ใหม่ลงในเมนูที่มีอยู่แล้วยากกว่าที่เห็น ลูกค้าเดิมมีนิสัย พนักงานมีกิจวัตร และ SKU ใหม่แข่งขันกับทุกสิ่งที่ทำอยู่แล้ว พาร์ทเนอร์ที่ประสบความสำเร็จทำห้าสิ่งนี้อย่างสม่ำเสมอ'],
+  ['h2','01 · จับคู่ ไม่ใช่แทนที่'],
+  ['p','การแนะนำที่ประสบความสำเร็จมากที่สุดเพิ่มตัวเลือกใหม่เป็นท็อปปิ้ง เป็นของเสริม หรือเป็นการจับคู่ตามฤดูกาล ไม่ใช่เป็นการแทนที่สินค้าขายดี ผลิตภัณฑ์ใหม่ได้รับการทดลองโดยไม่บังคับให้เปลี่ยน'],
+  ['h2','02 · ทำให้พนักงานเป็นกลุ่มแรก'],
+  ['p','ก่อนที่ลูกค้าจะลองผลิตภัณฑ์ ทีมงานหน้าเคาน์เตอร์ควรชิมก่อน เรียนรู้เรื่องราว และรู้วิธีอธิบาย พนักงานที่ตอบคำถามได้หนึ่งประโยคขับยอดขายได้มากกว่าป้ายพิมพ์ใดๆ'],
+  ['h2','03 · จำกัดการเปิดตัว'],
+  ['p','เปิดตัวผลิตภัณฑ์ใหม่เป็นรายการพิเศษสี่สัปดาห์แทนที่จะเป็นรายการถาวร ความหายากสร้างความอยากรู้ และหน้าต่างที่กำหนดไว้ปกป้องคุณหากผลการตอบรับไม่ดี'],
+  ['h2','04 · ถ่ายภาพให้ดี'],
+  ['p','ผลิตภัณฑ์พิเศษต้องการภาพถ่ายที่อธิบายสิ่งที่มันคือ เนื้อสัมผัสสำคัญกว่าการตกแต่งจาน ภาพนั้นควรทำให้คนที่ผ่านมาหยุดเลื่อน'],
+  ['h2','05 · ฟังก่อนขยาย'],
+  ['p','หลังจากลูกค้าร้อยคนแรก ถามพวกเขาโดยตรง แบบเผชิญหน้า ว่าคิดอย่างไร สัญญาณที่ได้จากตัวอย่างเล็กๆ นั้นมีประโยชน์กว่าการสำรวจใดๆ'],
+],
+```
+
+### Article 4: curation-philosophy
+```js
+titleTh: 'คัดสรรแทนแคตตาล็อก: ทำไมเราจึงเลือกผลิตภัณฑ์น้อยชิ้นแต่ละเอียดถี่ถ้วน',
+excerptTh: 'ผู้จัดจำหน่ายส่วนใหญ่แข่งขันด้วยความกว้าง เราเลือกแข่งขันด้วยการตัดสิน นี่คือเหตุผลที่แคตตาล็อกขนาดเล็กโดยเจตนาให้บริการพาร์ทเนอร์ของเราได้ดีกว่าแบบที่ไม่มีที่สิ้นสุด',
+bodyTh: [
+  ['p','เดินเข้างานแสดงอาหารใดก็ตาม ข้อเสนอก็เหมือนกัน SKU หลายร้อยรายการ ทุกรสชาติ ทุกรูปแบบ ทุกการรับรอง ผู้จัดจำหน่ายแข่งขันกันด้วยขนาดของแคตตาล็อก เราเลือกแข่งขันด้วยสิ่งตรงกันข้าม'],
+  ['h2','ทำไมการแคบจึงเร็วกว่า'],
+  ['p','แคตตาล็อกขนาดเล็กหมายความว่าเราเข้าใจทุกผลิตภัณฑ์อย่างลึกซึ้ง เราเยี่ยมชมโรงงาน ทำการทดสอบ ใช้ผลิตภัณฑ์ในงานประยุกต์จริง และผ่านรอบการสั่งซื้อซ้ำอย่างน้อยหนึ่งรอบเต็ม'],
+  ['h2','ทำไมการแคบจึงซื่อสัตย์กว่า'],
+  ['p','เราจะไม่แนะนำผลิตภัณฑ์ที่เราไม่เชื่อเป็นการส่วนตัว คำมั่นสัญญานั้นเป็นไปไม่ได้ที่จะรักษาไว้ใน SKU หลายร้อยรายการ แต่ทำได้อย่างตรงไปตรงมาใน range ขนาดเล็กที่เราคัดสรร'],
+  ['h2','สิ่งนี้หมายความว่าอะไรสำหรับพาร์ทเนอร์'],
+  ['p','เมื่อผลิตภัณฑ์ของเบลสมีมาถึงครัวของคุณ มันผ่านการทดสอบทุกอย่างที่เรารู้จักวิธีรัน นั่นคือความสัมพันธ์แบบต่างจากข้อเสนอทั่วไปของผู้จัดจำหน่าย'],
+],
+```
+
+### Article 5: cold-chain
+```js
+titleTh: 'โลจิสติกส์ห่วงโซ่ความเย็นในกรุงเทพฯ: การรักษาสินค้าคงคลังสม่ำเสมอตลอดทั้งปี',
+excerptTh: 'สภาพอากาศไทยไม่ปรานีผลิตภัณฑ์อาหารที่ไวต่ออุณหภูมิ บทสรุปสั้นๆ ของวิธีที่เรารักษาเนื้อสัมผัส อายุผลิตภัณฑ์ และสต็อกให้สม่ำเสมอโดยไม่คำนึงถึงฤดูกาล',
+bodyTh: [
+  ['p','กรุงเทพฯ ร้อนตลอดส่วนใหญ่ของปี สภาพอากาศไทยไม่ได้ผิดปกติสำหรับภูมิภาคนี้ แต่ไม่ปรานีสำหรับผลิตภัณฑ์ใดก็ตามที่พึ่งพาอุณหภูมิ ความสมบูรณ์ของห่วงโซ่ความเย็นไม่ใช่แค่ช่องที่ต้องติ๊ก — มันคืองาน'],
+  ['h2','สามจุดล้มเหลว'],
+  ['p','จากประสบการณ์ของเรา สามจุดในห่วงโซ่รับผิดชอบปัญหาเนื้อสัมผัสและอายุผลิตภัณฑ์เกือบทั้งหมด การส่งมอบจากตู้คอนเทนเนอร์สู่คลังสินค้า การจัดวางในคลังสินค้าเอง และกระบวนการรับสินค้าของพาร์ทเนอร์ที่ปลายทาง'],
+  ['h2','สิ่งที่เราตรวจสอบ'],
+  ['p','ทุกการส่งมอบบันทึกอุณหภูมิตั้งแต่ต้นทาง คลังสินค้าของเราใช้การติดตามต่อเนื่องพร้อมการแจ้งเตือน ความผิดปกติใดๆ จะกระตุ้นการตรวจสอบคุณภาพก่อนที่สินค้าที่ได้รับผลกระทบจะออกจากคลังสินค้า'],
+  ['h2','ทำไมเราจึงส่งตัวอย่างก่อน'],
+  ['p','ไม่ว่าห่วงโซ่จะระมัดระวังแค่ไหน การทดสอบคุณภาพการส่งถึงที่แท้จริงคือสิ่งที่ถึงครัวของพาร์ทเนอร์ นั่นคือเหตุผลที่เราส่งตัวอย่างขนาดเล็กก่อนพาเลทเต็มแรกสำหรับพาร์ทเนอร์ค้าส่งรายใหม่'],
+],
+```
+
+### Article 6: shelf-life
+```js
+titleTh: 'วิทยาศาสตร์อายุผลิตภัณฑ์: 12 เดือนหมายความว่าอะไรในทางปฏิบัติจริง',
+excerptTh: 'อายุผลิตภัณฑ์ 12 เดือนคือตัวเลขบนฉลาก คำถามสำคัญสำหรับพาร์ทเนอร์คือสินค้ารสชาติเป็นอย่างไรในเดือนที่เก้า สิบ สิบเอ็ด นี่คือสิ่งที่เราได้เรียนรู้',
+bodyTh: [
+  ['p','ทุกผลิตภัณฑ์อาหารมีอายุการเก็บรักษาที่ระบุไว้ ตัวเลขนั้นมีความหมายแต่ก็ไม่สมบูรณ์ ตัวเลขบอกว่าเมื่อไหร่ที่ผลิตภัณฑ์ไม่ได้รับการรับประกันความปลอดภัยและความสม่ำเสมออีกต่อไป'],
+  ['h2','วิธีที่เราตั้งวันที่'],
+  ['p','เราทำงานร่วมกับซัพพลายเออร์เพื่อตั้งวันที่แบบอนุรักษ์นิยม แล้วทำการทดสอบการเร่งอายุกับตัวอย่างของเราเองในสภาวะที่ควบคุม เมื่อข้อมูลจากห้องปฏิบัติการและวันที่ที่พิมพ์ไว้ต่างกัน เราไว้วางใจห้องปฏิบัติการ'],
+  ['h2','วิธีที่เราบริหารสต็อกตามนั้น'],
+  ['p','คลังสินค้าของเราหมุนเวียนแบบเข้าก่อนออกก่อนอย่างเคร่งครัด เราปรับขนาดออร์เดอร์ตามการพยากรณ์ความต้องการเพื่อให้พาร์ทเนอร์ไม่เคยได้รับสินค้าที่มีอายุการเก็บรักษาน้อยกว่าหกเดือน'],
+  ['h2','คำมั่นสัญญาเงียบๆ'],
+  ['p','อายุผลิตภัณฑ์ 12 เดือนคือพื้น ไม่ใช่ประสบการณ์ ประสบการณ์คือเนื้อสัมผัสที่สม่ำเสมอและรสชาติที่สม่ำเสมอตลอดช่วงเวลาทั้งหมด นั่นคือสิ่งที่เราขายจริงๆ'],
+],
+```
 
 ---
 
-## Phase 5 — Partner Portal (Future, when needed)
+## Step 4 — Fix BlogPage (~lines 1218–1256)
 
-- Password-protected partner login
-- Download product spec sheets (PDF)
-- View order history / reorder
-- Options: Next.js app (already have quotation-app skills), Supabase auth
-
----
-
-## Status Tracker (As of 2026-04-29)
-
-| Item | Status | Notes |
-|------|--------|-------|
-| OG image | ✅ DONE | 1200×630 PNG created at `assets/og-image.png` |
-| WebP images | ✅ DONE | All 6 products converted, 87-94% size reduction |
-| Contact form | ✅ DONE | Web3Forms integrated, key added (6a29a76e-...) |
-| sitemap.xml | ✅ DONE | 5 URLs listed with priorities |
-| robots.txt | ✅ DONE | Created with sitemap pointer |
-| Thai/EN language | ✅ DONE | Full translation object, language toggle in Nav |
-| Google Search Console | ✅ DONE | Meta tag placeholder added (awaiting user GSC code) |
-| Codebase audit | ✅ DONE | All 10 issues fixed (2 critical, 5 high, 4 medium, 1 low) |
-| Web3Forms key | ✅ DONE | Added to ContactForm (line 944) |
-| **Ready to deploy** | ✅ YES | Push to GitHub → Cloudflare Pages → blessmethailand.com |
+- Signature: `function BlogPage({ onOpenArticle, lang })` (App already passes `lang` at line ~1505)
+- Replace eyebrow/title/lead with `T[lang].blogEyebrow`, `T[lang].blogTitle`, `T[lang].blogLead`
+- Featured card: title/excerpt/date/read/category use `lang==='th'` ternaries with `titleTh`/`excerptTh`/`dateTh`/`readTh`/`catTh`
+- CTA: `{T[lang].readMore}`
+- Grid cards: same pattern
 
 ---
 
-## Cost Summary
+## Step 5 — Fix ArticlePage (~lines 1259–1330)
 
-| Item | Cost | Frequency |
-|------|------|-----------|
-| Domain (blessmethailand.com) | ~$11 USD | Per year |
-| Cloudflare Pages hosting | FREE | - |
-| Cloudflare Analytics | FREE | - |
-| Web3Forms contact form | FREE | Up to 250/month |
-| Google Search Console | FREE | - |
-| **Total** | **~$11/year** | |
+- Signature: `function ArticlePage({ articleId, onBack, onOpenArticle, lang })`
+- App render (~line 1500): add `lang={lang}` to `<ArticlePage />`
+- Back link: `{lang==='th' ? '← บทความทั้งหมด' : '← All articles'}`
+- Category: use `a.catTh || a.cat` when lang=th
+- Title/excerpt/date/read: use Thai fields when lang=th
+- Body: `(lang==='th' && a.bodyTh ? a.bodyTh : a.body).map(...)`
+- End marker: `{lang==='th' ? '— จบ —' : '— END —'}`
+- Signoff: Thai message when lang=th
+- Continue reading header: `{lang==='th' ? 'อ่านต่อ' : 'CONTINUE READING'}`
+- Related card titles/CTA: lang-aware
+
+---
+
+## Step 6 — Fix SolutionsPage (~lines 1181–1228)
+
+- Signature: `function SolutionsPage({ setPage, lang })`
+- Add `const t = T[lang];` at top
+- Replace `steps` array with lang-conditional version (TH/EN):
+
+**TH steps:**
+| n | t | d |
+|---|---|---|
+| 01 | ความต้องการของลูกค้า | ลูกค้าของเรากำลังมองหาประสบการณ์ใหม่ — จุดแตกต่างที่แท้จริง เราเริ่มต้นทุกการมีส่วนร่วมด้วยการฟัง |
+| 02 | การวิจัย | ปัจจุบันยังไม่มีการใช้ผลิตภัณฑ์นี้ในประเทศไทย เราทำแผนผังหมวดหมู่ ศึกษาพฤติกรรมผู้บริโภค และระบุช่องว่างที่พาร์ทเนอร์ของเราสามารถครอบครองได้ |
+| 03 | การจัดหา | เราระบุและเป็นพาร์ทเนอร์กับโรงงานที่น่าเชื่อถือที่มอบสมดุลที่ดีที่สุดของราคา คุณภาพ และมาตรฐานความปลอดภัยด้านอาหาร — ตรวจสอบด้วยตนเอง ตรวจสอบอย่างต่อเนื่อง |
+| 04 | การทดสอบ | เราทดสอบผลิตภัณฑ์กับพาร์ทเนอร์และผู้บริโภคปลายทาง ทุกผลิตภัณฑ์ผ่านรอบฟีดแบ็กหลายรอบก่อนได้รับการอนุมัติให้เข้าแคตตาล็อกค้าส่ง |
+| 05 | สต็อก | เรารักษาสต็อกที่สม่ำเสมอในคลังสินค้ากรุงเทพฯ เพื่อให้พาร์ทเนอร์ไม่เคยหยุดชะงัก สินค้าคงคลังที่ขับเคลื่อนด้วยการพยากรณ์ช่วยปกป้องกำหนดการเปิดตัวและการสั่งซื้อซ้ำ |
+| 06 | การตลาด | เราให้ความรู้แก่ตลาด — สร้างการรับรู้และความต้องการของผู้บริโภคผ่านการเล่าเรื่องแบรนด์ การสนับสนุนการขายปลีก และเนื้อหา — เพื่อให้พาร์ทเนอร์ได้รับลูกค้าที่พร้อมซื้อ |
+
+- Wire existing T keys: `t.solEyebrow`, `t.solTitle`, `t.solLead`, `t.solCtaEyebrow`, `t.solCtaTitle`, `t.solCtaBody`, `t.solCtaBtn`
+
+---
+
+## Step 7 — Fix FAQPage (~lines 1347–1387)
+
+- Signature: `function FAQPage({ lang })`
+- Add `const t = T[lang];` at top
+- Define `faqsEn` (current hardcoded array) and `faqsTh`:
+
+**TH FAQ pairs:**
+1. เบลสมีจำหน่ายสินค้าอะไรบ้าง? / เบลสมีคือผู้ค้าส่งอาหารพิเศษ... ป็อปปิ่งโบบา และท็อปปิ่ง 6 รสชาติ...
+2. ผลิตภัณฑ์เหมาะสำหรับผู้ทานมังสวิรัติหรือไม่? / ใช่ ทุกรสชาติทั้ง 6 รายการเหมาะสำหรับผู้ทานมังสวิรัติและวีแกน เราใช้สาหร่ายอัลจิเนตแทนเจลาติน
+3. ปริมาณสั่งซื้อขั้นต่ำสำหรับค้าส่งคือเท่าไหร่? / ขึ้นอยู่กับโปรไฟล์พาร์ทเนอร์และการจัดการขนส่ง กรุณาติดต่อทีมงานของเรา
+4. มีตัวอย่างสินค้าก่อนสั่งซื้อหรือไม่? / มี เราส่งถังตัวอย่างให้กับผู้สนใจค้าส่งที่มีคุณสมบัติ
+5. อายุผลิตภัณฑ์นานเท่าไหร่? / สิบสองเดือนเมื่อยังไม่ได้เปิด เก็บในที่เย็นและแห้ง เมื่อเปิดแล้วให้แช่เย็นและใช้ภายใน 14 วัน
+6. จัดส่งนอกกรุงเทพฯ ได้หรือไม่? / ได้ เราจัดส่งทั่วประเทศไทยจากคลังสินค้ากรุงเทพฯ
+7. เบลสมีแตกต่างจากซัพพลายเออร์รายอื่นอย่างไร? / เราคัดสรร ทุกผลิตภัณฑ์ที่เราจำหน่ายได้รับการวิจัย จัดหาจากโรงงานที่น่าเชื่อถือ ทดสอบกับพาร์ทเนอร์ และสนับสนุนด้วยการตลาดที่สร้างความต้องการของผู้บริโภคปลายทาง
+
+- Wire: `t.faqEyebrow`, `t.faqTitle`
+- `const faqs = lang === 'th' ? faqsTh : faqsEn;`
+
+---
+
+## Step 8 — Thai SEO: Make updateMeta() Lang-Aware (~lines 747–796)
+
+**A. Add `PAGE_META_TH` constant** (after existing PAGE_META):
+```js
+const PAGE_META_TH = {
+  Products: { title: 'เบลสมี ไทยแลนด์ — ป็อปปิ่งโบบา และท็อปปิ่งคาเฟ่ ค้าส่ง', description: 'เบลสมี (ประเทศไทย) — ผู้จัดจำหน่ายท็อปปิ่ง ป็อปปิ่งโบบา สำหรับคาเฟ่ ร้านอาหาร และแบรนด์ขนมหวาน 6 รสชาติคัดสรร สต็อกในกรุงเทพฯ อายุผลิตภัณฑ์ 12 เดือน', canonical: BASE_URL+'/' },
+  Solutions: { title: 'วิธีการทำงานของเบลสมี — กรอบ 6 ขั้นตอน | เบลสมี ไทยแลนด์', description: 'ค้นพบกรอบการทำงาน 6 ขั้นตอนที่เบลสมีใช้ในการจัดหา ทดสอบ และจัดส่งอาหารพิเศษให้กับพาร์ทเนอร์ค้าส่งทั่วไทย', canonical: BASE_URL+'/solutions' },
+  'About us': { title: 'เกี่ยวกับเบลสมี ไทยแลนด์ — ผู้ค้าส่งอาหาร กรุงเทพฯ', description: 'บริษัท เบลสมี (ประเทศไทย) จำกัด นำหมวดหมู่อาหารพิเศษสู่ตลาด B2B ไทย บริการคาเฟ่ ร้านอาหาร และแบรนด์ขนมหวานทั่วประเทศ', canonical: BASE_URL+'/about' },
+  Blog: { title: 'บทความ — ข้อมูลเชิงลึกอาหารพิเศษ | เบลสมี ไทยแลนด์', description: 'บันทึกจากทีมเบลสมีเกี่ยวกับการจัดหาท็อปปิ่ง ป็อปปิ่งโบบา โลจิสติกส์ห่วงโซ่ความเย็น และการแนะนำสินค้าใหม่สู่ตลาดไทย', canonical: BASE_URL+'/blog' },
+  FAQ: { title: 'คำถามที่พบบ่อย — เบลสมี ค้าส่ง | ป็อปปิ่งโบบา ท็อปปิ่งคาเฟ่', description: 'คำถามที่พบบ่อยเกี่ยวกับราคาค้าส่ง ปริมาณสั่งซื้อขั้นต่ำ อายุผลิตภัณฑ์ ป็อปปิ่งโบบา ท็อปปิ่ง และการจัดส่งทั่วประเทศไทย', canonical: BASE_URL+'/faq' },
+};
+```
+
+**B. Update `buildProductMeta(product, lang)` — add lang param:**
+- TH: `title = "${nameTh} ท็อปปิ่ง ป็อปปิ่งโบบา ค้าส่ง | เบลสมี ไทยแลนด์"`
+- TH: `description = "${nameTh} — ${noteTh} สั่งซื้อค้าส่งจากเบลสมี ไทยแลนด์ สต็อกในกรุงเทพฯ อายุผลิตภัณฑ์ 12 เดือน"`
+
+**C. Update `buildArticleMeta(article, lang)` — use titleTh/excerptTh when th**
+
+**D. Update `updateMeta(page, productId, articleId, lang='en')`:**
+- Use `PAGE_META_TH` when lang=th
+- Pass lang through to build* functions
+
+**E. Update `setMeta` to set `og:locale`:** `th_TH` or `en_US`
+
+**F. App useEffect — add `lang` to dependency array + pass to both calls:**
+```jsx
+React.useEffect(() => {
+  updateMeta(page, pid, aid, lang);
+  updateSchema(page, pid, aid, lang);
+}, [page, detail, articleId, lang]);
+```
+
+**G. `buildArticleSchema(article, lang)` — use titleTh/excerptTh + `"inLanguage":"th"` when th**
+
+---
+
+## Execution Order
+
+```
+Step 1 (Font)       → independent, do first
+Step 2 (Products)   → before Steps 4/5 (flavorTh needed by modal)
+Step 3 (Articles)   → before Steps 4/5 (titleTh/bodyTh must exist)
+Step 4 (BlogPage)   → after Step 3
+Step 5 (ArticlePage)→ after Step 3
+Step 6 (Solutions)  → independent
+Step 7 (FAQ)        → independent
+Step 8 (SEO meta)   → after Steps 2+3 (uses nameTh, titleTh)
+```
+
+Commit: `git commit -m "feat: full Thai localization — Sarabun font, blog/FAQ/Solutions in TH, Thai SEO meta"`
+
+---
+
+## Verification Checklist
+
+1. Toggle TH → every page in Thai (nav, hero, products, solutions steps, FAQ, blog)
+2. Open article → Thai title, body, `← บทความทั้งหมด`, `— จบ —`, `อ่านต่อ`
+3. Product modal → Thai spec labels + Thai flavor
+4. Osmanthus → `ดอกหอมหมื่นลี้`, Chestnut → `แห้ว`
+5. DevTools → `document.title` switches Thai, `og:locale` = `th_TH`
+6. Network tab → Sarabun loaded, no TTF request for DBHelvethaica
+7. Thai `<title>` contains: ท็อปปิ่ง, ป็อปปิ่งโบบา
