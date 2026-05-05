@@ -950,6 +950,8 @@ function BlogPage({ onOpenArticle, lang }) {
       <p className="bm-lead" style={{ maxWidth: '60ch', marginTop: 18 }}>
         {t.blogLead}
       </p>
+
+      {/* Featured article — hero card */}
       <article className="bm-feature-article" onClick={() => onOpenArticle(featured.id)}>
         <div className="bm-feature-cover" style={{ position: 'relative' }}>
           {featured.img ? (
@@ -966,6 +968,13 @@ function BlogPage({ onOpenArticle, lang }) {
           <div className="bm-card-cta">{t.readMore}</div>
         </div>
       </article>
+
+      {/* Section divider */}
+      <div style={{ marginTop: 56, marginBottom: 8, paddingBottom: 20, borderBottom: '1px solid rgba(12,42,61,0.1)' }}>
+        <div className="bm-eyebrow">{lang === 'th' ? 'บทความทั้งหมด' : 'ALL ARTICLES'}</div>
+      </div>
+
+      {/* Article grid — 2 columns, horizontal cards */}
       <div className="bm-blog-grid">
         {rest.map((a) => (
           <article key={a.id} className="bm-blog-card" onClick={() => onOpenArticle(a.id)}>
