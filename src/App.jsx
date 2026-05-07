@@ -1111,11 +1111,9 @@ function App() {
   const [articleId, setArticleId] = useState(initial.articleId);
   const [lang, setLang] = useState('en');
 
-  // Load language preference from localStorage
-  React.useEffect(() => {
-    const storedLang = localStorage.getItem('bm-lang');
-    if (storedLang === 'th' || storedLang === 'en') setLang(storedLang);
-  }, []);
+  // Always start with English on page load
+  React.useEffect(() => { setLang('en'); }, []);
+  // Save language preference to localStorage
   React.useEffect(() => { localStorage.setItem('bm-lang', lang); }, [lang]);
 
   // Handle browser back/forward buttons
