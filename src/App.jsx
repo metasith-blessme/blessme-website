@@ -627,7 +627,7 @@ function ContactForm({ lang, t }) {
         </div>
         <div className="bm-field">
           <label htmlFor="f-qty">{t.formQty}</label>
-          <input id="f-qty" name="qty" type="text" placeholder={isTh ? 'เช่น 10 ถัง/เดือน' : 'e.g. 10 tubs/month'} />
+          <input id="f-qty" name="qty" type="text" placeholder={isTh ? 'เช่น 10 ห่อ/เดือน' : 'e.g. 10 packs/month'} />
         </div>
       </div>
       <div className="bm-field">
