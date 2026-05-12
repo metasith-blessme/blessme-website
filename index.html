@@ -34,12 +34,16 @@
 <meta name="google-site-verification" content="UVEz5zLEbupofKQS5r0ZuEjL6qamoKbh7E6L6M-kvCA" />
 <!-- Sitemap hint -->
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+<!-- Performance hints -->
+<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+<link rel="dns-prefetch" href="https://vitals.vercel-analytics.com" />
 <!-- Google Fonts — preconnect + link (faster than CSS @import) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<!-- Preload hero logo for LCP -->
-<link rel="preload" as="image" href="/assets/logo-full.png" />
+<!-- Preload critical assets for LCP -->
+<link rel="preload" as="image" href="/assets/logo-full.png" fetchpriority="high" />
+<link rel="preload" as="style" href="/src/styles/index.css" />
 <!-- Schema.org structured data (updated dynamically by JS) -->
 <script type="application/ld+json" id="bm-schema">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"BlessMe (Thailand) Co., Ltd.","url":"https://blessmethailand.com","logo":"https://blessmethailand.com/assets/logo-full.png","image":"https://blessmethailand.com/assets/logo-full.png","description":"Specialty food wholesaler supplying cafés, restaurants, and dessert brands with premium popping boba in Thailand.","address":{"@type":"PostalAddress","addressLocality":"Bangkok","addressCountry":"TH"},"contactPoint":{"@type":"ContactPoint","telephone":"+66-82-896-5199","email":"Blessme.team@gmail.com","contactType":"sales","areaServed":"TH","availableLanguage":["Thai","English"]},"sameAs":["https://instagram.com/blessme_thailand","https://facebook.com/BlessMeThailand"],"priceRange":"฿฿","areaServed":{"@type":"Country","name":"Thailand"}}
@@ -51,6 +55,62 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-M2HGM3SM29');
+</script>
+<!-- Web Vitals monitoring for Core Web Vitals (LCP, CLS, FID) -->
+<script>
+  // Measure Core Web Vitals and send to Google Analytics
+  const vitalsUrl = 'https://vitals.vercel-analytics.com/v1/vitals';
+  function getConnectionSpeed() {
+    return 'connection' in navigator && navigator.connection
+      ? navigator.connection.effectiveType
+      : 'unknown';
+  }
+  const vitals = {
+    url: location.href,
+    referrer: document.referrer,
+    dimension1: getConnectionSpeed(),
+  };
+  function sendVitals(metric) {
+    vitals[metric.name] = metric.value;
+    fetch(vitalsUrl, {
+      method: 'POST',
+      body: JSON.stringify(vitals),
+      keepalive: true,
+    }).catch(() => {});
+  }
+  // Observe Core Web Vitals
+  if ('PerformanceObserver' in window) {
+    // LCP (Largest Contentful Paint)
+    try {
+      const lcpObserver = new PerformanceObserver((list) => {
+        const lastEntry = list.getEntries().pop();
+        if (lastEntry) sendVitals({ name: 'LCP', value: lastEntry.renderTime || lastEntry.loadTime });
+      });
+      lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+    } catch (e) {}
+
+    // CLS (Cumulative Layout Shift)
+    try {
+      let clsValue = 0;
+      const clsObserver = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          if (!entry.hadRecentInput) clsValue += entry.value;
+        }
+        sendVitals({ name: 'CLS', value: clsValue });
+      });
+      clsObserver.observe({ type: 'layout-shift', buffered: true });
+    } catch (e) {}
+
+    // FID/INP (First Input Delay / Interaction to Next Paint)
+    try {
+      const fidObserver = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          sendVitals({ name: 'FID', value: entry.processingDuration });
+        }
+      });
+      fidObserver.observe({ type: 'first-input', buffered: true });
+    } catch (e) {}
+  }
 </script>
 </head>
 <body>
