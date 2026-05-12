@@ -1,0 +1,25 @@
+name = "blessme-web-ui"
+type = "javascript"
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+compatibility_date = "2026-05-01"
+
+[env.production]
+name = "blessme-production"
+compatibility_date = "2026-05-01"
+
+[build]
+command = "npm run build"
+cwd = "./"
+watch_paths = ["src/**/*.jsx", "src/**/*.css"]
+
+[build.upload]
+format = "service-worker"
+
+[docs]
+# Cloudflare Pages configuration for SPA routing
+# Build: npm run build
+# Output: dist
+# Environment: production
