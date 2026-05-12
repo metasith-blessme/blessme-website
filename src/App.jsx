@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './styles/index.css';
+import { initWebVitals } from './lib/web-vitals';
 import {
   ARTICLES,
   getAdjacentArticles,
@@ -1115,6 +1116,11 @@ function App() {
   React.useEffect(() => { setLang('en'); }, []);
   // Save language preference to localStorage
   React.useEffect(() => { localStorage.setItem('bm-lang', lang); }, [lang]);
+
+  // Initialize Web Vitals monitoring on component mount
+  React.useEffect(() => {
+    initWebVitals({ analyticsId: 'G-M2HGM3SM29', sendBeacon: true, verbose: false });
+  }, []);
 
   // Handle browser back/forward buttons
   React.useEffect(() => {
