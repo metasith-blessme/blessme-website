@@ -2,11 +2,11 @@ export const ARTICLES = [
   {
     id: 'increase-smoothie-bar-profit-popping-boba',
     title: 'How to Increase Smoothie Bar Profit Margin with Popping Boba',
-    titleTh: 'เพิ่มกำไรร้านน้ำผลไม้ปั่น ร้านโยเกิร์ตปั่น ร้านคาเฟ่ ของคุณได้ง่าย ด้วยมุกป็อปจาก Blessme',
+    titleTh: 'เพิ่มกำไรร้านน้ำผลไม้ปั่นของคุณได้ง่ายๆด้วยมุกป็อป',
     excerpt:
       'Discover how smoothie bar owners can boost profit margins by 30–40% by adding popping boba as a premium topping. Real ROI numbers and practical tips from BlessMe Thailand.',
     excerptTh:
-      'เรียนรู้วิธีเพิ่มกำไรร้าน Smoothie ได้ 30–40% ด้วยการเพิ่มมุกป็อปเป็น premium topping พร้อมตัวเลข ROI จริงและเคล็ดลับปฏิบัติจาก BlessMe Thailand',
+      'เรียนรู้วิธีเพิ่มกำไรร้านน้ำผลไม้ปั่นได้ 30–40% ด้วยการเพิ่มมุกป็อปเป็น topping พรีเมียม พร้อมตัวเลขกำไรจริงและเคล็ดลับปฏิบัติจาก BlessMe Thailand',
     date: 'May 14, 2026',
     isoDate: '2026-05-14',
     dateTh: '14 พฤษภาคม 2569',
