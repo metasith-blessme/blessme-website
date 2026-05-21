@@ -24,89 +24,78 @@ npm run preview   # Preview production build locally
 | Hosting | Cloudflare Workers & Pages (auto-deploy from `main` branch) |
 | Domain | blessmethailand.com |
 | Repo | github.com/metasith-blessme/blessme-website |
-| Contact form | Web3Forms API |
+| Contact form | Web3Forms API
 
 ## Architecture
 
-**Single-page app with client-side routing.** All components, data, routing, and meta/schema updaters live in `src/App.jsx` (~1200 lines). No React Router — routing is manual via `window.history.pushState` + `popstate` listener.
+**Single-page app with modular client-side routing.** Fully decoupled modular structure dividing data constants, reusable layout components, pages, utility libraries, and the main App orchestrator. No React Router — custom routing is manual via standard `window.history.pushState` triggers + a `popstate` listener.
 
 ```
 src/
 ├── main.jsx              ← ReactDOM.createRoot entry
-├── App.jsx               ← ALL components, routing, products data, FAQ data, meta updaters
-├── content/
-│   └── blog.js           ← ARTICLES array + helper functions (getArticleById, getRelatedArticles, etc.)
+├── App.jsx               ← Sleek state orchestrator & layout wrapper (~130 lines)
+├── components/           ← Reusable UI Elements
+│   ├── ContactForm.jsx   ← Web3Forms contact form
+│   ├── Footer.jsx        ← Corporate site footer
+│   ├── Modal.jsx         ← Specifications detail overlays & B2B mailto quote generator
+│   ├── Navbar.jsx        ← Bilingual header navigation and mobile drawer toggler
+│   ├── ProductCard.jsx   ← Popping Boba showcase card wrapped in React.memo
+│   └── TrustBar.jsx      ← Certification and milestone trust meters
+├── constants/            ← Static Data Constants
+│   ├── faq.js            ← Localized collapsible accordions (FAQS_EN / FAQS_TH)
+│   ├── products.js       ← Popping Boba product specifications & meta (PRODUCTS)
+│   └── translations.js   ← Localized bilingual translation dictionaries (T)
+├── content/              ← Custom Blog Data
+│   └── blog.js           ← Articles database array (ARTICLES) & rendering helpers
+├── lib/                  ← Core Utilities & Side Effects
+│   ├── routing.js        ← Path-to-page mappings and state hydrator (getInitialState)
+│   ├── seo.js            ← Meta tags updaters (updateMeta) and JSON-LD schema injectors (updateSchema)
+│   └── web-vitals.js     ← Core Web Vitals monitoring setup
+├── pages/                ← Individual Layout Views
+│   ├── AboutPage.jsx     ← Company milestones & contacts page
+│   ├── ArticlePage.jsx   ← Rich blog post layout rendering engine
+│   ├── BlogPage.jsx      ← Articles filtering, searching, and cards list page
+│   ├── FAQPage.jsx       ← Collapsible accordions page
+│   ├── ProductsPage.jsx  ← Boba catalogue grids and call-to-actions
+│   └── SolutionsPage.jsx ← 6-stage wholesale supply framework page
 └── styles/
-    └── index.css          ← All CSS (design tokens in :root, Thai font overrides under [lang="th"])
+    └── index.css         ← Monolithic stylesheet (BEM class variables and lang="th" sizing overrides)
 ```
 
-### Key patterns in App.jsx
+### Key modular patterns
 
-- **Routing**: `getInitialState()` reads `window.location.pathname` → maps to page via `PATH_TO_PAGE`. Navigation via `goToPage()` which calls `pushState`.
-- **Language**: `lang` state (`'en'` | `'th'`). Sets `document.documentElement.lang`. Translation object `T` has `T.en` and `T.th` keys.
-- **SEO**: `updateMeta()` and `updateSchema()` run on every route/lang change. They update `<title>`, meta tags, and JSON-LD `<script>` in `<head>`.
-- **Products data**: `PRODUCTS` array defined inline in App.jsx (6 SKUs).
-- **Blog data**: `ARTICLES` array + helpers imported from `src/content/blog.js`.
+- **Routing**: Hydrated via `getInitialState()` inside `src/lib/routing.js` which reads `window.location.pathname` → maps path to page name via `PATH_TO_PAGE`. Navigation is driven by `goToPage()` in `App.jsx` which pushes history state updates.
+- **Language**: Bilingual state managed in the main App (`lang` state `'en'` | `'th'`). Side effects automatically update `document.documentElement.lang` to sync localized CSS typography adjustments.
+- **SEO**: Side effects run `updateMeta()` and `updateSchema()` inside `src/lib/seo.js` on every language toggle or routing event, updating `<title>`, metadata, and JSON-LD structured schemas.
+- **Static Assets**: Products arrays live in `src/constants/products.js`. Translated text strings live in `src/constants/translations.js`.
+- **Blog indexing**: Renders dynamic lists and handles text search/filtering queries in `src/pages/BlogPage.jsx` based on the data imported from `src/content/blog.js`.
 
 ### Thai font system
 
 DB Ozone X Med (loaded via `@font-face` from `/assets/DB-Ozone-X-Med.ttf`) has smaller visual metrics than Inter/Fraunces. Two mechanisms handle this:
 
 1. **CSS custom property overrides** under `[lang="th"]` — overrides `--font-display`, `--font-body`, `--font-editorial`, `--font-mono` to use DB Ozone X as primary.
-2. **Per-element size overrides** — `[lang="th"] .bm-h1`, `[lang="th"] .bm-body`, etc. with larger `font-size` values, because most elements use hardcoded px sizes rather than CSS variables.
+2. **Per-element size overrides** — `[lang="th"] .bm-h1`, `[lang="th"] .bm-body`, etc. with larger `font-size` values in `src/styles/index.css`.
 
 ### Bilingual system (English + Thai)
 
 - **Default language**: English (resets to EN on page load; users can toggle to TH via nav button)
-- **Translation object `T`**: Lives at top of App.jsx (lines 15–106), structured as `T.en` and `T.th` with identical keys
-- **Language state**: Managed in App component via `lang` useState hook
-- **DOM language attribute**: `document.documentElement.lang` set to current lang for CSS `:lang` selectors
-- **Persistent preference**: User's choice saved to localStorage but resets on page refresh (intentional)
+- **Translation object `T`**: Lives in `src/constants/translations.js`, structured as `T.en` and `T.th` with identical keys.
+- **Language state**: Managed in `App.jsx` via `lang` useState hook.
+- **DOM language attribute**: `document.documentElement.lang` automatically kept synced.
+- **Persistent preference**: Saved to localStorage but resets on page refresh (intentional).
 
-Thai typography is handled by:
-- Font overrides: `[lang="th"]` CSS selector switches font family and applies DB Ozone X as primary
-- Size adjustments: Lines 112–152 in index.css contain per-element `[lang="th"]` font-size overrides (Thai glyphs need larger px values to match visual weight)
-
-To update translations: Edit both `T.en` and `T.th` keys in App.jsx simultaneously. Test both languages in nav toggle.
-
-### Blog system
-
-Blog content in `src/content/blog.js` supports rich article bodies with block types: `p`, `h2`, `h3`, `quote`, `ul`, `ol`. The `BlogPage` component has search, category filtering, and a featured article hero. `ArticlePage` renders full articles with prev/next navigation.
-
-Each article in the `ARTICLES` array has English and Thai versions (e.g., `title` + `titleTh`, `excerpt` + `excerptTh`). Helper functions like `getArticleById()`, `getRelatedArticles()`, `getArticleSchema()` handle querying and rendering.
-
-## Pages
-
-| Route | Component | Description |
-|-------|-----------|-------------|
-| `/` | `ProductsPage` | Hero + 6-product grid + TrustBar. Default page. |
-| `/solutions` | `SolutionsPage` | 6-step framework + dark CTA |
-| `/about` | `AboutPage` | Company story + contact form (Web3Forms) |
-| `/blog` | `BlogPage` | Featured article + filterable 2-column card grid |
-| `/blog/:id` | `ArticlePage` | Full article with related articles + prev/next nav |
-| `/faq` | `FAQPage` | 7-question accordion |
-
-## SEO & Meta Tags
-
-`updateMeta()` and `updateSchema()` functions (lines 217–309) run on every route/language change:
-
-- **updateMeta()**: Updates `<title>`, `<meta description>`, `<meta og:*>`, `<meta twitter:*>`, and `<link hreflang>` tags in `<head>`
-- **updateSchema()**: Builds and injects JSON-LD schema into `<script id="bm-schema">` for:
-  - Organization schema (LocalBusiness)
-  - Page-specific schema (WebPage, Product, Article, FAQPage, ItemList)
-  - Breadcrumb schema for products and articles
-
-Both functions take `lang` parameter to render localized titles/descriptions. Products get custom meta via `buildProductMeta()`. Articles get meta/schema via helpers in `content/blog.js`.
+---
 
 ## Deployment
 
 Cloudflare Workers & Pages auto-deploys on push to `main`.
 
 - **Build command**: `npm run build`
-- **Deploy command**: `npx wrangler versions upload`
+- **Deploy command**: `npx wrangler versions upload` (used for manual CLI previews)
 - **Output directory**: `dist`
 - **Node version**: 22 (set via `.nvmrc` and `.node-version`)
-- SPA routing handled by wrangler's `not_found_handling: "single-page-application"` in `wrangler.jsonc`
+- SPA routing handled by wrangler's `not_found_handling = "single-page-application"` in `wrangler.toml`
 
 ## Component Naming & Styling
 
