@@ -36,26 +36,49 @@ export function buildProductMeta(product, lang) {
   return { title: `${product.name} Popping Boba Wholesale | BlessMe Thailand`, description: `${product.name} popping boba (${product.flavor}) — ${product.note} Available for wholesale from BlessMe Thailand. Stock in Bangkok, 12-month shelf life.`, canonical: `${BASE_URL}/products/${product.id}` };
 }
 
+function getOrCreateTag(selector, tagType, attributes = {}) {
+  let el = document.querySelector(selector);
+  if (!el) {
+    el = document.createElement(tagType);
+    Object.entries(attributes).forEach(([k, v]) => el.setAttribute(k, v));
+    document.head.appendChild(el);
+  }
+  return el;
+}
+
 export function setMeta(title, description, canonical, lang='en') {
   document.title = title;
-  const descEl = document.querySelector('meta[name="description"]');
-  if (descEl) descEl.setAttribute('content', description);
-  const canonEl = document.querySelector('link[rel="canonical"]');
-  if (canonEl) canonEl.setAttribute('href', canonical);
-  const ogTitle = document.querySelector('meta[property="og:title"]');
-  if (ogTitle) ogTitle.setAttribute('content', title);
-  const ogDesc = document.querySelector('meta[property="og:description"]');
-  if (ogDesc) ogDesc.setAttribute('content', description);
-  const ogUrl = document.querySelector('meta[property="og:url"]');
-  if (ogUrl) ogUrl.setAttribute('content', canonical);
-  const ogLocale = document.querySelector('meta[property="og:locale"]');
-  if (ogLocale) ogLocale.setAttribute('content', lang === 'th' ? 'th_TH' : 'en_US');
-  const twTitle = document.querySelector('meta[name="twitter:title"]');
-  if (twTitle) twTitle.setAttribute('content', title);
-  const twDesc = document.querySelector('meta[name="twitter:description"]');
-  if (twDesc) twDesc.setAttribute('content', description);
-  // Update hreflang links dynamically
-  document.querySelectorAll('link[hreflang]').forEach(el => el.setAttribute('href', canonical));
+  
+  const descEl = getOrCreateTag('meta[name="description"]', 'meta', { name: 'description' });
+  descEl.setAttribute('content', description);
+  
+  const canonEl = getOrCreateTag('link[rel="canonical"]', 'link', { rel: 'canonical' });
+  canonEl.setAttribute('href', canonical);
+  
+  const ogTitle = getOrCreateTag('meta[property="og:title"]', 'meta', { property: 'og:title' });
+  ogTitle.setAttribute('content', title);
+  
+  const ogDesc = getOrCreateTag('meta[property="og:description"]', 'meta', { property: 'og:description' });
+  ogDesc.setAttribute('content', description);
+  
+  const ogUrl = getOrCreateTag('meta[property="og:url"]', 'meta', { property: 'og:url' });
+  ogUrl.setAttribute('content', canonical);
+  
+  const ogLocale = getOrCreateTag('meta[property="og:locale"]', 'meta', { property: 'og:locale' });
+  ogLocale.setAttribute('content', lang === 'th' ? 'th_TH' : 'en_US');
+  
+  const twTitle = getOrCreateTag('meta[name="twitter:title"]', 'meta', { name: 'twitter:title' });
+  twTitle.setAttribute('content', title);
+  
+  const twDesc = getOrCreateTag('meta[name="twitter:description"]', 'meta', { name: 'twitter:description' });
+  twDesc.setAttribute('content', description);
+
+  // Update or create hreflang links dynamically
+  const hreflangs = ['th', 'en', 'x-default'];
+  hreflangs.forEach(hl => {
+    const el = getOrCreateTag(`link[hreflang="${hl}"]`, 'link', { rel: 'alternate', hreflang: hl });
+    el.setAttribute('href', canonical);
+  });
 }
 
 export function updateMeta(page, productId = null, articleId = null, lang = 'en') {
