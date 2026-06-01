@@ -438,7 +438,7 @@ export const ARTICLES = [
     authorRole: 'Health & Wellness Specialist', authorRoleTh: 'ผู้เชี่ยวชาญด้านสุขภาพและเวลเนส',
     authorBio: 'BlessMe health editor dedicated to helping you combine functional nutrition with playful eating experiences for balanced everyday lifestyle.',
     cover: 'linear-gradient(140deg,#8dbfd6 0%,#38b6ff 60%,#1d6fa8 100%)',
-    img: 'https://images.unsplash.com/photo-1571244856341-4f3dd95db36e?w=1080&q=80',
+    img: 'https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=1080&q=80',
     imgAlt: 'Fresh thick Greek yogurt in a bowl topped with granola, fresh mint, and bursting popping boba',
     body: [
       ['p', "If you love eating thick, high-protein Greek yogurt for its excellent health benefits, but occasionally find yourself getting bored of the same daily routine, this article is a true gift for you. Popping boba (มุกป็อป) is not only a fun, playful topping for beverages, but it is also a complete game-changer when paired with creamy Greek yogurt. Let us explore why this combination is a perfect healthy match and how to prepare it in just 5 minutes."],
