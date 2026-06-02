@@ -13,8 +13,8 @@ export const ARTICLES = [
     authorRole: 'B2B Wholesale Specialist', authorRoleTh: 'ผู้เชี่ยวชาญด้านการขายส่ง B2B',
     authorBio: 'BlessMe wholesale team helping F&B businesses across Thailand grow profit margins through premium specialty toppings and popping boba.',
     cover: 'linear-gradient(140deg,#a8e063 0%,#56ab2f 60%,#2d6a4f 100%)',
-    img: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1080&q=80',
-    imgAlt: 'Modern juice and smoothie bar with fresh colorful drinks lined up on the counter',
+    img: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1080&q=80',
+    imgAlt: 'Local Thai market street stall with colorful beverage cups and fresh ingredients',
     body: [
       ['p', "If you run a smoothie or juice bar, you already know that margins in the beverage business aren't as generous as outsiders assume. Ingredient costs creep up, rent stays high, and raising your base price risks pushing customers away. The answer lies in the right topping — and popping boba (มุกป็อป) is exactly that."],
       ['h2', 'Why Toppings Have More Impact on Margin Than You Think'],
