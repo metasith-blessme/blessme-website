@@ -13,8 +13,8 @@ export const ARTICLES = [
     authorRole: 'B2B Wholesale Specialist', authorRoleTh: 'ผู้เชี่ยวชาญด้านการขายส่ง B2B',
     authorBio: 'BlessMe wholesale team helping F&B businesses across Thailand grow profit margins through premium specialty toppings and popping boba.',
     cover: 'linear-gradient(140deg,#a8e063 0%,#56ab2f 60%,#2d6a4f 100%)',
-    img: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1080&q=80',
-    imgAlt: 'Local Thai market street stall with colorful beverage cups and fresh ingredients',
+    img: 'https://images.unsplash.com/photo-1508215885820-4585e56135c8?w=1080&q=80',
+    imgAlt: 'Local casual fruit and juice vendor stall at a market in Thailand',
     body: [
       ['p', "If you run a smoothie or juice bar, you already know that margins in the beverage business aren't as generous as outsiders assume. Ingredient costs creep up, rent stays high, and raising your base price risks pushing customers away. The answer lies in the right topping — and popping boba (มุกป็อป) is exactly that."],
       ['h2', 'Why Toppings Have More Impact on Margin Than You Think'],
@@ -438,8 +438,8 @@ export const ARTICLES = [
     authorRole: 'Health & Wellness Specialist', authorRoleTh: 'ผู้เชี่ยวชาญด้านสุขภาพและเวลเนส',
     authorBio: 'BlessMe health editor dedicated to helping you combine functional nutrition with playful eating experiences for balanced everyday lifestyle.',
     cover: 'linear-gradient(140deg,#8dbfd6 0%,#38b6ff 60%,#1d6fa8 100%)',
-    img: 'https://images.unsplash.com/photo-1546549032-9571cd6b27df?w=1080&q=80',
-    imgAlt: 'Bowl of thick creamy Greek yogurt topped with fresh red raspberries and blueberries',
+    img: 'https://images.unsplash.com/photo-1505305976870-c0be1cd39939?w=1080&q=80',
+    imgAlt: 'Thick, creamy plain Greek yogurt in a rustic bowl with a spoon',
     body: [
       ['p', "If you love eating thick, high-protein Greek yogurt for its excellent health benefits, but occasionally find yourself getting bored of the same daily routine, this article is a true gift for you. Popping boba (มุกป็อป) is not only a fun, playful topping for beverages, but it is also a complete game-changer when paired with creamy Greek yogurt. Let us explore why this combination is a perfect healthy match and how to prepare it in just 5 minutes."],
       ['h2', 'Why Greek Yogurt and Popping Boba are a Healthy "Perfect Match"'],
