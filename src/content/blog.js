@@ -13,7 +13,7 @@ export const ARTICLES = [
     authorRole: 'B2B Wholesale Specialist', authorRoleTh: 'ผู้เชี่ยวชาญด้านการขายส่ง B2B',
     authorBio: 'BlessMe wholesale team helping F&B businesses across Thailand grow profit margins through premium specialty toppings and popping boba.',
     cover: 'linear-gradient(140deg,#a8e063 0%,#56ab2f 60%,#2d6a4f 100%)',
-    img: 'https://images.unsplash.com/photo-1508215885820-4585e56135c8?w=1080&q=80',
+    img: '/assets/smoothie .jpg',
     imgAlt: 'Local casual fruit and juice vendor stall at a market in Thailand',
     body: [
       ['p', "If you run a smoothie or juice bar, you already know that margins in the beverage business aren't as generous as outsiders assume. Ingredient costs creep up, rent stays high, and raising your base price risks pushing customers away. The answer lies in the right topping — and popping boba (มุกป็อป) is exactly that."],
