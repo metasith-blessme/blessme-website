@@ -28,10 +28,11 @@
 <!-- Google Fonts — preconnect + link (faster than CSS @import) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Kanit:wght@300;400;500;600&display=swap" />
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Kanit:wght@300;400;500;600&display=swap" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Kanit:wght@300;400;500;600&display=swap" /></noscript>
 <!-- Preload critical assets for LCP -->
 <link rel="preload" as="image" href="/assets/logo-full.png" fetchpriority="high" />
-<link rel="preload" as="style" href="/src/styles/index.css" />
 <!-- Schema.org structured data (updated dynamically by JS) -->
 <script type="application/ld+json" id="bm-schema">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"BlessMe (Thailand) Co., Ltd.","url":"https://blessmethailand.com","logo":"https://blessmethailand.com/assets/logo-full.png","image":"https://blessmethailand.com/assets/logo-full.png","description":"Specialty food wholesaler supplying cafés, restaurants, and dessert brands with premium popping boba in Thailand.","address":{"@type":"PostalAddress","addressLocality":"Bangkok","addressCountry":"TH"},"contactPoint":{"@type":"ContactPoint","telephone":"+66-82-896-5199","email":"Blessme.team@gmail.com","contactType":"sales","areaServed":"TH","availableLanguage":["Thai","English"]},"sameAs":["https://instagram.com/blessme_thailand","https://facebook.com/BlessMeThailand"],"priceRange":"฿฿","areaServed":{"@type":"Country","name":"Thailand"}}
