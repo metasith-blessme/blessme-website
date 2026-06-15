@@ -627,8 +627,8 @@ export const ARTICLES = [
     authorRole: 'B2B Wholesale Specialist', authorRoleTh: 'ผู้เชี่ยวชาญด้านการขายส่ง B2B',
     authorBio: 'BlessMe wholesale team helping F&B businesses across Thailand grow profit margins through premium specialty toppings and popping boba.',
     cover: 'linear-gradient(140deg,#f7971e 0%,#ffd200 100%)',
-    img: null,
-    imgAlt: null,
+    img: '/assets/products/oat.webp',
+    imgAlt: 'BlessMe Oat Popping Boba — premium wholesale popping boba priced at 80–115 THB per pack for café and restaurant operators in Thailand',
     body: [
       ['p', 'If you have searched "ป็อปปิ่งโบบาราคาส่ง" or "popping boba wholesale price Thailand" recently, you already know the landscape is confusing. Some suppliers quote per-kilogram, others per pack, and it is hard to know whether you are comparing like for like. This guide cuts through the noise with real numbers and a clear framework for evaluating any popping boba supplier before you commit.'],
       ['h2', 'How Popping Boba Is Priced in Thailand'],
@@ -756,8 +756,8 @@ export const ARTICLES = [
     authorRole: 'B2B Wholesale Specialist', authorRoleTh: 'ผู้เชี่ยวชาญด้านการขายส่ง B2B',
     authorBio: 'BlessMe wholesale team helping F&B businesses across Thailand grow profit margins through premium specialty toppings and popping boba.',
     cover: 'linear-gradient(140deg,#134e5e 0%,#71b280 100%)',
-    img: null,
-    imgAlt: null,
+    img: '/assets/products/redbean.webp',
+    imgAlt: 'BlessMe Red Bean Popping Boba — Bangkok-stocked wholesale popping boba for Thai café and smoothie bar operators, no import delays',
     body: [
       ['p', 'Every café operator who has tried to source premium toppings from overseas knows the frustration: a shipment delayed at customs, a flavor out of stock for three weeks, an import batch that arrives with half the shelf life gone. When you rely on a core topping to drive revenue, that kind of unreliability is not a minor inconvenience — it costs you sales.'],
       ['p', 'That is why Bangkok-based local stock matters. And it is the reason BlessMe built its supply model around keeping consistent inventory in Bangkok so that Thai café and smoothie bar operators get the product they need, when they need it.'],
@@ -892,8 +892,8 @@ export const ARTICLES = [
     authorRole: 'B2B Wholesale Specialist', authorRoleTh: 'ผู้เชี่ยวชาญด้านการขายส่ง B2B',
     authorBio: 'BlessMe wholesale team helping F&B businesses across Thailand grow profit margins through premium specialty toppings and popping boba.',
     cover: 'linear-gradient(140deg,#c6a45a 0%,#8a6f2e 100%)',
-    img: null,
-    imgAlt: null,
+    img: '/assets/products/barley.webp',
+    imgAlt: 'BlessMe Barley Popping Boba — Thailand\'s best-selling Thai-inspired popping boba with toasty grain aroma, wholesale supply from Bangkok',
     body: [
       ['p', 'Of BlessMe\'s six popping boba flavors, Barley is the one that customers come back for. It has been the top-selling SKU since BlessMe launched, and the pattern holds across café types: smoothie bars, milk tea shops, and yogurt cafés all report barley as their fastest-moving topping. This article explains why — the flavor science, the health positioning, the best pairing applications, and where to source barley popping boba wholesale in Thailand.'],
       ['h2', 'What Is Barley Popping Boba?'],
