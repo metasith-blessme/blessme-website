@@ -27,11 +27,8 @@ function App() {
   const [page, setPage] = useState(initial.page);
   const [detail, setDetail] = useState(initial.productId ? PRODUCTS.find(p => p.id === initial.productId) || null : null);
   const [articleId, setArticleId] = useState(initial.articleId);
-  const [lang, setLang] = useState('en');
+  const [lang, setLang] = useState(() => localStorage.getItem('bm-lang') || 'en');
 
-  // Always start with English on page load
-  useEffect(() => { setLang('en'); }, []);
-  
   // Save language preference to localStorage
   useEffect(() => { localStorage.setItem('bm-lang', lang); }, [lang]);
 

@@ -93,10 +93,10 @@
 
 /* ---- Thai Font Application ---- */
 [lang="th"], .lang-th {
-  --font-display: 'DB Ozone X', 'Kanit', 'Fraunces', 'DM Serif Display', Georgia, serif;
-  --font-editorial: 'DB Ozone X', 'Kanit', 'Instrument Serif', Georgia, 'Times New Roman', serif;
-  --font-body: 'DB Ozone X', 'Kanit', 'Inter', ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: 'DB Ozone X', 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --font-display: 'Sarabun', 'DB Ozone X', 'Fraunces', 'DM Serif Display', Georgia, serif;
+  --font-editorial: 'Sarabun', 'DB Ozone X', 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-body: 'Sarabun', 'DB Ozone X', 'Inter', ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'Sarabun', 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   --bm-feature-excerpt-size: 24px;
   --bm-blog-title-size: 36px;
   --bm-blog-excerpt-size: 23px;
@@ -107,7 +107,7 @@
   --bm-article-h2-size: 48px;
   --bm-article-h3-size: 36px;
   --bm-article-quote-size: 38px;
-  font-family: 'DB Ozone X', 'Kanit', 'Inter', ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Sarabun', 'DB Ozone X', 'Inter', ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 [lang="th"] .bm-links a{font-size:24px;}
 [lang="th"] .bm-nav-contact-line{font-size:20px;}

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { T } from '../constants/translations';
 
+const NAV_KEYS = ['Products', 'Solutions', 'About us', 'Blog', 'FAQ'];
+
 export default function Navbar({ page, setPage, lang, setLang }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const t = T[lang];
@@ -14,7 +16,7 @@ export default function Navbar({ page, setPage, lang, setLang }) {
           </a>
           <div className="bm-links" role="menubar">
             {t.nav.map((l, i) => {
-              const key = ['Products','Solutions','About us','Blog','FAQ'][i];
+              const key = NAV_KEYS[i];
               return (
                 <a key={key} role="menuitem" className={page === key ? 'active' : ''} onClick={() => navigate(key)}
                   aria-current={page === key ? 'page' : undefined}>{l}</a>
@@ -37,7 +39,7 @@ export default function Navbar({ page, setPage, lang, setLang }) {
       </header>
       <div id="mobile-menu" className={`bm-mobile-menu${menuOpen?' is-open':''}`} role="dialog" aria-modal="true" aria-label="Mobile navigation">
         {t.nav.map((l, i) => {
-          const key = ['Products','Solutions','About us','Blog','FAQ'][i];
+          const key = NAV_KEYS[i];
           return <a key={key} onClick={() => navigate(key)} aria-current={page===key?'page':undefined}>{l}</a>;
         })}
         <div className="bm-lang-toggle" role="group" aria-label="Language" style={{marginTop:8}}>

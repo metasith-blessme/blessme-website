@@ -21,15 +21,7 @@ export const initWebVitals = (options = {}) => {
     timestamp: new Date().toISOString(),
   };
 
-  // Helper: Get connection speed
-  const getConnectionSpeed = () => {
-    if ('connection' in navigator && navigator.connection) {
-      return navigator.connection.effectiveType;
-    }
-    return 'unknown';
-  };
-
-  vitalsData.connection = getConnectionSpeed();
+  vitalsData.connection = navigator.connection?.effectiveType ?? 'unknown';
 
   // Helper: Send vitals to endpoint
   const sendVital = (metric) => {
@@ -180,38 +172,3 @@ export const initWebVitals = (options = {}) => {
   }
 };
 
-// Export utility function to manually track custom metrics
-export const trackCustomMetric = (name, value, category = 'Custom') => {
-  if (window.gtag) {
-    gtag('event', name, {
-      value: Math.round(value),
-      event_category: category,
-    });
-  }
-};
-
-// Export utility to get current performance data
-export const getPerformanceData = () => {
-  if (!window.performance || !window.performance.timing) {
-    return null;
-  }
-
-  const timing = window.performance.timing;
-  const navigation = window.performance.navigation;
-
-  return {
-    // Core timing metrics
-    dns: timing.domainLookupEnd - timing.domainLookupStart,
-    tcp: timing.connectEnd - timing.connectStart,
-    ttfb: timing.responseStart - timing.fetchStart,
-    download: timing.responseEnd - timing.responseStart,
-    domInteractive: timing.domInteractive - timing.fetchStart,
-    domComplete: timing.domComplete - timing.fetchStart,
-    pageLoad: timing.loadEventEnd - timing.fetchStart,
-
-    // Navigation type
-    navigationType: navigation.type,
-    isReload: navigation.type === 1,
-    isBackForward: navigation.type === 2,
-  };
-};
