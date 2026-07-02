@@ -48,7 +48,7 @@ export function ContactForm({ lang, t }) {
 
   const isTh = lang === 'th';
   return (
-    <form className="bm-form" onSubmit={handleSubmit} noValidate>
+    <form className="bm-form" onSubmit={handleSubmit}>
       <div className="bm-form-row">
         <div className="bm-field">
           <label htmlFor="f-name">{t.formName}</label>

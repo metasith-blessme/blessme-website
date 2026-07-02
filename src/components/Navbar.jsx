@@ -1,24 +1,32 @@
 import React, { useState } from 'react';
 import { T } from '../constants/translations';
+import { PAGE_TO_PATH } from '../lib/routing';
 
 const NAV_KEYS = ['Products', 'Solutions', 'About us', 'Blog', 'FAQ'];
 
 export default function Navbar({ page, setPage, lang, setLang }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const t = T[lang];
-  const navigate = (p) => { setMenuOpen(false); setPage(p); };
+  const navigate = (p, e) => {
+    if (e) {
+      if (e.button || e.metaKey || e.altKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault();
+    }
+    setMenuOpen(false);
+    setPage(p);
+  };
   return (
     <>
       <header className="bm-nav-shell">
         <nav className="bm-nav" role="navigation" aria-label="Main navigation">
-          <a className="bm-brand" href="#" aria-label="BlessMe — go to homepage" onClick={(e) => { e.preventDefault(); navigate('Products'); }}>
+          <a className="bm-brand" href="/" aria-label="BlessMe — go to homepage" onClick={(e) => navigate('Products', e)}>
             <img src="/assets/logo-full.png" alt="BlessMe Thailand" />
           </a>
           <div className="bm-links" role="menubar">
             {t.nav.map((l, i) => {
               const key = NAV_KEYS[i];
               return (
-                <a key={key} role="menuitem" className={page === key ? 'active' : ''} onClick={() => navigate(key)}
+                <a key={key} href={PAGE_TO_PATH[key]} role="menuitem" className={page === key ? 'active' : ''} onClick={(e) => navigate(key, e)}
                   aria-current={page === key ? 'page' : undefined}>{l}</a>
               );
             })}
@@ -40,7 +48,7 @@ export default function Navbar({ page, setPage, lang, setLang }) {
       <div id="mobile-menu" className={`bm-mobile-menu${menuOpen?' is-open':''}`} role="dialog" aria-modal="true" aria-label="Mobile navigation">
         {t.nav.map((l, i) => {
           const key = NAV_KEYS[i];
-          return <a key={key} onClick={() => navigate(key)} aria-current={page===key?'page':undefined}>{l}</a>;
+          return <a key={key} href={PAGE_TO_PATH[key]} onClick={(e) => navigate(key, e)} aria-current={page===key?'page':undefined}>{l}</a>;
         })}
         <div className="bm-lang-toggle" role="group" aria-label="Language" style={{marginTop:8}}>
           <button className={`bm-lang-btn${lang==='en'?' active':''}`} onClick={() => setLang('en')}>EN</button>

@@ -1,9 +1,15 @@
 import React from 'react';
 import { T } from '../constants/translations';
+import { PAGE_TO_PATH } from '../lib/routing';
 
 export default function Footer({ setPage, lang }) {
   const t = T[lang];
   const blessing = t.footerBlessing.split('\n');
+  const navigate = (page, e) => {
+    if (e.button || e.metaKey || e.altKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    setPage(page);
+  };
   return (
     <footer className="bm-footer">
       <div className="bm-footer-main">
@@ -17,14 +23,14 @@ export default function Footer({ setPage, lang }) {
       <div className="bm-footer-cols">
         <div>
           <div className="bm-eyebrow">{t.footerCatalogue}</div>
-          <a onClick={() => setPage('Products')}>{t.nav[0]}</a>
-          <a onClick={() => setPage('Solutions')}>{t.nav[1]}</a>
+          <a href={PAGE_TO_PATH.Products} onClick={(e) => navigate('Products', e)}>{t.nav[0]}</a>
+          <a href={PAGE_TO_PATH.Solutions} onClick={(e) => navigate('Solutions', e)}>{t.nav[1]}</a>
         </div>
         <div>
           <div className="bm-eyebrow">{t.footerCompany}</div>
-          <a onClick={() => setPage('About us')}>{t.nav[2]}</a>
-          <a onClick={() => setPage('Blog')}>{t.footerJournal}</a>
-          <a onClick={() => setPage('FAQ')}>{t.nav[4]}</a>
+          <a href={PAGE_TO_PATH['About us']} onClick={(e) => navigate('About us', e)}>{t.nav[2]}</a>
+          <a href={PAGE_TO_PATH.Blog} onClick={(e) => navigate('Blog', e)}>{t.footerJournal}</a>
+          <a href={PAGE_TO_PATH.FAQ} onClick={(e) => navigate('FAQ', e)}>{t.nav[4]}</a>
         </div>
         <div>
           <div className="bm-eyebrow">{t.footerContact}</div>

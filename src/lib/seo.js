@@ -108,7 +108,7 @@ export function buildWebPageSchema(page, canonical) {
 }
 
 export function buildProductSchema(product) {
-  return { "@context": "https://schema.org", "@type": "Product", "name": `${product.name} Popping Boba`, "description": `${product.note} ${product.flavor}.`, "image": `https://blessmethailand.com/${product.imgFallback}`, "brand": { "@type": "Brand", "name": "BlessMe Thailand" }, "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "THB", "seller": { "@type": "Organization", "name": "BlessMe (Thailand) Co., Ltd." } } };
+  return { "@context": "https://schema.org", "@type": "Product", "name": `${product.name} Popping Boba`, "description": `${product.note} ${product.flavor}.`, "image": new URL(product.imgFallback, BASE_URL).href, "brand": { "@type": "Brand", "name": "BlessMe Thailand" }, "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "THB", "seller": { "@type": "Organization", "name": "BlessMe (Thailand) Co., Ltd." } } };
 }
 
 export function buildBreadcrumbSchema(items) {
@@ -140,7 +140,7 @@ export function updateSchema(page, productId = null, articleId = null, lang = 'e
   } else if (articleId) {
     const article = getArticleById(articleId);
     if (article) {
-      schemas.push(getArticleSchema(article, lang));
+      schemas.push(getArticleSchema(article, lang, BASE_URL));
       schemas.push(buildBreadcrumbSchema([{ name: 'Home', url: 'https://blessmethailand.com/' }, { name: 'Journal', url: 'https://blessmethailand.com/blog' }, { name: lang === 'th' ? article.titleTh : article.title, url: `https://blessmethailand.com/blog/${article.id}` }]));
     }
   } else {

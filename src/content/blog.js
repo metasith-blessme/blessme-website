@@ -1050,7 +1050,7 @@ export function getArticleMeta(article, lang, baseUrl) {
   };
 }
 
-export function getArticleSchema(article, lang) {
+export function getArticleSchema(article, lang, baseUrl = 'https://blessmethailand.com') {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -1076,7 +1076,7 @@ export function getArticleSchema(article, lang) {
     url: `https://blessmethailand.com/blog/${article.id}`,
   };
 
-  if (article.img) schema.image = article.img;
+  if (article.img) schema.image = new URL(article.img, baseUrl).href;
 
   return schema;
 }
