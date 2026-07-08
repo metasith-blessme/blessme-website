@@ -44,15 +44,20 @@ export default function TrustBar({ lang }) {
   }, [hasAnimated, items]);
 
   return (
-    <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:px-12 border-t border-[#0F172A]/10" ref={barRef}>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-16">
+    <div className="relative z-10 max-w-[1400px] mx-auto px-6 py-20 lg:px-16" ref={barRef}>
+      <div className="flex flex-col md:flex-row items-center justify-between border-t border-b border-[#0F172A]/10 py-12">
         {items.map((i, index) => (
-          <div key={i.l} className="flex flex-col gap-2">
-            <div className={`n text-5xl md:text-6xl font-['Playfair_Display'] font-bold tracking-tight leading-none ${index === 0 || index === items.length - 1 ? 'animate-shimmer' : 'text-[#0F172A]'}`}>
-              {hasAnimated ? i.n : i.n.replace(/\d+/, '0')}
+          <React.Fragment key={i.l}>
+            <div className="flex flex-col items-center justify-center text-center flex-1">
+              <div className="n text-5xl md:text-[56px] font-['Playfair_Display'] font-bold tracking-tight mb-2 bg-gradient-to-r from-[#FFD194] via-[#F6B3CD] to-[#70C1B3] inline-block text-transparent bg-clip-text drop-shadow-sm">
+                {hasAnimated ? i.n : i.n.replace(/\d+/, '0')}
+              </div>
+              <div className="text-sm font-bold tracking-[0.15em] uppercase text-[#0F172A]">{i.l}</div>
             </div>
-            <div className="text-sm font-mono tracking-widest uppercase text-[#0F172A]/60 font-semibold">{i.l}</div>
-          </div>
+            {index < items.length - 1 && (
+              <div className="hidden md:block w-px h-16 bg-[#0F172A]/10 mx-4"></div>
+            )}
+          </React.Fragment>
         ))}
       </div>
     </div>
