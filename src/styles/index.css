@@ -1,4 +1,6 @@
-/* ---- Fonts loaded via <link> in <head> — no @import needed ---- */
+@import "tailwindcss";
+
+/* ---- Local Thai Font ---- */
 
 /* ---- Local Thai Font ---- */
 @font-face {

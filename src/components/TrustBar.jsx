@@ -11,7 +11,6 @@ function parseAndAnimate(element, targetText) {
   const step = (timestamp) => {
     if (!startTimestamp) startTimestamp = timestamp;
     const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-    // ease out quad
     const easeProgress = progress * (2 - progress);
     const currentNum = Math.floor(easeProgress * targetNum);
     element.innerText = targetText.replace(numStr, currentNum);
@@ -45,13 +44,17 @@ export default function TrustBar({ lang }) {
   }, [hasAnimated, items]);
 
   return (
-    <div className="bm-trustbar" ref={barRef}>
-      {items.map(i => (
-        <div key={i.l} className="bm-trustbar-item">
-          <div className="n">{hasAnimated ? i.n : i.n.replace(/\d+/, '0')}</div>
-          <div className="l">{i.l}</div>
-        </div>
-      ))}
+    <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:px-12 border-t border-[#0F172A]/10" ref={barRef}>
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-16">
+        {items.map((i, index) => (
+          <div key={i.l} className="flex flex-col gap-2">
+            <div className={`n text-5xl md:text-6xl font-['Playfair_Display'] font-bold tracking-tight leading-none ${index === 0 || index === items.length - 1 ? 'animate-shimmer' : 'text-[#0F172A]'}`}>
+              {hasAnimated ? i.n : i.n.replace(/\d+/, '0')}
+            </div>
+            <div className="text-sm font-mono tracking-widest uppercase text-[#0F172A]/60 font-semibold">{i.l}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

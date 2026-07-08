@@ -116,12 +116,11 @@ function App() {
   };
 
   return (
-    <div className="bm-app-shell">
+    <div className="relative min-h-screen">
       <div 
-        className={`bm-cursor ${isHovering ? 'hovering' : ''}`} 
+        className={`custom-cursor ${isHovering ? 'hovering' : ''} hidden lg:block`} 
         style={{ left: cursorPos.x, top: cursorPos.y }}
       ></div>
-      <a href="#main-content" className="bm-skip-link">Skip to content</a>
       <Navbar page={page} setPage={goToPage} lang={lang} setLang={setLang} />
       <main id="main-content">
         {articleId ? (
