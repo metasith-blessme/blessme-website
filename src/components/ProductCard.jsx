@@ -6,7 +6,7 @@ const ProductCard = React.memo(function ProductCard({ product, blessed, onClick,
   const displayName = lang === 'th' ? product.nameTh : product.name;
   const displayNote = lang === 'th' ? product.noteTh : product.note;
   return (
-    <article className="bm-recipe" onClick={onClick} role="button" tabIndex={0}
+    <article className="bm-recipe bm-card-3d" onClick={onClick} role="button" tabIndex={0}
       aria-label={`View details for ${displayName} popping boba`}
       onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onClick()}>
       <div className="bm-recipe-img">

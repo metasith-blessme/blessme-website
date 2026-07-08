@@ -62,6 +62,27 @@ function App() {
     updateSchema(page, pid, aid, lang);
   }, [page, detail, articleId, lang]);
 
+  // Custom Cursor Logic
+  const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
+  const [isHovering, setIsHovering] = useState(false);
+  useEffect(() => {
+    const moveCursor = (e) => setCursorPos({ x: e.clientX, y: e.clientY });
+    const handleMouseOver = (e) => {
+      const tag = e.target.tagName.toLowerCase();
+      if (tag === 'button' || tag === 'a' || e.target.closest('button') || e.target.closest('a')) {
+        setIsHovering(true);
+      } else {
+        setIsHovering(false);
+      }
+    };
+    window.addEventListener('mousemove', moveCursor);
+    window.addEventListener('mouseover', handleMouseOver);
+    return () => {
+      window.removeEventListener('mousemove', moveCursor);
+      window.removeEventListener('mouseover', handleMouseOver);
+    };
+  }, []);
+
   const goToPage = (p) => {
     const path = PAGE_TO_PATH[p] || '/';
     window.history.pushState({}, '', path);
@@ -95,7 +116,11 @@ function App() {
   };
 
   return (
-    <div className="bm-page">
+    <div className="bm-app-shell">
+      <div 
+        className={`bm-cursor ${isHovering ? 'hovering' : ''}`} 
+        style={{ left: cursorPos.x, top: cursorPos.y }}
+      ></div>
       <a href="#main-content" className="bm-skip-link">Skip to content</a>
       <Navbar page={page} setPage={goToPage} lang={lang} setLang={setLang} />
       <main id="main-content">
