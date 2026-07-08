@@ -23,7 +23,7 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
       <div className="absolute bottom-[25%] right-[5%] w-24 h-24 rounded-full bg-gradient-to-br from-white to-pink-100 shadow-2xl opacity-90 z-10"></div>
       <div className="absolute top-[50%] left-[55%] w-6 h-6 rounded-full bg-gradient-to-br from-white to-gray-100 shadow-md opacity-80 z-10"></div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 pt-32 pb-16 md:pt-40 md:pb-24 lg:px-16">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 pt-12 pb-16 md:pt-20 md:pb-24 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           
           {/* Hero Content */}
