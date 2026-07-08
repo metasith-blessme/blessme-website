@@ -23,7 +23,7 @@ import FAQPage from './pages/FAQPage';
 import ArticlePage from './pages/ArticlePage';
 
 function App() {
-  const initial = getInitialState();
+  const [initial] = useState(getInitialState); // ponytail: lazy init — runs once, not every render
   const [page, setPage] = useState(initial.page);
   const [detail, setDetail] = useState(initial.productId ? PRODUCTS.find(p => p.id === initial.productId) || null : null);
   const [articleId, setArticleId] = useState(initial.articleId);

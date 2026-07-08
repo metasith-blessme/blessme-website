@@ -108,7 +108,7 @@ export default function BlogPage({ onOpenArticle, lang }) {
               placeholder={labels.searchPlaceholder}
             />
           </label>
-          <div className="bm-blog-filters" role="tablist" aria-label={labels.allTopics}>
+          <div className="bm-blog-filters" aria-label={labels.allTopics}>
             {categories.map((category) => {
               const isActive = activeCategory === category.id;
               return (

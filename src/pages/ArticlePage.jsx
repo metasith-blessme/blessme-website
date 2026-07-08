@@ -5,7 +5,6 @@ import {
   getArticleById,
   getRelatedArticles,
   getAdjacentArticles,
-  getArticleBlocks,
 } from '../content/blog';
 import { BlogCard } from './BlogPage';
 
@@ -43,7 +42,21 @@ export default function ArticlePage({ articleId, onBack, onOpenArticle, lang }) 
   const excerpt = lang === 'th' ? article.excerptTh : article.excerpt;
   const category = lang === 'th' ? article.catTh || article.cat : article.cat;
   const authorRole = lang === 'th' ? article.authorRoleTh || article.authorRole : article.authorRole;
-  const blocks = getArticleBlocks(article, lang);
+  
+  const [blocks, setBlocks] = useState(null);
+  React.useEffect(() => {
+    let active = true;
+    setBlocks(null); // show loading state if needed
+    import('../content/blog-bodies.json').then((module) => {
+      if (!active) return;
+      const bodies = module.default || module;
+      const data = bodies[article.id];
+      if (data) {
+        setBlocks(lang === 'th' && data.bodyTh ? data.bodyTh : data.body);
+      }
+    }).catch(console.error);
+    return () => { active = false; };
+  }, [article.id, lang]);
   const heroCaption = lang === 'th'
     ? article.imgCaptionTh || article.imgAlt
     : article.imgCaption || article.imgAlt;
@@ -94,7 +107,7 @@ export default function ArticlePage({ articleId, onBack, onOpenArticle, lang }) 
         )}
 
         <div className="bm-article-body">
-          {blocks.map((block, index) => renderArticleBlock(block, index))}
+          {blocks ? blocks.map((block, index) => renderArticleBlock(block, index)) : <div style={{ height: '400px' }} />}
         </div>
 
         <div className="bm-article-support">

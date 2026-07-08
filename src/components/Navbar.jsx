@@ -22,11 +22,11 @@ export default function Navbar({ page, setPage, lang, setLang }) {
           <a className="bm-brand" href="/" aria-label="BlessMe — go to homepage" onClick={(e) => navigate('Products', e)}>
             <img src="/assets/logo-full.png" alt="BlessMe Thailand" />
           </a>
-          <div className="bm-links" role="menubar">
+          <div className="bm-links">
             {t.nav.map((l, i) => {
               const key = NAV_KEYS[i];
               return (
-                <a key={key} href={PAGE_TO_PATH[key]} role="menuitem" className={page === key ? 'active' : ''} onClick={(e) => navigate(key, e)}
+                <a key={key} href={PAGE_TO_PATH[key]} className={page === key ? 'active' : ''} onClick={(e) => navigate(key, e)}
                   aria-current={page === key ? 'page' : undefined}>{l}</a>
               );
             })}

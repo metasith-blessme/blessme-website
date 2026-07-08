@@ -81,12 +81,7 @@ export function setMeta(title, description, canonical, lang='en') {
   const twDesc = getOrCreateTag('meta[name="twitter:description"]', 'meta', { name: 'twitter:description' });
   twDesc.setAttribute('content', description);
 
-  // Update or create hreflang links dynamically
-  const hreflangs = ['th', 'en', 'x-default'];
-  hreflangs.forEach(hl => {
-    const el = getOrCreateTag(`link[hreflang="${hl}"]`, 'link', { rel: 'alternate', hreflang: hl });
-    el.setAttribute('href', canonical);
-  });
+  // ponytail: hreflang removed — single-URL site with JS lang toggle makes hreflang misleading to crawlers
 }
 
 export function updateMeta(page, productId = null, articleId = null, lang = 'en') {

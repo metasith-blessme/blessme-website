@@ -9,10 +9,8 @@
 
 export const initWebVitals = (options = {}) => {
   const {
-    analyticsId = 'G-M2HGM3SM29',
     sendBeacon = true,
     verbose = false,
-    customEndpoint = null,
   } = options;
 
   const vitalsData = {
@@ -36,10 +34,6 @@ export const initWebVitals = (options = {}) => {
       console.log(`[Web Vitals] ${metric.name}: ${Math.round(metric.value)}ms (${metric.rating})`);
     }
 
-    // Send to custom endpoint if provided
-    if (customEndpoint) {
-      navigator.sendBeacon?.(customEndpoint, JSON.stringify(payload));
-    }
 
     // Send to Google Analytics if available
     if (window.gtag && sendBeacon) {
@@ -55,21 +49,28 @@ export const initWebVitals = (options = {}) => {
   if ('PerformanceObserver' in window) {
     // LCP (Largest Contentful Paint)
     try {
+      let lastLcpMetric = null;
       const lcpObserver = new PerformanceObserver((entryList) => {
         const entries = entryList.getEntries();
         const lastEntry = entries[entries.length - 1];
+        const value = lastEntry.renderTime || lastEntry.loadTime;
 
-        const metric = {
+        lastLcpMetric = {
           name: 'LCP',
-          value: lastEntry.renderTime || lastEntry.loadTime,
-          rating: lastEntry.renderTime || lastEntry.loadTime < 2500 ? 'good' : 'poor',
+          value,
+          rating: value < 2500 ? 'good' : 'poor',
         };
-
-        sendVital(metric);
-        lcpObserver.disconnect();
       });
 
       lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+
+      // Report final LCP on page hide (standard practice)
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden' && lastLcpMetric) {
+          sendVital(lastLcpMetric);
+          lcpObserver.disconnect();
+        }
+      }, { once: true });
     } catch (e) {
       if (verbose) console.warn('LCP Observer failed:', e);
     }
@@ -125,10 +126,11 @@ export const initWebVitals = (options = {}) => {
     try {
       const fidObserver = new PerformanceObserver((entryList) => {
         for (const entry of entryList.getEntries()) {
+          const fid = entry.processingStart - entry.startTime;
           const metric = {
             name: 'FID',
-            value: entry.processingDuration,
-            rating: entry.processingDuration < 100 ? 'good' : 'poor',
+            value: fid,
+            rating: fid < 100 ? 'good' : 'poor',
           };
 
           sendVital(metric);

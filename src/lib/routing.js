@@ -19,7 +19,7 @@ export const PAGE_TO_PATH = {
 };
 
 export function getInitialState() {
-  const path = window.location.pathname;
+  const path = window.location.pathname.replace(/\/+$/, '') || '/';
   if (path.startsWith('/blog/')) {
     const articleId = path.slice(6);
     return { page: 'Blog', articleId: getArticleById(articleId) ? articleId : null, productId: null };

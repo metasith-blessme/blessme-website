@@ -25,7 +25,6 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <!-- Performance hints -->
 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-<link rel="dns-prefetch" href="https://vitals.vercel-analytics.com" />
 <!-- Google Fonts — preconnect + link (faster than CSS @import) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,62 +44,6 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-M2HGM3SM29');
-</script>
-<!-- Web Vitals monitoring for Core Web Vitals (LCP, CLS, FID) -->
-<script>
-  // Measure Core Web Vitals and send to Google Analytics
-  const vitalsUrl = 'https://vitals.vercel-analytics.com/v1/vitals';
-  function getConnectionSpeed() {
-    return 'connection' in navigator && navigator.connection
-      ? navigator.connection.effectiveType
-      : 'unknown';
-  }
-  const vitals = {
-    url: location.href,
-    referrer: document.referrer,
-    dimension1: getConnectionSpeed(),
-  };
-  function sendVitals(metric) {
-    vitals[metric.name] = metric.value;
-    fetch(vitalsUrl, {
-      method: 'POST',
-      body: JSON.stringify(vitals),
-      keepalive: true,
-    }).catch(() => {});
-  }
-  // Observe Core Web Vitals
-  if ('PerformanceObserver' in window) {
-    // LCP (Largest Contentful Paint)
-    try {
-      const lcpObserver = new PerformanceObserver((list) => {
-        const lastEntry = list.getEntries().pop();
-        if (lastEntry) sendVitals({ name: 'LCP', value: lastEntry.renderTime || lastEntry.loadTime });
-      });
-      lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
-    } catch (e) {}
-
-    // CLS (Cumulative Layout Shift)
-    try {
-      let clsValue = 0;
-      const clsObserver = new PerformanceObserver((list) => {
-        for (const entry of list.getEntries()) {
-          if (!entry.hadRecentInput) clsValue += entry.value;
-        }
-        sendVitals({ name: 'CLS', value: clsValue });
-      });
-      clsObserver.observe({ type: 'layout-shift', buffered: true });
-    } catch (e) {}
-
-    // FID/INP (First Input Delay / Interaction to Next Paint)
-    try {
-      const fidObserver = new PerformanceObserver((list) => {
-        for (const entry of list.getEntries()) {
-          sendVitals({ name: 'FID', value: entry.processingDuration });
-        }
-      });
-      fidObserver.observe({ type: 'first-input', buffered: true });
-    } catch (e) {}
-  }
 </script>
 </head>
 <body>
