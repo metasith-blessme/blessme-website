@@ -13,7 +13,7 @@ export const PRODUCTS = [
     note: 'A heritage Asian flavor profile, elevated. Pairs naturally with cold desserts, shaved ice, and pastries.',
     noteTh: 'รสชาติดั้งเดิมของเอเชียที่ยกระดับขึ้น เข้ากันได้ดีกับของหวานเย็น น้ำแข็งไส และขนมอบ' },
   { id: 'chestnut',  name: 'Water Chestnut', nameTh: 'แห้ว',           tag: 'Signature flavor', flavor: 'Crisp · Cool · Clean', flavorTh: 'กรอบ · เย็นสดชื่น · สะอาด',
-    img: '/assets/products/chestnut.webp',  imgFallback: '/assets/products/chestnut.png',
+    img: '/assets/products/waterchestnut.webp',  imgFallback: '/assets/products/waterchestnut.png',
     note: 'A signature crunch in pearl form — subtle, hydrating, distinctly Asian.',
     noteTh: 'ความกรุบกรอบเอกลักษณ์ในรูปแบบเม็ดบีด — ละเอียดอ่อน ให้ความชุ่มชื้น มีกลิ่นอายเอเชียชัดเจน' },
   { id: 'cheese',    name: 'Moji Yogurt',    nameTh: 'โมจิโยเกิร์ต',    tag: 'Signature flavor', flavor: 'Tangy · Rich · Creamy-sweet', flavorTh: 'เปรี้ยวอมหวาน · เข้มข้น · ครีมมี่',
