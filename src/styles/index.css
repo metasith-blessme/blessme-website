@@ -618,3 +618,82 @@ html,body{margin:0;padding:0;background:var(--ci-sky-soft);color:var(--ci-sky-in
     margin-top: 0;
   }
 }
+
+/* 
+  Blessme Thailand "Vibe-Coded" Animations 
+*/
+
+:root {
+  --brand-yellow: #EFFF00;
+}
+
+/* 1. Floating Bobbing Animation (for Pearls/Blobs) */
+@keyframes floating {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  animation: floating 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floating 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* 2. Pulsing CTA Button */
+@keyframes glow-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 255, 0, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(239, 255, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 255, 0, 0); }
+}
+
+.pulse-yellow {
+  animation: glow-pulse 2s infinite;
+}
+
+/* 3. Highlighter Draw-In Effect */
+.highlighter-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 1.5s ease-in-out;
+}
+
+.highlighter-active .highlighter-path {
+  stroke-dashoffset: 0;
+}
+
+/* 4. Shimmer Effect for Stats */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 3s infinite;
+}
+
+/* 5. Custom Cursor (Container) */
+#custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: var(--brand-yellow);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.2s ease-out, width 0.3s ease, height 0.3s ease;
+  transform: translate(-50%, -50%);
+}
+
+#custom-cursor.expand {
+  transform: translate(-50%, -50%) scale(3);
+  background: white;
+}

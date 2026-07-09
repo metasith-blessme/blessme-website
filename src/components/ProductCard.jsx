@@ -32,7 +32,7 @@ const ProductCard = React.memo(function ProductCard({ product, blessed, onClick,
           </span>
         </div>
         
-        <h3 className="text-[28px] font-['Playfair_Display'] font-bold text-[#0F172A] mb-1">{displayName}</h3>
+        <h3 className="text-[28px] font-bold text-[#0F172A] mb-1">{displayName}</h3>
         
         <p className="text-[15px] font-medium text-[#1E293B] mb-2 leading-snug">
           {displayNote}

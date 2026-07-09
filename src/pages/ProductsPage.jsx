@@ -32,11 +32,11 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.05] tracking-tight font-['Playfair_Display'] text-[#0F172A] mb-6"
+              className="text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.05] tracking-tight text-[#0F172A] mb-6"
             >
               {t.heroTitle[0]}<br/>
               <span className="relative inline-block mt-2 mb-2">
-                <span className="relative z-10 italic font-medium">{t.heroTitle[1]}</span>
+                <span className="relative z-10 italic font-medium font-['Playfair_Display']">{t.heroTitle[1]}</span>
                 {/* Hand-drawn highlighter */}
                 <motion.svg 
                   initial={{ strokeDashoffset: 1000 }}
@@ -123,7 +123,7 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <div className="text-xs font-bold tracking-[0.2em] uppercase text-[#0F172A] mb-3">{t.productRange}</div>
-            <h2 className="text-5xl md:text-6xl font-bold font-['Playfair_Display'] text-[#0F172A]">{t.sixFlavors}</h2>
+            <h2 className="text-5xl md:text-6xl font-bold text-[#0F172A]">{t.sixFlavors}</h2>
           </div>
           <p className="text-lg text-[#1E293B] italic font-serif max-w-[300px] text-right">
             Curated for the Thai market. Selected for cafés, restaurants, retailers, and dessert brands.

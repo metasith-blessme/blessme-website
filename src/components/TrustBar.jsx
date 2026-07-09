@@ -49,7 +49,7 @@ export default function TrustBar({ lang }) {
         {items.map((i, index) => (
           <React.Fragment key={i.l}>
             <div className="flex flex-col items-center justify-center text-center flex-1">
-              <div className="n text-5xl md:text-[56px] font-['Playfair_Display'] font-bold tracking-tight mb-2 bg-gradient-to-r from-[#FFD194] via-[#F6B3CD] to-[#70C1B3] inline-block text-transparent bg-clip-text drop-shadow-sm">
+              <div className="n text-5xl md:text-[56px] font-bold tracking-tight mb-2 bg-gradient-to-r from-[#FFD194] via-[#F6B3CD] to-[#70C1B3] inline-block text-transparent bg-clip-text drop-shadow-sm">
                 {hasAnimated ? i.n : i.n.replace(/\d+/, '0')}
               </div>
               <div className="text-sm font-bold tracking-[0.15em] uppercase text-[#0F172A]">{i.l}</div>
