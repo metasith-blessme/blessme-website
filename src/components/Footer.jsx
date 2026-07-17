@@ -36,7 +36,7 @@ export default function Footer({ setPage, lang }) {
           <div className="bm-eyebrow">{t.footerContact}</div>
           <a href="mailto:Blessme.team@gmail.com">Blessme.team@gmail.com</a>
           <a href="tel:+66828965199">+66 (0) 82-896-5199</a>
-          <a href="https://line.me/R/ti/p/@591dzhsr" target="_blank" rel="noopener noreferrer">LINE @591dzhsr</a>
+          <a href="https://line.me/R/ti/p/@blessmethailand" target="_blank" rel="noopener noreferrer">LINE @blessmethailand</a>
         </div>
       </div>
       <div className="bm-footer-fine">© {new Date().getFullYear()} BlessMe (Thailand) Co., Ltd. · Bangkok</div>

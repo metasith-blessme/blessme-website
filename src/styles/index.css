@@ -548,3 +548,49 @@ body{
     var(--paper);
   background-attachment:fixed;
 }
+
+/* ---- Hero orb: animated background inside the circular disc (video-ready) ---- */
+.bm-hero-orb{
+  position:absolute;width:420px;height:420px;border-radius:50%;overflow:hidden;
+  background:radial-gradient(circle at 32% 28%, #ffffff 0%, #EEF3EA 72%);
+  border:1px solid #E4DECF;box-shadow:0 30px 70px rgba(59,97,70,0.14);
+}
+/* Phase 2: a <video class="bm-hero-orb-media"> dropped in here fills the circle */
+.bm-hero-orb-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.bm-hero-sheen{
+  position:absolute;inset:-30%;
+  background:conic-gradient(from 0deg, transparent 0deg, rgba(78,124,89,0.14) 55deg, transparent 130deg 360deg);
+  animation:bm-spin 16s linear infinite;
+}
+.bm-hero-ring{
+  position:absolute;top:50%;left:50%;width:200px;height:200px;margin:-100px 0 0 -100px;
+  border-radius:50%;border:1px solid rgba(78,124,89,0.30);
+  animation:bm-ripple 5s ease-out infinite;
+}
+.bm-hero-ring:nth-child(3){animation-delay:1.6s;}
+.bm-hero-ring:nth-child(4){animation-delay:3.2s;}
+.bm-hero-orbit{position:absolute;inset:0;animation:bm-spin 24s linear infinite;}
+.bm-hero-orbit--rev{animation-duration:32s;animation-direction:reverse;}
+.bm-hero-pearl{position:absolute;border-radius:50%;box-shadow:0 4px 12px rgba(59,97,70,0.22);}
+.bm-hero-mark-float{animation:bm-float 6.5s ease-in-out infinite;}
+@keyframes bm-spin{to{transform:rotate(360deg);}}
+@keyframes bm-ripple{0%{transform:scale(0.45);opacity:0.55;}100%{transform:scale(1.85);opacity:0;}}
+@keyframes bm-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+@media (prefers-reduced-motion: reduce){
+  .bm-hero-sheen,.bm-hero-ring,.bm-hero-orbit,.bm-hero-mark-float{animation:none;}
+}
+
+/* ---- Hero ambient background motion (whole hero band) ---- */
+.bm-hero-drift{animation:bm-drift 20s ease-in-out infinite;}
+.bm-hero-drift--2{animation:bm-drift-2 26s ease-in-out infinite;}
+.bm-hero-float{position:absolute;border-radius:50%;box-shadow:0 6px 16px rgba(59,97,70,0.12);animation:bm-hero-float-move ease-in-out infinite;}
+@keyframes bm-drift{0%,100%{transform:translate(0,0);}50%{transform:translate(-26px,22px);}}
+@keyframes bm-drift-2{0%,100%{transform:translate(0,0);}50%{transform:translate(22px,-26px);}}
+@keyframes bm-hero-float-move{
+  0%,100%{transform:translate(0,0) scale(1);}
+  33%{transform:translate(14px,-22px) scale(1.06);}
+  66%{transform:translate(-12px,-10px) scale(0.96);}
+}
+@media (prefers-reduced-motion: reduce){
+  .bm-hero-drift,.bm-hero-drift--2,.bm-hero-float{animation:none;}
+}

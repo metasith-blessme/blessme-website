@@ -10,9 +10,18 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
   return (
     <div className="relative w-full min-h-screen bg-gradient-to-b from-[#FDFBF6] to-[#F1EADF] text-[#2B241E] overflow-hidden font-['Inter']">
 
-      {/* Soft warm atmosphere behind hero */}
-      <div className="absolute top-[-160px] right-[-120px] w-[560px] h-[560px] rounded-full bg-[#4E7C59]/12 blur-[90px] pointer-events-none"></div>
-      <div className="absolute top-[120px] left-[-140px] w-[420px] h-[420px] rounded-full bg-[#C9B893]/15 blur-[90px] pointer-events-none"></div>
+      {/* Soft warm atmosphere behind hero (slow drifting) */}
+      <div className="bm-hero-drift absolute top-[-160px] right-[-120px] w-[560px] h-[560px] rounded-full bg-[#4E7C59]/12 blur-[90px] pointer-events-none"></div>
+      <div className="bm-hero-drift--2 absolute top-[120px] left-[-140px] w-[420px] h-[420px] rounded-full bg-[#C9B893]/15 blur-[90px] pointer-events-none"></div>
+
+      {/* Ambient floating boba pearls across the hero (subtle, behind content) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        <span className="bm-hero-float" style={{ top: '22%', left: '30%', width: 18, height: 18, animationDuration: '17s', background: 'radial-gradient(circle at 30% 30%, #fff, #4E7C59)', opacity: 0.16 }} />
+        <span className="bm-hero-float" style={{ top: '68%', left: '18%', width: 12, height: 12, animationDuration: '21s', animationDelay: '-4s', background: 'radial-gradient(circle at 30% 30%, #fff, #C9B893)', opacity: 0.18 }} />
+        <span className="bm-hero-float" style={{ top: '40%', left: '58%', width: 10, height: 10, animationDuration: '19s', animationDelay: '-8s', background: 'radial-gradient(circle at 30% 30%, #fff, #7FAE8F)', opacity: 0.14 }} />
+        <span className="bm-hero-float" style={{ top: '80%', left: '46%', width: 22, height: 22, animationDuration: '24s', animationDelay: '-2s', background: 'radial-gradient(circle at 30% 30%, #fff, #B7CDA9)', opacity: 0.13 }} />
+        <span className="bm-hero-float" style={{ top: '14%', left: '64%', width: 8, height: 8, animationDuration: '15s', animationDelay: '-6s', background: 'radial-gradient(circle at 30% 30%, #fff, #4E7C59)', opacity: 0.15 }} />
+      </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 pt-12 pb-16 md:pt-20 md:pb-24 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
@@ -80,10 +89,23 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
             transition={{ duration: 1, delay: 0.2 }}
             className="relative flex-1 h-[520px] flex items-center justify-center pointer-events-none"
           >
-            {/* Soft halo disc behind the mark */}
-            <div className="absolute w-[420px] h-[420px] rounded-full bg-gradient-to-br from-white to-[#EEF3EA] border border-[#E4DECF] shadow-[0_30px_70px_rgba(59,97,70,0.14)]"></div>
+            {/* Animated background orb (swap in a <video className="bm-hero-orb-media" muted autoPlay loop playsInline poster="..."/> here later) */}
+            <div className="bm-hero-orb">
+              <div className="bm-hero-sheen" />
+              <div className="bm-hero-ring" />
+              <div className="bm-hero-ring" />
+              <div className="bm-hero-ring" />
+              <div className="bm-hero-orbit">
+                <span className="bm-hero-pearl" style={{ top: '7%', left: 'calc(50% - 7px)', width: 14, height: 14, background: 'radial-gradient(circle at 30% 30%, #fff, #4E7C59)' }} />
+                <span className="bm-hero-pearl" style={{ top: 'calc(50% - 5px)', left: '90%', width: 10, height: 10, background: 'radial-gradient(circle at 30% 30%, #fff, #C9B893)' }} />
+              </div>
+              <div className="bm-hero-orbit bm-hero-orbit--rev">
+                <span className="bm-hero-pearl" style={{ top: '85%', left: '38%', width: 12, height: 12, background: 'radial-gradient(circle at 30% 30%, #fff, #7FAE8F)' }} />
+                <span className="bm-hero-pearl" style={{ top: '28%', left: '9%', width: 8, height: 8, background: 'radial-gradient(circle at 30% 30%, #fff, #B7CDA9)' }} />
+              </div>
+            </div>
             <div className="absolute w-[300px] h-[300px] rounded-full border border-[#4E7C59]/15"></div>
-            <img src="/assets/logo-full.png" alt="BlessMe Thailand" className="relative z-20 w-full max-w-[300px] object-contain drop-shadow-[0_12px_28px_rgba(59,97,70,0.18)]" />
+            <img src="/assets/logo-full.png" alt="BlessMe Thailand" className="bm-hero-mark-float relative z-20 w-full max-w-[300px] object-contain drop-shadow-[0_12px_28px_rgba(59,97,70,0.18)]" />
           </motion.div>
 
         </div>

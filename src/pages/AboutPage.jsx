@@ -30,7 +30,7 @@ export default function AboutPage({ lang }) {
         <div className="bm-contact-grid">
           <ContactItem k="EMAIL"      v="Blessme.team@gmail.com" href="mailto:Blessme.team@gmail.com" />
           <ContactItem k="PHONE"      v="+66 (0) 82-896-5199" sub="คุณจ้า" href="tel:+66828965199" />
-          <ContactItem k="LINE"       v="@591dzhsr" href="https://line.me/R/ti/p/@591dzhsr" />
+          <ContactItem k="LINE"       v="@blessmethailand" href="https://line.me/R/ti/p/@blessmethailand" />
           <ContactItem k="INSTAGRAM"  v="blessme_thailand" href="https://instagram.com/blessme_thailand" />
           <ContactItem k="FACEBOOK"   v="@BlessMe Thailand" href="https://facebook.com/BlessMeThailand" />
           <ContactItem k="WAREHOUSE"  v="Bangkok, Thailand" />

@@ -8,7 +8,7 @@ export const ORG_DESCRIPTION = 'BlessMe (Thailand) — specialty food wholesaler
 export const PAGE_META = {
   Products: {
     title: 'ขายส่งป็อปปิ่งโบบา กรุงเทพฯ | Popping Boba Wholesale Bangkok — BlessMe Thailand',
-    description: 'ป็อปปิ่งโบบา 6 รสชาติพรีเมียม สต็อกกรุงเทพฯ ราคาส่ง 80–115 บาท/แพ็ค ส่งทั่วไทย ไม่ต้องแช่เย็น อายุ 12 เดือน ติดต่อ LINE @591dzhsr',
+    description: 'ป็อปปิ่งโบบา 6 รสชาติพรีเมียม สต็อกกรุงเทพฯ ราคาส่ง 80–115 บาท/แพ็ค ส่งทั่วไทย ไม่ต้องแช่เย็น อายุ 12 เดือน ติดต่อ LINE @blessmethailand',
     canonical: `${BASE_URL}/`
   },
   Solutions: { title: 'How BlessMe Works — 6-Step Framework | BlessMe Thailand', description: 'Discover the six-step framework BlessMe uses to source, test, and supply specialty food products to wholesale partners across Thailand.', canonical: `${BASE_URL}/solutions` },
