@@ -45,17 +45,17 @@ export default function TrustBar({ lang }) {
 
   return (
     <div className="relative z-10 max-w-[1400px] mx-auto px-6 py-20 lg:px-16" ref={barRef}>
-      <div className="flex flex-col md:flex-row items-center justify-between border-t border-b border-[#0F172A]/10 py-12">
+      <div className="flex flex-col md:flex-row items-center justify-between border-t border-b border-[#2B241E]/10 py-12">
         {items.map((i, index) => (
           <React.Fragment key={i.l}>
             <div className="flex flex-col items-center justify-center text-center flex-1">
-              <div className="n text-5xl md:text-[56px] font-bold tracking-tight mb-2 bg-gradient-to-r from-[#FFD194] via-[#F6B3CD] to-[#70C1B3] inline-block text-transparent bg-clip-text drop-shadow-sm">
+              <div className="n text-5xl md:text-[56px] font-semibold tracking-tight mb-2 text-[#3B6146] font-['Fraunces']">
                 {hasAnimated ? i.n : i.n.replace(/\d+/, '0')}
               </div>
-              <div className="text-sm font-bold tracking-[0.15em] uppercase text-[#0F172A]">{i.l}</div>
+              <div className="text-sm font-semibold tracking-[0.14em] uppercase text-[#8A7E71]">{i.l}</div>
             </div>
             {index < items.length - 1 && (
-              <div className="hidden md:block w-px h-16 bg-[#0F172A]/10 mx-4"></div>
+              <div className="hidden md:block w-px h-16 bg-[#2B241E]/10 mx-4"></div>
             )}
           </React.Fragment>
         ))}

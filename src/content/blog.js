@@ -41,7 +41,7 @@ export const ARTICLES = [
     "authorRole": "B2B Wholesale Specialist",
     "authorRoleTh": "ผู้เชี่ยวชาญด้านการขายส่ง B2B",
     "authorBio": "BlessMe wholesale team helping F&B businesses across Thailand grow profit margins through premium specialty toppings and popping boba.",
-    "cover": "linear-gradient(140deg,#3498db 0%,#2980b9 60%,#2c3e50 100%)",
+    "cover": "linear-gradient(140deg,#5b8a72 0%,#3b6146 60%,#243b30 100%)",
     "img": "/assets/products/oat.webp",
     "imgAlt": "BlessMe Premium Popping Boba Wholesale"
   },
@@ -87,7 +87,7 @@ export const ARTICLES = [
     "authorRole": "Nutrition & Trends Writer",
     "authorRoleTh": "นักเขียนด้านโภชนาการและเทรนด์",
     "authorBio": "BlessMe trends editor bringing you the latest and healthiest topping combinations to elevate your everyday beverage experience.",
-    "cover": "linear-gradient(140deg,#38b6ff 0%,#1d6fa8 60%,#0c2a3d 100%)",
+    "cover": "linear-gradient(140deg,#7fae8f 0%,#4e7c59 60%,#2b3a2e 100%)",
     "img": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=1080&q=80",
     "imgAlt": "Fresh fruit and creamy yogurt smoothie with floating popping boba pearls"
   },
@@ -156,7 +156,7 @@ export const ARTICLES = [
     "authorRole": "B2B Wholesale Specialist",
     "authorRoleTh": "ผู้เชี่ยวชาญด้านการขายส่ง B2B",
     "authorBio": "BlessMe wholesale team helping F&B businesses across Thailand grow profit margins through premium specialty toppings and popping boba.",
-    "cover": "linear-gradient(140deg,#1d6fa8 0%,#0c2a3d 100%)",
+    "cover": "linear-gradient(140deg,#4e7c59 0%,#243b30 100%)",
     "img": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=1080&q=80",
     "imgAlt": "Aesthetic Greek yogurt bowl layered with granola, honey, and popping boba pearls"
   },
@@ -179,7 +179,7 @@ export const ARTICLES = [
     "authorRole": "Health & Wellness Specialist",
     "authorRoleTh": "ผู้เชี่ยวชาญด้านสุขภาพและเวลเนส",
     "authorBio": "BlessMe health editor dedicated to helping you combine functional nutrition with playful eating experiences for balanced everyday lifestyle.",
-    "cover": "linear-gradient(140deg,#8dbfd6 0%,#38b6ff 60%,#1d6fa8 100%)",
+    "cover": "linear-gradient(140deg,#b7cda9 0%,#7fae8f 60%,#4e7c59 100%)",
     "img": "/assets/smoothie bowl.jpg",
     "imgAlt": "Thick, creamy plain Greek yogurt in a rustic bowl with a spoon"
   },
@@ -202,7 +202,7 @@ export const ARTICLES = [
     "authorRole": "Supply Chain & Wholesale Specialist",
     "authorRoleTh": "ผู้เชี่ยวชาญด้านซัพพลายเชนและการขายส่ง",
     "authorBio": "BlessMe supply chain team with deep experience in specialty food logistics across Thailand, helping cafés reduce operational costs through smarter ingredient sourcing.",
-    "cover": "linear-gradient(140deg,#0f2027 0%,#203a43 50%,#2c5364 100%)",
+    "cover": "linear-gradient(140deg,#2b241e 0%,#3b342d 50%,#4d443c 100%)",
     "img": "/assets/cold-chain-logistics.jpg",
     "imgAlt": "Yellow delivery truck with open door — representing cold chain logistics costs that Thai café operators face when sourcing perishable ingredients"
   },
@@ -225,7 +225,7 @@ export const ARTICLES = [
     "authorRole": "B2B Wholesale Specialist",
     "authorRoleTh": "ผู้เชี่ยวชาญด้านการขายส่ง B2B",
     "authorBio": "BlessMe wholesale team helping F&B businesses across Thailand grow profit margins through premium specialty toppings and popping boba.",
-    "cover": "linear-gradient(140deg,#f7971e 0%,#ffd200 100%)",
+    "cover": "linear-gradient(140deg,#d08a3a 0%,#e0b04a 100%)",
     "img": "/assets/boba-drink-wholesale.jpg",
     "imgAlt": "Hand holding a boba drink — popping boba wholesale pricing guide for Thai café and smoothie bar operators"
   },

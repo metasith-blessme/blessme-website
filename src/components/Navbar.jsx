@@ -18,7 +18,7 @@ export default function Navbar({ page, setPage, lang, setLang }) {
   };
   return (
     <>
-      <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-white/60 border-b border-[#0F172A]/5 transition-all duration-300">
+      <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-white/60 border-b border-[#2B241E]/5 transition-all duration-300">
         <nav className="max-w-7xl mx-auto px-6 lg:px-12 h-24 flex items-center justify-between" role="navigation" aria-label="Main navigation">
           
           {/* Brand */}
@@ -27,15 +27,15 @@ export default function Navbar({ page, setPage, lang, setLang }) {
           </a>
           
           {/* Desktop Links */}
-          <div className="hidden lg:flex items-center gap-2 bg-[#F1F5F9]/80 p-1.5 rounded-full border border-white">
+          <div className="hidden lg:flex items-center gap-2 bg-white/70 p-1.5 rounded-full border border-[#EAE2D5]">
             {t.nav.map((l, i) => {
               const key = NAV_KEYS[i];
               const isActive = page === key;
               return (
-                <a 
-                  key={key} 
-                  href={PAGE_TO_PATH[key]} 
-                  className={`relative px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-colors ${isActive ? 'text-[#0F172A]' : 'text-[#0F172A]/60 hover:text-[#0F172A]'}`}
+                <a
+                  key={key}
+                  href={PAGE_TO_PATH[key]}
+                  className={`relative px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-colors ${isActive ? 'text-[#3B6146]' : 'text-[#2B241E]/60 hover:text-[#2B241E]'}`}
                   onClick={(e) => navigate(key, e)}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -54,17 +54,17 @@ export default function Navbar({ page, setPage, lang, setLang }) {
           
           {/* Right Actions */}
           <div className="flex items-center gap-6">
-            <span className="hidden xl:block font-mono text-sm tracking-widest text-[#0F172A]/80 font-semibold">+66 (0) 82-896-5199</span>
+            <span className="hidden xl:block font-mono text-sm tracking-widest text-[#2B241E]/80 font-semibold">+66 (0) 82-896-5199</span>
             
-            <div className="hidden md:flex bg-[#F1F5F9] p-1 rounded-lg" role="group" aria-label="Language">
+            <div className="hidden md:flex bg-[#F1EADF] p-1 rounded-lg" role="group" aria-label="Language">
               <button 
-                className={`px-3 py-1 text-xs font-bold font-mono rounded-md transition-colors ${lang==='en' ? 'bg-white shadow-sm text-[#0F172A]' : 'text-[#0F172A]/50 hover:text-[#0F172A]'}`}
+                className={`px-3 py-1 text-xs font-bold font-mono rounded-md transition-colors ${lang==='en' ? 'bg-white shadow-sm text-[#2B241E]' : 'text-[#2B241E]/50 hover:text-[#2B241E]'}`}
                 onClick={() => setLang('en')} aria-pressed={lang==='en'}
               >
                 EN
               </button>
               <button 
-                className={`px-3 py-1 text-xs font-bold font-mono rounded-md transition-colors ${lang==='th' ? 'bg-white shadow-sm text-[#0F172A]' : 'text-[#0F172A]/50 hover:text-[#0F172A]'}`}
+                className={`px-3 py-1 text-xs font-bold font-mono rounded-md transition-colors ${lang==='th' ? 'bg-white shadow-sm text-[#2B241E]' : 'text-[#2B241E]/50 hover:text-[#2B241E]'}`}
                 onClick={() => setLang('th')} aria-pressed={lang==='th'}
               >
                 TH
@@ -72,7 +72,7 @@ export default function Navbar({ page, setPage, lang, setLang }) {
             </div>
             
             <button 
-              className="hidden md:inline-flex items-center justify-center px-6 py-3 bg-[#EFFF00] text-[#0F172A] font-bold text-sm uppercase tracking-widest rounded-xl hover:scale-105 transition-transform hover:shadow-[0_4px_20px_rgba(239,255,0,0.4)]"
+              className="hidden md:inline-flex items-center justify-center px-6 py-3 bg-[#4E7C59] text-white font-semibold text-sm tracking-wide rounded-xl hover:bg-[#3B6146] transition-colors hover:shadow-[0_6px_20px_rgba(59,97,70,0.35)]"
               onClick={() => navigate('Solutions')}
             >
               {t.wholesale}
@@ -85,9 +85,9 @@ export default function Navbar({ page, setPage, lang, setLang }) {
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
             >
-              <span className={`block w-6 h-0.5 bg-[#0F172A] rounded-full transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-              <span className={`block w-6 h-0.5 bg-[#0F172A] rounded-full transition-opacity duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-              <span className={`block w-6 h-0.5 bg-[#0F172A] rounded-full transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+              <span className={`block w-6 h-0.5 bg-[#2B241E] rounded-full transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`block w-6 h-0.5 bg-[#2B241E] rounded-full transition-opacity duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+              <span className={`block w-6 h-0.5 bg-[#2B241E] rounded-full transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
             </button>
           </div>
         </nav>
@@ -111,7 +111,7 @@ export default function Navbar({ page, setPage, lang, setLang }) {
                   key={key} 
                   href={PAGE_TO_PATH[key]} 
                   onClick={(e) => navigate(key, e)} 
-                  className={`text-4xl font-['Playfair_Display'] font-bold ${page === key ? 'text-[#0F172A]' : 'text-[#0F172A]/40'}`}
+                  className={`text-4xl font-['Fraunces'] font-bold ${page === key ? 'text-[#2B241E]' : 'text-[#2B241E]/40'}`}
                   aria-current={page===key ? 'page' : undefined}
                 >
                   {l}
@@ -121,13 +121,13 @@ export default function Navbar({ page, setPage, lang, setLang }) {
             
             <div className="mt-8 flex gap-4">
               <button 
-                className={`flex-1 py-4 text-sm font-bold font-mono rounded-xl transition-colors border ${lang==='en' ? 'bg-[#0F172A] text-white border-[#0F172A]' : 'border-[#0F172A]/20 text-[#0F172A]'}`}
+                className={`flex-1 py-4 text-sm font-bold font-mono rounded-xl transition-colors border ${lang==='en' ? 'bg-[#2B241E] text-white border-[#2B241E]' : 'border-[#2B241E]/20 text-[#2B241E]'}`}
                 onClick={() => setLang('en')}
               >
                 EN
               </button>
               <button 
-                className={`flex-1 py-4 text-sm font-bold font-mono rounded-xl transition-colors border ${lang==='th' ? 'bg-[#0F172A] text-white border-[#0F172A]' : 'border-[#0F172A]/20 text-[#0F172A]'}`}
+                className={`flex-1 py-4 text-sm font-bold font-mono rounded-xl transition-colors border ${lang==='th' ? 'bg-[#2B241E] text-white border-[#2B241E]' : 'border-[#2B241E]/20 text-[#2B241E]'}`}
                 onClick={() => setLang('th')}
               >
                 TH
@@ -135,7 +135,7 @@ export default function Navbar({ page, setPage, lang, setLang }) {
             </div>
             
             <button 
-              className="w-full py-5 bg-[#EFFF00] text-[#0F172A] font-bold text-sm uppercase tracking-widest rounded-xl mt-4"
+              className="w-full py-5 bg-[#4E7C59] text-white font-semibold text-sm tracking-wide rounded-xl mt-4"
               onClick={() => navigate('Solutions')}
             >
               {t.wholesale}

@@ -8,20 +8,11 @@ import TrustBar from '../components/TrustBar';
 export default function ProductsPage({ onOpen, setPage, lang }) {
   const t = T[lang];
   return (
-    <div className="relative w-full min-h-screen bg-gradient-to-br from-white to-[#F0F7FA] text-[#0F172A] overflow-hidden font-['Inter']">
-      
-      {/* Organic Blobs & Pearls in Hero */}
-      <div className="absolute top-0 right-0 w-[50%] h-[800px] pointer-events-none">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="absolute top-[10%] right-[10%] w-[600px] h-[600px] text-[#EFFF00] opacity-80 z-0">
-          <path fill="currentColor" d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,81.4,-46.2C91,-33.3,97.3,-17.7,96.6,-2.4C95.9,12.9,88.2,27.8,78.2,40.6C68.2,53.4,55.9,64.1,41.9,71.1C27.9,78.1,12.2,81.4,-2.7,85.2C-17.6,89,-31.7,93.4,-44.6,88.8C-57.5,84.2,-69.2,70.6,-77.9,55.1C-86.6,39.6,-92.3,22.2,-91.3,5.4C-90.3,-11.4,-82.6,-27.6,-72.1,-41C-61.6,-54.4,-48.3,-65,-34.5,-72.1C-20.7,-79.2,-6.4,-82.8,7.9,-84.6C22.2,-86.4,44.4,-86.4,44.7,-76.4Z" transform="translate(100 100)" />
-        </svg>
-      </div>
-      
-      {/* Decorative Pearls */}
-      <div className="absolute top-[15%] left-[45%] w-12 h-12 rounded-full bg-gradient-to-br from-white to-pink-100 shadow-xl opacity-90 z-10 blur-[1px]"></div>
-      <div className="absolute top-[8%] right-[30%] w-8 h-8 rounded-full bg-gradient-to-br from-white to-gray-200 shadow-xl opacity-90 z-10 blur-[2px]"></div>
-      <div className="absolute bottom-[25%] right-[5%] w-24 h-24 rounded-full bg-gradient-to-br from-white to-pink-100 shadow-2xl opacity-90 z-10"></div>
-      <div className="absolute top-[50%] left-[55%] w-6 h-6 rounded-full bg-gradient-to-br from-white to-gray-100 shadow-md opacity-80 z-10"></div>
+    <div className="relative w-full min-h-screen bg-gradient-to-b from-[#FDFBF6] to-[#F1EADF] text-[#2B241E] overflow-hidden font-['Inter']">
+
+      {/* Soft warm atmosphere behind hero */}
+      <div className="absolute top-[-160px] right-[-120px] w-[560px] h-[560px] rounded-full bg-[#4E7C59]/12 blur-[90px] pointer-events-none"></div>
+      <div className="absolute top-[120px] left-[-140px] w-[420px] h-[420px] rounded-full bg-[#C9B893]/15 blur-[90px] pointer-events-none"></div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 pt-12 pb-16 md:pt-20 md:pb-24 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
@@ -32,11 +23,11 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.05] tracking-tight text-[#0F172A] mb-6"
+              className="font-['Fraunces'] text-6xl md:text-7xl lg:text-[5.25rem] font-semibold leading-[1.02] tracking-[-0.02em] text-[#2B241E] mb-6"
             >
               {t.heroTitle[0]}<br/>
               <span className="relative inline-block mt-2 mb-2">
-                <span className="relative z-10 italic font-medium font-['Playfair_Display']">{t.heroTitle[1]}</span>
+                <span className="relative z-10 italic font-normal text-[#3B6146]">{t.heroTitle[1]}</span>
                 {/* Hand-drawn highlighter */}
                 <motion.svg 
                   initial={{ strokeDashoffset: 1000 }}
@@ -45,7 +36,7 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
                   className="absolute -bottom-1 -left-2 w-[110%] h-[20px] -z-10"
                   viewBox="0 0 200 20" preserveAspectRatio="none"
                 >
-                  <path d="M5,15 Q100,5 195,15" fill="none" stroke="#EFFF00" strokeWidth="12" strokeLinecap="round" strokeDasharray="1000" />
+                  <path d="M5,15 Q100,5 195,15" fill="none" stroke="#B7CDA9" strokeWidth="10" strokeLinecap="round" strokeDasharray="1000" />
                 </motion.svg>
               </span>
               <br/>{t.heroTitle[2]}
@@ -55,7 +46,7 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-[17px] md:text-lg text-[#1E293B] mb-10 font-normal leading-relaxed max-w-[500px]"
+              className="text-[17px] md:text-lg text-[#5B5048] mb-10 font-normal leading-relaxed max-w-[500px]"
             >
               We Think, discover, source, and supply specialty food products that give our partners a true point of difference — products customers cannot find elsewhere in the market.
             </motion.p>
@@ -68,14 +59,14 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
             >
               <button 
                 onClick={() => setPage('Solutions')}
-                className="px-7 py-3.5 bg-[#EFFF00] text-[#0F172A] font-bold text-sm rounded-xl transition-all hover:scale-105 shadow-sm hover:shadow-md"
+                className="px-7 py-3.5 bg-[#4E7C59] text-white font-semibold text-sm rounded-xl transition-colors hover:bg-[#3B6146] shadow-[0_6px_18px_rgba(59,97,70,0.22)]"
               >
                 {t.heroCta1}
               </button>
               
               <button 
                 onClick={() => setPage('About us')}
-                className="px-7 py-3.5 bg-white/80 backdrop-blur border border-gray-200 text-[#0F172A] font-bold text-sm rounded-xl hover:bg-white transition-all shadow-sm hover:shadow-md"
+                className="px-7 py-3.5 bg-white/70 backdrop-blur border border-[#E0D6C6] text-[#2B241E] font-semibold text-sm rounded-xl hover:bg-white hover:border-[#4E7C59] transition-colors"
               >
                 {t.heroCta2}
               </button>
@@ -87,19 +78,12 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative flex-1 h-[600px] flex items-center justify-center pointer-events-none"
+            className="relative flex-1 h-[520px] flex items-center justify-center pointer-events-none"
           >
-            <img src="/assets/logo-full.png" alt="BlessMe Thailand" className="relative z-20 w-full max-w-[320px] object-contain drop-shadow-2xl mix-blend-multiply" />
-            
-            {/* Fake boba/ingredients floating (represented by colored dots) */}
-            <div className="absolute w-full h-full z-10">
-              <div className="absolute top-[20%] left-[15%] w-4 h-4 rounded-full bg-red-600/80 shadow-md blur-[0.5px]"></div>
-              <div className="absolute top-[10%] right-[30%] w-5 h-5 rounded-full bg-red-500/90 shadow-md"></div>
-              <div className="absolute top-[30%] right-[15%] w-4 h-4 rounded-full bg-green-500/80 shadow-md blur-[1px]"></div>
-              <div className="absolute bottom-[35%] left-[20%] w-6 h-6 rounded-full bg-yellow-600/90 shadow-md"></div>
-              <div className="absolute bottom-[15%] right-[25%] w-5 h-5 rounded-full bg-[#38b6ff]/90 shadow-md blur-[0.5px]"></div>
-              <div className="absolute bottom-[40%] right-[5%] w-8 h-8 bg-amber-100 rounded shadow-md transform rotate-12"></div>
-            </div>
+            {/* Soft halo disc behind the mark */}
+            <div className="absolute w-[420px] h-[420px] rounded-full bg-gradient-to-br from-white to-[#EEF3EA] border border-[#E4DECF] shadow-[0_30px_70px_rgba(59,97,70,0.14)]"></div>
+            <div className="absolute w-[300px] h-[300px] rounded-full border border-[#4E7C59]/15"></div>
+            <img src="/assets/logo-full.png" alt="BlessMe Thailand" className="relative z-20 w-full max-w-[300px] object-contain drop-shadow-[0_12px_28px_rgba(59,97,70,0.18)]" />
           </motion.div>
 
         </div>
@@ -111,8 +95,8 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
           transition={{ delay: 1.5, duration: 1 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center"
         >
-          <div className="w-[1px] h-12 bg-gray-400"></div>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-gray-400 mt-2">
+          <div className="w-[1px] h-12 bg-[#B3A793]"></div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-[#B3A793] mt-2">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 9l-7 7-7-7" />
           </svg>
         </motion.div>
@@ -122,10 +106,10 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
       <section className="relative z-10 max-w-[1400px] mx-auto px-6 py-20 lg:px-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <div className="text-xs font-bold tracking-[0.2em] uppercase text-[#0F172A] mb-3">{t.productRange}</div>
-            <h2 className="text-5xl md:text-6xl font-bold text-[#0F172A]">{t.sixFlavors}</h2>
+            <div className="inline-flex items-center gap-2.5 text-xs font-semibold tracking-[0.14em] uppercase text-[#3B6146] mb-3"><span className="w-4 h-px bg-[#4E7C59]"></span>{t.productRange}</div>
+            <h2 className="font-['Fraunces'] text-5xl md:text-6xl font-semibold tracking-[-0.02em] text-[#2B241E]">{t.sixFlavors}</h2>
           </div>
-          <p className="text-lg text-[#1E293B] italic font-serif max-w-[300px] text-right">
+          <p className="font-['Fraunces'] text-lg text-[#5B5048] italic max-w-[300px] md:text-right">
             Curated for the Thai market. Selected for cafés, restaurants, retailers, and dessert brands.
           </p>
         </div>
