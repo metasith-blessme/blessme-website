@@ -17,7 +17,7 @@ export const PRODUCTS = [
     note: 'A signature crunch in pearl form — subtle, hydrating, distinctly Asian.',
     noteTh: 'ความกรุบกรอบเอกลักษณ์ในรูปแบบเม็ดบีด — ละเอียดอ่อน ให้ความชุ่มชื้น มีกลิ่นอายเอเชียชัดเจน' },
   { id: 'cheese',    name: 'Moji Yogurt',    nameTh: 'โมจิโยเกิร์ต',    tag: 'Signature flavor', flavor: 'Tangy · Rich · Creamy-sweet', flavorTh: 'เปรี้ยวอมหวาน · เข้มข้น · ครีมมี่',
-    img: '/assets/products/cheese.webp',    imgFallback: '/assets/products/cheese.jpg',
+    img: '/assets/products/moji-yogurt.webp', imgFallback: '/assets/products/moji-yogurt.png',
     note: 'A rich moji-yogurt core. The trend-forward topping reshaping cold dessert and beverage menus.',
     noteTh: 'แกนโมจิโยเกิร์ตรสเข้มข้น ท็อปปิ้งล้ำสมัยที่กำลังเปลี่ยนเมนูของหวานเย็นและเครื่องดื่ม' },
   { id: 'osmanthus', name: 'Osmanthus',      nameTh: 'ดอกหอมหมื่นลี้',   tag: 'Signature flavor', flavor: 'Floral · Honeyed · Elegant', flavorTh: 'ดอกไม้ · น้ำผึ้ง · หรูหรา',
