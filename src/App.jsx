@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { MotionConfig, useReducedMotion } from 'framer-motion';
 import './styles/index.css';
 import { initWebVitals } from './lib/web-vitals';
 
@@ -22,12 +23,20 @@ import BlogPage from './pages/BlogPage';
 import FAQPage from './pages/FAQPage';
 import ArticlePage from './pages/ArticlePage';
 
-function App() {
-  const [initial] = useState(getInitialState); // ponytail: lazy init — runs once, not every render
+function App({ ssrPath }) {
+  const [initial] = useState(() => getInitialState(ssrPath)); // ponytail: lazy init — runs once; ssrPath feeds the prerenderer
   const [page, setPage] = useState(initial.page);
   const [detail, setDetail] = useState(initial.productId ? PRODUCTS.find(p => p.id === initial.productId) || null : null);
   const [articleId, setArticleId] = useState(initial.articleId);
-  const [lang, setLang] = useState(() => localStorage.getItem('bm-lang') || 'en');
+  // SSR-safe: always start 'en' so server + client first paint match (no hydration mismatch); saved pref restored after mount
+  const [lang, setLang] = useState('en');
+  const shouldReduceMotion = useReducedMotion();
+
+  // Restore saved language preference after mount (browser-only, avoids hydration mismatch)
+  useEffect(() => {
+    const saved = localStorage.getItem('bm-lang');
+    if (saved) setLang(saved);
+  }, []);
 
   // Save language preference to localStorage
   useEffect(() => { localStorage.setItem('bm-lang', lang); }, [lang]);
@@ -62,10 +71,11 @@ function App() {
     updateSchema(page, pid, aid, lang);
   }, [page, detail, articleId, lang]);
 
-  // Custom Cursor Logic
+  // Custom Cursor Logic (skipped for users who prefer reduced motion)
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
   const [isHovering, setIsHovering] = useState(false);
   useEffect(() => {
+    if (shouldReduceMotion) return;
     const moveCursor = (e) => setCursorPos({ x: e.clientX, y: e.clientY });
     const handleMouseOver = (e) => {
       const tag = e.target.tagName.toLowerCase();
@@ -81,7 +91,7 @@ function App() {
       window.removeEventListener('mousemove', moveCursor);
       window.removeEventListener('mouseover', handleMouseOver);
     };
-  }, []);
+  }, [shouldReduceMotion]);
 
   const goToPage = (p) => {
     const path = PAGE_TO_PATH[p] || '/';
@@ -116,9 +126,12 @@ function App() {
   };
 
   return (
+    <MotionConfig reducedMotion="user">
     <div className="relative min-h-screen">
-      <div 
-        className={`custom-cursor ${isHovering ? 'hovering' : ''} hidden lg:block`} 
+      <a href="#main-content" className="bm-skip-link">Skip to content</a>
+      {/* Cursor renders deterministically (SSR-safe); tracking effect is skipped for reduced-motion, leaving it parked off-screen */}
+      <div
+        className={`custom-cursor ${isHovering ? 'hovering' : ''} hidden lg:block`}
         style={{ left: cursorPos.x, top: cursorPos.y }}
       ></div>
       <Navbar page={page} setPage={goToPage} lang={lang} setLang={setLang} />
@@ -146,6 +159,7 @@ function App() {
         </svg>
       </a>
     </div>
+    </MotionConfig>
   );
 }
 

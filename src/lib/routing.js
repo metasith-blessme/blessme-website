@@ -18,8 +18,10 @@ export const PAGE_TO_PATH = {
   'FAQ':       '/faq',
 };
 
-export function getInitialState() {
-  const path = window.location.pathname.replace(/\/+$/, '') || '/';
+export function getInitialState(pathname) {
+  // ponytail: accept an explicit path for SSR/prerender; fall back to window on the client
+  const raw = pathname ?? (typeof window !== 'undefined' ? window.location.pathname : '/');
+  const path = raw.replace(/\/+$/, '') || '/';
   if (path.startsWith('/blog/')) {
     const articleId = path.slice(6);
     return { page: 'Blog', articleId: getArticleById(articleId) ? articleId : null, productId: null };

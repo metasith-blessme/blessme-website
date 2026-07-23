@@ -84,17 +84,22 @@ export function setMeta(title, description, canonical, lang='en') {
   // ponytail: hreflang removed — single-URL site with JS lang toggle makes hreflang misleading to crawlers
 }
 
-export function updateMeta(page, productId = null, articleId = null, lang = 'en') {
+// Pure: compute { title, description, canonical } for a route. Reused by the prerenderer.
+export function getMeta(page, productId = null, articleId = null, lang = 'en') {
   if (productId) {
     const product = PRODUCTS.find(p => p.id === productId);
-    if (product) { const m = buildProductMeta(product, lang); setMeta(m.title, m.description, m.canonical, lang); return; }
+    if (product) return buildProductMeta(product, lang);
   }
   if (articleId) {
     const article = getArticleById(articleId);
-    if (article) { const m = getArticleMeta(article, lang, BASE_URL); setMeta(m.title, m.description, m.canonical, lang); return; }
+    if (article) return getArticleMeta(article, lang, BASE_URL);
   }
   const metaSet = lang === 'th' ? PAGE_META_TH : PAGE_META;
-  const m = metaSet[page] || metaSet.Products;
+  return metaSet[page] || metaSet.Products;
+}
+
+export function updateMeta(page, productId = null, articleId = null, lang = 'en') {
+  const m = getMeta(page, productId, articleId, lang);
   setMeta(m.title, m.description, m.canonical, lang);
 }
 
@@ -122,9 +127,8 @@ export function buildFAQSchema(faqs) {
   };
 }
 
-export function updateSchema(page, productId = null, articleId = null, lang = 'en') {
-  const el = document.getElementById('bm-schema');
-  if (!el) return;
+// Pure: assemble the JSON-LD schema array for a route. Reused by the prerenderer.
+export function getSchemas(page, productId = null, articleId = null, lang = 'en') {
   const schemas = [ORG_SCHEMA];
   if (productId) {
     const product = PRODUCTS.find(p => p.id === productId);
@@ -158,5 +162,12 @@ export function updateSchema(page, productId = null, articleId = null, lang = 'e
       schemas.push(buildFAQSchema(lang === 'th' ? FAQS_TH : FAQS_EN));
     }
   }
+  return schemas;
+}
+
+export function updateSchema(page, productId = null, articleId = null, lang = 'en') {
+  const el = document.getElementById('bm-schema');
+  if (!el) return;
+  const schemas = getSchemas(page, productId, articleId, lang);
   el.textContent = schemas.length === 1 ? JSON.stringify(schemas[0]) : JSON.stringify(schemas);
 }

@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+/* ---- Skip to content (a11y) ---- */
+.bm-skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 100;
+  padding: 10px 18px;
+  background: #2B241E;
+  color: #FAF6EF;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: top 0.2s ease;
+}
+.bm-skip-link:focus {
+  top: 12px;
+  outline: 2px solid #4E7C59;
+  outline-offset: 2px;
+}
+
 /* ---- Local Thai Font ---- */
 
 /* ---- Local Thai Font ---- */
