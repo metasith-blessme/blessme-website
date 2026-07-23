@@ -19,7 +19,7 @@ export const ARTICLES = [
     "authorRoleTh": "ผู้เชี่ยวชาญด้านการขายส่ง B2B",
     "authorBio": "BlessMe wholesale team helping F&B businesses across Thailand grow profit margins through premium specialty toppings and popping boba.",
     "cover": "linear-gradient(140deg,#f39c12 0%,#d35400 60%,#e74c3c 100%)",
-    "img": "/assets/products/cheese.webp",
+    "img": "/assets/products/moji-yogurt.webp",
     "imgAlt": "BlessMe Premium Popping Boba"
   },
   {
