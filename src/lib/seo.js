@@ -7,7 +7,7 @@ export const ORG_DESCRIPTION = 'BlessMe (Thailand) — specialty food wholesaler
 
 export const PAGE_META = {
   Products: {
-    title: 'ขายส่งป็อปปิ่งโบบา กรุงเทพฯ | Popping Boba Wholesale Bangkok — BlessMe Thailand',
+    title: 'ขายส่งมุกป็อป กรุงเทพฯ | Popping Boba Wholesale Bangkok — BlessMe Thailand',
     description: 'ป็อปปิ่งโบบา 6 รสชาติพรีเมียม สต็อกกรุงเทพฯ ราคาส่ง 80–115 บาท/แพ็ค ส่งทั่วไทย ไม่ต้องแช่เย็น อายุ 12 เดือน ติดต่อ LINE @blessmethailand',
     canonical: `${BASE_URL}/`
   },
@@ -19,7 +19,7 @@ export const PAGE_META = {
 
 export const PAGE_META_TH = {
   Products: {
-    title: 'ขายส่งป็อปปิ่งโบบา กรุงเทพฯ | มุกป็อปพรีเมียม 6 รส ราคาส่ง — เบลสมี ไทยแลนด์',
+    title: 'ขายส่งมุกป็อป กรุงเทพฯ | มุกป็อปพรีเมียม 6 รส ราคาส่ง — เบลสมี ไทยแลนด์',
     description: 'ป็อปปิ่งโบบา (มุกป็อป) 6 รสชาติพรีเมียม: บาร์เลย์ ถั่วแดง ข้าวโอ๊ต แห้ว หอบหมื่นลี้ โมจิโยเกิร์ต สต็อกกรุงเทพฯ ราคาส่ง 80–115 บาท/แพ็ค ส่งทั่วไทย',
     canonical: BASE_URL + '/'
   },
