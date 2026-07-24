@@ -1,6 +1,6 @@
 import React from 'react';
 import { T } from '../constants/translations';
-import { PAGE_TO_PATH } from '../lib/routing';
+import { buildPath } from '../lib/routing';
 
 export default function Footer({ setPage, lang }) {
   const t = T[lang];
@@ -23,14 +23,14 @@ export default function Footer({ setPage, lang }) {
       <div className="bm-footer-cols">
         <div>
           <div className="bm-eyebrow">{t.footerCatalogue}</div>
-          <a href={PAGE_TO_PATH.Products} onClick={(e) => navigate('Products', e)}>{t.nav[0]}</a>
-          <a href={PAGE_TO_PATH.Solutions} onClick={(e) => navigate('Solutions', e)}>{t.nav[1]}</a>
+          <a href={buildPath({ page: 'Products', lang })} onClick={(e) => navigate('Products', e)}>{t.nav[0]}</a>
+          <a href={buildPath({ page: 'Solutions', lang })} onClick={(e) => navigate('Solutions', e)}>{t.nav[1]}</a>
         </div>
         <div>
           <div className="bm-eyebrow">{t.footerCompany}</div>
-          <a href={PAGE_TO_PATH['About us']} onClick={(e) => navigate('About us', e)}>{t.nav[2]}</a>
-          <a href={PAGE_TO_PATH.Blog} onClick={(e) => navigate('Blog', e)}>{t.footerJournal}</a>
-          <a href={PAGE_TO_PATH.FAQ} onClick={(e) => navigate('FAQ', e)}>{t.nav[4]}</a>
+          <a href={buildPath({ page: 'About us', lang })} onClick={(e) => navigate('About us', e)}>{t.nav[2]}</a>
+          <a href={buildPath({ page: 'Blog', lang })} onClick={(e) => navigate('Blog', e)}>{t.footerJournal}</a>
+          <a href={buildPath({ page: 'FAQ', lang })} onClick={(e) => navigate('FAQ', e)}>{t.nav[4]}</a>
         </div>
         <div>
           <div className="bm-eyebrow">{t.footerContact}</div>

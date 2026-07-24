@@ -1,8 +1,16 @@
 import { PRODUCTS } from '../constants/products';
 import { FAQS_EN, FAQS_TH } from '../constants/faq';
 import { getArticleById, getArticleMeta, getArticleSchema } from '../content/blog';
+import { buildPath } from './routing';
 
 export const BASE_URL = 'https://blessmethailand.com';
+
+// Language-correct canonical, trailing-slash normalized to match how Cloudflare serves the file.
+export function canonicalFor(page, productId = null, articleId = null, lang = 'en') {
+  let p = buildPath({ page, productId, articleId, lang });
+  if (p !== '/' && !p.endsWith('/')) p += '/';
+  return BASE_URL + p;
+}
 export const ORG_DESCRIPTION = 'BlessMe (Thailand) — specialty food wholesaler supplying cafés, restaurants, and dessert brands with premium popping boba. 6 curated flavors, stock in Bangkok, 12-month shelf life.';
 
 export const PAGE_META = {
@@ -20,7 +28,7 @@ export const PAGE_META = {
 export const PAGE_META_TH = {
   Products: {
     title: 'ขายส่งมุกป็อป กรุงเทพฯ | มุกป็อปพรีเมียม 6 รส ราคาส่ง — เบลสมี ไทยแลนด์',
-    description: 'ป็อปปิ่งโบบา (มุกป็อป) 6 รสชาติพรีเมียม: บาร์เลย์ ถั่วแดง ข้าวโอ๊ต แห้ว หอบหมื่นลี้ โมจิโยเกิร์ต สต็อกกรุงเทพฯ ราคาส่ง 80–115 บาท/แพ็ค ส่งทั่วไทย',
+    description: 'ขายส่งไข่มุกป็อป (มุกป็อป / ป็อปปิ้งโบบา) 6 รสชาติพรีเมียม: บาร์เลย์ ถั่วแดง ข้าวโอ๊ต แห้ว หอบหมื่นลี้ โมจิโยเกิร์ต สต็อกกรุงเทพฯ ราคาส่ง 80–115 บาท/แพ็ค ส่งทั่วไทย',
     canonical: BASE_URL + '/'
   },
   Solutions: { title: 'โซลูชันวัตถุดิบอาหารพิเศษ — บริการพาร์ทเนอร์ค้าส่ง | เบลสมี ไทยแลนด์', description: 'เจาะลึกกระบวนการจัดหาและทดสอบวัตถุดิบอาหารพิเศษของเบลสมี เพื่อช่วยคาเฟ่และร้านอาหารสร้างจุดแตกต่างที่ยั่งยืนในตลาดไทย', canonical: BASE_URL+'/solutions' },
@@ -85,17 +93,19 @@ export function setMeta(title, description, canonical, lang='en') {
 }
 
 // Pure: compute { title, description, canonical } for a route. Reused by the prerenderer.
+// Canonical is always derived from the language + route so EN and /th URLs stay correct.
 export function getMeta(page, productId = null, articleId = null, lang = 'en') {
+  const canonical = canonicalFor(page, productId, articleId, lang);
   if (productId) {
     const product = PRODUCTS.find(p => p.id === productId);
-    if (product) return buildProductMeta(product, lang);
+    if (product) return { ...buildProductMeta(product, lang), canonical };
   }
   if (articleId) {
     const article = getArticleById(articleId);
-    if (article) return getArticleMeta(article, lang, BASE_URL);
+    if (article) return { ...getArticleMeta(article, lang, BASE_URL), canonical };
   }
   const metaSet = lang === 'th' ? PAGE_META_TH : PAGE_META;
-  return metaSet[page] || metaSet.Products;
+  return { ...(metaSet[page] || metaSet.Products), canonical };
 }
 
 export function updateMeta(page, productId = null, articleId = null, lang = 'en') {
@@ -143,8 +153,7 @@ export function getSchemas(page, productId = null, articleId = null, lang = 'en'
       schemas.push(buildBreadcrumbSchema([{ name: 'Home', url: 'https://blessmethailand.com/' }, { name: 'Journal', url: 'https://blessmethailand.com/blog' }, { name: lang === 'th' ? article.titleTh : article.title, url: `https://blessmethailand.com/blog/${article.id}` }]));
     }
   } else {
-    const m = (lang === 'th' ? PAGE_META_TH : PAGE_META)[page];
-    if (m) schemas.push(buildWebPageSchema(page, m.canonical));
+    schemas.push(buildWebPageSchema(page, canonicalFor(page, null, null, lang)));
     if (page === 'Products') {
       schemas.push({ "@context": "https://schema.org", "@type": "ItemList", "name": "BlessMe Popping Boba — Wholesale Product Range", "url": "https://blessmethailand.com/", "numberOfItems": PRODUCTS.length, "itemListElement": PRODUCTS.map((p, idx) => ({ "@type": "ListItem", "position": idx + 1, "url": `https://blessmethailand.com/products/${p.id}`, "name": `${p.name} Popping Boba` })) });
       schemas.push({
