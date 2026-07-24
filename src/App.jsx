@@ -7,7 +7,7 @@ import { initWebVitals } from './lib/web-vitals';
 import { PRODUCTS } from './constants/products';
 
 // Libs / Utilities
-import { getInitialState, PAGE_TO_PATH } from './lib/routing';
+import { getInitialState, buildPath } from './lib/routing';
 import { updateMeta, updateSchema } from './lib/seo';
 
 // Components
@@ -28,18 +28,10 @@ function App({ ssrPath }) {
   const [page, setPage] = useState(initial.page);
   const [detail, setDetail] = useState(initial.productId ? PRODUCTS.find(p => p.id === initial.productId) || null : null);
   const [articleId, setArticleId] = useState(initial.articleId);
-  // SSR-safe: always start 'en' so server + client first paint match (no hydration mismatch); saved pref restored after mount
-  const [lang, setLang] = useState('en');
+  // Language is derived from the URL (EN at /…, Thai at /th/…). Server and client both
+  // read the same URL, so first-render markup matches — no hydration mismatch.
+  const [lang, setLang] = useState(initial.lang);
   const shouldReduceMotion = useReducedMotion();
-
-  // Restore saved language preference after mount (browser-only, avoids hydration mismatch)
-  useEffect(() => {
-    const saved = localStorage.getItem('bm-lang');
-    if (saved) setLang(saved);
-  }, []);
-
-  // Save language preference to localStorage
-  useEffect(() => { localStorage.setItem('bm-lang', lang); }, [lang]);
 
   // Initialize Web Vitals monitoring on component mount
   useEffect(() => {
@@ -49,9 +41,10 @@ function App({ ssrPath }) {
   // Handle browser back/forward buttons
   useEffect(() => {
     const onPop = () => {
-      const { page: p, articleId: aid, productId: pid } = getInitialState();
+      const { page: p, articleId: aid, productId: pid, lang: lng } = getInitialState();
       setPage(p);
       setArticleId(aid);
+      setLang(lng);
       setDetail(pid ? PRODUCTS.find(pr => pr.id === pid) || null : null);
     };
     window.addEventListener('popstate', onPop);
@@ -94,35 +87,42 @@ function App({ ssrPath }) {
   }, [shouldReduceMotion]);
 
   const goToPage = (p) => {
-    const path = PAGE_TO_PATH[p] || '/';
-    window.history.pushState({}, '', path);
+    window.history.pushState({}, '', buildPath({ page: p, lang }));
     setArticleId(null);
     setPage(p);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-  
+
   const openArticle = (id) => {
-    window.history.pushState({}, '', `/blog/${id}`);
+    window.history.pushState({}, '', buildPath({ page: 'Blog', articleId: id, lang }));
     setPage('Blog');
     setArticleId(id);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-  
+
   const closeArticle = () => {
-    window.history.pushState({}, '', '/blog');
+    window.history.pushState({}, '', buildPath({ page: 'Blog', lang }));
     setPage('Blog');
     setArticleId(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-  
+
   const openProduct = (product) => {
-    window.history.pushState({}, '', `/products/${product.id}`);
+    window.history.pushState({}, '', buildPath({ page: 'Products', productId: product.id, lang }));
     setDetail(product);
   };
-  
+
   const closeProduct = () => {
-    window.history.pushState({}, '', '/');
+    window.history.pushState({}, '', buildPath({ page: 'Products', lang }));
     setDetail(null);
+  };
+
+  // Switching language navigates to the equivalent URL in the other language (keeps EN/TH on distinct URLs).
+  const switchLang = (newLang) => {
+    if (newLang === lang) return;
+    const productId = detail ? detail.id : null;
+    window.history.pushState({}, '', buildPath({ page, productId, articleId, lang: newLang }));
+    setLang(newLang);
   };
 
   return (
@@ -134,7 +134,7 @@ function App({ ssrPath }) {
         className={`custom-cursor ${isHovering ? 'hovering' : ''} hidden lg:block`}
         style={{ left: cursorPos.x, top: cursorPos.y }}
       ></div>
-      <Navbar page={page} setPage={goToPage} lang={lang} setLang={setLang} />
+      <Navbar page={page} setPage={goToPage} lang={lang} setLang={switchLang} />
       <main id="main-content">
         {articleId ? (
           <ArticlePage articleId={articleId} onBack={closeArticle} onOpenArticle={openArticle} lang={lang} />
