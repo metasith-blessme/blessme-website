@@ -30,3 +30,20 @@ export const FAQS_TH = [
   { q: 'ป็อปปิ่งโบบาราคาส่งในไทยราคาเท่าไหร่?', a: 'ราคาส่งของ BlessMe: 115 บาท/แพ็ค 500g (ซื้อแพ็คเดี่ยว) หรือ 80 บาท/แพ็คเมื่อสั่งยกลัง 24 แพ็ค (1,920 บาท/ลัง) แต่ละแพ็คได้ประมาณ 20 ที่เสิร์ฟที่ 15g/ที่ ติดต่อสอบถามราคาสำหรับออเดอร์ขนาดใหญ่' },
   { q: 'ขอตัวอย่างสินค้า BlessMe ฟรีได้ไหม?', a: 'ได้ ติดต่อ BlessMe ที่ Blessme.team@gmail.com หรือ LINE: @blessmethailand เพื่อขอตัวอย่างสินค้า ทีมงาน B2B ของเราพร้อมจัดแพ็คตัวอย่างให้เจ้าของคาเฟ่และธุรกิจอาหารที่กำลังประเมินสินค้าของเรา' },
 ];
+
+/* ===== WHOLESALE LANDING FAQ (commercial-intent, keyword-targeted) ===== */
+export const WHOLESALE_FAQS_EN = [
+  { q: 'How much is popping boba wholesale in Thailand?', a: 'BlessMe wholesale pricing is 115 THB per 500g pack for single packs, or 80 THB per pack when you order a case of 24. Each pack yields about 20 servings, so your cost per cup is roughly 4–7 THB.' },
+  { q: 'Where can I buy popping boba wholesale in Bangkok?', a: 'BlessMe (Thailand) Co., Ltd. stocks popping boba in Bangkok and ships nationwide — no import wait. Order via LINE @blessmethailand, email Blessme.team@gmail.com, or call 082-896-5199.' },
+  { q: 'Is there a minimum order?', a: 'No strict minimum. You can buy single packs at 115 THB, or a case of 24 at 80 THB per pack for the best wholesale price. We tailor larger orders per partner.' },
+  { q: 'Can I get free samples before ordering?', a: 'Yes. We send sample packs to qualified café and F&B buyers so your team can taste before committing.' },
+  { q: 'What flavors are available?', a: 'Six vegan flavors: Barley, Red Bean, Oat, Water Chestnut, Osmanthus, and Moji Yogurt — all shelf-stable for 12 months, no refrigeration needed.' },
+];
+
+export const WHOLESALE_FAQS_TH = [
+  { q: 'ไข่มุกป็อป (มุกป็อป) ราคาส่งเท่าไหร่?', a: 'ราคาส่งของ BlessMe: 115 บาท/แพ็ค 500g สำหรับซื้อแพ็คเดี่ยว หรือ 80 บาท/แพ็คเมื่อสั่งยกลัง 24 แพ็ค แต่ละแพ็คได้ประมาณ 20 ที่เสิร์ฟ เท่ากับต้นทุนต่อแก้วเพียง 4–7 บาท' },
+  { q: 'ซื้อไข่มุกป็อปขายส่งในกรุงเทพได้ที่ไหน?', a: 'BlessMe (ประเทศไทย) จำกัด มีสต็อกไข่มุกป็อปในกรุงเทพฯ ส่งทั่วไทย ไม่ต้องรอนำเข้า สั่งซื้อผ่าน LINE @blessmethailand อีเมล Blessme.team@gmail.com หรือโทร 082-896-5199' },
+  { q: 'มีขั้นต่ำในการสั่งซื้อไหม?', a: 'ไม่มีขั้นต่ำที่เข้มงวด ซื้อแพ็คเดี่ยวได้ที่ 115 บาท หรือยกลัง 24 แพ็คที่ 80 บาท/แพ็คเพื่อราคาส่งที่ดีที่สุด ออเดอร์ใหญ่มีราคาพิเศษ' },
+  { q: 'ขอตัวอย่างฟรีก่อนสั่งได้ไหม?', a: 'ได้ เราส่งแพ็คตัวอย่างให้คาเฟ่และธุรกิจอาหารที่สนใจ เพื่อให้ทีมงานได้ชิมและประเมินก่อนตัดสินใจสั่งจริง' },
+  { q: 'มีรสชาติอะไรบ้าง?', a: 'มี 6 รสชาติวีแกน: บาร์เลย์ ถั่วแดง ข้าวโอ๊ต แห้ว ดอกหอมหมื่นลี้ และโมจิโยเกิร์ต ทุกรสเก็บได้ 12 เดือน ไม่ต้องแช่เย็น' },
+];

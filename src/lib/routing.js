@@ -6,15 +6,17 @@ import { getArticleById } from '../content/blog';
  * language its own crawlable, indexable URL (required for Thai SEO/hreflang).
  */
 export const PATH_TO_PAGE = {
-  '/':          'Products',
-  '/solutions': 'Solutions',
-  '/about':     'About us',
-  '/blog':      'Blog',
-  '/faq':       'FAQ',
+  '/':           'Products',
+  '/wholesale':  'Wholesale',
+  '/solutions':  'Solutions',
+  '/about':      'About us',
+  '/blog':       'Blog',
+  '/faq':        'FAQ',
 };
 
 export const PAGE_TO_PATH = {
   'Products':  '/',
+  'Wholesale': '/wholesale',
   'Solutions': '/solutions',
   'About us':  '/about',
   'Blog':      '/blog',

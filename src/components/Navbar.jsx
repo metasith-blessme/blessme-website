@@ -73,7 +73,7 @@ export default function Navbar({ page, setPage, lang, setLang }) {
             
             <button 
               className="hidden md:inline-flex items-center justify-center px-6 py-3 bg-[#4E7C59] text-white font-semibold text-sm tracking-wide rounded-xl hover:bg-[#3B6146] transition-colors hover:shadow-[0_6px_20px_rgba(59,97,70,0.35)]"
-              onClick={() => navigate('Solutions')}
+              onClick={() => navigate('Wholesale')}
             >
               {t.wholesale}
             </button>
@@ -136,7 +136,7 @@ export default function Navbar({ page, setPage, lang, setLang }) {
             
             <button 
               className="w-full py-5 bg-[#4E7C59] text-white font-semibold text-sm tracking-wide rounded-xl mt-4"
-              onClick={() => navigate('Solutions')}
+              onClick={() => navigate('Wholesale')}
             >
               {t.wholesale}
             </button>

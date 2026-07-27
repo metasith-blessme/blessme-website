@@ -17,6 +17,7 @@ import ProductDetail from './components/Modal';
 
 // Pages
 import ProductsPage from './pages/ProductsPage';
+import WholesalePage from './pages/WholesalePage';
 import SolutionsPage from './pages/SolutionsPage';
 import AboutPage from './pages/AboutPage';
 import BlogPage from './pages/BlogPage';
@@ -141,6 +142,7 @@ function App({ ssrPath }) {
         ) : (
           <>
             {page === 'Products'  && <ProductsPage onOpen={openProduct} setPage={goToPage} lang={lang} />}
+            {page === 'Wholesale' && <WholesalePage setPage={goToPage} lang={lang} />}
             {page === 'About us'  && <AboutPage lang={lang} />}
             {page === 'Blog'      && <BlogPage onOpenArticle={openArticle} lang={lang} />}
             {page === 'Solutions' && <SolutionsPage setPage={goToPage} lang={lang} />}

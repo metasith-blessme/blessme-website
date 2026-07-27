@@ -26,6 +26,7 @@ const LANGS = ['en', 'th'];
 // Language-neutral routes; each emitted per language with hreflang alternates.
 const routes = [
   { page: 'Products', priority: '1.0', changefreq: 'weekly' },
+  { page: 'Wholesale', priority: '0.9', changefreq: 'weekly' },
   { page: 'Solutions', priority: '0.8', changefreq: 'weekly' },
   { page: 'About us', priority: '0.8', changefreq: 'weekly' },
   { page: 'Blog', priority: '0.8', changefreq: 'weekly' },
