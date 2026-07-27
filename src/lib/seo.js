@@ -1,5 +1,5 @@
 import { PRODUCTS } from '../constants/products';
-import { FAQS_EN, FAQS_TH } from '../constants/faq';
+import { FAQS_EN, FAQS_TH, WHOLESALE_FAQS_EN, WHOLESALE_FAQS_TH } from '../constants/faq';
 import { getArticleById, getArticleMeta, getArticleSchema } from '../content/blog';
 import { buildPath } from './routing';
 
@@ -19,6 +19,7 @@ export const PAGE_META = {
     description: 'ป็อปปิ่งโบบา 6 รสชาติพรีเมียม สต็อกกรุงเทพฯ ราคาส่ง 80–115 บาท/แพ็ค ส่งทั่วไทย ไม่ต้องแช่เย็น อายุ 12 เดือน ติดต่อ LINE @blessmethailand',
     canonical: `${BASE_URL}/`
   },
+  Wholesale: { title: 'Popping Boba Wholesale Bangkok — Prices & Order | BlessMe Thailand', description: 'Buy popping boba wholesale in Thailand: 6 vegan flavors, 80–115 THB/pack, stock in Bangkok, nationwide shipping, free samples. Order from BlessMe via LINE @blessmethailand.', canonical: `${BASE_URL}/wholesale` },
   Solutions: { title: 'How BlessMe Works — 6-Step Framework | BlessMe Thailand', description: 'Discover the six-step framework BlessMe uses to source, test, and supply specialty food products to wholesale partners across Thailand.', canonical: `${BASE_URL}/solutions` },
   'About us': { title: 'About BlessMe Thailand — Food Wholesaler Bangkok', description: 'BlessMe (Thailand) Co., Ltd. introduces specialty food categories to the Thai B2B market. Headquartered in Bangkok, serving cafés, restaurants, and dessert brands nationwide.', canonical: `${BASE_URL}/about` },
   Blog: { title: 'Journal — Specialty Food Insights | BlessMe Thailand', description: 'Notes from the BlessMe team on specialty food sourcing, cold-chain logistics, shelf life, and how to introduce new products to the Thai market.', canonical: `${BASE_URL}/blog` },
@@ -31,6 +32,7 @@ export const PAGE_META_TH = {
     description: 'ขายส่งไข่มุกป็อป (มุกป็อป / ป็อปปิ้งโบบา) 6 รสชาติพรีเมียม: บาร์เลย์ ถั่วแดง ข้าวโอ๊ต แห้ว หอบหมื่นลี้ โมจิโยเกิร์ต สต็อกกรุงเทพฯ ราคาส่ง 80–115 บาท/แพ็ค ส่งทั่วไทย',
     canonical: BASE_URL + '/'
   },
+  Wholesale: { title: 'ขายส่งไข่มุกป็อป (มุกป็อป) กรุงเทพ — ราคาส่ง & สั่งซื้อ | เบลสมี ไทยแลนด์', description: 'ขายส่งไข่มุกป็อป (มุกป็อป / ป็อปปิ้งโบบา) 6 รสวีแกน ราคาส่ง 80–115 บาท/แพ็ค สต็อกกรุงเทพ ส่งทั่วไทย มีตัวอย่างฟรี สั่งซื้อกับ BlessMe ทาง LINE @blessmethailand', canonical: BASE_URL+'/wholesale' },
   Solutions: { title: 'โซลูชันวัตถุดิบอาหารพิเศษ — บริการพาร์ทเนอร์ค้าส่ง | เบลสมี ไทยแลนด์', description: 'เจาะลึกกระบวนการจัดหาและทดสอบวัตถุดิบอาหารพิเศษของเบลสมี เพื่อช่วยคาเฟ่และร้านอาหารสร้างจุดแตกต่างที่ยั่งยืนในตลาดไทย', canonical: BASE_URL+'/solutions' },
   'About us': { title: 'เกี่ยวกับ เบลสมี (ประเทศไทย) — ผู้นำเข้าและจัดจำหน่ายวัตถุดิบอาหารพิเศษ', description: 'เราคือพาร์ทเนอร์ที่ไว้วางใจได้สำหรับแบรนด์คาเฟ่และร้านขนมหวาน นำเข้าและสต็อกวัตถุดิบป็อปปิ่งโบบาพรีเมียมเพื่อธุรกิจ B2B ทั่วไทย', canonical: BASE_URL+'/about' },
   Blog: { title: 'บทความและข้อมูลเชิงลึก วัตถุดิบคาเฟ่และป็อปปิ่งโบบา | เบลสมี ไทยแลนด์', description: 'อัปเดตเทรนด์วัตถุดิบคาเฟ่ เทคนิคการเลือกท็อปปิ่ง และเบื้องหลังการจัดหาอาหารพิเศษจากทีมงานผู้เชี่ยวชาญของเบลสมี', canonical: BASE_URL+'/blog' },
@@ -39,7 +41,7 @@ export const PAGE_META_TH = {
 
 export const ORG_SCHEMA = { "@context": "https://schema.org", "@type": "LocalBusiness", "name": "BlessMe (Thailand) Co., Ltd.", "url": "https://blessmethailand.com", "logo": "https://blessmethailand.com/assets/logo-full.png", "image": "https://blessmethailand.com/assets/logo-full.png", "description": "Specialty food wholesaler supplying cafés, restaurants, and dessert brands with premium popping boba in Thailand.", "address": { "@type": "PostalAddress", "addressLocality": "Bangkok", "addressCountry": "TH" }, "contactPoint": { "@type": "ContactPoint", "telephone": "+66-82-896-5199", "email": "Blessme.team@gmail.com", "contactType": "sales", "areaServed": "TH", "availableLanguage": ["Thai", "English"] }, "sameAs": ["https://instagram.com/blessme_thailand", "https://facebook.com/BlessMeThailand"], "priceRange": "฿฿", "areaServed": { "@type": "Country", "name": "Thailand" } };
 
-export const PAGE_NAMES = { Products: 'BlessMe Thailand — Specialty Food Wholesale', Solutions: 'How BlessMe Works', 'About us': 'About BlessMe Thailand', Blog: 'Journal — Specialty Food Insights', FAQ: 'FAQ — BlessMe Wholesale Thailand' };
+export const PAGE_NAMES = { Products: 'BlessMe Thailand — Specialty Food Wholesale', Wholesale: 'Popping Boba Wholesale Bangkok', Solutions: 'How BlessMe Works', 'About us': 'About BlessMe Thailand', Blog: 'Journal — Specialty Food Insights', FAQ: 'FAQ — BlessMe Wholesale Thailand' };
 
 export function buildProductMeta(product, lang) {
   if (lang === 'th') {
@@ -169,6 +171,9 @@ export function getSchemas(page, productId = null, articleId = null, lang = 'en'
     }
     if (page === 'FAQ') {
       schemas.push(buildFAQSchema(lang === 'th' ? FAQS_TH : FAQS_EN));
+    }
+    if (page === 'Wholesale') {
+      schemas.push(buildFAQSchema(lang === 'th' ? WHOLESALE_FAQS_TH : WHOLESALE_FAQS_EN));
     }
   }
   return schemas;

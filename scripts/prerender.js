@@ -42,6 +42,7 @@ try {
   // Language-neutral route list; each is emitted once per language below.
   const routes = [
     { page: 'Products' },
+    { page: 'Wholesale' },
     { page: 'Solutions' },
     { page: 'About us' },
     { page: 'Blog' },
