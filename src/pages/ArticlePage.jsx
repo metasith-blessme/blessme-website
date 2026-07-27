@@ -6,6 +6,7 @@ import {
   getRelatedArticles,
   getAdjacentArticles,
 } from '../content/blog';
+import BLOG_BODIES from '../content/blog-bodies.json';
 import { BlogCard } from './BlogPage';
 
 export function renderArticleBlock(block, index) {
@@ -43,20 +44,10 @@ export default function ArticlePage({ articleId, onBack, onOpenArticle, lang }) 
   const category = lang === 'th' ? article.catTh || article.cat : article.cat;
   const authorRole = lang === 'th' ? article.authorRoleTh || article.authorRole : article.authorRole;
   
-  const [blocks, setBlocks] = useState(null);
-  React.useEffect(() => {
-    let active = true;
-    setBlocks(null); // show loading state if needed
-    import('../content/blog-bodies.json').then((module) => {
-      if (!active) return;
-      const bodies = module.default || module;
-      const data = bodies[article.id];
-      if (data) {
-        setBlocks(lang === 'th' && data.bodyTh ? data.bodyTh : data.body);
-      }
-    }).catch(console.error);
-    return () => { active = false; };
-  }, [article.id, lang]);
+  // Blocks are resolved synchronously so the body is present during SSR/prerender
+  // (crawlable) and matches the client's first render (hydration-safe).
+  const bodyData = BLOG_BODIES[article.id];
+  const blocks = bodyData ? (lang === 'th' && bodyData.bodyTh ? bodyData.bodyTh : bodyData.body) : null;
   const heroCaption = lang === 'th'
     ? article.imgCaptionTh || article.imgAlt
     : article.imgCaption || article.imgAlt;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { T } from '../constants/translations';
-import { PAGE_TO_PATH } from '../lib/routing';
+import { buildPath } from '../lib/routing';
 
 const NAV_KEYS = ['Products', 'Solutions', 'About us', 'Blog', 'FAQ'];
 
@@ -22,7 +22,7 @@ export default function Navbar({ page, setPage, lang, setLang }) {
         <nav className="max-w-7xl mx-auto px-6 lg:px-12 h-24 flex items-center justify-between" role="navigation" aria-label="Main navigation">
           
           {/* Brand */}
-          <a className="flex items-center gap-3 cursor-pointer select-none" href="/" aria-label="BlessMe — go to homepage" onClick={(e) => navigate('Products', e)}>
+          <a className="flex items-center gap-3 cursor-pointer select-none" href={buildPath({ page: 'Products', lang })} aria-label="BlessMe — go to homepage" onClick={(e) => navigate('Products', e)}>
             <img src="/assets/logo-full.png" alt="BlessMe Thailand" className="h-16 w-auto object-contain drop-shadow-sm" />
           </a>
           
@@ -34,7 +34,7 @@ export default function Navbar({ page, setPage, lang, setLang }) {
               return (
                 <a
                   key={key}
-                  href={PAGE_TO_PATH[key]}
+                  href={buildPath({ page: key, lang })}
                   className={`relative px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-colors ${isActive ? 'text-[#3B6146]' : 'text-[#2B241E]/60 hover:text-[#2B241E]'}`}
                   onClick={(e) => navigate(key, e)}
                   aria-current={isActive ? 'page' : undefined}
@@ -109,7 +109,7 @@ export default function Navbar({ page, setPage, lang, setLang }) {
               return (
                 <a 
                   key={key} 
-                  href={PAGE_TO_PATH[key]} 
+                  href={buildPath({ page: key, lang })} 
                   onClick={(e) => navigate(key, e)} 
                   className={`text-4xl font-['Fraunces'] font-bold ${page === key ? 'text-[#2B241E]' : 'text-[#2B241E]/40'}`}
                   aria-current={page===key ? 'page' : undefined}
