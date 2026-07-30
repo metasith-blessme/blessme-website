@@ -28,7 +28,7 @@ Food Products Supplier
 ### Description (750 chars max — paste into "Business description" field)
 
 ```
-BlessMe is Thailand's specialist popping boba (มุกป็อป) wholesaler, supplying cafés, milk tea shops, smoothie bars, dessert brands, and restaurants across Bangkok and nationwide.
+BlessMe is Thailand's specialist popping boba (มุกป๊อป) wholesaler, supplying cafés, milk tea shops, smoothie bars, dessert brands, and restaurants across Bangkok and nationwide.
 
 We carry 6 signature flavors — Barley, Red Bean, Oat, Water Chestnut, Osmanthus, and Cheese — crafted with Thai-inspired profiles you won't find from mass suppliers. No mango. No strawberry. Real differentiation for your menu.
 
@@ -42,7 +42,7 @@ Contact us via LINE @591dzhsr, phone +66 82-896-5199, or email Blessme.team@gmai
 ### Short Description (250 chars max — paste into "Short description" or intro field)
 
 ```
-Premium popping boba (มุกป็อป) wholesale — 6 Thai-inspired flavors including Barley, Red Bean & Oat. 500g packs, room-temp storage, from 80 THB/pack. Serving cafés & F&B businesses across Thailand.
+Premium popping boba (มุกป๊อป) wholesale — 6 Thai-inspired flavors including Barley, Red Bean & Oat. 500g packs, room-temp storage, from 80 THB/pack. Serving cafés & F&B businesses across Thailand.
 ```
 
 ---
@@ -140,7 +140,7 @@ BlessMe (Thailand) Co., Ltd.
 ### Company Description (300 words)
 
 ```
-BlessMe (Thailand) Co., Ltd. is a Bangkok-based specialty food wholesaler supplying premium popping boba (มุกป็อป) to cafés, milk tea shops, smoothie bars, dessert brands, and restaurants across Thailand.
+BlessMe (Thailand) Co., Ltd. is a Bangkok-based specialty food wholesaler supplying premium popping boba (มุกป๊อป) to cafés, milk tea shops, smoothie bars, dessert brands, and restaurants across Thailand.
 
 Founded to bring genuine flavor differentiation to the Thai F&B market, BlessMe produces 6 signature popping boba flavors inspired by traditional Asian and Thai ingredients: Barley, Red Bean, Oat, Water Chestnut (Chestnut), Osmanthus, and Cheese. Unlike mainstream suppliers who limit their range to mango, strawberry, and lychee, BlessMe focuses on flavors with cultural depth and strong upsell potential — profiles that give buyers a menu story competitors cannot easily replicate.
 
@@ -254,7 +254,7 @@ Country of Origin: Thailand
 ### Company Overview (200 words)
 
 ```
-BlessMe (Thailand) Co., Ltd. is a specialty food wholesaler based in Bangkok, Thailand, focused exclusively on premium popping boba (มุกป็อป) for the B2B food and beverage market.
+BlessMe (Thailand) Co., Ltd. is a specialty food wholesaler based in Bangkok, Thailand, focused exclusively on premium popping boba (มุกป๊อป) for the B2B food and beverage market.
 
 We supply cafés, milk tea shops, smoothie bars, dessert restaurants, and food and beverage chains across Thailand with 6 signature popping boba flavors: Barley, Red Bean, Oat, Water Chestnut (Chestnut), Osmanthus, and Cheese. Every flavor is crafted around traditional Thai and Asian ingredient profiles — a deliberate strategy that gives our buyers menu differentiation that generic suppliers cannot match.
 
@@ -359,12 +359,12 @@ Contact: LINE @591dzhsr | Blessme.team@gmail.com | blessmethailand.com
 
 ### Display Name
 ```
-BlessMe มุกป็อปส่งร้าน
+BlessMe มุกป๊อปส่งร้าน
 ```
 
 ### Status Message
 ```
-มุกป็อป 6 รส | ส่งทั่วไทย | 80 บาท/แพ็ก (ยกกล่อง)
+มุกป๊อป 6 รส | ส่งทั่วไทย | 80 บาท/แพ็ก (ยกกล่อง)
 ```
 
 ---
@@ -373,9 +373,9 @@ BlessMe มุกป็อปส่งร้าน
 (Auto-sent when someone adds the account)
 
 ```
-สวัสดีครับ/ค่ะ! ยินดีต้อนรับสู่ BlessMe มุกป็อปขายส่ง 🫧
+สวัสดีครับ/ค่ะ! ยินดีต้อนรับสู่ BlessMe มุกป๊อปขายส่ง 🫧
 
-เราจำหน่ายมุกป็อป (Popping Boba) คุณภาพพรีเมียม 6 รสชาติไทย-เอเชียน:
+เราจำหน่ายมุกป๊อป (Popping Boba) คุณภาพพรีเมียม 6 รสชาติไทย-เอเชียน:
 ▸ บาร์เลย์ (Barley)
 ▸ ถั่วแดง (Red Bean)
 ▸ โอ๊ต (Oat)
@@ -398,7 +398,7 @@ BlessMe มุกป็อปส่งร้าน
 ### Auto-Reply for Keyword "ราคา"
 
 ```
-💰 ราคาขายส่ง BlessMe มุกป็อป:
+💰 ราคาขายส่ง BlessMe มุกป๊อป:
 
 แพ็กเดี่ยว: 115 บาท
 • ขนาด: 500 กรัม (สุทธิ 300 กรัม)
@@ -458,7 +458,7 @@ Button 6: ติดต่อเรา / Contact Us
 ### Page Description (short — shown in search results)
 
 ```
-BlessMe — พรีเมียมมุกป็อปขายส่ง 6 รสไทย-เอเชียน สำหรับคาเฟ่ ร้านชานม บาร์สมูทตี้ และร้านของหวานทั่วไทย | Premium popping boba wholesale, 6 Thai-inspired flavors, ships nationwide.
+BlessMe — พรีเมียมมุกป๊อปขายส่ง 6 รสไทย-เอเชียน สำหรับคาเฟ่ ร้านชานม บาร์สมูทตี้ และร้านของหวานทั่วไทย | Premium popping boba wholesale, 6 Thai-inspired flavors, ships nationwide.
 ```
 
 ---
@@ -466,7 +466,7 @@ BlessMe — พรีเมียมมุกป็อปขายส่ง 6 �
 ### About Section
 
 ```
-BlessMe (Thailand) Co., Ltd. คือผู้จำหน่ายมุกป็อป (Popping Boba) ขายส่งระดับพรีเมียมในกรุงเทพฯ เราเชี่ยวชาญด้านรสชาติที่ได้แรงบันดาลใจจากวัตถุดิบไทยและเอเชีย ซึ่งหาไม่ได้จากซัพพลายเออร์รายอื่น
+BlessMe (Thailand) Co., Ltd. คือผู้จำหน่ายมุกป๊อป (Popping Boba) ขายส่งระดับพรีเมียมในกรุงเทพฯ เราเชี่ยวชาญด้านรสชาติที่ได้แรงบันดาลใจจากวัตถุดิบไทยและเอเชีย ซึ่งหาไม่ได้จากซัพพลายเออร์รายอื่น
 
 6 รสชาติ: บาร์เลย์ | ถั่วแดง | โอ๊ต | แห้ว | ดอกหอมหมื่นลี้ | ชีส
 
@@ -498,9 +498,9 @@ Shipping nationwide from Bangkok. Serving independent cafés and multi-branch F&
 
 **Post 1 — Product introduction (TH)**
 ```
-รู้จักมุกป็อปกันแล้ว แต่รู้จัก BlessMe มั้ย? 👋
+รู้จักมุกป๊อปกันแล้ว แต่รู้จัก BlessMe มั้ย? 👋
 
-เราเป็นซัพพลายเออร์มุกป็อปที่เน้นรสชาติไทย-เอเชียนที่หาจากที่อื่นไม่ได้:
+เราเป็นซัพพลายเออร์มุกป๊อปที่เน้นรสชาติไทย-เอเชียนที่หาจากที่อื่นไม่ได้:
 ▸ บาร์เลย์ — คั่ว หอม กลิ่นถั่ว
 ▸ ถั่วแดง — หวานกลมกล่อม คลาสสิก
 ▸ โอ๊ต — ครีมมี่ เบาสบาย
@@ -511,7 +511,7 @@ Shipping nationwide from Bangkok. Serving independent cafés and multi-branch F&
 ราคาเริ่ม 80 บาท/แพ็ก (ยกกล่อง 24 แพ็ก) | เก็บที่อุณหภูมิห้อง | ส่งทั่วไทย
 ทักมาได้เลยที่ LINE @591dzhsr หรือเยี่ยมชม blessmethailand.com
 
-#มุกป็อป #PoppingBoba #ขายส่ง #BlessMe #คาเฟ่ #ชานม #ของหวาน
+#มุกป๊อป #PoppingBoba #ขายส่ง #BlessMe #คาเฟ่ #ชานม #ของหวาน
 ```
 
 **Post 2 — ROI/Business case (EN)**
@@ -534,7 +534,7 @@ The math works because no one says no to 20 THB for a premium topping that burst
 
 **Post 3 — Flavor education (TH + EN)**
 ```
-ทำไมมุกป็อปส่วนใหญ่ถึงมีแค่รสมะม่วง สตรอว์เบอร์รี ลิ้นจี่?
+ทำไมมุกป๊อปส่วนใหญ่ถึงมีแค่รสมะม่วง สตรอว์เบอร์รี ลิ้นจี่?
 
 เพราะรสพวกนั้นขายง่าย แต่ไม่มีเรื่องราว
 
@@ -549,24 +549,24 @@ Because BlessMe chose the harder road — and the better flavors.
 Wholesale from 80 THB/pack. Room temp. 12-month shelf life.
 LINE @591dzhsr | blessmethailand.com
 
-#มุกป็อป #PoppingBoba #BlessMe #ThaiCafe #SpecialtyFlavors
+#มุกป๊อป #PoppingBoba #BlessMe #ThaiCafe #SpecialtyFlavors
 ```
 
 **Post 4 — Social proof / use case (TH)**
 ```
-คาเฟ่ที่ใช้มุกป็อป BlessMe บอกว่า...
+คาเฟ่ที่ใช้มุกป๊อป BlessMe บอกว่า...
 
 "ลูกค้าถ่ายรูปแล้วโพสต์ IG เอง ไม่ต้องจ้างใคร"
 "รสบาร์เลย์กับถั่วแดงขายดีที่สุดในสัปดาห์แรก"
 "ไม่ต้องแช่แข็ง เก็บง่ายมาก ไม่กังวลเรื่องของเสีย"
 
-ลองเพิ่มมุกป็อปในเมนู 2 อาทิตย์ — ถ้าตัวเลขไม่ดีขึ้น ค่อยเลิก
+ลองเพิ่มมุกป๊อปในเมนู 2 อาทิตย์ — ถ้าตัวเลขไม่ดีขึ้น ค่อยเลิก
 แต่จากประสบการณ์ที่เห็นมา ส่วนใหญ่ไม่ได้เลิก 😄
 
 80 บาท/แพ็ก (ยกกล่อง) | ส่งทั่วไทย | 6 รสชาติ
 LINE @591dzhsr | blessmethailand.com
 
-#มุกป็อป #BlessMe #คาเฟ่ไทย #เพิ่มกำไร #PoppingBoba
+#มุกป๊อป #BlessMe #คาเฟ่ไทย #เพิ่มกำไร #PoppingBoba
 ```
 
 **Post 5 — Practical info / logistics (EN)**
@@ -611,7 +611,7 @@ Wholesale from 80 THB/pack. 500g. ~20 servings. Room temp.
 
 DM us or LINE @591dzhsr to get started.
 
-#PoppingBoba #มุกป็อป #BlessMe #WholesaleThai #CaféTopping #MilkTea #SpecialtyBoba #BangkokFood #ThaiCafe #BobaWholesale
+#PoppingBoba #มุกป๊อป #BlessMe #WholesaleThai #CaféTopping #MilkTea #SpecialtyBoba #BangkokFood #ThaiCafe #BobaWholesale
 ```
 
 **Caption 2 — Close-up texture shot**
@@ -624,7 +624,7 @@ On your menu: a 15 THB add-on that earns 161% ROI per pack at single-pack price.
 
 Wholesale available now. LINE @591dzhsr | blessmethailand.com
 
-#PoppingBoba #Barley #มุกป็อปบาร์เลย์ #BlessMe #CafeTopping #Thailand #BobaSupplier
+#PoppingBoba #Barley #มุกป๊อปบาร์เลย์ #BlessMe #CafeTopping #Thailand #BobaSupplier
 ```
 
 **Caption 3 — Lifestyle / drink styling shot**
@@ -637,7 +637,7 @@ Every pearl: sweet, earthy, classic Thai. A flavor your customers grew up with �
 BlessMe Red Bean Popping Boba. Wholesale from 80 THB/pack.
 LINE @591dzhsr
 
-#RedBeanBoba #มุกป็อปถั่วแดง #PoppingBoba #BlessMe #ThaiDessert #SmoothieBar #CaféLife #BobaThailand
+#RedBeanBoba #มุกป๊อปถั่วแดง #PoppingBoba #BlessMe #ThaiDessert #SmoothieBar #CaféLife #BobaThailand
 ```
 
 **Caption 4 — Cheese / trend flavor shot**
@@ -650,7 +650,7 @@ If your café doesn't have it yet, your competitor's might soon.
 
 Wholesale: 80 THB/pack (box of 24) | LINE @591dzhsr
 
-#CheeseBoba #มุกป็อปชีส #BlessMe #PoppingBoba #BobaWholesale #TrendTopping #CaféMenu
+#CheeseBoba #มุกป๊อปชีส #BlessMe #PoppingBoba #BobaWholesale #TrendTopping #CaféMenu
 ```
 
 **Caption 5 — Osmanthus / premium shot**
@@ -663,7 +663,7 @@ For specialty tea shops, hotel F&B, and dessert restaurants positioning at the t
 
 Wholesale from 80 THB/pack. LINE @591dzhsr | blessmethailand.com
 
-#OsmanthusBoba #มุกป็อปดอกหอม #BlessMe #PremiumDessert #FloralFlavors #BobaThailand #SpecialtyCafe
+#OsmanthusBoba #มุกป๊อปดอกหอม #BlessMe #PremiumDessert #FloralFlavors #BobaThailand #SpecialtyCafe
 ```
 
 ---
@@ -677,7 +677,7 @@ Wholesale from 80 THB/pack. LINE @591dzhsr | blessmethailand.com
 
 **10 Thai hashtags**
 ```
-#มุกป็อป #มุกป็อปขายส่ง #BlessMe #คาเฟ่ไทย #ชานม #ท็อปปิ้ง #ขายส่งอาหาร #ของหวาน #ร้านกาแฟ #เมนูคาเฟ่
+#มุกป๊อป #มุกป๊อปขายส่ง #BlessMe #คาเฟ่ไทย #ชานม #ท็อปปิ้ง #ขายส่งอาหาร #ของหวาน #ร้านกาแฟ #เมนูคาเฟ่
 ```
 
 ---
@@ -691,9 +691,9 @@ Wholesale from 80 THB/pack. LINE @591dzhsr | blessmethailand.com
 {
   id: 'best-popping-boba-suppliers-thailand-2026',
   title: 'Best Popping Boba Suppliers in Thailand 2026: A Buyer\'s Guide for Cafés and F&B Businesses',
-  titleTh: 'ซัพพลายเออร์มุกป็อปที่ดีที่สุดในไทย ปี 2026: คู่มือสำหรับคาเฟ่และธุรกิจ F&B',
-  excerpt: 'A practical comparison of the top popping boba (มุกป็อป) wholesale suppliers in Thailand — Jones Group/TENJU, Makro TEA brand, Pecan Deluxe Thailand, and BlessMe — with specs, price ranges, flavor counts, and cold chain requirements.',
-  excerptTh: 'เปรียบเทียบซัพพลายเออร์มุกป็อปขายส่งชั้นนำในไทย — Jones Group/TENJU, Makro TEA, Pecan Deluxe Thailand และ BlessMe — พร้อมสเปค ราคา จำนวนรส และข้อกำหนดห่วงโซ่ความเย็น',
+  titleTh: 'ซัพพลายเออร์มุกป๊อปที่ดีที่สุดในไทย ปี 2026: คู่มือสำหรับคาเฟ่และธุรกิจ F&B',
+  excerpt: 'A practical comparison of the top popping boba (มุกป๊อป) wholesale suppliers in Thailand — Jones Group/TENJU, Makro TEA brand, Pecan Deluxe Thailand, and BlessMe — with specs, price ranges, flavor counts, and cold chain requirements.',
+  excerptTh: 'เปรียบเทียบซัพพลายเออร์มุกป๊อปขายส่งชั้นนำในไทย — Jones Group/TENJU, Makro TEA, Pecan Deluxe Thailand และ BlessMe — พร้อมสเปค ราคา จำนวนรส และข้อกำหนดห่วงโซ่ความเย็น',
   date: 'June 15, 2026', isoDate: '2026-06-15', dateTh: '15 มิถุนายน 2569',
   publishedDate: '2026-06-15', updatedDate: '2026-06-15',
   read: '9 min read', readTh: '9 นาที',
@@ -705,7 +705,7 @@ Wholesale from 80 THB/pack. LINE @591dzhsr | blessmethailand.com
   img: '/assets/popping-boba-suppliers-thailand.jpg',
   imgAlt: 'Colorful popping boba pearls in glass bowls on a wooden table in a Thai café',
   body: [
-    ['p', "If you run a café, milk tea shop, smoothie bar, or dessert restaurant in Thailand, popping boba (มุกป็อป) is one of the highest-margin toppings you can add to your menu. But the supplier landscape in Thailand is fragmented — a mix of international distributors, large-format retail wholesalers, and specialist importers. Choosing the wrong supplier means paying too much, getting flavors your customers already see everywhere, or dealing with cold chain requirements that complicate your storage."],
+    ['p', "If you run a café, milk tea shop, smoothie bar, or dessert restaurant in Thailand, popping boba (มุกป๊อป) is one of the highest-margin toppings you can add to your menu. But the supplier landscape in Thailand is fragmented — a mix of international distributors, large-format retail wholesalers, and specialist importers. Choosing the wrong supplier means paying too much, getting flavors your customers already see everywhere, or dealing with cold chain requirements that complicate your storage."],
     ['p', "This guide compares the four most commonly mentioned popping boba suppliers in Thailand as of 2026: Jones Group (TENJU brand), Makro TEA-brand products, Pecan Deluxe Thailand, and BlessMe. We cover what each supplies, how they are typically accessed, and what the practical trade-offs are for an F&B operator buying in Bangkok or nationally."],
     ['h2', 'Quick Comparison: Top Popping Boba Suppliers in Thailand 2026'],
     ['table', {

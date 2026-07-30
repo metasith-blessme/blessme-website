@@ -24,7 +24,7 @@ export default function Footer({ setPage, lang }) {
         <div>
           <div className="bm-eyebrow">{t.footerCatalogue}</div>
           <a href={buildPath({ page: 'Products', lang })} onClick={(e) => navigate('Products', e)}>{t.nav[0]}</a>
-          <a href={buildPath({ page: 'Wholesale', lang })} onClick={(e) => navigate('Wholesale', e)}>{lang === 'th' ? 'ขายส่งไข่มุกป็อป' : 'Popping Boba Wholesale'}</a>
+          <a href={buildPath({ page: 'Wholesale', lang })} onClick={(e) => navigate('Wholesale', e)}>{lang === 'th' ? 'ขายส่งไข่มุกป๊อป' : 'Popping Boba Wholesale'}</a>
           <a href={buildPath({ page: 'Solutions', lang })} onClick={(e) => navigate('Solutions', e)}>{t.nav[1]}</a>
         </div>
         <div>
