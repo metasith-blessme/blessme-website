@@ -16,9 +16,10 @@ export default function Navbar({ page, setPage, lang, setLang }) {
     setMenuOpen(false);
     setPage(p);
   };
+
   return (
     <>
-      <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-white/60 border-b border-[#2B241E]/5 transition-all duration-300">
+      <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-white/70 border-b border-[#2B241E]/5 transition-all duration-300">
         <nav className="max-w-7xl mx-auto px-6 lg:px-12 h-24 flex items-center justify-between" role="navigation" aria-label="Main navigation">
           
           {/* Brand */}
@@ -72,8 +73,8 @@ export default function Navbar({ page, setPage, lang, setLang }) {
             </div>
             
             <button 
-              className="hidden md:inline-flex items-center justify-center px-6 py-3 bg-[#4E7C59] text-white font-semibold text-sm tracking-wide rounded-xl hover:bg-[#3B6146] transition-colors hover:shadow-[0_6px_20px_rgba(59,97,70,0.35)]"
-              onClick={() => navigate('Wholesale')}
+              className="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-[#4E7C59] text-white font-semibold text-sm tracking-wide rounded-full hover:bg-[#3B6146] transition-colors shadow-[0_4px_14px_rgba(59,97,70,0.25)] hover:shadow-[0_6px_20px_rgba(59,97,70,0.35)]"
+              onClick={() => navigate('Solutions')}
             >
               {t.wholesale}
             </button>
@@ -101,45 +102,69 @@ export default function Navbar({ page, setPage, lang, setLang }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-3xl pt-32 px-6 flex flex-col gap-6"
+            className="fixed inset-0 z-40 bg-[#FAF6EF]/98 backdrop-blur-3xl pt-28 px-6 pb-10 flex flex-col justify-between overflow-y-auto"
             role="dialog" aria-modal="true" aria-label="Mobile navigation"
           >
-            {t.nav.map((l, i) => {
-              const key = NAV_KEYS[i];
-              return (
-                <a 
-                  key={key} 
-                  href={buildPath({ page: key, lang })} 
-                  onClick={(e) => navigate(key, e)} 
-                  className={`text-4xl font-['Fraunces'] font-bold ${page === key ? 'text-[#2B241E]' : 'text-[#2B241E]/40'}`}
-                  aria-current={page===key ? 'page' : undefined}
-                >
-                  {l}
-                </a>
-              );
-            })}
-            
-            <div className="mt-8 flex gap-4">
-              <button 
-                className={`flex-1 py-4 text-sm font-bold font-mono rounded-xl transition-colors border ${lang==='en' ? 'bg-[#2B241E] text-white border-[#2B241E]' : 'border-[#2B241E]/20 text-[#2B241E]'}`}
-                onClick={() => setLang('en')}
-              >
-                EN
-              </button>
-              <button 
-                className={`flex-1 py-4 text-sm font-bold font-mono rounded-xl transition-colors border ${lang==='th' ? 'bg-[#2B241E] text-white border-[#2B241E]' : 'border-[#2B241E]/20 text-[#2B241E]'}`}
-                onClick={() => setLang('th')}
-              >
-                TH
-              </button>
+            <div className="flex flex-col gap-5">
+              {t.nav.map((l, i) => {
+                const key = NAV_KEYS[i];
+                return (
+                  <a 
+                    key={key} 
+                    href={buildPath({ page: key, lang })} 
+                    onClick={(e) => navigate(key, e)} 
+                    className={`text-3xl font-['Fraunces'] font-semibold transition-colors ${page === key ? 'text-[#3B6146]' : 'text-[#2B241E]/60'}`}
+                    aria-current={page===key ? 'page' : undefined}
+                  >
+                    {l}
+                  </a>
+                );
+              })}
             </div>
             
-            <button 
-              className="w-full py-5 bg-[#4E7C59] text-white font-semibold text-sm tracking-wide rounded-xl mt-4"
-              onClick={() => navigate('Wholesale')}
-            >
-              {t.wholesale}
-            </button>
+            <div className="mt-8 flex flex-col gap-4 border-t border-[#2B241E]/10 pt-6">
+              <div className="flex bg-[#F1EADF] p-1 rounded-full" role="group" aria-label="Language">
+                <button 
+                  className={`flex-1 py-2.5 text-xs font-bold font-mono rounded-full transition-colors ${lang==='en' ? 'bg-white shadow-sm text-[#2B241E]' : 'text-[#2B241E]/50'}`}
+                  onClick={() => setLang('en')}
+                >
+                  English (EN)
+                </button>
+                <button 
+                  className={`flex-1 py-2.5 text-xs font-bold font-mono rounded-full transition-colors ${lang==='th' ? 'bg-white shadow-sm text-[#2B241E]' : 'text-[#2B241E]/50'}`}
+                  onClick={() => setLang('th')}
+                >
+                  ภาษาไทย (TH)
+                </button>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-3 mt-2">
+                <a 
+                  href="tel:+66828965199" 
+                  className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-white border border-[#2B241E]/10 text-xs font-semibold text-[#2B241E]"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  Call +66 82-896-5199
+                </a>
+                <a 
+                  href="https://line.me/R/ti/p/@blessmethailand" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-[#06c755]/10 border border-[#06c755]/30 text-xs font-semibold text-[#06c755]"
+                >
+                  LINE @blessmethailand
+                </a>
+              </div>
+
+              <button 
+                className="w-full py-4 bg-[#4E7C59] text-white font-semibold text-sm tracking-wide rounded-full shadow-[0_4px_16px_rgba(59,97,70,0.25)] mt-2"
+                onClick={() => navigate('Solutions')}
+              >
+                {t.wholesale}
+              </button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

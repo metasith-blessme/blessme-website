@@ -28,33 +28,43 @@ export default function SolutionsPage({ setPage, lang }) {
   const steps = lang === 'th' ? stepsTh : stepsEn;
 
   return (
-    <section className="bm-content-page">
-      <div className="bm-eyebrow">{t.solEyebrow}</div>
-      <h1 className="bm-h1">{t.solTitle}</h1>
-      <p className="bm-lead" style={{ maxWidth: '64ch', marginTop: 22 }}>
+    <section className="bm-content-page max-w-[1360px] mx-auto px-6 py-16 lg:px-12">
+      <div className="inline-flex items-center gap-2.5 text-xs font-bold tracking-[0.16em] uppercase text-[#3B6146] mb-3">
+        <span className="w-5 h-px bg-[#3B6146]"></span>
+        <span>{t.solEyebrow}</span>
+      </div>
+      <h1 className="bm-h1 text-4xl sm:text-5xl md:text-6xl font-semibold font-['Fraunces'] text-[#2B241E] max-w-[20ch]">{t.solTitle}</h1>
+      <p className="bm-lead text-lg md:text-xl text-[#5C5248] font-normal leading-relaxed" style={{ maxWidth: '64ch', marginTop: 20 }}>
         {t.solLead}
       </p>
-      <div className="bm-solution-grid">
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-14">
         {steps.map(s => (
-          <div key={s.n} className="bm-solution">
-            <div className="bm-solution-head">
-              <span className="bm-solution-num">{s.n}</span>
-              <div className="bm-solution-line"/>
+          <div key={s.n} className="bg-white rounded-[24px] p-8 border border-[#2B241E]/8 shadow-[0_4px_20px_rgba(43,36,30,0.03)] hover:shadow-[0_16px_36px_rgba(59,97,70,0.08)] hover:border-[#3B6146]/30 transition-all duration-300 flex flex-col gap-4">
+            <div className="flex items-center justify-between">
+              <span className="font-['Fraunces'] text-4xl font-bold text-[#3B6146]">{s.n}</span>
+              <span className="w-8 h-px bg-[#2B241E]/10"></span>
             </div>
-            <h3 className="bm-solution-title">{s.t}</h3>
-            <p className="bm-solution-desc">{s.d}</p>
+            <h3 className="font-['Fraunces'] text-2xl font-semibold text-[#2B241E]">{s.t}</h3>
+            <p className="text-[15px] font-normal text-[#5C5248] leading-relaxed">{s.d}</p>
           </div>
         ))}
       </div>
-      <div className="bm-solution-cta">
+
+      <div className="mt-16 rounded-[32px] bg-gradient-to-br from-[#2E4F38] to-[#1E3324] p-10 md:p-14 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-8 shadow-[0_20px_50px_rgba(43,36,30,0.18)]">
         <div>
-          <div className="bm-eyebrow" style={{ color: 'var(--ci-sky)' }}>{t.solCtaEyebrow}</div>
-          <h2 className="bm-h2-cta">{t.solCtaTitle}</h2>
-          <p className="bm-body bm-body--inv" style={{ marginTop: 14, maxWidth: '52ch' }}>
+          <div className="text-xs font-bold tracking-[0.18em] uppercase text-[#C5A869] mb-2">{t.solCtaEyebrow}</div>
+          <h2 className="font-['Fraunces'] text-3xl md:text-4xl font-semibold text-white mb-3">{t.solCtaTitle}</h2>
+          <p className="text-sm md:text-base text-white/80 max-w-[50ch] leading-relaxed">
             {t.solCtaBody}
           </p>
         </div>
-        <button className="bm-btn bm-btn--sky" onClick={() => setPage('About us')}>{t.solCtaBtn}</button>
+        <button 
+          className="px-8 py-4 bg-white text-[#243E2C] font-bold text-sm tracking-wide rounded-full hover:bg-[#FAF6EF] transition-all shadow-md hover:shadow-lg hover:scale-102 flex-shrink-0" 
+          onClick={() => setPage('About us')}
+        >
+          {t.solCtaBtn}
+        </button>
       </div>
     </section>
   );

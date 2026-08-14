@@ -19,48 +19,65 @@
   outline-offset: 2px;
 }
 
-/* ---- Local Thai Font ---- */
+/* ---- Typography System ---- */
 
-/* ---- Local Thai Font ---- */
-@font-face {
-  font-family: 'DB Ozone X';
-  src: url('/assets/DB-Ozone-X-Med.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+/* Universal Thai typography override for Google Sans */
+html[lang="th"],
+html[lang="th"] body,
+html[lang="th"] h1,
+html[lang="th"] h2,
+html[lang="th"] h3,
+html[lang="th"] h4,
+html[lang="th"] h5,
+html[lang="th"] h6,
+html[lang="th"] p,
+html[lang="th"] span,
+html[lang="th"] a,
+html[lang="th"] button,
+html[lang="th"] input,
+html[lang="th"] select,
+html[lang="th"] textarea,
+html[lang="th"] [class*="font-"] {
+  font-family: 'Google Sans', 'Google Sans Text', 'Prompt', ui-sans-serif, system-ui, -apple-system, sans-serif !important;
 }
 
 /* ---- Design tokens ---- */
 :root {
   /* Warm editorial palette — cream paper, roasted-brown ink, tea-green accent */
   --paper:        #FAF6EF;
-  --paper-deep:   #F1EADF;
+  --paper-deep:   #F3ECE1;
   --card:         #FFFFFF;
-  --accent:       #4E7C59;
-  --accent-deep:  #3B6146;
+  --accent:       #3B6146;
+  --accent-deep:  #243E2C;
   --accent-soft:  #E9EFE4;
+  --gold:         #C5A869;
+  --gold-soft:    #F8F4EA;
   --line:         rgba(43,36,30,0.10);
   --line-soft:    rgba(43,36,30,0.06);
 
   --ink:            #2B241E;
-  --ink-soft:       #5B5048;
+  --ink-soft:       #5C5248;
   --parchment:      #FAF6EF;
-  --parchment-deep: #F1EADF;
+  --parchment-deep: #F3ECE1;
   --cream:          #FFFFFF;
   --white:          #FFFFFF;
-  /* legacy accent aliases now point at the tea-green system */
-  --ci-sky:         #4E7C59;
+  /* legacy accent aliases */
+  --ci-sky:         #3B6146;
   --ci-sky-soft:    #E9EFE4;
-  --ci-sky-deep:    #3B6146;
+  --ci-sky-deep:    #243E2C;
   --ci-sky-ink:     #2B241E;
-  --font-display:  'Fraunces', Georgia, 'Times New Roman', serif;
-  --font-editorial:'Fraunces', Georgia, 'Times New Roman', serif;
-  --font-body:     'Inter', ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-mono:     'Inter', ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --fs-hero: clamp(56px, 8vw, 120px);
-  --fs-h1:   clamp(40px, 5.2vw, 72px);
-  --fs-h2:   clamp(32px, 3.6vw, 48px);
-  --fs-h3:   28px;
+  
+  /* Typography */
+  --font-display:   'Fraunces', 'Google Sans', Georgia, serif;
+  --font-editorial: 'Fraunces', 'Google Sans', Georgia, serif;
+  --font-body:      'Inter', 'Google Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono:      'JetBrains Mono', 'Google Sans', monospace;
+
+  /* Type scale */
+  --fs-hero:  clamp(48px, 6.5vw, 84px);
+  --fs-h1:    clamp(34px, 4.2vw, 56px);
+  --fs-h2:    clamp(24px, 2.8vw, 36px);
+  --fs-h3:    20px;
   --fs-h4:   22px;
   --fs-lead: 20px;
   --fs-body: 16px;
@@ -69,8 +86,8 @@
   --s-1:4px;--s-2:8px;--s-3:12px;--s-4:16px;--s-5:24px;--s-6:32px;--s-7:48px;--s-8:64px;--s-9:96px;--s-10:128px;
   --r-xs:4px;--r-sm:8px;--r-md:12px;--r-lg:20px;--r-xl:28px;--r-pill:999px;
   --bw-hair:1px;--bw-1:1.5px;--bw-2:2px;--bw-3:3px;
-  --sh-soft:  0 2px 8px rgba(18,18,18,0.08);
-  --sh-soft-lg: 0 12px 32px rgba(18,18,18,0.12);
+  --sh-soft:  0 2px 8px rgba(18,18,18,0.06);
+  --sh-soft-lg: 0 16px 40px rgba(43,36,30,0.08);
   --ease-spring: cubic-bezier(.34,1.56,.64,1);
   --nav-h: 84px;
   --bm-feature-excerpt-size: 18px;
@@ -85,23 +102,13 @@
   --bm-article-quote-size: 28px;
 }
 
-/* ---- Thai Font Application ---- */
+/* ---- Thai Font Application (Google Fonts: Google Sans) ---- */
 [lang="th"], .lang-th {
-  --font-display: 'Sarabun', 'DB Ozone X', 'Fraunces', 'DM Serif Display', Georgia, serif;
-  --font-editorial: 'Sarabun', 'DB Ozone X', 'Instrument Serif', Georgia, 'Times New Roman', serif;
-  --font-body: 'Sarabun', 'DB Ozone X', 'Inter', ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: 'Sarabun', 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-  --bm-feature-excerpt-size: 24px;
-  --bm-blog-title-size: 36px;
-  --bm-blog-excerpt-size: 23px;
-  --bm-article-title-size: clamp(56px,6.2vw,86px);
-  --bm-article-excerpt-size: 27px;
-  --bm-article-body-size: 24px;
-  --bm-article-list-size: 24px;
-  --bm-article-h2-size: 48px;
-  --bm-article-h3-size: 36px;
-  --bm-article-quote-size: 38px;
-  font-family: 'Sarabun', 'DB Ozone X', 'Inter', ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-display: 'Google Sans', 'Prompt', 'Fraunces', Georgia, serif;
+  --font-editorial: 'Google Sans', 'Prompt', 'Fraunces', Georgia, serif;
+  --font-body: 'Google Sans', 'Prompt', 'Inter', ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'Google Sans', 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-family: 'Google Sans', 'Prompt', 'Inter', ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 [lang="th"] .bm-links a{font-size:24px;}
 [lang="th"] .bm-nav-contact-line{font-size:20px;}
@@ -599,17 +606,75 @@ body{
   .bm-hero-sheen,.bm-hero-ring,.bm-hero-orbit,.bm-hero-mark-float{animation:none;}
 }
 
-/* ---- Hero ambient background motion (whole hero band) ---- */
-.bm-hero-drift{animation:bm-drift 20s ease-in-out infinite;}
-.bm-hero-drift--2{animation:bm-drift-2 26s ease-in-out infinite;}
-.bm-hero-float{position:absolute;border-radius:50%;box-shadow:0 6px 16px rgba(59,97,70,0.12);animation:bm-hero-float-move ease-in-out infinite;}
-@keyframes bm-drift{0%,100%{transform:translate(0,0);}50%{transform:translate(-26px,22px);}}
-@keyframes bm-drift-2{0%,100%{transform:translate(0,0);}50%{transform:translate(22px,-26px);}}
-@keyframes bm-hero-float-move{
-  0%,100%{transform:translate(0,0) scale(1);}
-  33%{transform:translate(14px,-22px) scale(1.06);}
-  66%{transform:translate(-12px,-10px) scale(0.96);}
+/* ---- Enhanced 3D Specular Boba Pearls & Faster Physics ---- */
+.bm-boba-3d {
+  position: absolute;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
 }
+.bm-boba-3d:hover {
+  transform: scale(1.28) translateY(-6px) !important;
+  filter: brightness(1.12);
+}
+
+.bm-float-fast-1 { animation: bm-float-speed-1 6.5s ease-in-out infinite; }
+.bm-float-fast-2 { animation: bm-float-speed-2 5.5s ease-in-out infinite; }
+.bm-float-fast-3 { animation: bm-float-speed-3 7.5s ease-in-out infinite; }
+.bm-float-fast-4 { animation: bm-float-speed-4 6s ease-in-out infinite; }
+
+@keyframes bm-float-speed-1 {
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  25% { transform: translate(16px, -24px) scale(1.08) rotate(5deg); }
+  50% { transform: translate(-10px, -42px) scale(0.96) rotate(-3deg); }
+  75% { transform: translate(-20px, -18px) scale(1.04) rotate(4deg); }
+}
+
+@keyframes bm-float-speed-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-22px, -32px) scale(1.1); }
+  66% { transform: translate(18px, -16px) scale(0.94); }
+}
+
+@keyframes bm-float-speed-3 {
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  30% { transform: translate(24px, -18px) scale(1.06) rotate(-6deg); }
+  70% { transform: translate(-16px, -36px) scale(1.03) rotate(6deg); }
+}
+
+@keyframes bm-float-speed-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40% { transform: translate(-18px, -38px) scale(1.12); }
+  80% { transform: translate(14px, -14px) scale(0.96); }
+}
+
+/* Radiant fluid mesh background animation */
+.bm-mesh-drift {
+  animation: bm-mesh-pulse 8s ease-in-out infinite alternate;
+}
+@keyframes bm-mesh-pulse {
+  0% { transform: scale(1) translate(0, 0); opacity: 0.16; }
+  50% { transform: scale(1.14) translate(-25px, 20px); opacity: 0.24; }
+  100% { transform: scale(0.92) translate(30px, -15px); opacity: 0.18; }
+}
+
 @media (prefers-reduced-motion: reduce){
-  .bm-hero-drift,.bm-hero-drift--2,.bm-hero-float{animation:none;}
+  .bm-hero-drift, .bm-hero-drift--2, .bm-boba-3d, .bm-float-fast-1, .bm-float-fast-2, .bm-float-fast-3, .bm-float-fast-4, .bm-mesh-drift {
+    animation: none;
+  }
+}
+
+/* ---- Mobile Performance & Touch Smoothness Optimization ---- */
+@media (max-width: 768px) {
+  .bm-boba-3d {
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    max-width: 38px !important;
+    max-height: 38px !important;
+  }
+  .bm-mesh-drift {
+    filter: blur(75px);
+  }
 }

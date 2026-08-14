@@ -85,12 +85,29 @@ export function ContactForm({ lang, t }) {
         <label htmlFor="f-msg">{t.formMsg}</label>
         <textarea id="f-msg" name="message" placeholder={t.formMsg} />
       </div>
-      <button type="submit" className="bm-btn bm-btn--sky" disabled={status==='sending'}
-        style={{ alignSelf: 'flex-start', opacity: status==='sending'?0.7:1 }}>
-        {status === 'sending' ? t.formSending : t.formCta}
-      </button>
+      <div className="flex flex-wrap items-center gap-4 mt-2">
+        <button 
+          type="submit" 
+          className="px-8 py-4 bg-[#3B6146] text-white font-semibold text-sm rounded-full transition-all hover:bg-[#243E2C] shadow-[0_6px_20px_rgba(59,97,70,0.3)] disabled:opacity-60 cursor-pointer" 
+          disabled={status==='sending'}
+        >
+          {status === 'sending' ? t.formSending : t.formCta}
+        </button>
+
+        <a 
+          href="https://line.me/R/ti/p/@blessmethailand" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="px-6 py-4 rounded-full border border-white/20 text-white text-sm font-semibold hover:bg-white/10 transition-colors inline-flex items-center gap-2"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#06c755">
+            <path d="M12 2C6.48 2 2 5.92 2 10.75c0 3.32 2.15 6.22 5.38 7.68-.24.88-.86 3.19-.99 3.69 0 0-.05.21.11.31.16.1.33.02.33.02.44-.06 5.1-3.34 5.86-3.88.44.06.87.09 1.31.09 5.52 0 10-3.92 10-8.75S17.52 2 12 2z"/>
+          </svg>
+          <span>{lang === 'th' ? 'สอบถามผ่าน LINE ทันที' : 'Chat on LINE directly'}</span>
+        </a>
+      </div>
       {status === 'error' && (
-        <p style={{ color: '#f2768a', fontSize: 14, marginTop: 8 }}>
+        <p style={{ color: '#f2768a', fontSize: 14, marginTop: 12 }}>
           {isTh ? 'เกิดข้อผิดพลาด กรุณาลองใหม่หรือส่ง LINE โดยตรง' : 'Something went wrong. Please try again or contact us on LINE.'}
         </p>
       )}

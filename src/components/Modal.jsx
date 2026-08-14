@@ -6,6 +6,8 @@ export default function ProductDetail({ product, onClose, lang }) {
   const t = T[lang];
   const displayName = lang === 'th' ? product.nameTh : product.name;
   const displayNote = lang === 'th' ? product.noteTh : product.note;
+  const displayFlavor = lang === 'th' && product.flavorTh ? product.flavorTh : product.flavor;
+  const displayTag = lang === 'th' ? 'รสชาติซิกเนเจอร์' : product.tag;
 
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };
@@ -20,6 +22,7 @@ export default function ProductDetail({ product, onClose, lang }) {
     `Hello BlessMe Team,\n\nI would like to request a wholesale quote for:\n\nProduct: ${product.name}\nQuantity: ${qty} tubs\n\nPlease let me know pricing and minimum order details.\n\nThank you.`
   );
   const quoteHref = `mailto:Blessme.team@gmail.com?subject=${quoteSubject}&body=${quoteBody}`;
+  const lineHref = `https://line.me/R/ti/p/@blessmethailand`;
 
   return (
     <div className="bm-modal-scrim" onClick={onClose} role="presentation">
@@ -33,27 +36,73 @@ export default function ProductDetail({ product, onClose, lang }) {
           </picture>
         </div>
         <div className="bm-modal-body">
-          <div className="bm-eyebrow">{product.tag.toUpperCase()}</div>
-          <h2 className="bm-h1" id="modal-title">{displayName}</h2>
-          <p className="bm-product-flavor" style={{ marginTop: 4 }}>{lang === 'th' && product.flavorTh ? product.flavorTh : product.flavor}</p>
-          <p className="bm-body" style={{ marginTop: 16 }}>{displayNote}</p>
-          <div className="bm-spec-grid" role="list" aria-label="Product specifications">
-            <div role="listitem"><div className="k">{t.modalPack}</div><div className="v">500g</div></div>
-            <div role="listitem"><div className="k">{t.modalShelf}</div><div className="v">{lang==='th'?'12 เดือน':'12 months'}</div></div>
-            <div role="listitem"><div className="k">{t.modalStorage}</div><div className="v">{lang==='th'?'อุณหภูมิห้อง ที่แห้ง':'Room Temperature, dry'}</div></div>
-            <div role="listitem"><div className="k">{t.modalOrigin}</div><div className="v">{lang==='th'?'เอเชีย · โรงงานมาตรฐาน':'Asia · trusted factory'}</div></div>
+          <div className="flex items-center gap-2 mb-2">
+            <span className="px-3 py-0.5 rounded-full bg-[#E9EFE4] text-[#3B6146] text-[11px] font-bold tracking-wider uppercase">
+              {displayTag}
+            </span>
+            <span className="text-xs font-semibold text-[#8C6A2E] bg-[#F8F4EA] px-2.5 py-0.5 rounded-full border border-[#C5A869]/30">
+              ฿{product.price || 90} / pack
+            </span>
           </div>
-          <div className="bm-buy-row">
-            <div className="bm-stepper" role="group" aria-label="Order quantity">
-              <button aria-label="Decrease quantity" onClick={() => setQty(Math.max(1, qty - 1))}>−</button>
-              <span aria-live="polite" aria-atomic="true">{qty}</span>
-              <button aria-label="Increase quantity" onClick={() => setQty(qty + 1)}>+</button>
+
+          <h2 className="bm-h1" id="modal-title" style={{ marginTop: 0 }}>{displayName}</h2>
+          <p className="bm-product-flavor" style={{ marginTop: 4, fontStyle: 'italic', color: '#7A6E63' }}>{displayFlavor}</p>
+          <p className="bm-body" style={{ marginTop: 14 }}>{displayNote}</p>
+          
+          {product.pairings && (
+            <div style={{ marginTop: 14 }}>
+              <div style={{ fontSize: 12, fontWeight: 600, color: '#7A6E63', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                {lang === 'th' ? 'เมนูแนะนำสำหรับร้าน:' : 'Recommended Menu Pairings:'}
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                {(lang === 'th' ? (product.pairingsTh || product.pairings) : product.pairings).map((p, i) => (
+                  <span key={i} style={{ fontSize: 12.5, fontWeight: 500, color: '#243E2C', background: '#E9EFE4', padding: '4px 10px', borderRadius: 6 }}>
+                    {p}
+                  </span>
+                ))}
+              </div>
             </div>
-            <a className="bm-btn bm-btn--primary" style={{ flex: 1, justifyContent: 'center' }} href={quoteHref}>
-              {t.modalCta}
+          )}
+
+          <div className="bm-spec-grid" role="list" aria-label="Product specifications" style={{ marginTop: 20 }}>
+            <div role="listitem"><div className="k">{t.modalPack}</div><div className="v">500g (~20 {lang === 'th' ? 'ที่เสิร์ฟ' : 'servings'})</div></div>
+            <div role="listitem"><div className="k">{t.modalShelf}</div><div className="v">{lang==='th'?'12 เดือน':'12 months'}</div></div>
+            <div role="listitem"><div className="k">{t.modalStorage}</div><div className="v">{lang==='th'?'อุณหภูมิห้อง ไม่ต้องแช่เย็น':'Room Temp, Dry'}</div></div>
+            <div role="listitem"><div className="k">{t.modalOrigin}</div><div className="v">{lang==='th'?'โรงงานมาตรฐานสากล GMP / HACCP':'Global Standard · GMP / HACCP'}</div></div>
+          </div>
+          
+          <div className="bm-buy-row" style={{ marginTop: 22, display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-[#F5EFE6] text-xs text-[#5C5248]">
+              <span>{lang === 'th' ? 'จำนวนที่เลือก:' : 'Selected Quantity:'} <strong>{qty} {lang === 'th' ? 'แพ็ค' : 'packs'} (฿{(product.price || 90) * qty})</strong></span>
+              <span>{lang === 'th' ? 'ประมาณ' : 'Estimated:'} <strong>~{qty * 20} {lang === 'th' ? 'แก้ว' : 'servings'}</strong></span>
+            </div>
+
+            <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+              <div className="bm-stepper" role="group" aria-label="Order quantity" style={{ borderRadius: 999 }}>
+                <button aria-label="Decrease quantity" onClick={() => setQty(Math.max(1, qty - 1))}>−</button>
+                <span aria-live="polite" aria-atomic="true" style={{ fontWeight: 600 }}>{qty}</span>
+                <button aria-label="Increase quantity" onClick={() => setQty(qty + 1)}>+</button>
+              </div>
+              <a className="bm-btn bm-btn--primary" style={{ flex: 1, justifyContent: 'center', textAlign: 'center', borderRadius: 999 }} href={quoteHref}>
+                {t.modalCta} ({qty} {lang === 'th' ? 'แพ็ค' : 'packs'})
+              </a>
+            </div>
+            
+            <a 
+              href={lineHref} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bm-btn bm-btn--ghost" 
+              style={{ justifyContent: 'center', borderColor: '#06c755', color: '#06c755', borderRadius: 999, background: 'rgba(6,199,85,0.06)' }}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: 6 }}>
+                <path d="M12 2C6.48 2 2 5.92 2 10.75c0 3.32 2.15 6.22 5.38 7.68-.24.88-.86 3.19-.99 3.69 0 0-.05.21.11.31.16.1.33.02.33.02.44-.06 5.1-3.34 5.86-3.88.44.06.87.09 1.31.09 5.52 0 10-3.92 10-8.75S17.52 2 12 2z"/>
+              </svg>
+              {lang === 'th' ? 'สั่งซื้อ & สอบถามทาง LINE ทันที' : 'Order & Inquire via LINE'}
             </a>
           </div>
-          <p className="bm-small" style={{ marginTop: 10 }}>{t.modalSmall}</p>
+
+          <p className="bm-small" style={{ marginTop: 10, textAlign: 'center' }}>{t.modalSmall}</p>
         </div>
       </div>
     </div>
