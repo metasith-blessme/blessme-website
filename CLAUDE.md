@@ -95,7 +95,7 @@ Cloudflare Workers & Pages auto-deploys on push to `main`.
 - **Deploy command**: `npx wrangler versions upload` (used for manual CLI previews)
 - **Output directory**: `dist`
 - **Node version**: 22 (set via `.nvmrc` and `.node-version`)
-- SPA routing handled by wrangler's `not_found_handling = "single-page-application"` in `wrangler.toml`
+- Known routes are prerendered to static HTML; `not_found_handling = "404-page"` in `wrangler.toml` serves `public/404.html` for missing URLs. Do not restore the SPA homepage fallback.
 
 ## Component Naming & Styling
 
@@ -111,7 +111,7 @@ CSS is monolithic (`src/styles/index.css`) with design tokens in `:root` (colors
 ## Do Not Change Without Asking
 
 - **Web3Forms key** — `6a29a76e-ace2-44da-8bc4-22c10901684e` (sends to Blessme.team@gmail.com)
-- **Contact info** — phone (+66 82-896-5199), email (Blessme.team@gmail.com), LINE (@591dzhsr)
+- **Contact info** — phone (+66 82-896-5199), email (Blessme.team@gmail.com), LINE (@blessmethailand; owner confirmed)
 - **Product SKU data** — names, flavors, descriptions, pack size, shelf life
 - **Domain names** — `blessmethailand.com` in canonical, OG, robots.txt
 - **Brand colours** — CSS custom properties in `:root` (--ci-sky, --ci-sky-deep, etc.)

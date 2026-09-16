@@ -7,7 +7,7 @@ import { ARTICLES } from '../src/content/blog.js';
 
 // Mirror of routing.buildPath (inlined so this script runs under plain Node without
 // Vite's extensionless-import resolution). Keep in sync with src/lib/routing.js.
-const PAGE_TO_PATH = { 'Products': '/', 'Solutions': '/solutions', 'About us': '/about', 'Blog': '/blog', 'FAQ': '/faq' };
+const PAGE_TO_PATH = { 'Products': '/', 'Wholesale': '/wholesale', 'Solutions': '/solutions', 'About us': '/about', 'Blog': '/blog', 'FAQ': '/faq' };
 function buildPath({ page, productId = null, articleId = null, lang = 'en' }) {
   const prefix = lang === 'th' ? '/th' : '';
   if (articleId) return `${prefix}/blog/${articleId}`;

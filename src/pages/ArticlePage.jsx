@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { BASE_URL } from '../lib/seo';
+import { canonicalFor } from '../lib/seo';
+import { buildPath, handleLinkClick } from '../lib/routing';
 import {
   ARTICLES,
   getArticleById,
@@ -38,7 +39,7 @@ export default function ArticlePage({ articleId, onBack, onOpenArticle, lang }) 
   const article = getArticleById(articleId) || ARTICLES[0];
   const others = getRelatedArticles(article.id, 3);
   const { previous, next } = getAdjacentArticles(article.id);
-  const shareUrl = `${BASE_URL}/blog/${article.id}`;
+  const shareUrl = canonicalFor('Blog', null, article.id, lang);
   const title = lang === 'th' ? article.titleTh : article.title;
   const excerpt = lang === 'th' ? article.excerptTh : article.excerpt;
   const category = lang === 'th' ? article.catTh || article.cat : article.cat;
@@ -72,9 +73,9 @@ export default function ArticlePage({ articleId, onBack, onOpenArticle, lang }) 
 
   return (
     <article className="bm-article-page">
-      <button className="bm-back-link" onClick={onBack}>
+      <a className="bm-back-link" href={buildPath({ page: 'Blog', lang })} onClick={(e) => handleLinkClick(e, onBack)}>
         {lang === 'th' ? '← บทความทั้งหมด' : '← All articles'}
-      </button>
+      </a>
 
       <div className="bm-article-main">
         <header className="bm-article-head">
@@ -135,16 +136,16 @@ export default function ArticlePage({ articleId, onBack, onOpenArticle, lang }) 
         {(previous || next) && (
           <nav className="bm-article-nav" aria-label={lang === 'th' ? 'การนำทางบทความ' : 'Article navigation'}>
             {previous ? (
-              <button type="button" className="bm-article-nav-card" onClick={() => onOpenArticle(previous.id)}>
+              <a href={buildPath({ page: 'Blog', articleId: previous.id, lang })} className="bm-article-nav-card" onClick={(e) => handleLinkClick(e, () => onOpenArticle(previous.id))}>
                 <span className="bm-eyebrow">{lang === 'th' ? 'เก่ากว่า' : 'Older'}</span>
                 <strong>{lang === 'th' ? previous.titleTh : previous.title}</strong>
-              </button>
+              </a>
             ) : <div />}
             {next ? (
-              <button type="button" className="bm-article-nav-card bm-article-nav-card--next" onClick={() => onOpenArticle(next.id)}>
+              <a href={buildPath({ page: 'Blog', articleId: next.id, lang })} className="bm-article-nav-card bm-article-nav-card--next" onClick={(e) => handleLinkClick(e, () => onOpenArticle(next.id))}>
                 <span className="bm-eyebrow">{lang === 'th' ? 'ใหม่กว่า' : 'Newer'}</span>
                 <strong>{lang === 'th' ? next.titleTh : next.title}</strong>
-              </button>
+              </a>
             ) : <div />}
           </nav>
         )}

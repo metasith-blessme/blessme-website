@@ -36,11 +36,9 @@ export default function FAQPage({ lang }) {
                   {isOpen ? '−' : '+'}
                 </div>
               </button>
-              {isOpen && (
-                <div id={answerId} className="px-6 pb-6 sm:px-8 sm:pb-8 text-[#5C5248] text-base leading-relaxed border-t border-[#2B241E]/6 pt-4 font-normal">
+                <div hidden={!isOpen} id={answerId} className="px-6 pb-6 sm:px-8 sm:pb-8 text-[#5C5248] text-base leading-relaxed border-t border-[#2B241E]/6 pt-4 font-normal">
                   {f.a}
                 </div>
-              )}
             </div>
           );
         })}

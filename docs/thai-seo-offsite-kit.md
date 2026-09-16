@@ -3,9 +3,7 @@
 Goal: rank on Google (organic, no ads) and appear in AI Overviews for
 **ไข่มุกป๊อป · มุกป๊อป · ป๊อปปิ้งโบบา · ขายส่ง**.
 
-On-site work is done (prerendered `/th` URLs, hreflang, keyword titles,
-crawlable article cluster, `/wholesale` landing). The remaining lever is
-**off-site authority** — the work below is what most decides page-1. Copy-paste ready.
+ARCHIVED DRAFT — not copy-paste ready. This draft contains obsolete product/price claims. Use docs/SEO-AEO-GEO-AUDIT-PLAN.md and the current owner-confirmed facts: five SKUs 90 THB/pack; Moji Yogurt 120 THB; all vegan; Osmanthus is konjac; no MOQ; LINE @blessmethailand; free samples by email Blessme.team@gmail.com. Verify eligibility for each platform; listings do not guarantee backlinks, rankings or AI citations.
 
 ---
 

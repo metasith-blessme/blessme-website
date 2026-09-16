@@ -26,8 +26,8 @@ export const ARTICLES = [
     "id": "popping-boba-wholesale-price-buy-bangkok",
     "title": "Popping Boba Wholesale Price in Thailand & Where to Buy (2026)",
     "titleTh": "ไข่มุกป๊อป ราคาส่งเท่าไหร่ ซื้อที่ไหนดี 2569 | ขายส่งมุกป๊อป กรุงเทพ",
-    "excerpt": "How much does popping boba cost wholesale in Thailand, and where can cafés buy it? A clear price guide (80–115 THB/pack) and how to order from BlessMe in Bangkok.",
-    "excerptTh": "ไข่มุกป๊อป (มุกป๊อป) ราคาส่งเท่าไหร่ และร้านคาเฟ่ควรซื้อที่ไหนดี? รวมราคาขายส่งชัดเจน 80–115 บาท/แพ็ค พร้อมวิธีสั่งซื้อจาก BlessMe สต็อกกรุงเทพ ส่งทั่วไทย",
+    "excerpt": "How much does popping boba cost wholesale in Thailand, and where can cafés buy it? A clear price guide (90–120 THB/pack) and how to order from BlessMe in Bangkok.",
+    "excerptTh": "ไข่มุกป๊อป (มุกป๊อป) ราคาส่งเท่าไหร่ และร้านคาเฟ่ควรซื้อที่ไหนดี? รวมราคาขายส่งชัดเจน 90–120 บาท/แพ็ค พร้อมวิธีสั่งซื้อจาก BlessMe สต็อกกรุงเทพ ส่งทั่วไทย",
     "date": "July 27, 2026",
     "isoDate": "2026-07-27",
     "dateTh": "27 กรกฎาคม 2569",
@@ -72,8 +72,8 @@ export const ARTICLES = [
     "id": "popping-boba-wholesale-profit-margins",
     "title": "How to Increase Your Cafe's Profit Margins with Popping Boba",
     "titleTh": "วิธีเพิ่มอัตรากำไรให้คาเฟ่ของคุณด้วยป๊อปปิ้งบอบา (มุกป๊อป)",
-    "excerpt": "Cafes can significantly increase their profit margins by adding popping boba as a premium topping. With wholesale pricing as low as 80 THB for a 500g pack, your cost per serving is just 4 THB.",
-    "excerptTh": "คาเฟ่สามารถเพิ่มอัตรากำไรได้อย่างมากด้วยการใช้ป๊อปปิ้งบอบาเป็นท็อปปิ้งพรีเมียม ด้วยราคาขายส่งที่คุ้มค่าเพียง 80 บาทต่อแพ็คขนาด 500 กรัม",
+    "excerpt": "Calculate topping contribution using current BlessMe prices: 90 THB per pack, or 120 THB for Moji Yogurt. At 15g drained per serving, portion cost is 4.50 or 6.00 THB before other expenses.",
+    "excerptTh": "คำนวณส่วนต่างท็อปปิ้งจากราคา BlessMe 90 บาท/แพ็ค หรือโมจิโยเกิร์ต 120 บาท ใช้เนื้อเสิร์ฟละ 15g ต้นทุน 4.50 หรือ 6.00 บาท ยังไม่รวมค่าใช้จ่ายอื่น",
     "date": "July 8, 2026",
     "isoDate": "2026-07-08",
     "dateTh": "8 กรกฎาคม 2569",
@@ -359,14 +359,14 @@ export function getArticleMeta(article, lang, baseUrl) {
     return {
       title: `${article.titleTh} | เบลสมี ไทยแลนด์`,
       description: article.excerptTh,
-      canonical: `${baseUrl}/blog/${article.id}`,
+      canonical: `${baseUrl}/th/blog/${article.id}/`,
     };
   }
 
   return {
     title: `${article.title} | BlessMe Thailand`,
     description: article.excerpt,
-    canonical: `${baseUrl}/blog/${article.id}`,
+    canonical: `${baseUrl}/blog/${article.id}/`,
   };
 }
 
@@ -380,7 +380,7 @@ export function getArticleSchema(article, lang, baseUrl = 'https://blessmethaila
     author: {
       '@type': 'Organization',
       name: article.author || 'BlessMe Team',
-      description: article.authorBio || 'Specialty food sourcing team with 15+ years industry experience',
+      ...(article.authorBio ? { description: article.authorBio } : {}),
     },
     publisher: {
       '@type': 'Organization',
@@ -393,7 +393,8 @@ export function getArticleSchema(article, lang, baseUrl = 'https://blessmethaila
     },
     datePublished: article.publishedDate || article.isoDate,
     dateModified: article.updatedDate || article.isoDate,
-    url: `https://blessmethailand.com/blog/${article.id}`,
+    url: getArticleMeta(article, lang, baseUrl).canonical,
+    mainEntityOfPage: getArticleMeta(article, lang, baseUrl).canonical,
   };
 
   if (article.img) schema.image = new URL(article.img, baseUrl).href;

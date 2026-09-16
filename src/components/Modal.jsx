@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { T } from '../constants/translations';
+import { productSearchName } from '../constants/products';
 
 export default function ProductDetail({ product, onClose, lang }) {
   const [qty, setQty] = useState(12);
@@ -32,7 +33,7 @@ export default function ProductDetail({ product, onClose, lang }) {
         <div className="bm-modal-img">
           <picture>
             <source srcSet={product.img} type="image/webp" />
-            <img src={product.imgFallback} alt={`${displayName} popping boba`} width="600" height="400" style={{aspectRatio:'3/2'}} />
+            <img src={product.imgFallback} alt={productSearchName(product, lang)} width="600" height="400" style={{aspectRatio:'3/2'}} />
           </picture>
         </div>
         <div className="bm-modal-body">
@@ -65,9 +66,9 @@ export default function ProductDetail({ product, onClose, lang }) {
           )}
 
           <div className="bm-spec-grid" role="list" aria-label="Product specifications" style={{ marginTop: 20 }}>
-            <div role="listitem"><div className="k">{t.modalPack}</div><div className="v">500g (~20 {lang === 'th' ? 'ที่เสิร์ฟ' : 'servings'})</div></div>
+            <div role="listitem"><div className="k">{t.modalPack}</div><div className="v">{product.packSize} ({lang === 'th' ? 'น้ำหนักเนื้อ' : 'drained'} {product.drainedWeight}; ~20 × 15g)</div></div>
             <div role="listitem"><div className="k">{t.modalShelf}</div><div className="v">{lang==='th'?'12 เดือน':'12 months'}</div></div>
-            <div role="listitem"><div className="k">{t.modalStorage}</div><div className="v">{lang==='th'?'อุณหภูมิห้อง ไม่ต้องแช่เย็น':'Room Temp, Dry'}</div></div>
+            <div role="listitem"><div className="k">{t.modalStorage}</div><div className="v">{lang==='th'?'ก่อนเปิด: ที่เย็นและแห้ง หลังเปิด: ทำตามฉลาก':'Unopened: cool and dry. After opening: follow the label.'}</div></div>
             <div role="listitem"><div className="k">{t.modalOrigin}</div><div className="v">{lang==='th'?'โรงงานมาตรฐานสากล GMP / HACCP':'Global Standard · GMP / HACCP'}</div></div>
           </div>
           
@@ -83,7 +84,7 @@ export default function ProductDetail({ product, onClose, lang }) {
                 <span aria-live="polite" aria-atomic="true" style={{ fontWeight: 600 }}>{qty}</span>
                 <button aria-label="Increase quantity" onClick={() => setQty(qty + 1)}>+</button>
               </div>
-              <a className="bm-btn bm-btn--primary" style={{ flex: 1, justifyContent: 'center', textAlign: 'center', borderRadius: 999 }} href={quoteHref}>
+              <a data-contact-intent="quote" className="bm-btn bm-btn--primary" style={{ flex: 1, justifyContent: 'center', textAlign: 'center', borderRadius: 999 }} href={quoteHref}>
                 {t.modalCta} ({qty} {lang === 'th' ? 'แพ็ค' : 'packs'})
               </a>
             </div>

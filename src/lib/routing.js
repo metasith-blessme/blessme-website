@@ -27,13 +27,13 @@ export const PAGE_TO_PATH = {
 function resolvePage(path) {
   if (path.startsWith('/blog/')) {
     const articleId = path.slice(6);
-    return { page: 'Blog', articleId: getArticleById(articleId) ? articleId : null, productId: null };
+    if (getArticleById(articleId)) return { page: 'Blog', articleId, productId: null };
   }
   if (path.startsWith('/products/')) {
     const productId = path.slice(10);
-    return { page: 'Products', articleId: null, productId: PRODUCTS.some(p => p.id === productId) ? productId : null };
+    if (PRODUCTS.some(p => p.id === productId)) return { page: 'Products', articleId: null, productId };
   }
-  return { page: PATH_TO_PAGE[path] || 'Products', articleId: null, productId: null };
+  return { page: PATH_TO_PAGE[path] || 'NotFound', articleId: null, productId: null };
 }
 
 // Parse a full pathname (may include /th prefix) → { page, productId, articleId, lang }.
@@ -46,6 +46,13 @@ export function getInitialState(pathname) {
     path = path.slice(3) || '/';
   }
   return { ...resolvePage(path), lang };
+}
+
+// Preserve native new-tab clicks; intercept only ordinary navigation.
+export function handleLinkClick(event, navigate) {
+  if (event.defaultPrevented || event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  event.preventDefault();
+  navigate();
 }
 
 // Build a URL path for a target page/product/article in a given language.

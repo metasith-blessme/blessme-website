@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { T } from '../constants/translations';
 import { ARTICLES, getBlogCategories } from '../content/blog';
+import { buildPath, handleLinkClick } from '../lib/routing';
 
 export function BlogCard({ article, onOpenArticle, lang, compact = false }) {
   const title = lang === 'th' ? article.titleTh : article.title;
@@ -11,10 +12,10 @@ export function BlogCard({ article, onOpenArticle, lang, compact = false }) {
 
   return (
     <article className={`bm-blog-card${compact ? ' bm-blog-card--compact' : ''}`}>
-      <button
-        type="button"
+      <a
+        href={buildPath({ page: 'Blog', articleId: article.id, lang })}
         className="bm-blog-card-hit"
-        onClick={() => onOpenArticle(article.id)}
+        onClick={(e) => handleLinkClick(e, () => onOpenArticle(article.id))}
         aria-label={`${cta}: ${title}`}
       >
         <div className="bm-blog-img">
@@ -31,7 +32,7 @@ export function BlogCard({ article, onOpenArticle, lang, compact = false }) {
           {!compact && <p className="bm-blog-excerpt">{excerpt}</p>}
           <div className="bm-card-cta">{cta} →</div>
         </div>
-      </button>
+      </a>
     </article>
   );
 }
@@ -134,10 +135,10 @@ export default function BlogPage({ onOpenArticle, lang }) {
         {featured ? (
           <>
             <article className="bm-feature-article">
-              <button
-                type="button"
+              <a
+                href={buildPath({ page: 'Blog', articleId: featured.id, lang })}
                 className="bm-feature-link"
-                onClick={() => onOpenArticle(featured.id)}
+                onClick={(e) => handleLinkClick(e, () => onOpenArticle(featured.id))}
                 aria-label={`${t.readMore} ${lang === 'th' ? featured.titleTh : featured.title}`}
               >
                 <div className="bm-feature-cover">
@@ -154,7 +155,7 @@ export default function BlogPage({ onOpenArticle, lang }) {
                   <p className="bm-feature-excerpt">{lang === 'th' ? featured.excerptTh : featured.excerpt}</p>
                   <div className="bm-card-cta">{t.readMore}</div>
                 </div>
-              </button>
+              </a>
             </article>
 
             {rest.length > 0 && (

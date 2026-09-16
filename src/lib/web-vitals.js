@@ -1,176 +1,71 @@
 /**
- * Web Vitals Monitoring Module
- * Tracks Core Web Vitals (LCP, CLS, FID/INP) and sends to analytics
- *
- * Usage:
- *   import { initWebVitals } from './lib/web-vitals';
- *   initWebVitals({ analyticsId: 'GA_ID', sendBeacon: true });
+ * Lightweight first-hide LCP/CLS diagnostics, NOT a canonical field CWV report.
+ * No FID-as-INP: INP requires the full interaction lifecycle, not first-input delay.
+ * Use Search Console > Core Web Vitals (CrUX, rolling 28-day field data) for
+ * real LCP/INP/CLS assessment, split mobile/desktop; insufficient data is unknown.
+ * BFCache/prerender lifecycles are not measured here. Adopt the official web-vitals
+ * package if full client-side CWV collection is approved. No manual pageviews.
+ * initWebVitals({ sendBeacon: true, verbose: false }) returns cleanup.
  */
-
-export const initWebVitals = (options = {}) => {
-  const {
-    sendBeacon = true,
-    verbose = false,
-  } = options;
-
-  const vitalsData = {
-    url: window.location.href,
-    userAgent: navigator.userAgent,
-    timestamp: new Date().toISOString(),
-  };
-
-  vitalsData.connection = navigator.connection?.effectiveType ?? 'unknown';
-
-  // Helper: Send vitals to endpoint
-  const sendVital = (metric) => {
-    const payload = {
-      ...vitalsData,
-      metric: metric.name,
-      value: Math.round(metric.value),
-      rating: metric.rating || 'unknown',
-    };
-
-    if (verbose) {
-      console.log(`[Web Vitals] ${metric.name}: ${Math.round(metric.value)}ms (${metric.rating})`);
-    }
-
-
-    // Send to Google Analytics if available
-    if (window.gtag && sendBeacon) {
-      gtag('event', `web_vitals_${metric.name.toLowerCase()}`, {
-        value: Math.round(metric.value),
-        event_category: 'Web Vitals',
-        event_label: metric.name,
+export const initWebVitals = ({ sendBeacon = true, verbose = false } = {}) => {
+  const observers = [];
+  let lcp;
+  let cls = 0;
+  let session = 0;
+  let first;
+  let last;
+  let stopped = false;
+  const send = (name, value) => {
+    if (verbose) console.log(`[Web Vitals diagnostic] ${name}: ${value}${name === 'CLS' ? '' : 'ms'}`);
+    try {
+      if (sendBeacon) window.gtag?.('event', `web_vitals_${name.toLowerCase()}`, {
+        value,
+        page_path: window.location.pathname,
+        language: document.documentElement.lang === 'th' ? 'th' : 'en',
       });
-    }
+    } catch { /* Analytics must never interrupt the page lifecycle. */ }
   };
-
-  // Initialize observers
+  const observe = (type, collect) => {
+    try {
+      const observer = new window.PerformanceObserver(list => collect(list.getEntries()));
+      observer.observe({ type, buffered: true });
+      observers.push({ observer, collect, type });
+    } catch { /* Unsupported metric: do not invent a measurement. */ }
+  };
   if ('PerformanceObserver' in window) {
-    // LCP (Largest Contentful Paint)
-    try {
-      let lastLcpMetric = null;
-      const lcpObserver = new PerformanceObserver((entryList) => {
-        const entries = entryList.getEntries();
-        const lastEntry = entries[entries.length - 1];
-        const value = lastEntry.renderTime || lastEntry.loadTime;
-
-        lastLcpMetric = {
-          name: 'LCP',
-          value,
-          rating: value < 2500 ? 'good' : 'poor',
-        };
-      });
-
-      lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
-
-      // Report final LCP on page hide (standard practice)
-      document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'hidden' && lastLcpMetric) {
-          sendVital(lastLcpMetric);
-          lcpObserver.disconnect();
+    observe('largest-contentful-paint', entries => {
+      const entry = entries[entries.length - 1];
+      if (entry) lcp = entry.startTime;
+    });
+    observe('layout-shift', entries => {
+      for (const entry of entries) {
+        if (entry.hadRecentInput) continue;
+        if (last !== undefined && entry.startTime - last < 1000 && entry.startTime - first < 5000) {
+          session += entry.value;
+        } else {
+          first = entry.startTime;
+          session = entry.value;
         }
-      }, { once: true });
-    } catch (e) {
-      if (verbose) console.warn('LCP Observer failed:', e);
-    }
-
-    // CLS (Cumulative Layout Shift)
-    try {
-      let clsValue = 0;
-      let sessionValue = 0;
-      let sessionEntries = [];
-
-      const clsObserver = new PerformanceObserver((entryList) => {
-        for (const entry of entryList.getEntries()) {
-          if (!entry.hadRecentInput) {
-            const firstSessionEntry = sessionEntries[0];
-            const lastSessionEntry = sessionEntries[sessionEntries.length - 1];
-
-            if (
-              entry.startTime - (lastSessionEntry?.startTime || 0) < 1000 &&
-              entry.startTime - (firstSessionEntry?.startTime || 0) < 5000
-            ) {
-              sessionEntries.push(entry);
-              sessionValue += entry.value;
-            } else {
-              sessionEntries = [entry];
-              sessionValue = entry.value;
-            }
-          }
-        }
-
-        clsValue = Math.max(clsValue, sessionValue);
-      });
-
-      clsObserver.observe({ type: 'layout-shift', buffered: true });
-
-      // Report CLS on page hide
-      document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'hidden') {
-          const metric = {
-            name: 'CLS',
-            value: clsValue,
-            rating: clsValue < 0.1 ? 'good' : clsValue < 0.25 ? 'needs-improvement' : 'poor',
-          };
-
-          sendVital(metric);
-          clsObserver.disconnect();
-        }
-      });
-    } catch (e) {
-      if (verbose) console.warn('CLS Observer failed:', e);
-    }
-
-    // FID/INP (First Input Delay / Interaction to Next Paint)
-    try {
-      const fidObserver = new PerformanceObserver((entryList) => {
-        for (const entry of entryList.getEntries()) {
-          const fid = entry.processingStart - entry.startTime;
-          const metric = {
-            name: 'FID',
-            value: fid,
-            rating: fid < 100 ? 'good' : 'poor',
-          };
-
-          sendVital(metric);
-          fidObserver.disconnect();
-          break; // Only report first input
-        }
-      });
-
-      fidObserver.observe({ type: 'first-input', buffered: true });
-    } catch (e) {
-      if (verbose) console.warn('FID Observer failed:', e);
-    }
-
-    // TTFB (Time to First Byte)
-    try {
-      const ttfbObserver = new PerformanceObserver((entryList) => {
-        const entries = entryList.getEntries();
-        const navigationEntry = entries[0];
-
-        if (navigationEntry) {
-          const metric = {
-            name: 'TTFB',
-            value: navigationEntry.responseStart - navigationEntry.fetchStart,
-            rating: (navigationEntry.responseStart - navigationEntry.fetchStart) < 600 ? 'good' : 'poor',
-          };
-
-          sendVital(metric);
-          ttfbObserver.disconnect();
-        }
-      });
-
-      ttfbObserver.observe({ type: 'navigation', buffered: true });
-    } catch (e) {
-      if (verbose) console.warn('TTFB Observer failed:', e);
-    }
+        last = entry.startTime;
+        cls = Math.max(cls, session);
+      }
+    });
   }
-
-  if (verbose) {
-    console.log('✅ Web Vitals monitoring initialized');
-    console.log(`📊 Connection: ${vitalsData.connection}`);
-  }
+  const cleanup = () => {
+    stopped = true;
+    observers.forEach(({ observer }) => observer.disconnect());
+    document.removeEventListener('visibilitychange', onVisibility);
+    window.removeEventListener('pagehide', report);
+  };
+  const report = () => {
+    if (stopped) return;
+    for (const { observer, collect } of observers) collect(observer.takeRecords());
+    if (lcp !== undefined) send('LCP', lcp);
+    if (observers.some(({ type }) => type === 'layout-shift')) send('CLS', cls);
+    cleanup();
+  };
+  const onVisibility = () => { if (document.visibilityState === 'hidden') report(); };
+  document.addEventListener('visibilitychange', onVisibility);
+  window.addEventListener('pagehide', report);
+  return cleanup;
 };
-

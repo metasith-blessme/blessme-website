@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { T } from '../constants/translations';
+import { productSearchName } from '../constants/products';
+import { buildPath, handleLinkClick } from '../lib/routing';
 
 const ProductCard = React.memo(function ProductCard({ product, blessed, onClick, lang, index }) {
   const t = T[lang];
@@ -10,15 +12,16 @@ const ProductCard = React.memo(function ProductCard({ product, blessed, onClick,
   const displayTag = lang === 'th' ? 'รสชาติซิกเนเจอร์' : product.tag;
 
   return (
-    <motion.article 
+    <motion.a
+      href={buildPath({ page: 'Products', productId: product.id, lang })}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
       className="group cursor-pointer bg-white rounded-[28px] p-6 sm:p-7 border border-[#2B241E]/8 shadow-[0_4px_24px_rgba(43,36,30,0.04)] hover:shadow-[0_20px_48px_rgba(59,97,70,0.12)] hover:border-[#3B6146]/35 transition-all duration-300 flex flex-col h-full relative"
-      onClick={onClick} role="button" tabIndex={0}
-      aria-label={`View details for ${displayName} popping boba`}
-      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onClick()}
+      onClick={(e) => handleLinkClick(e, onClick)}
+      aria-label={`${lang === 'th' ? 'ดูรายละเอียด' : 'View details for'} ${productSearchName(product, lang)}`}
+
     >
       {/* Image Container with Price Badge and Gold Seal */}
       <div className="relative w-full aspect-[4/3] mb-6 bg-[#F5EFE6] rounded-[20px] overflow-hidden flex items-center justify-center border border-[#2B241E]/4">
@@ -40,7 +43,7 @@ const ProductCard = React.memo(function ProductCard({ product, blessed, onClick,
           <source srcSet={product.img} type="image/webp" />
           <img 
             src={product.imgFallback} 
-            alt={`${displayName} popping boba`} 
+            alt={productSearchName(product, lang)}
             loading="lazy" 
             className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 ease-out drop-shadow-md" 
           />
@@ -100,7 +103,7 @@ const ProductCard = React.memo(function ProductCard({ product, blessed, onClick,
         </div>
 
       </div>
-    </motion.article>
+    </motion.a>
   );
 });
 

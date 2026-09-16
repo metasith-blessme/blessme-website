@@ -14,8 +14,8 @@ export default function TrustBar({ lang }) {
       ),
       title: isTh ? 'เพิ่มกำไรต่อแก้ว (ต้นทุนเพียง ~4.50–6.00฿)' : 'High Profit Margin (~4.50–6.00฿ / Serving)',
       desc: isTh 
-        ? '1 แพ็ค (น้ำหนักเนื้อ 300g) เสิร์ฟได้ถึง ~15–20 แก้ว ช่วยคุมต้นทุนต่อเสิร์ฟให้อยู่ในระดับต่ำ พร้อมเพิ่มราคาขายเมนูซิกเนเจอร์ได้ 15–25 บาท' 
-        : 'Each pack (300g drained weight) delivers ~15–20 portions, keeping portion cost at ~4.50–6.00฿ while supporting a 15–25 THB drink upcharge.',
+        ? '1 แพ็คมีน้ำหนักเนื้อ 300g ถ้าเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาทสำหรับแพ็ค 90 บาท และ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมค่าใช้จ่ายอื่น'
+        : 'Each pack has 300g drained weight. At 15g per portion it yields 20 servings: 4.50 THB for a 90 THB pack or 6.00 THB for Moji Yogurt, before other expenses.',
       tag: isTh ? 'กำไรสูง' : 'High Margin'
     },
     {
@@ -27,8 +27,8 @@ export default function TrustBar({ lang }) {
       ),
       title: isTh ? 'พร้อมตักเสิร์ฟทันที (ไม่ต้องต้ม)' : 'Scoop & Serve (Zero Kitchen Prep)',
       desc: isTh 
-        ? 'ไม่ต้องต้ม ไม่ต้องแช่ ไม่ต้องใช้อุปกรณ์พิเศษ เก็บอุณหภูมิห้องได้ 12 เดือน เปิดถุงตักเสิร์ฟได้ทันที ลดเวลาบาริสต้า 20 นาที/กะ' 
-        : 'No boiling or soaking required. Stored ambient for 12 months — open and serve instantly to cut prep time during peak rushes.',
+        ? 'ไม่ต้องต้ม เก็บก่อนเปิดได้ 12 เดือนในที่เย็นและแห้ง หลังเปิดให้แช่เย็นและทำตามฉลากรายสินค้า'
+        : 'No boiling required. Store unopened packs cool and dry for 12 months. Refrigerate after opening and follow each product label.',
       tag: isTh ? 'สะดวกเร็ว' : 'Zero Prep'
     },
     {
@@ -37,10 +37,10 @@ export default function TrustBar({ lang }) {
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
         </svg>
       ),
-      title: isTh ? 'สาหร่ายธรรมชาติ 100% วีแกน' : '100% Plant-Based Seaweed Alginate',
+      title: isTh ? 'ท็อปปิ้งวีแกนทั้ง 6 รายการ' : 'All Six Toppings Are Vegan',
       desc: isTh 
-        ? 'ผลิตจากสารสกัดสาหร่ายธรรมชาติ ไร้เจลาติน เม็ดบีดบางนุ่มแตกในปาก ไม่ทิ้งคราบฟิล์มเหนียว เครื่องดื่มใสสวยงาม' 
-        : 'Natural vegan seaweed shell with no gelatin. Delivers a clean burst with zero film residue, preserving pristine drink aesthetics.',
+        ? 'มีทั้งมุกป๊อป โมจิโยเกิร์ต และบุกหอมหมื่นลี้ ตรวจส่วนผสมและสารก่อภูมิแพ้จากฉลากแต่ละสินค้า วีแกนไม่ได้แปลว่าปลอดสารก่อภูมิแพ้'
+        : 'The range includes popping boba, Moji Yogurt and Osmanthus Konjac. Check individual labels for ingredients and allergens; vegan does not mean allergen-free.',
       tag: isTh ? 'วีแกน 100%' : '100% Vegan'
     },
     {
@@ -55,7 +55,7 @@ export default function TrustBar({ lang }) {
       title: isTh ? 'สต็อกในกรุงเทพฯ จัดส่งทั่วประเทศ' : 'Bangkok Warehouse & Nationwide Delivery',
       desc: isTh 
         ? 'สต็อกสินค้าพร้อมส่งตลอดทั้งปีจากคลังสินค้ากรุงเทพฯ จัดส่งรวดเร็ว มีรอบสั่งซื้อยืดหยุ่น เริ่มต้นทดลองสั่งซื้อได้ทันที' 
-        : 'Central stock maintained year-round in Bangkok with fast dispatch across Thailand. Flexible MOQs for pilot testing.',
+        : 'Central stock maintained year-round in Bangkok with fast dispatch across Thailand. No minimum order.',
       tag: isTh ? 'ส่งไว' : 'Fast Dispatch'
     }
   ];
@@ -121,7 +121,7 @@ export default function TrustBar({ lang }) {
             <span>{isTh ? 'ชุดทดลองสำหรับร้านค้า' : 'Tasting Sample Kit for Cafés'}</span>
           </div>
           <h3 className="font-['Fraunces'] text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-3">
-            {isTh ? 'สั่งชุดตัวอย่าง 6 รสชาติเพื่อทดลองเมนูก่อนเปิดตัว' : 'Request a 6-Flavor Tasting Sample Box for Your Menu'}
+            {isTh ? 'ขอตัวอย่างฟรีทางอีเมลเพื่อทดลองเมนูก่อนเปิดตัว' : 'Request Free Samples by Email for Your Menu'}
           </h3>
           <p className="text-sm sm:text-base text-white/80 leading-relaxed">
             {isTh 
@@ -140,14 +140,15 @@ export default function TrustBar({ lang }) {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C6.48 2 2 5.92 2 10.75c0 3.32 2.15 6.22 5.38 7.68-.24.88-.86 3.19-.99 3.69 0 0-.05.21.11.31.16.1.33.02.33.02.44-.06 5.1-3.34 5.86-3.88.44.06.87.09 1.31.09 5.52 0 10-3.92 10-8.75S17.52 2 12 2z"/>
             </svg>
-            <span>{isTh ? 'ขอรับชุดตัวอย่าง (LINE)' : 'Request Sample via LINE'}</span>
+            <span>{isTh ? 'สอบถามการสั่งซื้อ (LINE)' : 'Order enquiries via LINE'}</span>
           </a>
 
           <a 
             href="mailto:Blessme.team@gmail.com?subject=Wholesale%20Sample%20Kit%20Request"
+            data-contact-intent="sample"
             className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold text-sm rounded-full transition-all flex items-center gap-2"
           >
-            <span>{isTh ? 'ส่งอีเมลสอบถาม' : 'Email Wholesale Team'}</span>
+            <span>{isTh ? 'ขอตัวอย่างฟรีทางอีเมล' : 'Request free samples by email'}</span>
           </a>
         </div>
       </div>

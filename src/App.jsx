@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MotionConfig, useReducedMotion } from 'framer-motion';
 import './styles/index.css';
 import { initWebVitals } from './lib/web-vitals';
+import { initContactTracking } from './lib/analytics';
 
 // Constants
 import { PRODUCTS } from './constants/products';
@@ -36,7 +37,9 @@ function App({ ssrPath }) {
 
   // Initialize Web Vitals monitoring on component mount
   useEffect(() => {
-    initWebVitals({ analyticsId: 'G-M2HGM3SM29', sendBeacon: true, verbose: false });
+    const stopVitals = initWebVitals({ sendBeacon: true, verbose: false });
+    const stopContacts = initContactTracking();
+    return () => { stopVitals(); stopContacts(); };
   }, []);
 
   // Handle browser back/forward buttons
@@ -89,6 +92,7 @@ function App({ ssrPath }) {
 
   const goToPage = (p) => {
     window.history.pushState({}, '', buildPath({ page: p, lang }));
+    setDetail(null);
     setArticleId(null);
     setPage(p);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -96,33 +100,31 @@ function App({ ssrPath }) {
 
   const openArticle = (id) => {
     window.history.pushState({}, '', buildPath({ page: 'Blog', articleId: id, lang }));
+    setDetail(null);
     setPage('Blog');
     setArticleId(id);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const closeArticle = () => {
-    window.history.pushState({}, '', buildPath({ page: 'Blog', lang }));
-    setPage('Blog');
-    setArticleId(null);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const closeArticle = () => goToPage('Blog');
 
   const openProduct = (product) => {
     window.history.pushState({}, '', buildPath({ page: 'Products', productId: product.id, lang }));
+    setPage('Products');
+    setArticleId(null);
     setDetail(product);
   };
 
-  const closeProduct = () => {
-    window.history.pushState({}, '', buildPath({ page: 'Products', lang }));
-    setDetail(null);
-  };
+  const closeProduct = () => goToPage('Products');
 
   // Switching language navigates to the equivalent URL in the other language (keeps EN/TH on distinct URLs).
   const switchLang = (newLang) => {
     if (newLang === lang) return;
     const productId = detail ? detail.id : null;
-    window.history.pushState({}, '', buildPath({ page, productId, articleId, lang: newLang }));
+    const nextPath = page === 'NotFound'
+      ? `${newLang === 'th' ? '/th' : ''}${window.location.pathname.replace(/^\/th(?=\/|$)/, '')}`
+      : buildPath({ page, productId, articleId, lang: newLang });
+    window.history.pushState({}, '', nextPath);
     setLang(newLang);
   };
 
@@ -137,7 +139,15 @@ function App({ ssrPath }) {
       ></div>
       <Navbar page={page} setPage={goToPage} lang={lang} setLang={switchLang} />
       <main id="main-content">
-        {articleId ? (
+        {page === 'NotFound' ? (
+          <section className="max-w-3xl mx-auto px-6 py-24 text-center">
+            <h1 className="text-4xl font-bold">404 — {lang === 'th' ? 'ไม่พบหน้าที่คุณต้องการ' : 'Page not found'}</h1>
+            <p className="mt-6">{lang === 'th' ? 'หน้านี้อาจถูกย้ายหรือไม่มีอยู่แล้ว' : 'This page may have moved or no longer exists.'}</p>
+            <a className="inline-block mt-8 underline" href={buildPath({ page: 'Products', lang })}>
+              {lang === 'th' ? 'กลับหน้าหลัก' : 'Back to home'}
+            </a>
+          </section>
+        ) : articleId ? (
           <ArticlePage articleId={articleId} onBack={closeArticle} onOpenArticle={openArticle} lang={lang} />
         ) : (
           <>

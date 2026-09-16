@@ -34,10 +34,10 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
     {
       title: isTh ? 'ชาหอมหมื่นลี้ สปาร์คกลิ้ง ยูซุ' : 'Osmanthus Blossom Yuzu Fizz',
       category: isTh ? '🌸 รีเฟรชเชอร์สปาร์คกลิ้ง' : '🌸 Craft Tea & Soda',
-      pairingFlavor: isTh ? 'ดอกหอมหมื่นลี้ (Osmanthus)' : 'Sweet Osmanthus',
+      pairingFlavor: isTh ? 'บุกหอมหมื่นลี้ (Osmanthus Konjac)' : 'Osmanthus Konjac',
       desc: isTh 
-        ? 'โคลด์บริวชามะลิผสมไซรัปยูซุแท้ ซ่าสดชื่นด้วยโซดา พร้อมกลิ่นหอมดอกไม้จากมุกหอมหมื่นลี้สีทอง' 
-        : 'Cold brew jasmine green tea with artisan yuzu soda, crowned with fragrant popping osmanthus pearls.',
+        ? 'โคลด์บริวชามะลิผสมไซรัปยูซุแท้ ซ่าสดชื่นด้วยโซดา พร้อมกลิ่นหอมดอกไม้จากบุกหอมหมื่นลี้'
+        : 'Cold brew jasmine green tea with artisan yuzu soda, crowned with fragrant osmanthus konjac.',
       toppingCost: '~4.50฿',
       suggestedPrice: '125฿',
       prepTime: '30s',
@@ -253,15 +253,15 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
             </button>
             
             <a 
-              href="https://line.me/R/ti/p/@blessmethailand" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href="mailto:Blessme.team@gmail.com?subject=Sample%20Request"
+              data-contact-intent="sample"
               className="px-8 py-4 bg-white border border-[#2B241E]/12 text-[#2B241E] font-semibold text-sm rounded-full hover:bg-white hover:border-[#3B6146] transition-all shadow-sm hover:shadow-md flex items-center gap-2"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#06c755">
-                <path d="M12 2C6.48 2 2 5.92 2 10.75c0 3.32 2.15 6.22 5.38 7.68-.24.88-.86 3.19-.99 3.69 0 0-.05.21.11.31.16.1.33.02.33.02.44-.06 5.1-3.34 5.86-3.88.44.06.87.09 1.31.09 5.52 0 10-3.92 10-8.75S17.52 2 12 2z"/>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m3 6 9 7 9-7" />
               </svg>
-              <span>{t.heroCta2} (LINE)</span>
+              <span>{t.heroCta2} (Email)</span>
             </a>
           </motion.div>
         </div>

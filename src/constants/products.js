@@ -35,7 +35,7 @@ export const PRODUCTS = [
     img: '/assets/products/moji-yogurt.webp', imgFallback: '/assets/products/moji-yogurt.png',
     note: 'A rich moji-yogurt core. The trend-forward topping reshaping cold dessert and beverage menus.',
     noteTh: 'แกนโมจิโยเกิร์ตรสเข้มข้น ท็อปปิ้งล้ำสมัยที่กำลังเปลี่ยนเมนูของหวานเย็นและเครื่องดื่ม' },
-  { id: 'osmanthus', name: 'Osmanthus',      nameTh: 'ดอกหอมหมื่นลี้',   tag: 'Signature flavor', flavor: 'Floral · Honeyed · Elegant', flavorTh: 'ดอกไม้ · น้ำผึ้ง · หรูหรา',
+  { id: 'osmanthus', name: 'Osmanthus Konjac', nameTh: 'บุกหอมหมื่นลี้',   tag: 'Signature flavor', flavor: 'Floral · Honeyed · Elegant', flavorTh: 'ดอกไม้ · น้ำผึ้ง · หรูหรา',
     price: 90, packSize: '500g', drainedWeight: '300g',
     pairings: ['🌸 Jasmine Sparkling', '🍵 Oolong Tea', '🍦 Soft Serve'],
     pairingsTh: ['🌸 สปาร์คกลิ้งมะลิ', '🍵 ชาอู่หลงพรีเมียม', '🍦 ซอฟต์เสิร์ฟ'],
@@ -43,3 +43,11 @@ export const PRODUCTS = [
     note: 'Tiny gold flowers, steeped and sealed. A whisper of honey for the premium dessert tier.',
     noteTh: 'ดอกไม้สีทองขนาดเล็ก ชงแล้วปิดผนึก กลิ่นน้ำผึ้งอ่อนๆ สำหรับของหวานระดับพรีเมียม' },
 ];
+
+export function productSearchName(product, lang = 'en') {
+  if (product.id === 'osmanthus' || product.id === 'cheese') {
+    return lang === 'th' ? product.nameTh : product.name;
+  }
+  const thaiName = { barley: 'ข้าวบาร์เลย์', oat: 'ข้าวโอ๊ต' }[product.id] || product.nameTh;
+  return lang === 'th' ? `มุกป๊อป${thaiName}` : `${product.name} Popping Boba`;
+}

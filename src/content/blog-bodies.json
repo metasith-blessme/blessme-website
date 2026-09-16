@@ -1,78 +1,290 @@
 {
   "what-is-popping-boba-khai-muk-pop": {
     "body": [
-      ["p", "Popping boba (also called popping pearls or bursting boba) are small, translucent spheres filled with fruit juice or flavored syrup. Bite or sip them and they burst, releasing flavor in your mouth — hence the ‘pop’."],
-      ["h2", "What is popping boba made of?"],
-      ["p", "Popping boba is made from seaweed extract (sodium alginate), not gelatin, so it is suitable for vegan and vegetarian customers. A thin gel skin holds the liquid centre — unlike chewy tapioca pearls, which must be boiled."],
-      ["h2", "Popping boba vs. tapioca pearls"],
-      ["ul", ["Popping boba: liquid centre, bursts in the mouth, no boiling, long shelf life", "Tapioca pearls: made from cassava starch, chewy, must be boiled and used the same day"]],
-      ["h2", "How many flavours does BlessMe offer?"],
-      ["p", "BlessMe curates six premium popping boba flavours for the Thai market: Barley, Red Bean, Oat, Water Chestnut, Osmanthus, and Moji Yogurt. All are vegan, shelf-stable, and keep for 12 months without refrigeration."],
-      ["h2", "What can you use popping boba in?"],
-      ["p", "Milk tea, fruit tea, soda, yogurt, smoothies, shaved ice, and desserts. It is a topping that instantly raises the appeal — and the price per cup — of your café menu."],
-      ["h2", "Order popping boba wholesale"],
-      ["p", "BlessMe (Thailand) Co., Ltd. stocks popping boba in Bangkok at wholesale prices of 80–115 THB per pack, ships nationwide, and offers samples. Contact LINE @blessmethailand or Blessme.team@gmail.com."]
+      [
+        "p",
+        "Popping boba (also called popping pearls or bursting boba) are small, translucent spheres filled with fruit juice or flavored syrup. Bite or sip them and they burst, releasing flavor in your mouth — hence the ‘pop’."
+      ],
+      [
+        "h2",
+        "What is popping boba made of?"
+      ],
+      [
+        "p",
+        "Popping boba is made from seaweed extract (sodium alginate), not gelatin, so it is suitable for vegan and vegetarian customers. A thin gel skin holds the liquid centre — unlike chewy tapioca pearls, which must be boiled."
+      ],
+      [
+        "h2",
+        "Popping boba vs. tapioca pearls"
+      ],
+      [
+        "ul",
+        [
+          "Popping boba: liquid centre, bursts in the mouth, no boiling, long shelf life",
+          "Tapioca pearls: made from cassava starch, chewy, must be boiled and used the same day"
+        ]
+      ],
+      [
+        "h2",
+        "How many flavours does BlessMe offer?"
+      ],
+      [
+        "p",
+        "BlessMe curates six premium popping boba flavours for the Thai market: Barley, Red Bean, Oat, Water Chestnut, Osmanthus Konjac, and Moji Yogurt. All are vegan, shelf-stable, and keep for 12 months without refrigeration."
+      ],
+      [
+        "h2",
+        "What can you use popping boba in?"
+      ],
+      [
+        "p",
+        "Milk tea, fruit tea, soda, yogurt, smoothies, shaved ice, and desserts. It is a topping that instantly raises the appeal — and the price per cup — of your café menu."
+      ],
+      [
+        "h2",
+        "Order popping boba wholesale"
+      ],
+      [
+        "p",
+        "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste."
+      ]
     ],
     "bodyTh": [
-      ["p", "ไข่มุกป๊อป (มุกป๊อป หรือที่หลายคนเรียกว่า ป๊อปปิ้งโบบา) คือเม็ดทรงกลมใสที่มีน้ำผลไม้หรือน้ำเชื่อมรสต่าง ๆ อยู่ข้างใน เมื่อกัดหรือดูดขึ้นมาเม็ดจะแตกและปล่อยรสชาติออกมาในปาก จึงเป็นที่มาของชื่อ ‘ป๊อป’ ที่แปลว่าแตก"],
-      ["h2", "ไข่มุกป๊อปทำจากอะไร?"],
-      ["p", "ไข่มุกป๊อปทำจากสาหร่ายทะเล (โซเดียมอัลจิเนต) ไม่ได้ใช้เจลาติน จึงเหมาะกับลูกค้าวีแกนและมังสวิรัติ ผิวด้านนอกเป็นเจลบาง ๆ ห่อของเหลวรสผลไม้ไว้ข้างใน ต่างจากไข่มุกแป้ง (ทาปิโอกา) ที่ต้องต้มและเคี้ยวหนึบ"],
-      ["h2", "ไข่มุกป๊อป ต่างจากไข่มุก (ทาปิโอกา) อย่างไร?"],
-      ["ul", ["ไข่มุกป๊อป: ข้างในเป็นน้ำ แตกในปาก ไม่ต้องต้ม เก็บได้นาน", "ไข่มุกทาปิโอกา: ทำจากแป้งมันสำปะหลัง เนื้อหนึบ ต้องต้มก่อนเสิร์ฟและใช้ภายในวันเดียว"]],
-      ["h2", "ไข่มุกป๊อปของ BlessMe มีกี่รส?"],
-      ["p", "BlessMe คัดสรรไข่มุกป๊อปพรีเมียม 6 รสชาติสำหรับตลาดไทย ได้แก่ บาร์เลย์ ถั่วแดง ข้าวโอ๊ต แห้ว ดอกหอมหมื่นลี้ และโมจิโยเกิร์ต ทุกรสเป็นวีแกน เก็บได้นาน 12 เดือน ไม่ต้องแช่เย็น"],
-      ["h2", "ใช้ไข่มุกป๊อปกับเมนูอะไรได้บ้าง?"],
-      ["p", "ใส่ได้ทั้งชานม ชาผลไม้ โซดา โยเกิร์ต สมูทตี้ น้ำแข็งไส และของหวาน เป็นท็อปปิ้งที่เพิ่มความน่าสนใจและราคาขายต่อแก้วให้ร้านคาเฟ่ได้ทันที"],
-      ["h2", "สนใจสั่งไข่มุกป๊อปขายส่ง"],
-      ["p", "BlessMe (ประเทศไทย) จำกัด สต็อกไข่มุกป๊อปในกรุงเทพฯ ราคาส่ง 80–115 บาท/แพ็ค ส่งทั่วไทย มีตัวอย่างให้ทดลองก่อนสั่งจริง ติดต่อ LINE @blessmethailand หรืออีเมล Blessme.team@gmail.com"]
+      [
+        "p",
+        "ไข่มุกป๊อป (มุกป๊อป หรือที่หลายคนเรียกว่า ป๊อปปิ้งโบบา) คือเม็ดทรงกลมใสที่มีน้ำผลไม้หรือน้ำเชื่อมรสต่าง ๆ อยู่ข้างใน เมื่อกัดหรือดูดขึ้นมาเม็ดจะแตกและปล่อยรสชาติออกมาในปาก จึงเป็นที่มาของชื่อ ‘ป๊อป’ ที่แปลว่าแตก"
+      ],
+      [
+        "h2",
+        "ไข่มุกป๊อปทำจากอะไร?"
+      ],
+      [
+        "p",
+        "ไข่มุกป๊อปทำจากสาหร่ายทะเล (โซเดียมอัลจิเนต) ไม่ได้ใช้เจลาติน จึงเหมาะกับลูกค้าวีแกนและมังสวิรัติ ผิวด้านนอกเป็นเจลบาง ๆ ห่อของเหลวรสผลไม้ไว้ข้างใน ต่างจากไข่มุกแป้ง (ทาปิโอกา) ที่ต้องต้มและเคี้ยวหนึบ"
+      ],
+      [
+        "h2",
+        "ไข่มุกป๊อป ต่างจากไข่มุก (ทาปิโอกา) อย่างไร?"
+      ],
+      [
+        "ul",
+        [
+          "ไข่มุกป๊อป: ข้างในเป็นน้ำ แตกในปาก ไม่ต้องต้ม เก็บได้นาน",
+          "ไข่มุกทาปิโอกา: ทำจากแป้งมันสำปะหลัง เนื้อหนึบ ต้องต้มก่อนเสิร์ฟและใช้ภายในวันเดียว"
+        ]
+      ],
+      [
+        "h2",
+        "ไข่มุกป๊อปของ BlessMe มีกี่รส?"
+      ],
+      [
+        "p",
+        "BlessMe คัดสรรไข่มุกป๊อปพรีเมียม 6 รสชาติสำหรับตลาดไทย ได้แก่ บาร์เลย์ ถั่วแดง ข้าวโอ๊ต แห้ว บุกหอมหมื่นลี้ และโมจิโยเกิร์ต ทุกรสเป็นวีแกน เก็บได้นาน 12 เดือน ไม่ต้องแช่เย็น"
+      ],
+      [
+        "h2",
+        "ใช้ไข่มุกป๊อปกับเมนูอะไรได้บ้าง?"
+      ],
+      [
+        "p",
+        "ใส่ได้ทั้งชานม ชาผลไม้ โซดา โยเกิร์ต สมูทตี้ น้ำแข็งไส และของหวาน เป็นท็อปปิ้งที่เพิ่มความน่าสนใจและราคาขายต่อแก้วให้ร้านคาเฟ่ได้ทันที"
+      ],
+      [
+        "h2",
+        "สนใจสั่งไข่มุกป๊อปขายส่ง"
+      ],
+      [
+        "p",
+        "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย"
+      ]
     ]
   },
   "popping-boba-wholesale-price-buy-bangkok": {
     "body": [
-      ["p", "One of the most common questions from café and milk tea shop owners is: how much does popping boba cost wholesale, and where should you buy it? Here is a clear answer."],
-      ["h2", "Popping boba wholesale price"],
-      ["p", "BlessMe's wholesale popping boba costs about 80–115 THB per 500g pack, depending on flavour and order size. The more you order, the lower the price per pack."],
-      ["h2", "Cost per cup"],
-      ["p", "One 500g pack serves roughly 15–20 cups, so your popping boba cost is only 4–7 THB per cup — while a topping upcharge of 10–20 THB is easy to add. That makes it a high-margin upgrade."],
-      ["h2", "Where to buy popping boba wholesale — check these 4 things"],
-      ["ul", ["Stocked in Thailand, no import wait", "Vegan, made from seaweed, no gelatin", "Samples available before you commit", "Nationwide shipping and after-sales support"]],
-      ["h2", "Order wholesale from BlessMe"],
-      ["p", "BlessMe (Thailand) Co., Ltd. stocks six popping boba flavours in Bangkok with nationwide shipping and samples. For wholesale pricing, contact LINE @blessmethailand, email Blessme.team@gmail.com, or call 082-896-5199."]
+      [
+        "p",
+        "One of the most common questions from café and milk tea shop owners is: how much does popping boba cost wholesale, and where should you buy it? Here is a clear answer."
+      ],
+      [
+        "h2",
+        "Popping boba wholesale price"
+      ],
+      [
+        "p",
+        "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste."
+      ],
+      [
+        "h2",
+        "Cost per cup"
+      ],
+      [
+        "p",
+        "One 500g pack serves roughly 15–20 cups, so your popping boba cost is only 4–7 THB per cup — while a topping upcharge of 10–20 THB is easy to add. That makes it a high-margin upgrade."
+      ],
+      [
+        "h2",
+        "Where to buy popping boba wholesale — check these 4 things"
+      ],
+      [
+        "ul",
+        [
+          "Stocked in Thailand, no import wait",
+          "Vegan, made from seaweed, no gelatin",
+          "Samples available before you commit",
+          "Nationwide shipping and after-sales support"
+        ]
+      ],
+      [
+        "h2",
+        "Order wholesale from BlessMe"
+      ],
+      [
+        "p",
+        "BlessMe (Thailand) Co., Ltd. stocks six popping boba flavours in Bangkok with nationwide shipping and samples. For wholesale pricing, contact LINE @blessmethailand, email Blessme.team@gmail.com, or call 082-896-5199."
+      ]
     ],
     "bodyTh": [
-      ["p", "หนึ่งในคำถามที่เจ้าของคาเฟ่และร้านชานมถามบ่อยที่สุดคือ ‘ไข่มุกป๊อป (มุกป๊อป) ราคาส่งเท่าไหร่ และควรซื้อขายส่งที่ไหนดี’ บทความนี้สรุปให้ชัดเจน"],
-      ["h2", "ไข่มุกป๊อป ราคาส่งเท่าไหร่?"],
-      ["p", "ราคาขายส่งไข่มุกป๊อปของ BlessMe อยู่ที่ประมาณ 80–115 บาทต่อแพ็ค (ขนาด 500 กรัม) ขึ้นอยู่กับรสชาติและจำนวนที่สั่ง ยิ่งสั่งจำนวนมากราคาต่อแพ็คยิ่งถูกลง"],
-      ["h2", "ต้นทุนต่อแก้วเท่าไหร่?"],
-      ["p", "หนึ่งแพ็ค 500 กรัม เสิร์ฟได้ประมาณ 15–20 แก้ว เท่ากับต้นทุนไข่มุกป๊อปเพียง 4–7 บาทต่อแก้ว แต่สามารถบวกราคาเมนูที่มีท็อปปิ้งได้ 10–20 บาท จึงเป็นวิธีเพิ่มกำไรที่คุ้มค่ามาก"],
-      ["h2", "ซื้อไข่มุกป๊อปขายส่งที่ไหนดี? เช็ก 4 ข้อนี้"],
-      ["ul", ["มีสต็อกในประเทศไทย ไม่ต้องรอนำเข้า ได้ของไว", "เป็นวีแกน ทำจากสาหร่าย ไม่ใช้เจลาติน", "มีตัวอย่างให้ชิมก่อนสั่งจริง", "ส่งทั่วประเทศและมีทีมดูแลหลังการขาย"]],
-      ["h2", "สั่งซื้อไข่มุกป๊อปขายส่งกับ BlessMe"],
-      ["p", "BlessMe (ประเทศไทย) จำกัด สต็อกไข่มุกป๊อป 6 รสในกรุงเทพฯ ส่งทั่วไทย มีตัวอย่างให้ทดลอง สอบถามราคาส่งและสั่งซื้อได้ที่ LINE @blessmethailand หรืออีเมล Blessme.team@gmail.com โทร 082-896-5199"]
+      [
+        "p",
+        "หนึ่งในคำถามที่เจ้าของคาเฟ่และร้านชานมถามบ่อยที่สุดคือ ‘ไข่มุกป๊อป (มุกป๊อป) ราคาส่งเท่าไหร่ และควรซื้อขายส่งที่ไหนดี’ บทความนี้สรุปให้ชัดเจน"
+      ],
+      [
+        "h2",
+        "ไข่มุกป๊อป ราคาส่งเท่าไหร่?"
+      ],
+      [
+        "p",
+        "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย"
+      ],
+      [
+        "h2",
+        "ต้นทุนต่อแก้วเท่าไหร่?"
+      ],
+      [
+        "p",
+        "หนึ่งแพ็ค 500 กรัม เสิร์ฟได้ประมาณ 15–20 แก้ว เท่ากับต้นทุนไข่มุกป๊อปเพียง 4–7 บาทต่อแก้ว แต่สามารถบวกราคาเมนูที่มีท็อปปิ้งได้ 10–20 บาท จึงเป็นวิธีเพิ่มกำไรที่คุ้มค่ามาก"
+      ],
+      [
+        "h2",
+        "ซื้อไข่มุกป๊อปขายส่งที่ไหนดี? เช็ก 4 ข้อนี้"
+      ],
+      [
+        "ul",
+        [
+          "มีสต็อกในประเทศไทย ไม่ต้องรอนำเข้า ได้ของไว",
+          "เป็นวีแกน ทำจากสาหร่าย ไม่ใช้เจลาติน",
+          "มีตัวอย่างให้ชิมก่อนสั่งจริง",
+          "ส่งทั่วประเทศและมีทีมดูแลหลังการขาย"
+        ]
+      ],
+      [
+        "h2",
+        "สั่งซื้อไข่มุกป๊อปขายส่งกับ BlessMe"
+      ],
+      [
+        "p",
+        "BlessMe (ประเทศไทย) จำกัด สต็อกไข่มุกป๊อป 6 รสในกรุงเทพฯ ส่งทั่วไทย มีตัวอย่างให้ทดลอง สอบถามราคาส่งและสั่งซื้อได้ที่ LINE @blessmethailand หรืออีเมล Blessme.team@gmail.com โทร 082-896-5199"
+      ]
     ]
   },
   "popping-boba-cafe-menu-ideas": {
     "body": [
-      ["p", "Popping boba is a versatile topping that makes it easy for cafés and milk tea shops to create new menu items and lift sales. Here are ten ideas you can use right away."],
-      ["h2", "10 popping boba menu ideas"],
-      ["ul", ["Popping boba milk tea — the best-selling classic", "Fruit tea with matched popping boba, e.g. lemon tea + water chestnut", "Italian soda with colourful popping boba", "Blended or Greek yogurt topped with Moji Yogurt popping boba", "Fruit smoothies with a popping boba topping", "Fresh milk or pink milk with popping boba", "Shaved ice and bingsu sprinkled with popping boba", "Thai tea or green tea with popping boba", "Alcohol-free mocktails garnished with popping boba", "Desserts — pudding, waffles — drizzled with popping boba"]],
-      ["h2", "Serving tips that sell"],
-      ["p", "Serve in clear cups to show off the colour, give menu items photogenic names, and match popping boba flavours to the drink — Moji Yogurt with milk drinks, Water Chestnut with fruit teas."],
-      ["h2", "Price it as a topping to grow margin"],
-      ["p", "Popping boba costs just 4–7 THB per cup but can carry a 10–20 THB topping upcharge. Offering several flavours keeps customers coming back to try more."],
-      ["h2", "Order popping boba wholesale for your shop"],
-      ["p", "BlessMe stocks six popping boba flavours in Bangkok at 80–115 THB per pack, shipping nationwide with samples available. Contact LINE @blessmethailand or Blessme.team@gmail.com."]
+      [
+        "p",
+        "Popping boba is a versatile topping that makes it easy for cafés and milk tea shops to create new menu items and lift sales. Here are ten ideas you can use right away."
+      ],
+      [
+        "h2",
+        "10 popping boba menu ideas"
+      ],
+      [
+        "ul",
+        [
+          "Popping boba milk tea — the best-selling classic",
+          "Fruit tea with matched popping boba, e.g. lemon tea + water chestnut",
+          "Italian soda with colourful popping boba",
+          "Blended or Greek yogurt topped with Moji Yogurt popping boba",
+          "Fruit smoothies with a popping boba topping",
+          "Fresh milk or pink milk with popping boba",
+          "Shaved ice and bingsu sprinkled with popping boba",
+          "Thai tea or green tea with popping boba",
+          "Alcohol-free mocktails garnished with popping boba",
+          "Desserts — pudding, waffles — drizzled with popping boba"
+        ]
+      ],
+      [
+        "h2",
+        "Serving tips that sell"
+      ],
+      [
+        "p",
+        "Serve in clear cups to show off the colour, give menu items photogenic names, and match popping boba flavours to the drink — Moji Yogurt with milk drinks, Water Chestnut with fruit teas."
+      ],
+      [
+        "h2",
+        "Price it as a topping to grow margin"
+      ],
+      [
+        "p",
+        "Popping boba costs just 4–7 THB per cup but can carry a 10–20 THB topping upcharge. Offering several flavours keeps customers coming back to try more."
+      ],
+      [
+        "h2",
+        "Order popping boba wholesale for your shop"
+      ],
+      [
+        "p",
+        "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste."
+      ]
     ],
     "bodyTh": [
-      ["p", "ไข่มุกป๊อป (มุกป๊อป) เป็นท็อปปิ้งที่ปรับใช้ได้หลากหลายเมนู ช่วยให้ร้านคาเฟ่และร้านชานมสร้างเมนูใหม่และเพิ่มยอดขายได้ง่าย ๆ นี่คือ 10 ไอเดียที่นำไปใช้ได้ทันที"],
-      ["h2", "10 ไอเดียเมนูไข่มุกป๊อป"],
-      ["ul", ["ชานมไข่มุกป๊อป — คลาสสิกที่ขายดีที่สุด", "ชาผลไม้จับคู่ไข่มุกป๊อปรสเข้ากัน เช่น ชามะนาว + แห้ว", "อิตาเลียนโซดาใส่ไข่มุกป๊อปหลากสี", "โยเกิร์ตปั่นหรือกรีกโยเกิร์ตท็อปไข่มุกป๊อปโมจิโยเกิร์ต", "สมูทตี้ผลไม้เพิ่มไข่มุกป๊อป", "นมสดหรือนมชมพูไข่มุกป๊อป", "น้ำแข็งไสและบิงซูโรยไข่มุกป๊อป", "ชาไทยหรือชาเขียวไข่มุกป๊อป", "ม็อกเทลไม่มีแอลกอฮอล์ตกแต่งด้วยไข่มุกป๊อป", "ของหวาน เช่น พุดดิ้ง วาฟเฟิล ราดไข่มุกป๊อป"]],
-      ["h2", "เคล็ดลับการเสิร์ฟให้ขายดี"],
-      ["p", "เสิร์ฟในแก้วใสเพื่อโชว์สีสันของไข่มุกป๊อป ตั้งชื่อเมนูให้ถ่ายรูปลงโซเชียลได้ และจับคู่รสชาติของไข่มุกป๊อปให้เข้ากับเครื่องดื่ม เช่น รสโมจิโยเกิร์ตกับเมนูนม รสแห้วกับชาผลไม้"],
-      ["h2", "เพิ่มกำไรด้วยการตั้งราคาแบบท็อปปิ้ง"],
-      ["p", "ต้นทุนไข่มุกป๊อปเพียง 4–7 บาทต่อแก้ว แต่บวกราคาเป็นออปชันท็อปปิ้งได้ 10–20 บาท ยิ่งมีหลายรสให้เลือก ลูกค้ายิ่งกลับมาลองซ้ำ"],
-      ["h2", "สั่งไข่มุกป๊อปขายส่งสำหรับร้านคุณ"],
-      ["p", "BlessMe สต็อกไข่มุกป๊อป 6 รสในกรุงเทพฯ ราคาส่ง 80–115 บาท/แพ็ค ส่งทั่วไทย มีตัวอย่างให้ทดลอง ติดต่อ LINE @blessmethailand หรืออีเมล Blessme.team@gmail.com"]
+      [
+        "p",
+        "ไข่มุกป๊อป (มุกป๊อป) เป็นท็อปปิ้งที่ปรับใช้ได้หลากหลายเมนู ช่วยให้ร้านคาเฟ่และร้านชานมสร้างเมนูใหม่และเพิ่มยอดขายได้ง่าย ๆ นี่คือ 10 ไอเดียที่นำไปใช้ได้ทันที"
+      ],
+      [
+        "h2",
+        "10 ไอเดียเมนูไข่มุกป๊อป"
+      ],
+      [
+        "ul",
+        [
+          "ชานมไข่มุกป๊อป — คลาสสิกที่ขายดีที่สุด",
+          "ชาผลไม้จับคู่ไข่มุกป๊อปรสเข้ากัน เช่น ชามะนาว + แห้ว",
+          "อิตาเลียนโซดาใส่ไข่มุกป๊อปหลากสี",
+          "โยเกิร์ตปั่นหรือกรีกโยเกิร์ตท็อปไข่มุกป๊อปโมจิโยเกิร์ต",
+          "สมูทตี้ผลไม้เพิ่มไข่มุกป๊อป",
+          "นมสดหรือนมชมพูไข่มุกป๊อป",
+          "น้ำแข็งไสและบิงซูโรยไข่มุกป๊อป",
+          "ชาไทยหรือชาเขียวไข่มุกป๊อป",
+          "ม็อกเทลไม่มีแอลกอฮอล์ตกแต่งด้วยไข่มุกป๊อป",
+          "ของหวาน เช่น พุดดิ้ง วาฟเฟิล ราดไข่มุกป๊อป"
+        ]
+      ],
+      [
+        "h2",
+        "เคล็ดลับการเสิร์ฟให้ขายดี"
+      ],
+      [
+        "p",
+        "เสิร์ฟในแก้วใสเพื่อโชว์สีสันของไข่มุกป๊อป ตั้งชื่อเมนูให้ถ่ายรูปลงโซเชียลได้ และจับคู่รสชาติของไข่มุกป๊อปให้เข้ากับเครื่องดื่ม เช่น รสโมจิโยเกิร์ตกับเมนูนม รสแห้วกับชาผลไม้"
+      ],
+      [
+        "h2",
+        "เพิ่มกำไรด้วยการตั้งราคาแบบท็อปปิ้ง"
+      ],
+      [
+        "p",
+        "ต้นทุนไข่มุกป๊อปเพียง 4–7 บาทต่อแก้ว แต่บวกราคาเป็นออปชันท็อปปิ้งได้ 10–20 บาท ยิ่งมีหลายรสให้เลือก ลูกค้ายิ่งกลับมาลองซ้ำ"
+      ],
+      [
+        "h2",
+        "สั่งไข่มุกป๊อปขายส่งสำหรับร้านคุณ"
+      ],
+      [
+        "p",
+        "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย"
+      ]
     ]
   },
   "increase-smoothie-bar-profit-popping-boba": {
@@ -90,42 +302,16 @@
         "Take a Yogurt Smoothie priced at 80 THB. Raw ingredient cost: around 35 THB. Gross margin: 45 THB (roughly 56%). Sounds solid — until you subtract rent, labour, and utilities. What remains isn't much."
       ],
       [
-        "p",
-        "Now add BlessMe popping boba. Each 500g pack (300g drained weight) yields 20 servings at 15g each. Your cost per serving: 5.75 THB on a single pack (115 THB), or just 4 THB per serving when you order a full box of 24 packs at 80 THB/pack."
-      ],
-      [
         "h2",
-        "The Real ROI: What the Numbers Look Like"
+        "Illustrative contribution before other expenses (not net profit)"
       ],
       [
         "p",
-        "At single-pack cost (115 THB → 20 servings):"
-      ],
-      [
-        "ul",
-        [
-          "Sell at 10 THB add-on → 200 THB revenue, 85 THB profit → 74% ROI",
-          "Sell at 15 THB add-on → 300 THB revenue, 185 THB profit → 161% ROI",
-          "Sell at 20 THB add-on → 400 THB revenue, 285 THB profit → 248% ROI",
-          "Sell at 30 THB add-on → 600 THB revenue, 485 THB profit → 422% ROI"
-        ]
+        "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste."
       ],
       [
         "p",
-        "At full box cost (80 THB/pack → 480 servings per box of 24 packs):"
-      ],
-      [
-        "ul",
-        [
-          "Sell at 10 THB add-on → 4,800 THB revenue, 2,880 THB profit → 150% ROI",
-          "Sell at 15 THB add-on → 7,200 THB revenue, 5,280 THB profit → 275% ROI",
-          "Sell at 20 THB add-on → 9,600 THB revenue, 7,680 THB profit → 400% ROI",
-          "Sell at 30 THB add-on → 14,400 THB revenue, 12,480 THB profit → 650% ROI"
-        ]
-      ],
-      [
-        "p",
-        "Break-even: sell just 12 out of 20 servings at 10 THB for a single pack, or 192 out of 480 servings for a full box, and the entire cost has already paid for itself. Everything after that is profit."
+        "Illustration: 20 barley topping servings/day at a 20 THB upcharge and 4.50 THB portion cost leave 310.00 THB/day or 9,300.00 THB per 30 days before labour, tax, shipping, waste and other expenses. This is not observed customer performance or a sales guarantee."
       ],
       [
         "h2",
@@ -155,7 +341,7 @@
           "⭐ Red Bean Popping Boba — Best Seller. Gently sweet, familiar Thai flavor. Classic with honey or plain yogurt smoothie.",
           "Oat Popping Boba — Light grain note. Great with banana or berry smoothies.",
           "Water Chestnut Popping Boba — Sweet, slightly crunchy. Excellent with tropical or mango bases.",
-          "Osmanthus Popping Boba — Delicate floral aroma. Premium feel with vanilla or green tea smoothie.",
+          "Osmanthus Konjac — Delicate floral aroma. Premium feel with vanilla or green tea smoothie.",
           "Moji Yogurt Popping Boba — Creamy-sweet trend that creates buzz. Best with berry or plain fruit smoothie."
         ]
       ],
@@ -216,15 +402,15 @@
       [
         "ul",
         [
-          "6 flavors: Barley, Red Bean, Oat, Water Chestnut, Osmanthus, Moji Yogurt",
-          "Wholesale pricing: 115 THB/pack (single) or 80 THB/pack in boxes of 24",
+          "6 flavors: Barley, Red Bean, Oat, Water Chestnut, Osmanthus Konjac, Moji Yogurt",
+          "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste.",
           "Consistent quality: every batch QC-tested for flavor and texture",
           "Nationwide delivery across Thailand"
         ]
       ],
       [
         "p",
-        "Contact BlessMe's B2B team today for wholesale pricing and free samples at blessmethailand.com or LINE: @blessmethailand"
+        "Yes. Request free samples by emailing Blessme.team@gmail.com."
       ]
     ],
     "bodyTh": [
@@ -241,49 +427,16 @@
         "สมมติว่าคุณขาย Yogurt Smoothie แก้วละ 80 บาท ต้นทุนวัตดุดิบประมาณ 35 บาท กำไรขั้นต้น 45 บาท (ประมาณ 56%) หักค่าใช้จ่ายอื่นๆ แล้วกำไรจริงๆ เหลือไม่มาก"
       ],
       [
-        "p",
-        "ทีนี้ลองเพิ่ม มุกป๊อป เข้าไป — 1 pack (500g / Drained 300g) ใช้ครั้งละ 15g ได้ 20 ที่เสิร์ฟต่อแพ็ค:"
-      ],
-      [
-        "ul",
-        [
-          "ซื้อแพ็คเดี่ยว: ต้นทุน 115 บาท/แพ็ค → ตกที่เสิร์ฟละ ~5.75 บาท",
-          "ซื้อยกลัง 1 box (24 แพ็ค): ต้นทุน 80 บาท/แพ็ค → ตกที่เสิร์ฟละ 4 บาท"
-        ]
-      ],
-      [
         "h2",
-        "ตัวเลขกำไรสุทธิ และ ROI"
+        "ตัวอย่างส่วนต่างก่อนค่าใช้จ่ายอื่น (ไม่ใช่กำไรสุทธิ)"
       ],
       [
         "p",
-        "กำไรเมื่อสั่งแบบแพ็คเดี่ยว (ต้นทุนแพ็คละ 115 บาท):"
-      ],
-      [
-        "ul",
-        [
-          "บวกราคา 10 บาท → รายได้รวม 200 บาท (กำไร 85 บาท) → ROI 74%",
-          "บวกราคา 15 บาท → รายได้รวม 300 บาท (กำไร 185 บาท) → ROI 161%",
-          "บวกราคา 20 บาท → รายได้รวม 400 บาท (กำไร 285 บาท) → ROI 248%",
-          "บวกราคา 30 บาท → รายได้รวม 600 บาท (กำไร 485 บาท) → ROI 422%"
-        ]
+        "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย"
       ],
       [
         "p",
-        "กำไรเมื่อสั่งแบบยกลัง (ต้นทุนแพ็คละ 80 บาท, รวม 480 ที่เสิร์ฟต่อลัง):"
-      ],
-      [
-        "ul",
-        [
-          "บวกราคา 10 บาท → รายได้รวม 4,800 บาท (กำไร 2,880 บาท) → ROI 150%",
-          "บวกราคา 15 บาท → รายได้รวม 7,200 บาท (กำไร 5,280 บาท) → ROI 275%",
-          "บวกราคา 20 บาท → รายได้รวม 9,600 บาท (กำไร 7,680 บาท) → ROI 400%",
-          "บวกราคา 30 บาท → รายได้รวม 14,400 บาท (กำไร 12,480 บาท) → ROI 650%"
-        ]
-      ],
-      [
-        "p",
-        "Break-even: ขายเพียง 12 เสิร์ฟ (แพ็คเดี่ยว) หรือ 192 เสิร์ฟ (ยกลัง) ที่ราคา 10 บาท ก็สามารถคืนทุนค่ามุกป๊อปทั้งหมดได้ทันที ส่วนที่เหลือคือกำไรล้วนๆ"
+        "สมมติขายท็อปปิ้งข้าวบาร์เลย์ 20 เสิร์ฟ/วัน บวกเพิ่มเสิร์ฟละ 20 บาท ต้นทุนเสิร์ฟละ 4.50 บาท จะเหลือส่วนต่าง 310.00 บาท/วัน หรือ 9,300.00 บาท/30 วัน ยังไม่หักค่าแรง ภาษี ขนส่ง ของเสีย และค่าใช้จ่ายอื่น ตัวเลขนี้เป็นตัวอย่าง ไม่ใช่ผลประกอบการจริงหรือการรับประกันยอดขาย"
       ],
       [
         "h2",
@@ -313,7 +466,7 @@
           "⭐ มุกป๊อปถั่วแดง — Best Seller รสหวานนุ่มละมุนสไตล์เอเชีย เข้ากันได้ดีแบบดั้งเดิมกับโยเกิร์ตรสธรรมชาติหรือน้ำผึ้ง",
           "มุกป๊อปข้าวโอ๊ต — กลิ่นข้าวโอ๊ตอบอวลเบาๆ อร่อยและเข้ากันสุดๆ กับสมูทตี้กล้วยหอมหรือมิกซ์เบอร์รี่",
           "มุกป๊อปแห้ว — เคี้ยวเพลินมีความกรุบกรอบเพิ่มความสดชื่น เหมาะมากกับสมูทตี้มะม่วงหรือผลไม้เมืองร้อน",
-          "มุกหอบหมื่นลี้ — กลิ่นหอมดอกไม้ละมุนหรูหรา ยกระดับสมูทตี้วานิลลาหรือชาเขียวให้มีมิติพรีเมียม",
+          "มุกบุกหอมหมื่นลี้ — กลิ่นหอมดอกไม้ละมุนหรูหรา ยกระดับสมูทตี้วานิลลาหรือชาเขียวให้มีมิติพรีเมียม",
           "มุกป๊อปชีส — รสชาติเค็มหวานเข้มข้นกลมกล่อมตามเทรนด์ยอดนิยม เข้ากันดีกับสมูทตี้รสธรรมชาติ"
         ]
       ],
@@ -374,15 +527,15 @@
       [
         "ul",
         [
-          "รสชาติหลากหลาย: 6 รสชาติพรีเมียม (ข้าวบาร์เลย์, ถั่วแดง, ข้าวโอ๊ต, แห้ว, หอบหมื่นลี้, ชีส)",
-          "ราคาขายส่งเรท B2B: คุ้มค่าสำหรับการจัดซื้อจำนวนมาก (แพ็คเดี่ยว 115 บาท / ยกลัง 80 บาทต่อแพ็ค)",
+          "รสชาติหลากหลาย: 6 รสชาติพรีเมียม (ข้าวบาร์เลย์, ถั่วแดง, ข้าวโอ๊ต, แห้ว, บุกหอมหมื่นลี้, ชีส)",
+          "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย",
           "คุณภาพคงที่ได้มาตรฐาน: ผ่านการตรวจสอบคุณภาพและการควบคุม QC อย่างเข้มงวดสม่ำเสมอทุกแบทช์",
           "จัดส่งรวดเร็วทั่วประเทศไทย ส่งตรงถึงหน้าร้านของคุณ"
         ]
       ],
       [
         "p",
-        "เพิ่มกำไรและสร้างความแตกต่างให้ร้านของคุณวันนี้ ติดต่อทีม B2B ของ BlessMe เพื่อรับราคาขายส่งและตัวอย่างสินค้าฟรีได้ที่ blessmethailand.com หรือ LINE: @blessmethailand"
+        "ได้ ขอตัวอย่างฟรีทางอีเมล Blessme.team@gmail.com"
       ]
     ]
   },
@@ -485,7 +638,7 @@
           "⭐ Plain Yogurt Smoothie + มุกป๊อปข้าวบาร์เลย์ (Best Seller): ได้พลังงานธัญพืชหอมกรุ่นจับคู่กับโยเกิร์ตธรรมชาติ ให้ความรู้สึกสดชื่นและอิ่มท้องดีต่อสุขภาพ",
           "⭐ Honey Yogurt Smoothie + มุกป๊อปถั่วแดง (Best Seller): น้ำผึ้งหวานหอมผสมโยเกิร์ต ผสานความนุ่มละมุนของถั่วแดง เป็นคู่คลาสสิกที่ทุกคนโปรดปราน",
           "Banana Yogurt Smoothie + มุกป๊อปข้าวโอ๊ต: สองความหอมจากกล้วยหอมและข้าวโอ๊ต เสริมพลังงานและกากใยให้อิ่มนานในมื้อเช้า",
-          "Vanilla Yogurt Smoothie + มุกหอบหมื่นลี้: ดอกออสมันทัสหอมอบอวลผสานวานิลลาหวานนุ่ม ได้รสชาติพรีเมียมหรูหราเหมือนทานขนมหวานในคาเฟ่ระดับสูง"
+          "Vanilla Yogurt Smoothie + มุกบุกหอมหมื่นลี้: ดอกออสมันทัสหอมอบอวลผสานวานิลลาหวานนุ่ม ได้รสชาติพรีเมียมหรูหราเหมือนทานขนมหวานในคาเฟ่ระดับสูง"
         ]
       ],
       [
@@ -526,27 +679,15 @@
       ],
       [
         "h2",
-        "The Numbers: What is the Real ROI of Popping Boba?"
+        "Illustrative contribution before other expenses (not net profit)"
       ],
       [
         "p",
-        "Let us look at actual wholesale cost figures. A single 500g wholesale pack yields 20 servings at 15g each. Single pack cost: 115 THB (~5.75 THB/serving). Box of 24 rate: 80 THB/pack (~4.00 THB/serving)."
+        "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste."
       ],
       [
         "p",
-        "If your average shop sells 100 cups per day, and 40% of customers choose to add popping boba at 20 THB, you sell 40 portions of boba per day:"
-      ],
-      [
-        "ul",
-        [
-          "Daily Boba Revenue: 40 portions x 20 THB = 800 THB",
-          "Daily Boba Cost (Box rate): 40 portions x 4 THB = 160 THB",
-          "Net Additional Profit: 640 THB/day = 19,200 THB/month!"
-        ]
-      ],
-      [
-        "p",
-        "This is highly profitable because it requires zero extra staff, no store expansion, and almost zero prep time. The boba is shelf-stable and ready to serve."
+        "Illustration: 40 barley topping servings/day at a 20 THB upcharge and 4.50 THB portion cost leave 620.00 THB/day or 18,600.00 THB per 30 days before labour, tax, shipping, waste and other expenses. This is not observed customer performance or a sales guarantee."
       ],
       [
         "h2",
@@ -593,34 +734,15 @@
       ],
       [
         "h2",
-        "ตัวเลขพิสูจน์กำไร: มุกป๊อปดันยอดเงินในกระเป๋าคุณได้แค่ไหน?"
+        "ตัวอย่างส่วนต่างก่อนค่าใช้จ่ายอื่น (ไม่ใช่กำไรสุทธิ)"
       ],
       [
         "p",
-        "ลองมาดูการคำนวณจากต้นทุนและปริมาณการเสิร์ฟจริงของ BlessMe มุกป๊อป 1 แพ็ค (500 กรัม / เนื้อบุก 300 กรัม) ตักเสิร์ฟแก้วละ 15 กรัม จะได้ทั้งหมด 20 แก้ว:"
-      ],
-      [
-        "ul",
-        [
-          "ราคาแพ็คเดี่ยว: 115 บาทต่อแพ็ค → ต้นทุนต่อแก้ว ~5.75 บาท",
-          "ราคาสั่งซื้อยกลัง (24 แพ็ค): 80 บาทต่อแพ็ค → ต้นทุนต่อแก้วเพียง 4 บาท"
-        ]
+        "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย"
       ],
       [
         "p",
-        "สมมติว่าร้านของคุณมียอดขายเฉลี่ยวันละ 100 แก้ว และมีลูกค้าอัปเกรดบวกมุกป๊อปเพียง 40% (40 แก้วต่อวัน) โดยคุณคิดราคา Topping เพิ่มแก้วละ 20 บาท:"
-      ],
-      [
-        "ul",
-        [
-          "ยอดรายได้เสริมจากมุกป๊อป: 40 แก้ว × 20 บาท = 800 บาทต่อวัน",
-          "ต้นทุนมุกป๊อปยกลัง: 40 แก้ว × 4 บาท = 160 บาทต่อวัน",
-          "ผลกำไรเสริมสุทธิเพิ่มขึ้น: 640 บาทต่อวัน = 19,200 บาทต่อเดือน!"
-        ]
-      ],
-      [
-        "p",
-        "เป็นกำไรพิเศษที่เกือบจะเท่ากับรายได้หลักของหลายๆ เมนู โดยคุณไม่ต้องขยายร้าน ไม่ต้องลงทุนเครื่องจักรเพิ่ม และไม่ต้องจ้างพนักงานเพิ่มแต่อย่างใด มุกป๊อปของ BlessMe สามารถเปิดใช้ตักเสิร์ฟได้ทันที จัดการง่ายมาก"
+        "สมมติขายท็อปปิ้งข้าวบาร์เลย์ 40 เสิร์ฟ/วัน บวกเพิ่มเสิร์ฟละ 20 บาท ต้นทุนเสิร์ฟละ 4.50 บาท จะเหลือส่วนต่าง 620.00 บาท/วัน หรือ 18,600.00 บาท/30 วัน ยังไม่หักค่าแรง ภาษี ขนส่ง ของเสีย และค่าใช้จ่ายอื่น ตัวเลขนี้เป็นตัวอย่าง ไม่ใช่ผลประกอบการจริงหรือการรับประกันยอดขาย"
       ],
       [
         "h2",
@@ -648,7 +770,7 @@
       ],
       [
         "p",
-        "เปลี่ยนร้านชานมธรรมดาๆ ให้กลายเป็นแบรนด์ที่มีจุดแตกต่างอันโดดเด่นและทำกำไรได้สูงขึ้นอย่างยั่งยืน ติดต่อทีม BlessMe เพื่อรับตัวอย่างมุกป๊อปไปลองปั่นสูตรพิเศษหน้าร้านของคุณฟรี ได้เลยวันนี้ที่ blessmethailand.com หรือทัก LINE: @blessmethailand"
+        "ได้ ขอตัวอย่างฟรีทางอีเมล Blessme.team@gmail.com"
       ]
     ]
   },
@@ -731,7 +853,7 @@
           "⭐ ชาไทยสเปเชียล + มุกป๊อปข้าวบาร์เลย์ (ระดับความเข้ากัน 9.5/10): รสหวานหอมเข้มข้นอันโดดเด่นของชาไทย เมื่อเจอรสชาติข้าวบาร์เลย์อบที่หอมมันกลมกล่อม ทั้งสองรสชาติจะเสริมกันอย่างเป็นธรรมชาติ ให้ความรู้สึกครีมมี่และเฮลตี้ขึ้นอย่างเด่นชัด เมนูนี้คือคอมโบที่ขายดีที่สุดของร้านค้า B2B ของเรา",
           "⭐ ชานมคลาสสิก + มุกป๊อปถั่วแดง (ระดับความเข้ากัน 9.5/10): เป็นการผสานรสชาติคลาสสิกสไตล์ชานมถั่วแดงของทวีปเอเชีย ความนุ่มละมุนของถั่วแดงผสานกับชานมได้อย่างลื่นไหล รสหวานกลมกล่อมเคี้ยวสนุก ได้รสสัมผัสหรูหรา",
           "มัทฉะลาเต้ + มุกป๊อปถั่วแดง (ระดับความเข้ากัน 9/10): ดึงความญี่ปุ่นแท้ๆ ออกมาด้วยมัทฉะรสเข้มข้นตัดเปรี้ยวขมนิดๆ คู่กับมุกป๊อปถั่วแดงหวานมัน ละมุนลิ้นสไตล์ขนมหวานญี่ปุ่นดั้งเดิม",
-          "ชาอู่หลงหอม + มุกหอบหมื่นลี้ (ระดับความเข้ากัน 9/10): เมนูสไตล์พรีเมียมระดับชาพรีเมียม กลิ่นอู่หลงหอมสะอาดธรรมชาติเจอความหอมอบอวลของดอกออสมันทัส (ดอกหอมหมื่นลี้) รสชาติเบา สดชื่น เหมาะกับผู้บริโภคสายเฮลตี้และรักความเป็นธรรมชาติ",
+          "ชาอู่หลงหอม + มุกบุกหอมหมื่นลี้ (ระดับความเข้ากัน 9/10): เมนูสไตล์พรีเมียมระดับชาพรีเมียม กลิ่นอู่หลงหอมสะอาดธรรมชาติเจอความหอมอบอวลของดอกออสมันทัส (บุกหอมหมื่นลี้) รสชาติเบา สดชื่น เหมาะกับผู้บริโภคสายเฮลตี้และรักความเป็นธรรมชาติ",
           "ชานมบราวน์ชูการ์ + มุกป๊อปชีส (ระดับความเข้ากัน 8.5/10): สำหรับสายหวานมันสะใจ โทนหวานเข้มข้นบราวน์ชูการ์เจอมุกป๊อปชีสเค็มหวาน นัวและชวนฟินสุดๆ เป็นเมนูยอดฮิตในกลุ่มคนรักชีส"
         ]
       ],
@@ -785,23 +907,15 @@
       ],
       [
         "h2",
-        "Let us Look at the Math: Profit Margins with Popping Boba"
+        "Illustrative contribution before other expenses (not net profit)"
       ],
       [
         "p",
-        "Standard Greek Yogurt Bowl: Price: 150 THB. Raw ingredients cost: ~65 THB. Profit: 85 THB (56% margin)."
+        "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste."
       ],
       [
         "p",
-        "Upgraded Premium Bowl with Boba: Price: 175 THB. Boba cost (15g serving at box rate): 4 THB. Total cost: 69 THB. Profit: 106 THB!"
-      ],
-      [
-        "ul",
-        [
-          "Single Pack Boba Cost: ~5.75 THB/serving | Upgraded Margin: 19.25 THB/bowl (335% ROI)",
-          "Box of 24 Boba Cost: 4.00 THB/serving | Upgraded Margin: 21.00 THB/bowl (525% ROI)",
-          "If you sell just 30 upgraded bowls per day, that is 630 THB extra profit daily, translating to 18,900 THB extra profit per month!"
-        ]
+        "Illustration: 30 barley topping servings/day at a 25 THB upcharge and 4.50 THB portion cost leave 615.00 THB/day or 18,450.00 THB per 30 days before labour, tax, shipping, waste and other expenses. This is not observed customer performance or a sales guarantee."
       ],
       [
         "h2",
@@ -817,7 +931,7 @@
       ],
       [
         "p",
-        "Add true menu differentiation, capture high-margin upsells, and make your F&B business stand out. Reach out to BlessMe B2B team today at blessmethailand.com or LINE: @blessmethailand for wholesale catalogs and free sample tubs!"
+        "Yes. Request free samples by emailing Blessme.team@gmail.com."
       ]
     ],
     "bodyTh": [
@@ -851,29 +965,15 @@
       ],
       [
         "h2",
-        "คำนวณรายได้เปรียบเทียบ: กำไรที่เพิ่มขึ้นแบบชัดเจน"
+        "ตัวอย่างส่วนต่างก่อนค่าใช้จ่ายอื่น (ไม่ใช่กำไรสุทธิ)"
       ],
       [
         "p",
-        "ลองมาคำนวณกำไรเปรียบเทียบระหว่างถ้วยโยเกิร์ตพื้นฐานกับการอัปเกรดด้วยมุกป๊อป:"
-      ],
-      [
-        "ul",
-        [
-          "Greek Yogurt Bowl ทั่วไป: ราคาขาย 150 บาท (ต้นทุนวัตถุดิบโยเกิร์ต+ผลไม้สด ~65 บาท) → กำไร 85 บาท (Margin 56%)",
-          "Premium Greek Yogurt Bowl + มุกป๊อป: ราคาขาย 175 บาท (เพิ่ม 25 บาท) ต้นทุนมุกป๊อปพรีเมียมเพิ่มขึ้นเพียง 4 บาทต่อแก้ว (เมื่อสั่งเรทยกลัง) → ต้นทุนรวม 69 บาท → กำไรพุ่งขึ้นเป็น 106 บาทต่อชาม!"
-        ]
+        "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย"
       ],
       [
         "p",
-        "หากเฉลี่ยร้านของคุณจำหน่ายโยเกิร์ตได้วันละ 50 ถ้วย และมีผู้เลือกอัปเกรดมุกป๊อป 60% (30 ที่ต่อวัน):"
-      ],
-      [
-        "ul",
-        [
-          "ต้นทุนสั่งซื้อยกลัง: 4 บาทต่อเสิร์ฟ → อัปเกรดขายเพิ่ม 25 บาท → กำไรพิเศษเพิ่ม 21 บาทต่อชาม",
-          "ผลกำไรพิเศษที่ร้านได้รับ: 630 บาทต่อวัน = 18,900 บาทต่อเดือน!"
-        ]
+        "สมมติขายท็อปปิ้งข้าวบาร์เลย์ 30 เสิร์ฟ/วัน บวกเพิ่มเสิร์ฟละ 25 บาท ต้นทุนเสิร์ฟละ 4.50 บาท จะเหลือส่วนต่าง 615.00 บาท/วัน หรือ 18,450.00 บาท/30 วัน ยังไม่หักค่าแรง ภาษี ขนส่ง ของเสีย และค่าใช้จ่ายอื่น ตัวเลขนี้เป็นตัวอย่าง ไม่ใช่ผลประกอบการจริงหรือการรับประกันยอดขาย"
       ],
       [
         "h2",
@@ -889,7 +989,7 @@
       ],
       [
         "p",
-        "ยกระดับร้านขนมเพื่อสุขภาพของคุณให้มีจุดเด่นล้ำหน้าแบรนด์อื่น พร้อมขยายอัตรากำไรพิเศษได้อย่างมีประสิทธิภาพสูงสุด ติดต่อทีมงานฝ่ายขายส่ง B2B ของ BlessMe เพื่อปรึกษาการทำเมนูสเปเชียลและขอรับตัวอย่างสินค้าฟรีได้เลยวันนี้ที่ blessmethailand.com หรือทัก LINE: @blessmethailand"
+        "ได้ ขอตัวอย่างฟรีทางอีเมล Blessme.team@gmail.com"
       ]
     ]
   },
@@ -979,7 +1079,7 @@
         [
           "⭐ โยเกิร์ตธรรมชาติรสจืด + มุกป๊อปข้าวบาร์เลย์ (Best Seller Match): ความเปรี้ยวบางเบาละมุนของกรีกโยเกิร์ตธรรมชาติ เจอรสข้าวบาร์เลย์อบหอมกรุ่น ได้รสชาติสไตล์ธัญพืชพรีเมียม ให้ความรู้สึกคลีนและอิ่มท้องนาน เหมาะกับเป็นมื้อเช้าอันยอดเยี่ยม",
           "⭐ โยเกิร์ตผสมน้ำผึ้ง + มุกป๊อปถั่วแดง (Best Seller Match): คู่หูสไตล์เอเชียหวานนุ่มละมุน น้ำผึ้งหอมกรุ่นผสมความหวานเนื้อแน่นของถั่วแดง เป็นคอมโบดั้งเดิมที่ทานกี่ครั้งก็ฟินสม่ำเสมอ",
-          "โยเกิร์ตรสวานิลลา + มุกหอบหมื่นลี้: ความเปรี้ยวหวานของวานิลลาเจอกลิ่นดอกออสมันทัส (หอบหมื่นลี้) หวานบางเบาละมุนละไม มอบกลิ่นอายคาเฟ่หรูระดับไฮเอนด์",
+          "โยเกิร์ตรสวานิลลา + มุกบุกหอมหมื่นลี้: ความเปรี้ยวหวานของวานิลลาเจอกลิ่นดอกออสมันทัส (บุกหอมหมื่นลี้) หวานบางเบาละมุนละไม มอบกลิ่นอายคาเฟ่หรูระดับไฮเอนด์",
           "โยเกิร์ตจืด + มุกป๊อปชีส: สำหรับสายครีมมี่ขั้นสุด รสเปรี้ยวบางเบาของโยเกิร์ตผสานความเค็มหวานมันเข้มข้นของมุกชีส เติมรสชาติที่กลมกล่อมแปลกใหม่และนัวสุดๆ"
         ]
       ],
@@ -1131,11 +1231,11 @@
       ],
       [
         "p",
-        "BlessMe popping boba is purpose-built for this reality. Six premium flavors — Barley, Red Bean, Oat, Water Chestnut, Osmanthus, and Moji Yogurt — available wholesale at 80–115 THB per pack, delivered ambient, with a 12-month shelf life. No cold chain. No spoilage risk. No complexity."
+        "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste."
       ],
       [
         "p",
-        "If you are evaluating your ingredient mix for cost efficiency and operational simplicity, this is a category worth looking at seriously. Contact BlessMe's B2B team at Blessme.team@gmail.com or LINE: @blessmethailand to discuss wholesale pricing and request samples."
+        "Yes. Request free samples by emailing Blessme.team@gmail.com."
       ]
     ],
     "bodyTh": [
@@ -1255,11 +1355,11 @@
       ],
       [
         "p",
-        "มุกป๊อปของ BlessMe ออกแบบมาเพื่อตอบสนองความเป็นจริงนี้ 6 รสชาติพรีเมียม — ข้าวบาร์เลย์ ถั่วแดง ข้าวโอ๊ต แห้วจีน หอบหมื่นลี้ และชีส — พร้อมขายส่งในราคา 80–115 บาท/แพ็ค จัดส่งแบบ Ambient อายุการเก็บรักษา 12 เดือน ไม่มี Cold Chain ไม่มีความเสี่ยงของเสีย ไม่มีความซับซ้อน"
+        "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย"
       ],
       [
         "p",
-        "หากคุณกำลังประเมินส่วนผสมของวัตถุดิบเพื่อประสิทธิภาพด้านต้นทุนและความเรียบง่ายในการดำเนินงาน นี่คือหมวดหมู่ที่ควรพิจารณาอย่างจริงจัง ติดต่อทีม B2B ของ BlessMe ที่ Blessme.team@gmail.com หรือ LINE: @blessmethailand เพื่อรับราคาส่งและตัวอย่างสินค้าฟรี"
+        "ได้ ขอตัวอย่างฟรีทางอีเมล Blessme.team@gmail.com"
       ]
     ]
   },
@@ -1294,19 +1394,19 @@
       ],
       [
         "p",
-        "BlessMe offers two straightforward tiers with no hidden fees and no MOQ for the single-pack option:"
+        "BlessMe prices five flavors at 90 THB per pack and Moji Yogurt at 120 THB per pack. There is no minimum order; confirm delivery charges and taxes with the team."
       ],
       [
         "ul",
         [
-          "Single pack: 115 THB per 500g pack (any of 6 flavors)",
-          "Full box of 24 packs: 80 THB per pack (1,920 THB per box)",
-          "That means: single-pack cost is 5.75 THB per 15g serving; box cost is 4.00 THB per 15g serving"
+          "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste.",
+          "Yes. Request free samples by emailing Blessme.team@gmail.com.",
+          "Compare drained weight, actual portion size, shipping and label information, not pack price alone."
         ]
       ],
       [
         "p",
-        "At 4 THB per serving and a typical add-on price of 15–20 THB, you are looking at roughly 275–400% ROI on just the topping, before factoring in any uplift to the base drink price."
+        "At a 15g drained serving, portion cost is 4.50 THB for a 90 THB pack or 6.00 THB for Moji Yogurt. Subtract portion cost from your chosen add-on price, then account for labour, shipping, tax and waste before estimating profit."
       ],
       [
         "h2",
@@ -1319,10 +1419,9 @@
       [
         "ul",
         [
-          "Generic imported boba (Chinese origin, no certification): 60–75 THB per pack, but 400g gross weight (lower yield, ~250g drained), no Thai importer support",
-          "Mid-tier Thai distributor (Tarad.com / Facebook resellers): 90–110 THB per pack for 500g, limited flavor range (usually 2–3 flavors), no box discount",
-          "Premium import brands (Japanese or Korean origin): 150–200 THB per pack, excellent quality but no bulk pricing and long lead times",
-          "BlessMe (local Bangkok stock): 80–115 THB per pack, 6 exclusive flavors, same-day pickup available, box discount down to 80 THB"
+          "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste.",
+          "Yes. Request free samples by emailing Blessme.team@gmail.com.",
+          "Compare drained weight, actual portion size, shipping and label information, not pack price alone."
         ]
       ],
       [
@@ -1360,7 +1459,7 @@
       ],
       [
         "p",
-        "Example: BlessMe single pack at 115 THB, 300g drained, 15g serving = 115 ÷ 20 = 5.75 THB per serving. A competitor at 90 THB but only 220g drained at 15g serving = 90 ÷ 14.7 = 6.12 THB per serving. The \"cheaper\" pack is actually more expensive per use."
+        "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste."
       ],
       [
         "h2",
@@ -1369,11 +1468,9 @@
       [
         "ul",
         [
-          "Order by the box, not the pack — the jump from 115 to 80 THB per pack at BlessMe saves 30%",
-          "Consolidate flavors into one box order rather than buying different suppliers for each flavor",
-          "Ask about mixed-flavor box options — BlessMe allows mixing flavors within a box",
-          "Calculate your weekly turnover before committing to a large stock: 480 servings per box means you need to sell roughly 480 add-ons to rotate stock",
-          "Negotiate a sample pack first — a legitimate wholesale supplier will offer trial packs before you commit to bulk"
+          "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste.",
+          "Yes. Request free samples by emailing Blessme.team@gmail.com.",
+          "Compare drained weight, actual portion size, shipping and label information, not pack price alone."
         ]
       ],
       [
@@ -1382,14 +1479,14 @@
       ],
       [
         "p",
-        "When you order from BlessMe at 80–115 THB per pack, you are getting more than just popping boba. The price includes:"
+        "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste."
       ],
       [
         "ul",
         [
           "Halal certification and FDA registration — critical for café operators serving Muslim customers",
           "QC-tested product: every batch is tested for burst quality, flavor consistency, and shelf life",
-          "Free sample packs for new B2B customers",
+          "Yes. Request free samples by emailing Blessme.team@gmail.com.",
           "B2B support from the BlessMe team for menu suggestions, pricing strategy, and portion guides",
           "Same-day pickup available from Bangkok stock or nationwide delivery"
         ]
@@ -1400,7 +1497,7 @@
       ],
       [
         "p",
-        "Getting started is straightforward. Contact the BlessMe B2B team via LINE: @blessmethailand or email Blessme.team@gmail.com. You can also submit a quote request at blessmethailand.com. New customers are eligible for a free sample pack of any flavor to test before committing to a box order."
+        "Yes. Request free samples by emailing Blessme.team@gmail.com."
       ],
       [
         "p",
@@ -1434,14 +1531,14 @@
       [
         "ul",
         [
-          "แพ็คเดี่ยว: 115 บาท/แพ็ค 500g (ทุกรสชาติ)",
-          "ยกลัง 24 แพ็ค: 80 บาท/แพ็ค (รวม 1,920 บาท/ลัง)",
-          "ต้นทุนต่อเสิร์ฟ (15g): แพ็คเดี่ยว 5.75 บาท, ยกลัง 4.00 บาท"
+          "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย",
+          "ได้ ขอตัวอย่างฟรีทางอีเมล Blessme.team@gmail.com",
+          "เปรียบเทียบด้วยน้ำหนักเนื้อ ปริมาณที่ใช้จริง ค่าขนส่ง และข้อมูลจากฉลาก ไม่ใช้ราคาแพ็คอย่างเดียว"
         ]
       ],
       [
         "p",
-        "ที่ต้นทุน 4 บาทต่อเสิร์ฟ และราคาขาย add-on ปกติ 15–20 บาท คุณได้ ROI ประมาณ 275–400% จาก topping เพียงอย่างเดียว"
+        "เมื่อใช้เนื้อ 15g ต่อเสิร์ฟ ต้นทุนคือ 4.50 บาทสำหรับแพ็ค 90 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต นำราคาขายเพิ่มหักต้นทุนนี้ และยังต้องหักค่าแรง ขนส่ง ภาษี และของเสียก่อนสรุปกำไร"
       ],
       [
         "h2",
@@ -1450,10 +1547,9 @@
       [
         "ul",
         [
-          "มุกป๊อปนำเข้าทั่วไป (จีน ไม่มีใบรับรอง): 60–75 บาท/แพ็ค แต่น้ำหนักรวม 400g (yield น้อยกว่า ~250g หลังสะเด็ดน้ำ) ไม่มีการรับประกันคุณภาพ",
-          "ตัวแทนจำหน่ายไทยระดับกลาง (Tarad.com / Facebook): 90–110 บาท/แพ็ค 500g รสชาติน้อย (2–3 รส) ไม่มีส่วนลดยกลัง",
-          "แบรนด์นำเข้าพรีเมียม (ญี่ปุ่น/เกาหลี): 150–200 บาท/แพ็ค คุณภาพดีเยี่ยมแต่ไม่มีราคาส่ง รอนานกว่า",
-          "BlessMe (สต็อกกรุงเทพ): 80–115 บาท/แพ็ค 6 รสชาติเฉพาะ รับสินค้าได้วันเดียวกัน ส่วนลดยกลัง 80 บาท"
+          "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย",
+          "ได้ ขอตัวอย่างฟรีทางอีเมล Blessme.team@gmail.com",
+          "เปรียบเทียบด้วยน้ำหนักเนื้อ ปริมาณที่ใช้จริง ค่าขนส่ง และข้อมูลจากฉลาก ไม่ใช้ราคาแพ็คอย่างเดียว"
         ]
       ],
       [
@@ -1483,7 +1579,7 @@
       ],
       [
         "p",
-        "ตัวอย่าง: BlessMe แพ็คเดี่ยว 115 บาท สะเด็ดน้ำ 300g เสิร์ฟ 15g = 115 ÷ 20 = 5.75 บาท/เสิร์ฟ คู่แข่งราคา 90 บาท แต่สะเด็ดน้ำ 220g = 90 ÷ 14.7 = 6.12 บาท/เสิร์ฟ แพ็ค \"ถูกกว่า\" กลับแพงกว่าต่อการใช้งานจริง"
+        "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย"
       ],
       [
         "h2",
@@ -1492,11 +1588,9 @@
       [
         "ul",
         [
-          "สั่งยกลัง ไม่ใช่แพ็คเดี่ยว — BlessMe ลดจาก 115 เหลือ 80 บาท/แพ็ค ประหยัด 30%",
-          "รวมรสชาติใน order เดียวแทนที่จะซื้อหลายซัพพลายเออร์แยกกัน",
-          "สอบถามตัวเลือกลังมิกซ์รสชาติ — BlessMe อนุญาตให้มิกซ์รสชาติใน 1 ลัง",
-          "คำนวณยอดขายต่อสัปดาห์ก่อนสั่งสต็อกจำนวนมาก: 1 ลัง = 480 เสิร์ฟ",
-          "ขอตัวอย่างก่อนเสมอ — ซัพพลายเออร์ที่น่าเชื่อถือจะให้ตัวอย่างก่อนสั่งจำนวนมาก"
+          "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย",
+          "ได้ ขอตัวอย่างฟรีทางอีเมล Blessme.team@gmail.com",
+          "เปรียบเทียบด้วยน้ำหนักเนื้อ ปริมาณที่ใช้จริง ค่าขนส่ง และข้อมูลจากฉลาก ไม่ใช้ราคาแพ็คอย่างเดียว"
         ]
       ],
       [
@@ -1508,14 +1602,14 @@
         [
           "ใบรับรองฮาลาลและการขึ้นทะเบียน อย. — สำคัญสำหรับร้านที่ให้บริการลูกค้ามุสลิม",
           "ผ่านการ QC ทุก batch: ทดสอบคุณภาพการแตก ความสม่ำเสมอของรสชาติ และอายุการเก็บรักษา",
-          "แพ็คตัวอย่างฟรีสำหรับลูกค้า B2B รายใหม่",
+          "ได้ ขอตัวอย่างฟรีทางอีเมล Blessme.team@gmail.com",
           "การสนับสนุน B2B: คำแนะนำเมนู กลยุทธ์ราคา และคู่มือปริมาณเสิร์ฟ",
           "รับสินค้าวันเดียวกันจากสต็อกกรุงเทพ หรือจัดส่งทั่วประเทศ"
         ]
       ],
       [
         "p",
-        "ติดต่อทีม B2B ของ BlessMe ผ่าน LINE: @blessmethailand หรืออีเมล Blessme.team@gmail.com หรือส่งคำขอใบเสนอราคาที่ blessmethailand.com ลูกค้าใหม่ได้รับตัวอย่างฟรี 1 แพ็คในรสชาติที่เลือก"
+        "ได้ ขอตัวอย่างฟรีทางอีเมล Blessme.team@gmail.com"
       ]
     ]
   },
@@ -1571,7 +1665,7 @@
       ],
       [
         "p",
-        "BlessMe (Thailand) Co., Ltd. operates from Bangkok with consistent inventory across all 6 SKUs: Barley, Red Bean, Oat, Water Chestnut, Osmanthus, and Moji Yogurt popping boba. The team is Thai, the pricing is in THB, and the product is already here."
+        "BlessMe (Thailand) Co., Ltd. operates from Bangkok with consistent inventory across all 6 SKUs: Barley, Red Bean, Oat, Water Chestnut, Osmanthus Konjac, and Moji Yogurt popping boba. The team is Thai, the pricing is in THB, and the product is already here."
       ],
       [
         "p",
@@ -1580,12 +1674,10 @@
       [
         "ul",
         [
-          "Stock location: Bangkok (exact pickup address provided upon B2B registration)",
-          "Same-day pickup: available Monday–Saturday during business hours",
-          "Delivery coverage: Bangkok same/next-day; provincial Thailand 1–3 business days via major couriers (Kerry, Flash, J&T)",
-          "Wholesale pricing: 80 THB/pack (box of 24) or 115 THB/pack (single)",
-          "MOQ: no minimum for single packs; box orders start at 1 box (24 packs)",
-          "Payment: bank transfer (PromptPay / corporate account), credit terms available for established accounts"
+          "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste.",
+          "No minimum order.",
+          "Yes. Request free samples by emailing Blessme.team@gmail.com.",
+          "Bangkok stock, nationwide shipping. Confirm delivery dates with the team."
         ]
       ],
       [
@@ -1611,10 +1703,10 @@
       [
         "ul",
         [
-          "Single-pack trial: as little as 1 pack (115 THB) to try a new flavor",
-          "Sample for B2B customers: free sample pack for qualifying new business accounts",
-          "Box wholesale: 1 box = 24 packs (1,920 THB at 80 THB/pack)",
-          "Multi-box: no hard upper limit — contact the team for volume pricing on large orders"
+          "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste.",
+          "No minimum order.",
+          "Yes. Request free samples by emailing Blessme.team@gmail.com.",
+          "Bangkok stock, nationwide shipping. Confirm delivery dates with the team."
         ]
       ],
       [
@@ -1629,7 +1721,7 @@
         "ul",
         [
           "Step 1: Contact via LINE @blessmethailand or email Blessme.team@gmail.com with your business name and the flavors you are interested in",
-          "Step 2: The B2B team will confirm availability, pricing, and whether you qualify for a free sample pack",
+          "Yes. Request free samples by emailing Blessme.team@gmail.com.",
           "Step 3: Place your order and confirm payment (bank transfer details provided)",
           "Step 4: Collect in person (Bangkok) or receive delivery within 1–3 business days"
         ]
@@ -1703,17 +1795,15 @@
       ],
       [
         "p",
-        "BlessMe (Thailand) Co., Ltd. ดำเนินงานจากกรุงเทพ พร้อมสินค้าคงคลังสม่ำเสมอครบทั้ง 6 SKU: มุกป๊อปข้าวบาร์เลย์ ถั่วแดง ข้าวโอ๊ต แห้วจีน หอบหมื่นลี้ และชีส ทีมเป็นคนไทย ราคาเป็นบาทไทย และสินค้าอยู่ที่นี่แล้ว"
+        "BlessMe (Thailand) Co., Ltd. ดำเนินงานจากกรุงเทพ พร้อมสินค้าคงคลังสม่ำเสมอครบทั้ง 6 SKU: มุกป๊อปข้าวบาร์เลย์ ถั่วแดง ข้าวโอ๊ต แห้วจีน บุกหอมหมื่นลี้ และชีส ทีมเป็นคนไทย ราคาเป็นบาทไทย และสินค้าอยู่ที่นี่แล้ว"
       ],
       [
         "ul",
         [
-          "ที่ตั้งสต็อก: กรุงเทพ (ที่อยู่รับสินค้าแจ้งเมื่อลงทะเบียน B2B แล้ว)",
-          "รับสินค้าวันเดียวกัน: จันทร์–เสาร์ ในเวลาทำการ",
-          "ครอบคลุมการจัดส่ง: กรุงเทพวัน/วันถัดไป; ต่างจังหวัด 1–3 วันทำการ ผ่าน Kerry, Flash, J&T",
-          "ราคาส่ง: 80 บาท/แพ็ค (ยกลัง 24 แพ็ค) หรือ 115 บาท/แพ็ค (แพ็คเดี่ยว)",
-          "MOQ: ไม่มีขั้นต่ำสำหรับแพ็คเดี่ยว; สั่งลังเริ่มที่ 1 ลัง (24 แพ็ค)",
-          "การชำระเงิน: โอนเงิน (PromptPay / บัญชีธุรกิจ) มีเครดิตสำหรับลูกค้าที่มีประวัติ"
+          "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย",
+          "ไม่มีขั้นต่ำในการสั่งซื้อ",
+          "ได้ ขอตัวอย่างฟรีทางอีเมล Blessme.team@gmail.com",
+          "มีสต็อกกรุงเทพฯ ส่งทั่วไทย ติดต่อทีมงานเพื่อยืนยันวันจัดส่ง"
         ]
       ],
       [
@@ -1731,10 +1821,10 @@
       [
         "ul",
         [
-          "แพ็คเดี่ยวทดลอง: เพียง 1 แพ็ค (115 บาท) เพื่อทดสอบรสชาติใหม่",
-          "ตัวอย่างสำหรับลูกค้า B2B: แพ็คตัวอย่างฟรีสำหรับบัญชีธุรกิจใหม่ที่ผ่านเงื่อนไข",
-          "ยกลัง: 1 ลัง = 24 แพ็ค (1,920 บาท ที่ 80 บาท/แพ็ค)",
-          "หลายลัง: ไม่มีขีดจำกัดบน ติดต่อทีมสำหรับราคา volume"
+          "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย",
+          "ไม่มีขั้นต่ำในการสั่งซื้อ",
+          "ได้ ขอตัวอย่างฟรีทางอีเมล Blessme.team@gmail.com",
+          "มีสต็อกกรุงเทพฯ ส่งทั่วไทย ติดต่อทีมงานเพื่อยืนยันวันจัดส่ง"
         ]
       ],
       [
@@ -1745,7 +1835,7 @@
         "ul",
         [
           "ขั้นที่ 1: ติดต่อผ่าน LINE @blessmethailand หรืออีเมล Blessme.team@gmail.com พร้อมชื่อธุรกิจและรสชาติที่สนใจ",
-          "ขั้นที่ 2: ทีม B2B ยืนยันสต็อก ราคา และเงื่อนไขตัวอย่างฟรี",
+          "ได้ ขอตัวอย่างฟรีทางอีเมล Blessme.team@gmail.com",
           "ขั้นที่ 3: สั่งซื้อและยืนยันการชำระเงิน",
           "ขั้นที่ 4: รับสินค้าด้วยตนเอง (กรุงเทพ) หรือรอรับส่ง 1–3 วันทำการ"
         ]
@@ -1920,7 +2010,7 @@
       ],
       [
         "p",
-        "BlessMe is currently the only Thai-based wholesale supplier of barley popping boba with local Bangkok stock, Halal certification, and FDA registration. All 6 BlessMe flavors — including barley — are available at 80 THB/pack (box of 24) or 115 THB/pack (single), with no minimum order for trial purchases."
+        "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste."
       ],
       [
         "p",
@@ -1928,7 +2018,7 @@
       ],
       [
         "p",
-        "To order or request a free sample, contact the BlessMe B2B team via LINE: @blessmethailand, email Blessme.team@gmail.com, or visit blessmethailand.com. New business accounts are eligible for a complimentary barley sample pack to test before committing to a wholesale order."
+        "Yes. Request free samples by emailing Blessme.team@gmail.com."
       ]
     ],
     "bodyTh": [
@@ -2057,7 +2147,7 @@
       ],
       [
         "p",
-        "ปัจจุบัน BlessMe เป็นซัพพลายเออร์ไทยเจ้าเดียวที่ขายส่งมุกป๊อปข้าวบาร์เลย์โดยมีสต็อกในกรุงเทพ รับรองฮาลาล และขึ้นทะเบียน อย. ทั้ง 6 รสชาติ BlessMe รวมถึงข้าวบาร์เลย์ มีจำหน่ายในราคา 80 บาท/แพ็ค (ยกลัง 24 แพ็ค) หรือ 115 บาท/แพ็ค (แพ็คเดี่ยว) ไม่มีขั้นต่ำสำหรับการซื้อทดลอง"
+        "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย"
       ],
       [
         "p",
@@ -2065,7 +2155,7 @@
       ],
       [
         "p",
-        "ติดต่อสั่งซื้อหรือขอตัวอย่างฟรีผ่าน LINE: @blessmethailand อีเมล Blessme.team@gmail.com หรือ blessmethailand.com บัญชีธุรกิจใหม่มีสิทธิ์รับตัวอย่างมุกข้าวบาร์เลย์ฟรี 1 แพ็คก่อนสั่ง wholesale"
+        "ได้ ขอตัวอย่างฟรีทางอีเมล Blessme.team@gmail.com"
       ]
     ]
   },
@@ -2082,8 +2172,9 @@
       [
         "ul",
         [
-          "Retail/Single Pack: 115 THB per 500g pack.",
-          "Wholesale (24 packs/box): 80 THB per 500g pack."
+          "Five flavors: 90 THB/pack.",
+          "Moji Yogurt: 120 THB/pack.",
+          "No minimum order."
         ]
       ],
       [
@@ -2096,26 +2187,19 @@
       ],
       [
         "p",
-        "Offering premium, unique toppings like Barley, Red Bean, Oat, Water Chestnut, Osmanthus, and Moji Yogurt popping boba allows cafes to differentiate themselves from competitors. Customers are willing to pay a premium for novel textures and flavors, directly increasing the average ticket size."
+        "Offering premium, unique toppings like Barley, Red Bean, Oat, Water Chestnut, Osmanthus Konjac, and Moji Yogurt popping boba allows cafes to differentiate themselves from competitors. Customers are willing to pay a premium for novel textures and flavors, directly increasing the average ticket size."
       ],
       [
-        "h3",
-        "Example Profit Calculation"
+        "h2",
+        "Illustrative contribution before other expenses (not net profit)"
       ],
       [
         "p",
-        "Here is a quick breakdown of cost versus revenue for a single serving of BlessMe popping boba (bought at wholesale):"
+        "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste."
       ],
       [
-        "ul",
-        [
-          "Cost per Pack (Wholesale): 80 THB",
-          "Servings per Pack: 20 servings (25g per serving)",
-          "Cost per Serving: 4 THB",
-          "Suggested Topping Add-on Price: 15 THB",
-          "Gross Profit per Serving: 11 THB",
-          "Profit Margin: 73%"
-        ]
+        "p",
+        "Illustration: 20 barley topping servings/day at a 20 THB upcharge and 4.50 THB portion cost leave 310.00 THB/day or 9,300.00 THB per 30 days before labour, tax, shipping, waste and other expenses. This is not observed customer performance or a sales guarantee."
       ],
       [
         "h2",
@@ -2161,7 +2245,7 @@
       ],
       [
         "p",
-        "การเอามุกป๊อปมาเป็นท็อปปิ้งพรีเมียม ถือเป็นวิธีที่ช่วยเพิ่มกำไรให้ร้านได้แบบเห็นผลชัดเจนมาก ลองคิดดูง่ายๆ ครับ ด้วยต้นทุนราคาส่งของ BlessMe ที่ 80 บาท/ถุง (500 กรัม) หนึ่งถุงเสิร์ฟได้ตั้ง 20 แก้ว ตกต้นทุนแค่ 4 บาท/แก้วเท่านั้นเอง แต่เราสามารถอัปเซลล์ลูกค้าเพิ่มได้ 15-20 บาท เท่ากับว่าเราได้กำไรขั้นต้นทะลุ 70% จากแค่ท็อปปิ้งตัวเดียวเลยครับ"
+        "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย"
       ],
       [
         "h2",
@@ -2174,8 +2258,9 @@
       [
         "ul",
         [
-          "ราคาซื้อปลีก: ถุงละ 115 บาท",
-          "ราคาเหมาลัง (24 ถุง): ถุงละ 80 บาทเท่านั้น"
+          "5 รส ราคา 90 บาท/แพ็ค",
+          "โมจิโยเกิร์ต 120 บาท/แพ็ค",
+          "ไม่มีขั้นต่ำในการสั่งซื้อ"
         ]
       ],
       [
@@ -2191,23 +2276,16 @@
         "เดี๋ยวนี้มุกผลไม้ธรรมดามันเกลื่อนตลาดครับ การที่เรามีมุกป๊อปรสชาติแปลกใหม่ อย่าง บาร์เลย์, ถั่วแดง, ข้าวโอ๊ต, แห้ว, หอมหมื่นลี้ หรือชีส มันทำให้ร้านเราดูมีอะไรมากกว่าคู่แข่ง ลูกค้ายอมจ่ายแพงขึ้นเพื่อแลกกับรสสัมผัสใหม่ๆ ซึ่งตรงนี้แหละครับที่ไปช่วยดันยอดขายต่อบิล (Ticket Size) ให้พุ่งขึ้น"
       ],
       [
-        "h3",
-        "ตัวอย่างการคำนวณกำไร (ฉบับเข้าใจง่าย)"
+        "h2",
+        "ตัวอย่างส่วนต่างก่อนค่าใช้จ่ายอื่น (ไม่ใช่กำไรสุทธิ)"
       ],
       [
         "p",
-        "ลองดูตัวเลขเวลาเอาไปขายจริงดูครับ (คำนวณจากราคาลังนะ):"
+        "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย"
       ],
       [
-        "ul",
-        [
-          "ต้นทุนต่อถุง (ราคาส่ง): 80 บาท",
-          "เสิร์ฟได้: 20 แก้ว (ตักแก้วละประมาณ 25 กรัม)",
-          "ต้นทุนต่อแก้ว: 4 บาท",
-          "ราคาบวกเพิ่มหน้าร้าน: 15 บาท",
-          "กำไรต่อแก้ว: 11 บาท",
-          "อัตรากำไร (Margin): 73%"
-        ]
+        "p",
+        "สมมติขายท็อปปิ้งข้าวบาร์เลย์ 20 เสิร์ฟ/วัน บวกเพิ่มเสิร์ฟละ 20 บาท ต้นทุนเสิร์ฟละ 4.50 บาท จะเหลือส่วนต่าง 310.00 บาท/วัน หรือ 9,300.00 บาท/30 วัน ยังไม่หักค่าแรง ภาษี ขนส่ง ของเสีย และค่าใช้จ่ายอื่น ตัวเลขนี้เป็นตัวอย่าง ไม่ใช่ผลประกอบการจริงหรือการรับประกันยอดขาย"
       ],
       [
         "h2",
@@ -2297,7 +2375,7 @@
       ],
       [
         "p",
-        "BlessMe is more than just an ingredient provider; we are a strategic partner for your F&B brand. Our popping boba comes in convenient 500g packs (yielding 20 servings), priced transparently at 115 THB for retail and just 80 THB per pack for wholesale (24 packs per box). With a reliable 12-month shelf life (1 month refrigerated after opening), you can scale your operations with confidence. Upgrade your menu and your margins with BlessMe today."
+        "Barley, Oat, Red Bean, Water Chestnut and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste."
       ]
     ],
     "bodyTh": [
@@ -2307,7 +2385,7 @@
       ],
       [
         "p",
-        "ถ้าคุณเป็นเจ้าของร้าน F&B, คนทำแฟรนไชส์ หรือมีร้านขนมหลายสาขา และกำลังหามุกป๊อปเกรดพรีเมียมที่ไม่ซ้ำใครไปลงที่ร้าน BlessMe Thailand คือคำตอบครับ เรานำเข้ารสชาติแปลกใหม่ในราคาส่งที่จับต้องได้จริง (แค่ถุงละ 80 บาทเมื่อซื้อยกลัง) เพื่อให้คุณทำกำไรได้เต็มเม็ดเต็มหน่วย"
+        "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย"
       ],
       [
         "h2",
@@ -2357,7 +2435,7 @@
       ],
       [
         "p",
-        "เราไม่ได้อยากเป็นแค่คนส่งของ แต่เราอยากเป็นพาร์ทเนอร์ที่ช่วยให้ร้านคุณโตไปด้วยกัน มุกป๊อปของเรามาในแพ็ค 500 กรัม (ใช้ได้ 20 เสิร์ฟ) ราคาชัดเจนครับ ปลีก 115 บาท ส่ง 80 บาท/ถุง (ลังละ 24 ถุง) แถมอายุสินค้ายาว 12 เดือน บริหารสต็อกง่ายสุดๆ ถ้าอยากเพิ่มกำไรและอัปเกรดเมนูที่ร้าน ติดต่อ BlessMe ได้เลยครับ"
+        "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย"
       ]
     ]
   }

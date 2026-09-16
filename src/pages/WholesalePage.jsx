@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { PRODUCTS } from '../constants/products';
+import { buildPath } from '../lib/routing';
 import { WHOLESALE_FAQS_EN, WHOLESALE_FAQS_TH } from '../constants/faq';
 
 const LINE_URL = 'https://line.me/R/ti/p/@blessmethailand';
@@ -9,54 +10,54 @@ const CONTENT = {
   en: {
     eyebrow: 'WHOLESALE',
     h1: 'Popping Boba Wholesale in Bangkok',
-    lead: 'Six vegan flavors of popping boba, in stock in Bangkok. Wholesale 80–115 THB per pack, nationwide shipping, and free samples for cafés and F&B businesses.',
+    lead: 'Six vegan toppings, including popping boba, Moji Yogurt and Osmanthus Konjac. 90–120 THB per pack, no minimum order. Bangkok stock, nationwide shipping. Request free samples by email.',
     ctaLine: 'Order on LINE',
     ctaSamples: 'Request free samples',
     whyTitle: 'Why buy popping boba wholesale from BlessMe',
     why: [
       ['Stock in Bangkok', 'No import wait — fast nationwide shipping.'],
-      ['Vegan, no gelatin', 'Seaweed-based shells filled with real fruit juice.'],
-      ['6 signature flavors', 'Barley, Red Bean, Oat, Water Chestnut, Osmanthus, Moji Yogurt.'],
-      ['Free samples', 'Taste before you commit.'],
-      ['12-month shelf life', 'Shelf-stable, no refrigeration needed.'],
-      ['Low cost per cup', '~4.50–6.00 THB per serving, easy 15–30 THB upcharge.'],
+      ['Vegan, no gelatin', 'All six products are vegan; check individual labels for allergens.'],
+      ['6 signature flavors', 'Barley, Red Bean, Oat, Water Chestnut, Osmanthus Konjac, Moji Yogurt.'],
+      ['Free samples', 'Request by email: Blessme.team@gmail.com.'],
+      ['12-month shelf life', 'Unopened, cool and dry; follow the label after opening.'],
+      ['Low cost per cup', '4.50–6.00 THB at 15g drained per serving; excludes other expenses.'],
     ],
     priceTitle: 'Wholesale pricing',
     priceRows: [
-      ['Signature Flavors (500g)', '90 THB / pack'],
+      ['Five flavors, excluding Moji Yogurt (500g)', '90 THB / pack'],
       ['Moji Yogurt (500g)', '120 THB / pack'],
       ['Servings per pack', '~15–20 servings (300g drained)'],
     ],
     flavorsTitle: '6 wholesale flavors',
     faqTitle: 'Wholesale FAQ',
     finalTitle: 'Ready to order popping boba wholesale?',
-    finalLead: 'Message us on LINE @blessmethailand or email us for pricing and free samples.',
+    finalLead: 'Order on LINE @blessmethailand. Request free samples by email: Blessme.team@gmail.com.',
   },
   th: {
     eyebrow: 'ขายส่ง',
     h1: 'ขายส่งไข่มุกป๊อป (มุกป๊อป) กรุงเทพ',
-    lead: 'ไข่มุกป๊อป 6 รสวีแกน สต็อกในกรุงเทพฯ ราคาส่งเริ่มต้น 90–120 บาท/แพ็ค ส่งทั่วไทย มีตัวอย่างฟรีสำหรับคาเฟ่และธุรกิจอาหาร',
+    lead: 'ท็อปปิ้งวีแกน 6 รายการ รวมมุกป๊อป โมจิโยเกิร์ต และบุกหอมหมื่นลี้ ราคา 90–120 บาท/แพ็ค ไม่มีขั้นต่ำ สต็อกกรุงเทพฯ ส่งทั่วไทย ขอตัวอย่างฟรีทางอีเมล',
     ctaLine: 'สั่งซื้อทาง LINE',
     ctaSamples: 'ขอตัวอย่างฟรี',
     whyTitle: 'ทำไมต้องสั่งไข่มุกป๊อปขายส่งกับ BlessMe',
     why: [
       ['สต็อกในกรุงเทพฯ', 'ไม่ต้องรอนำเข้า ส่งเร็วทั่วไทย'],
-      ['วีแกน ไม่ใช้เจลาติน', 'เปลือกสาหร่ายห่อน้ำผลไม้แท้'],
-      ['6 รสซิกเนเจอร์', 'บาร์เลย์ ถั่วแดง ข้าวโอ๊ต แห้ว หอมหมื่นลี้ โมจิโยเกิร์ต'],
-      ['มีตัวอย่างฟรี', 'ชิมก่อนตัดสินใจสั่งจริง'],
-      ['อายุ 12 เดือน', 'เก็บได้นาน ไม่ต้องแช่เย็น'],
-      ['ต้นทุนต่อแก้วต่ำ', '~4.50–6.00 บาท/แก้ว บวกราคาท็อปปิ้งได้ 15–30 บาท'],
+      ['วีแกน ไม่ใช้เจลาติน', 'ทั้ง 6 รายการเป็นวีแกน ตรวจสารก่อภูมิแพ้จากฉลากรายสินค้า'],
+      ['6 รสซิกเนเจอร์', 'บาร์เลย์ ถั่วแดง ข้าวโอ๊ต แห้ว บุกหอมหมื่นลี้ โมจิโยเกิร์ต'],
+      ['มีตัวอย่างฟรี', 'ขอทางอีเมล Blessme.team@gmail.com'],
+      ['อายุ 12 เดือน', 'ก่อนเปิดเก็บในที่เย็นและแห้ง หลังเปิดทำตามฉลาก'],
+      ['ต้นทุนต่อแก้วต่ำ', '4.50–6.00 บาท เมื่อใช้เนื้อ 15g ต่อเสิร์ฟ ยังไม่รวมค่าใช้จ่ายอื่น'],
     ],
     priceTitle: 'ราคาส่ง',
     priceRows: [
-      ['รสชาติซิกเนเจอร์ (500g)', '90 บาท / แพ็ค'],
+      ['5 รส ไม่รวมโมจิโยเกิร์ต (500g)', '90 บาท / แพ็ค'],
       ['โมจิโยเกิร์ต (500g)', '120 บาท / แพ็ค'],
       ['จำนวนที่เสิร์ฟต่อแพ็ค', '~15–20 ที่ (น้ำหนักเนื้อ 300g)'],
     ],
     flavorsTitle: '6 รสชาติขายส่ง',
     faqTitle: 'คำถามที่พบบ่อย (ขายส่ง)',
     finalTitle: 'พร้อมสั่งไข่มุกป๊อปขายส่งแล้วหรือยัง?',
-    finalLead: 'ทักหาเราทาง LINE @blessmethailand หรืออีเมล เพื่อสอบถามราคาและขอตัวอย่างฟรี',
+    finalLead: 'สั่งซื้อทาง LINE @blessmethailand ขอตัวอย่างฟรีทางอีเมล Blessme.team@gmail.com',
   },
 };
 
@@ -80,7 +81,7 @@ export default function WholesalePage({ lang, setPage }) {
             className="px-7 py-3.5 bg-[#4E7C59] text-white font-semibold text-sm rounded-xl hover:bg-[#3B6146] transition-colors shadow-[0_6px_18px_rgba(59,97,70,0.22)]">
             {c.ctaLine}
           </a>
-          <a href={`mailto:${EMAIL}`}
+          <a href={`mailto:${EMAIL}?subject=Sample%20Request`} data-contact-intent="sample"
             className="px-7 py-3.5 bg-white/70 border border-[#E0D6C6] text-[#2B241E] font-semibold text-sm rounded-xl hover:bg-white hover:border-[#4E7C59] transition-colors">
             {c.ctaSamples}
           </a>
@@ -112,11 +113,11 @@ export default function WholesalePage({ lang, setPage }) {
         <h2 className="font-['Fraunces'] text-3xl md:text-4xl font-semibold mt-20 mb-8">{c.flavorsTitle}</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {PRODUCTS.map((p) => (
-            <button key={p.id} onClick={() => setPage('Products')}
+            <a key={p.id} href={buildPath({ page: 'Products', productId: p.id, lang })}
               className="text-left bg-white/70 border border-[#EAE2D5] rounded-xl px-5 py-4 hover:border-[#4E7C59] transition-colors">
               <div className="font-['Fraunces'] text-lg font-semibold">{lang === 'th' ? p.nameTh : p.name}</div>
               <div className="text-xs text-[#8A7E71] mt-1">{lang === 'th' ? p.flavorTh : p.flavor}</div>
-            </button>
+            </a>
           ))}
         </div>
 
@@ -133,7 +134,7 @@ export default function WholesalePage({ lang, setPage }) {
                 <span className="font-semibold text-[#2B241E]">{f.q}</span>
                 <span className="text-[#4E7C59] text-xl shrink-0">{open === i ? '–' : '+'}</span>
               </button>
-              {open === i && <p className="text-[#5B5048] leading-relaxed pb-5 -mt-1">{f.a}</p>}
+              <p hidden={open !== i} className="text-[#5B5048] leading-relaxed pb-5 -mt-1">{f.a}</p>
             </div>
           ))}
         </div>
@@ -147,7 +148,7 @@ export default function WholesalePage({ lang, setPage }) {
               className="px-7 py-3.5 bg-[#4E7C59] text-white font-semibold text-sm rounded-xl hover:bg-[#5b8a72] transition-colors">
               {c.ctaLine}
             </a>
-            <a href={`mailto:${EMAIL}`}
+            <a href={`mailto:${EMAIL}?subject=Sample%20Request`} data-contact-intent="sample"
               className="px-7 py-3.5 bg-white/10 border border-white/25 text-white font-semibold text-sm rounded-xl hover:bg-white/20 transition-colors">
               {EMAIL}
             </a>

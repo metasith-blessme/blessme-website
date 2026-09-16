@@ -1,4 +1,4 @@
-import { PRODUCTS } from '../constants/products';
+import { PRODUCTS, productSearchName } from '../constants/products';
 import { FAQS_EN, FAQS_TH, WHOLESALE_FAQS_EN, WHOLESALE_FAQS_TH } from '../constants/faq';
 import { getArticleById, getArticleMeta, getArticleSchema } from '../content/blog';
 import { buildPath } from './routing';
@@ -15,11 +15,11 @@ export const ORG_DESCRIPTION = 'BlessMe (Thailand) — specialty food wholesaler
 
 export const PAGE_META = {
   Products: {
-    title: 'ขายส่งมุกป๊อป กรุงเทพฯ | Popping Boba Wholesale Bangkok — BlessMe Thailand',
-    description: 'ป๊อปปิ้งโบบา 6 รสชาติพรีเมียม สต็อกกรุงเทพฯ ราคาส่ง 80–115 บาท/แพ็ค ส่งทั่วไทย ไม่ต้องแช่เย็น อายุ 12 เดือน ติดต่อ LINE @blessmethailand',
+    title: 'Popping Boba & Konjac Wholesale Bangkok | BlessMe Thailand',
+    description: 'Wholesale vegan toppings: popping boba, Moji Yogurt and Osmanthus Konjac. 90–120 THB/pack, no minimum order. Bangkok stock, nationwide Thailand shipping.',
     canonical: `${BASE_URL}/`
   },
-  Wholesale: { title: 'Popping Boba Wholesale Bangkok — Prices & Order | BlessMe Thailand', description: 'Buy popping boba wholesale in Thailand: 6 vegan flavors, 80–115 THB/pack, stock in Bangkok, nationwide shipping, free samples. Order from BlessMe via LINE @blessmethailand.', canonical: `${BASE_URL}/wholesale` },
+  Wholesale: { title: 'Popping Boba Wholesale Bangkok — Prices & Order | BlessMe Thailand', description: 'Vegan toppings at 90 THB/pack; Moji Yogurt 120 THB. No minimum order. Order via LINE @blessmethailand; request free samples by email Blessme.team@gmail.com.', canonical: `${BASE_URL}/wholesale` },
   Solutions: { title: 'How BlessMe Works — 6-Step Framework | BlessMe Thailand', description: 'Discover the six-step framework BlessMe uses to source, test, and supply specialty food products to wholesale partners across Thailand.', canonical: `${BASE_URL}/solutions` },
   'About us': { title: 'About BlessMe Thailand — Food Wholesaler Bangkok', description: 'BlessMe (Thailand) Co., Ltd. introduces specialty food categories to the Thai B2B market. Headquartered in Bangkok, serving cafés, restaurants, and dessert brands nationwide.', canonical: `${BASE_URL}/about` },
   Blog: { title: 'Journal — Specialty Food Insights | BlessMe Thailand', description: 'Notes from the BlessMe team on specialty food sourcing, cold-chain logistics, shelf life, and how to introduce new products to the Thai market.', canonical: `${BASE_URL}/blog` },
@@ -28,11 +28,11 @@ export const PAGE_META = {
 
 export const PAGE_META_TH = {
   Products: {
-    title: 'ขายส่งมุกป๊อป กรุงเทพฯ | มุกป๊อปพรีเมียม 6 รส ราคาส่ง — เบลสมี ไทยแลนด์',
-    description: 'ขายส่งไข่มุกป๊อป (มุกป๊อป / ป๊อปปิ้งโบบา) 6 รสชาติพรีเมียม: บาร์เลย์ ถั่วแดง ข้าวโอ๊ต แห้ว หอบหมื่นลี้ โมจิโยเกิร์ต สต็อกกรุงเทพฯ ราคาส่ง 80–115 บาท/แพ็ค ส่งทั่วไทย',
+    title: 'ขายส่งมุกป๊อป กรุงเทพฯ | ท็อปปิ้งพรีเมียม 6 รายการ ราคาส่ง — เบลสมี ไทยแลนด์',
+    description: 'ขายส่งมุกป๊อปข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว โมจิโยเกิร์ต และบุกหอมหมื่นลี้ 90–120 บาท/แพ็ค ไม่มีขั้นต่ำ สต็อกกรุงเทพฯ ส่งทั่วไทย',
     canonical: BASE_URL + '/'
   },
-  Wholesale: { title: 'ขายส่งไข่มุกป๊อป (มุกป๊อป) กรุงเทพ — ราคาส่ง & สั่งซื้อ | เบลสมี ไทยแลนด์', description: 'ขายส่งไข่มุกป๊อป (มุกป๊อป / ป๊อปปิ้งโบบา) 6 รสวีแกน ราคาส่ง 80–115 บาท/แพ็ค สต็อกกรุงเทพ ส่งทั่วไทย มีตัวอย่างฟรี สั่งซื้อกับ BlessMe ทาง LINE @blessmethailand', canonical: BASE_URL+'/wholesale' },
+  Wholesale: { title: 'ขายส่งไข่มุกป๊อป (มุกป๊อป) กรุงเทพ — ราคาส่ง & สั่งซื้อ | เบลสมี ไทยแลนด์', description: 'ท็อปปิ้งวีแกน 5 รส 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท ไม่มีขั้นต่ำ สั่งทาง LINE @blessmethailand ขอตัวอย่างฟรีทางอีเมล Blessme.team@gmail.com', canonical: BASE_URL+'/wholesale' },
   Solutions: { title: 'โซลูชันวัตถุดิบอาหารพิเศษ — บริการพาร์ทเนอร์ค้าส่ง | เบลสมี ไทยแลนด์', description: 'เจาะลึกกระบวนการจัดหาและทดสอบวัตถุดิบอาหารพิเศษของเบลสมี เพื่อช่วยคาเฟ่และร้านอาหารสร้างจุดแตกต่างที่ยั่งยืนในตลาดไทย', canonical: BASE_URL+'/solutions' },
   'About us': { title: 'เกี่ยวกับ เบลสมี (ประเทศไทย) — ผู้นำเข้าและจัดจำหน่ายวัตถุดิบอาหารพิเศษ', description: 'เราคือพาร์ทเนอร์ที่ไว้วางใจได้สำหรับแบรนด์คาเฟ่และร้านขนมหวาน นำเข้าและสต็อกวัตถุดิบป๊อปปิ้งโบบาพรีเมียมเพื่อธุรกิจ B2B ทั่วไทย', canonical: BASE_URL+'/about' },
   Blog: { title: 'บทความและข้อมูลเชิงลึก วัตถุดิบคาเฟ่และป๊อปปิ้งโบบา | เบลสมี ไทยแลนด์', description: 'อัปเดตเทรนด์วัตถุดิบคาเฟ่ เทคนิคการเลือกท็อปปิ่ง และเบื้องหลังการจัดหาอาหารพิเศษจากทีมงานผู้เชี่ยวชาญของเบลสมี', canonical: BASE_URL+'/blog' },
@@ -44,14 +44,14 @@ export const ORG_SCHEMA = { "@context": "https://schema.org", "@type": "LocalBus
 export const PAGE_NAMES = { Products: 'BlessMe Thailand — Specialty Food Wholesale', Wholesale: 'Popping Boba Wholesale Bangkok', Solutions: 'How BlessMe Works', 'About us': 'About BlessMe Thailand', Blog: 'Journal — Specialty Food Insights', FAQ: 'FAQ — BlessMe Wholesale Thailand' };
 
 export function buildProductMeta(product, lang) {
-  if (lang === 'th') {
-    return {
-      title: `${product.nameTh} ท็อปปิ่ง ป๊อปปิ้งโบบา ค้าส่ง | เบลสมี ไทยแลนด์`,
-      description: `${product.nameTh} — ${product.noteTh} สั่งซื้อค้าส่งจากเบลสมี ไทยแลนด์ สต็อกในกรุงเทพฯ อายุผลิตภัณฑ์ 12 เดือน`,
-      canonical: `${BASE_URL}/products/${product.id}`
-    };
-  }
-  return { title: `${product.name} Popping Boba Wholesale | BlessMe Thailand`, description: `${product.name} popping boba (${product.flavor}) — ${product.note} Available for wholesale from BlessMe Thailand. Stock in Bangkok, 12-month shelf life.`, canonical: `${BASE_URL}/products/${product.id}` };
+  const name = productSearchName(product, lang);
+  return {
+    title: lang === 'th' ? `${name} ขายส่ง | เบลสมี ไทยแลนด์` : `${name} Wholesale | BlessMe Thailand`,
+    description: lang === 'th'
+      ? `${name} — ${product.noteTh} ${product.price} บาท/แพ็ค ${product.packSize} ไม่มีขั้นต่ำ สต็อกกรุงเทพฯ ส่งทั่วไทย`
+      : `${name} — ${product.note} ${product.price} THB per ${product.packSize} pack. No minimum order. Bangkok stock, nationwide Thailand shipping.`,
+    canonical: canonicalFor('Products', product.id, null, lang),
+  };
 }
 
 function getOrCreateTag(selector, tagType, attributes = {}) {
@@ -64,7 +64,7 @@ function getOrCreateTag(selector, tagType, attributes = {}) {
   return el;
 }
 
-export function setMeta(title, description, canonical, lang='en') {
+export function setMeta(title, description, canonical, lang='en', image = `${BASE_URL}/assets/og-image.png`, type = 'website') {
   document.title = title;
   
   const descEl = getOrCreateTag('meta[name="description"]', 'meta', { name: 'description' });
@@ -91,12 +91,16 @@ export function setMeta(title, description, canonical, lang='en') {
   const twDesc = getOrCreateTag('meta[name="twitter:description"]', 'meta', { name: 'twitter:description' });
   twDesc.setAttribute('content', description);
 
-  // ponytail: hreflang removed — single-URL site with JS lang toggle makes hreflang misleading to crawlers
+  getOrCreateTag('meta[property="og:image"]', 'meta', { property: 'og:image' }).setAttribute('content', image);
+  getOrCreateTag('meta[name="twitter:image"]', 'meta', { name: 'twitter:image' }).setAttribute('content', image);
+  getOrCreateTag('meta[property="og:type"]', 'meta', { property: 'og:type' }).setAttribute('content', type);
+  getOrCreateTag('meta[name="twitter:card"]', 'meta', { name: 'twitter:card' }).setAttribute('content', 'summary_large_image');
 }
 
 // Pure: compute { title, description, canonical } for a route. Reused by the prerenderer.
 // Canonical is always derived from the language + route so EN and /th URLs stay correct.
 export function getMeta(page, productId = null, articleId = null, lang = 'en') {
+  if (page === 'NotFound') return { title: lang === 'th' ? '404 — ไม่พบหน้า | BlessMe Thailand' : '404 — Page not found | BlessMe Thailand', description: lang === 'th' ? 'ไม่พบหน้าที่คุณต้องการ' : 'The requested page does not exist.', canonical: null };
   const canonical = canonicalFor(page, productId, articleId, lang);
   if (productId) {
     const product = PRODUCTS.find(p => p.id === productId);
@@ -112,15 +116,30 @@ export function getMeta(page, productId = null, articleId = null, lang = 'en') {
 
 export function updateMeta(page, productId = null, articleId = null, lang = 'en') {
   const m = getMeta(page, productId, articleId, lang);
-  setMeta(m.title, m.description, m.canonical, lang);
+  const product = PRODUCTS.find(p => p.id === productId);
+  const article = getArticleById(articleId);
+  const image = new URL(product?.imgFallback || article?.img || '/assets/og-image.png', BASE_URL).href;
+  setMeta(m.title, m.description, m.canonical || '', lang, image, article ? 'article' : 'website');
+  getOrCreateTag('meta[name="robots"]', 'meta', { name: 'robots' }).setAttribute('content', page === 'NotFound' ? 'noindex, follow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
+  if (page === 'NotFound') {
+    document.querySelector('link[rel="canonical"]')?.remove();
+    document.querySelector('meta[property="og:url"]')?.remove();
+    return;
+  }
+  for (const alternate of ['en', 'th', 'x-default']) {
+    getOrCreateTag(`link[rel="alternate"][hreflang="${alternate}"]`, 'link', { rel: 'alternate', hreflang: alternate })
+      .setAttribute('href', canonicalFor(page, productId, articleId, alternate === 'th' ? 'th' : 'en'));
+  }
 }
 
 export function buildWebPageSchema(page, canonical) {
   return { "@context": "https://schema.org", "@type": "WebPage", "name": PAGE_NAMES[page] || PAGE_NAMES.Products, "url": canonical, "isPartOf": { "@id": "https://blessmethailand.com" } };
 }
 
-export function buildProductSchema(product) {
-  return { "@context": "https://schema.org", "@type": "Product", "name": `${product.name} Popping Boba`, "description": `${product.note} ${product.flavor}.`, "image": new URL(product.imgFallback, BASE_URL).href, "brand": { "@type": "Brand", "name": "BlessMe Thailand" }, "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "THB", "seller": { "@type": "Organization", "name": "BlessMe (Thailand) Co., Ltd." } } };
+export function buildProductSchema(product, lang = 'en') {
+  const url = canonicalFor('Products', product.id, null, lang);
+  return { '@context': 'https://schema.org', '@type': 'Product', name: productSearchName(product, lang), description: lang === 'th' ? product.noteTh : product.note, sku: product.id, url, image: new URL(product.imgFallback, BASE_URL).href, brand: { '@type': 'Brand', name: 'BlessMe Thailand' }, offers: { '@type': 'Offer', url, price: product.price, priceCurrency: 'THB', availability: 'https://schema.org/InStock', seller: { '@type': 'Organization', name: 'BlessMe (Thailand) Co., Ltd.' } } };
 }
 
 export function buildBreadcrumbSchema(items) {
@@ -141,33 +160,25 @@ export function buildFAQSchema(faqs) {
 
 // Pure: assemble the JSON-LD schema array for a route. Reused by the prerenderer.
 export function getSchemas(page, productId = null, articleId = null, lang = 'en') {
+  if (page === 'NotFound') return [];
   const schemas = [ORG_SCHEMA];
+  const home = { name: lang === 'th' ? 'หน้าหลัก' : 'Home', url: canonicalFor('Products', null, null, lang) };
   if (productId) {
     const product = PRODUCTS.find(p => p.id === productId);
     if (product) {
-      schemas.push(buildProductSchema(product));
-      schemas.push(buildBreadcrumbSchema([{ name: 'Home', url: 'https://blessmethailand.com/' }, { name: 'Products', url: 'https://blessmethailand.com/' }, { name: `${product.name} Popping Boba`, url: `https://blessmethailand.com/products/${product.id}` }]));
+      schemas.push(buildProductSchema(product, lang));
+      schemas.push(buildBreadcrumbSchema([home, { name: productSearchName(product, lang), url: canonicalFor('Products', product.id, null, lang) }]));
     }
   } else if (articleId) {
     const article = getArticleById(articleId);
     if (article) {
       schemas.push(getArticleSchema(article, lang, BASE_URL));
-      schemas.push(buildBreadcrumbSchema([{ name: 'Home', url: 'https://blessmethailand.com/' }, { name: 'Journal', url: 'https://blessmethailand.com/blog' }, { name: lang === 'th' ? article.titleTh : article.title, url: `https://blessmethailand.com/blog/${article.id}` }]));
+      schemas.push(buildBreadcrumbSchema([home, { name: lang === 'th' ? 'บทความ' : 'Journal', url: canonicalFor('Blog', null, null, lang) }, { name: lang === 'th' ? article.titleTh : article.title, url: canonicalFor('Blog', null, article.id, lang) }]));
     }
   } else {
     schemas.push(buildWebPageSchema(page, canonicalFor(page, null, null, lang)));
     if (page === 'Products') {
-      schemas.push({ "@context": "https://schema.org", "@type": "ItemList", "name": "BlessMe Popping Boba — Wholesale Product Range", "url": "https://blessmethailand.com/", "numberOfItems": PRODUCTS.length, "itemListElement": PRODUCTS.map((p, idx) => ({ "@type": "ListItem", "position": idx + 1, "url": `https://blessmethailand.com/products/${p.id}`, "name": `${p.name} Popping Boba` })) });
-      schemas.push({
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "BlessMe Thailand — Popping Boba Wholesale Bangkok",
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": [".bm-hero", ".bm-lead", ".bm-h1"]
-        },
-        "url": "https://blessmethailand.com"
-      });
+      schemas.push({ '@context': 'https://schema.org', '@type': 'ItemList', name: lang === 'th' ? 'ท็อปปิ้งขายส่ง BlessMe' : 'BlessMe Wholesale Toppings', url: home.url, numberOfItems: PRODUCTS.length, itemListElement: PRODUCTS.map((p, idx) => ({ '@type': 'ListItem', position: idx + 1, url: canonicalFor('Products', p.id, null, lang), name: productSearchName(p, lang) })) });
     }
     if (page === 'FAQ') {
       schemas.push(buildFAQSchema(lang === 'th' ? FAQS_TH : FAQS_EN));

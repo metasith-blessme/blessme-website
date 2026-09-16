@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { trackLead } from '../lib/analytics';
 
 export function ContactItem({ k, v, sub, href }) {
   return (
@@ -18,22 +19,39 @@ export function ContactForm({ lang, t }) {
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
   const W3F_ACCESS_KEY = '6a29a76e-ace2-44da-8bc4-22c10901684e'; // get free key at web3forms.com
 
+  const request = useRef(null);
+  const completed = useRef(false);
+  useEffect(() => () => {
+    if (request.current) {
+      clearTimeout(request.current.timeout);
+      request.current.controller.abort();
+      request.current = null;
+    }
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('sending');
-    const data = new FormData(e.target);
-    data.append('access_key', W3F_ACCESS_KEY);
-    data.append('subject', `BlessMe Wholesale Enquiry — ${data.get('business') || data.get('name')}`);
+    if (request.current || completed.current) return;
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 10000);
+    const pending = { controller, timeout: setTimeout(() => controller.abort(), 10000) };
+    request.current = pending;
+    setStatus('sending');
     try {
+      const data = new FormData(e.currentTarget);
+      data.append('access_key', W3F_ACCESS_KEY);
+      data.append('subject', `BlessMe Wholesale Enquiry — ${data.get('business') || data.get('name')}`);
       const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data, signal: controller.signal });
-      clearTimeout(timeout);
       const json = await res.json();
-      setStatus(json.success ? 'success' : 'error');
-    } catch (err) {
-      clearTimeout(timeout);
-      setStatus('error');
+      if (request.current !== pending) return;
+      if (!res.ok || json?.success !== true) throw new Error('Submission not confirmed');
+      completed.current = true;
+      setStatus('success');
+      try { trackLead(lang); } catch { /* Tracking must not change submission status. */ }
+    } catch {
+      if (request.current === pending) setStatus('error');
+    } finally {
+      clearTimeout(pending.timeout);
+      if (request.current === pending) request.current = null;
     }
   };
 

@@ -25,6 +25,7 @@ const LANGS = ['en', 'th'];
 
 const vite = await createServer({
   root: ROOT,
+  optimizeDeps: { noDiscovery: true, include: [] },
   logLevel: 'warn',
   server: { middlewareMode: true },
   appType: 'custom',
