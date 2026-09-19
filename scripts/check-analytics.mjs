@@ -74,15 +74,19 @@ console.log('PASS CLS precision/session maximum, single hide report, observer cl
 const source = await readFile(new URL('../src/components/ContactForm.jsx', import.meta.url), 'utf8');
 const compiled = await transform(source.replace(/^import .*;\n/gm, '').replace(/export function/g, 'function'), { loader: 'jsx', jsx: 'transform' });
 async function formFixture(response, { duplicate = false, unmount = false, analyticsThrows = false } = {}) {
-  const statuses = [], timers = new Map(), cleanups = [];
+  const statuses = [], timers = new Map(), cleanups = [], states = [], refs = [];
+  const fields = { name: 'ผู้ทดสอบ & + ?', business: 'คาเฟ่ & Co + ?', email: 'test+tag@example.com', phone: '+66 123?', product: 'โยเกิร์ต & ชา', qty: '10 + 2?', message: 'ขอราคา & รายละเอียด?\nขอบคุณ + 😊' };
+  const nodes = tree => tree && typeof tree === 'object' ? [tree, ...tree.children.flat(Infinity).flatMap(nodes)] : [];
+  const fallback = tree => nodes(tree).find(node => node.type === 'a' && node.props.href?.startsWith('mailto:'));
+  let stateIndex = 0, refIndex = 0;
   let calls = 0, leads = 0, release, signal;
   const gate = new Promise(resolve => { release = resolve; });
   const context = {
     React: { createElement: (type, props, ...children) => ({ type, props, children }) },
-    useState: () => ['idle', state => statuses.push(state)],
-    useRef: value => ({ current: value }),
-    useEffect: setup => { const cleanup = setup(); if (cleanup) cleanups.push(cleanup); },
-    FormData: class { append() {} get() { return 'PRIVATE TEST FIELD'; } },
+    useState: initial => { const index = stateIndex++; if (!(index in states)) states[index] = initial; return [states[index], value => { states[index] = value; if (index === 0) statuses.push(value); }]; },
+    useRef: value => refs[refIndex++] ||= { current: value },
+    useEffect: setup => { if (!cleanups.length) { const cleanup = setup(); if (cleanup) cleanups.push(cleanup); } },
+    FormData: class extends Map { constructor(form) { assert.ok(form, 'form must be captured before await'); super(Object.entries(form)); } append(key, value) { this.set(key, value); } },
     AbortController,
     setTimeout: fn => { timers.set(1, fn); return 1; },
     clearTimeout: id => timers.delete(id),
@@ -90,12 +94,38 @@ async function formFixture(response, { duplicate = false, unmount = false, analy
     trackLead: () => { leads++; if (analyticsThrows) throw Error('analytics unavailable'); },
   };
   vm.createContext(context);
-  vm.runInContext(compiled.code + '\nthis.form = ContactForm({lang:"th",t:{formProducts:[]}});', context);
-  const event = { preventDefault() {}, target: {}, currentTarget: {} };
-  const first = context.form.props.onSubmit(event);
-  const second = duplicate ? context.form.props.onSubmit(event) : undefined;
+  vm.runInContext(compiled.code, context);
+  const render = (lang = 'th') => { stateIndex = 0; refIndex = 0; return context.ContactForm({ lang, t: { formProducts: [], formSuccess: 'CONFIRMED SUCCESS' } }); };
+  const form = render();
+  assert.equal(fallback(form), undefined, 'no fallback before failure');
+  const event = { preventDefault() {}, target: {}, currentTarget: fields };
+  const first = form.props.onSubmit(event);
+  const second = duplicate ? form.props.onSubmit(event) : undefined;
+  event.currentTarget = null; // React clears currentTarget after the synchronous handler.
+  assert.equal(fallback(render()), undefined, 'no fallback while sending');
   if (unmount) cleanups.forEach(fn => fn());
   release(); await first; await second;
+  for (const lang of ['th', 'en']) {
+    const tree = render(lang);
+    if (statuses.at(-1) === 'error') {
+      const link = fallback(tree);
+      assert.ok(link, 'provider failure must offer an email fallback');
+      const url = new URL(link.props.href);
+      assert.equal(url.pathname, 'Blessme.team@gmail.com');
+      assert.deepEqual([...url.searchParams.keys()], ['subject', 'body']);
+      assert.equal(url.searchParams.get('subject'), `BlessMe Wholesale Enquiry — ${fields.business}`);
+      const labels = ['Name', 'Business', 'Email', 'Phone', 'Product', 'Quantity', 'Message'];
+      assert.equal(url.searchParams.get('body'), Object.values(fields).map((value, i) => `${labels[i]}: ${value}`).join('\n'));
+      assert.equal(link.props.onClick, undefined, 'fallback is a native link, not an auto-send or lead handler');
+      assert.ok(nodes(tree).some(node => node.props?.href === 'https://line.me/R/ti/p/@blessmethailand'));
+      const alert = nodes(tree).find(node => node.props?.role === 'alert');
+      assert.ok(alert, 'failure instructions must be announced');
+      const text = JSON.stringify(alert);
+      assert.match(text, lang === 'th' ? /กดส่ง/ : /send.*yourself/i);
+      assert.ok(!JSON.stringify(tree).includes('CONFIRMED SUCCESS'));
+      assert.equal(leads, 0);
+    } else assert.equal(fallback(tree), undefined, 'no fallback on success or unmount');
+  }
   assert.equal(timers.size, 0, 'request timer must always be cleared');
   if (unmount) { assert.ok(signal.aborted); assert.deepEqual(statuses, ['sending']); assert.equal(leads, 0); }
   return { statuses, calls, leads };
@@ -112,3 +142,4 @@ for (const response of [
 assert.deepEqual((await formFixture(success, { analyticsThrows: true })).statuses, ['sending', 'success']);
 await formFixture(success, { unmount: true });
 console.log('PASS form HTTP+JSON gate, duplicates, failure isolation, timer/unmount cleanup (mock requests only)');
+console.log('PASS error-only TH/EN email fallback, all fields/Unicode/&/+/? encoding, accessible send instructions, no false success or leads');

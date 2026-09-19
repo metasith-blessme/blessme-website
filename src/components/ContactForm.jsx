@@ -17,6 +17,7 @@ export function ContactItem({ k, v, sub, href }) {
 
 export function ContactForm({ lang, t }) {
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
+  const [emailFallback, setEmailFallback] = useState('');
   const W3F_ACCESS_KEY = '6a29a76e-ace2-44da-8bc4-22c10901684e'; // get free key at web3forms.com
 
   const request = useRef(null);
@@ -38,8 +39,13 @@ export function ContactForm({ lang, t }) {
     setStatus('sending');
     try {
       const data = new FormData(e.currentTarget);
+      const subject = `BlessMe Wholesale Enquiry — ${data.get('business') || data.get('name')}`;
+      const body = [['Name', 'name'], ['Business', 'business'], ['Email', 'email'], ['Phone', 'phone'],
+        ['Product', 'product'], ['Quantity', 'qty'], ['Message', 'message']]
+        .map(([label, field]) => `${label}: ${data.get(field) || ''}`).join('\n');
+      setEmailFallback(`mailto:Blessme.team@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
       data.append('access_key', W3F_ACCESS_KEY);
-      data.append('subject', `BlessMe Wholesale Enquiry — ${data.get('business') || data.get('name')}`);
+      data.append('subject', subject);
       const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data, signal: controller.signal });
       const json = await res.json();
       if (request.current !== pending) return;
@@ -125,8 +131,12 @@ export function ContactForm({ lang, t }) {
         </a>
       </div>
       {status === 'error' && (
-        <p style={{ color: '#f2768a', fontSize: 14, marginTop: 12 }}>
-          {isTh ? 'เกิดข้อผิดพลาด กรุณาลองใหม่หรือส่ง LINE โดยตรง' : 'Something went wrong. Please try again or contact us on LINE.'}
+        <p role="alert" style={{ color: '#f2768a', fontSize: 14, marginTop: 12 }}>
+          {isTh ? 'เกิดข้อผิดพลาด กรุณาลองใหม่หรือส่ง LINE โดยตรง หรือเปิดอีเมลด้านล่างแล้วกดส่งด้วยตนเอง' : 'Something went wrong. Please try again or contact us on LINE, or open the email below and send it yourself.'}
+          {' '}
+          <a href={emailFallback || 'mailto:Blessme.team@gmail.com'} className="underline">
+            {isTh ? 'เปิดอีเมลถึง Blessme.team@gmail.com' : 'Open email to Blessme.team@gmail.com'}
+          </a>
         </p>
       )}
     </form>
