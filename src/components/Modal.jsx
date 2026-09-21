@@ -71,11 +71,18 @@ export default function ProductDetail({ product, onClose, lang }) {
 
           <div className="bm-spec-grid" role="list" aria-label="Product specifications" style={{ marginTop: 20 }}>
             <div role="listitem"><div className="k">{t.modalPack}</div><div className="v">{product.packSize} ({lang === 'th' ? 'น้ำหนักเนื้อ' : 'drained'} {product.drainedWeight}; ~20 × 15g)</div></div>
-            <div role="listitem"><div className="k">{t.modalShelf}</div><div className="v">{lang==='th'?'12 เดือน':'12 months'}</div></div>
-            <div role="listitem"><div className="k">{t.modalStorage}</div><div className="v">{lang==='th'?'ก่อนเปิด: ที่เย็นและแห้ง หลังเปิด: ทำตามฉลาก':'Unopened: cool and dry. After opening: follow the label.'}</div></div>
-            <div role="listitem"><div className="k">{t.modalOrigin}</div><div className="v">{lang==='th'?'โรงงานมาตรฐานสากล GMP / HACCP':'Global Standard · GMP / HACCP'}</div></div>
+            <div role="listitem"><div className="k">{t.modalShelf}</div><div className="v">{t.storageUnopened}</div></div>
+            <div role="listitem"><div className="k">{t.modalStorage}</div><div className="v">{t.storageOpened}</div></div>
+            <div role="listitem"><div className="k">{t.modalOrigin}</div><div className="v">{t.factoryOrigin}</div></div>
           </div>
           
+          <section aria-labelledby="serving-guidance" style={{ marginTop: 20 }}>
+            <h2 id="serving-guidance" className="text-lg font-semibold">{t.servingTitle}</h2>
+            <p className="bm-body" style={{ marginTop: 8 }}>{t.syrupGuidance}</p>
+            <p className="bm-body" style={{ marginTop: 8 }}>{t.childWarning}</p>
+            {product.containsGluten && <p className="bm-body" style={{ marginTop: 8 }}><strong>{t.allergenWarning}</strong></p>}
+          </section>
+
           <div className="bm-buy-row" style={{ marginTop: 22, display: 'flex', flexDirection: 'column', gap: 12 }}>
             <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-[#F5EFE6] text-xs text-[#5C5248]">
               <span>{lang === 'th' ? 'จำนวนที่เลือก:' : 'Selected Quantity:'} <strong>{qty} {lang === 'th' ? 'แพ็ค' : 'packs'} (฿{(product.price || 90) * qty})</strong></span>

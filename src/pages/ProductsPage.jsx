@@ -228,7 +228,7 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
             </div>
             <div className="px-4 py-2 rounded-full bg-white border border-[#2B241E]/10 shadow-sm text-xs md:text-sm font-semibold text-[#2B241E] flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#C5A869]"></span>
-              <span className="text-[#7A6E63]">{isTh ? 'อายุ 12 เดือน ไม่ต้องแช่เย็น' : '12M Shelf Life · Ambient'}</span>
+              <span className="text-[#7A6E63]">{isTh ? 'ก่อนเปิด: 12 เดือนนับจากวันผลิต ที่อุณหภูมิห้อง' : 'Unopened: 12 months from manufacture · Room temperature'}</span>
             </div>
           </motion.div>
 

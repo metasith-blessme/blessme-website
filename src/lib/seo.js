@@ -11,7 +11,7 @@ export function canonicalFor(page, productId = null, articleId = null, lang = 'e
   if (p !== '/' && !p.endsWith('/')) p += '/';
   return BASE_URL + p;
 }
-export const ORG_DESCRIPTION = 'BlessMe (Thailand) — specialty food wholesaler supplying cafés, restaurants, and dessert brands with premium popping boba. 6 curated flavors, stock in Bangkok, 12-month shelf life.';
+export const ORG_DESCRIPTION = 'BlessMe (Thailand) — specialty food wholesaler supplying cafés, restaurants, and dessert brands with premium popping boba. 6 curated flavors, stock in Bangkok, 12 months from manufacture unopened at room temperature.';
 
 export const PAGE_META = {
   Products: {

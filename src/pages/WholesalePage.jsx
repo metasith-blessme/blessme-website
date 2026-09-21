@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PRODUCTS, productSearchName } from '../constants/products';
 import { buildPath } from '../lib/routing';
+import { T } from '../constants/translations';
 import { WHOLESALE_FAQS_EN, WHOLESALE_FAQS_TH } from '../constants/faq';
 
 const LINE_URL = 'https://line.me/R/ti/p/@blessmethailand';
@@ -19,7 +20,7 @@ const CONTENT = {
       ['Vegan, no gelatin', 'All six products are vegan; check individual labels for allergens.'],
       ['6 signature flavors', 'Barley, Red Bean, Oat, Water Chestnut, Osmanthus Konjac, Moji Yogurt.'],
       ['Free samples', 'Request by email: Blessme.team@gmail.com.'],
-      ['12-month shelf life', 'Unopened, cool and dry; follow the label after opening.'],
+      ['12-month shelf life', `${T.en.storageUnopened} ${T.en.storageOpened}`],
       ['Low cost per cup', '4.50–6.00 THB at 15g drained per serving; excludes other expenses.'],
     ],
     priceTitle: 'Wholesale pricing',
@@ -45,7 +46,7 @@ const CONTENT = {
       ['วีแกน ไม่ใช้เจลาติน', 'ทั้ง 6 รายการเป็นวีแกน ตรวจสารก่อภูมิแพ้จากฉลากรายสินค้า'],
       ['6 รสซิกเนเจอร์', 'บาร์เลย์ ถั่วแดง ข้าวโอ๊ต แห้ว บุกหอมหมื่นลี้ โมจิโยเกิร์ต'],
       ['มีตัวอย่างฟรี', 'ขอทางอีเมล Blessme.team@gmail.com'],
-      ['อายุ 12 เดือน', 'ก่อนเปิดเก็บในที่เย็นและแห้ง หลังเปิดทำตามฉลาก'],
+      ['อายุ 12 เดือน', `${T.th.storageUnopened} ${T.th.storageOpened}`],
       ['ต้นทุนต่อแก้วต่ำ', '4.50–6.00 บาท เมื่อใช้เนื้อ 15g ต่อเสิร์ฟ ยังไม่รวมค่าใช้จ่ายอื่น'],
     ],
     priceTitle: 'ราคาส่ง',

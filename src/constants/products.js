@@ -1,13 +1,13 @@
 /* ===== PRODUCTS DATA ===== */
 export const PRODUCTS = [
-  { id: 'barley',    name: 'Barley',         nameTh: 'บาร์เลย์',       tag: 'Signature flavor', flavor: 'Toasty · Nutty · Refined', flavorTh: 'คั่ว · กลิ่นถั่ว · ประณีต',
+  { id: 'barley', containsGluten: true,    name: 'Barley',         nameTh: 'บาร์เลย์',       tag: 'Signature flavor', flavor: 'Toasty · Nutty · Refined', flavorTh: 'คั่ว · กลิ่นถั่ว · ประณีต',
     price: 90, packSize: '500g', drainedWeight: '300g',
     pairings: ['☕ Iced Latte', '🧋 Milk Tea', '🧁 Bakery Garnish'],
     pairingsTh: ['☕ ลาเต้เย็น', '🧋 ชานมพรีเมียม', '🧁 ท็อปปิ้งเบเกอรี'],
     img: '/assets/products/barley.webp',    imgFallback: '/assets/products/barley.png',
     note: 'Roasted Asian barley, captured in a bursting pearl. A grown-up topping for desserts, drinks, and bakery applications.',
     noteTh: 'บาร์เลย์อบจากเอเชีย ถูกกักไว้ในเม็ดบีดแตกกระจาย เป็นท็อปปิ้งพรีเมียมสำหรับของหวาน เครื่องดื่ม และเบเกอรี' },
-  { id: 'oat',       name: 'Oat',            nameTh: 'โอ๊ต',           tag: 'Signature flavor', flavor: 'Creamy · Mellow · Modern', flavorTh: 'ครีมมี่ · นุ่มนวล · ทันสมัย',
+  { id: 'oat', containsGluten: true,       name: 'Oat',            nameTh: 'โอ๊ต',           tag: 'Signature flavor', flavor: 'Creamy · Mellow · Modern', flavorTh: 'ครีมมี่ · นุ่มนวล · ทันสมัย',
     price: 90, packSize: '500g', drainedWeight: '300g',
     pairings: ['🥛 Plant Milk', '☕ Dirty Coffee', '🥤 Acai Smoothie'],
     pairingsTh: ['🥛 นมพืช/โอ๊ต', '☕ เดอร์ตี้คอฟฟี่', '🥤 อาซาอิสมูทตี้'],

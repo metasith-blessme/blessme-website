@@ -21,7 +21,7 @@ export default function AboutPage({ lang }) {
         <div className="lg:col-span-5 grid grid-cols-2 gap-4">
           <div className="bg-[#2E4F38] text-white p-7 rounded-[24px] shadow-sm flex flex-col justify-between h-[160px]">
             <div className="font-['Fraunces'] text-4xl font-bold">12M</div>
-            <div className="text-xs font-semibold tracking-wider uppercase text-white/80">{lang==='th'?'อายุสินค้า 12 เดือน (ไม่ต้องแช่เย็น)':'12-Month Shelf Life (Ambient)'}</div>
+            <div className="text-xs font-semibold tracking-wider uppercase text-white/80">{lang==='th'?'ก่อนเปิด: 12 เดือนนับจากวันผลิต ที่อุณหภูมิห้อง':'Unopened: 12 months from manufacture at room temperature'}</div>
           </div>
           <div className="bg-white border border-[#2B241E]/8 p-7 rounded-[24px] shadow-sm flex flex-col justify-between h-[160px]">
             <div className="font-['Fraunces'] text-4xl font-bold text-[#3B6146]">6</div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import RoiCalculator from './RoiCalculator';
+import { T } from '../constants/translations';
 
 export default function TrustBar({ lang }) {
   const isTh = lang === 'th';
@@ -27,8 +28,8 @@ export default function TrustBar({ lang }) {
       ),
       title: isTh ? 'พร้อมตักเสิร์ฟทันที (ไม่ต้องต้ม)' : 'Scoop & Serve (Zero Kitchen Prep)',
       desc: isTh 
-        ? 'ไม่ต้องต้ม เก็บก่อนเปิดได้ 12 เดือนในที่เย็นและแห้ง หลังเปิดให้แช่เย็นและทำตามฉลากรายสินค้า'
-        : 'No boiling required. Store unopened packs cool and dry for 12 months. Refrigerate after opening and follow each product label.',
+        ? `ไม่ต้องต้ม ${T.th.storageUnopened} ${T.th.storageOpened}`
+        : `No boiling required. ${T.en.storageUnopened} ${T.en.storageOpened}`,
       tag: isTh ? 'สะดวกเร็ว' : 'Zero Prep'
     },
     {

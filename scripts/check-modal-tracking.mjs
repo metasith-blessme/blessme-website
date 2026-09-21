@@ -34,6 +34,11 @@ try {
           document.documentElement.lang = lang;
           for (const product of PRODUCTS) {
             flushSync(() => root.render(<main><ProductDetail key={product.id} product={product} lang={lang} onClose={() => closed++} /></main>));
+            const text = document.querySelector('main').textContent;
+            const containsGluten = ['barley', 'oat'].includes(product.id);
+            check(text.includes(lang === 'th' ? 'มีกลูเตน' : 'Contains gluten.') === containsGluten, product.id + '/' + lang + ': gluten warning scope');
+            check(containsGluten || !/gluten|กลูเตน/i.test(text), 'No invented allergen status for other SKUs');
+            check(!/gluten[- ]free|allergen[- ]free|ปราศจากกลูเตน|ปลอดกลูเตน|ปลอดสารก่อภูมิแพ้/i.test(text), 'No unsupported allergen-free claims');
             const title = document.querySelector('main h1');
             check(title?.textContent === productSearchName(product, lang), 'Missing localized SKU H1');
             check(!document.querySelector('[role="dialog"], .bm-modal-scrim'), 'Product must not be a dialog');
