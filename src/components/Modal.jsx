@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { T } from '../constants/translations';
 import { productSearchName } from '../constants/products';
+import { buildPath, handleLinkClick } from '../lib/routing';
 
 export default function ProductDetail({ product, onClose, lang }) {
   const [qty, setQty] = useState(12);
+  const titleRef = useRef(null);
   const t = T[lang];
-  const displayName = lang === 'th' ? product.nameTh : product.name;
   const displayNote = lang === 'th' ? product.noteTh : product.note;
   const displayFlavor = lang === 'th' && product.flavorTh ? product.flavorTh : product.flavor;
   const displayTag = lang === 'th' ? 'รสชาติซิกเนเจอร์' : product.tag;
 
   useEffect(() => {
-    const onKey = (e) => { if (e.key === 'Escape') onClose(); };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [onClose]);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    titleRef.current?.focus({ preventScroll: true });
+  }, [product.id, lang]);
 
   if (!product) return null;
 
@@ -26,10 +26,11 @@ export default function ProductDetail({ product, onClose, lang }) {
   const lineHref = `https://line.me/R/ti/p/@blessmethailand`;
 
   return (
-    <div className="bm-modal-scrim" onClick={onClose} role="presentation">
-      <div className="bm-modal" onClick={(e) => e.stopPropagation()}
-        role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <button className="bm-modal-close" onClick={onClose} aria-label="Close product details">×</button>
+    <section className="bm-product-page" aria-labelledby="product-title">
+      <a className="bm-back-link" href={buildPath({ page: 'Products', lang })} onClick={(e) => handleLinkClick(e, onClose)}>
+        {lang === 'th' ? '← สินค้าทั้งหมด' : '← All products'}
+      </a>
+      <div className="bm-modal">
         <div className="bm-modal-img">
           <picture>
             <source srcSet={product.img} type="image/webp" />
@@ -46,7 +47,7 @@ export default function ProductDetail({ product, onClose, lang }) {
             </span>
           </div>
 
-          <h2 className="bm-h1" id="modal-title" style={{ marginTop: 0 }}>{displayName}</h2>
+          <h1 className="bm-h1" id="product-title" ref={titleRef} tabIndex={-1} style={{ marginTop: 0 }}>{productSearchName(product, lang)}</h1>
           <p className="bm-product-flavor" style={{ marginTop: 4, fontStyle: 'italic', color: '#7A6E63' }}>{displayFlavor}</p>
           <p className="bm-body" style={{ marginTop: 14 }}>{displayNote}</p>
           
@@ -78,7 +79,7 @@ export default function ProductDetail({ product, onClose, lang }) {
               <span>{lang === 'th' ? 'ประมาณ' : 'Estimated:'} <strong>~{qty * 20} {lang === 'th' ? 'แก้ว' : 'servings'}</strong></span>
             </div>
 
-            <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center' }}>
               <div className="bm-stepper" role="group" aria-label="Order quantity" style={{ borderRadius: 999 }}>
                 <button aria-label="Decrease quantity" onClick={() => setQty(Math.max(1, qty - 1))}>−</button>
                 <span aria-live="polite" aria-atomic="true" style={{ fontWeight: 600 }}>{qty}</span>
@@ -106,6 +107,6 @@ export default function ProductDetail({ product, onClose, lang }) {
           <p className="bm-small" style={{ marginTop: 10, textAlign: 'center' }}>{t.modalSmall}</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

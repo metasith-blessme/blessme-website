@@ -149,6 +149,8 @@ function App({ ssrPath }) {
           </section>
         ) : articleId ? (
           <ArticlePage articleId={articleId} onBack={closeArticle} onOpenArticle={openArticle} lang={lang} />
+        ) : detail ? (
+          <ProductDetail key={detail.id} product={detail} onClose={closeProduct} lang={lang} />
         ) : (
           <>
             {page === 'Products'  && <ProductsPage onOpen={openProduct} setPage={goToPage} lang={lang} />}
@@ -161,7 +163,7 @@ function App({ ssrPath }) {
         )}
       </main>
       <Footer setPage={goToPage} lang={lang} />
-      {detail && <ProductDetail product={detail} onClose={closeProduct} lang={lang} />}
+
 
       {/* LINE floating action button */}
       <a href="https://line.me/R/ti/p/@blessmethailand" target="_blank" rel="noopener noreferrer"

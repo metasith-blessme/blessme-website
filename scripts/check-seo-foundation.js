@@ -8,7 +8,7 @@ const root = path.resolve(import.meta.dirname, '..');
 const vite = await createServer({ root, optimizeDeps: { noDiscovery: true, include: [] }, server: { middlewareMode: true }, appType: 'custom', logLevel: 'error' });
 const escape = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
 try {
-  const { PRODUCTS } = await vite.ssrLoadModule('/src/constants/products.js');
+  const { PRODUCTS, productSearchName } = await vite.ssrLoadModule('/src/constants/products.js');
   const { ARTICLES } = await vite.ssrLoadModule('/src/content/blog.js');
   const { getInitialState } = await vite.ssrLoadModule('/src/lib/routing.js');
   const { getMeta, getSchemas, canonicalFor, updateMeta } = await vite.ssrLoadModule('/src/lib/seo.js');
@@ -16,10 +16,22 @@ try {
   const urls = [...fs.readFileSync(path.join(root, 'dist/sitemap.xml'), 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
   assert.equal(urls.length, (6 + PRODUCTS.length + ARTICLES.length) * 2);
   assert.equal(new Set(urls).size, urls.length);
+  let productPages = 0;
   for (const url of urls) {
     const pathname = new URL(url).pathname;
     const { page, productId, articleId, lang } = getInitialState(pathname);
     const html = fs.readFileSync(path.join(root, 'dist', pathname, 'index.html'), 'utf8');
+    if (productId) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] || '';
+      const headings = [...main.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/g)];
+      assert.deepEqual(headings.map(m => m[1]), [escape(productSearchName(product, lang))], `${pathname}: SKU-specific main H1`);
+      assert(main.includes(escape(lang === 'th' ? product.noteTh : product.note)), `${pathname}: SKU description in main`);
+      assert.match(main, new RegExp(`<a[^>]*href="${lang === 'th' ? '/th/' : '/'}"[^>]*>← ${lang === 'th' ? 'สินค้าทั้งหมด' : 'All products'}</a>`), `${pathname}: localized native back link`);
+      assert.match(main, /data-contact-intent="quote"/);
+      assert.doesNotMatch(html, /role="dialog"|aria-modal=|bm-modal-scrim|bm-mesh-drift/, `${pathname}: no dialog or home hero`);
+      productPages++;
+    }
     const meta = getMeta(page, productId, articleId, lang);
     assert.equal(meta.canonical, url);
     assert(html.includes(`<title>${escape(meta.title).replace(/&#x27;/g, "'")}</title>`), pathname);
@@ -55,6 +67,8 @@ try {
       if (schema['@type'] === 'FAQPage') for (const q of schema.mainEntity) assert(html.includes(escape(q.acceptedAnswer.text)), 'FAQ answer must be in HTML, not only schema');
     }
   }
+
+  assert.equal(productPages, 12, 'All six SKUs in EN/TH must be standalone');
 
   // Minimal head boundary: exercise updates across SPA product/article/lang/404 transitions.
   const nodes = new Map();
