@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PRODUCTS } from '../constants/products';
+import { PRODUCTS, productSearchName } from '../constants/products';
 import { buildPath } from '../lib/routing';
 import { WHOLESALE_FAQS_EN, WHOLESALE_FAQS_TH } from '../constants/faq';
 
@@ -115,8 +115,9 @@ export default function WholesalePage({ lang, setPage }) {
           {PRODUCTS.map((p) => (
             <a key={p.id} href={buildPath({ page: 'Products', productId: p.id, lang })}
               className="text-left bg-white/70 border border-[#EAE2D5] rounded-xl px-5 py-4 hover:border-[#4E7C59] transition-colors">
-              <div className="font-['Fraunces'] text-lg font-semibold">{lang === 'th' ? p.nameTh : p.name}</div>
+              <div className="font-['Fraunces'] text-lg font-semibold">{productSearchName(p, lang)}</div>
               <div className="text-xs text-[#8A7E71] mt-1">{lang === 'th' ? p.flavorTh : p.flavor}</div>
+              <div className="text-sm font-semibold text-[#3B6146] mt-2">{p.price} {lang === 'th' ? 'บาท / แพ็ค' : 'THB / pack'}</div>
             </a>
           ))}
         </div>
