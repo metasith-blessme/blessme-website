@@ -118,8 +118,8 @@ export const ARTICLES = [
     "id": "increase-smoothie-bar-profit-popping-boba",
     "title": "How to Increase Smoothie Bar Profit Margin with Popping Boba",
     "titleTh": "เพิ่มกำไรร้าน Smoothie ได้ง่ายๆ ด้วย มุกป๊อป — เคล็ดลับที่เจ้าของร้านหลายคนยังไม่รู้",
-    "excerpt": "Discover how smoothie bar owners can boost profit margins by 30–40% by adding popping boba (มุกป๊อป) as a premium topping. Real ROI numbers and practical tips from BlessMe Thailand.",
-    "excerptTh": "เรียนรู้วิธีเพิ่มกำไรร้านน้ำผลไม้ปั่นได้ 30-40% ด้วยการเพิ่มมุกป๊อปเป็น topping พรีเมียม พร้อมตัวเลขกำไรจริงและเคล็ดลับปฏิบัติจาก BlessMe Thailand",
+    "excerpt": "Plan a smoothie topping offer using BlessMe pack prices and drained portion costs. Illustrative calculations before other expenses, not measured customer results.",
+    "excerptTh": "วางแผนท็อปปิ้งร้านสมูทตี้จากราคาแพ็คและต้นทุนเนื้อสินค้า BlessMe พร้อมตัวอย่างคำนวณก่อนค่าใช้จ่ายอื่น ไม่ใช่ผลลัพธ์จริงของร้านลูกค้า",
     "date": "May 14, 2026",
     "isoDate": "2026-05-14",
     "dateTh": "14 พฤษภาคม 2569",
@@ -231,10 +231,10 @@ export const ARTICLES = [
   },
   {
     "id": "popping-boba-greek-yogurt-healthy-pairing",
-    "title": "Popping Boba with Greek Yogurt: Why This Healthy Pairing is a Game Changer",
-    "titleTh": "มุกป๊อปกับ Greek Yogurt — ทำไมถึงเป็น Healthy Pairing ที่คุณต้องลอง",
-    "excerpt": "Discover the best ways to enjoy popping boba (มุกป๊อป) with Greek yogurt. Flavor combinations, health benefits, and easy recipes. BlessMe Thailand.",
-    "excerptTh": "ทำไมมุกป๊อปกับกรีกโยเกิร์ตถึงเป็นเมนูสุขภาพคู่ที่ดีที่สุด เสริมโปรตีนและวิตามิน อร่อยแคลอรีต่ำพร้อมสูตรทำเองง่ายๆ 5 นาที จาก BlessMe",
+    "title": "Popping Boba with Greek Yogurt: Serving Ideas and Sweetness Guidance",
+    "titleTh": "มุกป๊อปกับ Greek Yogurt — ไอเดียเสิร์ฟและคำแนะนำเรื่องความหวาน",
+    "excerpt": "Serving ideas for pairing BlessMe toppings with Greek yogurt. Adjust portions and sweetness for your menu; these are suggestions, not tested health claims.",
+    "excerptTh": "ไอเดียจับคู่ท็อปปิ้ง BlessMe กับกรีกโยเกิร์ต ปรับปริมาณและความหวานให้เหมาะกับเมนู เป็นข้อเสนอในการเสิร์ฟ ไม่ใช่ผลทดสอบด้านสุขภาพ",
     "date": "June 1, 2026",
     "isoDate": "2026-06-01",
     "dateTh": "1 มิถุนายน 2569",
@@ -323,10 +323,10 @@ export const ARTICLES = [
   },
   {
     "id": "barley-popping-boba-thailand",
-    "title": "Barley Popping Boba Thailand: BlessMe's #1 Bestseller and Why Your Menu Needs It",
-    "titleTh": "มุกป๊อปข้าวบาร์เลย์ในไทย: สินค้าขายดีอันดับ 1 ของ BlessMe และเหตุผลที่เมนูของคุณต้องมี",
-    "excerpt": "A deep-dive into barley popping boba — the health angle, unique grain flavor, why it's BlessMe's top-selling SKU, and the best pairing applications for smoothie bars, milk tea shops, and yogurt cafés in Thailand.",
-    "excerptTh": "เจาะลึกมุกป๊อปข้าวบาร์เลย์ — มุมสุขภาพ รสชาติธัญพืชที่เป็นเอกลักษณ์ เหตุผลที่เป็น SKU ขายดีอันดับ 1 ของ BlessMe และการจับคู่ที่ดีที่สุดสำหรับร้านปั่น ชานม และคาเฟ่โยเกิร์ตในไทย",
+    "title": "Barley Popping Boba Thailand: Product Guide and Menu Ideas",
+    "titleTh": "มุกป๊อปข้าวบาร์เลย์ในไทย: ข้อมูลสินค้าและไอเดียเมนู",
+    "excerpt": "Explore BlessMe barley popping boba: pack pricing, drained portion costs, gluten warning and pairing ideas for smoothie bars, milk tea shops and yogurt cafés.",
+    "excerptTh": "รู้จักมุกป๊อปข้าวบาร์เลย์ BlessMe ราคาแพ็ค ต้นทุนต่อเสิร์ฟจากน้ำหนักเนื้อ คำเตือนกลูเตน และไอเดียจับคู่สำหรับร้านสมูทตี้ ชานม และโยเกิร์ต",
     "date": "June 14, 2026",
     "isoDate": "2026-06-14",
     "dateTh": "14 มิถุนายน 2569",
@@ -342,7 +342,7 @@ export const ARTICLES = [
     "authorBio": "BlessMe wholesale team helping F&B businesses across Thailand grow profit margins through premium specialty toppings and popping boba.",
     "cover": "linear-gradient(140deg,#c6a45a 0%,#8a6f2e 100%)",
     "img": "/assets/barley-grain-boba.jpg",
-    "imgAlt": "Close-up of golden barley grain — the inspiration behind BlessMe Barley Popping Boba, Thailand's best-selling Thai-inspired topping for smoothies and milk tea"
+    "imgAlt": "Close-up of golden barley grain illustrating the barley ingredient theme"
   }
 ];
 
