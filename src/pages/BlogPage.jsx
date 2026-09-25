@@ -20,7 +20,10 @@ export function BlogCard({ article, onOpenArticle, lang, compact = false }) {
       >
         <div className="bm-blog-img">
           {article.img ? (
-            <img src={article.img} alt={title} loading="lazy" />
+            <picture>
+              {article.img.endsWith('.jpg') && <source srcSet={article.img.replace(/\.jpg$/, '.webp')} type="image/webp" />}
+              <img src={article.img} alt={title} loading="lazy" />
+            </picture>
           ) : (
             <div className="bm-blog-fill" style={{ background: article.cover }} />
           )}
@@ -143,7 +146,10 @@ export default function BlogPage({ onOpenArticle, lang }) {
               >
                 <div className="bm-feature-cover">
                   {featured.img ? (
-                    <img src={featured.img} alt={lang === 'th' ? featured.titleTh : featured.title} loading="lazy" />
+                    <picture>
+                      {featured.img.endsWith('.jpg') && <source srcSet={featured.img.replace(/\.jpg$/, '.webp')} type="image/webp" />}
+                      <img src={featured.img} alt={lang === 'th' ? featured.titleTh : featured.title} loading="lazy" />
+                    </picture>
                   ) : (
                     <div className="bm-blog-fill" style={{ background: featured.cover }} />
                   )}

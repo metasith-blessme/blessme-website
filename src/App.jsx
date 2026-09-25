@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MotionConfig, useReducedMotion } from 'framer-motion';
+import { MotionConfig } from 'framer-motion';
 import './styles/index.css';
 import { initWebVitals } from './lib/web-vitals';
 import { initContactTracking } from './lib/analytics';
@@ -33,7 +33,6 @@ function App({ ssrPath }) {
   // Language is derived from the URL (EN at /…, Thai at /th/…). Server and client both
   // read the same URL, so first-render markup matches — no hydration mismatch.
   const [lang, setLang] = useState(initial.lang);
-  const shouldReduceMotion = useReducedMotion();
 
   // Initialize Web Vitals monitoring on component mount
   useEffect(() => {
@@ -67,28 +66,6 @@ function App({ ssrPath }) {
     updateMeta(page, pid, aid, lang);
     updateSchema(page, pid, aid, lang);
   }, [page, detail, articleId, lang]);
-
-  // Custom Cursor Logic (skipped for users who prefer reduced motion)
-  const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
-  const [isHovering, setIsHovering] = useState(false);
-  useEffect(() => {
-    if (shouldReduceMotion) return;
-    const moveCursor = (e) => setCursorPos({ x: e.clientX, y: e.clientY });
-    const handleMouseOver = (e) => {
-      const tag = e.target.tagName.toLowerCase();
-      if (tag === 'button' || tag === 'a' || e.target.closest('button') || e.target.closest('a')) {
-        setIsHovering(true);
-      } else {
-        setIsHovering(false);
-      }
-    };
-    window.addEventListener('mousemove', moveCursor);
-    window.addEventListener('mouseover', handleMouseOver);
-    return () => {
-      window.removeEventListener('mousemove', moveCursor);
-      window.removeEventListener('mouseover', handleMouseOver);
-    };
-  }, [shouldReduceMotion]);
 
   const goToPage = (p) => {
     window.history.pushState({}, '', buildPath({ page: p, lang }));
@@ -132,11 +109,6 @@ function App({ ssrPath }) {
     <MotionConfig reducedMotion="user">
     <div className="relative min-h-screen">
       <a href="#main-content" className="bm-skip-link">Skip to content</a>
-      {/* Cursor renders deterministically (SSR-safe); tracking effect is skipped for reduced-motion, leaving it parked off-screen */}
-      <div
-        className={`custom-cursor ${isHovering ? 'hovering' : ''} hidden lg:block`}
-        style={{ left: cursorPos.x, top: cursorPos.y }}
-      ></div>
       <Navbar page={page} setPage={goToPage} lang={lang} setLang={switchLang} />
       <main id="main-content">
         {page === 'NotFound' ? (

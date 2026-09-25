@@ -39,6 +39,9 @@ export const PAGE_META_TH = {
   FAQ: { title: 'คำถามที่พบบ่อย — การสั่งซื้อป๊อปปิ้งโบบาราคาส่ง | เบลสมี ไทยแลนด์', description: 'รวมทุกคำถามเกี่ยวกับการสั่งซื้อค้าส่ง ขั้นต่ำการสั่งซื้อ การจัดส่งทั่วไทย และการเก็บรักษาป๊อปปิ้งโบบาและท็อปปิ่งของเบลสมี', canonical: BASE_URL+'/faq' },
 };
 
+// logo + image URLs intentionally stay logo-full.png: this is a stable
+// social/SEO identifier (Schema.org LocalBusiness, OpenGraph crawlers).
+// Visible-UI renderers use <picture> with logo-full.webp; json-ld stays png.
 export const ORG_SCHEMA = { "@context": "https://schema.org", "@type": "LocalBusiness", "name": "BlessMe (Thailand) Co., Ltd.", "url": "https://blessmethailand.com", "logo": "https://blessmethailand.com/assets/logo-full.png", "image": "https://blessmethailand.com/assets/logo-full.png", "description": "Specialty food wholesaler supplying cafés, restaurants, and dessert brands with premium popping boba in Thailand.", "address": { "@type": "PostalAddress", "addressLocality": "Bangkok", "addressCountry": "TH" }, "contactPoint": { "@type": "ContactPoint", "telephone": "+66-82-896-5199", "email": "Blessme.team@gmail.com", "contactType": "sales", "areaServed": "TH", "availableLanguage": ["Thai", "English"] }, "sameAs": ["https://instagram.com/blessme_thailand", "https://facebook.com/BlessMeThailand"], "priceRange": "฿฿", "areaServed": { "@type": "Country", "name": "Thailand" } };
 
 export const PAGE_NAMES = { Products: 'BlessMe Thailand — Specialty Food Wholesale', Wholesale: 'Popping Boba Wholesale Bangkok', Solutions: 'How BlessMe Works', 'About us': 'About BlessMe Thailand', Blog: 'Journal — Specialty Food Insights', FAQ: 'FAQ — BlessMe Wholesale Thailand' };

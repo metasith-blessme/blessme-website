@@ -93,7 +93,10 @@ export default function ArticlePage({ articleId, onBack, onOpenArticle, lang }) 
 
         {article.img ? (
           <figure className="bm-article-figure bm-article-figure--hero">
-            <img src={article.img} alt={article.imgAlt} className="bm-article-hero-img" width="1080" height="608" fetchpriority="high" />
+            <picture>
+              {article.img.endsWith('.jpg') && <source srcSet={article.img.replace(/\.jpg$/, '.webp')} type="image/webp" />}
+              <img src={article.img} alt={article.imgAlt} className="bm-article-hero-img" width="1080" height="608" fetchpriority="high" />
+            </picture>
             {heroCaption && <figcaption className="bm-article-caption">{heroCaption}</figcaption>}
           </figure>
         ) : (
