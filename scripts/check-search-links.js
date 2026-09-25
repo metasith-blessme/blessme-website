@@ -22,6 +22,20 @@ const names = {
   cheese: ['Moji Yogurt', 'โมจิโยเกิร์ต'],
   osmanthus: ['Osmanthus Konjac', 'บุกหอมหมื่นลี้'],
 };
+// Curated from the bilingual article bodies, not incidental names in price/warning boilerplate.
+const productArticles = {
+  barley: 'barley-popping-boba-thailand',
+  oat: 'popping-boba-yogurt-smoothie-pairing',
+  redbean: 'popping-boba-yogurt-smoothie-pairing',
+  osmanthus: 'popping-boba-yogurt-smoothie-pairing',
+  chestnut: 'popping-boba-cafe-menu-ideas',
+  cheese: 'popping-boba-cafe-menu-ideas',
+};
+const section = (text, id) => text.match(new RegExp(`<section[^>]*id="${id}"[^>]*>([\\s\\S]*?)<\\/section>`))?.[1] || '';
+for (const p of PRODUCTS) {
+  assert.deepEqual(p.articleIds, [productArticles[p.id]], `${p.id}: curated article metadata`);
+  assert(p.articleIds.every(id => ARTICLES.some(a => a.id === id)), `${p.id}: unknown article`);
+}
 const comparisonErrors = [];
 const sitemap = fs.readFileSync(path.join(root, 'dist/sitemap.xml'), 'utf8');
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
@@ -37,6 +51,14 @@ for (const prefix of ['', '/th']) {
     assert(wholesale.includes(url), `Wholesale missing product link: ${url}`);
     const card = anchors(main(html(`${prefix}/wholesale`))).find(a => a.href === url);
     const name = names[p.id][prefix ? 1 : 0];
+    const article = ARTICLES.find(a => a.id === productArticles[p.id]);
+    assert.deepEqual(anchors(section(main(html(url)), 'related-articles')), [{
+      href: `${prefix}/blog/${article.id}`, text: prefix ? article.titleTh : article.title,
+    }], `${url}: localized curated article link`);
+    const faq = section(main(html(url)), 'product-faq');
+    if (p.id === 'osmanthus') {
+      assert(faq.includes(prefix ? 'บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป' : 'Osmanthus Konjac is a konjac topping, not popping boba.'), `${url}: category clarification`);
+    } else assert.equal(faq, '', `${url}: no repetitive SKU FAQ`);
     const price = `${p.price} ${prefix ? 'บาท / แพ็ค' : 'THB / pack'}`;
     if (!card?.text.includes(name)) comparisonErrors.push(`Wholesale card missing ${name}: ${url}`);
     if (!card?.text.includes(price)) comparisonErrors.push(`Wholesale card missing ${price}: ${url}`);
@@ -49,6 +71,12 @@ for (const prefix of ['', '/th']) {
     const url = `${prefix}/blog/${a.id}`;
     assert(blog.includes(url), `Blog missing article link: ${url}`);
     assert(hrefs(html(url)).includes(`${prefix}/blog`), `Missing back link: ${url}`);
+    const expected = PRODUCTS.filter(p => productArticles[p.id] === a.id).map(p => ({
+      href: `${prefix}/products/${p.id}`, text: names[p.id][prefix ? 1 : 0],
+    }));
+    const related = section(main(html(url)), 'related-products');
+    assert.deepEqual(anchors(related), expected, `${url}: exact reciprocal SKU links`);
+    if (!expected.length) assert.equal(related, '', `${url}: no empty related section`);
   }
 }
 assert.deepEqual(comparisonErrors, [], 'Localized SKU comparison content must be present');

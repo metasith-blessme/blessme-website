@@ -9,6 +9,7 @@ import {
 } from '../content/blog';
 import BLOG_BODIES from '../content/blog-bodies.json';
 import { BlogCard } from './BlogPage';
+import { PRODUCTS, productSearchName } from '../constants/products';
 
 export function renderArticleBlock(block, index) {
   const [tag, content] = block;
@@ -37,6 +38,7 @@ export function renderArticleBlock(block, index) {
 
 export default function ArticlePage({ articleId, onBack, onOpenArticle, lang }) {
   const article = getArticleById(articleId) || ARTICLES[0];
+  const products = PRODUCTS.filter(product => product.articleIds?.includes(article.id));
   const others = getRelatedArticles(article.id, 3);
   const { previous, next } = getAdjacentArticles(article.id);
   const shareUrl = canonicalFor('Blog', null, article.id, lang);
@@ -101,6 +103,17 @@ export default function ArticlePage({ articleId, onBack, onOpenArticle, lang }) 
         <div className="bm-article-body">
           {blocks ? blocks.map((block, index) => renderArticleBlock(block, index)) : <div style={{ height: '400px' }} />}
         </div>
+
+        {products.length > 0 && (
+          <section id="related-products" className="bm-article-panel" aria-labelledby="related-products-title">
+            <h2 id="related-products-title">{lang === 'th' ? 'สินค้าที่กล่าวถึงในบทความ' : 'Products discussed in this article'}</h2>
+            <ul className="bm-article-list">
+              {products.map(product => (
+                <li key={product.id}><a className="bm-inline-link" href={buildPath({ page: 'Products', productId: product.id, lang })}>{productSearchName(product, lang)}</a></li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         <div className="bm-article-support">
           <div className="bm-article-panel">

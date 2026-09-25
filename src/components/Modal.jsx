@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { T } from '../constants/translations';
 import { productSearchName } from '../constants/products';
+import { ARTICLES } from '../content/blog';
 import { buildPath, handleLinkClick } from '../lib/routing';
 
 export default function ProductDetail({ product, onClose, lang }) {
@@ -10,6 +11,7 @@ export default function ProductDetail({ product, onClose, lang }) {
   const displayNote = lang === 'th' ? product.noteTh : product.note;
   const displayFlavor = lang === 'th' && product.flavorTh ? product.flavorTh : product.flavor;
   const displayTag = lang === 'th' ? 'รสชาติซิกเนเจอร์' : product.tag;
+  const articles = ARTICLES.filter(article => product.articleIds?.includes(article.id));
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -82,6 +84,24 @@ export default function ProductDetail({ product, onClose, lang }) {
             <p className="bm-body" style={{ marginTop: 8 }}>{t.childWarning}</p>
             {product.containsGluten && <p className="bm-body" style={{ marginTop: 8 }}><strong>{t.allergenWarning}</strong></p>}
           </section>
+
+          {product.id === 'osmanthus' && (
+            <section id="product-faq" aria-labelledby="product-faq-title" style={{ marginTop: 20 }}>
+              <h2 id="product-faq-title" className="text-lg font-semibold">{lang === 'th' ? 'บุกหอมหมื่นลี้เป็นมุกป๊อปหรือไม่?' : 'Is Osmanthus Konjac popping boba?'}</h2>
+              <p className="bm-body" style={{ marginTop: 8 }}>{lang === 'th' ? 'บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป' : 'Osmanthus Konjac is a konjac topping, not popping boba.'}</p>
+            </section>
+          )}
+
+          {articles.length > 0 && (
+            <section id="related-articles" aria-labelledby="related-articles-title" style={{ marginTop: 20 }}>
+              <h2 id="related-articles-title" className="text-lg font-semibold">{lang === 'th' ? 'บทความที่เกี่ยวข้อง' : 'Related reading'}</h2>
+              <ul className="bm-article-list">
+                {articles.map(article => (
+                  <li key={article.id}><a className="bm-inline-link" href={buildPath({ page: 'Blog', articleId: article.id, lang })}>{lang === 'th' ? article.titleTh : article.title}</a></li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           <div className="bm-buy-row" style={{ marginTop: 22, display: 'flex', flexDirection: 'column', gap: 12 }}>
             <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-[#F5EFE6] text-xs text-[#5C5248]">
