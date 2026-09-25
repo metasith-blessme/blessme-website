@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-14T05:08:00.000Z",
+  "title": "Design System: BlessMe Thailand",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Tea Green", "canonical": "#4E7C59" },
+      "primary-deep": { "role": "primary", "displayName": "Deep Tea Green", "canonical": "#3B6146" },
+      "primary-soft": { "role": "primary", "displayName": "Soft Green Wash", "canonical": "#E9EFE4" },
+      "neutral-bg": { "role": "neutral", "displayName": "Cream Paper", "canonical": "#FAF6EF" },
+      "neutral-bg-deep": { "role": "neutral", "displayName": "Deep Parchment", "canonical": "#F1EADF" },
+      "neutral-card": { "role": "neutral", "displayName": "Pure White", "canonical": "#FFFFFF" },
+      "text-main": { "role": "neutral", "displayName": "Roasted Brown Ink", "canonical": "#2B241E" },
+      "text-soft": { "role": "neutral", "displayName": "Soft Earth Ink", "canonical": "#5B5048" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display (Fraunces)", "purpose": "Hero and major editorial section headlines." },
+      "body": { "displayName": "Body (Inter)", "purpose": "Standard narrative copy and UI text." }
+    },
+    "shadows": [
+      { "name": "soft-ambient", "value": "0 2px 8px rgba(18,18,18,0.08)", "purpose": "Rest state card elevation." },
+      { "name": "lifted-modal", "value": "0 12px 32px rgba(18,18,18,0.12)", "purpose": "Modal dialog and sheet elevation." }
+    ],
+    "motion": [
+      { "name": "ease-spring", "value": "cubic-bezier(0.34, 1.56, 0.64, 1)", "purpose": "Pill and modal interaction physics." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "narrative": {
+    "northStar": "The Editorial Tea House",
+    "overview": "BlessMe's visual system evokes a serene, tactile, and high-end culinary publication. The identity marries classical typography with contemporary minimalist spacing, conveying trust, culinary precision, and premium wholesale quality.",
+    "keyCharacteristics": [
+      "Warm paper & roasted ink contrast (no pure black text).",
+      "Refined editorial serif headlines with clean, modern sans-serif body copy.",
+      "Tactile pill buttons, soft border separations, and gentle spring micro-interactions.",
+      "Seamless dual-language typography harmony between English and Thai (DB Ozone X Med)."
+    ],
+    "rules": [
+      { "name": "The Organic Harmony Rule", "body": "Black text is forbidden; all high-contrast typography uses roasted earth ink (#2B241E) to harmonize with paper canvases (#FAF6EF).", "section": "colors" },
+      { "name": "The Dual-Language Optical Match Rule", "body": "Thai text in DB Ozone X must render at ~110-120% font size compared to English Inter/Fraunces equivalents to maintain optical weight balance across language switches.", "section": "typography" }
+    ],
+    "dos": [
+      "Do maintain the cream paper canvas (#FAF6EF) across all marketing pages.",
+      "Do ensure every interactive element provides clear hover and focus feedback.",
+      "Do test Thai translation switching to verify typography size overrides.",
+      "Do keep unit economics and wholesale margins prominent for B2B clarity."
+    ],
+    "donts": [
+      "Don't use pure #000000 black or generic saturated blue hyperlinks.",
+      "Don't use harsh box shadows or neon border glows.",
+      "Don't introduce generic placeholder iconography or cluttered bento boxes."
+    ]
+  }
+}
