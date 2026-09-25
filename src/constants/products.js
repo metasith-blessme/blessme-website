@@ -33,7 +33,7 @@ export const PRODUCTS = [
     note: 'A signature crunch in pearl form — subtle, hydrating, distinctly Asian.',
     noteTh: 'ความกรุบกรอบเอกลักษณ์ในรูปแบบเม็ดบีด — ละเอียดอ่อน ให้ความชุ่มชื้น มีกลิ่นอายเอเชียชัดเจน' },
   { id: 'cheese',    name: 'Moji Yogurt',    nameTh: 'โมจิโยเกิร์ต',    tag: 'Signature flavor', flavor: 'Tangy · Rich · Creamy-sweet', flavorTh: 'เปรี้ยวอมหวาน · เข้มข้น · ครีมมี่',
-    articleIds: ['popping-boba-cafe-menu-ideas'],
+    articleIds: ['moji-yogurt-trend-asia'],
     price: 120, packSize: '500g', drainedWeight: '300g',
     pairings: ['🍓 Yogurt Shake', '🍧 Strawberry Bingsu', '🍰 Tart Topping'],
     pairingsTh: ['🍓 โยเกิร์ตเชค', '🍧 สตรอว์เบอร์รีบิงซู', '🍰 หน้าทาร์ตเค้ก'],
