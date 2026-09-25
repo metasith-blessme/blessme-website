@@ -16,7 +16,10 @@ export default function Footer({ setPage, lang }) {
       <div className="max-w-[1360px] mx-auto">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-12 border-b border-[#2B241E]/10 gap-8">
           <div className="flex items-center gap-3">
-            <img src="/assets/logo-full.png" alt="BlessMe Thailand" className="h-16 w-auto object-contain" />
+            <picture>
+              <source srcSet="/assets/logo-full.webp" type="image/webp" />
+              <img src="/assets/logo-full.png" alt="BlessMe Thailand" className="h-16 w-auto object-contain" width="256" height="256" />
+            </picture>
           </div>
           <p className="font-['Fraunces'] text-xl sm:text-2xl text-[#3B6146] italic md:text-right leading-snug">
             {blessing[0]}<br/>{blessing[1]}

@@ -128,3 +128,14 @@ CSS is monolithic (`src/styles/index.css`) with design tokens in `:root` (colors
 **Update contact form fields**: Form fields in `T.en.formProducts` and `T.th.formProducts`. Form submission via Web3Forms API (no backend needed).
 
 **Adjust Thai typography**: Edit `[lang="th"]` overrides in `index.css` (lines 95–152). Increase font-size for Thai elements to match visual hierarchy of English text.
+
+## Agent skills
+
+### Issue tracker
+GitHub Issues via gh. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+Default five-role vocabulary. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+Single-context layout. See `docs/agents/domain.md`.

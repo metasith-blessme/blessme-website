@@ -8,9 +8,13 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-sitemap.js && vite build && node scripts/prerender.js",
+    "build": "node scripts/generate-sitemap.js && vite build && node scripts/split-blog-bodies.mjs && node scripts/prerender.js",
     "preview": "vite preview",
-    "check:seo": "npm run build && node scripts/check-search-links.js && node scripts/check-seo-foundation.js && node scripts/check-analytics.mjs"
+    "check:seo": "npm run build && node scripts/check-search-links.js && node scripts/check-seo-foundation.js && node scripts/check-analytics.mjs",
+    "check:cursor": "python3 scripts/check-cursor-cleanup.py",
+    "check:images": "python3 scripts/check-image-budget.py",
+    "check:bundle": "node scripts/check-bundle.mjs",
+    "check:perf": "npm run build && python3 scripts/check-cursor-cleanup.py && python3 scripts/check-image-budget.py && node scripts/check-bundle.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.2",

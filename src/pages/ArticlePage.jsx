@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { canonicalFor } from '../lib/seo';
 import { buildPath, handleLinkClick } from '../lib/routing';
 import {
@@ -7,9 +7,62 @@ import {
   getRelatedArticles,
   getAdjacentArticles,
 } from '../content/blog';
-import BLOG_BODIES from '../content/blog-bodies.json';
 import { BlogCard } from './BlogPage';
 import { PRODUCTS, productSearchName } from '../constants/products';
+//
+// Article body content is loaded from a <script type="application/json">
+// tag injected by scripts/prerender.js, not from a JS bundle import. Two
+// reasons: (1) the body data is large enough that bundling it blocks parse
+// on every route, including non-article pages. (2) Per-article lazy fetch
+// scales linearly with how many articles exist on disk; bundling scales the
+// same way but pays the cost on every page. The body content lives inline
+// in the article HTML for first paint (crawler/SEO/AI-share unchanged).
+// For client-side article-to-article navigation, the URL rewrites still go
+// to full HTML pages that bring their own data; useArticleBody below
+// returns null when the SSR script tag is present, and falls back to a
+// fetch for any later client-side render path that needs the body.
+//
+function readArticleBodyFromDocument(articleId, lang) {
+  if (typeof document === 'undefined') return null;
+  const script = document.getElementById('bm-article-body-data');
+  if (!script) return null;
+  try {
+    const data = JSON.parse(script.textContent);
+    if (data?.articleId !== articleId) return null;
+    return (lang === 'th' && data.bodyTh) ? data.bodyTh : data.body;
+  } catch {
+    return null;
+  }
+}
+
+function fetchArticleBody(articleId, lang) {
+  return fetch(`/blog-bodies/${articleId}.json`, { credentials: 'same-origin' })
+    .then((r) => (r.ok ? r.json() : null))
+    .then((data) => {
+      if (!data) return null;
+      return (lang === 'th' && data.bodyTh) ? data.bodyTh : data.body;
+    })
+    .catch(() => null);
+}
+
+// Tracks whether the component has finished mounting on the client. The
+// article body is rendered only after the first effect runs, so server
+// HTML and the first client render produce the same empty container (no
+// hydration mismatch). Once mounted, the body is installed from the
+// injected JSON script tag or lazily fetched from /blog-bodies/<id>.json.
+function useArticleBody(articleId, lang) {
+  const [blocks, setBlocks] = useState(null);
+  useEffect(() => {
+    let cancelled = false;
+    const fromDoc = readArticleBodyFromDocument(articleId, lang);
+    if (fromDoc) { setBlocks(fromDoc); return undefined; }
+    fetchArticleBody(articleId, lang).then((next) => {
+      if (!cancelled && next) setBlocks(next);
+    });
+    return () => { cancelled = true; };
+  }, [articleId, lang]);
+  return blocks;
+}
 
 export function renderArticleBlock(block, index) {
   const [tag, content] = block;
@@ -47,10 +100,11 @@ export default function ArticlePage({ articleId, onBack, onOpenArticle, lang }) 
   const category = lang === 'th' ? article.catTh || article.cat : article.cat;
   const authorRole = lang === 'th' ? article.authorRoleTh || article.authorRole : article.authorRole;
   
-  // Blocks are resolved synchronously so the body is present during SSR/prerender
-  // (crawlable) and matches the client's first render (hydration-safe).
-  const bodyData = BLOG_BODIES[article.id];
-  const blocks = bodyData ? (lang === 'th' && bodyData.bodyTh ? bodyData.bodyTh : bodyData.body) : null;
+  // Blocks are resolved on demand. On the client, the prerendered HTML
+  // already contains the body markup inside #bm-article-body; the hook
+  // returns null and the React render uses the empty placeholder.
+  // For client-side article navigation, the hook fetches the JSON.
+  const blocks = useArticleBody(article.id, lang);
   const heroCaption = lang === 'th'
     ? article.imgCaptionTh || article.imgAlt
     : article.imgCaption || article.imgAlt;
@@ -93,15 +147,18 @@ export default function ArticlePage({ articleId, onBack, onOpenArticle, lang }) 
 
         {article.img ? (
           <figure className="bm-article-figure bm-article-figure--hero">
-            <img src={article.img} alt={article.imgAlt} className="bm-article-hero-img" width="1080" height="608" fetchpriority="high" />
+            <picture>
+              {article.img.endsWith('.jpg') && <source srcSet={article.img.replace(/\.jpg$/, '.webp')} type="image/webp" />}
+              <img src={article.img} alt={article.imgAlt} className="bm-article-hero-img" width="1080" height="608" fetchpriority="high" />
+            </picture>
             {heroCaption && <figcaption className="bm-article-caption">{heroCaption}</figcaption>}
           </figure>
         ) : (
           <div className="bm-article-cover" style={{ background: article.cover }} />
         )}
 
-        <div className="bm-article-body">
-          {blocks ? blocks.map((block, index) => renderArticleBlock(block, index)) : <div style={{ height: '400px' }} />}
+        <div className="bm-article-body" id="bm-article-body">
+          {blocks ? blocks.map((block, index) => renderArticleBlock(block, index)) : null}
         </div>
 
         {products.length > 0 && (

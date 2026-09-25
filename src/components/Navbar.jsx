@@ -24,7 +24,10 @@ export default function Navbar({ page, setPage, lang, setLang }) {
           
           {/* Brand */}
           <a className="flex items-center gap-3 cursor-pointer select-none" href={buildPath({ page: 'Products', lang })} aria-label="BlessMe — go to homepage" onClick={(e) => navigate('Products', e)}>
-            <img src="/assets/logo-full.png" alt="BlessMe Thailand" className="h-16 w-auto object-contain drop-shadow-sm" />
+            <picture>
+              <source srcSet="/assets/logo-full.webp" type="image/webp" />
+              <img src="/assets/logo-full.png" alt="BlessMe Thailand" className="h-16 w-auto object-contain drop-shadow-sm" width="256" height="256" />
+            </picture>
           </a>
           
           {/* Desktop Links */}
