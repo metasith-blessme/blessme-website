@@ -29,7 +29,7 @@ const productArticles = {
   redbean: 'popping-boba-yogurt-smoothie-pairing',
   osmanthus: 'popping-boba-yogurt-smoothie-pairing',
   chestnut: 'popping-boba-cafe-menu-ideas',
-  cheese: 'popping-boba-cafe-menu-ideas',
+  cheese: 'moji-yogurt-trend-asia',
 };
 const section = (text, id) => text.match(new RegExp(`<section[^>]*id="${id}"[^>]*>([\\s\\S]*?)<\\/section>`))?.[1] || '';
 for (const p of PRODUCTS) {
