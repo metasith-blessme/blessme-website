@@ -10,7 +10,10 @@
     "dev": "vite",
     "build": "node scripts/generate-sitemap.js && vite build && node scripts/prerender.js",
     "preview": "vite preview",
-    "check:seo": "npm run build && node scripts/check-search-links.js && node scripts/check-seo-foundation.js && node scripts/check-analytics.mjs"
+    "check:seo": "npm run build && node scripts/check-search-links.js && node scripts/check-seo-foundation.js && node scripts/check-analytics.mjs",
+    "check:cursor": "python3 scripts/check-cursor-cleanup.py",
+    "check:images": "python3 scripts/check-image-budget.py",
+    "check:perf": "npm run build && python3 scripts/check-cursor-cleanup.py && python3 scripts/check-image-budget.py"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.2",
