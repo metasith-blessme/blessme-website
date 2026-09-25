@@ -37,6 +37,29 @@ try {
   const { buildPath } = await vite.ssrLoadModule('/src/lib/routing.js');
   const { PRODUCTS } = await vite.ssrLoadModule('/src/constants/products.js');
   const { ARTICLES } = await vite.ssrLoadModule('/src/content/blog.js');
+  // Article body data is injected post-render (see injectArticleBody below)
+  // because ArticlePage no longer imports it at module scope — the JSON is
+  // loaded per article directly so the runtime bundle does not embed every
+  // body.
+  const BLOG_BODIES = JSON.parse(
+    fs.readFileSync(path.join(ROOT, 'src', 'content', 'blog-bodies.json'), 'utf8')
+  );
+
+  // Convert the active article's body into a <script type="application/json">
+  // payload that the client reads on hydration. Keeping the body data inside a
+  // JSON <script> (rather than splicing HTML into the React-rendered <div>)
+  // avoids hydration mismatches between the server-rendered and client-rendered
+  // subtrees: both render the same empty body container, and the body content
+  // is installed from the JSON after mount.
+  const articleBodyScript = (articleId) => {
+    const data = BLOG_BODIES[articleId];
+    if (!data) return '';
+    const payload = JSON.stringify({ articleId, body: data.body, bodyTh: data.bodyTh });
+    return `<script type="application/json" id="bm-article-body-data">${payload}</script>`;
+  };
+  const injectArticleBody = (html, articleId) => {
+    return html.replace('</head>', `${articleBodyScript(articleId)}\n</head>`);
+  };
 
   const abs = (url) => new URL(url, BASE_URL).href;
 
@@ -54,8 +77,15 @@ try {
 
   const template = fs.readFileSync(path.join(DIST, 'index.html'), 'utf8');
 
-  const esc = (s) =>
-    String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  // Escape `& < > "`. Pass apostropheSafe=true to also escape `'` -> `&#x27;`
+  // (needed for article body content; skipped for <title> by seo.js contract).
+  const esc = (s, apostropheSafe = false) =>
+    String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(apostropheSafe ? /'/g : /(?!)/, apostropheSafe ? '&#x27;' : '');
 
   // Replace an existing tag if present, otherwise inject before </head>.
   const upsert = (html, matcher, tag) =>
@@ -107,6 +137,9 @@ try {
       const urlPath = buildPath({ page: route.page, productId: route.productId, articleId: route.articleId, lang });
       const appHtml = renderToString(React.createElement(App, { ssrPath: urlPath }));
       let html = template.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+      if (route.page === 'Blog' && route.articleId) {
+        html = injectArticleBody(html, route.articleId);
+      }
       html = applyHead(html, route, lang);
 
       const outPath = path.join(DIST, urlPath, 'index.html');

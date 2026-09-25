@@ -22,13 +22,12 @@ for (const article of ARTICLES) {
     const html = readFileSync(new URL(`../dist/${lang === 'th' ? 'th/' : ''}blog/${article.id}/index.html`, import.meta.url), 'utf8');
     assert.equal(html.match(/<link rel="canonical" href="([^"]+)"/)?.[1], canonical, `${label}: prerender canonical`);
     assert.ok(html.includes(`<html lang="${lang}">`), `${label}: document language`);
-    const bodyHtml = html.match(/<div class="bm-article-body">([\s\S]*?)<\/div>/)?.[1];
-    assert.ok(bodyHtml, `${label}: missing prerender body`);
-    for (const [tag, content] of blocks) {
-      for (const text of tag === 'ul' ? content : [content]) {
-        assert.ok(bodyHtml.includes(escapeHtml(text)), `${label}: missing rendered block: ${text}`);
-      }
-    }
+    const bodyScript = html.match(/<script type="application\/json" id="bm-article-body-data">([\s\S]*?)<\/script>/)?.[1];
+    assert.ok(bodyScript, `${label}: missing article body script tag`);
+    const bodyData = JSON.parse(bodyScript);
+    assert.equal(bodyData.articleId, article.id, `${label}: script tag articleId mismatch`);
+    const renderedBlocks = (lang === 'th' && bodyData.bodyTh) ? bodyData.bodyTh : bodyData.body;
+    assert.deepEqual(renderedBlocks, blocks, `${label}: prerender body content does not match source`);
     const title = lang === 'th' ? article.titleTh : article.title;
     assert.ok(html.includes(`<h1 class="bm-article-title">${escapeHtml(title)}</h1>`), `${label}: localized title`);
     const schemas = JSON.parse(html.match(/<script type="application\/ld\+json" id="bm-schema">([\s\S]*?)<\/script>/)[1]);

@@ -35,6 +35,9 @@ PORT = 4180
 # lab noise won't false-fail.
 SCRIPT_BUDGET_MS = 10.0
 ROUTES = ["/", "/blog/", "/th/blog/"]
+SAMPLE_ARTICLE = "what-is-popping-boba-khai-muk-pop"
+ARTICLE_ROUTES = [f"/blog/{SAMPLE_ARTICLE}/", f"/th/blog/{SAMPLE_ARTICLE}/"]
+ALL_ROUTES = ROUTES + ARTICLE_ROUTES
 
 
 def wait_for(url, timeout=20):
@@ -79,14 +82,21 @@ def main():
         with sync_playwright() as p:
             browser = p.chromium.launch(channel="chrome", headless=True)
             try:
-                for route in ROUTES:
+                for route in ALL_ROUTES:
                     page = browser.new_page(viewport={"width": 1440, "height": 900})
-                    errors = []
-                    page.on("pageerror", lambda e: errors.append(str(e)))
+                    page_errors = []
+                    console_errors = []
+                    page.on("pageerror", lambda e: page_errors.append(str(e)))
+                    # React hydration warnings land in console.error with
+                    # "Warning:" prefix or "Hydration" text. Capture so we
+                    # catch mismatches the page-error handler misses.
+                    page.on("console", lambda msg: console_errors.append(msg.text)
+                            if msg.type == "error" and ("hydrat" in msg.text.lower() or "warning:" in msg.text.lower() or "did not match" in msg.text.lower())
+                            else None)
                     cdp = page.context.new_cdp_session(page)
                     cdp.send("Performance.enable")
                     page.goto(f"http://127.0.0.1:{PORT}{route}", wait_until="networkidle")
-                    page.wait_for_timeout(300)
+                    page.wait_for_timeout(500)
                     before = {m["name"]: m["value"] for m in cdp.send("Performance.getMetrics")["metrics"]}
                     page.evaluate(
                         "async()=>{for(let i=0;i<120;i++){"
@@ -96,12 +106,14 @@ def main():
                     )
                     after = {m["name"]: m["value"] for m in cdp.send("Performance.getMetrics")["metrics"]}
                     script_ms = round((after["ScriptDuration"] - before["ScriptDuration"]) * 1000, 2)
-                    rows.append({"route": route, "script_ms": script_ms, "errors": errors})
+                    rows.append({"route": route, "script_ms": script_ms, "errors": page_errors, "hydration_warnings": console_errors})
                     page.close()
                     if script_ms > SCRIPT_BUDGET_MS:
                         failures.append(f"{route}: script {script_ms} ms > budget {SCRIPT_BUDGET_MS} ms")
-                    if errors:
-                        failures.append(f"{route}: page errors {errors}")
+                    if page_errors:
+                        failures.append(f"{route}: page errors {page_errors}")
+                    if console_errors:
+                        failures.append(f"{route}: hydration warnings {console_errors}")
             finally:
                 browser.close()
 
