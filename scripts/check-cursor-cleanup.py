@@ -11,10 +11,8 @@ logic removed from src/App.jsx used to add tens-to-hundreds of milliseconds
 of script time per mouse workload; after the fix the figure must stay
 small.
 
-Why CDP metrics, not a React commit counter: React 18 production builds do
-NOT read window.__REACT_DEVTOOLS_GLOBAL_HOOK__, so a commit-count gate
-would silently pass on a regression. Script-time at the page level still
-catches the dominant cost of re-running setState on every mousemove.
+Uses React's injected commit hook and CDP script time. A positive-control
+language change must produce a commit before the pointer assertion is trusted.
 
 Pass criteria per route: script_ms <= SCRIPT_BUDGET_MS, no page errors.
 Exits 0 on pass, 1 on fail. Requires Python 3.9+, playwright.
@@ -62,10 +60,11 @@ def main():
         print(f"port {PORT} in use; abort", file=sys.stderr)
         return 2
 
-    subprocess.run(["npm", "run", "build"], cwd=ROOT, check=True)
+    if '--skip-build' not in sys.argv:
+        subprocess.run(["npm", "run", "build"], cwd=ROOT, check=True)
 
     preview = subprocess.Popen(
-        ["npx", "--no-install", "vite", "preview", "--host", "127.0.0.1", "--port", str(PORT)],
+        [str(ROOT / 'node_modules/.bin/vite'), "preview", "--host", "127.0.0.1", "--port", str(PORT), "--strictPort"],
         cwd=ROOT,
         stdout=subprocess.DEVNULL,
         stderr=subprocess.PIPE,
@@ -84,6 +83,9 @@ def main():
             try:
                 for route in ALL_ROUTES:
                     page = browser.new_page(viewport={"width": 1440, "height": 900})
+                    page.route('**/*googletagmanager.com/**', lambda r: r.abort())
+                    page.route('**/*google-analytics.com/**', lambda r: r.abort())
+                    page.add_init_script("window.__commits=0; window.__REACT_DEVTOOLS_GLOBAL_HOOK__={supportsFiber:true,inject:()=>1,onCommitFiberRoot:()=>window.__commits++,onCommitFiberUnmount:()=>{}}")
                     page_errors = []
                     console_errors = []
                     page.on("pageerror", lambda e: page_errors.append(str(e)))
@@ -97,6 +99,7 @@ def main():
                     cdp.send("Performance.enable")
                     page.goto(f"http://127.0.0.1:{PORT}{route}", wait_until="networkidle")
                     page.wait_for_timeout(500)
+                    commits = page.evaluate('window.__commits')
                     before = {m["name"]: m["value"] for m in cdp.send("Performance.getMetrics")["metrics"]}
                     page.evaluate(
                         "async()=>{for(let i=0;i<120;i++){"
@@ -106,7 +109,13 @@ def main():
                     )
                     after = {m["name"]: m["value"] for m in cdp.send("Performance.getMetrics")["metrics"]}
                     script_ms = round((after["ScriptDuration"] - before["ScriptDuration"]) * 1000, 2)
-                    rows.append({"route": route, "script_ms": script_ms, "errors": page_errors, "hydration_warnings": console_errors})
+                    pointer_commits = page.evaluate('window.__commits') - commits
+                    before_control = page.evaluate('window.__commits')
+                    page.get_by_role('button', name='EN' if route.startswith('/th/') else 'TH', exact=True).click()
+                    page.wait_for_function('window.__commits > ' + str(before_control))
+                    if pointer_commits:
+                        failures.append(f'{route}: {pointer_commits} pointer-driven commits')
+                    rows.append({"route": route, "pointer_commits": pointer_commits, "script_ms": script_ms, "errors": page_errors, "hydration_warnings": console_errors})
                     page.close()
                     if script_ms > SCRIPT_BUDGET_MS:
                         failures.append(f"{route}: script {script_ms} ms > budget {SCRIPT_BUDGET_MS} ms")

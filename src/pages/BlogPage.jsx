@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { T } from '../constants/translations';
 import { ARTICLES, getBlogCategories } from '../content/blog';
 import { buildPath, handleLinkClick } from '../lib/routing';
@@ -40,7 +40,7 @@ export function BlogCard({ article, onOpenArticle, lang, compact = false }) {
   );
 }
 
-export default function BlogPage({ onOpenArticle, lang }) {
+export default function BlogPage({ onOpenArticle, lang, activeCategory, setActiveCategory, query, setQuery }) {
   const t = T[lang];
   const labels = lang === 'th'
     ? {
@@ -61,8 +61,7 @@ export default function BlogPage({ onOpenArticle, lang }) {
         emptyTitle: 'No articles match that search yet.',
         emptyBody: 'Try a different keyword or switch topics.',
       };
-  const [activeCategory, setActiveCategory] = useState('all');
-  const [query, setQuery] = useState('');
+
   
   const categories = useMemo(
     () => [{ id: 'all', label: labels.allTopics }, ...getBlogCategories(lang)],

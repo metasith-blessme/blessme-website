@@ -81,10 +81,11 @@ def main():
         print(f"port {PORT} in use; abort", file=sys.stderr)
         return 2
 
-    subprocess.run(["npm", "run", "build"], cwd=ROOT, check=True)
+    if '--skip-build' not in sys.argv:
+        subprocess.run(["npm", "run", "build"], cwd=ROOT, check=True)
 
     preview = subprocess.Popen(
-        ["npx", "--no-install", "vite", "preview", "--host", "127.0.0.1", "--port", str(PORT)],
+        [str(ROOT / 'node_modules/.bin/vite'), "preview", "--host", "127.0.0.1", "--port", str(PORT), "--strictPort"],
         cwd=ROOT,
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
@@ -105,6 +106,8 @@ def main():
                 for route in ROUTES:
                     context = browser.new_context(viewport={"width": 1440, "height": 900})
                     page = context.new_page()
+                    page.route('**/*googletagmanager.com/**', lambda r: r.abort())
+                    page.route('**/*google-analytics.com/**', lambda r: r.abort())
                     image_requests = []
 
                     def on_response(r):
@@ -134,6 +137,21 @@ def main():
                     page.goto(f"http://127.0.0.1:{PORT}{route}", wait_until="networkidle")
                     # Give lazy loaders a chance to fire on initial below-fold.
                     page.wait_for_timeout(500)
+                    for image in page.locator('img').all():
+                        image.scroll_into_view_if_needed()
+                        image.evaluate('(img) => img.decode().catch(() => {})')
+                    broken = page.locator('img').evaluate_all('(images) => images.filter(i => !i.naturalWidth).map(i => i.currentSrc || i.src)')
+                    if broken:
+                        failures.append(f'{route}: broken images: {broken}')
+                    if route in ['/blog/', '/th/blog/']:
+                        page.locator('.bm-feature-link').click()
+                        page.locator('.bm-article-body p').first.wait_for()
+                        for image in page.locator('img').all():
+                            image.scroll_into_view_if_needed()
+                            image.evaluate('(img) => img.decode().catch(() => {})')
+                        broken = page.locator('img').evaluate_all('(images) => images.filter(i => !i.naturalWidth).map(i => i.currentSrc || i.src)')
+                        if broken:
+                            failures.append(f'{route}: broken article images after navigation: {broken}')
 
                     requested = [r["url"] for r in image_requests]
                     forbidden = [n for n in ORIGINAL_NAMES if any(n in u for u in requested)]

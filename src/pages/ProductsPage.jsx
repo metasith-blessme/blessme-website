@@ -242,7 +242,7 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
             <button 
               onClick={() => {
                 const el = document.getElementById('catalog-section');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
+                if (el) el.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
               }}
               className="px-8 py-4 bg-[#3B6146] text-white font-semibold text-sm rounded-full transition-all hover:bg-[#243E2C] shadow-[0_8px_24px_rgba(59,97,70,0.28)] hover:shadow-[0_12px_32px_rgba(59,97,70,0.36)] hover:translate-y-[-1px] flex items-center gap-2"
             >

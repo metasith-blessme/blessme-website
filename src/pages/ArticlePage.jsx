@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { canonicalFor } from '../lib/seo';
 import { buildPath, handleLinkClick } from '../lib/routing';
 import {
@@ -9,59 +9,58 @@ import {
 } from '../content/blog';
 import { BlogCard } from './BlogPage';
 import { PRODUCTS, productSearchName } from '../constants/products';
-//
-// Article body content is loaded from a <script type="application/json">
-// tag injected by scripts/prerender.js, not from a JS bundle import. Two
-// reasons: (1) the body data is large enough that bundling it blocks parse
-// on every route, including non-article pages. (2) Per-article lazy fetch
-// scales linearly with how many articles exist on disk; bundling scales the
-// same way but pays the cost on every page. The body content lives inline
-// in the article HTML for first paint (crawler/SEO/AI-share unchanged).
-// For client-side article-to-article navigation, the URL rewrites still go
-// to full HTML pages that bring their own data; useArticleBody below
-// returns null when the SSR script tag is present, and falls back to a
-// fetch for any later client-side render path that needs the body.
-//
+// Only visited, validated articles; bounded by the catalogue and cleared on reload.
+const visitedBodies = new Map();
+// Direct loads hydrate from the same data used by the prerenderer.
 function readArticleBodyFromDocument(articleId, lang) {
   if (typeof document === 'undefined') return null;
+  const cached = visitedBodies.get(articleId);
+  if (cached) return lang === 'th' ? cached.bodyTh : cached.body;
   const script = document.getElementById('bm-article-body-data');
   if (!script) return null;
   try {
     const data = JSON.parse(script.textContent);
     if (data?.articleId !== articleId) return null;
+    visitedBodies.set(articleId, data);
     return (lang === 'th' && data.bodyTh) ? data.bodyTh : data.body;
   } catch {
     return null;
   }
 }
 
-function fetchArticleBody(articleId, lang) {
-  return fetch(`/blog-bodies/${articleId}.json`, { credentials: 'same-origin' })
-    .then((r) => (r.ok ? r.json() : null))
-    .then((data) => {
-      if (!data) return null;
-      return (lang === 'th' && data.bodyTh) ? data.bodyTh : data.body;
-    })
-    .catch(() => null);
-}
-
-// Tracks whether the component has finished mounting on the client. The
-// article body is rendered only after the first effect runs, so server
-// HTML and the first client render produce the same empty container (no
-// hydration mismatch). Once mounted, the body is installed from the
-// injected JSON script tag or lazily fetched from /blog-bodies/<id>.json.
-function useArticleBody(articleId, lang) {
-  const [blocks, setBlocks] = useState(null);
+function useArticleBody(articleId, lang, initialBlocks) {
+  const [blocks, setBlocks] = useState(() => initialBlocks || readArticleBodyFromDocument(articleId, lang));
+  const [error, setError] = useState(false);
+  const [attempt, setAttempt] = useState(0);
   useEffect(() => {
-    let cancelled = false;
-    const fromDoc = readArticleBodyFromDocument(articleId, lang);
-    if (fromDoc) { setBlocks(fromDoc); return undefined; }
-    fetchArticleBody(articleId, lang).then((next) => {
-      if (!cancelled && next) setBlocks(next);
-    });
-    return () => { cancelled = true; };
-  }, [articleId, lang]);
-  return blocks;
+    if (blocks) return;
+    const controller = new AbortController();
+    setError(false);
+    fetch(`/blog-bodies/${articleId}.json`, { signal: controller.signal, credentials: 'same-origin' })
+      .then(response => {
+        if (!response.ok) throw new Error('Article unavailable');
+        return response.json();
+      })
+      .then(data => {
+        for (const next of [data.body, data.bodyTh]) {
+          if (!Array.isArray(next) || !next.length || !next.every(block =>
+          Array.isArray(block) && block.length === 2 && (
+            (['p', 'h2', 'h3', 'quote'].includes(block[0]) && typeof block[1] === 'string') ||
+            (block[0] === 'ul' && Array.isArray(block[1]) && block[1].every(item => typeof item === 'string')) ||
+            (block[0] === 'image' && typeof block[1]?.src === 'string' && typeof block[1]?.alt === 'string' &&
+              (!('caption' in block[1]) || typeof block[1].caption === 'string'))
+          )
+          )) throw new Error('Invalid article');
+        }
+        if (!controller.signal.aborted) {
+          visitedBodies.set(articleId, data);
+          setBlocks(lang === 'th' ? data.bodyTh : data.body);
+        }
+      })
+      .catch(() => { if (!controller.signal.aborted) setError(true); });
+    return () => controller.abort();
+  }, [articleId, lang, attempt, blocks]);
+  return { blocks, error, retry: () => setAttempt(value => value + 1) };
 }
 
 export function renderArticleBlock(block, index) {
@@ -89,7 +88,9 @@ export function renderArticleBlock(block, index) {
   return <p key={index} className="bm-article-p">{content}</p>;
 }
 
-export default function ArticlePage({ articleId, onBack, onOpenArticle, lang }) {
+export default function ArticlePage({ articleId, initialBlocks, onBack, onOpenArticle, lang }) {
+  const titleRef = useRef(null);
+  useEffect(() => { titleRef.current?.focus({ preventScroll: true }); }, []);
   const article = getArticleById(articleId) || ARTICLES[0];
   const products = PRODUCTS.filter(product => product.articleIds?.includes(article.id));
   const others = getRelatedArticles(article.id, 3);
@@ -100,11 +101,7 @@ export default function ArticlePage({ articleId, onBack, onOpenArticle, lang }) 
   const category = lang === 'th' ? article.catTh || article.cat : article.cat;
   const authorRole = lang === 'th' ? article.authorRoleTh || article.authorRole : article.authorRole;
   
-  // Blocks are resolved on demand. On the client, the prerendered HTML
-  // already contains the body markup inside #bm-article-body; the hook
-  // returns null and the React render uses the empty placeholder.
-  // For client-side article navigation, the hook fetches the JSON.
-  const blocks = useArticleBody(article.id, lang);
+  const { blocks, error, retry } = useArticleBody(article.id, lang, initialBlocks);
   const heroCaption = lang === 'th'
     ? article.imgCaptionTh || article.imgAlt
     : article.imgCaption || article.imgAlt;
@@ -136,7 +133,7 @@ export default function ArticlePage({ articleId, onBack, onOpenArticle, lang }) 
       <div className="bm-article-main">
         <header className="bm-article-head">
           <div className="bm-eyebrow">{category.toUpperCase()}</div>
-          <h1 className="bm-article-title">{title}</h1>
+          <h1 ref={titleRef} tabIndex={-1} className="bm-article-title">{title}</h1>
           <div className="bm-article-meta">
             <span>{lang === 'th' ? article.dateTh : article.date}</span>
             <span className="dot">·</span>
@@ -148,6 +145,7 @@ export default function ArticlePage({ articleId, onBack, onOpenArticle, lang }) 
         {article.img ? (
           <figure className="bm-article-figure bm-article-figure--hero">
             <picture>
+              {article.imgSmall && <source media="(max-width: 640px)" srcSet={article.imgSmall} type="image/webp" />}
               {article.img.endsWith('.jpg') && <source srcSet={article.img.replace(/\.jpg$/, '.webp')} type="image/webp" />}
               <img src={article.img} alt={article.imgAlt} className="bm-article-hero-img" width="1080" height="608" fetchpriority="high" />
             </picture>
@@ -158,7 +156,12 @@ export default function ArticlePage({ articleId, onBack, onOpenArticle, lang }) 
         )}
 
         <div className="bm-article-body" id="bm-article-body">
-          {blocks ? blocks.map((block, index) => renderArticleBlock(block, index)) : null}
+          {blocks ? blocks.map((block, index) => renderArticleBlock(block, index)) : error ? (
+            <div role="alert">
+              <p>{lang === 'th' ? 'ไม่สามารถโหลดบทความได้ โปรดลองอีกครั้ง' : 'Could not load this article. Please try again.'}</p>
+              <button type="button" className="bm-btn" onClick={retry}>{lang === 'th' ? 'ลองอีกครั้ง' : 'Try again'}</button>
+            </div>
+          ) : <p role="status">{lang === 'th' ? 'กำลังโหลดบทความ…' : 'Loading article…'}</p>}
         </div>
 
         {products.length > 0 && (
