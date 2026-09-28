@@ -20,6 +20,7 @@ export const ARTICLES = [
     "authorBio": "BlessMe team sharing product information, serving ideas and wholesale ordering guidance.",
     "cover": "linear-gradient(140deg,#7fae8f 0%,#4e7c59 60%,#243b30 100%)",
     "img": "/assets/products/moji-yogurt.webp",
+    "imgSmall": "/assets/products/moji-yogurt-640.webp",
     "imgAlt": "ไข่มุกป๊อป (มุกป๊อป) พรีเมียม BlessMe"
   },
   {
@@ -89,6 +90,7 @@ export const ARTICLES = [
     "authorBio": "BlessMe team sharing product information, serving ideas and wholesale ordering guidance.",
     "cover": "linear-gradient(140deg,#f39c12 0%,#d35400 60%,#e74c3c 100%)",
     "img": "/assets/products/moji-yogurt.webp",
+    "imgSmall": "/assets/products/moji-yogurt-640.webp",
     "imgAlt": "BlessMe Premium Popping Boba"
   },
   {
@@ -346,10 +348,10 @@ export const ARTICLES = [
   },
   {
     "id": "moji-yogurt-trend-asia",
-    "title": "Mochi Yogurt Boba: The Topping Trend Reshaping Cafés Across Asia",
-    "titleTh": "มุกป๊อปโมจิโยเกิร์ต: เทรนด์ท็อปปิ้งที่กำลังเปลี่ยนหน้าตาเมนูคาเฟ่ทั่วเอเชีย",
-    "excerpt": "Mochi yogurt boba is a liquid-filled pearl with a tangy yogurt core — the topping trend reshaping cold dessert and beverage menus across Asia. Definition, regional cues and how BlessMe's Moji Yogurt fits the trend.",
-    "excerptTh": "มุกป๊อปโมจิโยเกิร์ตคือเม็ดบีดที่มีของเหลวแกนโยเกิร์ตเปรี้ยวอ่อน ๆ — เทรนด์ท็อปปิ้งที่กำลังเปลี่ยนหน้าตาเมนูของหวานเย็นและเครื่องดื่มทั่วเอเชีย นิยาม สัญญาณจากตลาดภูมิภาค และท็อปปิ้งโมจิโยเกิร์ตของ BlessMe ที่เข้ากับเทรนด์",
+    "title": "Moji Yogurt Boba: Topping Ideas for Café Drinks and Desserts",
+    "titleTh": "มุกป๊อปโมจิโยเกิร์ต: ไอเดียท็อปปิ้งสำหรับเครื่องดื่มและของหวานในคาเฟ่",
+    "excerpt": "BlessMe's Moji Yogurt is a liquid-filled pearl with a tangy yogurt-flavoured core. Explore serving ideas, pack pricing and storage guidance for café drinks and desserts.",
+    "excerptTh": "โมจิโยเกิร์ตของ BlessMe คือเม็ดบีดที่มีของเหลวแกนรสโยเกิร์ตเปรี้ยวอ่อน ๆ พร้อมไอเดียเสิร์ฟ ราคาแพ็ค และคำแนะนำการจัดเก็บสำหรับเครื่องดื่มและของหวานในคาเฟ่",
     "date": "September 26, 2026",
     "isoDate": "2026-09-26",
     "dateTh": "26 กันยายน 2569",
@@ -365,14 +367,15 @@ export const ARTICLES = [
     "authorBio": "BlessMe team sharing product information, serving ideas and wholesale ordering guidance.",
     "cover": "linear-gradient(140deg,#f4d3e6 0%,#d8536b 60%,#5a2a47 100%)",
     "img": "/assets/products/moji-yogurt.webp",
+    "imgSmall": "/assets/products/moji-yogurt-640.webp",
     "imgAlt": "มุกป๊อปโมจิโยเกิร์ต BlessMe เม็ดบีดแกนโยเกิร์ตเปรี้ยวอ่อน"
   },
   {
     "id": "is-popping-boba-gluten-free",
-    "title": "Is Popping Boba Gluten-Free? A Buyer's Guide for Cafés with Coeliac Customers",
-    "titleTh": "คู่มือสำหรับร้านคาเฟ่ที่มีเมนู Gluten free",
-    "excerpt": "Most popping boba uses a tapioca or seaweed gel skin and is gluten-free, but the flavour base and added ingredients change that. A side-by-side look at BlessMe's six toppings — barley, oat, red bean, water chestnut, Moji Yogurt and Osmanthus Konjac — so cafés can answer gluten questions before customers ask.",
-    "excerptTh": "มุกป๊อปส่วนใหญ่ใช้เจลจากมันสำปะหลังหรือสาหร่าย จึงปลอดกลูเตน แต่ฐานรสและส่วนเติมอาจเปลี่ยนสถานะนั้นได้ เปรียบเทียบท็อปปิ้งหกรายการของ BlessMe — บาร์เลย์ โอ๊ต ถั่วแดง แห้ว โมจิโยเกิร์ต และบุกหอมหมื่นลี้ — ให้ร้านตอบคำถามเรื่องกลูเตนก่อนลูกค้าถาม",
+    "title": "Is Popping Boba Gluten-Free? Product Information to Check Before Ordering",
+    "titleTh": "มุกป๊อปปลอดกลูเตนหรือไม่: ข้อมูลสินค้าที่ควรตรวจสอบก่อนสั่ง",
+    "excerpt": "BlessMe's Barley and Oat toppings contain gluten. Gluten-free status is not confirmed here for the other four toppings. Check product labels and supplier documentation rather than relying on a flavour name or a missing warning.",
+    "excerptTh": "ท็อปปิ้งบาร์เลย์และโอ๊ตของ BlessMe มีกลูเตน ส่วนอีกสี่รายการยังไม่มีการยืนยันสถานะปลอดกลูเตนในบทความนี้ ตรวจสอบฉลากและเอกสารจากซัพพลายเออร์ แทนการอาศัยชื่อรสหรือการไม่มีคำเตือน",
     "date": "September 26, 2026",
     "isoDate": "2026-09-26",
     "dateTh": "26 กันยายน 2569",
@@ -388,14 +391,14 @@ export const ARTICLES = [
     "authorBio": "BlessMe team sharing product information, serving ideas and wholesale ordering guidance.",
     "cover": "linear-gradient(140deg,#a8d8c0 0%,#4e7c59 60%,#243b30 100%)",
     "img": "/assets/products/oat.webp",
-    "imgAlt": "มุกป๊อปโอ๊ต BlessMe — ท็อปปิ้งไร้กลูเตน"
+    "imgAlt": "มุกป๊อปโอ๊ต BlessMe — ท็อปปิ้งที่มีกลูเตน"
   },
   {
     "id": "cold-brew-tea-popping-boba-pairing",
-    "title": "Cold Brew Tea & Coffee with Popping Boba: Menu Pairings Thai Cafés Are Trying in 2026",
-    "titleTh": "ชาและกาแฟ Cold Brew กับมุกป๊อป: ไอเดียจับคู่เมนูที่ร้านคาเฟ่ในปี 2569",
-    "excerpt": "Cold brew steeped 8–12 hours is gentler on bitterness and pairs naturally with Asian-style popping boba. Eight menu pairings drawn from BlessMe's six SKUs — ideas to test, not measured customer results — plus a short checklist of questions cafés can ask their wholesale supplier.",
-    "excerptTh": "การสกัดเย็น 8–12 ชั่วโมง ทำให้รสขมน้อยลงและเข้ากับมุกป๊อปสไตล์เอเชียได้ดี แปดไอเดียจับคู่เมนูจากท็อปปิ้งหกรายการของ BlessMe — เป็นข้อเสนอให้ทดลอง ไม่ใช่ผลลัพธ์จริงจากลูกค้า — พร้อมรายการคำถามสั้น ๆ ที่ร้านควรถามซัพพลายเออร์ขายส่ง",
+    "title": "Cold Brew Tea & Coffee with BlessMe Toppings: Eight Menu Pairings to Try",
+    "titleTh": "ชาและกาแฟ Cold Brew กับท็อปปิ้ง BlessMe: แปดไอเดียจับคู่เมนูให้ทดลอง",
+    "excerpt": "Eight cold brew menu pairings drawn from BlessMe's six toppings — ideas to test, not measured customer results — plus a short checklist of questions cafés can ask their wholesale supplier.",
+    "excerptTh": "แปดไอเดียจับคู่เมนู Cold Brew จากท็อปปิ้งหกรายการของ BlessMe — เป็นข้อเสนอให้ทดลอง ไม่ใช่ผลลัพธ์จริงจากลูกค้า — พร้อมรายการคำถามสั้น ๆ ที่ร้านควรถามซัพพลายเออร์ขายส่ง",
     "date": "September 26, 2026",
     "isoDate": "2026-09-26",
     "dateTh": "26 กันยายน 2569",

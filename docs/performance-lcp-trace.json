@@ -1,0 +1,338 @@
+[
+  {
+    "lang": "en",
+    "run": 1,
+    "lcp": [
+      {
+        "time": 2156,
+        "url": "http://127.0.0.1:55242/assets/products/moji-yogurt-640.webp",
+        "element": "<img src=\"/assets/products/moji-yogurt.webp\" alt=\"\u0e44\u0e02\u0e48\u0e21\u0e38\u0e01\u0e1b\u0e4a\u0e2d\u0e1b (\u0e21\u0e38\u0e01\u0e1b\u0e4a\u0e2d\u0e1b) \u0e1e\u0e23\u0e35\u0e40\u0e21\u0e35\u0e22\u0e21 BlessMe\" class=\"bm-article-hero-img\" width=\"1080\" height=\"608\" fetchpriority=\"high\">"
+      }
+    ],
+    "resources": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600;700&family=Google+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap",
+        "start": 179.69999980926514,
+        "end": 537.1999998092651,
+        "bytes": 3770
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/logo-full.webp",
+        "start": 184.80000019073486,
+        "end": 665.9000000953674,
+        "bytes": 16522
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-M2HGM3SM29",
+        "start": 192.69999980926514,
+        "end": 233.59999990463257,
+        "bytes": 0
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/index-BaW80sR9.js",
+        "start": 201.90000009536743,
+        "end": 4722.900000095367,
+        "bytes": 301702
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/react-vendor-DEQ385Nk.js",
+        "start": 202.5,
+        "end": 2930.699999809265,
+        "bytes": 139482
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/index-D3M_vnmT.css",
+        "start": 202.59999990463257,
+        "end": 1933.3000001907349,
+        "bytes": 86647
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/products/moji-yogurt-640.webp",
+        "start": 253.90000009536743,
+        "end": 1288.0999999046326,
+        "bytes": 40370
+      }
+    ],
+    "titleFont": "Fraunces, \"Google Sans\", Georgia, serif"
+  },
+  {
+    "lang": "en",
+    "run": 2,
+    "lcp": [
+      {
+        "time": 2180,
+        "url": "http://127.0.0.1:55242/assets/products/moji-yogurt-640.webp",
+        "element": "<img src=\"/assets/products/moji-yogurt.webp\" alt=\"\u0e44\u0e02\u0e48\u0e21\u0e38\u0e01\u0e1b\u0e4a\u0e2d\u0e1b (\u0e21\u0e38\u0e01\u0e1b\u0e4a\u0e2d\u0e1b) \u0e1e\u0e23\u0e35\u0e40\u0e21\u0e35\u0e22\u0e21 BlessMe\" class=\"bm-article-hero-img\" width=\"1080\" height=\"608\" fetchpriority=\"high\">"
+      }
+    ],
+    "resources": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600;700&family=Google+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap",
+        "start": 185.5,
+        "end": 544.3000001907349,
+        "bytes": 3770
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/logo-full.webp",
+        "start": 186,
+        "end": 731.4000000953674,
+        "bytes": 16522
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-M2HGM3SM29",
+        "start": 201.09999990463257,
+        "end": 238.80000019073486,
+        "bytes": 0
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/index-BaW80sR9.js",
+        "start": 202.40000009536743,
+        "end": 4730.400000095367,
+        "bytes": 301702
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/index-D3M_vnmT.css",
+        "start": 202.80000019073486,
+        "end": 1940.5,
+        "bytes": 86647
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/react-vendor-DEQ385Nk.js",
+        "start": 202.80000019073486,
+        "end": 2846.4000000953674,
+        "bytes": 139482
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/products/moji-yogurt-640.webp",
+        "start": 253.40000009536743,
+        "end": 1301.5,
+        "bytes": 40370
+      }
+    ],
+    "titleFont": "Fraunces, \"Google Sans\", Georgia, serif"
+  },
+  {
+    "lang": "en",
+    "run": 3,
+    "lcp": [
+      {
+        "time": 2144,
+        "url": "http://127.0.0.1:55242/assets/products/moji-yogurt-640.webp",
+        "element": "<img src=\"/assets/products/moji-yogurt.webp\" alt=\"\u0e44\u0e02\u0e48\u0e21\u0e38\u0e01\u0e1b\u0e4a\u0e2d\u0e1b (\u0e21\u0e38\u0e01\u0e1b\u0e4a\u0e2d\u0e1b) \u0e1e\u0e23\u0e35\u0e40\u0e21\u0e35\u0e22\u0e21 BlessMe\" class=\"bm-article-hero-img\" width=\"1080\" height=\"608\" fetchpriority=\"high\">"
+      }
+    ],
+    "resources": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600;700&family=Google+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap",
+        "start": 184.39999961853027,
+        "end": 544.1999998092651,
+        "bytes": 3770
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/logo-full.webp",
+        "start": 184.7999997138977,
+        "end": 663.3999996185303,
+        "bytes": 16522
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-M2HGM3SM29",
+        "start": 199.19999980926514,
+        "end": 238.69999980926514,
+        "bytes": 0
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/index-BaW80sR9.js",
+        "start": 199.59999990463257,
+        "end": 4721.699999809265,
+        "bytes": 301702
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/index-D3M_vnmT.css",
+        "start": 199.7999997138977,
+        "end": 1938.5999999046326,
+        "bytes": 86647
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/react-vendor-DEQ385Nk.js",
+        "start": 199.7999997138977,
+        "end": 2936.7999997138977,
+        "bytes": 139482
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/products/moji-yogurt-640.webp",
+        "start": 251.59999990463257,
+        "end": 1286.6999998092651,
+        "bytes": 40370
+      }
+    ],
+    "titleFont": "Fraunces, \"Google Sans\", Georgia, serif"
+  },
+  {
+    "lang": "/th",
+    "run": 1,
+    "lcp": [
+      {
+        "time": 2284,
+        "url": "http://127.0.0.1:55242/assets/products/moji-yogurt-640.webp",
+        "element": "<img src=\"/assets/products/moji-yogurt.webp\" alt=\"\u0e44\u0e02\u0e48\u0e21\u0e38\u0e01\u0e1b\u0e4a\u0e2d\u0e1b (\u0e21\u0e38\u0e01\u0e1b\u0e4a\u0e2d\u0e1b) \u0e1e\u0e23\u0e35\u0e40\u0e21\u0e35\u0e22\u0e21 BlessMe\" class=\"bm-article-hero-img\" width=\"1080\" height=\"608\" fetchpriority=\"high\">"
+      }
+    ],
+    "resources": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600;700&family=Google+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap",
+        "start": 177.39999961853027,
+        "end": 536.7999997138977,
+        "bytes": 3770
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/logo-full.webp",
+        "start": 184.7999997138977,
+        "end": 701,
+        "bytes": 16522
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-M2HGM3SM29",
+        "start": 199.09999990463257,
+        "end": 231.19999980926514,
+        "bytes": 0
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/index-BaW80sR9.js",
+        "start": 200.39999961853027,
+        "end": 3851,
+        "bytes": 301702
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/react-vendor-DEQ385Nk.js",
+        "start": 200.89999961853027,
+        "end": 2478.199999809265,
+        "bytes": 139482
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/index-D3M_vnmT.css",
+        "start": 201,
+        "end": 1946.0999999046326,
+        "bytes": 86647
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/products/moji-yogurt-640.webp",
+        "start": 251.09999990463257,
+        "end": 1293.1999998092651,
+        "bytes": 40370
+      }
+    ],
+    "titleFont": "\"Google Sans\", \"Google Sans Text\", Prompt, ui-sans-serif, system-ui, -apple-system, sans-serif"
+  },
+  {
+    "lang": "/th",
+    "run": 2,
+    "lcp": [
+      {
+        "time": 2256,
+        "url": "http://127.0.0.1:55242/assets/products/moji-yogurt-640.webp",
+        "element": "<img src=\"/assets/products/moji-yogurt.webp\" alt=\"\u0e44\u0e02\u0e48\u0e21\u0e38\u0e01\u0e1b\u0e4a\u0e2d\u0e1b (\u0e21\u0e38\u0e01\u0e1b\u0e4a\u0e2d\u0e1b) \u0e1e\u0e23\u0e35\u0e40\u0e21\u0e35\u0e22\u0e21 BlessMe\" class=\"bm-article-hero-img\" width=\"1080\" height=\"608\" fetchpriority=\"high\">"
+      }
+    ],
+    "resources": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600;700&family=Google+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap",
+        "start": 185.80000019073486,
+        "end": 544.5,
+        "bytes": 3770
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/logo-full.webp",
+        "start": 193,
+        "end": 671.6999998092651,
+        "bytes": 16522
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-M2HGM3SM29",
+        "start": 208.59999990463257,
+        "end": 238.80000019073486,
+        "bytes": 0
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/index-BaW80sR9.js",
+        "start": 209.5,
+        "end": 3852.800000190735,
+        "bytes": 301702
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/react-vendor-DEQ385Nk.js",
+        "start": 210,
+        "end": 2554.300000190735,
+        "bytes": 139482
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/index-D3M_vnmT.css",
+        "start": 210.09999990463257,
+        "end": 1954.3000001907349,
+        "bytes": 86647
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/products/moji-yogurt-640.webp",
+        "start": 260.59999990463257,
+        "end": 1294.9000000953674,
+        "bytes": 40370
+      }
+    ],
+    "titleFont": "\"Google Sans\", \"Google Sans Text\", Prompt, ui-sans-serif, system-ui, -apple-system, sans-serif"
+  },
+  {
+    "lang": "/th",
+    "run": 3,
+    "lcp": [
+      {
+        "time": 2264,
+        "url": "http://127.0.0.1:55242/assets/products/moji-yogurt-640.webp",
+        "element": "<img src=\"/assets/products/moji-yogurt.webp\" alt=\"\u0e44\u0e02\u0e48\u0e21\u0e38\u0e01\u0e1b\u0e4a\u0e2d\u0e1b (\u0e21\u0e38\u0e01\u0e1b\u0e4a\u0e2d\u0e1b) \u0e1e\u0e23\u0e35\u0e40\u0e21\u0e35\u0e22\u0e21 BlessMe\" class=\"bm-article-hero-img\" width=\"1080\" height=\"608\" fetchpriority=\"high\">"
+      }
+    ],
+    "resources": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600;700&family=Google+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap",
+        "start": 185.59999990463257,
+        "end": 544.2999997138977,
+        "bytes": 3770
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/logo-full.webp",
+        "start": 193,
+        "end": 671,
+        "bytes": 16522
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-M2HGM3SM29",
+        "start": 206.39999961853027,
+        "end": 238,
+        "bytes": 0
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/index-BaW80sR9.js",
+        "start": 207.5,
+        "end": 3851.199999809265,
+        "bytes": 301702
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/index-D3M_vnmT.css",
+        "start": 207.59999990463257,
+        "end": 1938.2999997138977,
+        "bytes": 86647
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/react-vendor-DEQ385Nk.js",
+        "start": 207.59999990463257,
+        "end": 2509.0999999046326,
+        "bytes": 139482
+      },
+      {
+        "url": "http://127.0.0.1:55242/assets/products/moji-yogurt-640.webp",
+        "start": 260.09999990463257,
+        "end": 1293.2999997138977,
+        "bytes": 40370
+      }
+    ],
+    "titleFont": "\"Google Sans\", \"Google Sans Text\", Prompt, ui-sans-serif, system-ui, -apple-system, sans-serif"
+  }
+]

@@ -14,7 +14,9 @@
     "check:cursor": "python3 scripts/check-cursor-cleanup.py",
     "check:images": "python3 scripts/check-image-budget.py",
     "check:bundle": "node scripts/check-bundle.mjs",
-    "check:perf": "npm run build && python3 scripts/check-cursor-cleanup.py && python3 scripts/check-image-budget.py && node scripts/check-bundle.mjs"
+    "check:articles": "python3 scripts/check-article-loading.py",
+    "check:scroll": "python3 scripts/check-route-scroll.py && python3 scripts/check-reading-position.py",
+    "check:perf": "npm run build && python3 scripts/check-cursor-cleanup.py --skip-build && python3 scripts/check-image-budget.py --skip-build && node scripts/check-bundle.mjs && npm run check:articles && npm run check:scroll"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.2",

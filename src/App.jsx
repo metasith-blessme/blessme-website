@@ -25,11 +25,13 @@ import BlogPage from './pages/BlogPage';
 import FAQPage from './pages/FAQPage';
 import ArticlePage from './pages/ArticlePage';
 
-function App({ ssrPath }) {
+function App({ ssrPath, articleBody }) {
   const [initial] = useState(() => getInitialState(ssrPath)); // ponytail: lazy init — runs once; ssrPath feeds the prerenderer
   const [page, setPage] = useState(initial.page);
   const [detail, setDetail] = useState(initial.productId ? PRODUCTS.find(p => p.id === initial.productId) || null : null);
   const [articleId, setArticleId] = useState(initial.articleId);
+  const [blogCategory, setBlogCategory] = useState('all');
+  const [blogQuery, setBlogQuery] = useState('');
   // Language is derived from the URL (EN at /…, Thai at /th/…). Server and client both
   // read the same URL, so first-render markup matches — no hydration mismatch.
   const [lang, setLang] = useState(initial.lang);
@@ -72,7 +74,7 @@ function App({ ssrPath }) {
     setDetail(null);
     setArticleId(null);
     setPage(p);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const openArticle = (id) => {
@@ -80,7 +82,7 @@ function App({ ssrPath }) {
     setDetail(null);
     setPage('Blog');
     setArticleId(id);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const closeArticle = () => goToPage('Blog');
@@ -120,7 +122,7 @@ function App({ ssrPath }) {
             </a>
           </section>
         ) : articleId ? (
-          <ArticlePage articleId={articleId} onBack={closeArticle} onOpenArticle={openArticle} lang={lang} />
+          <ArticlePage key={`${articleId}:${lang}`} articleId={articleId} initialBlocks={articleBody} onBack={closeArticle} onOpenArticle={openArticle} lang={lang} />
         ) : detail ? (
           <ProductDetail key={detail.id} product={detail} onClose={closeProduct} lang={lang} />
         ) : (
@@ -128,7 +130,7 @@ function App({ ssrPath }) {
             {page === 'Products'  && <ProductsPage onOpen={openProduct} setPage={goToPage} lang={lang} />}
             {page === 'Wholesale' && <WholesalePage setPage={goToPage} lang={lang} />}
             {page === 'About us'  && <AboutPage lang={lang} />}
-            {page === 'Blog'      && <BlogPage onOpenArticle={openArticle} lang={lang} />}
+            {page === 'Blog'      && <BlogPage onOpenArticle={openArticle} lang={lang} activeCategory={blogCategory} setActiveCategory={setBlogCategory} query={blogQuery} setQuery={setBlogQuery} />}
             {page === 'Solutions' && <SolutionsPage setPage={goToPage} lang={lang} />}
             {page === 'FAQ'       && <FAQPage lang={lang} />}
           </>

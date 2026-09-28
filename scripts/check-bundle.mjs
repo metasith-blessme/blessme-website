@@ -19,6 +19,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import './check-blog-facts.mjs'; // Checks every visible EN/TH body, not just embedded JSON.
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -51,7 +52,7 @@ else {
   const text = fs.readFileSync(path.join(DIST, 'assets', bundle), 'utf8');
   const hits = text.split(sampleText).length - 1;
   if (hits > 0) fail(`bundle ${bundle} still contains ${hits} occurrence(s) of body text`);
-  log(`✓ bundle ${bundle} (${(text.length/1024).toFixed(1)} KB) has no body text`);
+  log(`✓ bundle ${bundle} (${(Buffer.byteLength(text)/1024).toFixed(1)} KiB) has no body text`);
 }
 
 // 3. A sample article's prerendered HTML contains the body markup, in both languages.
@@ -65,7 +66,9 @@ for (const lang of ['en', 'th']) {
   const blocks = bodies[sampleId][lang === 'th' ? 'bodyTh' : 'body'];
   const sample = (typeof blocks[0][1] === 'string' ? blocks[0][1] : '').slice(0, 60);
   if (!sample) { fail(`empty sample body for ${sampleId}/${lang}`); continue; }
-  if (!html.includes(sample)) fail(`prerender ${path.relative(DIST, out)} missing body text`);
+  const bodyMarkup = html.match(/<div class="bm-article-body"[^>]*>([\s\S]*?)<\/div>/)?.[1] || '';
+  const escaped = sample.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
+  if (!bodyMarkup.includes(escaped)) fail(`prerender ${path.relative(DIST, out)} missing visible body text`);
   log(`✓ prerender ${path.relative(DIST, out)} contains body text`);
 }
 
