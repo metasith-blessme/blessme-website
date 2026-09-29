@@ -15,10 +15,10 @@ const anchors = (text) => [...text.matchAll(/<a\b[^>]*\bhref="([^"]+)"[^>]*>([\s
   text: body.replace(/<[^>]*>/g, '').replace(/&amp;/g, '&'),
 }));
 const names = {
-  barley: ['Barley Popping Boba', 'มุกป๊อปข้าวบาร์เลย์'],
-  oat: ['Oat Popping Boba', 'มุกป๊อปข้าวโอ๊ต'],
-  redbean: ['Red Bean Popping Boba', 'มุกป๊อปถั่วแดง'],
-  chestnut: ['Water Chestnut Popping Boba', 'มุกป๊อปแห้ว'],
+  barley: ['Barley Popping Boba', 'มุกป็อปข้าวบาร์เลย์'],
+  oat: ['Oat Popping Boba', 'มุกป็อปข้าวโอ๊ต'],
+  redbean: ['Red Bean Popping Boba', 'มุกป็อปถั่วแดง'],
+  chestnut: ['Water Chestnut Popping Boba', 'มุกป็อปแห้ว'],
   cheese: ['Moji Yogurt', 'โมจิโยเกิร์ต'],
   osmanthus: ['Osmanthus Konjac', 'บุกหอมหมื่นลี้'],
 };
@@ -57,7 +57,7 @@ for (const prefix of ['', '/th']) {
     }], `${url}: localized curated article link`);
     const faq = section(main(html(url)), 'product-faq');
     if (p.id === 'osmanthus') {
-      assert(faq.includes(prefix ? 'บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป' : 'Osmanthus Konjac is a konjac topping, not popping boba.'), `${url}: category clarification`);
+      assert(faq.includes(prefix ? 'บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป็อป' : 'Osmanthus Konjac is a konjac topping, not popping boba.'), `${url}: category clarification`);
     } else assert.equal(faq, '', `${url}: no repetitive SKU FAQ`);
     const price = `${p.price} ${prefix ? 'บาท / แพ็ค' : 'THB / pack'}`;
     if (!card?.text.includes(name)) comparisonErrors.push(`Wholesale card missing ${name}: ${url}`);

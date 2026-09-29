@@ -1,10 +1,10 @@
 export const ARTICLES = [
   {
     "id": "what-is-popping-boba-khai-muk-pop",
-    "title": "What Is Popping Boba? A Complete Guide (ไข่มุกป๊อป Explained)",
-    "titleTh": "ไข่มุกป๊อปคืออะไร? รู้จักมุกป๊อป / ป๊อปปิ้งโบบา ฉบับสมบูรณ์",
+    "title": "What Is Popping Boba? A Complete Guide (ไข่มุกป็อป Explained)",
+    "titleTh": "ไข่มุกป็อปคืออะไร? รู้จักมุกป็อป / ป๊อปปิ้งโบบา ฉบับสมบูรณ์",
     "excerpt": "Popping boba has a liquid centre that bursts when bitten. Explore topping types, the BlessMe range and serving ideas.",
-    "excerptTh": "รู้จักมุกป๊อปที่มีของเหลวด้านในแตกเมื่อกัด ประเภทท็อปปิ้ง สินค้า BlessMe และไอเดียการเสิร์ฟ",
+    "excerptTh": "รู้จักมุกป็อปที่มีของเหลวด้านในแตกเมื่อกัด ประเภทท็อปปิ้ง สินค้า BlessMe และไอเดียการเสิร์ฟ",
     "date": "July 27, 2026",
     "isoDate": "2026-07-27",
     "dateTh": "27 กรกฎาคม 2569",
@@ -21,12 +21,12 @@ export const ARTICLES = [
     "cover": "linear-gradient(140deg,#7fae8f 0%,#4e7c59 60%,#243b30 100%)",
     "img": "/assets/products/moji-yogurt.webp",
     "imgSmall": "/assets/products/moji-yogurt-640.webp",
-    "imgAlt": "ไข่มุกป๊อป (มุกป๊อป) พรีเมียม BlessMe"
+    "imgAlt": "ไข่มุกป็อป (มุกป็อป) พรีเมียม BlessMe"
   },
   {
     "id": "popping-boba-wholesale-price-buy-bangkok",
     "title": "Popping Boba Wholesale Price in Thailand & Where to Buy (2026)",
-    "titleTh": "ไข่มุกป๊อป ราคาส่งเท่าไหร่ ซื้อที่ไหนดี 2569 | ขายส่งมุกป๊อป กรุงเทพ",
+    "titleTh": "ไข่มุกป็อป ราคาส่งเท่าไหร่ ซื้อที่ไหนดี 2569 | ขายส่งมุกป็อป กรุงเทพ",
     "excerpt": "How much does popping boba cost wholesale in Thailand, and where can cafés buy it? A clear price guide (90–120 THB/pack) and how to order from BlessMe in Bangkok.",
     "excerptTh": "ราคา BlessMe 90–120 บาท/แพ็ค น้ำหนักรวม 500g เนื้อ 300g พร้อมข้อมูลต้นทุนต่อเสิร์ฟและช่องทางสอบถามสั่งซื้อ",
     "date": "July 27, 2026",
@@ -44,14 +44,14 @@ export const ARTICLES = [
     "authorBio": "BlessMe team sharing product information, serving ideas and wholesale ordering guidance.",
     "cover": "linear-gradient(140deg,#c9a24a 0%,#a06d1e 60%,#5a3a12 100%)",
     "img": "/assets/bangkok-market-supplier.jpg",
-    "imgAlt": "ขายส่งไข่มุกป๊อป (มุกป๊อป) กรุงเทพ BlessMe"
+    "imgAlt": "ขายส่งไข่มุกป็อป (มุกป็อป) กรุงเทพ BlessMe"
   },
   {
     "id": "popping-boba-cafe-menu-ideas",
     "title": "10 Popping Boba Menu Ideas for Cafés & Milk Tea Shops",
-    "titleTh": "10 ไอเดียเมนูไข่มุกป๊อป (มุกป๊อป) สำหรับคาเฟ่และร้านชานม",
+    "titleTh": "10 ไอเดียเมนูไข่มุกป็อป (มุกป็อป) สำหรับคาเฟ่และร้านชานม",
     "excerpt": "Ten serving ideas for popping boba with milk tea, soda, yogurt, smoothies and desserts. Suggestions to try, not tested recipes or sales results.",
-    "excerptTh": "10 ไอเดียเสิร์ฟมุกป๊อปกับชานม โซดา โยเกิร์ต สมูทตี้ และของหวาน เป็นข้อเสนอให้ทดลอง ไม่ใช่สูตรทดสอบหรือผลยอดขาย",
+    "excerptTh": "10 ไอเดียเสิร์ฟมุกป็อปกับชานม โซดา โยเกิร์ต สมูทตี้ และของหวาน เป็นข้อเสนอให้ทดลอง ไม่ใช่สูตรทดสอบหรือผลยอดขาย",
     "date": "July 27, 2026",
     "isoDate": "2026-07-27",
     "dateTh": "27 กรกฎาคม 2569",
@@ -67,12 +67,12 @@ export const ARTICLES = [
     "authorBio": "BlessMe team sharing product information, serving ideas and wholesale ordering guidance.",
     "cover": "linear-gradient(140deg,#e08aa0 0%,#b45a72 60%,#5a2436 100%)",
     "img": "/assets/boba-drink-wholesale.jpg",
-    "imgAlt": "เมนูไข่มุกป๊อป (มุกป๊อป) สำหรับคาเฟ่"
+    "imgAlt": "เมนูไข่มุกป็อป (มุกป็อป) สำหรับคาเฟ่"
   },
   {
     "id": "popping-boba-wholesale-profit-margins",
     "title": "Popping Boba Topping Costs: Calculate Contribution Before Other Expenses",
-    "titleTh": "ต้นทุนท็อปปิ้งมุกป๊อป: คำนวณส่วนต่างก่อนค่าใช้จ่ายอื่น",
+    "titleTh": "ต้นทุนท็อปปิ้งมุกป็อป: คำนวณส่วนต่างก่อนค่าใช้จ่ายอื่น",
     "excerpt": "Calculate topping contribution using current BlessMe prices: 90 THB per pack, or 120 THB for Moji Yogurt. At 15g drained per serving, portion cost is 4.50 or 6.00 THB before other expenses.",
     "excerptTh": "คำนวณส่วนต่างท็อปปิ้งจากราคา BlessMe 90 บาท/แพ็ค หรือโมจิโยเกิร์ต 120 บาท ใช้เนื้อเสิร์ฟละ 15g ต้นทุน 4.50 หรือ 6.00 บาท ยังไม่รวมค่าใช้จ่ายอื่น",
     "date": "July 8, 2026",
@@ -96,7 +96,7 @@ export const ARTICLES = [
   {
     "id": "best-popping-boba-wholesale-supplier-bangkok",
     "title": "Where to Buy Premium Popping Boba Wholesale in Thailand",
-    "titleTh": "ลายแทงแหล่งซื้อป๊อปปิ้งบอบา (มุกป๊อป) พรีเมียมขายส่งในไทย",
+    "titleTh": "ลายแทงแหล่งซื้อป๊อปปิ้งบอบา (มุกป็อป) พรีเมียมขายส่งในไทย",
     "excerpt": "Compare topping samples, drained portion costs, storage and ordering terms. Explore BlessMe’s six toppings for your café or dessert shop.",
     "excerptTh": "เปรียบเทียบตัวอย่างท็อปปิ้ง ต้นทุนเนื้อต่อเสิร์ฟ การเก็บ และเงื่อนไขสั่งซื้อ พร้อมรู้จักท็อปปิ้งหกรายการของ BlessMe",
     "date": "July 8, 2026",
@@ -119,7 +119,7 @@ export const ARTICLES = [
   {
     "id": "increase-smoothie-bar-profit-popping-boba",
     "title": "Plan Smoothie Topping Prices with Popping Boba",
-    "titleTh": "วางแผนราคาท็อปปิ้งร้านสมูทตี้ด้วยมุกป๊อป",
+    "titleTh": "วางแผนราคาท็อปปิ้งร้านสมูทตี้ด้วยมุกป็อป",
     "excerpt": "Plan a smoothie topping offer using BlessMe pack prices and drained portion costs. Illustrative calculations before other expenses, not measured customer results.",
     "excerptTh": "วางแผนท็อปปิ้งร้านสมูทตี้จากราคาแพ็คและต้นทุนเนื้อสินค้า BlessMe พร้อมตัวอย่างคำนวณก่อนค่าใช้จ่ายอื่น ไม่ใช่ผลลัพธ์จริงของร้านลูกค้า",
     "date": "May 14, 2026",
@@ -142,7 +142,7 @@ export const ARTICLES = [
   {
     "id": "popping-boba-yogurt-smoothie-pairing",
     "title": "Popping Boba with Yogurt Smoothie: Pairing Ideas to Try",
-    "titleTh": "มุกป๊อปกับ Yogurt Smoothie: ไอเดียจับคู่สำหรับทดลอง",
+    "titleTh": "มุกป็อปกับ Yogurt Smoothie: ไอเดียจับคู่สำหรับทดลอง",
     "excerpt": "Explore topping combinations for yogurt smoothies, with serving suggestions and gluten and sweetness guidance.",
     "excerptTh": "ไอเดียจับคู่ท็อปปิ้งกับโยเกิร์ตสมูทตี้ พร้อมข้อเสนอการเสิร์ฟและข้อมูลกลูเตนกับความหวาน",
     "date": "May 21, 2026",
@@ -165,7 +165,7 @@ export const ARTICLES = [
   {
     "id": "milk-tea-shop-popping-boba-profit-strategy",
     "title": "Plan a Milk Tea Topping Trial with Popping Boba",
-    "titleTh": "วางแผนทดลองท็อปปิ้งมุกป๊อปสำหรับร้านชานม",
+    "titleTh": "วางแผนทดลองท็อปปิ้งมุกป็อปสำหรับร้านชานม",
     "excerpt": "Evaluate a milk tea topping offer using drained portion costs, illustrative pricing and a small menu trial. No promised sales uplift.",
     "excerptTh": "ประเมินท็อปปิ้งชานมจากต้นทุนเนื้อต่อเสิร์ฟ ตัวอย่างราคา และการทดลองเมนู ไม่รับประกันยอดขายที่เพิ่มขึ้น",
     "date": "May 25, 2026",
@@ -188,7 +188,7 @@ export const ARTICLES = [
   {
     "id": "best-milk-tea-popping-boba-pairing-guide",
     "title": "Milk Tea and Popping Boba: Pairing Ideas to Try",
-    "titleTh": "ชานมกับมุกป๊อป: ไอเดียจับคู่สำหรับทดลอง",
+    "titleTh": "ชานมกับมุกป็อป: ไอเดียจับคู่สำหรับทดลอง",
     "excerpt": "Serving suggestions for pairing Thai tea, matcha and other tea bases with BlessMe toppings. Test portions and sweetness for your own menu.",
     "excerptTh": "ไอเดียจับคู่ชาไทย มัทฉะ และฐานชาอื่นกับท็อปปิ้ง BlessMe ทดลองปริมาณและความหวานให้เหมาะกับเมนูของร้าน",
     "date": "May 28, 2026",
@@ -234,7 +234,7 @@ export const ARTICLES = [
   {
     "id": "popping-boba-greek-yogurt-healthy-pairing",
     "title": "Popping Boba with Greek Yogurt: Serving Ideas and Sweetness Guidance",
-    "titleTh": "มุกป๊อปกับ Greek Yogurt — ไอเดียเสิร์ฟและคำแนะนำเรื่องความหวาน",
+    "titleTh": "มุกป็อปกับ Greek Yogurt — ไอเดียเสิร์ฟและคำแนะนำเรื่องความหวาน",
     "excerpt": "Serving ideas for pairing BlessMe toppings with Greek yogurt. Adjust portions and sweetness for your menu; these are suggestions, not tested health claims.",
     "excerptTh": "ไอเดียจับคู่ท็อปปิ้ง BlessMe กับกรีกโยเกิร์ต ปรับปริมาณและความหวานให้เหมาะกับเมนู เป็นข้อเสนอในการเสิร์ฟ ไม่ใช่ผลทดสอบด้านสุขภาพ",
     "date": "June 1, 2026",
@@ -280,7 +280,7 @@ export const ARTICLES = [
   {
     "id": "popping-boba-wholesale-price-thailand",
     "title": "Popping Boba Wholesale Price in Thailand: A Complete Buyer's Guide (2026)",
-    "titleTh": "ราคาส่งมุกป๊อปในไทย: คู่มือเปรียบเทียบราคาครบถ้วนสำหรับผู้ซื้อ (2569)",
+    "titleTh": "ราคาส่งมุกป็อปในไทย: คู่มือเปรียบเทียบราคาครบถ้วนสำหรับผู้ซื้อ (2569)",
     "excerpt": "BlessMe pack prices, drained portion costs and questions to ask when comparing supplier quotes. No competitor price survey is presented.",
     "excerptTh": "ราคาแพ็ค BlessMe ต้นทุนเนื้อต่อเสิร์ฟ และคำถามสำหรับเปรียบเทียบใบเสนอราคาซัพพลายเออร์ ไม่ใช่ผลสำรวจราคาคู่แข่ง",
     "date": "June 10, 2026",
@@ -303,7 +303,7 @@ export const ARTICLES = [
   {
     "id": "popping-boba-supplier-bangkok",
     "title": "Popping Boba Supplier Inquiries in Bangkok: A Buying Checklist",
-    "titleTh": "สอบถามซัพพลายเออร์มุกป๊อปในกรุงเทพ: รายการตรวจสอบก่อนซื้อ",
+    "titleTh": "สอบถามซัพพลายเออร์มุกป็อปในกรุงเทพ: รายการตรวจสอบก่อนซื้อ",
     "excerpt": "A BlessMe wholesale inquiry checklist: pack pricing, no minimum order, samples and questions about stock and delivery arrangements.",
     "excerptTh": "รายการตรวจสอบก่อนสอบถามราคาส่ง BlessMe: ราคาแพ็ค ไม่มีขั้นต่ำ ตัวอย่างสินค้า และคำถามเรื่องสต็อกกับการจัดส่ง",
     "date": "June 12, 2026",
@@ -326,9 +326,9 @@ export const ARTICLES = [
   {
     "id": "barley-popping-boba-thailand",
     "title": "Barley Popping Boba Thailand: Product Guide and Menu Ideas",
-    "titleTh": "มุกป๊อปข้าวบาร์เลย์ในไทย: ข้อมูลสินค้าและไอเดียเมนู",
+    "titleTh": "มุกป็อปข้าวบาร์เลย์ในไทย: ข้อมูลสินค้าและไอเดียเมนู",
     "excerpt": "Explore BlessMe barley popping boba: pack pricing, drained portion costs, gluten warning and pairing ideas for smoothie bars, milk tea shops and yogurt cafés.",
-    "excerptTh": "รู้จักมุกป๊อปข้าวบาร์เลย์ BlessMe ราคาแพ็ค ต้นทุนต่อเสิร์ฟจากน้ำหนักเนื้อ คำเตือนกลูเตน และไอเดียจับคู่สำหรับร้านสมูทตี้ ชานม และโยเกิร์ต",
+    "excerptTh": "รู้จักมุกป็อปข้าวบาร์เลย์ BlessMe ราคาแพ็ค ต้นทุนต่อเสิร์ฟจากน้ำหนักเนื้อ คำเตือนกลูเตน และไอเดียจับคู่สำหรับร้านสมูทตี้ ชานม และโยเกิร์ต",
     "date": "June 14, 2026",
     "isoDate": "2026-06-14",
     "dateTh": "14 มิถุนายน 2569",
@@ -349,7 +349,7 @@ export const ARTICLES = [
   {
     "id": "moji-yogurt-trend-asia",
     "title": "Moji Yogurt Boba: Topping Ideas for Café Drinks and Desserts",
-    "titleTh": "มุกป๊อปโมจิโยเกิร์ต: ไอเดียท็อปปิ้งสำหรับเครื่องดื่มและของหวานในคาเฟ่",
+    "titleTh": "มุกป็อปโมจิโยเกิร์ต: ไอเดียท็อปปิ้งสำหรับเครื่องดื่มและของหวานในคาเฟ่",
     "excerpt": "BlessMe's Moji Yogurt is a liquid-filled pearl with a tangy yogurt-flavoured core. Explore serving ideas, pack pricing and storage guidance for café drinks and desserts.",
     "excerptTh": "โมจิโยเกิร์ตของ BlessMe คือเม็ดบีดที่มีของเหลวแกนรสโยเกิร์ตเปรี้ยวอ่อน ๆ พร้อมไอเดียเสิร์ฟ ราคาแพ็ค และคำแนะนำการจัดเก็บสำหรับเครื่องดื่มและของหวานในคาเฟ่",
     "date": "September 26, 2026",
@@ -368,12 +368,12 @@ export const ARTICLES = [
     "cover": "linear-gradient(140deg,#f4d3e6 0%,#d8536b 60%,#5a2a47 100%)",
     "img": "/assets/products/moji-yogurt.webp",
     "imgSmall": "/assets/products/moji-yogurt-640.webp",
-    "imgAlt": "มุกป๊อปโมจิโยเกิร์ต BlessMe เม็ดบีดแกนโยเกิร์ตเปรี้ยวอ่อน"
+    "imgAlt": "มุกป็อปโมจิโยเกิร์ต BlessMe เม็ดบีดแกนโยเกิร์ตเปรี้ยวอ่อน"
   },
   {
     "id": "is-popping-boba-gluten-free",
     "title": "Is Popping Boba Gluten-Free? Product Information to Check Before Ordering",
-    "titleTh": "มุกป๊อปปลอดกลูเตนหรือไม่: ข้อมูลสินค้าที่ควรตรวจสอบก่อนสั่ง",
+    "titleTh": "มุกป็อปปลอดกลูเตนหรือไม่: ข้อมูลสินค้าที่ควรตรวจสอบก่อนสั่ง",
     "excerpt": "BlessMe's Barley and Oat toppings contain gluten. Gluten-free status is not confirmed here for the other four toppings. Check product labels and supplier documentation rather than relying on a flavour name or a missing warning.",
     "excerptTh": "ท็อปปิ้งบาร์เลย์และโอ๊ตของ BlessMe มีกลูเตน ส่วนอีกสี่รายการยังไม่มีการยืนยันสถานะปลอดกลูเตนในบทความนี้ ตรวจสอบฉลากและเอกสารจากซัพพลายเออร์ แทนการอาศัยชื่อรสหรือการไม่มีคำเตือน",
     "date": "September 26, 2026",
@@ -391,7 +391,7 @@ export const ARTICLES = [
     "authorBio": "BlessMe team sharing product information, serving ideas and wholesale ordering guidance.",
     "cover": "linear-gradient(140deg,#a8d8c0 0%,#4e7c59 60%,#243b30 100%)",
     "img": "/assets/products/oat.webp",
-    "imgAlt": "มุกป๊อปโอ๊ต BlessMe — ท็อปปิ้งที่มีกลูเตน"
+    "imgAlt": "มุกป็อปโอ๊ต BlessMe — ท็อปปิ้งที่มีกลูเตน"
   },
   {
     "id": "cold-brew-tea-popping-boba-pairing",
@@ -414,7 +414,7 @@ export const ARTICLES = [
     "authorBio": "BlessMe team sharing product information, serving ideas and wholesale ordering guidance.",
     "cover": "linear-gradient(140deg,#3a4d5e 0%,#1f2d3a 60%,#0f1a24 100%)",
     "img": "/assets/products/waterchestnut.webp",
-    "imgAlt": "มุกป๊อปแห้ว BlessMe — ท็อปปิ้งจับคู่กับชาและกาแฟ Cold Brew"
+    "imgAlt": "มุกป็อปแห้ว BlessMe — ท็อปปิ้งจับคู่กับชาและกาแฟ Cold Brew"
   }
 ];
 

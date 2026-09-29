@@ -55,5 +55,5 @@ export function productSearchName(product, lang = 'en') {
     return lang === 'th' ? product.nameTh : product.name;
   }
   const thaiName = { barley: 'ข้าวบาร์เลย์', oat: 'ข้าวโอ๊ต' }[product.id] || product.nameTh;
-  return lang === 'th' ? `มุกป๊อป${thaiName}` : `${product.name} Popping Boba`;
+  return lang === 'th' ? `มุกป็อป${thaiName}` : `${product.name} Popping Boba`;
 }
