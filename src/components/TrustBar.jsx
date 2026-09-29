@@ -40,7 +40,7 @@ export default function TrustBar({ lang }) {
       ),
       title: isTh ? 'ท็อปปิ้งวีแกนทั้ง 6 รายการ' : 'All Six Toppings Are Vegan',
       desc: isTh 
-        ? 'มีทั้งมุกป๊อป โมจิโยเกิร์ต และบุกหอมหมื่นลี้ ตรวจส่วนผสมและสารก่อภูมิแพ้จากฉลากแต่ละสินค้า วีแกนไม่ได้แปลว่าปลอดสารก่อภูมิแพ้'
+        ? 'มีทั้งมุกป็อป โมจิโยเกิร์ต และบุกหอมหมื่นลี้ ตรวจส่วนผสมและสารก่อภูมิแพ้จากฉลากแต่ละสินค้า วีแกนไม่ได้แปลว่าปลอดสารก่อภูมิแพ้'
         : 'The range includes popping boba, Moji Yogurt and Osmanthus Konjac. Check individual labels for ingredients and allergens; vegan does not mean allergen-free.',
       tag: isTh ? 'วีแกน 100%' : '100% Vegan'
     },

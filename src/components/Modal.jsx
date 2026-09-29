@@ -87,8 +87,8 @@ export default function ProductDetail({ product, onClose, lang }) {
 
           {product.id === 'osmanthus' && (
             <section id="product-faq" aria-labelledby="product-faq-title" style={{ marginTop: 20 }}>
-              <h2 id="product-faq-title" className="text-lg font-semibold">{lang === 'th' ? 'บุกหอมหมื่นลี้เป็นมุกป๊อปหรือไม่?' : 'Is Osmanthus Konjac popping boba?'}</h2>
-              <p className="bm-body" style={{ marginTop: 8 }}>{lang === 'th' ? 'บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป' : 'Osmanthus Konjac is a konjac topping, not popping boba.'}</p>
+              <h2 id="product-faq-title" className="text-lg font-semibold">{lang === 'th' ? 'บุกหอมหมื่นลี้เป็นมุกป็อปหรือไม่?' : 'Is Osmanthus Konjac popping boba?'}</h2>
+              <p className="bm-body" style={{ marginTop: 8 }}>{lang === 'th' ? 'บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป็อป' : 'Osmanthus Konjac is a konjac topping, not popping boba.'}</p>
             </section>
           )}
 

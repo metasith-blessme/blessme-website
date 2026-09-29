@@ -30,7 +30,7 @@ export default function Footer({ setPage, lang }) {
           <div className="flex flex-col gap-3">
             <div className="text-xs font-bold tracking-[0.16em] uppercase text-[#3B6146] mb-1">{t.footerCatalogue}</div>
             <a href={buildPath({ page: 'Products', lang })} onClick={(e) => navigate('Products', e)} className="text-[#5C5248] hover:text-[#2B241E] transition-colors">{t.nav[0]}</a>
-            <a href={buildPath({ page: 'Wholesale', lang })} onClick={(e) => navigate('Wholesale', e)} className="text-[#5C5248] hover:text-[#2B241E] transition-colors">{lang === 'th' ? 'ขายส่งไข่มุกป๊อป' : 'Popping Boba Wholesale'}</a>
+            <a href={buildPath({ page: 'Wholesale', lang })} onClick={(e) => navigate('Wholesale', e)} className="text-[#5C5248] hover:text-[#2B241E] transition-colors">{lang === 'th' ? 'ขายส่งไข่มุกป็อป' : 'Popping Boba Wholesale'}</a>
             <a href={buildPath({ page: 'Solutions', lang })} onClick={(e) => navigate('Solutions', e)} className="text-[#5C5248] hover:text-[#2B241E] transition-colors">{t.nav[1]}</a>
           </div>
 
