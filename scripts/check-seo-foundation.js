@@ -8,7 +8,7 @@ const root = path.resolve(import.meta.dirname, '..');
 const vite = await createServer({ root, optimizeDeps: { noDiscovery: true, include: [] }, server: { middlewareMode: true }, appType: 'custom', logLevel: 'error' });
 const escape = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
 try {
-  const { PRODUCTS, productSearchName } = await vite.ssrLoadModule('/src/constants/products.js');
+  const { PRODUCTS, productHeading } = await vite.ssrLoadModule('/src/constants/products.js');
   const { ARTICLES } = await vite.ssrLoadModule('/src/content/blog.js');
   const { getInitialState } = await vite.ssrLoadModule('/src/lib/routing.js');
   const { getMeta, getSchemas, canonicalFor, updateMeta } = await vite.ssrLoadModule('/src/lib/seo.js');
@@ -25,7 +25,7 @@ try {
       const product = PRODUCTS.find(p => p.id === productId);
       const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] || '';
       const headings = [...main.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/g)];
-      assert.deepEqual(headings.map(m => m[1]), [escape(productSearchName(product, lang))], `${pathname}: SKU-specific main H1`);
+      assert.deepEqual(headings.map(m => m[1]), [escape(productHeading(product, lang))], `${pathname}: SKU-specific main H1`);
       assert(main.includes(escape(lang === 'th' ? product.noteTh : product.note)), `${pathname}: SKU description in main`);
       assert.match(main, new RegExp(`<a[^>]*href="${lang === 'th' ? '/th/' : '/'}"[^>]*>← ${lang === 'th' ? 'สินค้าทั้งหมด' : 'All products'}</a>`), `${pathname}: localized native back link`);
       const guidance = lang === 'th' ? [
@@ -100,7 +100,7 @@ try {
     }
   }
 
-  assert.equal(productPages, 12, 'All six SKUs in EN/TH must be standalone');
+  assert.equal(productPages, PRODUCTS.length * 2, 'Every current SKU in EN/TH must be standalone');
   const llms = fs.readFileSync(path.join(root, 'dist/llms.txt'), 'utf8');
   for (const warning of ['Barley and Oat: Contains gluten.', 'ข้าวบาร์เลย์และข้าวโอ๊ต: มีกลูเตน']) {
     assert(llms.includes(warning), 'llms.txt names the two confirmed SKUs');

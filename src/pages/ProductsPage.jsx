@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { T } from '../constants/translations';
 import { PRODUCTS } from '../constants/products';
+import { SHOPEE_URL } from '../lib/analytics';
 import ProductCard from '../components/ProductCard';
 import TrustBar from '../components/TrustBar';
 
@@ -122,11 +123,11 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
             }} 
           />
 
-          {/* 4. Water Chestnut Boba (Crystalline Opal Glass) */}
+          {/* 4. Clear pearl (decorative; not a current SKU) */}
           <span 
-            onClick={() => handleBobaBurst('แห้วกรอบสดชื่น', 'Crisp Water Chestnut')}
+            onClick={() => handleBobaBurst('มุกใสกรอบ', 'Crisp pearl')}
             className="bm-boba-3d bm-float-fast-4 pointer-events-auto active:scale-90" 
-            title="Click to burst Water Chestnut Boba!"
+            title="Click to burst a popping pearl!"
             style={{ 
               top: '68%', right: '8%', width: 48, height: 48, 
               background: 'radial-gradient(circle at 28% 26%, #ffffff 16%, rgba(235,248,252,0.98) 46%, rgba(175,220,230,0.92) 76%, rgba(80,135,150,0.95) 100%)', 
@@ -162,7 +163,7 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
           <span onClick={() => handleBobaBurst('บาร์เลย์', 'Barley')} className="bm-boba-3d bm-float-fast-3 pointer-events-auto" style={{ top: '8%', left: '32%', width: 26, height: 26, animationDelay: '-1s', background: 'radial-gradient(circle at 28% 26%, #ffffff 12%, #FAD790 40%, #D49838 75%, #7A4B12 100%)', boxShadow: '0 6px 16px rgba(185,125,35,0.35)' }} />
           <span onClick={() => handleBobaBurst('โอ๊ต', 'Oat')} className="bm-boba-3d bm-float-fast-4 pointer-events-auto" style={{ top: '16%', right: '28%', width: 28, height: 28, animationDelay: '-4s', background: 'radial-gradient(circle at 28% 26%, #ffffff 14%, #FFF3DC 42%, #E3CCA2 76%, #9E7D52 100%)', boxShadow: '0 6px 16px rgba(180,150,100,0.3)' }} />
           <span onClick={() => handleBobaBurst('ถั่วแดง', 'Red Bean')} className="bm-boba-3d bm-float-fast-1 pointer-events-auto" style={{ top: '80%', left: '22%', width: 32, height: 32, animationDelay: '-5s', background: 'radial-gradient(circle at 28% 26%, #ffffff 10%, #E57385 38%, #A3283B 74%, #540D18 100%)', boxShadow: '0 8px 18px rgba(150,30,45,0.35)' }} />
-          <span onClick={() => handleBobaBurst('แห้ว', 'Water Chestnut')} className="bm-boba-3d bm-float-fast-2 pointer-events-auto" style={{ top: '84%', right: '20%', width: 30, height: 30, animationDelay: '-1.5s', background: 'radial-gradient(circle at 28% 26%, #ffffff 16%, #EAF5F8 46%, #B8DFE6 76%, #6A9EAA 100%)', boxShadow: '0 8px 18px rgba(80,135,150,0.3)' }} />
+          <span onClick={() => handleBobaBurst('มุกใส', 'Clear pearl')} className="bm-boba-3d bm-float-fast-2 pointer-events-auto" style={{ top: '84%', right: '20%', width: 30, height: 30, animationDelay: '-1.5s', background: 'radial-gradient(circle at 28% 26%, #ffffff 16%, #EAF5F8 46%, #B8DFE6 76%, #6A9EAA 100%)', boxShadow: '0 8px 18px rgba(80,135,150,0.3)' }} />
           <span onClick={() => handleBobaBurst('โมจิโยเกิร์ต', 'Moji Yogurt')} className="bm-boba-3d bm-float-fast-3 pointer-events-auto" style={{ top: '48%', left: '4%', width: 24, height: 24, animationDelay: '-3s', background: 'radial-gradient(circle at 28% 26%, #ffffff 14%, #FFF9E6 42%, #F5DFA0 76%, #B89035 100%)', boxShadow: '0 6px 14px rgba(210,165,60,0.3)' }} />
           <span onClick={() => handleBobaBurst('หอมหมื่นลี้', 'Osmanthus')} className="bm-boba-3d bm-float-fast-4 pointer-events-auto" style={{ top: '54%', right: '4%', width: 28, height: 28, animationDelay: '-6s', background: 'radial-gradient(circle at 28% 26%, #ffffff 12%, #FFE885 40%, #F5B82A 74%, #A86B08 100%)', boxShadow: '0 8px 18px rgba(240,175,20,0.35)' }} />
         </div>
@@ -188,10 +189,10 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-['Fraunces'] text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-semibold leading-[1.04] tracking-[-0.025em] text-[#2B241E] mb-6"
+            className="font-['Fraunces'] text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-semibold leading-[1.12] tracking-[-0.025em] text-[#2B241E] mb-6 text-balance"
           >
             {t.heroTitle[0]}
-            <span className="relative inline-block mx-2">
+            <span className="relative inline-block">
               <span className="relative z-10 italic font-normal text-[#3B6146] font-['Fraunces']">{t.heroTitle[1]}</span>
               {/* Organic brush underline */}
               <svg className="absolute -bottom-2 left-0 w-full h-[14px] text-[#C5A869]/60 -z-10" viewBox="0 0 200 14" preserveAspectRatio="none" fill="none">
@@ -252,6 +253,18 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
               </svg>
             </button>
             
+            <a
+              href={SHOPEE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-white border border-[#2B241E]/12 text-[#2B241E] font-semibold text-sm rounded-full hover:bg-white hover:border-[#EE4D2D] transition-all shadow-sm hover:shadow-md flex items-center gap-2"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="#EE4D2D">
+                <path d="M7 7V6a5 5 0 0 1 10 0v1h2.2a1 1 0 0 1 1 .9l1 12a1 1 0 0 1-1 1.1H3.8a1 1 0 0 1-1-1.1l1-12a1 1 0 0 1 1-.9H7zm2 0h6V6a3 3 0 0 0-6 0v1z"/>
+              </svg>
+              <span>{t.heroShopee}</span>
+            </a>
+
             <a 
               href="mailto:Blessme.team@gmail.com?subject=Sample%20Request"
               data-contact-intent="sample"

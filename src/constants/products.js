@@ -24,14 +24,6 @@ export const PRODUCTS = [
     img: '/assets/products/redbean.webp',   imgFallback: '/assets/products/redbean.png',
     note: 'A heritage Asian flavor profile, elevated. Pairs naturally with cold desserts, shaved ice, and pastries.',
     noteTh: 'รสชาติดั้งเดิมของเอเชียที่ยกระดับขึ้น เข้ากันได้ดีกับของหวานเย็น น้ำแข็งไส และขนมอบ' },
-  { id: 'chestnut',  name: 'Water Chestnut', nameTh: 'แห้ว',           tag: 'Signature flavor', flavor: 'Crisp · Cool · Clean', flavorTh: 'กรอบ · เย็นสดชื่น · สะอาด',
-    articleIds: ['popping-boba-cafe-menu-ideas'],
-    price: 90, packSize: '500g', drainedWeight: '300g',
-    pairings: ['🍵 Fruit Tea', '🍸 Craft Mocktail', '🧊 Cold Brew Tea'],
-    pairingsTh: ['🍵 ชาผลไม้สด', '🍸 คราฟต์ม็อกเทล', '🧊 โคลด์บริวที'],
-    img: '/assets/products/waterchestnut.webp',  imgFallback: '/assets/products/waterchestnut.png',
-    note: 'A signature crunch in pearl form — subtle, hydrating, distinctly Asian.',
-    noteTh: 'ความกรุบกรอบเอกลักษณ์ในรูปแบบเม็ดบีด — ละเอียดอ่อน ให้ความชุ่มชื้น มีกลิ่นอายเอเชียชัดเจน' },
   { id: 'cheese',    name: 'Moji Yogurt',    nameTh: 'โมจิโยเกิร์ต',    tag: 'Signature flavor', flavor: 'Tangy · Rich · Creamy-sweet', flavorTh: 'เปรี้ยวอมหวาน · เข้มข้น · ครีมมี่',
     articleIds: ['moji-yogurt-trend-asia'],
     price: 120, packSize: '500g', drainedWeight: '300g',
@@ -55,5 +47,13 @@ export function productSearchName(product, lang = 'en') {
     return lang === 'th' ? product.nameTh : product.name;
   }
   const thaiName = { barley: 'ข้าวบาร์เลย์', oat: 'ข้าวโอ๊ต' }[product.id] || product.nameTh;
-  return lang === 'th' ? `มุกป็อป${thaiName}` : `${product.name} Popping Boba`;
+  return lang === 'th' ? `มุกป๊อป${thaiName}` : `${product.name} Popping Boba`;
+}
+
+// Visible product-page H1. English stays the SKU name; Thai uses the search spelling.
+export function productHeading(product, lang = 'en') {
+  if (lang !== 'th') return productSearchName(product, lang);
+  if (product.id === 'osmanthus') return 'บุกหอมหมื่นลี้ ท็อปปิ้งขายส่ง';
+  if (product.id === 'cheese') return 'มุกป๊อปโมจิโยเกิร์ต ขายส่ง';
+  return `${productSearchName(product, lang)} ขายส่ง`;
 }

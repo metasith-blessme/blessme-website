@@ -15,10 +15,9 @@ const anchors = (text) => [...text.matchAll(/<a\b[^>]*\bhref="([^"]+)"[^>]*>([\s
   text: body.replace(/<[^>]*>/g, '').replace(/&amp;/g, '&'),
 }));
 const names = {
-  barley: ['Barley Popping Boba', 'มุกป็อปข้าวบาร์เลย์'],
-  oat: ['Oat Popping Boba', 'มุกป็อปข้าวโอ๊ต'],
-  redbean: ['Red Bean Popping Boba', 'มุกป็อปถั่วแดง'],
-  chestnut: ['Water Chestnut Popping Boba', 'มุกป็อปแห้ว'],
+  barley: ['Barley Popping Boba', 'มุกป๊อปข้าวบาร์เลย์'],
+  oat: ['Oat Popping Boba', 'มุกป๊อปข้าวโอ๊ต'],
+  redbean: ['Red Bean Popping Boba', 'มุกป๊อปถั่วแดง'],
   cheese: ['Moji Yogurt', 'โมจิโยเกิร์ต'],
   osmanthus: ['Osmanthus Konjac', 'บุกหอมหมื่นลี้'],
 };
@@ -28,7 +27,6 @@ const productArticles = {
   oat: 'popping-boba-yogurt-smoothie-pairing',
   redbean: 'popping-boba-yogurt-smoothie-pairing',
   osmanthus: 'popping-boba-yogurt-smoothie-pairing',
-  chestnut: 'popping-boba-cafe-menu-ideas',
   cheese: 'moji-yogurt-trend-asia',
 };
 const section = (text, id) => text.match(new RegExp(`<section[^>]*id="${id}"[^>]*>([\\s\\S]*?)<\\/section>`))?.[1] || '';
