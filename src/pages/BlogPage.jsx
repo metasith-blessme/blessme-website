@@ -2,6 +2,8 @@ import React, { useMemo } from 'react';
 import { T } from '../constants/translations';
 import { ARTICLES, getBlogCategories } from '../content/blog';
 import { buildPath, handleLinkClick } from '../lib/routing';
+import { pageCrumbs } from '../lib/seo';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export function BlogCard({ article, onOpenArticle, lang, compact = false }) {
   const title = lang === 'th' ? article.titleTh : article.title;
@@ -96,6 +98,7 @@ export default function BlogPage({ onOpenArticle, lang, activeCategory, setActiv
     <section className="bm-content-page bm-blog-page">
       <div className="bm-blog-shell">
         <div className="bm-blog-intro">
+          <Breadcrumbs items={pageCrumbs('Blog', lang)} />
           <div className="bm-eyebrow">{t.blogEyebrow}</div>
           <h1 className="bm-h1">{t.blogTitle}</h1>
           <p className="bm-lead bm-blog-lead">{t.blogLead}</p>

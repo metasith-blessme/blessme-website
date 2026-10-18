@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { T } from '../constants/translations';
 import { PRODUCTS } from '../constants/products';
 import { SHOPEE_URL } from '../lib/analytics';
+import { buildPath } from '../lib/routing';
 import ProductCard from '../components/ProductCard';
 import TrustBar from '../components/TrustBar';
 
@@ -184,33 +185,22 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
             <span>{isTh ? 'วัตถุดิบเครื่องดื่ม & ขนมหวาน ค้าส่งระดับพรีเมียม' : 'Premium Beverage & Dessert Wholesale'}</span>
           </motion.div>
 
-          {/* Poetic Editorial Headline */}
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-['Fraunces'] text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-semibold leading-[1.12] tracking-[-0.025em] text-[#2B241E] mb-6 text-balance"
-          >
+          {/* Headline is visible in the prerendered HTML. Do not start it at opacity 0. */}
+          <h1 className="font-['Fraunces'] text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-semibold leading-[1.12] tracking-[-0.025em] text-[#2B241E] mb-6 text-balance">
             {t.heroTitle[0]}
             <span className="relative inline-block">
               <span className="relative z-10 italic font-normal text-[#3B6146] font-['Fraunces']">{t.heroTitle[1]}</span>
-              {/* Organic brush underline */}
               <svg className="absolute -bottom-2 left-0 w-full h-[14px] text-[#C5A869]/60 -z-10" viewBox="0 0 200 14" preserveAspectRatio="none" fill="none">
                 <path d="M4 10C60 3 140 3 196 10" stroke="currentColor" strokeWidth="6" strokeLinecap="round" />
               </svg>
             </span>
             {t.heroTitle[2]}
-          </motion.h1>
+          </h1>
 
-          {/* Subtitle */}
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-[#5C5248] mb-10 font-normal leading-relaxed max-w-[680px]"
-          >
+          <p className="bm-answer mb-6">{t.poppingDefinition}</p>
+          <p className="text-lg md:text-xl text-[#5C5248] mb-10 font-normal leading-relaxed max-w-[680px]">
             {t.heroSub}
-          </motion.p>
+          </p>
 
           {/* Unit Economics Highlight Pills */}
           <motion.div 
@@ -293,6 +283,9 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
             <h2 className="font-['Fraunces'] text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.02em] text-[#2B241E]">
               {t.sixFlavors}
             </h2>
+            <a className="inline-block mt-3 text-[#3B6146] underline" href={buildPath({ page: 'Catalogue', lang })}>
+              {isTh ? 'มุกป๊อป ขายส่ง ทุกรส' : 'All popping boba in stock'}
+            </a>
           </div>
           <p className="font-['Fraunces'] text-base md:text-lg text-[#5C5248] italic max-w-[340px] md:text-right leading-relaxed">
             {t.productSub}

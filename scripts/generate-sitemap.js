@@ -7,7 +7,7 @@ import { ARTICLES } from '../src/content/blog.js';
 
 // Mirror of routing.buildPath (inlined so this script runs under plain Node without
 // Vite's extensionless-import resolution). Keep in sync with src/lib/routing.js.
-const PAGE_TO_PATH = { 'Products': '/', 'Wholesale': '/wholesale', 'Solutions': '/solutions', 'About us': '/about', 'Blog': '/blog', 'FAQ': '/faq' };
+const PAGE_TO_PATH = { 'Products': '/', 'Catalogue': '/products', 'Wholesale': '/wholesale', 'Solutions': '/solutions', 'About us': '/about', 'Blog': '/blog', 'FAQ': '/faq' };
 function buildPath({ page, productId = null, articleId = null, lang = 'en' }) {
   const prefix = lang === 'th' ? '/th' : '';
   if (articleId) return `${prefix}/blog/${articleId}`;
@@ -24,14 +24,16 @@ const BASE_URL = 'https://blessmethailand.com';
 const LANGS = ['en', 'th'];
 
 // Language-neutral routes; each emitted per language with hreflang alternates.
+const CONTENT_DATE = '2026-10-18';
 const routes = [
-  { page: 'Products', priority: '1.0', changefreq: 'weekly' },
-  { page: 'Wholesale', priority: '0.9', changefreq: 'weekly' },
-  { page: 'Solutions', priority: '0.8', changefreq: 'weekly' },
-  { page: 'About us', priority: '0.8', changefreq: 'weekly' },
-  { page: 'Blog', priority: '0.8', changefreq: 'weekly' },
-  { page: 'FAQ', priority: '0.8', changefreq: 'weekly' },
-  ...PRODUCTS.map((p) => ({ page: 'Products', productId: p.id, priority: '0.9', changefreq: 'monthly' })),
+  { page: 'Products', priority: '1.0', changefreq: 'weekly', lastmod: CONTENT_DATE },
+  { page: 'Catalogue', priority: '0.9', changefreq: 'weekly', lastmod: CONTENT_DATE },
+  { page: 'Wholesale', priority: '0.9', changefreq: 'weekly', lastmod: CONTENT_DATE },
+  { page: 'Solutions', priority: '0.8', changefreq: 'weekly', lastmod: CONTENT_DATE },
+  { page: 'About us', priority: '0.8', changefreq: 'weekly', lastmod: CONTENT_DATE },
+  { page: 'Blog', priority: '0.8', changefreq: 'weekly', lastmod: CONTENT_DATE },
+  { page: 'FAQ', priority: '0.8', changefreq: 'weekly', lastmod: CONTENT_DATE },
+  ...PRODUCTS.map((p) => ({ page: 'Products', productId: p.id, priority: '0.9', changefreq: 'monthly', lastmod: CONTENT_DATE })),
   ...ARTICLES.map((a) => ({
     page: 'Blog',
     articleId: a.id,

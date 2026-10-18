@@ -3,6 +3,9 @@ import { PRODUCTS, productSearchName } from '../constants/products';
 import { buildPath } from '../lib/routing';
 import { T } from '../constants/translations';
 import { WHOLESALE_FAQS_EN, WHOLESALE_FAQS_TH } from '../constants/faq';
+import { pageCrumbs } from '../lib/seo';
+import { SHOPEE_URL } from '../lib/analytics';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const LINE_URL = 'https://line.me/R/ti/p/@blessmethailand';
 const EMAIL = 'Blessme.team@gmail.com';
@@ -11,6 +14,7 @@ const CONTENT = {
   en: {
     eyebrow: 'WHOLESALE',
     h1: 'Popping Boba Wholesale in Bangkok',
+    definition: 'Popping boba is a topping pearl with juice or syrup inside that pops when bitten. BlessMe wholesales it from Bangkok stock at 90–120 THB per pack, with no minimum order.',
     lead: 'Five vegan toppings, including popping boba, Moji Yogurt and Osmanthus Konjac. 90–120 THB per pack, no minimum order. Bangkok stock, nationwide shipping. Request free samples by email.',
     ctaLine: 'Order on LINE',
     ctaSamples: 'Request free samples',
@@ -37,6 +41,7 @@ const CONTENT = {
   th: {
     eyebrow: 'ขายส่ง',
     h1: 'มุกป๊อป ขายส่ง กรุงเทพฯ ราคาส่ง 90 บาท/แพ็ค',
+    definition: 'มุกป๊อปคือท็อปปิ้งเม็ดกลมที่มีน้ำเชื่อมหรือน้ำผลไม้ด้านใน และแตกเมื่อกัด เบลสมีขายส่งจากสต็อกกรุงเทพฯ ในราคา 90–120 บาทต่อแพ็ค โดยไม่มีขั้นต่ำ',
     lead: 'ท็อปปิ้งวีแกน 5 รายการ รวมมุกป๊อป โมจิโยเกิร์ต และบุกหอมหมื่นลี้ ราคา 90–120 บาท/แพ็ค ไม่มีขั้นต่ำ สต็อกกรุงเทพฯ ส่งทั่วไทย ขอตัวอย่างฟรีทางอีเมล',
     ctaLine: 'สั่งซื้อทาง LINE',
     ctaSamples: 'ขอตัวอย่างฟรี',
@@ -70,12 +75,14 @@ export default function WholesalePage({ lang, setPage }) {
   return (
     <div className="relative w-full bg-gradient-to-b from-[#FDFBF6] to-[#F1EADF] text-[#2B241E] font-['Inter']">
       <div className="max-w-[1100px] mx-auto px-6 lg:px-10 py-16 md:py-24">
+        <Breadcrumbs items={pageCrumbs('Wholesale', lang)} />
 
         {/* Hero */}
         <div className="inline-flex items-center gap-2.5 text-xs font-semibold tracking-[0.14em] uppercase text-[#3B6146] mb-4">
           <span className="w-4 h-px bg-[#4E7C59]"></span>{c.eyebrow}
         </div>
         <h1 className="font-['Fraunces'] text-4xl md:text-6xl font-semibold tracking-[-0.02em] leading-[1.05] mb-5">{c.h1}</h1>
+        <p className="bm-answer mb-5">{c.definition}</p>
         <p className="text-lg text-[#5B5048] max-w-[640px] mb-8 leading-relaxed">{c.lead}</p>
         <div className="flex flex-wrap gap-4">
           <a href={LINE_URL} target="_blank" rel="noopener noreferrer"
@@ -111,6 +118,8 @@ export default function WholesalePage({ lang, setPage }) {
         </div>
 
         {/* Flavors */}
+        <p className="mt-8"><a className="text-[#3B6146] underline" href={buildPath({ page: 'Catalogue', lang })}>{lang === 'th' ? 'มุกป๊อป ขายส่ง ทุกรส' : 'All popping boba in stock'}</a></p>
+        <p className="mt-3"><a className="text-[#3B6146] underline" href={SHOPEE_URL} target="_blank" rel="noopener noreferrer">{lang === 'th' ? 'สั่งปลีกทาง Shopee' : 'Buy retail on Shopee'}</a></p>
         <h2 className="font-['Fraunces'] text-3xl md:text-4xl font-semibold mt-20 mb-8">{c.flavorsTitle}</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {PRODUCTS.map((p) => (

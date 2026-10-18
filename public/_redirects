@@ -1,5 +1,19 @@
-# Discontinued water chestnut SKU. Wholesale is the popping-boba category page.
-/products/chestnut          /wholesale/       301
-/products/chestnut/         /wholesale/       301
-/th/products/chestnut       /th/wholesale/    301
-/th/products/chestnut/      /th/wholesale/    301
+# Discontinued water chestnut SKU. The products hub is the popping-boba category page.
+/products/chestnut          /products/        301
+/products/chestnut/         /products/        301
+/th/products/chestnut       /th/products/     301
+/th/products/chestnut/      /th/products/     301
+
+# Merged duplicate articles. Keep one URL per search intent.
+/blog/popping-boba-wholesale-price-buy-bangkok      /blog/popping-boba-wholesale-price-thailand/      301
+/blog/popping-boba-wholesale-price-buy-bangkok/     /blog/popping-boba-wholesale-price-thailand/      301
+/th/blog/popping-boba-wholesale-price-buy-bangkok   /th/blog/popping-boba-wholesale-price-thailand/   301
+/th/blog/popping-boba-wholesale-price-buy-bangkok/  /th/blog/popping-boba-wholesale-price-thailand/   301
+/blog/popping-boba-supplier-bangkok                 /blog/best-popping-boba-wholesale-supplier-bangkok/      301
+/blog/popping-boba-supplier-bangkok/                /blog/best-popping-boba-wholesale-supplier-bangkok/      301
+/th/blog/popping-boba-supplier-bangkok              /th/blog/best-popping-boba-wholesale-supplier-bangkok/   301
+/th/blog/popping-boba-supplier-bangkok/             /th/blog/best-popping-boba-wholesale-supplier-bangkok/   301
+/blog/greek-yogurt-cafe-premium-popping-boba-revenue      /blog/popping-boba-greek-yogurt-healthy-pairing/      301
+/blog/greek-yogurt-cafe-premium-popping-boba-revenue/     /blog/popping-boba-greek-yogurt-healthy-pairing/      301
+/th/blog/greek-yogurt-cafe-premium-popping-boba-revenue   /th/blog/popping-boba-greek-yogurt-healthy-pairing/   301
+/th/blog/greek-yogurt-cafe-premium-popping-boba-revenue/  /th/blog/popping-boba-greek-yogurt-healthy-pairing/   301

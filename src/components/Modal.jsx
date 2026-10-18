@@ -32,6 +32,9 @@ export default function ProductDetail({ product, onClose, lang }) {
       <a className="bm-back-link" href={buildPath({ page: 'Products', lang })} onClick={(e) => handleLinkClick(e, onClose)}>
         {lang === 'th' ? '← สินค้าทั้งหมด' : '← All products'}
       </a>
+      <a className="bm-back-link" href={buildPath({ page: 'Catalogue', lang })}>
+        {lang === 'th' ? 'มุกป๊อป ขายส่ง' : 'Popping boba range'}
+      </a>
       <div className="bm-modal">
         <div className="bm-modal-img">
           <picture>
@@ -52,6 +55,12 @@ export default function ProductDetail({ product, onClose, lang }) {
           <h1 className="bm-h1" id="product-title" ref={titleRef} tabIndex={-1} style={{ marginTop: 0 }}>{productHeading(product, lang)}</h1>
           <p className="bm-product-flavor" style={{ marginTop: 4, fontStyle: 'italic', color: '#7A6E63' }}>{displayFlavor}</p>
           <p className="bm-body" style={{ marginTop: 14 }}>{displayNote}</p>
+          {lang === 'th' && product.id === 'cheese' && (
+            <p className="bm-body" style={{ marginTop: 8 }}>มุกป๊อป โยเกิร์ต ในชื่อสินค้าโมจิโยเกิร์ต</p>
+          )}
+          {lang === 'th' && product.id === 'osmanthus' && (
+            <p className="bm-body" style={{ marginTop: 8 }}>บุกหอมหมื่นลี้ (มุกบุก / เยลลี่บุก) เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป</p>
+          )}
           <a className="inline-block mt-4 text-[#3B6146] underline" href={buildPath({ page: 'Wholesale', lang })}>
             {lang === 'th' ? 'เปรียบเทียบสินค้าและราคาขายส่ง' : 'Compare products & wholesale pricing'}
           </a>
@@ -87,8 +96,8 @@ export default function ProductDetail({ product, onClose, lang }) {
 
           {product.id === 'osmanthus' && (
             <section id="product-faq" aria-labelledby="product-faq-title" style={{ marginTop: 20 }}>
-              <h2 id="product-faq-title" className="text-lg font-semibold">{lang === 'th' ? 'บุกหอมหมื่นลี้เป็นมุกป็อปหรือไม่?' : 'Is Osmanthus Konjac popping boba?'}</h2>
-              <p className="bm-body" style={{ marginTop: 8 }}>{lang === 'th' ? 'บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป็อป' : 'Osmanthus Konjac is a konjac topping, not popping boba.'}</p>
+              <h2 id="product-faq-title" className="text-lg font-semibold">{lang === 'th' ? 'บุกหอมหมื่นลี้เป็นมุกป๊อปหรือไม่?' : 'Is Osmanthus Konjac popping boba?'}</h2>
+              <p className="bm-body" style={{ marginTop: 8 }}>{lang === 'th' ? 'บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป' : 'Osmanthus Konjac is a konjac topping, not popping boba.'}</p>
             </section>
           )}
 

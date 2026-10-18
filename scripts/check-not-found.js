@@ -42,10 +42,16 @@ for (const url of routes) {
   }
 }
 for (const [from, to] of [
-  ['/products/chestnut', '/wholesale/'],
-  ['/products/chestnut/', '/wholesale/'],
-  ['/th/products/chestnut', '/th/wholesale/'],
-  ['/th/products/chestnut/', '/th/wholesale/'],
+  ['/products/chestnut', '/products/'],
+  ['/products/chestnut/', '/products/'],
+  ['/th/products/chestnut', '/th/products/'],
+  ['/th/products/chestnut/', '/th/products/'],
+  ['/blog/popping-boba-wholesale-price-buy-bangkok/', '/blog/popping-boba-wholesale-price-thailand/'],
+  ['/th/blog/popping-boba-wholesale-price-buy-bangkok/', '/th/blog/popping-boba-wholesale-price-thailand/'],
+  ['/blog/popping-boba-supplier-bangkok/', '/blog/best-popping-boba-wholesale-supplier-bangkok/'],
+  ['/th/blog/popping-boba-supplier-bangkok/', '/th/blog/best-popping-boba-wholesale-supplier-bangkok/'],
+  ['/blog/greek-yogurt-cafe-premium-popping-boba-revenue/', '/blog/popping-boba-greek-yogurt-healthy-pairing/'],
+  ['/th/blog/greek-yogurt-cafe-premium-popping-boba-revenue/', '/th/blog/popping-boba-greek-yogurt-healthy-pairing/'],
 ]) {
   const redirect = await fetch(new URL(from, origin), { redirect: 'manual' });
   assert.equal(redirect.status, 301, from);
@@ -69,4 +75,4 @@ for (const url of missing) {
 const asset = fs.readdirSync(path.join(root, 'dist/assets')).find(name => name.endsWith('.js'));
 assert(asset, 'Built JavaScript asset exists');
 assert.equal((await fetch(new URL(`/assets/${asset}`, origin))).status, 200);
-console.log(`404 checks OK: ${routes.length} EN/TH routes return 200 (slash redirects checked); chestnut URLs 301 to wholesale; ${missing.length} missing paths return 404 for GET + HEAD, with/without navigation headers; existing JS returns 200; routing and SSR show NotFound.`);
+console.log(`404 checks OK: ${routes.length} EN/TH routes return 200 (slash redirects checked); chestnut URLs 301 to the products hub; merged blog URLs 301 to the kept posts; ${missing.length} missing paths return 404 for GET + HEAD, with/without navigation headers; existing JS returns 200; routing and SSR show NotFound.`);

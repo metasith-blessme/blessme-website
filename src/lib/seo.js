@@ -1,5 +1,5 @@
 import { PRODUCTS, productSearchName, productHeading } from '../constants/products';
-import { FAQS_EN, FAQS_TH, WHOLESALE_FAQS_EN, WHOLESALE_FAQS_TH } from '../constants/faq';
+import { FAQS_EN, FAQS_TH, WHOLESALE_FAQS_EN, WHOLESALE_FAQS_TH, HUB_FAQS_EN, HUB_FAQS_TH } from '../constants/faq';
 import { getArticleById, getArticleMeta, getArticleSchema } from '../content/blog';
 import { buildPath } from './routing';
 
@@ -23,7 +23,8 @@ export const PAGE_META = {
   Solutions: { title: 'How BlessMe Works — 6-Step Framework | BlessMe Thailand', description: 'Discover the six-step framework BlessMe uses to source, test, and supply specialty food products to wholesale partners across Thailand.', canonical: `${BASE_URL}/solutions` },
   'About us': { title: 'About BlessMe Thailand — Food Wholesaler Bangkok', description: 'BlessMe (Thailand) Co., Ltd. introduces specialty food categories to the Thai B2B market. Headquartered in Bangkok, serving cafés, restaurants, and dessert brands nationwide.', canonical: `${BASE_URL}/about` },
   Blog: { title: 'Journal — Specialty Food Insights | BlessMe Thailand', description: 'Notes from the BlessMe team on specialty food sourcing, cold-chain logistics, shelf life, and how to introduce new products to the Thai market.', canonical: `${BASE_URL}/blog` },
-  FAQ: { title: 'FAQ — BlessMe Wholesale Thailand | Popping Boba Questions', description: 'Frequently asked questions about BlessMe wholesale pricing, minimum orders, shelf life, product range, and shipping across Thailand.', canonical: `${BASE_URL}/faq` },
+  FAQ: { title: 'Popping Boba Wholesale FAQ | BlessMe Thailand', description: 'Answers on what popping boba is, storage, shelf life, wholesale prices, minimum orders, LINE and Shopee ordering, and drink and dessert uses.', canonical: `${BASE_URL}/faq` },
+  Catalogue: { title: 'Popping Boba Wholesale, All Flavours in Stock | BlessMe', description: 'Barley, oat, red bean, Moji Yogurt and Osmanthus Konjac in stock. 90–120 THB per pack, no minimum order. Bangkok wholesale, Shopee retail.', canonical: `${BASE_URL}/products` },
 };
 
 export const PAGE_META_TH = {
@@ -33,25 +34,85 @@ export const PAGE_META_TH = {
     canonical: BASE_URL + '/'
   },
   Wholesale: { title: 'มุกป๊อป ขายส่ง ราคาส่ง ไม่มีขั้นต่ำ | เบลสมี ไทยแลนด์', description: 'ไข่มุกป๊อปขายส่ง 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท ไม่มีขั้นต่ำ ขอตัวอย่างฟรี สั่งทาง LINE @blessmethailand ส่งทั่วประเทศ', canonical: BASE_URL+'/wholesale' },
-  Solutions: { title: 'โซลูชันวัตถุดิบอาหารพิเศษ — บริการพาร์ทเนอร์ค้าส่ง | เบลสมี ไทยแลนด์', description: 'เจาะลึกกระบวนการจัดหาและทดสอบวัตถุดิบอาหารพิเศษของเบลสมี เพื่อช่วยคาเฟ่และร้านอาหารสร้างจุดแตกต่างที่ยั่งยืนในตลาดไทย', canonical: BASE_URL+'/solutions' },
-  'About us': { title: 'เกี่ยวกับ เบลสมี (ประเทศไทย) — ผู้นำเข้าและจัดจำหน่ายวัตถุดิบอาหารพิเศษ', description: 'เราคือพาร์ทเนอร์ที่ไว้วางใจได้สำหรับแบรนด์คาเฟ่และร้านขนมหวาน นำเข้าและสต็อกวัตถุดิบป๊อปปิ้งโบบาพรีเมียมเพื่อธุรกิจ B2B ทั่วไทย', canonical: BASE_URL+'/about' },
-  Blog: { title: 'บทความและข้อมูลเชิงลึก วัตถุดิบคาเฟ่และป๊อปปิ้งโบบา | เบลสมี ไทยแลนด์', description: 'อัปเดตเทรนด์วัตถุดิบคาเฟ่ เทคนิคการเลือกท็อปปิ่ง และเบื้องหลังการจัดหาอาหารพิเศษจากทีมงานผู้เชี่ยวชาญของเบลสมี', canonical: BASE_URL+'/blog' },
-  FAQ: { title: 'คำถามที่พบบ่อย — การสั่งซื้อป๊อปปิ้งโบบาราคาส่ง | เบลสมี ไทยแลนด์', description: 'รวมทุกคำถามเกี่ยวกับการสั่งซื้อค้าส่ง ขั้นต่ำการสั่งซื้อ การจัดส่งทั่วไทย และการเก็บรักษาป๊อปปิ้งโบบาและท็อปปิ่งของเบลสมี', canonical: BASE_URL+'/faq' },
+  Solutions: { title: 'วิธีทำงานกับเบลสมี 6 ขั้นตอน | ขายส่งมุกป๊อป', description: 'กระบวนการจัดหาและทดสอบวัตถุดิบของเบลสมี สำหรับคาเฟ่ที่อยากเพิ่มมุกป๊อปและท็อปปิ้งขายส่งในเมนู', canonical: BASE_URL+'/solutions' },
+  'About us': { title: 'เกี่ยวกับ เบลสมี (ประเทศไทย) — ผู้นำเข้าไข่มุกป๊อปขายส่ง', description: 'เบลสมี (ประเทศไทย) จำกัด นำเข้าและสต็อกไข่มุกป๊อปและท็อปปิ้งขายส่งในกรุงเทพฯ สำหรับคาเฟ่ ร้านอาหาร และแบรนด์ขนมหวานทั่วไทย', canonical: BASE_URL+'/about' },
+  Blog: { title: 'บทความมุกป๊อปและวัตถุดิบคาเฟ่ | เบลสมี ไทยแลนด์', description: 'อัปเดตเทรนด์วัตถุดิบคาเฟ่ เทคนิคการเลือกท็อปปิ้ง และเบื้องหลังการจัดหาอาหารพิเศษจากทีมงานเบลสมี', canonical: BASE_URL+'/blog' },
+  FAQ: { title: 'คำถามที่พบบ่อย ไข่มุกป๊อป ขายส่ง | เบลสมี', description: 'มุกป๊อปคืออะไร เก็บอย่างไร อายุสินค้า ราคาส่ง 90–120 บาท ไม่มีขั้นต่ำ สั่ง LINE @blessmethailand หรือ Shopee ส่งทั่วไทย', canonical: BASE_URL+'/faq' },
+  Catalogue: { title: 'มุกป๊อป (ไข่มุกป๊อป) ขายส่ง ทุกรส | เบลสมี', description: 'มุกป๊อปขายส่งทุกรสที่ยังมีสต็อก ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง โมจิโยเกิร์ต และบุกหอมหมื่นลี้ 90–120 บาท/แพ็ค ไม่มีขั้นต่ำ สั่ง LINE หรือ Shopee', canonical: BASE_URL+'/products' },
 };
 
 // logo + image URLs intentionally stay logo-full.png: this is a stable
 // social/SEO identifier (Schema.org LocalBusiness, OpenGraph crawlers).
 // Visible-UI renderers use <picture> with logo-full.webp; json-ld stays png.
-export const ORG_SCHEMA = { "@context": "https://schema.org", "@type": "LocalBusiness", "name": "BlessMe (Thailand) Co., Ltd.", "url": "https://blessmethailand.com", "logo": "https://blessmethailand.com/assets/logo-full.png", "image": "https://blessmethailand.com/assets/logo-full.png", "description": "Specialty food wholesaler supplying cafés, restaurants, and dessert brands with premium popping boba in Thailand.", "address": { "@type": "PostalAddress", "addressLocality": "Bangkok", "addressCountry": "TH" }, "contactPoint": { "@type": "ContactPoint", "telephone": "+66-82-896-5199", "email": "Blessme.team@gmail.com", "contactType": "sales", "areaServed": "TH", "availableLanguage": ["Thai", "English"] }, "sameAs": ["https://instagram.com/blessme_thailand", "https://facebook.com/BlessMeThailand", "https://shopee.co.th/blessme_thailand"], "priceRange": "฿฿", "areaServed": { "@type": "Country", "name": "Thailand" } };
+export const ORG_ID = 'https://blessmethailand.com/#org';
+const LOGO = 'https://blessmethailand.com/assets/logo-full.png';
 
-export const PAGE_NAMES = { Products: 'BlessMe Thailand — Specialty Food Wholesale', Wholesale: 'Popping Boba Wholesale Bangkok', Solutions: 'How BlessMe Works', 'About us': 'About BlessMe Thailand', Blog: 'Journal — Specialty Food Insights', FAQ: 'FAQ — BlessMe Wholesale Thailand' };
+export const ORGANIZATION_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': ORG_ID,
+  name: 'BlessMe Thailand',
+  legalName: 'BlessMe (Thailand) Co., Ltd.',
+  url: 'https://blessmethailand.com',
+  logo: LOGO,
+  image: LOGO,
+  description: ORG_DESCRIPTION,
+  sameAs: [
+    'https://shopee.co.th/blessme_thailand',
+    'https://line.me/R/ti/p/@blessmethailand',
+    'https://instagram.com/blessme_thailand',
+    'https://facebook.com/BlessMeThailand',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+66-82-896-5199',
+    email: 'Blessme.team@gmail.com',
+    contactType: 'sales',
+    areaServed: 'TH',
+    availableLanguage: ['Thai', 'English'],
+  },
+};
+
+// City-level locality only. Street address, hours and registration numbers stay off until the owner confirms them.
+export const ORG_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'WholesaleStore',
+  '@id': 'https://blessmethailand.com/#store',
+  name: 'BlessMe (Thailand) Co., Ltd.',
+  url: 'https://blessmethailand.com',
+  logo: LOGO,
+  image: LOGO,
+  description: ORG_DESCRIPTION,
+  parentOrganization: { '@id': ORG_ID },
+  telephone: '+66-82-896-5199',
+  email: 'Blessme.team@gmail.com',
+  address: { '@type': 'PostalAddress', addressLocality: 'Bangkok', addressCountry: 'TH' },
+  areaServed: { '@type': 'Country', name: 'Thailand' },
+  priceRange: '฿฿',
+};
+
+export const PAGE_NAMES = { Products: 'BlessMe Thailand — Specialty Food Wholesale', Catalogue: 'Popping Boba Wholesale', Wholesale: 'Popping Boba Wholesale Bangkok', Solutions: 'How BlessMe Works', 'About us': 'About BlessMe Thailand', Blog: 'Journal — Specialty Food Insights', FAQ: 'FAQ — BlessMe Wholesale Thailand' };
+
+const CRUMB_NAMES = {
+  en: { Catalogue: 'Popping boba', Wholesale: 'Wholesale', Solutions: 'How BlessMe works', 'About us': 'About', Blog: 'Journal', FAQ: 'FAQ' },
+  th: { Catalogue: 'มุกป๊อปขายส่ง', Wholesale: 'ขายส่ง', Solutions: 'โซลูชัน', 'About us': 'เกี่ยวกับเรา', Blog: 'บทความ', FAQ: 'คำถามที่พบบ่อย' },
+};
+
+export function pageCrumbs(page, lang = 'en') {
+  const current = CRUMB_NAMES[lang]?.[page];
+  if (!current) return [];
+  return [
+    { name: lang === 'th' ? 'หน้าหลัก' : 'Home', url: canonicalFor('Products', null, null, lang) },
+    { name: current, url: canonicalFor(page, null, null, lang) },
+  ];
+}
 
 const TH_PRODUCT_TITLE = {
   barley: 'มุกป๊อปบาร์เลย์ ขายส่ง 90 บาท/แพ็ค | เบลสมี',
   oat: 'มุกป๊อปข้าวโอ๊ต ขายส่ง 90 บาท/แพ็ค | เบลสมี',
   redbean: 'มุกป๊อปถั่วแดง ขายส่ง 90 บาท/แพ็ค | เบลสมี',
-  cheese: 'มุกป๊อปโมจิโยเกิร์ต ขายส่ง 120 บาท | เบลสมี',
-  osmanthus: 'บุกหอมหมื่นลี้ ท็อปปิ้ง ขายส่ง | เบลสมี',
+  cheese: 'มุกป๊อป โยเกิร์ต ขายส่ง 120 บาท | เบลสมี',
+  osmanthus: 'บุกหอมหมื่นลี้ มุกบุก เยลลี่บุก | เบลสมี',
 };
 
 export function buildProductMeta(product, lang) {
@@ -150,7 +211,34 @@ export function buildWebPageSchema(page, canonical) {
 
 export function buildProductSchema(product, lang = 'en') {
   const url = canonicalFor('Products', product.id, null, lang);
-  return { '@context': 'https://schema.org', '@type': 'Product', name: productSearchName(product, lang), description: lang === 'th' ? product.noteTh : product.note, sku: product.id, url, image: new URL(product.imgFallback, BASE_URL).href, brand: { '@type': 'Brand', name: 'BlessMe Thailand' }, offers: { '@type': 'Offer', url, price: product.price, priceCurrency: 'THB', availability: 'https://schema.org/InStock', seller: { '@type': 'Organization', name: 'BlessMe (Thailand) Co., Ltd.' } } };
+  const properties = [
+    { '@type': 'PropertyValue', name: 'Pack size', value: product.packSize },
+    { '@type': 'PropertyValue', name: 'Drained weight', value: product.drainedWeight },
+    { '@type': 'PropertyValue', name: 'Vegan', value: 'Yes' },
+  ];
+  if (product.containsGluten) properties.push({ '@type': 'PropertyValue', name: 'Gluten', value: 'Contains gluten' });
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: productSearchName(product, lang),
+    alternateName: lang === 'th' ? product.name : product.nameTh,
+    description: lang === 'th' ? product.noteTh : product.note,
+    sku: product.id,
+    category: product.id === 'osmanthus' ? 'Konjac topping' : 'Popping boba',
+    url,
+    image: new URL(product.imgFallback, BASE_URL).href,
+    brand: { '@type': 'Brand', '@id': ORG_ID, name: 'BlessMe Thailand' },
+    additionalProperty: properties,
+    offers: {
+      '@type': 'Offer',
+      url,
+      price: product.price,
+      priceCurrency: 'THB',
+      availability: 'https://schema.org/InStock',
+      itemCondition: 'https://schema.org/NewCondition',
+      seller: { '@id': ORG_ID, '@type': 'Organization', name: 'BlessMe (Thailand) Co., Ltd.' },
+    },
+  };
 }
 
 export function buildBreadcrumbSchema(items) {
@@ -172,7 +260,7 @@ export function buildFAQSchema(faqs) {
 // Pure: assemble the JSON-LD schema array for a route. Reused by the prerenderer.
 export function getSchemas(page, productId = null, articleId = null, lang = 'en') {
   if (page === 'NotFound') return [];
-  const schemas = [ORG_SCHEMA];
+  const schemas = [ORGANIZATION_SCHEMA, ORG_SCHEMA];
   const home = { name: lang === 'th' ? 'หน้าหลัก' : 'Home', url: canonicalFor('Products', null, null, lang) };
   if (productId) {
     const product = PRODUCTS.find(p => p.id === productId);
@@ -188,14 +276,21 @@ export function getSchemas(page, productId = null, articleId = null, lang = 'en'
     }
   } else {
     schemas.push(buildWebPageSchema(page, canonicalFor(page, null, null, lang)));
-    if (page === 'Products') {
-      schemas.push({ '@context': 'https://schema.org', '@type': 'ItemList', name: lang === 'th' ? 'ท็อปปิ้งขายส่ง BlessMe' : 'BlessMe Wholesale Toppings', url: home.url, numberOfItems: PRODUCTS.length, itemListElement: PRODUCTS.map((p, idx) => ({ '@type': 'ListItem', position: idx + 1, url: canonicalFor('Products', p.id, null, lang), name: productSearchName(p, lang) })) });
+    if (page !== 'Products') {
+      const crumbs = pageCrumbs(page, lang);
+      if (crumbs.length) schemas.push(buildBreadcrumbSchema(crumbs));
+    }
+    if (page === 'Products' || page === 'Catalogue') {
+      schemas.push({ '@context': 'https://schema.org', '@type': 'ItemList', name: lang === 'th' ? 'ท็อปปิ้งขายส่ง BlessMe' : 'BlessMe Wholesale Toppings', url: canonicalFor(page, null, null, lang), numberOfItems: PRODUCTS.length, itemListElement: PRODUCTS.map((p, idx) => ({ '@type': 'ListItem', position: idx + 1, url: canonicalFor('Products', p.id, null, lang), name: productSearchName(p, lang) })) });
     }
     if (page === 'FAQ') {
       schemas.push(buildFAQSchema(lang === 'th' ? FAQS_TH : FAQS_EN));
     }
     if (page === 'Wholesale') {
       schemas.push(buildFAQSchema(lang === 'th' ? WHOLESALE_FAQS_TH : WHOLESALE_FAQS_EN));
+    }
+    if (page === 'Catalogue') {
+      schemas.push(buildFAQSchema(lang === 'th' ? HUB_FAQS_TH : HUB_FAQS_EN));
     }
   }
   return schemas;
