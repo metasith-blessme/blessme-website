@@ -55,7 +55,7 @@ for (const prefix of ['', '/th']) {
     }], `${url}: localized curated article link`);
     const faq = section(main(html(url)), 'product-faq');
     if (p.id === 'osmanthus') {
-      assert(faq.includes(prefix ? 'บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป็อป' : 'Osmanthus Konjac is a konjac topping, not popping boba.'), `${url}: category clarification`);
+      assert(faq.includes(prefix ? 'บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป' : 'Osmanthus Konjac is a konjac topping, not popping boba.'), `${url}: category clarification`);
     } else assert.equal(faq, '', `${url}: no repetitive SKU FAQ`);
     const price = `${p.price} ${prefix ? 'บาท / แพ็ค' : 'THB / pack'}`;
     if (!card?.text.includes(name)) comparisonErrors.push(`Wholesale card missing ${name}: ${url}`);

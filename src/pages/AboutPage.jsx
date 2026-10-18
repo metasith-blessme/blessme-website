@@ -1,16 +1,19 @@
 import React from 'react';
 import { T } from '../constants/translations';
 import { ContactForm, ContactItem } from '../components/ContactForm';
+import { pageCrumbs } from '../lib/seo';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function AboutPage({ lang }) {
   const t = T[lang];
   return (
     <section className="bm-content-page max-w-[1360px] mx-auto px-6 py-16 lg:px-12">
+      <Breadcrumbs items={pageCrumbs('About us', lang)} />
       <div className="inline-flex items-center gap-2.5 text-xs font-bold tracking-[0.16em] uppercase text-[#3B6146] mb-3">
         <span className="w-5 h-px bg-[#3B6146]"></span>
         <span>{t.aboutEyebrow}</span>
       </div>
-      <h1 className="bm-h1 text-4xl sm:text-5xl md:text-6xl font-semibold font-['Fraunces'] text-[#2B241E] max-w-[22ch]">{t.aboutTitle}</h1>
+      <h1 className="bm-h1 text-4xl sm:text-5xl md:text-6xl font-semibold font-['Fraunces'] text-[#2B241E] max-w-[36ch]">{t.aboutTitle}</h1>
       
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mt-12 mb-20">
         <div className="lg:col-span-7">
@@ -24,7 +27,7 @@ export default function AboutPage({ lang }) {
             <div className="text-xs font-semibold tracking-wider uppercase text-white/80">{lang==='th'?'ก่อนเปิด: 12 เดือนนับจากวันผลิต ที่อุณหภูมิห้อง':'Unopened: 12 months from manufacture at room temperature'}</div>
           </div>
           <div className="bg-white border border-[#2B241E]/8 p-7 rounded-[24px] shadow-sm flex flex-col justify-between h-[160px]">
-            <div className="font-['Fraunces'] text-4xl font-bold text-[#3B6146]">6</div>
+            <div className="font-['Fraunces'] text-4xl font-bold text-[#3B6146]">5</div>
             <div className="text-xs font-semibold tracking-wider uppercase text-[#7A6E63]">{lang==='th'?'รสชาติคัดสรร':'Signature Flavors'}</div>
           </div>
           <div className="bg-white border border-[#2B241E]/8 p-7 rounded-[24px] shadow-sm flex flex-col justify-between h-[160px]">

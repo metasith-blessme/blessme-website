@@ -7,6 +7,7 @@ import { getArticleById } from '../content/blog';
  */
 export const PATH_TO_PAGE = {
   '/':           'Products',
+  '/products':   'Catalogue',
   '/wholesale':  'Wholesale',
   '/solutions':  'Solutions',
   '/about':      'About us',
@@ -16,6 +17,7 @@ export const PATH_TO_PAGE = {
 
 export const PAGE_TO_PATH = {
   'Products':  '/',
+  'Catalogue': '/products',
   'Wholesale': '/wholesale',
   'Solutions': '/solutions',
   'About us':  '/about',

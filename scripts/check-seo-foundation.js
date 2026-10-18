@@ -14,7 +14,7 @@ try {
   const { getMeta, getSchemas, canonicalFor, updateMeta } = await vite.ssrLoadModule('/src/lib/seo.js');
   const { calculateUplift } = await vite.ssrLoadModule('/src/components/RoiCalculator.jsx');
   const urls = [...fs.readFileSync(path.join(root, 'dist/sitemap.xml'), 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
-  assert.equal(urls.length, (6 + PRODUCTS.length + ARTICLES.length) * 2);
+  assert.equal(urls.length, (7 + PRODUCTS.length + ARTICLES.length) * 2);
   assert.equal(new Set(urls).size, urls.length);
   let productPages = 0;
   for (const url of urls) {

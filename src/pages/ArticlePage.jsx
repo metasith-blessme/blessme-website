@@ -134,6 +134,13 @@ export default function ArticlePage({ articleId, initialBlocks, onBack, onOpenAr
         <header className="bm-article-head">
           <div className="bm-eyebrow">{category.toUpperCase()}</div>
           <h1 ref={titleRef} tabIndex={-1} className="bm-article-title">{title}</h1>
+          {article.id === 'what-is-popping-boba-khai-muk-pop' && (
+            <p className="bm-answer">
+              {lang === 'th'
+                ? 'มุกป๊อป (ไข่มุกป๊อป) คือเม็ดท็อปปิ้งที่มีของเหลวด้านใน เมื่อกัดเม็ดจะแตกและปล่อยรสชาติออกมา ต่างจากไข่มุกทาปิโอกาที่เคี้ยวหนึบ'
+                : 'Popping boba is a round topping with a liquid centre that bursts when bitten, unlike chewy tapioca pearls.'}
+            </p>
+          )}
           <div className="bm-article-meta">
             <span>{lang === 'th' ? article.dateTh : article.date}</span>
             <span className="dot">·</span>
@@ -163,6 +170,16 @@ export default function ArticlePage({ articleId, initialBlocks, onBack, onOpenAr
             </div>
           ) : <p role="status">{lang === 'th' ? 'กำลังโหลดบทความ…' : 'Loading article…'}</p>}
         </div>
+
+        <nav className="bm-article-panel" aria-label={lang === 'th' ? 'หน้าที่เกี่ยวข้อง' : 'Related pages'}>
+          <a className="bm-inline-link" href={buildPath({ page: 'Catalogue', lang })}>{lang === 'th' ? 'มุกป๊อป ขายส่ง' : 'Popping boba wholesale'}</a>
+          {article.id !== 'what-is-popping-boba-khai-muk-pop' && (
+            <>
+              {' · '}
+              <a className="bm-inline-link" href={buildPath({ page: 'Blog', articleId: 'what-is-popping-boba-khai-muk-pop', lang })}>{lang === 'th' ? 'มุกป๊อปคืออะไร' : 'What is popping boba?'}</a>
+            </>
+          )}
+        </nav>
 
         {products.length > 0 && (
           <section id="related-products" className="bm-article-panel" aria-labelledby="related-products-title">

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { T } from '../constants/translations';
 import { FAQS_EN, FAQS_TH } from '../constants/faq';
+import { pageCrumbs } from '../lib/seo';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function FAQPage({ lang }) {
   const t = T[lang];
@@ -9,6 +11,7 @@ export default function FAQPage({ lang }) {
 
   return (
     <section className="bm-content-page max-w-[1100px] mx-auto px-6 py-16 lg:px-12">
+      <Breadcrumbs items={pageCrumbs('FAQ', lang)} />
       <div className="inline-flex items-center gap-2.5 text-xs font-bold tracking-[0.16em] uppercase text-[#3B6146] mb-3">
         <span className="w-5 h-px bg-[#3B6146]"></span>
         <span>{t.faqEyebrow}</span>
