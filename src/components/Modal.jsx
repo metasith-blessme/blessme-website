@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { T } from '../constants/translations';
-import { productSearchName } from '../constants/products';
+import { productSearchName, productHeading } from '../constants/products';
 import { ARTICLES } from '../content/blog';
 import { buildPath, handleLinkClick } from '../lib/routing';
 
@@ -49,7 +49,7 @@ export default function ProductDetail({ product, onClose, lang }) {
             </span>
           </div>
 
-          <h1 className="bm-h1" id="product-title" ref={titleRef} tabIndex={-1} style={{ marginTop: 0 }}>{productSearchName(product, lang)}</h1>
+          <h1 className="bm-h1" id="product-title" ref={titleRef} tabIndex={-1} style={{ marginTop: 0 }}>{productHeading(product, lang)}</h1>
           <p className="bm-product-flavor" style={{ marginTop: 4, fontStyle: 'italic', color: '#7A6E63' }}>{displayFlavor}</p>
           <p className="bm-body" style={{ marginTop: 14 }}>{displayNote}</p>
           <a className="inline-block mt-4 text-[#3B6146] underline" href={buildPath({ page: 'Wholesale', lang })}>

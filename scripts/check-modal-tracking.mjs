@@ -17,7 +17,7 @@ try {
       import { createRoot } from 'react-dom/client';
       import { flushSync } from 'react-dom';
       import ProductDetail from './src/components/Modal.jsx';
-      import { PRODUCTS, productSearchName } from './src/constants/products.js';
+      import { PRODUCTS, productHeading } from './src/constants/products.js';
       import { initContactTracking } from './src/lib/analytics.js';
       const check = (ok, message) => { if (!ok) throw Error(message); };
       try {
@@ -40,7 +40,7 @@ try {
             check(containsGluten || !/gluten|กลูเตน/i.test(text), 'No invented allergen status for other SKUs');
             check(!/gluten[- ]free|allergen[- ]free|ปราศจากกลูเตน|ปลอดกลูเตน|ปลอดสารก่อภูมิแพ้/i.test(text), 'No unsupported allergen-free claims');
             const title = document.querySelector('main h1');
-            check(title?.textContent === productSearchName(product, lang), 'Missing localized SKU H1');
+            check(title?.textContent === productHeading(product, lang), 'Missing localized SKU H1');
             check(!document.querySelector('[role="dialog"], .bm-modal-scrim'), 'Product must not be a dialog');
             check(document.activeElement === title, 'SKU navigation must focus heading');
             const quantity = document.querySelector('.bm-stepper span');
@@ -71,7 +71,7 @@ try {
               check(command === 'event' && name === 'contact_click', 'Wrong event');
               check(payload.contact_method === method && payload.language === lang, 'Wrong attribution');
               check(method !== 'email' || payload.contact_intent === 'quote', 'Missing quote intent');
-              check(Object.keys(payload).sort().join(',') === 'contact_intent,contact_method,language,page_path', 'Unexpected payload/PII');
+              check(Object.keys(payload).sort().join(',') === 'contact_intent,contact_method,language,method,page_path', 'Unexpected payload/PII');
               check(!/subject=|body=|@|Quantity:/.test(JSON.stringify(payload)), 'Leaked contact data');
               cases++;
             }
@@ -119,7 +119,7 @@ try {
   const evaluated = await call('Runtime.evaluate', { expression: `document.body.innerHTML = '<div id="root"></div><pre id="result">PENDING</pre>';\n${bundle.outputFiles[0].text}\ndocument.getElementById('result').textContent`, returnByValue: true }, sessionId);
   assert.ok(!evaluated.exceptionDetails, JSON.stringify(evaluated.exceptionDetails));
   const result = evaluated.result.value;
-  assert.match(result || '', /^PASS 24 product contact clicks;/);
+  assert.match(result || '', /^PASS 20 product contact clicks;/);
   console.log(result);
 } finally {
   clearTimeout(deadline);

@@ -21,22 +21,48 @@ window.gtag = (...args) => events.push(args);
 const analytics = await import('../src/lib/analytics.js');
 assert.equal(typeof analytics.initContactTracking, 'function');
 const stop = analytics.initContactTracking();
+assert.equal(events.length, 0, 'installing the listener must not emit an event');
 const click = (href, intent = null) => doc.emit('click', { target: { closest: () => ({ getAttribute: name => name === 'href' ? href : intent }) } });
 click('https://line.me/R/ti/p/@blessmethailand?text=private');
 click('mailto:Blessme.team@gmail.com?subject=private');
 click('tel:+66828965199');
-click('mailto:someone@example.com');
 click('https://line.me.evil.test/R/ti/p/@blessmethailand');
-click('tel:+668****5199');
-assert.deepEqual(events.map(e => e[2].contact_method), ['line', 'email', 'phone']);
+click('https://notline.me/R/ti/p/@blessmethailand');
+click('mailto:?subject=private');
+click('tel:');
+click('https://shopee.co.th.evil.test/blessme_thailand');
+assert.deepEqual(events.map(e => e[2].method), ['line', 'email', 'phone']);
 assert.ok(events.every(e => e[0] === 'event' && e[1] === 'contact_click'));
-assert.deepEqual(events[0][2], { contact_method: 'line', contact_intent: 'contact', page_path: '/th/wholesale', language: 'th' });
+assert.deepEqual(events[0][2], { method: 'line', contact_method: 'line', contact_intent: 'contact', page_path: '/th/wholesale', language: 'th' });
+assert.equal(events[1][2].contact_method, 'email');
+assert.equal(events[2][2].contact_method, 'phone');
 click('mailto:Blessme.team@gmail.com?subject=private', 'sample');
 click('https://line.me/R/ti/p/@blessmethailand?text=private', 'quote');
 assert.equal(events[3][2].contact_intent, 'sample');
 assert.equal(events[4][2].contact_intent, 'quote');
+click('mailto:someone@example.com');
+click('tel:+668****5199');
+click('https://liff.line.me/something');
+click('https://shopee.co.th/blessme_thailand?utm=private');
+click('https://mall.shopee.co.th/blessme_thailand');
+assert.deepEqual(events.slice(5).map(e => [e[1], e[2].method]), [
+  ['contact_click', 'email'],
+  ['contact_click', 'phone'],
+  ['contact_click', 'line'],
+  ['shopee_click', 'shopee'],
+  ['shopee_click', 'shopee'],
+]);
+assert.deepEqual(events[8][2], { method: 'shopee', page_path: '/th/wholesale', language: 'th' });
+assert.equal(events[8][2].contact_method, undefined);
 assert(events.every(e => !JSON.stringify(e[2]).includes('private')));
-stop(); click('mailto:Blessme.team@gmail.com'); assert.equal(events.length, 5);
+analytics.trackLead('th');
+const lead = events.at(-1);
+assert.deepEqual(lead.slice(0, 2), ['event', 'generate_lead']);
+assert.equal(lead[2].method, 'form');
+assert.equal(lead[2].contact_method, 'form');
+assert.equal(lead[2].language, 'th');
+const beforeStop = events.length;
+stop(); click('mailto:Blessme.team@gmail.com'); assert.equal(events.length, beforeStop);
 window.gtag = () => { throw Error('blocked analytics'); };
 assert.doesNotThrow(() => analytics.trackLead('en'));
 window.gtag = (...args) => events.push(args);

@@ -1,4 +1,4 @@
-import { PRODUCTS, productSearchName } from '../constants/products';
+import { PRODUCTS, productSearchName, productHeading } from '../constants/products';
 import { FAQS_EN, FAQS_TH, WHOLESALE_FAQS_EN, WHOLESALE_FAQS_TH } from '../constants/faq';
 import { getArticleById, getArticleMeta, getArticleSchema } from '../content/blog';
 import { buildPath } from './routing';
@@ -11,11 +11,11 @@ export function canonicalFor(page, productId = null, articleId = null, lang = 'e
   if (p !== '/' && !p.endsWith('/')) p += '/';
   return BASE_URL + p;
 }
-export const ORG_DESCRIPTION = 'BlessMe (Thailand) — specialty food wholesaler supplying cafés, restaurants, and dessert brands with premium popping boba. 6 curated flavors, stock in Bangkok, 12 months from manufacture unopened at room temperature.';
+export const ORG_DESCRIPTION = 'BlessMe (Thailand) — specialty food wholesaler supplying cafés, restaurants, and dessert brands with premium popping boba. 5 curated toppings, stock in Bangkok, 12 months from manufacture unopened at room temperature.';
 
 export const PAGE_META = {
   Products: {
-    title: 'Popping Boba & Konjac Wholesale Bangkok | BlessMe Thailand',
+    title: 'Popping Boba Wholesale Bangkok, 90 THB/pack | BlessMe',
     description: 'Wholesale vegan toppings: popping boba, Moji Yogurt and Osmanthus Konjac. 90–120 THB/pack, no minimum order. Bangkok stock, nationwide Thailand shipping.',
     canonical: `${BASE_URL}/`
   },
@@ -28,11 +28,11 @@ export const PAGE_META = {
 
 export const PAGE_META_TH = {
   Products: {
-    title: 'ขายส่งมุกป็อป กรุงเทพฯ | ท็อปปิ้งพรีเมียม 6 รายการ ราคาส่ง — เบลสมี ไทยแลนด์',
-    description: 'ขายส่งมุกป็อปข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว โมจิโยเกิร์ต และบุกหอมหมื่นลี้ 90–120 บาท/แพ็ค ไม่มีขั้นต่ำ สต็อกกรุงเทพฯ ส่งทั่วไทย',
+    title: 'ไข่มุกป๊อป ขายส่ง กรุงเทพฯ ราคาส่ง 90 บาท | เบลสมี',
+    description: 'ขายส่งไข่มุกป๊อป มุกป๊อปบาร์เลย์ โอ๊ต ถั่วแดง โมจิโยเกิร์ต บุกหอมหมื่นลี้ 90–120 บาท/แพ็ค ไม่มีขั้นต่ำ ส่งทั่วไทย สั่ง LINE หรือ Shopee',
     canonical: BASE_URL + '/'
   },
-  Wholesale: { title: 'ขายส่งไข่มุกป็อป (มุกป็อป) กรุงเทพ — ราคาส่ง & สั่งซื้อ | เบลสมี ไทยแลนด์', description: 'ท็อปปิ้งวีแกน 5 รส 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท ไม่มีขั้นต่ำ สั่งทาง LINE @blessmethailand ขอตัวอย่างฟรีทางอีเมล Blessme.team@gmail.com', canonical: BASE_URL+'/wholesale' },
+  Wholesale: { title: 'มุกป๊อป ขายส่ง ราคาส่ง ไม่มีขั้นต่ำ | เบลสมี ไทยแลนด์', description: 'ไข่มุกป๊อปขายส่ง 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท ไม่มีขั้นต่ำ ขอตัวอย่างฟรี สั่งทาง LINE @blessmethailand ส่งทั่วประเทศ', canonical: BASE_URL+'/wholesale' },
   Solutions: { title: 'โซลูชันวัตถุดิบอาหารพิเศษ — บริการพาร์ทเนอร์ค้าส่ง | เบลสมี ไทยแลนด์', description: 'เจาะลึกกระบวนการจัดหาและทดสอบวัตถุดิบอาหารพิเศษของเบลสมี เพื่อช่วยคาเฟ่และร้านอาหารสร้างจุดแตกต่างที่ยั่งยืนในตลาดไทย', canonical: BASE_URL+'/solutions' },
   'About us': { title: 'เกี่ยวกับ เบลสมี (ประเทศไทย) — ผู้นำเข้าและจัดจำหน่ายวัตถุดิบอาหารพิเศษ', description: 'เราคือพาร์ทเนอร์ที่ไว้วางใจได้สำหรับแบรนด์คาเฟ่และร้านขนมหวาน นำเข้าและสต็อกวัตถุดิบป๊อปปิ้งโบบาพรีเมียมเพื่อธุรกิจ B2B ทั่วไทย', canonical: BASE_URL+'/about' },
   Blog: { title: 'บทความและข้อมูลเชิงลึก วัตถุดิบคาเฟ่และป๊อปปิ้งโบบา | เบลสมี ไทยแลนด์', description: 'อัปเดตเทรนด์วัตถุดิบคาเฟ่ เทคนิคการเลือกท็อปปิ่ง และเบื้องหลังการจัดหาอาหารพิเศษจากทีมงานผู้เชี่ยวชาญของเบลสมี', canonical: BASE_URL+'/blog' },
@@ -42,14 +42,22 @@ export const PAGE_META_TH = {
 // logo + image URLs intentionally stay logo-full.png: this is a stable
 // social/SEO identifier (Schema.org LocalBusiness, OpenGraph crawlers).
 // Visible-UI renderers use <picture> with logo-full.webp; json-ld stays png.
-export const ORG_SCHEMA = { "@context": "https://schema.org", "@type": "LocalBusiness", "name": "BlessMe (Thailand) Co., Ltd.", "url": "https://blessmethailand.com", "logo": "https://blessmethailand.com/assets/logo-full.png", "image": "https://blessmethailand.com/assets/logo-full.png", "description": "Specialty food wholesaler supplying cafés, restaurants, and dessert brands with premium popping boba in Thailand.", "address": { "@type": "PostalAddress", "addressLocality": "Bangkok", "addressCountry": "TH" }, "contactPoint": { "@type": "ContactPoint", "telephone": "+66-82-896-5199", "email": "Blessme.team@gmail.com", "contactType": "sales", "areaServed": "TH", "availableLanguage": ["Thai", "English"] }, "sameAs": ["https://instagram.com/blessme_thailand", "https://facebook.com/BlessMeThailand"], "priceRange": "฿฿", "areaServed": { "@type": "Country", "name": "Thailand" } };
+export const ORG_SCHEMA = { "@context": "https://schema.org", "@type": "LocalBusiness", "name": "BlessMe (Thailand) Co., Ltd.", "url": "https://blessmethailand.com", "logo": "https://blessmethailand.com/assets/logo-full.png", "image": "https://blessmethailand.com/assets/logo-full.png", "description": "Specialty food wholesaler supplying cafés, restaurants, and dessert brands with premium popping boba in Thailand.", "address": { "@type": "PostalAddress", "addressLocality": "Bangkok", "addressCountry": "TH" }, "contactPoint": { "@type": "ContactPoint", "telephone": "+66-82-896-5199", "email": "Blessme.team@gmail.com", "contactType": "sales", "areaServed": "TH", "availableLanguage": ["Thai", "English"] }, "sameAs": ["https://instagram.com/blessme_thailand", "https://facebook.com/BlessMeThailand", "https://shopee.co.th/blessme_thailand"], "priceRange": "฿฿", "areaServed": { "@type": "Country", "name": "Thailand" } };
 
 export const PAGE_NAMES = { Products: 'BlessMe Thailand — Specialty Food Wholesale', Wholesale: 'Popping Boba Wholesale Bangkok', Solutions: 'How BlessMe Works', 'About us': 'About BlessMe Thailand', Blog: 'Journal — Specialty Food Insights', FAQ: 'FAQ — BlessMe Wholesale Thailand' };
+
+const TH_PRODUCT_TITLE = {
+  barley: 'มุกป๊อปบาร์เลย์ ขายส่ง 90 บาท/แพ็ค | เบลสมี',
+  oat: 'มุกป๊อปข้าวโอ๊ต ขายส่ง 90 บาท/แพ็ค | เบลสมี',
+  redbean: 'มุกป๊อปถั่วแดง ขายส่ง 90 บาท/แพ็ค | เบลสมี',
+  cheese: 'มุกป๊อปโมจิโยเกิร์ต ขายส่ง 120 บาท | เบลสมี',
+  osmanthus: 'บุกหอมหมื่นลี้ ท็อปปิ้ง ขายส่ง | เบลสมี',
+};
 
 export function buildProductMeta(product, lang) {
   const name = productSearchName(product, lang);
   return {
-    title: lang === 'th' ? `${name} ขายส่ง | เบลสมี ไทยแลนด์` : `${name} Wholesale | BlessMe Thailand`,
+    title: lang === 'th' ? (TH_PRODUCT_TITLE[product.id] || `${productHeading(product, lang)} | เบลสมี`) : `${name} Wholesale | BlessMe Thailand`,
     description: lang === 'th'
       ? `${name} — ${product.noteTh} ${product.price} บาท/แพ็ค ${product.packSize} ไม่มีขั้นต่ำ สต็อกกรุงเทพฯ ส่งทั่วไทย`
       : `${name} — ${product.note} ${product.price} THB per ${product.packSize} pack. No minimum order. Bangkok stock, nationwide Thailand shipping.`,

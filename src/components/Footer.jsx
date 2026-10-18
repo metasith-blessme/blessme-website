@@ -1,6 +1,7 @@
 import React from 'react';
 import { T } from '../constants/translations';
 import { buildPath } from '../lib/routing';
+import { SHOPEE_URL } from '../lib/analytics';
 
 export default function Footer({ setPage, lang }) {
   const t = T[lang];
@@ -45,7 +46,14 @@ export default function Footer({ setPage, lang }) {
             <div className="text-xs font-bold tracking-[0.16em] uppercase text-[#3B6146] mb-1">{t.footerContact}</div>
             <a href="mailto:Blessme.team@gmail.com" className="text-[#5C5248] hover:text-[#2B241E] transition-colors">Blessme.team@gmail.com</a>
             <a href="tel:+66828965199" className="text-[#5C5248] hover:text-[#2B241E] transition-colors">+66 (0) 82-896-5199 (คุณจ้า)</a>
-            <a href="https://line.me/R/ti/p/@blessmethailand" target="_blank" rel="noopener noreferrer" className="text-[#06c755] font-semibold hover:underline">LINE Official: @blessmethailand</a>
+            <div className="flex items-center gap-3">
+              <a href="https://line.me/R/ti/p/@blessmethailand" target="_blank" rel="noopener noreferrer" className="text-[#06c755] font-semibold hover:underline">LINE Official: @blessmethailand</a>
+              <a href={SHOPEE_URL} target="_blank" rel="noopener noreferrer" aria-label={lang === 'th' ? 'สั่งปลีกทาง Shopee' : 'Buy retail on Shopee'} className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#EE4D2D] text-white hover:bg-[#d7321b] transition-colors" title="Shopee">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path d="M7 7V6a5 5 0 0 1 10 0v1h2.2a1 1 0 0 1 1 .9l1 12a1 1 0 0 1-1 1.1H3.8a1 1 0 0 1-1-1.1l1-12a1 1 0 0 1 1-.9H7zm2 0h6V6a3 3 0 0 0-6 0v1z"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
 
