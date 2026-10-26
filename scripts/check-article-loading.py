@@ -43,7 +43,7 @@ def check(origin, development=False):
                 # Force a real navigation failure, not a mocked internal hook.
                 pattern = '**/blog-bodies/*.json'
                 page.route(pattern, lambda r: r.fulfill(status=503, body='unavailable'))
-                page.locator(f'.bm-article-nav a[href="{prefix}/blog/{SECOND}"]').click()
+                page.locator(f'.bm-article-nav a[href="{prefix}/blog/{SECOND}/"]').click()
                 expect(body).not_to_contain_text(BODIES[FIRST][field][0][1])
                 expect(body.get_by_role('alert')).to_be_visible()
                 page.unroute(pattern)

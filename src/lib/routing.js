@@ -67,18 +67,24 @@ export function handleLinkClick(event, navigate) {
   navigate();
 }
 
+function withTrailingSlash(path) {
+  if (path === '/' || path.endsWith('/')) return path;
+  return `${path}/`;
+}
+
 // Build a URL path for a target page/product/article in a given language.
+// Directory routes keep a trailing slash so the browser requests the 200 URL.
 export function buildPath({ page, productId = null, articleId = null, lang = 'th' }) {
   const prefix = lang === 'en' ? '/en' : '';
-  if (articleId) return `${prefix}/blog/${articleId}`;
-  if (productId) return `${prefix}/products/${productId}`;
+  if (articleId) return withTrailingSlash(`${prefix}/blog/${articleId}`);
+  if (productId) return withTrailingSlash(`${prefix}/products/${productId}`);
   const base = PAGE_TO_PATH[page] || '/';
-  return base === '/' ? `${prefix}/` : `${prefix}${base}`;
+  return withTrailingSlash(base === '/' ? `${prefix}/` : `${prefix}${base}`);
 }
 
 // Re-home a pathname that is not in the route table (404s, legacy /th links).
 export function pathForLang(pathname, lang = 'th') {
   const path = stripLangPrefix(String(pathname || '/').replace(/\/+$/, '') || '/');
-  if (lang === 'en') return path === '/' ? '/en/' : `/en${path}`;
-  return path === '/' ? '/' : path;
+  if (lang === 'en') return withTrailingSlash(path === '/' ? '/en/' : `/en${path}`);
+  return withTrailingSlash(path === '/' ? '/' : path);
 }

@@ -10,19 +10,19 @@ export const ARTICLES = [
     "answer": "These five milk tea shop menus use oat, barley and red bean popping boba. Oat and barley are the flavours shops reorder most, then red bean. Use 1 to 2 tablespoons, about 15 to 30 grams drained, in a 16 oz cup.",
     "answerTh": "เมนูมุกป๊อปห้าแก้วนี้ใช้ไข่มุกป๊อปข้าวโอ๊ต ข้าวบาร์เลย์ และถั่วแดง ข้าวโอ๊ตกับข้าวบาร์เลย์เป็นรสที่ร้านสั่งเยอะที่สุด ตัก 1-2 ช้อนโต๊ะต่อแก้ว 16 ออนซ์",
     "faqs": [
-      { "q": "Which popping boba menus work in a milk tea shop?", "a": "Five starting menus: brown sugar fresh milk with oat, milk tea with oat, Thai tea with barley, genmaicha with barley, and a matcha latte with red bean." },
+      { "q": "Which popping boba menus work in a milk tea shop?", "a": "Five starting menus: brown sugar fresh milk with oat, milk tea with oat, Thai tea with barley, milk tea with barley, and a matcha latte with red bean." },
       { "q": "How much popping boba goes in one cup?", "a": "Use 1 to 2 tablespoons per 16 oz cup. One tablespoon is about 15 grams after the syrup is drained. Two tablespoons are about 30 grams. Use 2 tablespoons in a 22 oz cup." },
-      { "q": "Which flavours do shops reorder most?", "a": "Oat and barley are the flavours shops reorder most. Red bean follows. Black sticky rice also moves through a reseller. The five menus here use oat, barley and red bean." },
+      { "q": "Which flavours do shops reorder most?", "a": "Oat and barley are the flavours shops reorder most. Red bean follows. These five menus use those three flavours." },
       { "q": "What drinks suit oat popping boba?", "a": "Brown sugar fresh milk and milk tea. Oat does not cover the brown sugar, and a shop can add it on top of the milk tea it already makes." },
-      { "q": "What tea suits barley popping boba?", "a": "Thai tea and genmaicha. The roasted barley stays noticeable in strong Thai tea, and it sits next to the roasted-rice smell of genmaicha." },
+      { "q": "What tea suits barley popping boba?", "a": "Thai tea and milk tea. The roasted aroma of barley stays in Thai tea, and it goes well with milk." },
       { "q": "Can red bean popping boba go in a matcha latte?", "a": "Yes. Put 1 to 2 tablespoons in the bottom of the cup, then ice, matcha and fresh milk. Do not pour the pearls on top of foam." }
     ],
     "faqsTh": [
-      { "q": "เมนูมุกป๊อปสำหรับร้านชานมมีอะไรบ้าง", "a": "ห้าแก้วในบทความนี้คือนมสดบราวน์ชูการ์กับข้าวโอ๊ต ชานมกับข้าวโอ๊ต ชาไทยกับข้าวบาร์เลย์ ชาข้าวคั่วกับข้าวบาร์เลย์ และมัทฉะลาเต้กับถั่วแดง" },
+      { "q": "เมนูมุกป๊อปสำหรับร้านชานมมีอะไรบ้าง", "a": "ห้าแก้วในบทความนี้คือนมสดบราวน์ชูการ์กับข้าวโอ๊ต ชานมกับข้าวโอ๊ต ชาไทยกับข้าวบาร์เลย์ ชานมกับข้าวบาร์เลย์ และมัทฉะลาเต้กับถั่วแดง" },
       { "q": "1 แก้วใส่มุกป๊อปกี่ช้อน", "a": "แก้ว 16 ออนซ์ใช้ 1-2 ช้อนโต๊ะ 1 ช้อนโต๊ะหลังสะเด็ดน้ำเชื่อมราว 15 กรัม 2 ช้อนโต๊ะราว 30 กรัม แก้ว 22 ออนซ์ใช้ 2 ช้อนโต๊ะ" },
-      { "q": "รสที่ร้านสั่งเยอะที่สุดคือรสอะไร", "a": "ข้าวโอ๊ตกับข้าวบาร์เลย์เป็นรสที่ร้านสั่งเยอะที่สุด ถั่วแดงตามมา ข้าวเหนียวดำก็มีออเดอร์ผ่านร้านตัวแทน เมนูห้าแก้วนี้ใช้สามรสแรก" },
+      { "q": "รสที่ร้านสั่งเยอะที่สุดคือรสอะไร", "a": "ข้าวโอ๊ตกับข้าวบาร์เลย์เป็นรสที่ร้านสั่งเยอะที่สุด ถั่วแดงตามมา เมนูห้าแก้วนี้ใช้สามรสนี้" },
       { "q": "มุกป๊อปข้าวโอ๊ตใส่แก้วอะไร", "a": "ใส่นมสดบราวน์ชูการ์และชานมได้ โอ๊ตไม่กลบน้ำตาลไหม้ และร้านใส่บนชานมที่ชงอยู่แล้วได้โดยไม่ต้องเปลี่ยนสูตรชา" },
-      { "q": "มุกป๊อปข้าวบาร์เลย์เข้ากับชาอะไร", "a": "เข้ากับชาไทยและชาข้าวคั่ว กลิ่นคั่วของบาร์เลย์ไม่หายในชาไทย และไปทางเดียวกับกลิ่นข้าวคั่ว" },
+      { "q": "มุกป๊อปข้าวบาร์เลย์เข้ากับชาอะไร", "a": "เข้ากับชาไทยและชานม กลิ่นคั่วของบาร์เลย์ไม่หายในชาไทย และเข้ากันดีกับนม" },
       { "q": "มุกป๊อปถั่วแดงใส่กับมัทฉะได้ไหม", "a": "ได้ ตัก 1-2 ช้อนโต๊ะลงก้นแก้ว แล้วใส่น้ำแข็ง มัทฉะ และนมสด อย่าเทเม็ดทับโฟมด้านบน" }
     ],
     "date": "October 26, 2026",

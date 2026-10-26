@@ -3,7 +3,6 @@ import { PRODUCTS, productSearchName } from '../constants/products';
 import { buildPath, handleLinkClick } from '../lib/routing';
 
 // Grain popping boba that already has a product page and photo.
-// Black sticky rice is not in the catalogue. Water chestnut is discontinued.
 const GRAIN_SHOWROOM_IDS = ['barley', 'oat', 'redbean'];
 
 const COPY = {
