@@ -62,7 +62,7 @@ const CONTENT = {
     ],
     flavorsTitle: '5 รายการขายส่ง',
     faqTitle: 'คำถามเรื่องการสั่ง',
-    finalTitle: 'สั่งไข่มุกป๊อปขายส่ง',
+    finalTitle: 'สนใจไข่มุกป๊อปขายส่ง',
     finalLead: 'ทัก LINE @blessmethailand หรือขอตัวอย่างฟรีที่ Blessme.team@gmail.com',
   },
 };
