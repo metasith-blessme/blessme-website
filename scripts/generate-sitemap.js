@@ -5,8 +5,8 @@ import { fileURLToPath } from 'url';
 import { PRODUCTS } from '../src/constants/products.js';
 import { ARTICLES } from '../src/content/blog.js';
 
-// Mirror of routing.buildPath (inlined so this script runs under plain Node without
-// Vite's extensionless-import resolution). Keep in sync with src/lib/routing.js.
+// Mirror of routing.buildPath without the trailing slash. urlFor adds the slash for
+// canonicals. Redirect sources below must stay unsashed so both forms 301 once.
 // Thai is the default at `/…`. English lives at `/en/…`.
 const PAGE_TO_PATH = { 'Products': '/', 'Catalogue': '/products', 'Wholesale': '/wholesale', 'Solutions': '/solutions', 'About us': '/about', 'Blog': '/blog', 'FAQ': '/faq' };
 function buildPath({ page, productId = null, articleId = null, lang = 'th' }) {
