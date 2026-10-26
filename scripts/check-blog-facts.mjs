@@ -3,8 +3,8 @@ import { readFileSync, existsSync } from 'node:fs';
 import { ARTICLES, getArticleMeta } from '../src/content/blog.js';
 
 const bodies = JSON.parse(readFileSync(new URL('../src/content/blog-bodies.json', import.meta.url)));
-assert.equal(ARTICLES.length, 17);
-assert.equal(new Set(ARTICLES.map(a => a.id)).size, 17);
+assert.equal(ARTICLES.length, 18);
+assert.equal(new Set(ARTICLES.map(a => a.id)).size, 18);
 assert.deepEqual(Object.keys(bodies).sort(), ARTICLES.map(a => a.id).sort());
 const glutenGuide = ARTICLES.find(article => article.id === 'is-popping-boba-gluten-free');
 assert.match(glutenGuide.imgAlt, /มีกลูเตน/);
@@ -64,8 +64,8 @@ for (const article of ARTICLES) {
     variants++;
   }
 }
-assert.equal(variants, 34);
+assert.equal(variants, 36);
 const portions = bodies['popping-boba-wholesale-profit-margins'];
 assert.match(JSON.stringify(portions.body), /25g drained gives 12 servings/);
 assert.match(JSON.stringify(portions.bodyTh), /25g จะได้ 12 เสิร์ฟ/);
-console.log('Blog facts: 17 unique articles × 2 languages; 34 actual prerenders, exact canonicals, schema, claims and portions passed.');
+console.log('Blog facts: 18 unique articles × 2 languages; 36 actual prerenders, exact canonicals, schema, claims and portions passed.');
