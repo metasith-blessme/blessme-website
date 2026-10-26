@@ -33,8 +33,8 @@ export default function HeroShowroom({ lang, onOpen }) {
     if (!el) return undefined;
     const update = () => {
       const max = el.scrollWidth - el.clientWidth;
-      const prev = el.scrollLeft > 2;
-      const next = max > 2 && el.scrollLeft < max - 2;
+      const prev = el.scrollLeft > 8;
+      const next = max > 8 && el.scrollLeft < max - 8;
       setCanPrev((value) => (value === prev ? value : prev));
       setCanNext((value) => (value === next ? value : next));
     };
@@ -94,7 +94,7 @@ export default function HeroShowroom({ lang, onOpen }) {
                       height="1000"
                       loading="lazy"
                       decoding="async"
-                      fetchPriority="low"
+                      fetchpriority="low"
                     />
                   </picture>
                 </span>
