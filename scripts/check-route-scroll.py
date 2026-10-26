@@ -26,7 +26,7 @@ try:
                         page = browser.new_page(viewport={'width': width, 'height': 844}, reduced_motion=motion)
                         origin = f'http://127.0.0.1:{server.server_port}'
                         page.route('**/*', lambda r: r.continue_() if r.request.url.startswith(origin) else r.abort())
-                        page.goto(origin + ('/th' if lang == 'th' else '') + '/blog/', wait_until='networkidle')
+                        page.goto(origin + ('/en' if lang == 'en' else '') + '/blog/', wait_until='networkidle')
                         for selector in ['.bm-feature-link', '.bm-blog-card-hit']:
                             target = page.locator(selector).first
                             target.hover()
@@ -62,7 +62,7 @@ try:
                         page.go_back()
                         expect(page.locator('input[type="search"]')).to_have_value('boba')
                         expect(page.locator('.bm-filter-pill.is-active')).to_have_text(category)
-                        page.goto(origin + ('/th/' if lang == 'th' else '/'), wait_until='networkidle')
+                        page.goto(origin + ('/en/' if lang == 'en' else '/'), wait_until='networkidle')
                         behavior = page.evaluate('''()=>{
                           let behavior; const original=Element.prototype.scrollIntoView;
                           Element.prototype.scrollIntoView=function(options){behavior=options.behavior;original.call(this,options)};

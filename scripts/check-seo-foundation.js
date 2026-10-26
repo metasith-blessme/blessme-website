@@ -16,6 +16,12 @@ try {
   const urls = [...fs.readFileSync(path.join(root, 'dist/sitemap.xml'), 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
   assert.equal(urls.length, (7 + PRODUCTS.length + ARTICLES.length) * 2);
   assert.equal(new Set(urls).size, urls.length);
+  assert(urls.includes('https://blessmethailand.com/'));
+  assert(urls.includes('https://blessmethailand.com/en/'));
+  assert(!urls.some(url => new URL(url).pathname.startsWith('/th')));
+  const lastmods = [...fs.readFileSync(path.join(root, 'dist/sitemap.xml'), 'utf8').matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map(m => m[1]);
+  assert.equal(lastmods.length, urls.length);
+  assert(lastmods.every(date => date === '2026-10-26'), 'sitemap lastmod is the URL move date');
   let productPages = 0;
   for (const url of urls) {
     const pathname = new URL(url).pathname;
@@ -27,7 +33,7 @@ try {
       const headings = [...main.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/g)];
       assert.deepEqual(headings.map(m => m[1]), [escape(productHeading(product, lang))], `${pathname}: SKU-specific main H1`);
       assert(main.includes(escape(lang === 'th' ? product.noteTh : product.note)), `${pathname}: SKU description in main`);
-      assert.match(main, new RegExp(`<a[^>]*href="${lang === 'th' ? '/th/' : '/'}"[^>]*>← ${lang === 'th' ? 'สินค้าทั้งหมด' : 'All products'}</a>`), `${pathname}: localized native back link`);
+      assert.match(main, new RegExp(`<a[^>]*href="${lang === 'th' ? '/' : '/en/'}"[^>]*>← ${lang === 'th' ? 'สินค้าทั้งหมด' : 'All products'}</a>`), `${pathname}: localized native back link`);
       const guidance = lang === 'th' ? [
         'ก่อนเปิด: เก็บที่อุณหภูมิห้องได้นาน 12 เดือนนับจากวันผลิต',
         'หลังเปิด: ปิดให้สนิทและแช่เย็นที่อุณหภูมิไม่เกิน 4°C เก็บได้นานสูงสุด 1 เดือน',
@@ -61,6 +67,7 @@ try {
     const meta = getMeta(page, productId, articleId, lang);
     assert.equal(meta.canonical, url);
     assert(html.includes(`<title>${escape(meta.title).replace(/&#x27;/g, "'")}</title>`), pathname);
+    assert.equal(html.match(/<html lang="([^"]+)">/)?.[1], lang, pathname);
     assert(html.includes(`rel="canonical" href="${url}"`), pathname);
     assert(html.includes(`og:url" content="${url}"`), pathname);
     assert(html.includes('twitter:card" content="summary_large_image"'));
@@ -73,7 +80,7 @@ try {
       const faq = schemas.find(schema => schema['@type'] === 'FAQPage');
       assert(faq.mainEntity.some(q => q.acceptedAnswer.text.includes(scopedWarning)), `${pathname}: FAQ schema preserves allergen scope`);
     }
-    for (const alt of ['en', 'th', 'x-default']) assert(html.includes(`hreflang="${alt}" href="${canonicalFor(page, productId, articleId, alt === 'th' ? 'th' : 'en')}"`));
+    for (const alt of ['en', 'th', 'x-default']) assert(html.includes(`hreflang="${alt}" href="${canonicalFor(page, productId, articleId, alt === 'en' ? 'en' : 'th')}"`), pathname);
     for (const schema of schemas) {
       if (schema['@type'] === 'Product') {
         const product = PRODUCTS.find(p => p.id === productId);
@@ -92,7 +99,7 @@ try {
       }
       if (schema['@type'] === 'BreadcrumbList') {
         for (const item of schema.itemListElement) {
-          assert.equal(new URL(item.item).pathname.startsWith('/th/'), lang === 'th');
+          assert.equal(new URL(item.item).pathname.startsWith('/en/'), lang === 'en');
           assert(item.item.endsWith('/'));
         }
       }
@@ -125,6 +132,7 @@ try {
   updateMeta('Blog', null, ARTICLES[0].id, 'th');
   assert.equal(nodes.get('meta[property="og:type"]').attrs.content, 'article');
   assert.equal(nodes.get('link[rel="alternate"][hreflang="th"]').attrs.href, canonicalFor('Blog', null, ARTICLES[0].id, 'th'));
+  assert.equal(nodes.get('link[rel="alternate"][hreflang="x-default"]').attrs.href, canonicalFor('Blog', null, ARTICLES[0].id, 'th'));
   updateMeta('Products', null, null, 'en');
   assert.equal(nodes.get('meta[property="og:image"]').attrs.content, 'https://blessmethailand.com/assets/og-image.png');
   assert.equal(nodes.get('meta[property="og:type"]').attrs.content, 'website');

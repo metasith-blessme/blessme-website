@@ -53,7 +53,7 @@ try {
             const quote = document.querySelector('main a[href^="mailto:"]');
             check(decodeURIComponent(quote.href).includes('Quantity: 13 tubs'), 'Quote must preserve selected quantity');
             const back = document.querySelector('main .bm-back-link');
-            check(back.getAttribute('href') === (lang === 'th' ? '/th/' : '/'), 'Wrong back URL');
+            check(back.getAttribute('href') === (lang === 'th' ? '/' : '/en/'), 'Wrong back URL');
             const modified = new MouseEvent('click', { bubbles: true, cancelable: true, ctrlKey: true });
             back.dispatchEvent(modified);
             check(!modified.defaultPrevented && closed === 0, 'Modified back click must remain native');

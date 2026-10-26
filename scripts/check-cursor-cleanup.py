@@ -4,7 +4,7 @@ check-cursor-cleanup.py
 
 Runnable regression check for WEBSITE-PERFORMANCE-PLAN.md Phase 1.
 
-Builds the site, serves it with `vite preview`, then opens /, /blog/, /th/blog/
+Builds the site, serves it with `vite preview`, then opens /, /blog/, /en/blog/
 in headless Chrome. For each route it dispatches 120 frame-spaced mousemove
 events and measures script time via CDP Performance.getMetrics. The cursor
 logic removed from src/App.jsx used to add tens-to-hundreds of milliseconds
@@ -32,9 +32,9 @@ PORT = 4180
 # recovers 5–10% of the original 79–149 ms still fails, while ordinary
 # lab noise won't false-fail.
 SCRIPT_BUDGET_MS = 10.0
-ROUTES = ["/", "/blog/", "/th/blog/"]
+ROUTES = ["/", "/blog/", "/en/blog/"]
 SAMPLE_ARTICLE = "what-is-popping-boba-khai-muk-pop"
-ARTICLE_ROUTES = [f"/blog/{SAMPLE_ARTICLE}/", f"/th/blog/{SAMPLE_ARTICLE}/"]
+ARTICLE_ROUTES = [f"/blog/{SAMPLE_ARTICLE}/", f"/en/blog/{SAMPLE_ARTICLE}/"]
 ALL_ROUTES = ROUTES + ARTICLE_ROUTES
 
 
@@ -111,7 +111,7 @@ def main():
                     script_ms = round((after["ScriptDuration"] - before["ScriptDuration"]) * 1000, 2)
                     pointer_commits = page.evaluate('window.__commits') - commits
                     before_control = page.evaluate('window.__commits')
-                    page.get_by_role('button', name='EN' if route.startswith('/th/') else 'TH', exact=True).click()
+                    page.get_by_role('button', name='TH' if route.startswith('/en/') else 'EN', exact=True).click()
                     page.wait_for_function('window.__commits > ' + str(before_control))
                     if pointer_commits:
                         failures.append(f'{route}: {pointer_commits} pointer-driven commits')

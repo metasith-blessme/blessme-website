@@ -6,7 +6,7 @@ import { buildPath } from './routing';
 export const BASE_URL = 'https://blessmethailand.com';
 
 // Language-correct canonical, trailing-slash normalized to match how Cloudflare serves the file.
-export function canonicalFor(page, productId = null, articleId = null, lang = 'en') {
+export function canonicalFor(page, productId = null, articleId = null, lang = 'th') {
   let p = buildPath({ page, productId, articleId, lang });
   if (p !== '/' && !p.endsWith('/')) p += '/';
   return BASE_URL + p;
@@ -136,7 +136,7 @@ function getOrCreateTag(selector, tagType, attributes = {}) {
   return el;
 }
 
-export function setMeta(title, description, canonical, lang='en', image = `${BASE_URL}/assets/og-image.png`, type = 'website') {
+export function setMeta(title, description, canonical, lang='th', image = `${BASE_URL}/assets/og-image.png`, type = 'website') {
   document.title = title;
   
   const descEl = getOrCreateTag('meta[name="description"]', 'meta', { name: 'description' });
@@ -170,8 +170,8 @@ export function setMeta(title, description, canonical, lang='en', image = `${BAS
 }
 
 // Pure: compute { title, description, canonical } for a route. Reused by the prerenderer.
-// Canonical is always derived from the language + route so EN and /th URLs stay correct.
-export function getMeta(page, productId = null, articleId = null, lang = 'en') {
+// Canonical is always derived from the language + route so Thai root and /en URLs stay correct.
+export function getMeta(page, productId = null, articleId = null, lang = 'th') {
   if (page === 'NotFound') return { title: lang === 'th' ? '404 — ไม่พบหน้า | BlessMe Thailand' : '404 — Page not found | BlessMe Thailand', description: lang === 'th' ? 'ไม่พบหน้าที่คุณต้องการ' : 'The requested page does not exist.', canonical: null };
   const canonical = canonicalFor(page, productId, articleId, lang);
   if (productId) {
@@ -186,7 +186,7 @@ export function getMeta(page, productId = null, articleId = null, lang = 'en') {
   return { ...(metaSet[page] || metaSet.Products), canonical };
 }
 
-export function updateMeta(page, productId = null, articleId = null, lang = 'en') {
+export function updateMeta(page, productId = null, articleId = null, lang = 'th') {
   const m = getMeta(page, productId, articleId, lang);
   const product = PRODUCTS.find(p => p.id === productId);
   const article = getArticleById(articleId);
@@ -200,8 +200,10 @@ export function updateMeta(page, productId = null, articleId = null, lang = 'en'
     return;
   }
   for (const alternate of ['en', 'th', 'x-default']) {
+    // x-default is Thai: the root URL is the default for Google and AI Overviews.
+    const altLang = alternate === 'en' ? 'en' : 'th';
     getOrCreateTag(`link[rel="alternate"][hreflang="${alternate}"]`, 'link', { rel: 'alternate', hreflang: alternate })
-      .setAttribute('href', canonicalFor(page, productId, articleId, alternate === 'th' ? 'th' : 'en'));
+      .setAttribute('href', canonicalFor(page, productId, articleId, altLang));
   }
 }
 
@@ -258,7 +260,7 @@ export function buildFAQSchema(faqs) {
 }
 
 // Pure: assemble the JSON-LD schema array for a route. Reused by the prerenderer.
-export function getSchemas(page, productId = null, articleId = null, lang = 'en') {
+export function getSchemas(page, productId = null, articleId = null, lang = 'th') {
   if (page === 'NotFound') return [];
   const schemas = [ORGANIZATION_SCHEMA, ORG_SCHEMA];
   const home = { name: lang === 'th' ? 'หน้าหลัก' : 'Home', url: canonicalFor('Products', null, null, lang) };
@@ -298,7 +300,7 @@ export function getSchemas(page, productId = null, articleId = null, lang = 'en'
   return schemas;
 }
 
-export function updateSchema(page, productId = null, articleId = null, lang = 'en') {
+export function updateSchema(page, productId = null, articleId = null, lang = 'th') {
   const el = document.getElementById('bm-schema');
   if (!el) return;
   const schemas = getSchemas(page, productId, articleId, lang);
