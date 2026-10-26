@@ -8,6 +8,8 @@ import Breadcrumbs from '../components/Breadcrumbs';
 
 const LINE_URL = 'https://line.me/R/ti/p/@blessmethailand';
 const PILLAR = 'what-is-popping-boba-khai-muk-pop';
+const MADE_OF = 'muk-pop-made-of';
+const CHOOSE = 'how-to-choose-muk-pop-wholesale';
 
 const COPY = {
   en: {
@@ -22,6 +24,8 @@ const COPY = {
     headers: ['Product', 'Type', 'Pack', 'Wholesale price'],
     linksTitle: 'Keep reading',
     pillar: 'What is popping boba?',
+    madeOf: 'What is popping boba made of?',
+    choose: 'How to choose popping boba wholesale',
     faqLink: 'Popping boba wholesale FAQ',
     wholesale: 'Wholesale prices and how to order',
     faqTitle: 'Quick answers',
@@ -38,6 +42,8 @@ const COPY = {
     headers: ['สินค้า', 'ประเภท', 'แพ็ค', 'ราคาส่ง'],
     linksTitle: 'อ่านต่อ',
     pillar: 'มุกป๊อปคืออะไร',
+    madeOf: 'มุกป๊อปทำจากอะไร',
+    choose: 'มุกป๊อปขายส่งเลือกยังไง',
     faqLink: 'คำถามที่พบบ่อยเรื่องมุกป๊อปขายส่ง',
     wholesale: 'ราคาส่งและวิธีสั่งซื้อ',
     faqTitle: 'คำตอบสั้น ๆ',
@@ -125,6 +131,8 @@ export default function ProductHubPage({ lang }) {
         <h2 className="font-['Fraunces'] text-3xl md:text-4xl font-semibold mt-20 mb-6">{c.linksTitle}</h2>
         <ul className="flex flex-col gap-3 text-[#3B6146] underline">
           <li><a href={buildPath({ page: 'Blog', articleId: PILLAR, lang })}>{c.pillar}</a></li>
+          <li><a href={buildPath({ page: 'Blog', articleId: MADE_OF, lang })}>{c.madeOf}</a></li>
+          <li><a href={buildPath({ page: 'Blog', articleId: CHOOSE, lang })}>{c.choose}</a></li>
           <li><a href={buildPath({ page: 'FAQ', lang })}>{c.faqLink}</a></li>
           <li><a href={buildPath({ page: 'Wholesale', lang })}>{c.wholesale}</a></li>
         </ul>
