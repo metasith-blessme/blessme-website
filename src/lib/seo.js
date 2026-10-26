@@ -272,6 +272,8 @@ export function getSchemas(page, productId = null, articleId = null, lang = 'en'
     const article = getArticleById(articleId);
     if (article) {
       schemas.push(getArticleSchema(article, lang, BASE_URL));
+      const articleFaqs = lang === 'th' ? article.faqsTh : article.faqs;
+      if (articleFaqs?.length) schemas.push(buildFAQSchema(articleFaqs));
       schemas.push(buildBreadcrumbSchema([home, { name: lang === 'th' ? 'บทความ' : 'Journal', url: canonicalFor('Blog', null, null, lang) }, { name: lang === 'th' ? article.titleTh : article.title, url: canonicalFor('Blog', null, article.id, lang) }]));
     }
   } else {

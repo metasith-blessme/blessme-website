@@ -379,6 +379,9 @@ html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-famil
 .bm-article-main{min-width:0;max-width:750px;margin:0 auto;}
 .bm-article-head{margin-bottom:48px;max-width:750px;}
 .bm-article-title{font-family:var(--font-display);font-weight:700;font-size:var(--bm-article-title-size);line-height:1.04;letter-spacing:-0.03em;color:#2B241E;margin:12px 0 14px;text-wrap:balance;}
+.bm-article-head .bm-answer{margin:0 0 18px;}
+.bm-article-text-link{color:#3B6146;text-decoration:underline;text-underline-offset:3px;}
+.bm-article-faq{margin-top:8px;}
 .bm-article-excerpt{font-family:var(--font-body);font-size:var(--bm-article-excerpt-size);line-height:1.72;color:#4D443C;margin:20px 0 0;max-width:38em;text-wrap:pretty;}
 .bm-article-meta{display:flex;gap:10px;align-items:center;font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#A79A8C;padding-top:0;border-top:0;}
 .bm-article-meta .dot{color:rgba(43,36,30,0.3);}

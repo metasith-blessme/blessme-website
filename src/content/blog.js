@@ -1,18 +1,31 @@
 export const ARTICLES = [
   {
     "id": "what-is-popping-boba-khai-muk-pop",
-    "title": "What Is Popping Boba? A Complete Guide (ไข่มุกป๊อป Explained)",
-    "titleTh": "ไข่มุกป๊อป (มุกป๊อป) คืออะไร? คู่มือฉบับสมบูรณ์",
-    "seoTitleTh": "ไข่มุกป๊อป คืออะไร? รู้จักมุกป๊อป ป๊อปปิ้งโบบา",
-    "excerpt": "Popping boba has a liquid centre that bursts when bitten. Explore topping types, the BlessMe range and serving ideas.",
-    "excerptTh": "รู้จักมุกป๊อปที่มีของเหลวด้านในแตกเมื่อกัด ประเภทท็อปปิ้ง สินค้า BlessMe และไอเดียการเสิร์ฟ",
+    "schemaType": "Article",
+    "title": "What Is มุกป๊อป? A Guide to Popping Boba",
+    "titleTh": "มุกป๊อปคืออะไร? คู่มือไข่มุกป๊อป",
+    "seoTitleTh": "มุกป๊อปคืออะไร? ไข่มุกป๊อป เม็ดป๊อป",
+    "excerpt": "มุกป๊อป (popping boba) is a liquid-filled pearl that bursts when bitten. BlessMe wholesales barley, oat and red bean, plus Moji Yogurt, from Bangkok stock.",
+    "excerptTh": "มุกป๊อป (ไข่มุกป๊อป) คือเม็ดท็อปปิ้งที่แตกเมื่อกัด เบลสมีขายส่งมุกป๊อปข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง และโมจิโยเกิร์ต จากสต็อกกรุงเทพฯ",
+    "answer": "มุกป๊อป (ไข่มุกป๊อป), also called เม็ดป๊อป, is a round topping with liquid inside. When bitten, the pearl bursts and releases flavour, unlike chewy tapioca pearls. Some people write the alternate spelling มุกป๊อบ. BlessMe wholesales grain popping boba in barley, oat and red bean, plus Moji Yogurt. Stock is held in Bangkok and ships across Thailand.",
+    "answerTh": "มุกป๊อป (ไข่มุกป๊อป) คือเม็ดท็อปปิ้งทรงกลมที่มีของเหลวด้านใน เมื่อกัดเม็ดจะแตกและปล่อยรสชาติ ต่างจากไข่มุกทาปิโอกาที่เคี้ยวหนึบ บางคนเรียกว่าเม็ดป๊อป และมีคำสะกดอีกแบบว่ามุกป๊อบ เบลสมีขายส่งมุกป๊อปธัญพืช ข้าวบาร์เลย์ ข้าวโอ๊ต และถั่วแดง พร้อมโมจิโยเกิร์ต จากสต็อกกรุงเทพฯ",
+    "faqs": [
+      { "q": "What is มุกป๊อป?", "a": "มุกป๊อป (ไข่มุกป๊อป), also called เม็ดป๊อป, is a round topping with liquid inside. When bitten, the pearl bursts and releases flavour, unlike chewy tapioca pearls. BlessMe wholesales grain popping boba in barley, oat and red bean, plus Moji Yogurt. Stock is held in Bangkok and ships across Thailand." },
+      { "q": "Which popping boba does BlessMe sell?", "a": "BlessMe sells barley, oat and red bean popping boba, plus Moji Yogurt. Osmanthus Konjac is stocked as a konjac topping, not popping boba." },
+      { "q": "How can a shop order มุกป๊อป wholesale?", "a": "Open the popping boba product hub, message LINE @blessmethailand, call 082-896-5199, or email Blessme.team@gmail.com. Retail orders use the Shopee shop blessme_thailand. There is no minimum order." }
+    ],
+    "faqsTh": [
+      { "q": "มุกป๊อปคืออะไร?", "a": "มุกป๊อป (ไข่มุกป๊อป) คือเม็ดท็อปปิ้งทรงกลมที่มีของเหลวด้านใน เมื่อกัดเม็ดจะแตกและปล่อยรสชาติ ต่างจากไข่มุกทาปิโอกาที่เคี้ยวหนึบ บางคนเรียกว่าเม็ดป๊อป เบลสมีขายส่งมุกป๊อปธัญพืช ข้าวบาร์เลย์ ข้าวโอ๊ต และถั่วแดง พร้อมโมจิโยเกิร์ต จากสต็อกกรุงเทพฯ" },
+      { "q": "เบลสมีขายมุกป๊อปรสอะไร?", "a": "เบลสมีขายมุกป๊อปข้าวบาร์เลย์ ข้าวโอ๊ต และถั่วแดง พร้อมโมจิโยเกิร์ต บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป" },
+      { "q": "สั่งมุกป๊อปขายส่งได้อย่างไร?", "a": "เปิดฮับมุกป๊อป แล้วทัก LINE @blessmethailand โทร 082-896-5199 หรืออีเมล Blessme.team@gmail.com สั่งปลีกที่ร้าน Shopee blessme_thailand ไม่มีขั้นต่ำ" }
+    ],
     "date": "July 27, 2026",
     "isoDate": "2026-07-27",
     "dateTh": "27 กรกฎาคม 2569",
     "publishedDate": "2026-07-27",
-    "updatedDate": "2026-10-18",
-    "read": "5 min read",
-    "readTh": "5 นาที",
+    "updatedDate": "2026-10-26",
+    "read": "8 min read",
+    "readTh": "8 นาที",
     "cat": "Guide",
     "catTh": "ความรู้",
     "author": "BlessMe Team",
@@ -348,6 +361,80 @@ export const ARTICLES = [
     "cover": "linear-gradient(140deg,#3a4d5e 0%,#1f2d3a 60%,#0f1a24 100%)",
     "img": "/assets/products/waterchestnut.webp",
     "imgAlt": "มุกป๊อปข้าวโอ๊ต BlessMe — ท็อปปิ้งจับคู่กับชาและกาแฟ Cold Brew"
+  },
+  {
+    "id": "muk-pop-made-of",
+    "schemaType": "Article",
+    "title": "What Is Popping Boba Made Of?",
+    "titleTh": "มุกป๊อปทำจากอะไร? ส่วนผสมและลักษณะเม็ด",
+    "seoTitleTh": "มุกป๊อปทำจากอะไร? ส่วนผสมไข่มุกป๊อป",
+    "excerpt": "Popping boba is a thin gel skin around a liquid centre. BlessMe grain pearls use barley, oat or red bean. Moji Yogurt is yogurt-flavoured. All five toppings are vegan and do not use gelatin.",
+    "excerptTh": "มุกป๊อปทำจากเปลือกเจลบางห่อของเหลว ไม่ใช่ไข่มุกแป้ง เบลสมีมีข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง โมจิโยเกิร์ต และบุกหอมหมื่นลี้ซึ่งเป็นท็อปปิ้งบุก",
+    "answer": "Popping boba is a thin gel skin around a liquid centre, not a chewy tapioca pearl. BlessMe grain popping boba uses barley, oat or red bean as the flavour. Moji Yogurt uses a yogurt-flavoured liquid centre. All five toppings are vegan, do not use gelatin, are imported, and are packed in syrup that contains sugar.",
+    "answerTh": "มุกป๊อปทำจากเปลือกเจลบางที่ห่อของเหลวด้านใน ไม่ใช่ไข่มุกทาปิโอกา มุกป๊อปธัญพืชของเบลสมีใช้ข้าวบาร์เลย์ ข้าวโอ๊ต หรือถั่วแดงเป็นรส โมจิโยเกิร์ตใช้ของเหลวรสโยเกิร์ต ท็อปปิ้งทั้งห้ารายการเป็นวีแกน ไม่ใช้เจลาติน เป็นสินค้านำเข้าจากโรงงานในจีน และบรรจุในน้ำเชื่อมที่มีน้ำตาล",
+    "faqs": [
+      { "q": "What is popping boba made of?", "a": "Popping boba is a thin gel skin around a liquid centre, not a chewy tapioca pearl. BlessMe grain popping boba uses barley, oat or red bean as the flavour. Moji Yogurt uses a yogurt-flavoured liquid centre. All five toppings are vegan, do not use gelatin, are imported, and are packed in syrup that contains sugar." },
+      { "q": "Do BlessMe toppings use gelatin?", "a": "No. All five toppings are vegan and do not use gelatin. Vegan does not mean allergen-free. Check each product label." },
+      { "q": "Is Moji Yogurt made from mochi dough?", "a": "No. Moji Yogurt is the product name for a popping boba with a yogurt-flavoured liquid centre. The name is not a claim that the pearl contains mochi dough." }
+    ],
+    "faqsTh": [
+      { "q": "มุกป๊อปทำจากอะไร?", "a": "มุกป๊อปทำจากเปลือกเจลบางที่ห่อของเหลวด้านใน ไม่ใช่ไข่มุกทาปิโอกา มุกป๊อปธัญพืชของเบลสมีใช้ข้าวบาร์เลย์ ข้าวโอ๊ต หรือถั่วแดงเป็นรส โมจิโยเกิร์ตใช้ของเหลวรสโยเกิร์ต ท็อปปิ้งทั้งห้ารายการเป็นวีแกน ไม่ใช้เจลาติน เป็นสินค้านำเข้าจากโรงงานในจีน และบรรจุในน้ำเชื่อมที่มีน้ำตาล" },
+      { "q": "ท็อปปิ้งเบลสมีใช้เจลาตินหรือไม่?", "a": "ไม่ใช้ ท็อปปิ้งทั้งห้ารายการเป็นวีแกนและไม่ใช้เจลาติน วีแกนไม่ได้หมายความว่าปลอดสารก่อภูมิแพ้ โปรดตรวจฉลากแต่ละสินค้า" },
+      { "q": "โมจิโยเกิร์ตทำจากแป้งโมจิหรือไม่?", "a": "ไม่ใช่ โมจิโยเกิร์ตเป็นชื่อสินค้าของมุกป๊อปที่มีของเหลวรสโยเกิร์ต ชื่อนี้ไม่ได้ระบุว่ามีแป้งโมจิเป็นส่วนผสม" }
+    ],
+    "date": "October 26, 2026",
+    "isoDate": "2026-10-26",
+    "dateTh": "26 ตุลาคม 2569",
+    "publishedDate": "2026-10-26",
+    "updatedDate": "2026-10-26",
+    "read": "6 min read",
+    "readTh": "6 นาที",
+    "cat": "Guide",
+    "catTh": "ความรู้",
+    "author": "BlessMe Team",
+    "authorRole": "BlessMe Team",
+    "authorRoleTh": "ทีมงาน BlessMe",
+    "authorBio": "BlessMe team sharing product information, serving ideas and wholesale ordering guidance.",
+    "cover": "linear-gradient(140deg,#c6a45a 0%,#8a6f2e 100%)",
+    "img": "/assets/products/barley.webp",
+    "imgAlt": "มุกป๊อปข้าวบาร์เลย์ BlessMe เม็ดท็อปปิ้งธัญพืช"
+  },
+  {
+    "id": "how-to-choose-muk-pop-wholesale",
+    "schemaType": "Article",
+    "title": "How to Choose Popping Boba Wholesale",
+    "titleTh": "มุกป๊อปขายส่งเลือกยังไง? วิธีเทียบก่อนสั่ง",
+    "seoTitleTh": "มุกป๊อป ขายส่ง เลือกยังไง ก่อนสั่งร้าน",
+    "excerpt": "Match the topping to the menu, then check gluten, pack price and drained weight. BlessMe lists barley, oat, red bean, Moji Yogurt and Osmanthus Konjac, with no minimum order.",
+    "excerptTh": "วิธีเลือกมุกป๊อปขายส่งจากสต็อกเบลสมี เทียบชนิดเม็ด กลูเตน ราคาแพ็ค และน้ำหนักเนื้อ แล้วสั่งทาง LINE หรือดูสินค้าที่ฮับมุกป๊อป",
+    "answer": "Choose wholesale popping boba by matching the topping to the menu, then checking gluten, pack price and drained weight. BlessMe stocks barley, oat and red bean pearls at 90 THB, Moji Yogurt at 120 THB, and Osmanthus Konjac, a konjac topping, at 90 THB. There is no minimum. Compare the hub or order on LINE.",
+    "answerTh": "เลือกมุกป๊อปขายส่งโดยจับคู่ชนิดท็อปปิ้งกับเมนู แล้วตรวจกลูเตน ราคาแพ็ค และน้ำหนักเนื้อ เบลสมีมีมุกป๊อปข้าวบาร์เลย์ ข้าวโอ๊ต และถั่วแดงที่ 90 บาท โมจิโยเกิร์ต 120 บาท และบุกหอมหมื่นลี้ซึ่งเป็นท็อปปิ้งบุกที่ 90 บาท ไม่มีขั้นต่ำ เทียบที่ฮับสินค้าหรือสั่งทาง LINE",
+    "faqs": [
+      { "q": "How do I choose popping boba wholesale?", "a": "Choose wholesale popping boba by matching the topping to the menu, then checking gluten, pack price and drained weight. BlessMe stocks barley, oat and red bean pearls at 90 THB, Moji Yogurt at 120 THB, and Osmanthus Konjac, a konjac topping, at 90 THB. There is no minimum. Compare the hub or order on LINE." },
+      { "q": "What should a café check before ordering popping boba?", "a": "Check whether the item is popping boba or a konjac topping, confirm that barley and oat contain gluten, and use the 500g pack with 300g drained weight. Read the unopened and opened storage rules, and request a free sample by email before adding it to the menu." },
+      { "q": "Where is the BlessMe topping list?", "a": "The popping boba hub lists every topping in stock, with pack size and wholesale price. Wholesale orders go through LINE @blessmethailand. Retail orders go through Shopee blessme_thailand." }
+    ],
+    "faqsTh": [
+      { "q": "มุกป๊อปขายส่งเลือกยังไง?", "a": "เลือกมุกป๊อปขายส่งโดยจับคู่ชนิดท็อปปิ้งกับเมนู แล้วตรวจกลูเตน ราคาแพ็ค และน้ำหนักเนื้อ เบลสมีมีมุกป๊อปข้าวบาร์เลย์ ข้าวโอ๊ต และถั่วแดงที่ 90 บาท โมจิโยเกิร์ต 120 บาท และบุกหอมหมื่นลี้ซึ่งเป็นท็อปปิ้งบุกที่ 90 บาท ไม่มีขั้นต่ำ เทียบที่ฮับสินค้าหรือสั่งทาง LINE" },
+      { "q": "ก่อนสั่งมุกป๊อปขายส่ง ร้านควรตรวจอะไร?", "a": "ตรวจว่าเป็นมุกป๊อปหรือท็อปปิ้งบุก ข้าวบาร์เลย์และข้าวโอ๊ตมีกลูเตน ขนาดแพ็ค 500g น้ำหนักเนื้อ 300g และวิธีเก็บก่อนเปิดกับหลังเปิด ขอตัวอย่างฟรีทางอีเมลก่อนใส่เมนู" },
+      { "q": "ดูรายการมุกป๊อปขายส่งของเบลสมีได้ที่ไหน?", "a": "ฮับมุกป๊อปแสดงท็อปปิ้งที่มีสต็อก พร้อมขนาดแพ็คและราคาส่ง สั่งขายส่งทาง LINE @blessmethailand สั่งปลีกทาง Shopee blessme_thailand" }
+    ],
+    "date": "October 26, 2026",
+    "isoDate": "2026-10-26",
+    "dateTh": "26 ตุลาคม 2569",
+    "publishedDate": "2026-10-26",
+    "updatedDate": "2026-10-26",
+    "read": "6 min read",
+    "readTh": "6 นาที",
+    "cat": "Sourcing",
+    "catTh": "การจัดหา",
+    "author": "BlessMe Team",
+    "authorRole": "BlessMe Team",
+    "authorRoleTh": "ทีมงาน BlessMe",
+    "authorBio": "BlessMe team sharing product information, serving ideas and wholesale ordering guidance.",
+    "cover": "linear-gradient(140deg,#5b8a72 0%,#3b6146 60%,#243b30 100%)",
+    "img": "/assets/products/redbean.webp",
+    "imgAlt": "มุกป๊อปถั่วแดง BlessMe สำหรับร้านที่เลือกท็อปปิ้งขายส่ง"
   }
 ];
 
@@ -378,7 +465,7 @@ export function getArticleMeta(article, lang, baseUrl) {
 export function getArticleSchema(article, lang, baseUrl = 'https://blessmethailand.com') {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
+    '@type': article.schemaType || 'BlogPosting',
     headline: lang === 'th' ? article.titleTh : article.title,
     description: lang === 'th' ? article.excerptTh : article.excerpt,
     inLanguage: lang === 'th' ? 'th' : 'en',

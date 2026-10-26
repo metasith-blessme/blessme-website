@@ -84,7 +84,7 @@ try {
         assert(html.includes(`og:image" content="https://blessmethailand.com${product.imgFallback}"`));
         if (productId === 'osmanthus') assert.doesNotMatch(schema.name, /Popping Boba|ป๊อปปิ้งโบบา/);
       }
-      if (schema['@type'] === 'BlogPosting') {
+      if (schema['@type'] === 'BlogPosting' || schema['@type'] === 'Article') {
         assert.equal(schema.url, url);
         assert.equal(schema.mainEntityOfPage, url);
         assert(html.includes(encodeURIComponent(url)), 'Article email share preserves locale');

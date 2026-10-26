@@ -47,6 +47,10 @@ function useArticleBody(articleId, lang, initialBlocks) {
           Array.isArray(block) && block.length === 2 && (
             (['p', 'h2', 'h3', 'quote'].includes(block[0]) && typeof block[1] === 'string') ||
             (block[0] === 'ul' && Array.isArray(block[1]) && block[1].every(item => typeof item === 'string')) ||
+            (block[0] === 'links' && Array.isArray(block[1]) && block[1].every(item =>
+              item && typeof item.href === 'string' && typeof item.text === 'string' &&
+              /^(?:\/|https:\/\/|mailto:|tel:)/.test(item.href)
+            )) ||
             (block[0] === 'image' && typeof block[1]?.src === 'string' && typeof block[1]?.alt === 'string' &&
               (!('caption' in block[1]) || typeof block[1].caption === 'string'))
           )
@@ -76,6 +80,21 @@ export function renderArticleBlock(block, index) {
       </ul>
     );
   }
+  if (tag === 'links') {
+    return (
+      <ul key={index} className="bm-article-list">
+        {content.map((item) => (
+          <li key={item.href}>
+            <a
+              className="bm-article-text-link"
+              href={item.href}
+              {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            >{item.text}</a>
+          </li>
+        ))}
+      </ul>
+    );
+  }
   if (tag === 'image') {
     return (
       <figure key={index} className="bm-article-figure">
@@ -98,6 +117,8 @@ export default function ArticlePage({ articleId, initialBlocks, onBack, onOpenAr
   const shareUrl = canonicalFor('Blog', null, article.id, lang);
   const title = lang === 'th' ? article.titleTh : article.title;
   const excerpt = lang === 'th' ? article.excerptTh : article.excerpt;
+  const answer = lang === 'th' ? article.answerTh : article.answer;
+  const faqs = (lang === 'th' ? article.faqsTh : article.faqs) || [];
   const category = lang === 'th' ? article.catTh || article.cat : article.cat;
   const authorRole = lang === 'th' ? article.authorRoleTh || article.authorRole : article.authorRole;
   
@@ -134,13 +155,7 @@ export default function ArticlePage({ articleId, initialBlocks, onBack, onOpenAr
         <header className="bm-article-head">
           <div className="bm-eyebrow">{category.toUpperCase()}</div>
           <h1 ref={titleRef} tabIndex={-1} className="bm-article-title">{title}</h1>
-          {article.id === 'what-is-popping-boba-khai-muk-pop' && (
-            <p className="bm-answer">
-              {lang === 'th'
-                ? 'มุกป๊อป (ไข่มุกป๊อป) คือเม็ดท็อปปิ้งที่มีของเหลวด้านใน เมื่อกัดเม็ดจะแตกและปล่อยรสชาติออกมา ต่างจากไข่มุกทาปิโอกาที่เคี้ยวหนึบ'
-                : 'Popping boba is a round topping with a liquid centre that bursts when bitten, unlike chewy tapioca pearls.'}
-            </p>
-          )}
+          {answer && <p className="bm-answer">{answer}</p>}
           <div className="bm-article-meta">
             <span>{lang === 'th' ? article.dateTh : article.date}</span>
             <span className="dot">·</span>
@@ -170,6 +185,18 @@ export default function ArticlePage({ articleId, initialBlocks, onBack, onOpenAr
             </div>
           ) : <p role="status">{lang === 'th' ? 'กำลังโหลดบทความ…' : 'Loading article…'}</p>}
         </div>
+
+        {faqs.length > 0 && (
+          <section className="bm-article-faq" aria-labelledby="article-faq-title">
+            <h2 id="article-faq-title" className="bm-article-h2">{lang === 'th' ? 'คำถามสั้น ๆ' : 'Short answers'}</h2>
+            {faqs.map((item) => (
+              <div key={item.q}>
+                <h3 className="bm-article-h3">{item.q}</h3>
+                <p className="bm-article-p">{item.a}</p>
+              </div>
+            ))}
+          </section>
+        )}
 
         <nav className="bm-article-panel" aria-label={lang === 'th' ? 'หน้าที่เกี่ยวข้อง' : 'Related pages'}>
           <a className="bm-inline-link" href={buildPath({ page: 'Catalogue', lang })}>{lang === 'th' ? 'มุกป๊อป ขายส่ง' : 'Popping boba wholesale'}</a>

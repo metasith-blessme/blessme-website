@@ -3,8 +3,8 @@ import { readFileSync, existsSync } from 'node:fs';
 import { ARTICLES, getArticleMeta } from '../src/content/blog.js';
 
 const bodies = JSON.parse(readFileSync(new URL('../src/content/blog-bodies.json', import.meta.url)));
-assert.equal(ARTICLES.length, 18);
-assert.equal(new Set(ARTICLES.map(a => a.id)).size, 18);
+assert.equal(ARTICLES.length, 17);
+assert.equal(new Set(ARTICLES.map(a => a.id)).size, 17);
 assert.deepEqual(Object.keys(bodies).sort(), ARTICLES.map(a => a.id).sort());
 const glutenGuide = ARTICLES.find(article => article.id === 'is-popping-boba-gluten-free');
 assert.match(glutenGuide.imgAlt, /มีกลูเตน/);
@@ -33,7 +33,10 @@ for (const article of ARTICLES) {
     const bodyHtml = html.match(/<div class="bm-article-body"[^>]*>([\s\S]*?)<\/div>/)?.[1];
     assert.ok(bodyHtml, `${label}: missing readable prerender body`);
     for (const [tag, content] of blocks) {
-      const texts = tag === 'ul' ? content : tag === 'image' ? [content.alt, content.caption].filter(Boolean) : [content];
+      const texts = tag === 'ul' ? content
+        : tag === 'links' ? content.map(item => item.text)
+        : tag === 'image' ? [content.alt, content.caption].filter(Boolean)
+        : [content];
       for (const text of texts) assert.ok(bodyHtml.includes(escapeHtml(text)), `${label}: missing rendered block: ${text}`);
     }
     const bodyScript = html.match(/<script type="application\/json" id="bm-article-body-data">([\s\S]*?)<\/script>/)?.[1];
@@ -45,7 +48,7 @@ for (const article of ARTICLES) {
     const title = lang === 'th' ? article.titleTh : article.title;
     assert.equal(html.match(/<h1\b[^>]*class="bm-article-title"[^>]*>([\s\S]*?)<\/h1>/)?.[1], escapeHtml(title), `${label}: localized title`);
     const schemas = JSON.parse(html.match(/<script type="application\/ld\+json" id="bm-schema">([\s\S]*?)<\/script>/)[1]);
-    const posting = (Array.isArray(schemas) ? schemas : [schemas]).find(s => s['@type'] === 'BlogPosting');
+    const posting = (Array.isArray(schemas) ? schemas : [schemas]).find(s => s['@type'] === 'BlogPosting' || s['@type'] === 'Article');
     assert.equal(posting.url, canonical, `${label}: schema URL`);
     assert.equal(posting.mainEntityOfPage, canonical, `${label}: schema canonical`);
     assert.equal(posting.headline, title, `${label}: schema title`);
@@ -53,8 +56,8 @@ for (const article of ARTICLES) {
     variants++;
   }
 }
-assert.equal(variants, 36);
+assert.equal(variants, 34);
 const portions = bodies['popping-boba-wholesale-profit-margins'];
 assert.match(JSON.stringify(portions.body), /25g drained gives 12 servings/);
 assert.match(JSON.stringify(portions.bodyTh), /25g จะได้ 12 เสิร์ฟ/);
-console.log('Blog facts: 18 unique articles × 2 languages; 36 actual prerenders, exact canonicals, schema, claims and portions passed.');
+console.log('Blog facts: 17 unique articles × 2 languages; 34 actual prerenders, exact canonicals, schema, claims and portions passed.');
