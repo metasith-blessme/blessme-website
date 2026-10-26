@@ -197,10 +197,14 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
             {t.heroTitle[2]}
           </h1>
 
+          {isTh && <p className="bm-hero-tagline">{t.heroSub}</p>}
+
           <p className="bm-answer mb-6">{t.poppingDefinition}</p>
-          <p className="text-lg md:text-xl text-[#5C5248] mb-10 font-normal leading-relaxed max-w-[680px]">
-            {t.heroSub}
-          </p>
+          {!isTh && (
+            <p className="text-lg md:text-xl text-[#5C5248] mb-10 font-normal leading-relaxed max-w-[680px]">
+              {t.heroSub}
+            </p>
+          )}
 
           {/* Unit Economics Highlight Pills */}
           <motion.div 

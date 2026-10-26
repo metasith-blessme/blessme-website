@@ -8,14 +8,14 @@ export const ARTICLES = [
     "excerpt": "มุกป๊อป (popping boba) is a liquid-filled pearl that bursts when bitten. BlessMe wholesales barley, oat and red bean, plus Moji Yogurt, from Bangkok stock.",
     "excerptTh": "มุกป๊อป (ไข่มุกป๊อป) คือเม็ดที่แตกตอนกัด เบลสมีขายส่งข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง และโมจิโยเกิร์ต ของอยู่กรุงเทพฯ",
     "answer": "มุกป๊อป (ไข่มุกป๊อป), also called เม็ดป๊อป, is a round topping with liquid inside. When bitten, the pearl bursts and releases flavour, unlike chewy tapioca pearls. Some people write the alternate spelling มุกป๊อบ. BlessMe wholesales grain popping boba in barley, oat and red bean, plus Moji Yogurt. Stock is held in Bangkok and ships across Thailand.",
-    "answerTh": "มุกป๊อป (ไข่มุกป๊อป) คือเม็ดท็อปปิ้งทรงกลมที่มีของเหลวด้านใน เมื่อกัดเม็ดจะแตกและปล่อยรสชาติ ต่างจากไข่มุกทาปิโอกาที่เคี้ยวหนึบ บางคนเรียกว่าเม็ดป๊อป และมีคำสะกดอีกแบบว่ามุกป๊อบ เบลสมีขายส่งมุกป๊อปธัญพืช ข้าวบาร์เลย์ ข้าวโอ๊ต และถั่วแดง พร้อมโมจิโยเกิร์ต จากสต็อกกรุงเทพฯ",
+    "answerTh": "ไข่มุกป๊อปไม่ใช่เม็ดไข่มุกทั่วไปที่เคี้ยวหนึบ แตกต่างกันตรงที่เม็ดมีเปลือกเจลบางห่อ และมีธัญพืชด้านใน",
     "faqs": [
       { "q": "What is มุกป๊อป?", "a": "มุกป๊อป (ไข่มุกป๊อป), also called เม็ดป๊อป, is a round topping with liquid inside. When bitten, the pearl bursts and releases flavour, unlike chewy tapioca pearls. BlessMe wholesales grain popping boba in barley, oat and red bean, plus Moji Yogurt. Stock is held in Bangkok and ships across Thailand." },
       { "q": "Which popping boba does BlessMe sell?", "a": "BlessMe sells barley, oat and red bean popping boba, plus Moji Yogurt. Osmanthus Konjac is stocked as a konjac topping, not popping boba." },
       { "q": "How can a shop order มุกป๊อป wholesale?", "a": "Open the popping boba product hub, message LINE @blessmethailand, call 082-896-5199, or email Blessme.team@gmail.com. Retail orders use the Shopee shop blessme_thailand. There is no minimum order." }
     ],
     "faqsTh": [
-      { "q": "มุกป๊อปคืออะไร?", "a": "มุกป๊อป (ไข่มุกป๊อป) คือเม็ดกลม มีของเหลวข้างใน กัดแล้วแตก รสออกมาตอนนั้น ต่างจากไข่มุกทาปิโอกาที่เคี้ยวหนึบ บางคนเรียกเม็ดป๊อป เบลสมีขายส่งมุกป๊อปธัญพืช คือข้าวบาร์เลย์ ข้าวโอ๊ต และถั่วแดง และมีโมจิโยเกิร์ต ของอยู่กรุงเทพฯ" },
+      { "q": "มุกป๊อปคืออะไร?", "a": "ไข่มุกป๊อปไม่ใช่เม็ดไข่มุกทั่วไปที่เคี้ยวหนึบ แตกต่างกันตรงที่เม็ดมีเปลือกเจลบางห่อ และมีธัญพืชด้านใน" },
       { "q": "เบลสมีขายมุกป๊อปรสอะไร?", "a": "มีมุกป๊อปข้าวบาร์เลย์ ข้าวโอ๊ต และถั่วแดง และมีโมจิโยเกิร์ต บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป" },
       { "q": "สั่งมุกป๊อปขายส่งได้อย่างไร?", "a": "เปิดหน้ารายการมุกป๊อป แล้วทัก LINE @blessmethailand โทร 082-896-5199 หรืออีเมล Blessme.team@gmail.com สั่งปลีกที่ร้าน Shopee blessme_thailand ไม่มีขั้นต่ำ" }
     ],
