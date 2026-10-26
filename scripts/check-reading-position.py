@@ -30,7 +30,7 @@ try:
                         time.sleep(0.8)
                         route.continue_()
                     page.route('**/blog-bodies/*.json', delayed)
-                    prefix = '/th' if lang == 'th' else ''
+                    prefix = '' if lang == 'th' else '/en'
                     field = 'bodyTh' if lang == 'th' else 'body'
                     page.goto(origin + prefix + '/blog/', wait_until='networkidle')
                     page.locator('.bm-feature-link').click()

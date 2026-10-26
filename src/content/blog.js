@@ -451,14 +451,14 @@ export function getArticleMeta(article, lang, baseUrl) {
     return {
       title: `${article.seoTitleTh || article.titleTh} | เบลสมี ไทยแลนด์`,
       description: article.excerptTh,
-      canonical: `${baseUrl}/th/blog/${article.id}/`,
+      canonical: `${baseUrl}/blog/${article.id}/`,
     };
   }
 
   return {
     title: `${article.title} | BlessMe Thailand`,
     description: article.excerpt,
-    canonical: `${baseUrl}/blog/${article.id}/`,
+    canonical: `${baseUrl}/en/blog/${article.id}/`,
   };
 }
 

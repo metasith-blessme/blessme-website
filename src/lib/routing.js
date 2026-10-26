@@ -2,8 +2,12 @@ import { PRODUCTS } from '../constants/products';
 import { getArticleById } from '../content/blog';
 
 /* ===== URL ROUTING MAPS =====
- * Language lives in the URL: EN at `/…`, Thai at `/th/…`. This gives each
- * language its own crawlable, indexable URL (required for Thai SEO/hreflang).
+ * Thai is the default language at `/…` (long-term Thai SEO). English lives at
+ * `/en/…`. Each language keeps its own crawlable URL for hreflang.
+ *
+ * Old `/th/…` URLs are 301'd at the edge (public/_redirects) onto these Thai
+ * paths. The former English root URLs are the same paths Thai now occupies, so
+ * they stay 200 and serve Thai; they are not redirected to `/en/…`.
  */
 export const PATH_TO_PAGE = {
   '/':           'Products',
@@ -25,7 +29,7 @@ export const PAGE_TO_PATH = {
   'FAQ':       '/faq',
 };
 
-// Resolve a language-neutral path (no /th prefix) into page/product/article.
+// Resolve a language-neutral path (no /en prefix) into page/product/article.
 function resolvePage(path) {
   if (path.startsWith('/blog/')) {
     const articleId = path.slice(6);
@@ -38,13 +42,19 @@ function resolvePage(path) {
   return { page: PATH_TO_PAGE[path] || 'NotFound', articleId: null, productId: null };
 }
 
-// Parse a full pathname (may include /th prefix) → { page, productId, articleId, lang }.
+function stripLangPrefix(path) {
+  if (path === '/en' || path.startsWith('/en/')) return path.slice(3) || '/';
+  if (path === '/th' || path.startsWith('/th/')) return path.slice(3) || '/';
+  return path;
+}
+
+// Parse a full pathname (may include /en prefix) → { page, productId, articleId, lang }.
 export function getInitialState(pathname) {
   // ponytail: accept an explicit path for SSR/prerender; fall back to window on the client
   let path = (pathname ?? (typeof window !== 'undefined' ? window.location.pathname : '/')).replace(/\/+$/, '') || '/';
-  let lang = 'en';
-  if (path === '/th' || path.startsWith('/th/')) {
-    lang = 'th';
+  let lang = 'th';
+  if (path === '/en' || path.startsWith('/en/')) {
+    lang = 'en';
     path = path.slice(3) || '/';
   }
   return { ...resolvePage(path), lang };
@@ -58,10 +68,17 @@ export function handleLinkClick(event, navigate) {
 }
 
 // Build a URL path for a target page/product/article in a given language.
-export function buildPath({ page, productId = null, articleId = null, lang = 'en' }) {
-  const prefix = lang === 'th' ? '/th' : '';
+export function buildPath({ page, productId = null, articleId = null, lang = 'th' }) {
+  const prefix = lang === 'en' ? '/en' : '';
   if (articleId) return `${prefix}/blog/${articleId}`;
   if (productId) return `${prefix}/products/${productId}`;
   const base = PAGE_TO_PATH[page] || '/';
   return base === '/' ? `${prefix}/` : `${prefix}${base}`;
+}
+
+// Re-home a pathname that is not in the route table (404s, legacy /th links).
+export function pathForLang(pathname, lang = 'th') {
+  const path = stripLangPrefix(String(pathname || '/').replace(/\/+$/, '') || '/');
+  if (lang === 'en') return path === '/' ? '/en/' : `/en${path}`;
+  return path === '/' ? '/' : path;
 }

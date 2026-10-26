@@ -5,7 +5,7 @@ check-image-budget.py
 Phase 2 acceptance gate for WEBSITE-PERFORMANCE-PLAN.md.
 
 Builds the site, serves it with `vite preview`, then opens /blog/ and
-/th/blog/ in headless Chrome with a cold cache. Asserts:
+/en/blog/ in headless Chrome with a cold cache. Asserts:
 
 - No request is made for any multi-megabyte original photograph (boba-drink,
   bangkok-market, cold-chain, barley grain). Each of those source files is
@@ -53,9 +53,9 @@ ROUTE_ARTICLES = {
 ROUTES = [
     "/",
     "/blog/",
-    "/th/blog/",
-    "/blog/" + ROUTE_ARTICLES["en"] + "/",
-    "/th/blog/" + ROUTE_ARTICLES["th"] + "/",
+    "/en/blog/",
+    "/blog/" + ROUTE_ARTICLES["th"] + "/",
+    "/en/blog/" + ROUTE_ARTICLES["en"] + "/",
 ]
 
 
@@ -143,7 +143,7 @@ def main():
                     broken = page.locator('img').evaluate_all('(images) => images.filter(i => !i.naturalWidth).map(i => i.currentSrc || i.src)')
                     if broken:
                         failures.append(f'{route}: broken images: {broken}')
-                    if route in ['/blog/', '/th/blog/']:
+                    if route in ['/blog/', '/en/blog/']:
                         page.locator('.bm-feature-link').click()
                         page.locator('.bm-article-body p').first.wait_for()
                         for image in page.locator('img').all():

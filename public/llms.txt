@@ -4,11 +4,11 @@
 
 ## Products
 
-- Barley popping boba / มุกป๊อปข้าวบาร์เลย์ — 90 THB/pack: https://blessmethailand.com/th/products/barley/
-- Oat popping boba / มุกป๊อปข้าวโอ๊ต — 90 THB/pack: https://blessmethailand.com/th/products/oat/
-- Red Bean popping boba / มุกป๊อปถั่วแดง — 90 THB/pack: https://blessmethailand.com/th/products/redbean/
-- Moji Yogurt / โมจิโยเกิร์ต — 120 THB/pack: https://blessmethailand.com/th/products/cheese/
-- Osmanthus Konjac / บุกหอมหมื่นลี้ — 90 THB/pack (konjac, not popping boba): https://blessmethailand.com/th/products/osmanthus/
+- Barley popping boba / มุกป๊อปข้าวบาร์เลย์ — 90 THB/pack: https://blessmethailand.com/products/barley/
+- Oat popping boba / มุกป๊อปข้าวโอ๊ต — 90 THB/pack: https://blessmethailand.com/products/oat/
+- Red Bean popping boba / มุกป๊อปถั่วแดง — 90 THB/pack: https://blessmethailand.com/products/redbean/
+- Moji Yogurt / โมจิโยเกิร์ต — 120 THB/pack: https://blessmethailand.com/products/cheese/
+- Osmanthus Konjac / บุกหอมหมื่นลี้ — 90 THB/pack (konjac, not popping boba): https://blessmethailand.com/products/osmanthus/
 
 ## Wholesale details
 
@@ -26,16 +26,16 @@
 
 ## Key pages
 
-- English home: https://blessmethailand.com/
-- Thai home: https://blessmethailand.com/th/
-- Popping boba hub: https://blessmethailand.com/th/products/
-- Wholesale: https://blessmethailand.com/th/wholesale/
-- FAQ: https://blessmethailand.com/th/faq/
-- Journal: https://blessmethailand.com/th/blog/
-- มุกป๊อปคืออะไร: https://blessmethailand.com/th/blog/what-is-popping-boba-khai-muk-pop/
-- มุกป๊อปทำจากอะไร: https://blessmethailand.com/th/blog/muk-pop-made-of/
-- มุกป๊อปขายส่งเลือกยังไง: https://blessmethailand.com/th/blog/how-to-choose-muk-pop-wholesale/
-- About and contact: https://blessmethailand.com/th/about/
+- Thai home (default): https://blessmethailand.com/
+- English home: https://blessmethailand.com/en/
+- Popping boba hub: https://blessmethailand.com/products/
+- Wholesale: https://blessmethailand.com/wholesale/
+- FAQ: https://blessmethailand.com/faq/
+- Journal: https://blessmethailand.com/blog/
+- มุกป๊อปคืออะไร: https://blessmethailand.com/blog/what-is-popping-boba-khai-muk-pop/
+- มุกป๊อปทำจากอะไร: https://blessmethailand.com/blog/muk-pop-made-of/
+- มุกป๊อปขายส่งเลือกยังไง: https://blessmethailand.com/blog/how-to-choose-muk-pop-wholesale/
+- About and contact: https://blessmethailand.com/about/
 
 ## Contact
 

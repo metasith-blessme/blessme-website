@@ -9,7 +9,7 @@ import { createServer } from 'vite';
 
 const root = path.resolve(import.meta.dirname, '..');
 const origin = process.argv[2] || 'http://127.0.0.1:8787';
-const missing = ['', '/th'].flatMap(prefix => [
+const missing = ['', '/en', '/th'].flatMap(prefix => [
   `${prefix}/not-a-real-page`, `${prefix}/products/not-a-real-product`,
   `${prefix}/blog/not-a-real-article`, `${prefix}/assets/not-a-real-file.js`,
   `${prefix}/not-a-real-page/`, `${prefix}/products/not-a-real-product/`,
@@ -21,7 +21,7 @@ try {
   const { default: App } = await vite.ssrLoadModule('/src/App.jsx');
   for (const url of missing) {
     assert.deepEqual(getInitialState(url), {
-      page: 'NotFound', productId: null, articleId: null, lang: url.startsWith('/th/') ? 'th' : 'en',
+      page: 'NotFound', productId: null, articleId: null, lang: url === '/en' || url.startsWith('/en/') ? 'en' : 'th',
     }, url);
     assert.match(renderToString(React.createElement(App, { ssrPath: url })), /<h1[^>]*>404/);
   }
@@ -30,7 +30,7 @@ try {
 }
 const sitemap = fs.readFileSync(path.join(root, 'dist/sitemap.xml'), 'utf8');
 const routes = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => new URL(m[1]).pathname);
-assert(routes.length > 0 && routes.some(p => p.startsWith('/th/')));
+assert(routes.length > 0 && routes.some(p => p.startsWith('/en/')) && !routes.some(p => p.startsWith('/th/')));
 for (const url of routes) {
   const response = await fetch(new URL(url, origin), { redirect: 'manual' });
   assert.equal(response.status, 200, url);
@@ -41,21 +41,18 @@ for (const url of routes) {
     assert.equal(new URL(redirect.headers.get('location'), origin).pathname, url);
   }
 }
-for (const [from, to] of [
-  ['/products/chestnut', '/products/'],
-  ['/products/chestnut/', '/products/'],
-  ['/th/products/chestnut', '/th/products/'],
-  ['/th/products/chestnut/', '/th/products/'],
-  ['/blog/popping-boba-wholesale-price-buy-bangkok/', '/blog/popping-boba-wholesale-price-thailand/'],
-  ['/th/blog/popping-boba-wholesale-price-buy-bangkok/', '/th/blog/popping-boba-wholesale-price-thailand/'],
-  ['/blog/popping-boba-supplier-bangkok/', '/blog/best-popping-boba-wholesale-supplier-bangkok/'],
-  ['/th/blog/popping-boba-supplier-bangkok/', '/th/blog/best-popping-boba-wholesale-supplier-bangkok/'],
-  ['/blog/greek-yogurt-cafe-premium-popping-boba-revenue/', '/blog/popping-boba-greek-yogurt-healthy-pairing/'],
-  ['/th/blog/greek-yogurt-cafe-premium-popping-boba-revenue/', '/th/blog/popping-boba-greek-yogurt-healthy-pairing/'],
-]) {
+const redirectFile = fs.readFileSync(path.join(root, 'dist/_redirects'), 'utf8');
+const redirectRules = [...redirectFile.matchAll(/^(\S+)\s+(\S+)\s+301\s*$/gm)];
+assert(redirectRules.length > 0, 'dist/_redirects has 301s');
+const redirectSources = new Set(redirectRules.map(([, from]) => from));
+for (const [, from, to] of redirectRules) {
+  assert(!redirectSources.has(to), `${from} chains through ${to}`);
   const redirect = await fetch(new URL(from, origin), { redirect: 'manual' });
   assert.equal(redirect.status, 301, from);
-  assert.equal(new URL(redirect.headers.get('location'), origin).pathname, to, from);
+  const location = new URL(redirect.headers.get('location'), origin);
+  assert.equal(location.pathname, to, from);
+  const finalResponse = await fetch(location, { redirect: 'manual' });
+  assert.equal(finalResponse.status, 200, `${from} → ${to}`);
 }
 for (const url of missing) {
   for (const method of ['GET', 'HEAD']) {
@@ -75,4 +72,4 @@ for (const url of missing) {
 const asset = fs.readdirSync(path.join(root, 'dist/assets')).find(name => name.endsWith('.js'));
 assert(asset, 'Built JavaScript asset exists');
 assert.equal((await fetch(new URL(`/assets/${asset}`, origin))).status, 200);
-console.log(`404 checks OK: ${routes.length} EN/TH routes return 200 (slash redirects checked); chestnut URLs 301 to the products hub; merged blog URLs 301 to the kept posts; ${missing.length} missing paths return 404 for GET + HEAD, with/without navigation headers; existing JS returns 200; routing and SSR show NotFound.`);
+console.log(`404 checks OK: ${routes.length} TH/EN routes return 200 (slash redirects checked); ${redirectRules.length} permanent redirects land on 200 with no chain; ${missing.length} missing paths return 404 for GET + HEAD, with/without navigation headers; existing JS returns 200; routing and SSR show NotFound.`);

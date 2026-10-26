@@ -38,7 +38,7 @@ const comparisonErrors = [];
 const sitemap = fs.readFileSync(path.join(root, 'dist/sitemap.xml'), 'utf8');
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
 assert.equal(urls.length, new Set(urls).size, 'Sitemap URLs must be unique');
-for (const prefix of ['', '/th']) {
+for (const { prefix, thai } of [{ prefix: '', thai: true }, { prefix: '/en', thai: false }]) {
   const home = hrefs(html(`${prefix}/`));
   const wholesale = hrefs(html(`${prefix}/wholesale`));
   const blog = hrefs(html(`${prefix}/blog`));
@@ -48,19 +48,19 @@ for (const prefix of ['', '/th']) {
     assert(home.includes(url), `Home missing product link: ${url}`);
     assert(wholesale.includes(url), `Wholesale missing product link: ${url}`);
     const card = anchors(main(html(`${prefix}/wholesale`))).find(a => a.href === url);
-    const name = names[p.id][prefix ? 1 : 0];
+    const name = names[p.id][thai ? 1 : 0];
     const article = ARTICLES.find(a => a.id === productArticles[p.id]);
     assert.deepEqual(anchors(section(main(html(url)), 'related-articles')), [{
-      href: `${prefix}/blog/${article.id}`, text: prefix ? article.titleTh : article.title,
+      href: `${prefix}/blog/${article.id}`, text: thai ? article.titleTh : article.title,
     }], `${url}: localized curated article link`);
     const faq = section(main(html(url)), 'product-faq');
     if (p.id === 'osmanthus') {
-      assert(faq.includes(prefix ? 'บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป' : 'Osmanthus Konjac is a konjac topping, not popping boba.'), `${url}: category clarification`);
+      assert(faq.includes(thai ? 'บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป' : 'Osmanthus Konjac is a konjac topping, not popping boba.'), `${url}: category clarification`);
     } else assert.equal(faq, '', `${url}: no repetitive SKU FAQ`);
-    const price = `${p.price} ${prefix ? 'บาท / แพ็ค' : 'THB / pack'}`;
+    const price = `${p.price} ${thai ? 'บาท / แพ็ค' : 'THB / pack'}`;
     if (!card?.text.includes(name)) comparisonErrors.push(`Wholesale card missing ${name}: ${url}`);
     if (!card?.text.includes(price)) comparisonErrors.push(`Wholesale card missing ${price}: ${url}`);
-    const label = prefix ? 'เปรียบเทียบสินค้าและราคาขายส่ง' : 'Compare products & wholesale pricing';
+    const label = thai ? 'เปรียบเทียบสินค้าและราคาขายส่ง' : 'Compare products & wholesale pricing';
     if (!anchors(main(html(url))).some(a => a.href === `${prefix}/wholesale` && a.text === label)) {
       comparisonErrors.push(`Product main missing localized wholesale comparison link: ${url}`);
     }
@@ -70,7 +70,7 @@ for (const prefix of ['', '/th']) {
     assert(blog.includes(url), `Blog missing article link: ${url}`);
     assert(hrefs(html(url)).includes(`${prefix}/blog`), `Missing back link: ${url}`);
     const expected = PRODUCTS.filter(p => productArticles[p.id] === a.id).map(p => ({
-      href: `${prefix}/products/${p.id}`, text: names[p.id][prefix ? 1 : 0],
+      href: `${prefix}/products/${p.id}`, text: names[p.id][thai ? 1 : 0],
     }));
     const related = section(main(html(url)), 'related-products');
     assert.deepEqual(anchors(related), expected, `${url}: exact reciprocal SKU links`);

@@ -23,11 +23,11 @@ for (const article of ARTICLES) {
     const label = `${article.id}/${lang}`;
     const blocks = bodies[article.id][lang === 'th' ? 'bodyTh' : 'body'];
     assert.ok(blocks?.length > 0, `${label}: empty body`);
-    const canonical = `https://blessmethailand.com/${lang === 'th' ? 'th/' : ''}blog/${article.id}/`;
+    const canonical = `https://blessmethailand.com${lang === 'en' ? '/en' : ''}/blog/${article.id}/`;
     assert.equal(getArticleMeta(article, lang, 'https://blessmethailand.com').canonical, canonical);
     assert.doesNotMatch(JSON.stringify(blocks), unsupported, `${label}: unsupported claim`);
     // JSON alone is not readable article markup: assert both SSR and hydration data.
-    const html = readFileSync(new URL(`../dist/${lang === 'th' ? 'th/' : ''}blog/${article.id}/index.html`, import.meta.url), 'utf8');
+    const html = readFileSync(new URL(`../dist${lang === 'en' ? '/en' : ''}/blog/${article.id}/index.html`, import.meta.url), 'utf8');
     assert.equal(html.match(/<link rel="canonical" href="([^"]+)"/)?.[1], canonical, `${label}: prerender canonical`);
     assert.ok(html.includes(`<html lang="${lang}">`), `${label}: document language`);
     const bodyHtml = html.match(/<div class="bm-article-body"[^>]*>([\s\S]*?)<\/div>/)?.[1];
@@ -38,6 +38,14 @@ for (const article of ARTICLES) {
         : tag === 'image' ? [content.alt, content.caption].filter(Boolean)
         : [content];
       for (const text of texts) assert.ok(bodyHtml.includes(escapeHtml(text)), `${label}: missing rendered block: ${text}`);
+      if (tag === 'links') {
+        for (const item of content) {
+          if (!item.href.startsWith('/')) continue;
+          assert.equal(item.href.startsWith('/en/'), lang === 'en', `${label}: ${item.href}`);
+          assert.doesNotMatch(item.href, /^\/th(\/|$)/, `${label}: legacy Thai href`);
+          assert(bodyHtml.includes(`href="${item.href}"`), `${label}: missing href ${item.href}`);
+        }
+      }
     }
     const bodyScript = html.match(/<script type="application\/json" id="bm-article-body-data">([\s\S]*?)<\/script>/)?.[1];
     assert.ok(bodyScript, `${label}: missing article body script tag`);

@@ -8,7 +8,7 @@ import { initContactTracking } from './lib/analytics';
 import { PRODUCTS } from './constants/products';
 
 // Libs / Utilities
-import { getInitialState, buildPath } from './lib/routing';
+import { getInitialState, buildPath, pathForLang } from './lib/routing';
 import { updateMeta, updateSchema } from './lib/seo';
 
 // Components
@@ -33,7 +33,7 @@ function App({ ssrPath, articleBody }) {
   const [articleId, setArticleId] = useState(initial.articleId);
   const [blogCategory, setBlogCategory] = useState('all');
   const [blogQuery, setBlogQuery] = useState('');
-  // Language is derived from the URL (EN at /…, Thai at /th/…). Server and client both
+  // Language is derived from the URL (Thai at /…, English at /en/…). Server and client both
   // read the same URL, so first-render markup matches — no hydration mismatch.
   const [lang, setLang] = useState(initial.lang);
 
@@ -102,7 +102,7 @@ function App({ ssrPath, articleBody }) {
     if (newLang === lang) return;
     const productId = detail ? detail.id : null;
     const nextPath = page === 'NotFound'
-      ? `${newLang === 'th' ? '/th' : ''}${window.location.pathname.replace(/^\/th(?=\/|$)/, '')}`
+      ? pathForLang(window.location.pathname, newLang)
       : buildPath({ page, productId, articleId, lang: newLang });
     window.history.pushState({}, '', nextPath);
     setLang(newLang);

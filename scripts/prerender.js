@@ -3,8 +3,8 @@
  * answer engines (ChatGPT, Perplexity, Gemini, Google AI) see full content and
  * per-route meta/OG/schema without executing JavaScript.
  *
- * Bilingual: each route is emitted in English (/…) and Thai (/th/…) with
- * hreflang alternates and language-correct canonicals. The client hydrates on top.
+ * Bilingual: each route is emitted in Thai (/…) and English (/en/…) with
+ * hreflang alternates (x-default = Thai) and language-correct canonicals. The client hydrates on top.
  *
  * Runs after `vite build`. Uses Vite's SSR module loader so the exact same React
  * app (and pure seo.js builders) produce the markup.
@@ -93,7 +93,7 @@ try {
     const thUrl = canonicalFor(page, productId, articleId, 'th');
 
     let out = html;
-    out = out.replace('<html lang="en">', `<html lang="${lang}">`);
+    out = out.replace(/<html lang="[a-zA-Z-]*">/, `<html lang="${lang}">`);
     out = out.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(m.title)}</title>`);
     out = upsert(out, /<meta name="description"[^>]*>/, `<meta name="description" content="${esc(m.description)}" />`);
     out = upsert(out, /<link rel="canonical"[^>]*>/, `<link rel="canonical" href="${esc(canonical)}" />`);
@@ -101,7 +101,7 @@ try {
     const hreflang = [
       `<link rel="alternate" hreflang="en" href="${esc(enUrl)}" />`,
       `<link rel="alternate" hreflang="th" href="${esc(thUrl)}" />`,
-      `<link rel="alternate" hreflang="x-default" href="${esc(enUrl)}" />`,
+      `<link rel="alternate" hreflang="x-default" href="${esc(thUrl)}" />`,
     ].join('\n');
     out = out.replace('</head>', `${hreflang}\n</head>`);
     out = upsert(out, /<meta property="og:type"[^>]*>/, `<meta property="og:type" content="${ogType}" />`);

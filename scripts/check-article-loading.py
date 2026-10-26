@@ -21,7 +21,7 @@ def check(origin, development=False):
         browser = p.chromium.launch(channel='chrome', headless=True)
         try:
             for mobile, lang in [(mobile, lang) for mobile in [False, True] for lang in ['en', 'th']]:
-                prefix = '/th' if lang == 'th' else ''
+                prefix = '' if lang == 'th' else '/en'
                 field = 'bodyTh' if lang == 'th' else 'body'
                 route = f'{prefix}/blog/{FIRST}/'
                 if not development:

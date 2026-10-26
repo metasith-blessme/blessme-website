@@ -9,7 +9,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 origin, output = sys.argv[1:]
-routes = ['/', '/blog/', '/th/blog/', '/blog/what-is-popping-boba-khai-muk-pop/', '/th/blog/what-is-popping-boba-khai-muk-pop/']
+routes = ['/', '/blog/', '/en/blog/', '/blog/what-is-popping-boba-khai-muk-pop/', '/en/blog/what-is-popping-boba-khai-muk-pop/']
 rows = []
 with sync_playwright() as p:
     browser = p.chromium.launch(channel='chrome', headless=True)
