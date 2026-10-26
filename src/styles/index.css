@@ -398,6 +398,7 @@ html[lang="th"] p.bm-hero-tagline{
 .bm-article-meta{display:flex;gap:10px;align-items:center;font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#A79A8C;padding-top:0;border-top:0;}
 .bm-article-meta .dot{color:rgba(43,36,30,0.3);}
 .bm-article-cover,.bm-article-hero-img,.bm-article-inline-img{width:100%;display:block;border-radius:8px;}
+.bm-article-inline-img{height:auto;}
 .bm-article-cover,.bm-article-hero-img{height:auto;min-height:0;box-shadow:none;aspect-ratio:16/10;object-fit:cover;}
 .bm-article-figure{margin:0 0 48px;}
 .bm-article-figure--hero{margin:0 0 56px;}

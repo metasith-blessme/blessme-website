@@ -52,6 +52,8 @@ function useArticleBody(articleId, lang, initialBlocks) {
               /^(?:\/|https:\/\/|mailto:|tel:)/.test(item.href)
             )) ||
             (block[0] === 'image' && typeof block[1]?.src === 'string' && typeof block[1]?.alt === 'string' &&
+              Number.isInteger(block[1].width) && block[1].width > 0 &&
+              Number.isInteger(block[1].height) && block[1].height > 0 &&
               (!('caption' in block[1]) || typeof block[1].caption === 'string'))
           )
           )) throw new Error('Invalid article');
@@ -98,7 +100,7 @@ export function renderArticleBlock(block, index) {
   if (tag === 'image') {
     return (
       <figure key={index} className="bm-article-figure">
-        <img src={content.src} alt={content.alt} className="bm-article-inline-img" loading="lazy" />
+        <img src={content.src} alt={content.alt} className="bm-article-inline-img" loading="lazy" width={content.width} height={content.height} />
         {content.caption && <figcaption className="bm-article-caption">{content.caption}</figcaption>}
       </figure>
     );
@@ -126,6 +128,7 @@ export default function ArticlePage({ articleId, initialBlocks, onBack, onOpenAr
   const heroCaption = lang === 'th'
     ? article.imgCaptionTh || article.imgAlt
     : article.imgCaption || article.imgAlt;
+  const heroAlt = lang === 'th' ? article.imgAlt : (article.imgAltEn || article.imgAlt);
   const [copied, setCopied] = useState(false);
   const copyLinkLabel = copied
     ? (lang === 'th' ? 'คัดลอกแล้ว' : 'Copied')
@@ -169,7 +172,7 @@ export default function ArticlePage({ articleId, initialBlocks, onBack, onOpenAr
             <picture>
               {article.imgSmall && <source media="(max-width: 640px)" srcSet={article.imgSmall} type="image/webp" />}
               {article.img.endsWith('.jpg') && <source srcSet={article.img.replace(/\.jpg$/, '.webp')} type="image/webp" />}
-              <img src={article.img} alt={article.imgAlt} className="bm-article-hero-img" width="1080" height="608" fetchpriority="high" />
+              <img src={article.img} alt={heroAlt} className="bm-article-hero-img" width={article.imgWidth || 1080} height={article.imgHeight || 608} fetchpriority="high" />
             </picture>
             {heroCaption && <figcaption className="bm-article-caption">{heroCaption}</figcaption>}
           </figure>
