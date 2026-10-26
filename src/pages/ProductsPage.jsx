@@ -5,6 +5,7 @@ import { PRODUCTS } from '../constants/products';
 import { SHOPEE_URL } from '../lib/analytics';
 import { buildPath } from '../lib/routing';
 import ProductCard from '../components/ProductCard';
+import HeroShowroom from '../components/HeroShowroom';
 import TrustBar from '../components/TrustBar';
 
 export default function ProductsPage({ onOpen, setPage, lang }) {
@@ -199,7 +200,7 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
 
           {isTh && <p className="bm-hero-tagline">{t.heroSub}</p>}
 
-          <p className="bm-answer mb-6">{t.poppingDefinition}</p>
+          <HeroShowroom lang={lang} onOpen={onOpen} />
           {!isTh && (
             <p className="text-lg md:text-xl text-[#5C5248] mb-10 font-normal leading-relaxed max-w-[680px]">
               {t.heroSub}
