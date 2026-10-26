@@ -28,7 +28,7 @@ export default function AboutPage({ lang }) {
           </div>
           <div className="bg-white border border-[#2B241E]/8 p-7 rounded-[24px] shadow-sm flex flex-col justify-between h-[160px]">
             <div className="font-['Fraunces'] text-4xl font-bold text-[#3B6146]">5</div>
-            <div className="text-xs font-semibold tracking-wider uppercase text-[#7A6E63]">{lang==='th'?'รสชาติคัดสรร':'Signature Flavors'}</div>
+            <div className="text-xs font-semibold tracking-wider uppercase text-[#7A6E63]">{lang==='th'?'รายการสินค้า':'Signature Flavors'}</div>
           </div>
           <div className="bg-white border border-[#2B241E]/8 p-7 rounded-[24px] shadow-sm flex flex-col justify-between h-[160px]">
             <div className="font-['Fraunces'] text-4xl font-bold text-[#3B6146]">100%</div>
@@ -36,7 +36,7 @@ export default function AboutPage({ lang }) {
           </div>
           <div className="bg-[#F8F4EA] border border-[#C5A869]/30 p-7 rounded-[24px] shadow-sm flex flex-col justify-between h-[160px]">
             <div className="font-['Fraunces'] text-4xl font-bold text-[#8C6A2E]">B2B</div>
-            <div className="text-xs font-semibold tracking-wider uppercase text-[#8C6A2E]">{lang==='th'?'ค้าส่งคาเฟ่ & ขนมหวาน':'Wholesale Specialist'}</div>
+            <div className="text-xs font-semibold tracking-wider uppercase text-[#8C6A2E]">{lang==='th'?'ขายส่งให้ร้าน':'Wholesale Specialist'}</div>
           </div>
         </div>
       </div>

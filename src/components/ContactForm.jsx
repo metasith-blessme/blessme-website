@@ -102,7 +102,7 @@ export function ContactForm({ lang, t }) {
         </div>
         <div className="bm-field">
           <label htmlFor="f-qty">{t.formQty}</label>
-          <input id="f-qty" name="qty" type="text" placeholder={isTh ? 'เช่น 10 ห่อ/เดือน' : 'e.g. 10 packs/month'} />
+          <input id="f-qty" name="qty" type="text" placeholder={isTh ? 'เช่น 10 แพ็ค/เดือน' : 'e.g. 10 packs/month'} />
         </div>
       </div>
       <div className="bm-field">
@@ -127,12 +127,12 @@ export function ContactForm({ lang, t }) {
           <svg width="16" height="16" viewBox="0 0 24 24" fill="#06c755">
             <path d="M12 2C6.48 2 2 5.92 2 10.75c0 3.32 2.15 6.22 5.38 7.68-.24.88-.86 3.19-.99 3.69 0 0-.05.21.11.31.16.1.33.02.33.02.44-.06 5.1-3.34 5.86-3.88.44.06.87.09 1.31.09 5.52 0 10-3.92 10-8.75S17.52 2 12 2z"/>
           </svg>
-          <span>{lang === 'th' ? 'สอบถามผ่าน LINE ทันที' : 'Chat on LINE directly'}</span>
+          <span>{lang === 'th' ? 'ทัก LINE' : 'Chat on LINE directly'}</span>
         </a>
       </div>
       {status === 'error' && (
         <p role="alert" style={{ color: '#f2768a', fontSize: 14, marginTop: 12 }}>
-          {isTh ? 'เกิดข้อผิดพลาด กรุณาลองใหม่หรือส่ง LINE โดยตรง หรือเปิดอีเมลด้านล่างแล้วกดส่งด้วยตนเอง' : 'Something went wrong. Please try again or contact us on LINE, or open the email below and send it yourself.'}
+          {isTh ? 'ส่งไม่สำเร็จ ลองใหม่ หรือทัก LINE หรือเปิดอีเมลด้านล่างแล้วกดส่งเอง' : 'Something went wrong. Please try again or contact us on LINE, or open the email below and send it yourself.'}
           {' '}
           <a href={emailFallback || 'mailto:Blessme.team@gmail.com'} className="underline">
             {isTh ? 'เปิดอีเมลถึง Blessme.team@gmail.com' : 'Open email to Blessme.team@gmail.com'}

@@ -9,7 +9,7 @@ const ProductCard = React.memo(function ProductCard({ product, blessed, onClick,
   const displayName = lang === 'th' ? product.nameTh : product.name;
   const displayNote = lang === 'th' ? product.noteTh : product.note;
   const displayFlavor = lang === 'th' && product.flavorTh ? product.flavorTh : product.flavor;
-  const displayTag = lang === 'th' ? 'รสชาติซิกเนเจอร์' : product.tag;
+  const displayTag = lang === 'th' ? 'ขายส่ง' : product.tag;
 
   return (
     <motion.a

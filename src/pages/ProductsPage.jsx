@@ -23,10 +23,10 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
   const signatureRecipes = [
     {
       title: isTh ? 'กาแฟบาร์เลย์ ไอน์ชแปนเนอร์' : 'Roasted Barley Einspänner',
-      category: isTh ? '☕ ซิกเนเจอร์คอฟฟี่' : '☕ Signature Coffee',
+      category: isTh ? '☕ กาแฟ' : '☕ Signature Coffee',
       pairingFlavor: isTh ? 'บาร์เลย์ (Barley)' : 'Roasted Barley',
       desc: isTh 
-        ? 'ดับเบิ้ลเอสเพรสโซ่เข้มข้น ท็อปด้วยวิปครีมเกลือหิมาลายัน และมุกบาร์เลย์คั่วหอม แตกตัวเพิ่มมิติสัมผัส' 
+        ? 'เอสเปรสโซ 2 ช็อต วิปครีมเกลือ และมุกบาร์เลย์คั่ว เม็ดแตกตอนดื่ม' 
         : 'Double espresso over chilled oat milk, crowned with sea salt cream and bursting roasted barley pearls.',
       toppingCost: '~4.50฿',
       suggestedPrice: '145฿',
@@ -34,11 +34,11 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
       tagColor: '#8C6A2E'
     },
     {
-      title: isTh ? 'ชาหอมหมื่นลี้ สปาร์คกลิ้ง ยูซุ' : 'Osmanthus Blossom Yuzu Fizz',
-      category: isTh ? '🌸 รีเฟรชเชอร์สปาร์คกลิ้ง' : '🌸 Craft Tea & Soda',
+      title: isTh ? 'ชาหอมหมื่นลี้ โซดายูซุ' : 'Osmanthus Blossom Yuzu Fizz',
+      category: isTh ? '🌸 ชาโซดา' : '🌸 Craft Tea & Soda',
       pairingFlavor: isTh ? 'บุกหอมหมื่นลี้ (Osmanthus Konjac)' : 'Osmanthus Konjac',
       desc: isTh 
-        ? 'โคลด์บริวชามะลิผสมไซรัปยูซุแท้ ซ่าสดชื่นด้วยโซดา พร้อมกลิ่นหอมดอกไม้จากบุกหอมหมื่นลี้'
+        ? 'ชามะลิโคลด์บริว ไซรัปยูซุ โซดา และบุกหอมหมื่นลี้'
         : 'Cold brew jasmine green tea with artisan yuzu soda, crowned with fragrant osmanthus konjac.',
       toppingCost: '~4.50฿',
       suggestedPrice: '125฿',
@@ -47,10 +47,10 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
     },
     {
       title: isTh ? 'มัทฉะ สตรอว์เบอร์รี โมจิโยเกิร์ต' : 'Moji Yogurt Strawberry Matcha',
-      category: isTh ? '🍓 พรีเมียมเลเยอร์ลาเต้' : '🍓 Layered Latte & Dessert',
+      category: isTh ? '🍓 มัทฉะ' : '🍓 Layered Latte & Dessert',
       pairingFlavor: isTh ? 'โมจิโยเกิร์ต (Moji Yogurt)' : 'Moji Yogurt',
       desc: isTh 
-        ? 'ซอสสตรอว์เบอร์รีเคี่ยวสด เลเยอร์นมสดและมัทฉะอุจิแท้ ตัดรสชาติด้วยมุกโมจิโยเกิร์ตเปรี้ยวหวานเข้มข้น' 
+        ? 'ซอสสตรอว์เบอร์รี นม มัทฉะ และมุกโมจิโยเกิร์ตเปรี้ยวหวาน' 
         : 'Artisan strawberry compote layered with fresh milk, ceremonial matcha, and rich moji-yogurt pearls.',
       toppingCost: '~6.00฿',
       suggestedPrice: '165฿',
@@ -72,7 +72,7 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
             className="fixed top-24 left-1/2 -translate-x-1/2 z-50 px-5 py-2.5 rounded-full bg-[#243E2C] text-[#E5C378] text-sm font-semibold shadow-2xl border border-[#C5A869]/40 flex items-center gap-2 pointer-events-none"
           >
             <span className="w-2.5 h-2.5 rounded-full bg-[#C5A869] animate-ping" />
-            <span>✨ {isTh ? `สัมผัสรสชาติแตกกระจาย: ${burstFlavor}!` : `Sensory Burst: ${burstFlavor}!`}</span>
+            <span>✨ {isTh ? `แตกแล้ว: ${burstFlavor}` : `Sensory Burst: ${burstFlavor}!`}</span>
           </motion.div>
         )}
       </AnimatePresence>
@@ -182,7 +182,7 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
             className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#E9EFE4] border border-[#3B6146]/20 text-[#243E2C] text-xs md:text-sm font-semibold tracking-wider uppercase mb-8"
           >
             <span className="w-2 h-2 rounded-full bg-[#3B6146] animate-pulse"></span>
-            <span>{isTh ? 'วัตถุดิบเครื่องดื่ม & ขนมหวาน ค้าส่งระดับพรีเมียม' : 'Premium Beverage & Dessert Wholesale'}</span>
+            <span>{isTh ? 'ขายส่งท็อปปิ้งเครื่องดื่มและของหวาน' : 'Premium Beverage & Dessert Wholesale'}</span>
           </motion.div>
 
           {/* Headline is visible in the prerendered HTML. Do not start it at opacity 0. */}
@@ -315,15 +315,15 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
           <div>
             <div className="inline-flex items-center gap-2.5 text-xs font-bold tracking-[0.16em] uppercase text-[#8C6A2E] mb-3">
               <span className="w-5 h-px bg-[#8C6A2E]"></span>
-              <span>{isTh ? 'ไอเดียเมนูเครื่องดื่มซิกเนเจอร์' : 'SIGNATURE PAIRING CONCEPTS'}</span>
+              <span>{isTh ? 'ไอเดียใส่เมนู' : 'SIGNATURE PAIRING CONCEPTS'}</span>
             </div>
             <h2 className="font-['Fraunces'] text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-[#2B241E]">
-              {isTh ? 'สร้างสรรค์เมนูซิกเนเจอร์ที่ไม่มีใครเหมือน' : 'Inspire Your Baristas. Captivate Your Guests.'}
+              {isTh ? 'ตัวอย่างเมนูที่ใช้ท็อปปิ้งนี้' : 'Inspire Your Baristas. Captivate Your Guests.'}
             </h2>
           </div>
           <p className="text-sm sm:text-base text-[#5C5248] max-w-[400px] md:text-right leading-relaxed font-normal">
             {isTh 
-              ? 'พร้อมตักเสิร์ฟทันทีโดยไม่ต้องต้ม ช่วยยกระดับเมนูกาแฟ ชา และขนมหวานให้พรีเมียม เพิ่มราคาขายได้ 20–35 บาท' 
+              ? 'ไม่ต้องต้ม ตักใส่แก้วได้เลย ร้านบวกเพิ่มบนเมนูได้ 20–35 บาท' 
               : 'Zero kitchen prep required. Turn ordinary lattes, teas, and bingsu into high-ticket signature items.'}
           </p>
         </div>
