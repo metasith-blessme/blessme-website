@@ -77,6 +77,22 @@ export const WHOLESALE_FAQS_TH = [
   { q: 'มีรสชาติอะไรบ้าง?', a: `ท็อปปิ้งวีแกน 5 รายการ คือมุกป๊อปข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง โมจิโยเกิร์ต และบุกหอมหมื่นลี้ ${T.th.storageUnopened} ${T.th.storageOpened}` },
 ];
 
+export const HOME_FAQS_TH = [
+  { q: 'มุกป๊อปคืออะไร', a: 'มุกป๊อป (ไข่มุกป๊อป) คือเม็ดท็อปปิ้งที่มีของเหลวด้านใน กัดแล้วเม็ดแตก รสออกมาตอนนั้น ต่างจากไข่มุกทาปิโอกาที่เคี้ยวหนึบ' },
+  { q: 'มีรสอะไรบ้าง', a: 'มุกป๊อปของเบลสมีคือข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง และโมจิโยเกิร์ต บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป' },
+  { q: 'สั่งขายส่งอย่างไร', a: 'ทัก LINE @blessmethailand โทร 082-896-5199 หรืออีเมล Blessme.team@gmail.com ไม่มีขั้นต่ำ ส่งทั่วไทยจากกรุงเทพฯ' },
+  { q: 'ซื้อปลีกที่ Shopee ได้ไหม', a: 'ได้ สั่งปลีกที่ร้าน Shopee blessme_thailand https://shopee.co.th/blessme_thailand ส่วนการสั่งขายส่งให้ทัก LINE @blessmethailand' },
+  { q: 'แพ็คละเท่าไหร่', a: 'ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง และบุกหอมหมื่นลี้ แพ็คละ 90 บาท โมจิโยเกิร์ต 120 บาท ทุกแพ็ค 500g น้ำหนักเนื้อ 300g' },
+];
+
+export const HOME_FAQS_EN = [
+  { q: 'What is popping boba?', a: 'Popping boba is a round topping with a liquid centre. It bursts and releases flavour when bitten, unlike chewy tapioca pearls.' },
+  { q: 'Which flavours are in stock?', a: 'The popping boba range is Barley, Oat, Red Bean and Moji Yogurt. Osmanthus Konjac is a konjac topping, not popping boba.' },
+  { q: 'How do I order wholesale?', a: 'Message LINE @blessmethailand, call 082-896-5199, or email Blessme.team@gmail.com. There is no minimum order. BlessMe ships nationwide from Bangkok.' },
+  { q: 'Can I buy retail on Shopee?', a: 'Yes. Retail orders can be placed on the Shopee shop blessme_thailand at https://shopee.co.th/blessme_thailand. For wholesale, order on LINE @blessmethailand.' },
+  { q: 'How much is a pack?', a: 'Barley, Oat, Red Bean and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight.' },
+];
+
 export const HUB_FAQS_EN = [
   FAQS_EN.find(item => item.q === 'What is popping boba?'),
   FAQS_EN.find(item => item.q === 'How much does popping boba wholesale cost in Thailand?'),

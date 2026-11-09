@@ -1,5 +1,5 @@
 import { PRODUCTS, productSearchName, productHeading } from '../constants/products';
-import { FAQS_EN, FAQS_TH, WHOLESALE_FAQS_EN, WHOLESALE_FAQS_TH, HUB_FAQS_EN, HUB_FAQS_TH } from '../constants/faq';
+import { FAQS_EN, FAQS_TH, WHOLESALE_FAQS_EN, WHOLESALE_FAQS_TH, HUB_FAQS_EN, HUB_FAQS_TH, HOME_FAQS_EN, HOME_FAQS_TH } from '../constants/faq';
 import { getArticleById, getArticleMeta, getArticleSchema } from '../content/blog';
 import { buildPath } from './routing';
 
@@ -29,7 +29,7 @@ export const PAGE_META = {
 
 export const PAGE_META_TH = {
   Products: {
-    title: 'ไข่มุกป๊อป ขายส่ง กรุงเทพฯ ราคาส่ง 90 บาท | เบลสมี',
+    title: 'มุกป๊อป ขายส่ง กรุงเทพฯ ราคาส่ง 90 บาท | เบลสมี',
     description: 'ขายส่งไข่มุกป๊อป มุกป๊อปบาร์เลย์ โอ๊ต ถั่วแดง โมจิโยเกิร์ต บุกหอมหมื่นลี้ 90–120 บาท/แพ็ค ไม่มีขั้นต่ำ ส่งทั่วไทย สั่ง LINE หรือ Shopee',
     canonical: BASE_URL + '/'
   },
@@ -286,6 +286,9 @@ export function getSchemas(page, productId = null, articleId = null, lang = 'th'
     }
     if (page === 'Products' || page === 'Catalogue') {
       schemas.push({ '@context': 'https://schema.org', '@type': 'ItemList', name: lang === 'th' ? 'ท็อปปิ้งขายส่ง BlessMe' : 'BlessMe Wholesale Toppings', url: canonicalFor(page, null, null, lang), numberOfItems: PRODUCTS.length, itemListElement: PRODUCTS.map((p, idx) => ({ '@type': 'ListItem', position: idx + 1, url: canonicalFor('Products', p.id, null, lang), name: productSearchName(p, lang) })) });
+    }
+    if (page === 'Products') {
+      schemas.push(buildFAQSchema(lang === 'th' ? HOME_FAQS_TH : HOME_FAQS_EN));
     }
     if (page === 'FAQ') {
       schemas.push(buildFAQSchema(lang === 'th' ? FAQS_TH : FAQS_EN));
