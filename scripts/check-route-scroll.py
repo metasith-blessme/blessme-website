@@ -63,13 +63,16 @@ try:
                         expect(page.locator('input[type="search"]')).to_have_value('boba')
                         expect(page.locator('.bm-filter-pill.is-active')).to_have_text(category)
                         page.goto(origin + ('/en/' if lang == 'en' else '/'), wait_until='networkidle')
-                        behavior = page.evaluate('''()=>{
-                          let behavior; const original=Element.prototype.scrollIntoView;
-                          Element.prototype.scrollIntoView=function(options){behavior=options.behavior;original.call(this,options)};
-                          const button=[...document.querySelectorAll('button')].find(b=>b.querySelector('path[d="M5 12h14M12 5l7 7-7 7"]'));
-                          button.click();Element.prototype.scrollIntoView=original;return behavior;
+                        home_cta = page.evaluate('''()=>{
+                          let called=false; const original=Element.prototype.scrollIntoView;
+                          Element.prototype.scrollIntoView=function(options){called=true;original.call(this,options)};
+                          const link=document.querySelector('.bm-home-hero a.bm-home-btn--line');
+                          const href=link && link.getAttribute('href');
+                          Element.prototype.scrollIntoView=original;
+                          return {tag:link && link.tagName, href, called};
                         }''')
-                        assert behavior == ('instant' if motion == 'reduce' else 'smooth'), behavior
+                        assert home_cta['tag'] == 'A' and 'line.me' in (home_cta['href'] or ''), home_cta
+                        assert home_cta['called'] is False, home_cta
                         # Isolated CSS fixture for the decorative pearl hover rule.
                         page.evaluate('''()=>{const el=document.createElement('div');el.id='motion-probe';el.className='bm-boba-3d';el.style.cssText='position:fixed;top:110px;left:5px;width:30px;height:30px;z-index:9999';document.body.append(el)}''')
                         pearl = page.locator('#motion-probe')

@@ -119,7 +119,7 @@ try {
   const evaluated = await call('Runtime.evaluate', { expression: `document.body.innerHTML = '<div id="root"></div><pre id="result">PENDING</pre>';\n${bundle.outputFiles[0].text}\ndocument.getElementById('result').textContent`, returnByValue: true }, sessionId);
   assert.ok(!evaluated.exceptionDetails, JSON.stringify(evaluated.exceptionDetails));
   const result = evaluated.result.value;
-  assert.match(result || '', /^PASS 20 product contact clicks;/);
+  assert.match(result || '', /^PASS 24 product contact clicks;/);
   console.log(result);
 } finally {
   clearTimeout(deadline);

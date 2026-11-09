@@ -59,8 +59,8 @@ else {
 const sampleId = articleIds[0];
 for (const lang of ['en', 'th']) {
   const out = lang === 'en'
-    ? path.join(DIST, 'blog', sampleId, 'index.html')
-    : path.join(DIST, 'th', 'blog', sampleId, 'index.html');
+    ? path.join(DIST, 'en', 'blog', sampleId, 'index.html')
+    : path.join(DIST, 'blog', sampleId, 'index.html');
   if (!fs.existsSync(out)) { fail(`missing prerender ${out}`); continue; }
   const html = fs.readFileSync(out, 'utf8');
   const blocks = bodies[sampleId][lang === 'th' ? 'bodyTh' : 'body'];
