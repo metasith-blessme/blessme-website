@@ -2,9 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { PRODUCTS, productSearchName } from '../constants/products';
 import { buildPath, handleLinkClick } from '../lib/routing';
 
-// Popping boba with a product page and photo. Osmanthus Konjac stays on the catalogue grid.
-const SHOWROOM_IDS = ['barley', 'oat', 'redbean', 'chestnut'];
-
 const COPY = {
   en: {
     region: 'Popping boba',
@@ -20,9 +17,7 @@ const COPY = {
 
 export default function HeroShowroom({ lang, onOpen }) {
   const copy = COPY[lang] || COPY.en;
-  const products = SHOWROOM_IDS
-    .map((id) => PRODUCTS.find((product) => product.id === id))
-    .filter(Boolean);
+  const products = PRODUCTS;
   const trackRef = useRef(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(true);

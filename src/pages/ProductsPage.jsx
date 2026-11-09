@@ -173,7 +173,7 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
       </div>
 
       {/* Hero Section */}
-      <section className="relative z-10 max-w-[1360px] mx-auto px-6 pt-12 pb-20 md:pt-20 md:pb-28 lg:px-12">
+      <section className="relative z-10 max-w-[1360px] mx-auto px-6 pt-3 pb-16 md:pt-4 md:pb-20 lg:px-12">
         <div className="flex flex-col items-center text-center max-w-[960px] mx-auto">
           
           {/* Eyebrow Pill */}
@@ -181,7 +181,7 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#E9EFE4] border border-[#3B6146]/20 text-[#243E2C] text-xs md:text-sm font-semibold tracking-wider uppercase mb-8"
+            className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#E9EFE4] border border-[#3B6146]/20 text-[#243E2C] text-xs md:text-sm font-semibold tracking-wider uppercase mb-5"
           >
             <span className="w-2 h-2 rounded-full bg-[#3B6146] animate-pulse"></span>
             <span>{isTh ? 'ขายส่งท็อปปิ้งเครื่องดื่มและของหวาน' : 'Premium Beverage & Dessert Wholesale'}</span>
@@ -199,9 +199,13 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
             {t.heroTitle[2]}
           </h1>
 
+          {isTh && <p className="text-base text-[#5C5248] mb-3">{t.heroAlias}</p>}
           {isTh && <p className="bm-hero-tagline">{t.heroSub}</p>}
+        </div>
 
           <HeroShowroom lang={lang} onOpen={onOpen} />
+
+        <div className="flex flex-col items-center text-center max-w-[960px] mx-auto">
           {!isTh && (
             <p className="text-lg md:text-xl text-[#5C5248] mb-10 font-normal leading-relaxed max-w-[680px]">
               {t.heroSub}
