@@ -53,7 +53,7 @@ export const ORGANIZATION_SCHEMA = {
   '@id': ORG_ID,
   name: 'BlessMe Thailand',
   legalName: 'BlessMe (Thailand) Co., Ltd.',
-  url: 'https://blessmethailand.com',
+  url: `${BASE_URL}/`,
   logo: LOGO,
   image: LOGO,
   description: ORG_DESCRIPTION,
@@ -79,7 +79,7 @@ export const ORG_SCHEMA = {
   '@type': 'WholesaleStore',
   '@id': 'https://blessmethailand.com/#store',
   name: 'BlessMe (Thailand) Co., Ltd.',
-  url: 'https://blessmethailand.com',
+  url: `${BASE_URL}/`,
   logo: LOGO,
   image: LOGO,
   description: ORG_DESCRIPTION,
@@ -209,7 +209,7 @@ export function updateMeta(page, productId = null, articleId = null, lang = 'th'
 }
 
 export function buildWebPageSchema(page, canonical) {
-  return { "@context": "https://schema.org", "@type": "WebPage", "name": PAGE_NAMES[page] || PAGE_NAMES.Products, "url": canonical, "isPartOf": { "@id": "https://blessmethailand.com" } };
+  return { "@context": "https://schema.org", "@type": "WebPage", "name": PAGE_NAMES[page] || PAGE_NAMES.Products, "url": canonical, "isPartOf": { "@id": "https://blessmethailand.com/#store" } };
 }
 
 export function buildProductSchema(product, lang = 'en') {

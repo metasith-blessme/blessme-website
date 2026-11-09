@@ -7,3 +7,4 @@ GEMINI.md
 blessme-website/
 *.ttf
 .claude/
+.wrangler/
