@@ -161,7 +161,11 @@ try {
   const homeTh = pageHtml('/');
   const homeH1 = homeTh.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)[1].replace(/<[^>]+>/g, '');
   assert.match(homeH1, /^มุกป๊อป/);
-  assert.match(homeH1, /ไข่มุกป๊อป/);
+  assert.match(homeH1, /เบลสมี/);
+  assert.doesNotMatch(homeH1, /ไข่มุกป๊อป/);
+  const homeMain = homeTh.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] || '';
+  assert.match(homeMain, /ไข่มุกป๊อป/);
+  assert.match(homeTh, /<meta name="description" content="[^"]*ไข่มุกป๊อป/);
   assert(!urls.some(url => url.includes('/solutions')));
   assert(urls.includes('https://blessmethailand.com/customers/'));
   assert(urls.includes('https://blessmethailand.com/en/customers/'));
