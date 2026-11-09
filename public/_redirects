@@ -18,8 +18,8 @@
 /th/products/  /products/  301
 /th/wholesale  /wholesale/  301
 /th/wholesale/  /wholesale/  301
-/th/solutions  /solutions/  301
-/th/solutions/  /solutions/  301
+/th/customers  /customers/  301
+/th/customers/  /customers/  301
 /th/about  /about/  301
 /th/about/  /about/  301
 /th/blog  /blog/  301
@@ -74,3 +74,9 @@
 /th/blog/muk-pop-made-of/  /blog/muk-pop-made-of/  301
 /th/blog/how-to-choose-muk-pop-wholesale  /blog/how-to-choose-muk-pop-wholesale/  301
 /th/blog/how-to-choose-muk-pop-wholesale/  /blog/how-to-choose-muk-pop-wholesale/  301
+/solutions  /customers/  301
+/solutions/  /customers/  301
+/en/solutions  /en/customers/  301
+/en/solutions/  /en/customers/  301
+/th/solutions  /customers/  301
+/th/solutions/  /customers/  301

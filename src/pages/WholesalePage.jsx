@@ -6,6 +6,7 @@ import { WHOLESALE_FAQS_EN, WHOLESALE_FAQS_TH } from '../constants/faq';
 import { pageCrumbs } from '../lib/seo';
 import { SHOPEE_URL } from '../lib/analytics';
 import Breadcrumbs from '../components/Breadcrumbs';
+import RoiCalculator from '../components/RoiCalculator';
 
 const LINE_URL = 'https://line.me/R/ti/p/@blessmethailand';
 const EMAIL = 'Blessme.team@gmail.com';
@@ -116,6 +117,8 @@ export default function WholesalePage({ lang, setPage }) {
             </div>
           ))}
         </div>
+
+        <RoiCalculator lang={lang} />
 
         {/* Flavors */}
         <p className="mt-8"><a className="text-[#3B6146] underline" href={buildPath({ page: 'Catalogue', lang })}>{lang === 'th' ? 'มุกป๊อป ขายส่ง ทุกรส' : 'All popping boba in stock'}</a></p>

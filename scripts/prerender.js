@@ -60,7 +60,7 @@ try {
     { page: 'Products' },
     { page: 'Catalogue' },
     { page: 'Wholesale' },
-    { page: 'Solutions' },
+    { page: 'Customers' },
     { page: 'About us' },
     { page: 'Blog' },
     { page: 'FAQ' },
@@ -85,7 +85,7 @@ try {
     const { productId = null, articleId = null, page } = route;
     const m = getMeta(page, productId, articleId, lang);
     const schemas = getSchemas(page, productId, articleId, lang);
-    const schemaJson = schemas.length === 1 ? JSON.stringify(schemas[0]) : JSON.stringify(schemas);
+    const schemaJson = JSON.stringify(schemas);
     const ogImage = route.ogImage || DEFAULT_OG_IMAGE;
     const ogType = articleId ? 'article' : 'website';
     const canonical = m.canonical;

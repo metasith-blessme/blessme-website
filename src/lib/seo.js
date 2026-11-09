@@ -20,7 +20,7 @@ export const PAGE_META = {
     canonical: `${BASE_URL}/`
   },
   Wholesale: { title: 'Popping Boba Wholesale Bangkok — Prices & Order | BlessMe Thailand', description: 'Vegan toppings at 90 THB/pack; Moji Yogurt 120 THB. No minimum order. Order via LINE @blessmethailand; request free samples by email Blessme.team@gmail.com.', canonical: `${BASE_URL}/wholesale` },
-  Solutions: { title: 'How BlessMe Works — 6-Step Framework | BlessMe Thailand', description: 'Discover the six-step framework BlessMe uses to source, test, and supply specialty food products to wholesale partners across Thailand.', canonical: `${BASE_URL}/solutions` },
+  Customers: { title: 'Our customers | BlessMe Thailand', description: 'Cafés using BlessMe toppings can send a menu photo on LINE @blessmethailand. Shopee reviews are on the shop page.', canonical: `${BASE_URL}/customers` },
   'About us': { title: 'About BlessMe Thailand — Food Wholesaler Bangkok', description: 'BlessMe (Thailand) Co., Ltd. introduces specialty food categories to the Thai B2B market. Headquartered in Bangkok, serving cafés, restaurants, and dessert brands nationwide.', canonical: `${BASE_URL}/about` },
   Blog: { title: 'Journal — Specialty Food Insights | BlessMe Thailand', description: 'Notes from the BlessMe team on specialty food sourcing, cold-chain logistics, shelf life, and how to introduce new products to the Thai market.', canonical: `${BASE_URL}/blog` },
   FAQ: { title: 'Popping Boba Wholesale FAQ | BlessMe Thailand', description: 'Answers on what popping boba is, storage, shelf life, wholesale prices, minimum orders, LINE and Shopee ordering, and drink and dessert uses.', canonical: `${BASE_URL}/faq` },
@@ -34,7 +34,7 @@ export const PAGE_META_TH = {
     canonical: BASE_URL + '/'
   },
   Wholesale: { title: 'มุกป๊อป ขายส่ง ราคาส่ง ไม่มีขั้นต่ำ | เบลสมี ไทยแลนด์', description: 'ไข่มุกป๊อปขายส่ง 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท ไม่มีขั้นต่ำ ขอตัวอย่างฟรี สั่งทาง LINE @blessmethailand ส่งทั่วประเทศ', canonical: BASE_URL+'/wholesale' },
-  Solutions: { title: 'วิธีทำงานกับเบลสมี 6 ขั้นตอน | ขายส่งมุกป๊อป', description: 'กระบวนการจัดหาและทดสอบวัตถุดิบของเบลสมี สำหรับคาเฟ่ที่อยากเพิ่มมุกป๊อปและท็อปปิ้งขายส่งในเมนู', canonical: BASE_URL+'/solutions' },
+  Customers: { title: 'ร้านที่ใช้เรา | เบลสมี', description: 'ร้านที่ใส่ท็อปปิ้งเบลสมีในเมนู ส่งรูปเมนูมาที่ LINE @blessmethailand ดูรีวิวที่ Shopee', canonical: BASE_URL+'/customers' },
   'About us': { title: 'เกี่ยวกับ เบลสมี (ประเทศไทย) — ผู้นำเข้าไข่มุกป๊อปขายส่ง', description: 'เบลสมี (ประเทศไทย) จำกัด นำเข้าและสต็อกไข่มุกป๊อปและท็อปปิ้งขายส่งในกรุงเทพฯ สำหรับคาเฟ่ ร้านอาหาร และแบรนด์ขนมหวานทั่วไทย', canonical: BASE_URL+'/about' },
   Blog: { title: 'บทความมุกป๊อปและวัตถุดิบคาเฟ่ | เบลสมี ไทยแลนด์', description: 'อัปเดตเทรนด์วัตถุดิบคาเฟ่ เทคนิคการเลือกท็อปปิ้ง และเบื้องหลังการจัดหาอาหารพิเศษจากทีมงานเบลสมี', canonical: BASE_URL+'/blog' },
   FAQ: { title: 'คำถามที่พบบ่อย ไข่มุกป๊อป ขายส่ง | เบลสมี', description: 'มุกป๊อปคืออะไร เก็บอย่างไร อายุสินค้า ราคาส่ง 90–120 บาท ไม่มีขั้นต่ำ สั่ง LINE @blessmethailand หรือ Shopee ส่งทั่วไทย', canonical: BASE_URL+'/faq' },
@@ -91,11 +91,11 @@ export const ORG_SCHEMA = {
   priceRange: '฿฿',
 };
 
-export const PAGE_NAMES = { Products: 'BlessMe Thailand — Specialty Food Wholesale', Catalogue: 'Popping Boba Wholesale', Wholesale: 'Popping Boba Wholesale Bangkok', Solutions: 'How BlessMe Works', 'About us': 'About BlessMe Thailand', Blog: 'Journal — Specialty Food Insights', FAQ: 'FAQ — BlessMe Wholesale Thailand' };
+export const PAGE_NAMES = { Products: 'BlessMe Thailand — Specialty Food Wholesale', Catalogue: 'Popping Boba Wholesale', Wholesale: 'Popping Boba Wholesale Bangkok', Customers: 'Our customers', 'About us': 'About BlessMe Thailand', Blog: 'Journal — Specialty Food Insights', FAQ: 'FAQ — BlessMe Wholesale Thailand' };
 
 const CRUMB_NAMES = {
-  en: { Catalogue: 'Popping boba', Wholesale: 'Wholesale', Solutions: 'How BlessMe works', 'About us': 'About', Blog: 'Journal', FAQ: 'FAQ' },
-  th: { Catalogue: 'มุกป๊อปขายส่ง', Wholesale: 'ขายส่ง', Solutions: 'โซลูชัน', 'About us': 'เกี่ยวกับเรา', Blog: 'บทความ', FAQ: 'คำถามที่พบบ่อย' },
+  en: { Catalogue: 'Popping boba', Wholesale: 'Wholesale', Customers: 'Our customers', 'About us': 'About', Blog: 'Journal', FAQ: 'FAQ' },
+  th: { Catalogue: 'มุกป๊อปขายส่ง', Wholesale: 'ขายส่ง', Customers: 'ร้านที่ใช้เรา', 'About us': 'เกี่ยวกับเรา', Blog: 'บทความ', FAQ: 'คำถามที่พบบ่อย' },
 };
 
 export function pageCrumbs(page, lang = 'en') {
@@ -263,6 +263,7 @@ export function buildFAQSchema(faqs) {
 // Pure: assemble the JSON-LD schema array for a route. Reused by the prerenderer.
 export function getSchemas(page, productId = null, articleId = null, lang = 'th') {
   if (page === 'NotFound') return [];
+  if (page === 'Customers') return [ORGANIZATION_SCHEMA];
   const schemas = [ORGANIZATION_SCHEMA, ORG_SCHEMA];
   const home = { name: lang === 'th' ? 'หน้าหลัก' : 'Home', url: canonicalFor('Products', null, null, lang) };
   if (productId) {
@@ -308,5 +309,5 @@ export function updateSchema(page, productId = null, articleId = null, lang = 't
   const el = document.getElementById('bm-schema');
   if (!el) return;
   const schemas = getSchemas(page, productId, articleId, lang);
-  el.textContent = schemas.length === 1 ? JSON.stringify(schemas[0]) : JSON.stringify(schemas);
+  el.textContent = JSON.stringify(schemas);
 }

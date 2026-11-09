@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { PRODUCTS } from '../constants/products';
+import { buildPath } from '../lib/routing';
 
 export function calculateUplift(product, portionGrams, dailyCups, upcharge) {
   const drainedGrams = Number.parseFloat(product.drainedWeight);
@@ -177,7 +178,7 @@ export default function RoiCalculator({ lang }) {
             </a>
 
             <a 
-              href="#contact"
+              href={buildPath({ page: 'About us', lang })}
               className="w-full py-3 px-6 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium text-center text-xs sm:text-sm transition-colors"
             >
               {isTh ? 'หรือส่งแบบฟอร์ม' : 'Or send enquiry form'}
