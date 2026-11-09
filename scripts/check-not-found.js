@@ -36,11 +36,28 @@ for (const url of routes) {
   assert.equal(response.status, 200, url);
   assert.match(await response.text(), /<div id="root"><div/);
   if (url !== '/' && url.endsWith('/')) {
-    const redirect = await fetch(new URL(url.slice(0, -1), origin), { redirect: 'manual' });
-    assert.equal(redirect.status, 307, url);
-    assert.equal(new URL(redirect.headers.get('location'), origin).pathname, url);
+    const bare = url.slice(0, -1);
+    for (const alias of [bare, `${url}index.html`, `${url}index`, `${bare}.html`]) {
+      const redirect = await fetch(new URL(alias, origin), { redirect: 'manual' });
+      assert.equal(redirect.status, 301, alias);
+      const location = new URL(redirect.headers.get('location'), origin);
+      assert.equal(location.pathname, url, alias);
+      assert.equal(location.search, '', alias);
+    }
   }
 }
+for (const alias of ['/index.html', '/index']) {
+  const redirect = await fetch(new URL(alias, origin), { redirect: 'manual' });
+  assert.equal(redirect.status, 301, alias);
+  assert.equal(new URL(redirect.headers.get('location'), origin).pathname, '/');
+}
+const withQuery = await fetch(new URL('/products/oat?utm=x', origin), { redirect: 'manual' });
+assert.equal(withQuery.status, 301, '/products/oat?utm=x');
+const queryLocation = new URL(withQuery.headers.get('location'), origin);
+assert.equal(queryLocation.pathname, '/products/oat/');
+assert.equal(queryLocation.search, '?utm=x');
+const homeQuery = await fetch(new URL('/?utm=x', origin), { redirect: 'manual' });
+assert.equal(homeQuery.status, 200, '/?utm=x');
 const redirectFile = fs.readFileSync(path.join(root, 'dist/_redirects'), 'utf8');
 const redirectRules = [...redirectFile.matchAll(/^(\S+)\s+(\S+)\s+301\s*$/gm)];
 assert(redirectRules.length > 0, 'dist/_redirects has 301s');
@@ -72,4 +89,4 @@ for (const url of missing) {
 const asset = fs.readdirSync(path.join(root, 'dist/assets')).find(name => name.endsWith('.js'));
 assert(asset, 'Built JavaScript asset exists');
 assert.equal((await fetch(new URL(`/assets/${asset}`, origin))).status, 200);
-console.log(`404 checks OK: ${routes.length} TH/EN routes return 200 (slash redirects checked); ${redirectRules.length} permanent redirects land on 200 with no chain; ${missing.length} missing paths return 404 for GET + HEAD, with/without navigation headers; existing JS returns 200; routing and SSR show NotFound.`);
+console.log(`404 checks OK: ${routes.length} TH/EN routes return 200; slashless, index, and .html aliases 301 once to that URL and keep the query string; ${redirectRules.length} permanent redirects land on 200 with no chain; ${missing.length} missing paths return 404 for GET + HEAD, with/without navigation headers; existing JS returns 200; routing and SSR show NotFound.`);

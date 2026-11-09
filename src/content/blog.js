@@ -527,7 +527,7 @@ export function getArticleSchema(article, lang, baseUrl = 'https://blessmethaila
       '@type': 'Organization',
       '@id': 'https://blessmethailand.com/#org',
       name: 'BlessMe (Thailand) Co., Ltd.',
-      url: 'https://blessmethailand.com',
+      url: 'https://blessmethailand.com/',
       logo: {
         '@type': 'ImageObject',
         url: 'https://blessmethailand.com/assets/logo-full.png',

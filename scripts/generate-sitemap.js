@@ -81,7 +81,15 @@ function withSlash(p) {
 
 function generateRedirects() {
   const rules = [];
-  const add = (from, to) => rules.push({ from, to: withSlash(to) });
+  const add = (from, to) => {
+    const dest = withSlash(to);
+    const existing = rules.find((rule) => rule.from === from);
+    if (existing) {
+      if (existing.to !== dest) throw new Error(`Redirect conflict: ${from} → ${existing.to} vs ${dest}`);
+      return;
+    }
+    rules.push({ from, to: dest });
+  };
 
   for (const [fromId, toId] of MERGED_POSTS) {
     add(`/blog/${fromId}`, `/en/blog/${toId}/`);
@@ -108,11 +116,28 @@ function generateRedirects() {
   ];
   for (const [from, to] of retiredSolutions) add(from, to);
 
+  // html_handling answers these aliases with a 307. Search treats that as temporary.
+  const canonicalPaths = new Set(
+    routes.flatMap((route) => LANGS.map((lang) => urlFor(route, lang).slice(BASE_URL.length)))
+  );
+  for (const target of canonicalPaths) {
+    if (target === '/') {
+      // /index.html is the file `/` serves. A _redirects rule from that file back
+      // to `/` loops inside the asset server and the request never completes.
+      // html_handling already 307s /index.html to `/`, and the worker promotes it.
+      add('/index', '/');
+      continue;
+    }
+    const bare = target.replace(/\/$/, '');
+    add(bare, target);
+    add(`${target}index.html`, target);
+    add(`${target}index`, target);
+    add(`${bare}.html`, target);
+  }
+
   const sources = new Set(rules.map((rule) => rule.from));
   for (const rule of rules) {
-    if (sources.has(rule.to) || sources.has(rule.to.replace(/\/$/, '') || '/')) {
-      throw new Error(`Redirect chain: ${rule.from} → ${rule.to}`);
-    }
+    if (sources.has(rule.to)) throw new Error(`Redirect chain: ${rule.from} → ${rule.to}`);
     if (rule.from === rule.to) throw new Error(`Redirect loop: ${rule.from}`);
   }
   const unique = new Set(rules.map((rule) => rule.from));
