@@ -162,6 +162,23 @@ try {
   const homeH1 = homeTh.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)[1].replace(/<[^>]+>/g, '');
   assert.match(homeH1, /^มุกป๊อป/);
   assert.match(homeH1, /ไข่มุกป๊อป/);
+  assert(!urls.some(url => url.includes('/solutions')));
+  assert(urls.includes('https://blessmethailand.com/customers/'));
+  assert(urls.includes('https://blessmethailand.com/en/customers/'));
+  const customerSchema = JSON.parse(pageHtml('/customers/').match(/<script type="application\/ld\+json" id="bm-schema">([\s\S]*?)<\/script>/)[1]);
+  assert.deepEqual(customerSchema.map(schema => schema['@type']), ['Organization']);
+  assert.doesNotMatch(JSON.stringify(customerSchema), /"@type":"Review"|"@type":"AggregateRating"/);
+  const redirectText = fs.readFileSync(path.join(root, 'public/_redirects'), 'utf8');
+  for (const [from, to] of [
+    ['/solutions', '/customers/'],
+    ['/solutions/', '/customers/'],
+    ['/en/solutions', '/en/customers/'],
+    ['/en/solutions/', '/en/customers/'],
+    ['/th/solutions', '/customers/'],
+    ['/th/solutions/', '/customers/'],
+  ]) {
+    assert.match(redirectText, new RegExp(`^${from}\\s+${to}\\s+301$`, 'm'), `${from} → ${to}`);
+  }
   const homeFaq = JSON.parse(homeTh.match(/<script type="application\/ld\+json" id="bm-schema">([\s\S]*?)<\/script>/)[1]).find(schema => schema['@type'] === 'FAQPage');
   assert.equal(homeFaq.mainEntity.length, 5);
   assert.ok(JSON.parse(pageHtml('/en/').match(/<script type="application\/ld\+json" id="bm-schema">([\s\S]*?)<\/script>/)[1]).some(schema => schema['@type'] === 'FAQPage'));

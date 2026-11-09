@@ -5,6 +5,7 @@ export const HEADER_NAV = [
   { page: 'Catalogue', th: 'สินค้า', en: 'Products' },
   { page: 'Wholesale', th: 'ราคาส่ง & วิธีสั่ง', en: 'Wholesale & ordering' },
   { page: 'Blog', th: 'ไอเดียเมนู', en: 'Menu ideas' },
+  { page: 'Customers', th: 'ร้านที่ใช้เรา', en: 'Our customers' },
   { page: 'About us', th: 'เกี่ยวกับเรา', en: 'About' },
 ];
 
@@ -12,7 +13,7 @@ export const FOOTER_NAV = {
   catalogue: [
     { page: 'Catalogue', th: 'สินค้า', en: 'Products' },
     { page: 'Wholesale', th: 'ราคาส่ง & วิธีสั่ง', en: 'Wholesale & ordering' },
-    { page: 'Solutions', th: 'วิธีทำงานกับเรา', en: 'How we work' },
+    { page: 'Customers', th: 'ร้านที่ใช้เรา', en: 'Our customers' },
   ],
   company: [
     { page: 'About us', th: 'เกี่ยวกับเรา', en: 'About' },

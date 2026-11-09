@@ -22,7 +22,7 @@ import ProductDetail from './components/Modal';
 import ProductsPage from './pages/ProductsPage';
 import ProductHubPage from './pages/ProductHubPage';
 import WholesalePage from './pages/WholesalePage';
-import SolutionsPage from './pages/SolutionsPage';
+import CustomersPage from './pages/CustomersPage';
 import AboutPage from './pages/AboutPage';
 import BlogPage from './pages/BlogPage';
 import FAQPage from './pages/FAQPage';
@@ -135,7 +135,7 @@ function App({ ssrPath, articleBody }) {
             {page === 'Wholesale' && <WholesalePage setPage={goToPage} lang={lang} />}
             {page === 'About us'  && <AboutPage lang={lang} />}
             {page === 'Blog'      && <BlogPage onOpenArticle={openArticle} lang={lang} activeCategory={blogCategory} setActiveCategory={setBlogCategory} query={blogQuery} setQuery={setBlogQuery} />}
-            {page === 'Solutions' && <SolutionsPage setPage={goToPage} lang={lang} />}
+            {page === 'Customers' && <CustomersPage onOpen={openProduct} lang={lang} />}
             {page === 'FAQ'       && <FAQPage lang={lang} />}
           </>
         )}

@@ -8,7 +8,7 @@ import { ARTICLES } from '../src/content/blog.js';
 // Mirror of routing.buildPath without the trailing slash. urlFor adds the slash for
 // canonicals. Redirect sources below must stay unsashed so both forms 301 once.
 // Thai is the default at `/…`. English lives at `/en/…`.
-const PAGE_TO_PATH = { 'Products': '/', 'Catalogue': '/products', 'Wholesale': '/wholesale', 'Solutions': '/solutions', 'About us': '/about', 'Blog': '/blog', 'FAQ': '/faq' };
+const PAGE_TO_PATH = { 'Products': '/', 'Catalogue': '/products', 'Wholesale': '/wholesale', 'Customers': '/customers', 'About us': '/about', 'Blog': '/blog', 'FAQ': '/faq' };
 function buildPath({ page, productId = null, articleId = null, lang = 'th' }) {
   const prefix = lang === 'en' ? '/en' : '';
   if (articleId) return `${prefix}/blog/${articleId}`;
@@ -30,7 +30,7 @@ const routes = [
   { page: 'Products', priority: '1.0', changefreq: 'weekly' },
   { page: 'Catalogue', priority: '0.9', changefreq: 'weekly' },
   { page: 'Wholesale', priority: '0.9', changefreq: 'weekly' },
-  { page: 'Solutions', priority: '0.8', changefreq: 'weekly' },
+  { page: 'Customers', priority: '0.8', changefreq: 'weekly' },
   { page: 'About us', priority: '0.8', changefreq: 'weekly' },
   { page: 'Blog', priority: '0.8', changefreq: 'weekly' },
   { page: 'FAQ', priority: '0.8', changefreq: 'weekly' },
@@ -96,6 +96,17 @@ function generateRedirects() {
     add(legacy, thai);
     if (!legacy.endsWith('/')) add(`${legacy}/`, thai);
   }
+
+  // Retired solutions page. Each source lands on /customers/ in one hop.
+  const retiredSolutions = [
+    ['/solutions', '/customers/'],
+    ['/solutions/', '/customers/'],
+    ['/en/solutions', '/en/customers/'],
+    ['/en/solutions/', '/en/customers/'],
+    ['/th/solutions', '/customers/'],
+    ['/th/solutions/', '/customers/'],
+  ];
+  for (const [from, to] of retiredSolutions) add(from, to);
 
   const sources = new Set(rules.map((rule) => rule.from));
   for (const rule of rules) {
