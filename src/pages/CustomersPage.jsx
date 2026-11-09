@@ -11,7 +11,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 const COPY = {
   th: {
     eyebrow: 'ร้านค้า',
-    h1: 'ร้านที่ใช้เรา',
+    h1: 'ลูกค้าของเรา',
     lead: 'ร้านที่ใส่ท็อปปิ้งในเมนู ส่งรูปเมนูมาที่ LINE @blessmethailand ได้ เราลงรูปเมื่อร้านอนุญาต',
     shopee: 'ดูรีวิวที่ Shopee',
     line: 'ส่งรูปเมนูทาง LINE',

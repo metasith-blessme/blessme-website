@@ -34,7 +34,7 @@ export const PAGE_META_TH = {
     canonical: BASE_URL + '/'
   },
   Wholesale: { title: 'มุกป๊อป ขายส่ง ราคาส่ง ไม่มีขั้นต่ำ | เบลสมี ไทยแลนด์', description: 'ไข่มุกป๊อปขายส่ง 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท ไม่มีขั้นต่ำ ขอตัวอย่างฟรี สั่งทาง LINE @blessmethailand ส่งทั่วประเทศ', canonical: BASE_URL+'/wholesale' },
-  Customers: { title: 'ร้านที่ใช้เรา | เบลสมี', description: 'ร้านที่ใส่ท็อปปิ้งเบลสมีในเมนู ส่งรูปเมนูมาที่ LINE @blessmethailand ดูรีวิวที่ Shopee', canonical: BASE_URL+'/customers' },
+  Customers: { title: 'ลูกค้าของเรา | เบลสมี', description: 'ร้านที่ใส่ท็อปปิ้งเบลสมีในเมนู ส่งรูปเมนูมาที่ LINE @blessmethailand ดูรีวิวที่ Shopee', canonical: BASE_URL+'/customers' },
   'About us': { title: 'เกี่ยวกับ เบลสมี (ประเทศไทย) — ผู้นำเข้าไข่มุกป๊อปขายส่ง', description: 'เบลสมี (ประเทศไทย) จำกัด นำเข้าและสต็อกไข่มุกป๊อปและท็อปปิ้งขายส่งในกรุงเทพฯ สำหรับคาเฟ่ ร้านอาหาร และแบรนด์ขนมหวานทั่วไทย', canonical: BASE_URL+'/about' },
   Blog: { title: 'บทความมุกป๊อปและวัตถุดิบคาเฟ่ | เบลสมี ไทยแลนด์', description: 'อัปเดตเทรนด์วัตถุดิบคาเฟ่ เทคนิคการเลือกท็อปปิ้ง และเบื้องหลังการจัดหาอาหารพิเศษจากทีมงานเบลสมี', canonical: BASE_URL+'/blog' },
   FAQ: { title: 'คำถามที่พบบ่อย ไข่มุกป๊อป ขายส่ง | เบลสมี', description: 'มุกป๊อปคืออะไร เก็บอย่างไร อายุสินค้า ราคาส่ง 90–120 บาท ไม่มีขั้นต่ำ สั่ง LINE @blessmethailand หรือ Shopee ส่งทั่วไทย', canonical: BASE_URL+'/faq' },
@@ -95,7 +95,7 @@ export const PAGE_NAMES = { Products: 'BlessMe Thailand — Specialty Food Whole
 
 const CRUMB_NAMES = {
   en: { Catalogue: 'Popping boba', Wholesale: 'Wholesale', Customers: 'Our customers', 'About us': 'About', Blog: 'Journal', FAQ: 'FAQ' },
-  th: { Catalogue: 'มุกป๊อปขายส่ง', Wholesale: 'ขายส่ง', Customers: 'ร้านที่ใช้เรา', 'About us': 'เกี่ยวกับเรา', Blog: 'บทความ', FAQ: 'คำถามที่พบบ่อย' },
+  th: { Catalogue: 'มุกป๊อปขายส่ง', Wholesale: 'ขายส่ง', Customers: 'ลูกค้าของเรา', 'About us': 'เกี่ยวกับเรา', Blog: 'บทความ', FAQ: 'คำถามที่พบบ่อย' },
 };
 
 export function pageCrumbs(page, lang = 'en') {

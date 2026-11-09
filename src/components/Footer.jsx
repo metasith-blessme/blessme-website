@@ -2,7 +2,6 @@ import React from 'react';
 import { T } from '../constants/translations';
 import { buildPath } from '../lib/routing';
 import { SHOPEE_URL } from '../lib/analytics';
-import { FOOTER_NAV, LINE_URL, navLabel } from '../constants/nav';
 
 export default function Footer({ setPage, lang }) {
   const t = T[lang];
@@ -17,12 +16,12 @@ export default function Footer({ setPage, lang }) {
     <footer className="w-full bg-[#F3ECE1] border-t border-[#2B241E]/10 mt-28 pt-16 pb-12 px-6 lg:px-12">
       <div className="max-w-[1360px] mx-auto">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-12 border-b border-[#2B241E]/10 gap-8">
-          <a href={buildPath({ page: 'Products', lang })} onClick={(e) => navigate('Products', e)} className="flex items-center gap-3">
+          <div className="flex items-center gap-3">
             <picture>
               <source srcSet="/assets/logo-full.webp" type="image/webp" />
               <img src="/assets/logo-full.png" alt="BlessMe Thailand" className="h-16 w-auto object-contain" width="256" height="256" />
             </picture>
-          </a>
+          </div>
           <p className="font-['Fraunces'] text-xl sm:text-2xl text-[#3B6146] italic md:text-right leading-snug">
             {blessing[0]}<br/>{blessing[1]}
           </p>
@@ -31,16 +30,17 @@ export default function Footer({ setPage, lang }) {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 py-12 border-b border-[#2B241E]/10 text-sm">
           <div className="flex flex-col gap-3">
             <div className="text-xs font-bold tracking-[0.16em] uppercase text-[#3B6146] mb-1">{t.footerCatalogue}</div>
-            {FOOTER_NAV.catalogue.map((item) => (
-              <a key={item.page} href={buildPath({ page: item.page, lang })} onClick={(e) => navigate(item.page, e)} className="text-[#5C5248] hover:text-[#2B241E] transition-colors">{navLabel(item, lang)}</a>
-            ))}
+            <a href={buildPath({ page: 'Products', lang })} onClick={(e) => navigate('Products', e)} className="text-[#5C5248] hover:text-[#2B241E] transition-colors">{t.nav[0]}</a>
+            <a href={buildPath({ page: 'Catalogue', lang })} onClick={(e) => navigate('Catalogue', e)} className="text-[#5C5248] hover:text-[#2B241E] transition-colors">{lang === 'th' ? 'มุกป๊อป ขายส่ง' : 'Popping boba range'}</a>
+            <a href={buildPath({ page: 'Wholesale', lang })} onClick={(e) => navigate('Wholesale', e)} className="text-[#5C5248] hover:text-[#2B241E] transition-colors">{lang === 'th' ? 'ขายส่งไข่มุกป๊อป' : 'Popping Boba Wholesale'}</a>
+            <a href={buildPath({ page: 'Customers', lang })} onClick={(e) => navigate('Customers', e)} className="text-[#5C5248] hover:text-[#2B241E] transition-colors">{t.nav[1]}</a>
           </div>
 
           <div className="flex flex-col gap-3">
             <div className="text-xs font-bold tracking-[0.16em] uppercase text-[#3B6146] mb-1">{t.footerCompany}</div>
-            {FOOTER_NAV.company.map((item) => (
-              <a key={item.page} href={buildPath({ page: item.page, lang })} onClick={(e) => navigate(item.page, e)} className="text-[#5C5248] hover:text-[#2B241E] transition-colors">{navLabel(item, lang)}</a>
-            ))}
+            <a href={buildPath({ page: 'About us', lang })} onClick={(e) => navigate('About us', e)} className="text-[#5C5248] hover:text-[#2B241E] transition-colors">{t.nav[2]}</a>
+            <a href={buildPath({ page: 'Blog', lang })} onClick={(e) => navigate('Blog', e)} className="text-[#5C5248] hover:text-[#2B241E] transition-colors">{t.footerJournal}</a>
+            <a href={buildPath({ page: 'FAQ', lang })} onClick={(e) => navigate('FAQ', e)} className="text-[#5C5248] hover:text-[#2B241E] transition-colors">{t.nav[4]}</a>
           </div>
 
           <div className="flex flex-col gap-3 col-span-2 md:col-span-2">
@@ -48,7 +48,7 @@ export default function Footer({ setPage, lang }) {
             <a href="mailto:Blessme.team@gmail.com" className="text-[#5C5248] hover:text-[#2B241E] transition-colors">Blessme.team@gmail.com</a>
             <a href="tel:+66828965199" className="text-[#5C5248] hover:text-[#2B241E] transition-colors">+66 (0) 82-896-5199 (คุณจ้า)</a>
             <div className="flex items-center gap-3">
-              <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="text-[#06c755] font-semibold hover:underline">LINE Official: @blessmethailand</a>
+              <a href="https://line.me/R/ti/p/@blessmethailand" target="_blank" rel="noopener noreferrer" className="text-[#06c755] font-semibold hover:underline">LINE Official: @blessmethailand</a>
               <a href={SHOPEE_URL} target="_blank" rel="noopener noreferrer" aria-label={lang === 'th' ? 'สั่งปลีกทาง Shopee' : 'Buy retail on Shopee'} className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#EE4D2D] text-white hover:bg-[#d7321b] transition-colors" title="Shopee">
                 <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
                   <path d="M7 7V6a5 5 0 0 1 10 0v1h2.2a1 1 0 0 1 1 .9l1 12a1 1 0 0 1-1 1.1H3.8a1 1 0 0 1-1-1.1l1-12a1 1 0 0 1 1-.9H7zm2 0h6V6a3 3 0 0 0-6 0v1z"/>
