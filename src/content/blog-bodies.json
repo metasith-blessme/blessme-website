@@ -317,6 +317,15 @@
         ]
       ],
       [
+        "links",
+        [
+          {
+            "href": "/en/products/oat/",
+            "text": "Oat Popping Boba"
+          }
+        ]
+      ],
+      [
         "h2",
         "Serving ideas"
       ],
@@ -367,6 +376,15 @@
           "ชาไทยหรือชาเขียวไข่มุกป๊อป",
           "ม็อกเทลไม่มีแอลกอฮอล์ตกแต่งด้วยไข่มุกป๊อป",
           "ของหวาน เช่น พุดดิ้ง วาฟเฟิล ราดไข่มุกป๊อป"
+        ]
+      ],
+      [
+        "links",
+        [
+          {
+            "href": "/products/oat/",
+            "text": "มุกป๊อปข้าวโอ๊ต"
+          }
         ]
       ],
       [
@@ -455,6 +473,23 @@
           "Trial idea: oat popping boba with mango smoothie",
           "Trial idea: Osmanthus Konjac with vanilla smoothie; it is konjac, not popping boba",
           "Trial idea: Moji Yogurt with berry smoothie"
+        ]
+      ],
+      [
+        "links",
+        [
+          {
+            "href": "/en/products/barley/",
+            "text": "Barley Popping Boba"
+          },
+          {
+            "href": "/en/products/oat/",
+            "text": "Oat Popping Boba"
+          },
+          {
+            "href": "/en/products/redbean/",
+            "text": "Red Bean Popping Boba"
+          }
         ]
       ],
       [
@@ -580,6 +615,23 @@
           "ไอเดียทดลอง: มุกป๊อปข้าวโอ๊ตกับสมูทตี้มะม่วง",
           "ไอเดียทดลอง: บุกหอมหมื่นลี้กับสมูทตี้วานิลลา เป็นบุกไม่ใช่มุกป๊อป",
           "ไอเดียทดลอง: โมจิโยเกิร์ตกับสมูทตี้เบอร์รี่"
+        ]
+      ],
+      [
+        "links",
+        [
+          {
+            "href": "/products/barley/",
+            "text": "มุกป๊อปข้าวบาร์เลย์"
+          },
+          {
+            "href": "/products/oat/",
+            "text": "มุกป๊อปข้าวโอ๊ต"
+          },
+          {
+            "href": "/products/redbean/",
+            "text": "มุกป๊อปถั่วแดง"
+          }
         ]
       ],
       [
@@ -827,6 +879,19 @@
         ]
       ],
       [
+        "links",
+        [
+          {
+            "href": "/en/products/barley/",
+            "text": "Barley Popping Boba"
+          },
+          {
+            "href": "/en/products/redbean/",
+            "text": "Red Bean Popping Boba"
+          }
+        ]
+      ],
+      [
         "p",
         "Request samples by emailing Blessme.team@gmail.com. These pairings are serving suggestions, not tested recipes or measured customer results."
       ],
@@ -885,6 +950,19 @@
         ]
       ],
       [
+        "links",
+        [
+          {
+            "href": "/products/barley/",
+            "text": "มุกป๊อปข้าวบาร์เลย์"
+          },
+          {
+            "href": "/products/redbean/",
+            "text": "มุกป๊อปถั่วแดง"
+          }
+        ]
+      ],
+      [
         "p",
         "ขอตัวอย่างทางอีเมล Blessme.team@gmail.com การจับคู่เหล่านี้เป็นไอเดียเสิร์ฟ ไม่ใช่สูตรที่ผ่านการทดสอบหรือผลลัพธ์จริงของลูกค้า"
       ],
@@ -920,6 +998,19 @@
           "Trial idea: matcha latte + Red Bean Popping Boba.",
           "Trial idea: oolong tea + Osmanthus Konjac.",
           "Trial idea: brown sugar milk tea + Moji Yogurt. These pairings are suggestions, not taste-test scores or proven sales results."
+        ]
+      ],
+      [
+        "links",
+        [
+          {
+            "href": "/en/products/barley/",
+            "text": "Barley Popping Boba"
+          },
+          {
+            "href": "/en/products/redbean/",
+            "text": "Red Bean Popping Boba"
+          }
         ]
       ],
       [
@@ -978,6 +1069,19 @@
         ]
       ],
       [
+        "links",
+        [
+          {
+            "href": "/products/barley/",
+            "text": "มุกป๊อปข้าวบาร์เลย์"
+          },
+          {
+            "href": "/products/redbean/",
+            "text": "มุกป๊อปถั่วแดง"
+          }
+        ]
+      ],
+      [
         "h2",
         "เคล็ดลับส่วนตัวในการดื่มชานมมุกป๊อปให้อร่อยที่สุด:"
       ],
@@ -1028,6 +1132,19 @@
           "Trial idea: honey Greek yogurt + red bean",
           "Trial idea: vanilla Greek yogurt + Osmanthus Konjac (not popping boba)",
           "Trial idea: plain Greek yogurt + Moji Yogurt"
+        ]
+      ],
+      [
+        "links",
+        [
+          {
+            "href": "/en/products/barley/",
+            "text": "Barley Popping Boba"
+          },
+          {
+            "href": "/en/products/redbean/",
+            "text": "Red Bean Popping Boba"
+          }
         ]
       ],
       [
@@ -1135,6 +1252,19 @@
           "ไอเดียทดลอง: กรีกโยเกิร์ตน้ำผึ้ง + ถั่วแดง",
           "ไอเดียทดลอง: กรีกโยเกิร์ตวานิลลา + บุกหอมหมื่นลี้ (ไม่ใช่มุกป๊อป)",
           "ไอเดียทดลอง: กรีกโยเกิร์ตธรรมชาติ + โมจิโยเกิร์ต"
+        ]
+      ],
+      [
+        "links",
+        [
+          {
+            "href": "/products/barley/",
+            "text": "มุกป๊อปข้าวบาร์เลย์"
+          },
+          {
+            "href": "/products/redbean/",
+            "text": "มุกป๊อปถั่วแดง"
+          }
         ]
       ],
       [
@@ -1336,6 +1466,23 @@
         "Barley, Oat, Red Bean and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste."
       ],
       [
+        "links",
+        [
+          {
+            "href": "/en/products/barley/",
+            "text": "Barley Popping Boba"
+          },
+          {
+            "href": "/en/products/oat/",
+            "text": "Oat Popping Boba"
+          },
+          {
+            "href": "/en/products/redbean/",
+            "text": "Red Bean Popping Boba"
+          }
+        ]
+      ],
+      [
         "p",
         "Request samples by emailing Blessme.team@gmail.com."
       ]
@@ -1454,6 +1601,23 @@
       [
         "p",
         "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย"
+      ],
+      [
+        "links",
+        [
+          {
+            "href": "/products/barley/",
+            "text": "มุกป๊อปข้าวบาร์เลย์"
+          },
+          {
+            "href": "/products/oat/",
+            "text": "มุกป๊อปข้าวโอ๊ต"
+          },
+          {
+            "href": "/products/redbean/",
+            "text": "มุกป๊อปถั่วแดง"
+          }
+        ]
       ],
       [
         "p",
@@ -1639,6 +1803,23 @@
         "BlessMe offers five toppings: Barley, Oat, Red Bean, Osmanthus Konjac and Moji Yogurt. Osmanthus Konjac is a konjac topping, not popping boba. Request samples by emailing Blessme.team@gmail.com."
       ],
       [
+        "links",
+        [
+          {
+            "href": "/en/products/barley/",
+            "text": "Barley Popping Boba"
+          },
+          {
+            "href": "/en/products/oat/",
+            "text": "Oat Popping Boba"
+          },
+          {
+            "href": "/en/products/redbean/",
+            "text": "Red Bean Popping Boba"
+          }
+        ]
+      ],
+      [
         "p",
         "Barley and oat contain gluten. All five toppings are vegan and packed in syrup with sugar. Draining syrup can reduce sweetness but does not make them sugar-free. Not suitable for children under 6 because of choking risk."
       ]
@@ -1786,6 +1967,23 @@
       [
         "p",
         "BlessMe มีท็อปปิ้งห้ารายการ: ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง บุกหอมหมื่นลี้ และโมจิโยเกิร์ต บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป ขอตัวอย่างทางอีเมล Blessme.team@gmail.com"
+      ],
+      [
+        "links",
+        [
+          {
+            "href": "/products/barley/",
+            "text": "มุกป๊อปข้าวบาร์เลย์"
+          },
+          {
+            "href": "/products/oat/",
+            "text": "มุกป๊อปข้าวโอ๊ต"
+          },
+          {
+            "href": "/products/redbean/",
+            "text": "มุกป๊อปถั่วแดง"
+          }
+        ]
       ],
       [
         "p",
@@ -2116,6 +2314,23 @@
         "BlessMe offers five toppings: Barley, Oat, Red Bean, Osmanthus Konjac and Moji Yogurt. Osmanthus Konjac is a konjac topping, not popping boba. These pairings are serving suggestions, not tested recipes or measured customer results."
       ],
       [
+        "links",
+        [
+          {
+            "href": "/en/products/barley/",
+            "text": "Barley Popping Boba"
+          },
+          {
+            "href": "/en/products/oat/",
+            "text": "Oat Popping Boba"
+          },
+          {
+            "href": "/en/products/redbean/",
+            "text": "Red Bean Popping Boba"
+          }
+        ]
+      ],
+      [
         "h2",
         "Illustrative contribution before other expenses (not net profit)"
       ],
@@ -2204,6 +2419,23 @@
       [
         "p",
         "BlessMe มีท็อปปิ้งห้ารายการ: ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง บุกหอมหมื่นลี้ และโมจิโยเกิร์ต บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป การจับคู่เหล่านี้เป็นไอเดียเสิร์ฟ ไม่ใช่สูตรที่ผ่านการทดสอบหรือผลลัพธ์จริงของลูกค้า"
+      ],
+      [
+        "links",
+        [
+          {
+            "href": "/products/barley/",
+            "text": "มุกป๊อปข้าวบาร์เลย์"
+          },
+          {
+            "href": "/products/oat/",
+            "text": "มุกป๊อปข้าวโอ๊ต"
+          },
+          {
+            "href": "/products/redbean/",
+            "text": "มุกป๊อปถั่วแดง"
+          }
+        ]
       ],
       [
         "h2",
@@ -2301,6 +2533,23 @@
           "Trial idea: red bean or oat popping boba with tea",
           "Trial idea: Osmanthus Konjac with clear tea; this is konjac, not popping boba",
           "Trial idea: Moji Yogurt with fruit tea or smoothies"
+        ]
+      ],
+      [
+        "links",
+        [
+          {
+            "href": "/en/products/barley/",
+            "text": "Barley Popping Boba"
+          },
+          {
+            "href": "/en/products/oat/",
+            "text": "Oat Popping Boba"
+          },
+          {
+            "href": "/en/products/redbean/",
+            "text": "Red Bean Popping Boba"
+          }
         ]
       ],
       [
@@ -2488,6 +2737,23 @@
           "ไอเดียทดลอง: ถั่วแดงหรือมุกป๊อปข้าวโอ๊ตกับชา",
           "ไอเดียทดลอง: บุกหอมหมื่นลี้กับชาใส เป็นบุกไม่ใช่มุกป๊อป",
           "ไอเดียทดลอง: โมจิโยเกิร์ตกับชาผลไม้หรือสมูทตี้"
+        ]
+      ],
+      [
+        "links",
+        [
+          {
+            "href": "/products/barley/",
+            "text": "มุกป๊อปข้าวบาร์เลย์"
+          },
+          {
+            "href": "/products/oat/",
+            "text": "มุกป๊อปข้าวโอ๊ต"
+          },
+          {
+            "href": "/products/redbean/",
+            "text": "มุกป๊อปถั่วแดง"
+          }
         ]
       ],
       [
@@ -2766,6 +3032,19 @@
         "BlessMe's Barley and Oat toppings are listed as containing gluten. The product summaries do not confirm gluten-free status for the other three toppings. A flavour name or an absent gluten warning is not confirmation: request the current label and supplier documentation before answering customer questions."
       ],
       [
+        "links",
+        [
+          {
+            "href": "/en/products/barley/",
+            "text": "Barley Popping Boba"
+          },
+          {
+            "href": "/en/products/oat/",
+            "text": "Oat Popping Boba"
+          }
+        ]
+      ],
+      [
         "h2",
         "Gluten status of BlessMe's five toppings"
       ],
@@ -2841,6 +3120,19 @@
       [
         "p",
         "ท็อปปิ้งบาร์เลย์และโอ๊ตของ BlessMe ระบุว่ามีกลูเตน ข้อมูลสินค้าโดยย่อไม่ได้ยืนยันสถานะปลอดกลูเตนของอีกสามรายการ ชื่อรสหรือการไม่มีคำเตือนไม่ใช่การยืนยัน ควรขอฉลากปัจจุบันและเอกสารจากซัพพลายเออร์ก่อนตอบคำถามลูกค้า"
+      ],
+      [
+        "links",
+        [
+          {
+            "href": "/products/barley/",
+            "text": "มุกป๊อปข้าวบาร์เลย์"
+          },
+          {
+            "href": "/products/oat/",
+            "text": "มุกป๊อปข้าวโอ๊ต"
+          }
+        ]
       ],
       [
         "h2",
@@ -2947,6 +3239,23 @@
         ]
       ],
       [
+        "links",
+        [
+          {
+            "href": "/en/products/barley/",
+            "text": "Barley Popping Boba"
+          },
+          {
+            "href": "/en/products/oat/",
+            "text": "Oat Popping Boba"
+          },
+          {
+            "href": "/en/products/redbean/",
+            "text": "Red Bean Popping Boba"
+          }
+        ]
+      ],
+      [
         "h2",
         "Plan a small menu trial"
       ],
@@ -3041,6 +3350,23 @@
           "Cold Brew เอิร์ลเกรย์ + โมจิโยเกิร์ต เบอร์กามอตกับโยเกิร์ตเปรี้ยว ทำโปรไฟล์ครีมมี่-ซิตรัส",
           "กาแฟดริป Cold Brew + โอ๊ต กาแฟนุ่มเข้ากับท็อปปิ้งโอ๊ตครีมมี่",
           "กาแฟ Cold Brew + โมจิโยเกิร์ต จับคู่แนวของหวานสำหรับเมนูกาแฟ"
+        ]
+      ],
+      [
+        "links",
+        [
+          {
+            "href": "/products/barley/",
+            "text": "มุกป๊อปข้าวบาร์เลย์"
+          },
+          {
+            "href": "/products/oat/",
+            "text": "มุกป๊อปข้าวโอ๊ต"
+          },
+          {
+            "href": "/products/redbean/",
+            "text": "มุกป๊อปถั่วแดง"
+          }
         ]
       ],
       [
@@ -3378,6 +3704,23 @@
         "Start with the drink or dessert, not with a flavour name alone. Barley popping boba is the roasted barley pearl for iced latte, milk tea and bakery garnish. Oat popping boba is the plant-forward oat pearl for plant milk, dirty coffee and acai smoothies. Red bean popping boba is the sweet, earthy pearl for shaved ice, matcha parfait and brown sugar tea. Moji Yogurt is the tangy yogurt-flavoured popping boba for a yogurt shake, strawberry bingsu or a tart. These are serving ideas to test, not measured recipes or sales results."
       ],
       [
+        "links",
+        [
+          {
+            "href": "/en/products/barley/",
+            "text": "Barley Popping Boba"
+          },
+          {
+            "href": "/en/products/oat/",
+            "text": "Oat Popping Boba"
+          },
+          {
+            "href": "/en/products/redbean/",
+            "text": "Red Bean Popping Boba"
+          }
+        ]
+      ],
+      [
         "p",
         "Osmanthus Konjac is the item shops most often mislabel. It is a floral konjac topping, not popping boba. If the menu word is มุกป๊อป, choose barley, oat, red bean or Moji Yogurt. Use Osmanthus Konjac only when the menu says konjac."
       ],
@@ -3487,6 +3830,23 @@
       [
         "p",
         "มุกป๊อปข้าวบาร์เลย์คือเม็ดบาร์เลย์คั่ว ใส่ลาเต้เย็น ชานม และท็อปปิ้งเบเกอรี มุกป๊อปข้าวโอ๊ตคือเม็ดรสโอ๊ตที่เน้นพืชเป็นหลัก ใส่นมพืช เดอร์ตี้คอฟฟี่ และอาซาอิสมูทตี้ มุกป๊อปถั่วแดงคือเม็ดรสหวานแบบวัตถุดิบเอเชีย ใส่น้ำแข็งไส มัทฉะพาร์เฟต์ และชาบราวน์ชูการ์"
+      ],
+      [
+        "links",
+        [
+          {
+            "href": "/products/barley/",
+            "text": "มุกป๊อปข้าวบาร์เลย์"
+          },
+          {
+            "href": "/products/oat/",
+            "text": "มุกป๊อปข้าวโอ๊ต"
+          },
+          {
+            "href": "/products/redbean/",
+            "text": "มุกป๊อปถั่วแดง"
+          }
+        ]
       ],
       [
         "p",
