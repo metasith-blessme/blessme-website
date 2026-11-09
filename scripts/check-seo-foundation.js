@@ -153,6 +153,33 @@ try {
   assert.equal(calculateUplift(PRODUCTS[0], 25, 50, 20).costPerServing, 7.5);
   assert.equal(calculateUplift(PRODUCTS[0], 15, 1, 0).monthlyProfit, -135);
   assert.throws(() => calculateUplift(PRODUCTS[0], 0, 50, 20), RangeError);
+
+  const pageHtml = (pathname) => fs.readFileSync(path.join(root, 'dist', pathname, 'index.html'), 'utf8');
+  for (const url of urls) {
+    assert.doesNotMatch(pageHtml(new URL(url).pathname), /ข้าวเหนียวดำ|black sticky rice/i, `${url}: black sticky rice is not a BlessMe product`);
+  }
+  const homeTh = pageHtml('/');
+  const homeH1 = homeTh.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)[1].replace(/<[^>]+>/g, '');
+  assert.match(homeH1, /^มุกป๊อป/);
+  assert.match(homeH1, /ไข่มุกป๊อป/);
+  const homeFaq = JSON.parse(homeTh.match(/<script type="application\/ld\+json" id="bm-schema">([\s\S]*?)<\/script>/)[1]).find(schema => schema['@type'] === 'FAQPage');
+  assert.equal(homeFaq.mainEntity.length, 5);
+  assert.ok(JSON.parse(pageHtml('/en/').match(/<script type="application\/ld\+json" id="bm-schema">([\s\S]*?)<\/script>/)[1]).some(schema => schema['@type'] === 'FAQPage'));
+  for (const article of ARTICLES) {
+    for (const lang of ['th', 'en']) {
+      const prefix = lang === 'en' ? '/en' : '';
+      assert.match(pageHtml(`${prefix}/blog/${article.id}`), new RegExp(`href="${prefix}/products/(?:oat|barley|redbean|cheese|osmanthus)/"`), `${prefix}/blog/${article.id}/: product page link`);
+    }
+  }
+  const redirectFrom = new Set([...fs.readFileSync(path.join(root, 'public/_redirects'), 'utf8').matchAll(/^(\/\S+)\s+/gm)].map(match => match[1]));
+  for (const url of urls) {
+    const hrefs = [...pageHtml(new URL(url).pathname).matchAll(/\bhref="(\/[^"]*)"/g)].map(match => match[1].split(/[?#]/)[0]);
+    for (const href of hrefs) {
+      assert.equal(redirectFrom.has(href), false, `${href} from ${url} is a redirect source`);
+      const file = href.endsWith('/') ? path.join(root, 'dist', href, 'index.html') : path.join(root, 'dist', href);
+      assert.equal(fs.existsSync(file), true, `${href} from ${url} has no file`);
+    }
+  }
   console.log(`SEO foundation OK: ${urls.length} HTML pages, localized meta/schema/share, SPA head reset, FAQ HTML, approved prices and ROI math.`);
 } finally {
   delete globalThis.document;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { T } from '../constants/translations';
+import { HOME_FAQS_EN, HOME_FAQS_TH } from '../constants/faq';
 import { PRODUCTS } from '../constants/products';
 import { SHOPEE_URL } from '../lib/analytics';
 import { buildPath } from '../lib/routing';
@@ -386,6 +387,20 @@ export default function ProductsPage({ onOpen, setPage, lang }) {
           ))}
         </div>
 
+      </section>
+
+      <section className="relative z-10 max-w-[1360px] mx-auto px-6 py-20 lg:px-12 border-t border-[#2B241E]/8" aria-labelledby="home-faq-title">
+        <h2 id="home-faq-title" className="font-['Fraunces'] text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-[#2B241E] mb-8">
+          {isTh ? 'คำถามที่พบบ่อย' : 'Common questions'}
+        </h2>
+        <div className="max-w-[760px]">
+          {(isTh ? HOME_FAQS_TH : HOME_FAQS_EN).map(item => (
+            <div key={item.q} className="border-b border-[#EAE2D5] py-5">
+              <h3 className="font-semibold text-[#2B241E] mb-2">{item.q}</h3>
+              <p className="text-[#5B5048] leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Trust & Certifications Bar (with ROI Calculator) */}
