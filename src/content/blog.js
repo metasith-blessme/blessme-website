@@ -407,8 +407,9 @@ export const ARTICLES = [
     "authorRoleTh": "ทีมงาน BlessMe",
     "authorBio": "BlessMe team sharing product information, serving ideas and wholesale ordering guidance.",
     "cover": "linear-gradient(140deg,#3a4d5e 0%,#1f2d3a 60%,#0f1a24 100%)",
-    "img": "/assets/products/waterchestnut.webp",
-    "imgAlt": "มุกป๊อปข้าวโอ๊ต BlessMe — ท็อปปิ้งจับคู่กับชาและกาแฟ Cold Brew"
+    "img": "/assets/products/oat.webp",
+    "imgAlt": "มุกป๊อปข้าวโอ๊ต BlessMe แพ็คสำหรับจับคู่กับชาและกาแฟ Cold Brew",
+    "imgAltEn": "BlessMe oat popping boba pack for cold brew tea and coffee"
   },
   {
     "id": "muk-pop-made-of",
