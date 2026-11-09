@@ -3,6 +3,8 @@ import { MotionConfig } from 'framer-motion';
 import './styles/index.css';
 import { initWebVitals } from './lib/web-vitals';
 import { initContactTracking } from './lib/analytics';
+import { LINE_URL, PHONE_HREF } from './constants/nav';
+import { HOME } from './constants/home';
 
 // Constants
 import { PRODUCTS } from './constants/products';
@@ -110,9 +112,9 @@ function App({ ssrPath, articleBody }) {
 
   return (
     <MotionConfig reducedMotion="user">
-    <div className="relative min-h-screen">
+    <div className="bm-app relative min-h-screen">
       <a href="#main-content" className="bm-skip-link">Skip to content</a>
-      <Navbar page={page} setPage={goToPage} lang={lang} setLang={switchLang} />
+      <Navbar page={detail ? 'Catalogue' : page} setPage={goToPage} lang={lang} setLang={switchLang} />
       <main id="main-content">
         {page === 'NotFound' ? (
           <section className="max-w-3xl mx-auto px-6 py-24 text-center">
@@ -128,7 +130,7 @@ function App({ ssrPath, articleBody }) {
           <ProductDetail key={detail.id} product={detail} onClose={closeProduct} lang={lang} />
         ) : (
           <>
-            {page === 'Products'  && <ProductsPage onOpen={openProduct} setPage={goToPage} lang={lang} />}
+            {page === 'Products'  && <ProductsPage onOpen={openProduct} onOpenArticle={openArticle} setPage={goToPage} lang={lang} />}
             {page === 'Catalogue' && <ProductHubPage lang={lang} />}
             {page === 'Wholesale' && <WholesalePage setPage={goToPage} lang={lang} />}
             {page === 'About us'  && <AboutPage lang={lang} />}
@@ -141,8 +143,12 @@ function App({ ssrPath, articleBody }) {
       <Footer setPage={goToPage} lang={lang} />
 
 
-      {/* LINE floating action button */}
-      <a href="https://line.me/R/ti/p/@blessmethailand" target="_blank" rel="noopener noreferrer"
+      <nav className="bm-mobile-order" aria-label={lang === 'th' ? 'สั่งของ' : 'Order'}>
+        <a href={LINE_URL} target="_blank" rel="noopener noreferrer">{HOME[lang]?.barLine || 'LINE'}</a>
+        <a href={PHONE_HREF}>{HOME[lang]?.barCall || 'Call'}</a>
+      </nav>
+
+      <a href={LINE_URL} target="_blank" rel="noopener noreferrer"
         className="bm-line-fab" aria-label="Contact us on LINE">
         <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M24 4C13 4 4 11.8 4 21.4c0 6.6 4.4 12.4 11 15.6-.5 1.7-1.6 6.1-1.8 7 0 0-.1.4.2.6.3.2.6 0 .6 0 .8-.1 9.3-6.1 10.7-7.1.8.1 1.5.1 2.3.1 11 0 20-7.8 20-17.4C44 11.8 35 4 24 4z" fill="white"/>

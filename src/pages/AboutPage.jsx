@@ -27,7 +27,7 @@ export default function AboutPage({ lang }) {
             <div className="text-xs font-semibold tracking-wider uppercase text-white/80">{lang==='th'?'ก่อนเปิด: 12 เดือนนับจากวันผลิต ที่อุณหภูมิห้อง':'Unopened: 12 months from manufacture at room temperature'}</div>
           </div>
           <div className="bg-white border border-[#2B241E]/8 p-7 rounded-[24px] shadow-sm flex flex-col justify-between h-[160px]">
-            <div className="font-['Fraunces'] text-4xl font-bold text-[#3B6146]">5</div>
+            <div className="font-['Fraunces'] text-4xl font-bold text-[#3B6146]">6</div>
             <div className="text-xs font-semibold tracking-wider uppercase text-[#7A6E63]">{lang==='th'?'รายการสินค้า':'Signature Flavors'}</div>
           </div>
           <div className="bg-white border border-[#2B241E]/8 p-7 rounded-[24px] shadow-sm flex flex-col justify-between h-[160px]">

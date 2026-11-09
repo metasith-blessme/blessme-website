@@ -1,10 +1,10 @@
 /* ===== TRANSLATIONS (EN / TH) ===== */
 export const T = {
   en: {
-    nav: ['Products', 'Solutions', 'About us', 'Blog', 'FAQ'],
+    nav: ['Products', 'Wholesale & ordering', 'Menu ideas', 'About'],
     heroEyebrow: 'BLESSME (THAILAND) · Sourcing and distribution of decorative products for beverages and desserts',
     heroTitle: ['Popping Boba ', 'Wholesale', ' for Cafés in Thailand'],
-    heroSub: 'Bringing a new experience to your menu. We think, discover, source, and supply specialty food products that give our partners a true point of difference — products customers cannot find elsewhere in the market.',
+    heroSub: 'Café drink and dessert toppings, shipped from Bangkok.',
     poppingDefinition: 'Popping boba is a round topping with a liquid centre that bursts when bitten, unlike chewy tapioca pearls.',
     heroCta1: 'See our solution', heroCta2: 'Request samples',
     heroShopee: 'Buy retail on Shopee',
@@ -52,10 +52,10 @@ export const T = {
     footerBlessing: 'Crafting sensory wonder for modern menus.\nBangkok, Thailand.',
     footerCatalogue: 'Catalogue', footerCompany: 'Company', footerContact: 'Contact',
     footerJournal: 'Journal',
-    wholesale: 'Wholesale enquiry',
+    wholesale: 'Order on LINE',
   },
   th: {
-    nav: ['สินค้า', 'วิธีสั่ง', 'เกี่ยวกับเรา', 'บทความ', 'คำถาม'],
+    nav: ['สินค้า', 'ราคาส่ง & วิธีสั่ง', 'ไอเดียเมนู', 'เกี่ยวกับเรา'],
     heroEyebrow: 'เบลสมี (ประเทศไทย) · ขายส่งท็อปปิ้งให้ร้านเครื่องดื่มและของหวาน',
     heroTitle: ['มุกป๊อป ', '(ไข่มุกป๊อป)', ' ขายส่งสำหรับคาเฟ่และร้านชานม'],
     heroSub: 'นำประสบการณ์ใหม่ๆมาสู่เมนูของคุณ',
@@ -106,6 +106,6 @@ export const T = {
     footerBlessing: 'ขายส่งมุกป๊อปและท็อปปิ้งให้ร้าน\nกรุงเทพฯ',
     footerCatalogue: 'สินค้า', footerCompany: 'บริษัท', footerContact: 'ติดต่อ',
     footerJournal: 'บทความ',
-    wholesale: 'สั่งขายส่ง',
+    wholesale: 'ทัก LINE สั่งของ',
   },
 };
