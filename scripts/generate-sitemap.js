@@ -89,12 +89,6 @@ function generateRedirects() {
     add(`/th/blog/${fromId}`, `/blog/${toId}/`);
     add(`/th/blog/${fromId}/`, `/blog/${toId}/`);
   }
-  // Discontinued water chestnut SKU → the popping-boba category page, in the same language.
-  add('/products/chestnut', '/en/products/');
-  add('/products/chestnut/', '/en/products/');
-  add('/th/products/chestnut', '/products/');
-  add('/th/products/chestnut/', '/products/');
-
   for (const route of routes) {
     const thai = urlFor(route, 'th').slice(BASE_URL.length);
     const oldBase = buildPath({ page: route.page, productId: route.productId, articleId: route.articleId, lang: 'th' });

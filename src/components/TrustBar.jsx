@@ -38,7 +38,7 @@ export default function TrustBar({ lang }) {
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
         </svg>
       ),
-      title: isTh ? 'ทั้ง 5 รายการเป็นวีแกน' : 'All Five Toppings Are Vegan',
+      title: isTh ? 'ทั้ง 6 รายการเป็นวีแกน' : 'All Six Toppings Are Vegan',
       desc: isTh 
         ? 'มีมุกป๊อป โมจิโยเกิร์ต และบุกหอมหมื่นลี้ ดูฉลากแต่ละสินค้า วีแกนไม่ได้แปลว่าปลอดสารก่อภูมิแพ้'
         : 'The range includes popping boba, Moji Yogurt and Osmanthus Konjac. Check individual labels for ingredients and allergens; vegan does not mean allergen-free.',

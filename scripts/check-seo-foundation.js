@@ -156,7 +156,7 @@ try {
 
   const pageHtml = (pathname) => fs.readFileSync(path.join(root, 'dist', pathname, 'index.html'), 'utf8');
   for (const url of urls) {
-    assert.doesNotMatch(pageHtml(new URL(url).pathname), /waterchestnut/i, `${url}: discontinued water chestnut image`);
+    assert.doesNotMatch(pageHtml(new URL(url).pathname), /ข้าวเหนียวดำ|black sticky rice/i, `${url}: black sticky rice is not a BlessMe product`);
   }
   const homeTh = pageHtml('/');
   const homeH1 = homeTh.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)[1].replace(/<[^>]+>/g, '');

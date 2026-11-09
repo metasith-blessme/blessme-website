@@ -24,13 +24,13 @@ export const PAGE_META = {
   'About us': { title: 'About BlessMe Thailand — Food Wholesaler Bangkok', description: 'BlessMe (Thailand) Co., Ltd. introduces specialty food categories to the Thai B2B market. Headquartered in Bangkok, serving cafés, restaurants, and dessert brands nationwide.', canonical: `${BASE_URL}/about` },
   Blog: { title: 'Journal — Specialty Food Insights | BlessMe Thailand', description: 'Notes from the BlessMe team on specialty food sourcing, cold-chain logistics, shelf life, and how to introduce new products to the Thai market.', canonical: `${BASE_URL}/blog` },
   FAQ: { title: 'Popping Boba Wholesale FAQ | BlessMe Thailand', description: 'Answers on what popping boba is, storage, shelf life, wholesale prices, minimum orders, LINE and Shopee ordering, and drink and dessert uses.', canonical: `${BASE_URL}/faq` },
-  Catalogue: { title: 'Popping Boba Wholesale, All Flavours in Stock | BlessMe', description: 'Barley, oat, red bean, Moji Yogurt and Osmanthus Konjac in stock. 90–120 THB per pack, no minimum order. Bangkok wholesale, Shopee retail.', canonical: `${BASE_URL}/products` },
+  Catalogue: { title: 'Popping Boba Wholesale, All Flavours in Stock | BlessMe', description: 'Barley, oat, red bean, water chestnut, Moji Yogurt and Osmanthus Konjac in stock. 90–120 THB per pack, no minimum order. Bangkok wholesale, Shopee retail.', canonical: `${BASE_URL}/products` },
 };
 
 export const PAGE_META_TH = {
   Products: {
     title: 'มุกป๊อป ขายส่ง กรุงเทพฯ ราคาส่ง 90 บาท | เบลสมี',
-    description: 'ขายส่งไข่มุกป๊อป มุกป๊อปบาร์เลย์ โอ๊ต ถั่วแดง โมจิโยเกิร์ต บุกหอมหมื่นลี้ 90–120 บาท/แพ็ค ไม่มีขั้นต่ำ ส่งทั่วไทย สั่ง LINE หรือ Shopee',
+    description: 'ขายส่งไข่มุกป๊อป มุกป๊อปบาร์เลย์ โอ๊ต ถั่วแดง แห้ว โมจิโยเกิร์ต บุกหอมหมื่นลี้ 90–120 บาท/แพ็ค ไม่มีขั้นต่ำ ส่งทั่วไทย สั่ง LINE หรือ Shopee',
     canonical: BASE_URL + '/'
   },
   Wholesale: { title: 'มุกป๊อป ขายส่ง ราคาส่ง ไม่มีขั้นต่ำ | เบลสมี ไทยแลนด์', description: 'ไข่มุกป๊อปขายส่ง 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท ไม่มีขั้นต่ำ ขอตัวอย่างฟรี สั่งทาง LINE @blessmethailand ส่งทั่วประเทศ', canonical: BASE_URL+'/wholesale' },
@@ -38,7 +38,7 @@ export const PAGE_META_TH = {
   'About us': { title: 'เกี่ยวกับ เบลสมี (ประเทศไทย) — ผู้นำเข้าไข่มุกป๊อปขายส่ง', description: 'เบลสมี (ประเทศไทย) จำกัด นำเข้าและสต็อกไข่มุกป๊อปและท็อปปิ้งขายส่งในกรุงเทพฯ สำหรับคาเฟ่ ร้านอาหาร และแบรนด์ขนมหวานทั่วไทย', canonical: BASE_URL+'/about' },
   Blog: { title: 'บทความมุกป๊อปและวัตถุดิบคาเฟ่ | เบลสมี ไทยแลนด์', description: 'อัปเดตเทรนด์วัตถุดิบคาเฟ่ เทคนิคการเลือกท็อปปิ้ง และเบื้องหลังการจัดหาอาหารพิเศษจากทีมงานเบลสมี', canonical: BASE_URL+'/blog' },
   FAQ: { title: 'คำถามที่พบบ่อย ไข่มุกป๊อป ขายส่ง | เบลสมี', description: 'มุกป๊อปคืออะไร เก็บอย่างไร อายุสินค้า ราคาส่ง 90–120 บาท ไม่มีขั้นต่ำ สั่ง LINE @blessmethailand หรือ Shopee ส่งทั่วไทย', canonical: BASE_URL+'/faq' },
-  Catalogue: { title: 'มุกป๊อป (ไข่มุกป๊อป) ขายส่ง ทุกรส | เบลสมี', description: 'มุกป๊อปขายส่งทุกรสที่ยังมีสต็อก ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง โมจิโยเกิร์ต และบุกหอมหมื่นลี้ 90–120 บาท/แพ็ค ไม่มีขั้นต่ำ สั่ง LINE หรือ Shopee', canonical: BASE_URL+'/products' },
+  Catalogue: { title: 'มุกป๊อป (ไข่มุกป๊อป) ขายส่ง ทุกรส | เบลสมี', description: 'มุกป๊อปขายส่งทุกรสที่ยังมีสต็อก ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง แห้ว โมจิโยเกิร์ต และบุกหอมหมื่นลี้ 90–120 บาท/แพ็ค ไม่มีขั้นต่ำ สั่ง LINE หรือ Shopee', canonical: BASE_URL+'/products' },
 };
 
 // logo + image URLs intentionally stay logo-full.png: this is a stable
@@ -111,6 +111,7 @@ const TH_PRODUCT_TITLE = {
   barley: 'มุกป๊อปบาร์เลย์ ขายส่ง 90 บาท/แพ็ค | เบลสมี',
   oat: 'มุกป๊อปข้าวโอ๊ต ขายส่ง 90 บาท/แพ็ค | เบลสมี',
   redbean: 'มุกป๊อปถั่วแดง ขายส่ง 90 บาท/แพ็ค | เบลสมี',
+  chestnut: 'มุกป๊อปแห้ว ขายส่ง 90 บาท/แพ็ค | เบลสมี',
   cheese: 'มุกป๊อป โยเกิร์ต ขายส่ง 120 บาท | เบลสมี',
   osmanthus: 'บุกหอมหมื่นลี้ มุกบุก เยลลี่บุก | เบลสมี',
 };

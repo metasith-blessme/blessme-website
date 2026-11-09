@@ -2,17 +2,17 @@ import React, { useEffect, useRef, useState } from 'react';
 import { PRODUCTS, productSearchName } from '../constants/products';
 import { buildPath, handleLinkClick } from '../lib/routing';
 
-// Grain popping boba that already has a product page and photo.
-const GRAIN_SHOWROOM_IDS = ['barley', 'oat', 'redbean'];
+// Popping boba with a product page and photo. Osmanthus Konjac stays on the catalogue grid.
+const SHOWROOM_IDS = ['barley', 'oat', 'redbean', 'chestnut'];
 
 const COPY = {
   en: {
-    region: 'Grain popping boba',
+    region: 'Popping boba',
     prev: 'Previous products',
     next: 'Next products',
   },
   th: {
-    region: 'มุกป๊อปธัญพืช',
+    region: 'มุกป๊อป',
     prev: 'สินค้าก่อนหน้า',
     next: 'สินค้าถัดไป',
   },
@@ -20,7 +20,7 @@ const COPY = {
 
 export default function HeroShowroom({ lang, onOpen }) {
   const copy = COPY[lang] || COPY.en;
-  const products = GRAIN_SHOWROOM_IDS
+  const products = SHOWROOM_IDS
     .map((id) => PRODUCTS.find((product) => product.id === id))
     .filter(Boolean);
   const trackRef = useRef(null);

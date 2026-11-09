@@ -18,6 +18,7 @@ const names = {
   barley: ['Barley Popping Boba', 'มุกป๊อปข้าวบาร์เลย์'],
   oat: ['Oat Popping Boba', 'มุกป๊อปข้าวโอ๊ต'],
   redbean: ['Red Bean Popping Boba', 'มุกป๊อปถั่วแดง'],
+  chestnut: ['Water Chestnut Popping Boba', 'มุกป๊อปแห้ว'],
   cheese: ['Moji Yogurt', 'โมจิโยเกิร์ต'],
   osmanthus: ['Osmanthus Konjac', 'บุกหอมหมื่นลี้'],
 };
@@ -26,6 +27,7 @@ const productArticles = {
   barley: 'barley-popping-boba-thailand',
   oat: 'popping-boba-yogurt-smoothie-pairing',
   redbean: 'popping-boba-yogurt-smoothie-pairing',
+  chestnut: 'popping-boba-cafe-menu-ideas',
   osmanthus: 'popping-boba-yogurt-smoothie-pairing',
   cheese: 'moji-yogurt-trend-asia',
 };
