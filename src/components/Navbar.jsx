@@ -27,7 +27,7 @@ export default function Navbar({ page, setPage, lang, setLang }) {
           <a className="flex items-center gap-3 cursor-pointer select-none" href={buildPath({ page: 'Products', lang })} aria-label="BlessMe — go to homepage" onClick={(e) => navigate('Products', e)}>
             <picture>
               <source srcSet="/assets/logo-full.webp" type="image/webp" />
-              <img src="/assets/logo-full.png" alt="BlessMe Thailand" className="h-16 w-auto object-contain drop-shadow-sm" width="256" height="256" />
+              <img src="/assets/logo-full.png" alt="BlessMe Thailand" className="h-[72px] md:h-20 w-auto object-contain drop-shadow-sm" width="256" height="256" />
             </picture>
           </a>
           
@@ -40,7 +40,7 @@ export default function Navbar({ page, setPage, lang, setLang }) {
                 <a
                   key={key}
                   href={buildPath({ page: key, lang })}
-                  className={`relative px-3.5 min-[1360px]:px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-colors ${isActive ? 'text-[#3B6146]' : 'text-[#2B241E]/60 hover:text-[#2B241E]'}`}
+                  className={`relative px-3 min-[1100px]:px-3.5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-colors ${isActive ? 'text-[#3B6146]' : 'text-[#2B241E]/60 hover:text-[#2B241E]'}`}
                   onClick={(e) => navigate(key, e)}
                   aria-current={isActive ? 'page' : undefined}
                 >

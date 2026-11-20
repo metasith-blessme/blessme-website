@@ -20,7 +20,7 @@ export default function Footer({ setPage, lang }) {
           <div className="flex items-center gap-3">
             <picture>
               <source srcSet="/assets/logo-full.webp" type="image/webp" />
-              <img src="/assets/logo-full.png" alt="BlessMe Thailand" className="h-16 w-auto object-contain" width="256" height="256" />
+              <img src="/assets/logo-full.png" alt="BlessMe Thailand" className="h-24 w-auto object-contain" width="256" height="256" />
             </picture>
           </div>
           <p className="font-['Fraunces'] text-xl sm:text-2xl text-[#3B6146] italic md:text-right leading-snug">
