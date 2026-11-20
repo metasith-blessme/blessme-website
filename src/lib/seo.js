@@ -2,6 +2,9 @@ import { PRODUCTS, productSearchName, productHeading } from '../constants/produc
 import { FAQS_EN, FAQS_TH, WHOLESALE_FAQS_EN, WHOLESALE_FAQS_TH, HUB_FAQS_EN, HUB_FAQS_TH, HOME_FAQS_EN, HOME_FAQS_TH } from '../constants/faq';
 import { getArticleById, getArticleMeta, getArticleSchema } from '../content/blog';
 import { buildPath } from './routing';
+import { SHOPEE_URL } from './analytics';
+import { LINE_URL } from '../constants/nav';
+import { SOCIAL_LINKS } from '../constants/social';
 
 export const BASE_URL = 'https://blessmethailand.com';
 
@@ -57,12 +60,7 @@ export const ORGANIZATION_SCHEMA = {
   logo: LOGO,
   image: LOGO,
   description: ORG_DESCRIPTION,
-  sameAs: [
-    'https://shopee.co.th/blessme_thailand',
-    'https://line.me/R/ti/p/@blessmethailand',
-    'https://instagram.com/blessme_thailand',
-    'https://facebook.com/BlessMeThailand',
-  ],
+  sameAs: [SHOPEE_URL, LINE_URL, ...SOCIAL_LINKS.map(link => link.href)],
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+66-82-896-5199',
