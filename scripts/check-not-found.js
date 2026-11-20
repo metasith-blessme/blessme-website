@@ -71,6 +71,31 @@ for (const [, from, to] of redirectRules) {
   const finalResponse = await fetch(location, { redirect: 'manual' });
   assert.equal(finalResponse.status, 200, `${from} → ${to}`);
 }
+const removedPosts = [
+  ['sourcing-audit', '/blog/how-to-choose-muk-pop-wholesale/', '/en/blog/how-to-choose-muk-pop-wholesale/'],
+  ['specialty-category', '/blog/', '/en/blog/'],
+  ['curation-philosophy', '/about/', '/en/about/'],
+  ['introduce-new-product', '/blog/five-muk-pop-menus-for-milk-tea-shops/', '/en/blog/five-muk-pop-menus-for-milk-tea-shops/'],
+  ['shelf-life', '/blog/cold-chain/', '/en/blog/cold-chain/'],
+];
+for (const [id, thai, english] of removedPosts) {
+  for (const [from, to] of [
+    [`/blog/${id}`, english],
+    [`/blog/${id}/`, english],
+    [`/en/blog/${id}`, english],
+    [`/en/blog/${id}/`, english],
+    [`/th/blog/${id}`, thai],
+    [`/th/blog/${id}/`, thai],
+  ]) {
+    const redirect = await fetch(new URL(from, origin), { redirect: 'manual' });
+    assert.equal(redirect.status, 301, from);
+    const location = new URL(redirect.headers.get('location'), origin);
+    assert.equal(location.pathname, to, from);
+    assert.equal(location.search, '', from);
+    const finalResponse = await fetch(location, { redirect: 'manual' });
+    assert.equal(finalResponse.status, 200, `${from} → ${to}`);
+  }
+}
 for (const url of missing) {
   for (const method of ['GET', 'HEAD']) {
     for (const headers of [{}, { 'Sec-Fetch-Mode': 'navigate' }]) {
