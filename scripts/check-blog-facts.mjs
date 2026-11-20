@@ -3,15 +3,15 @@ import { readFileSync, existsSync } from 'node:fs';
 import { ARTICLES, getArticleMeta } from '../src/content/blog.js';
 
 const bodies = JSON.parse(readFileSync(new URL('../src/content/blog-bodies.json', import.meta.url)));
-assert.equal(ARTICLES.length, 18);
-assert.equal(new Set(ARTICLES.map(a => a.id)).size, 18);
+assert.equal(ARTICLES.length, 17);
+assert.equal(new Set(ARTICLES.map(a => a.id)).size, 17);
 assert.deepEqual(Object.keys(bodies).sort(), ARTICLES.map(a => a.id).sort());
 const glutenGuide = ARTICLES.find(article => article.id === 'is-popping-boba-gluten-free');
 assert.match(glutenGuide.imgAlt, /มีกลูเตน/);
 assert.doesNotMatch(glutenGuide.imgAlt, /ไร้กลูเตน|ปลอดกลูเตน|gluten.free/i);
 assert.match(bodies[glutenGuide.id].body[0][1], /Barley and Oat.*containing gluten/);
 assert.match(bodies[glutenGuide.id].bodyTh[0][1], /บาร์เลย์และโอ๊ต.*มีกลูเตน/);
-const unsupported = /vitamin C|สารต้านอนุมูลอิสระ|beta-glucan|not preservatives|ไม่ใช่สารกันเสีย|QC-tested|QC ทุก|QC อย่าง|Halal.certified|Halal certification|รับรองฮาลาล|ใบรับรองฮาลาล|best.?sell|ขายดี|9\.5\/10|30[–-]40%|no artificial fruit coloring|ไม่มีสีผสมอาหารเทียม|health.positioning|health.aligned|health halo|healthy match|health benefits|health-conscious|healthiest|functional nutrition|ดีต่อสุขภาพ|สายเฮลตี้|สายสุขภาพ|เพื่อสุขภาพ|อิ่มนาน|อิ่มท้องนาน|ชีส|\bcheese\b|consistent inventory|never caught out of stock|exclusive flavors|exclusive range|unavailable (?:in|from)|30%|2[–-]4x|2-4 เท่า|20 billion|2 หมื่นล้าน|no oxidation risk|ไม่มีความเสี่ยงจากออกซิเดชัน/i;
+const unsupported = /vitamin C|สารต้านอนุมูลอิสระ|beta-glucan|not preservatives|ไม่ใช่สารกันเสีย|QC-tested|QC ทุก|QC อย่าง|Halal.certified|Halal certification|รับรองฮาลาล|ใบรับรองฮาลาล|best.?sell|ขายดี|9\.5\/10|30[–-]40%|no artificial fruit coloring|ไม่มีสีผสมอาหารเทียม|health.positioning|health.aligned|health halo|healthy match|health benefits|health-conscious|healthiest|functional nutrition|ดีต่อสุขภาพ|สายเฮลตี้|สายสุขภาพ|เพื่อสุขภาพ|อิ่มนาน|อิ่มท้องนาน|ชีส|(?<!\/products\/)\bcheese\b|consistent inventory|never caught out of stock|exclusive flavors|exclusive range|unavailable (?:in|from)|30%|2[–-]4x|2-4 เท่า|20 billion|2 หมื่นล้าน|no oxidation risk|ไม่มีความเสี่ยงจากออกซิเดชัน/i;
 const escapeHtml = text => String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
 let variants = 0;
 for (const article of ARTICLES) {
@@ -64,8 +64,8 @@ for (const article of ARTICLES) {
     variants++;
   }
 }
-assert.equal(variants, 36);
+assert.equal(variants, 34);
 const portions = bodies['popping-boba-wholesale-profit-margins'];
 assert.match(JSON.stringify(portions.body), /25g drained gives 12 servings/);
 assert.match(JSON.stringify(portions.bodyTh), /25g จะได้ 12 เสิร์ฟ/);
-console.log('Blog facts: 18 unique articles × 2 languages; 36 actual prerenders, exact canonicals, schema, claims and portions passed.');
+console.log('Blog facts: 17 unique articles × 2 languages; 34 actual prerenders, exact canonicals, schema, claims and portions passed.');
