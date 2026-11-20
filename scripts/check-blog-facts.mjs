@@ -11,7 +11,7 @@ assert.match(glutenGuide.imgAlt, /มีกลูเตน/);
 assert.doesNotMatch(glutenGuide.imgAlt, /ไร้กลูเตน|ปลอดกลูเตน|gluten.free/i);
 assert.match(bodies[glutenGuide.id].body[0][1], /Barley and Oat.*containing gluten/);
 assert.match(bodies[glutenGuide.id].bodyTh[0][1], /บาร์เลย์และโอ๊ต.*มีกลูเตน/);
-const unsupported = /vitamin C|สารต้านอนุมูลอิสระ|beta-glucan|not preservatives|ไม่ใช่สารกันเสีย|QC-tested|QC ทุก|QC อย่าง|Halal.certified|Halal certification|รับรองฮาลาล|ใบรับรองฮาลาล|best.?sell|ขายดี|9\.5\/10|30[–-]40%|no artificial fruit coloring|ไม่มีสีผสมอาหารเทียม|health.positioning|health.aligned|health halo|healthy match|health benefits|health-conscious|healthiest|functional nutrition|ดีต่อสุขภาพ|สายเฮลตี้|สายสุขภาพ|เพื่อสุขภาพ|อิ่มนาน|อิ่มท้องนาน|ชีส|\bcheese\b|consistent inventory|never caught out of stock|exclusive flavors|exclusive range|unavailable (?:in|from)|30%|2[–-]4x|2-4 เท่า|20 billion|2 หมื่นล้าน|no oxidation risk|ไม่มีความเสี่ยงจากออกซิเดชัน/i;
+const unsupported = /vitamin C|สารต้านอนุมูลอิสระ|beta-glucan|not preservatives|ไม่ใช่สารกันเสีย|QC-tested|QC ทุก|QC อย่าง|Halal.certified|Halal certification|รับรองฮาลาล|ใบรับรองฮาลาล|best.?sell|ขายดี|9\.5\/10|30[–-]40%|no artificial fruit coloring|ไม่มีสีผสมอาหารเทียม|health.positioning|health.aligned|health halo|healthy match|health benefits|health-conscious|healthiest|functional nutrition|ดีต่อสุขภาพ|สายเฮลตี้|สายสุขภาพ|เพื่อสุขภาพ|อิ่มนาน|อิ่มท้องนาน|ชีส|(?<!\/products\/)\bcheese\b|consistent inventory|never caught out of stock|exclusive flavors|exclusive range|unavailable (?:in|from)|30%|2[–-]4x|2-4 เท่า|20 billion|2 หมื่นล้าน|no oxidation risk|ไม่มีความเสี่ยงจากออกซิเดชัน/i;
 const escapeHtml = text => String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
 let variants = 0;
 for (const article of ARTICLES) {
@@ -25,8 +25,7 @@ for (const article of ARTICLES) {
     assert.ok(blocks?.length > 0, `${label}: empty body`);
     const canonical = `https://blessmethailand.com${lang === 'en' ? '/en' : ''}/blog/${article.id}/`;
     assert.equal(getArticleMeta(article, lang, 'https://blessmethailand.com').canonical, canonical);
-    const claimText = JSON.stringify(blocks, (key, value) => key === 'href' ? undefined : value);
-    assert.doesNotMatch(claimText, unsupported, `${label}: unsupported claim`);
+    assert.doesNotMatch(JSON.stringify(blocks), unsupported, `${label}: unsupported claim`);
     // JSON alone is not readable article markup: assert both SSR and hydration data.
     const html = readFileSync(new URL(`../dist${lang === 'en' ? '/en' : ''}/blog/${article.id}/index.html`, import.meta.url), 'utf8');
     assert.equal(html.match(/<link rel="canonical" href="([^"]+)"/)?.[1], canonical, `${label}: prerender canonical`);
