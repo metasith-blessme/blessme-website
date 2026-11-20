@@ -2,9 +2,7 @@ import React from 'react';
 import { CUSTOMERS } from '../constants/customers';
 import { HOME } from '../constants/home';
 import { LINE_URL } from '../constants/nav';
-import { PRODUCTS, productSearchName } from '../constants/products';
 import { SHOPEE_URL } from '../lib/analytics';
-import { buildPath, handleLinkClick } from '../lib/routing';
 import { pageCrumbs } from '../lib/seo';
 import Breadcrumbs from '../components/Breadcrumbs';
 
@@ -15,6 +13,10 @@ const COPY = {
     lead: 'ร้านที่ใส่ท็อปปิ้งในเมนู ส่งรูปเมนูมาที่ LINE @blessmethailand ได้ เราลงรูปเมื่อร้านอนุญาต',
     shopee: 'ดูรีวิวที่ Shopee',
     line: 'ส่งรูปเมนูทาง LINE',
+    map: 'ดูแผนที่',
+    facebook: 'Facebook',
+    website: 'เว็บไซต์',
+    shop: 'ร้านออนไลน์',
   },
   en: {
     eyebrow: 'Shops',
@@ -22,10 +24,18 @@ const COPY = {
     lead: 'Cafés can send a photo of the menu on LINE @blessmethailand. A shop is shown here after they allow it.',
     shopee: 'See the Shopee reviews',
     line: 'Send a menu photo on LINE',
+    map: 'View map',
+    facebook: 'Facebook',
+    website: 'Website',
+    shop: 'Online shop',
   },
 };
 
-export default function CustomersPage({ lang, onOpen }) {
+function shopName(shop, lang) {
+  return lang === 'th' ? shop.nameTh : shop.nameEn;
+}
+
+export default function CustomersPage({ lang }) {
   const copy = COPY[lang] || COPY.en;
   const proof = (HOME[lang] || HOME.en).why.slice(0, 2);
 
@@ -50,18 +60,35 @@ export default function CustomersPage({ lang, onOpen }) {
       {CUSTOMERS.length > 0 && (
         <ul className="bm-customer-grid">
           {CUSTOMERS.map((shop) => {
-            const product = PRODUCTS.find((item) => item.id === shop.product);
+            const name = shopName(shop, lang);
+            const province = lang === 'th' ? shop.provinceTh : shop.provinceEn;
             return (
-              <li key={`${shop.shopName}-${shop.location}`}>
-                {shop.photo ? <img src={shop.photo} alt={shop.shopName} /> : null}
-                <strong>{shop.shopName}</strong>
-                {shop.location ? <span>{shop.location}</span> : null}
-                {shop.quote ? <q>{shop.quote}</q> : null}
-                {product ? (
-                  <a href={buildPath({ page: 'Products', productId: product.id, lang })} onClick={(event) => handleLinkClick(event, () => onOpen(product))}>
-                    {productSearchName(product, lang)}
-                  </a>
-                ) : null}
+              <li key={shop.id}>
+                <picture>
+                  <source srcSet={shop.logo} type="image/webp" />
+                  <img
+                    src={shop.logoFallback}
+                    alt={name}
+                    width={shop.logoWidth}
+                    height={shop.logoHeight}
+                    loading="lazy"
+                  />
+                </picture>
+                <strong>{name}</strong>
+                <span>{province}</span>
+                <span className="bm-customer-address">{shop.address}</span>
+                <div className="bm-customer-links">
+                  <a href={shop.mapsUrl} target="_blank" rel="noopener noreferrer">{copy.map}</a>
+                  {shop.links.map((link) => (
+                    <a key={link.kind} href={link.href} target="_blank" rel="noopener noreferrer">{copy[link.kind]}</a>
+                  ))}
+                </div>
+                <iframe
+                  className="bm-customer-map"
+                  loading="lazy"
+                  title={lang === 'th' ? `แผนที่ ${shop.nameTh}` : `Map of ${shop.nameEn}`}
+                  src={`https://maps.google.com/maps?q=${shop.lat},${shop.lng}&z=15&output=embed`}
+                />
               </li>
             );
           })}
