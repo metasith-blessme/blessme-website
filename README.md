@@ -138,7 +138,7 @@ Search for `Blessme.team@gmail.com` or `82-896-5199` in index.html.
 - Phone: +66 (0) 82-896-5199
 - LINE: @591dzhsr
 - Instagram: blessme_thailand
-- Facebook: @BlessMe Thailand
+- Facebook: BlessMe Thailand
 
 ---
 
