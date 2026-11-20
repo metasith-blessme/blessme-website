@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { T } from '../constants/translations';
 import { buildPath } from '../lib/routing';
+import SocialLinks from './SocialLinks';
 
 const NAV_KEYS = ['Products', 'Customers', 'About us', 'Blog', 'FAQ'];
 
@@ -39,7 +40,7 @@ export default function Navbar({ page, setPage, lang, setLang }) {
                 <a
                   key={key}
                   href={buildPath({ page: key, lang })}
-                  className={`relative px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-colors ${isActive ? 'text-[#3B6146]' : 'text-[#2B241E]/60 hover:text-[#2B241E]'}`}
+                  className={`relative px-3.5 min-[1360px]:px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-colors ${isActive ? 'text-[#3B6146]' : 'text-[#2B241E]/60 hover:text-[#2B241E]'}`}
                   onClick={(e) => navigate(key, e)}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -58,7 +59,7 @@ export default function Navbar({ page, setPage, lang, setLang }) {
           
           {/* Right Actions */}
           <div className="flex items-center gap-6">
-            <span className="hidden xl:block font-mono text-sm tracking-widest text-[#2B241E]/80 font-semibold">+66 (0) 82-896-5199</span>
+            <span className="hidden xl:block whitespace-nowrap font-mono text-sm tracking-widest text-[#2B241E]/80 font-semibold">+66 (0) 82-896-5199</span>
             
             <div className="hidden md:flex bg-[#F1EADF] p-1 rounded-lg" role="group" aria-label="Language">
               <button 
@@ -74,9 +75,13 @@ export default function Navbar({ page, setPage, lang, setLang }) {
                 TH
               </button>
             </div>
+
+            <div className="hidden lg:flex -mx-3">
+              <SocialLinks />
+            </div>
             
             <button 
-              className="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-[#4E7C59] text-white font-semibold text-sm tracking-wide rounded-full hover:bg-[#3B6146] transition-colors shadow-[0_4px_14px_rgba(59,97,70,0.25)] hover:shadow-[0_6px_20px_rgba(59,97,70,0.35)]"
+              className="hidden md:inline-flex whitespace-nowrap items-center justify-center px-6 py-2.5 bg-[#4E7C59] text-white font-semibold text-sm tracking-wide rounded-full hover:bg-[#3B6146] transition-colors shadow-[0_4px_14px_rgba(59,97,70,0.25)] hover:shadow-[0_6px_20px_rgba(59,97,70,0.35)]"
               onClick={() => navigate('Wholesale')}
             >
               {t.wholesale}
@@ -126,6 +131,7 @@ export default function Navbar({ page, setPage, lang, setLang }) {
             </div>
             
             <div className="mt-8 flex flex-col gap-4 border-t border-[#2B241E]/10 pt-6">
+              <SocialLinks />
               <div className="flex bg-[#F1EADF] p-1 rounded-full" role="group" aria-label="Language">
                 <button 
                   className={`flex-1 py-2.5 text-xs font-bold font-mono rounded-full transition-colors ${lang==='en' ? 'bg-white shadow-sm text-[#2B241E]' : 'text-[#2B241E]/50'}`}

@@ -2,6 +2,7 @@ import React from 'react';
 import { T } from '../constants/translations';
 import { buildPath } from '../lib/routing';
 import { SHOPEE_URL } from '../lib/analytics';
+import SocialLinks from './SocialLinks';
 
 export default function Footer({ setPage, lang }) {
   const t = T[lang];
@@ -55,6 +56,7 @@ export default function Footer({ setPage, lang }) {
                 </svg>
               </a>
             </div>
+            <SocialLinks />
           </div>
         </div>
 
