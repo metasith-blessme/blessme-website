@@ -75,6 +75,14 @@ const MERGED_POSTS = [
   ['greek-yogurt-cafe-premium-popping-boba-revenue', 'popping-boba-greek-yogurt-healthy-pairing'],
 ];
 
+const REMOVED_POSTS = [
+  { id: 'sourcing-audit', th: '/blog/how-to-choose-muk-pop-wholesale/', en: '/en/blog/how-to-choose-muk-pop-wholesale/' },
+  { id: 'specialty-category', th: '/blog/', en: '/en/blog/' },
+  { id: 'curation-philosophy', th: '/about/', en: '/en/about/' },
+  { id: 'introduce-new-product', th: '/blog/five-muk-pop-menus-for-milk-tea-shops/', en: '/en/blog/five-muk-pop-menus-for-milk-tea-shops/' },
+  { id: 'shelf-life', th: '/blog/cold-chain/', en: '/en/blog/cold-chain/' },
+];
+
 function withSlash(p) {
   return p !== '/' && !p.endsWith('/') ? `${p}/` : p;
 }
@@ -96,6 +104,14 @@ function generateRedirects() {
     add(`/blog/${fromId}/`, `/en/blog/${toId}/`);
     add(`/th/blog/${fromId}`, `/blog/${toId}/`);
     add(`/th/blog/${fromId}/`, `/blog/${toId}/`);
+  }
+  for (const post of REMOVED_POSTS) {
+    for (const prefix of ['', '/en']) {
+      add(`${prefix}/blog/${post.id}`, post.en);
+      add(`${prefix}/blog/${post.id}/`, post.en);
+    }
+    add(`/th/blog/${post.id}`, post.th);
+    add(`/th/blog/${post.id}/`, post.th);
   }
   for (const route of routes) {
     const thai = urlFor(route, 'th').slice(BASE_URL.length);
