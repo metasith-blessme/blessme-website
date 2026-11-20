@@ -827,151 +827,6 @@
       ]
     ]
   },
-  "milk-tea-shop-popping-boba-profit-strategy": {
-    "body": [
-      [
-        "p",
-        "A topping trial can help you evaluate a new milk tea menu option. Compare portion costs, proposed prices and actual orders before deciding."
-      ],
-      [
-        "h2",
-        "Plan a milk tea topping trial"
-      ],
-      [
-        "p",
-        "Before adding a topping, compare its drained portion cost with your proposed selling price. Include labour, waste and other expenses when deciding whether the menu item works for your shop."
-      ],
-      [
-        "h2",
-        "Illustrative contribution before other expenses (not net profit)"
-      ],
-      [
-        "p",
-        "Barley, Oat, Red Bean and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste."
-      ],
-      [
-        "p",
-        "Illustration: 40 barley topping servings/day at a 20 THB upcharge and 4.50 THB portion cost leave 620.00 THB/day or 18,600.00 THB per 30 days before labour, tax, shipping, waste and other expenses. This is not observed customer performance or a sales guarantee."
-      ],
-      [
-        "h2",
-        "Questions to test with customers"
-      ],
-      [
-        "ul",
-        [
-          "Would customers choose the topping at your proposed price?",
-          "Does a menu photo help customers understand the topping?",
-          "Do customers order it again? Record rather than assume."
-        ]
-      ],
-      [
-        "h2",
-        "Milk tea pairing ideas to test"
-      ],
-      [
-        "ul",
-        [
-          "Trial idea: Thai tea + barley (contains gluten)",
-          "Trial idea: classic milk tea + red bean",
-          "Trial idea: matcha latte + red bean",
-          "Trial idea: oolong tea + Osmanthus Konjac (not popping boba)"
-        ]
-      ],
-      [
-        "links",
-        [
-          {
-            "href": "/en/products/barley/",
-            "text": "Barley Popping Boba"
-          },
-          {
-            "href": "/en/products/redbean/",
-            "text": "Red Bean Popping Boba"
-          }
-        ]
-      ],
-      [
-        "p",
-        "Request samples by emailing Blessme.team@gmail.com. These pairings are serving suggestions, not tested recipes or measured customer results."
-      ],
-      [
-        "p",
-        "Barley and oat contain gluten. All five toppings are vegan and packed in syrup with sugar. Draining syrup can reduce sweetness but does not make them sugar-free. Not suitable for children under 6 because of choking risk."
-      ]
-    ],
-    "bodyTh": [
-      [
-        "p",
-        "การทดลองท็อปปิ้งช่วยให้ประเมินตัวเลือกเมนูชานมใหม่ได้ เปรียบเทียบต้นทุนต่อเสิร์ฟ ราคาที่เสนอ และคำสั่งซื้อจริงก่อนตัดสินใจ"
-      ],
-      [
-        "h2",
-        "วางแผนทดลองท็อปปิ้งชานม"
-      ],
-      [
-        "p",
-        "ก่อนเพิ่มท็อปปิ้ง ให้เปรียบเทียบต้นทุนเนื้อต่อเสิร์ฟกับราคาขายที่เสนอ รวมค่าแรง ของเสีย และค่าใช้จ่ายอื่นก่อนตัดสินใจว่าเมนูเหมาะกับร้านหรือไม่"
-      ],
-      [
-        "h2",
-        "ตัวอย่างส่วนต่างก่อนค่าใช้จ่ายอื่น (ไม่ใช่กำไรสุทธิ)"
-      ],
-      [
-        "p",
-        "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย"
-      ],
-      [
-        "p",
-        "สมมติขายท็อปปิ้งข้าวบาร์เลย์ 40 เสิร์ฟ/วัน บวกเพิ่มเสิร์ฟละ 20 บาท ต้นทุนเสิร์ฟละ 4.50 บาท จะเหลือส่วนต่าง 620.00 บาท/วัน หรือ 18,600.00 บาท/30 วัน ยังไม่หักค่าแรง ภาษี ขนส่ง ของเสีย และค่าใช้จ่ายอื่น ตัวเลขนี้เป็นตัวอย่าง ไม่ใช่ผลประกอบการจริงหรือการรับประกันยอดขาย"
-      ],
-      [
-        "h2",
-        "คำถามที่ควรทดลองกับลูกค้า"
-      ],
-      [
-        "ul",
-        [
-          "ลูกค้าเลือกท็อปปิ้งที่ราคาที่เสนอหรือไม่",
-          "ภาพเมนูช่วยให้ลูกค้าเข้าใจท็อปปิ้งหรือไม่",
-          "ลูกค้าสั่งซ้ำหรือไม่ ให้บันทึกแทนการคาดเดา"
-        ]
-      ],
-      [
-        "h2",
-        "ไอเดียจับคู่ชานมสำหรับทดลอง"
-      ],
-      [
-        "ul",
-        [
-          "ไอเดียทดลอง: ชาไทย + มุกป๊อปข้าวบาร์เลย์ ซึ่งมีกลูเตน",
-          "ไอเดียทดลอง: ชานม + มุกป๊อปถั่วแดง",
-          "ไอเดียทดลอง: ชานมบราวน์ชูการ์ + โมจิโยเกิร์ต"
-        ]
-      ],
-      [
-        "links",
-        [
-          {
-            "href": "/products/barley/",
-            "text": "มุกป๊อปข้าวบาร์เลย์"
-          },
-          {
-            "href": "/products/redbean/",
-            "text": "มุกป๊อปถั่วแดง"
-          }
-        ]
-      ],
-      [
-        "p",
-        "ขอตัวอย่างทางอีเมล Blessme.team@gmail.com การจับคู่เหล่านี้เป็นไอเดียเสิร์ฟ ไม่ใช่สูตรที่ผ่านการทดสอบหรือผลลัพธ์จริงของลูกค้า"
-      ],
-      [
-        "p",
-        "ข้าวบาร์เลย์และข้าวโอ๊ตมีกลูเตน ท็อปปิ้งทั้งห้ารายการเป็นวีแกน บรรจุในน้ำเชื่อมและมีน้ำตาล เทน้ำเชื่อมออกเพื่อลดความหวานได้ แต่ไม่ได้ทำให้ปราศจากน้ำตาล ไม่เหมาะสำหรับเด็กอายุต่ำกว่า 6 ปี เพราะเสี่ยงสำลัก"
-      ]
-    ]
-  },
   "best-milk-tea-popping-boba-pairing-guide": {
     "body": [
       [
@@ -2287,80 +2142,120 @@
     "body": [
       [
         "h2",
-        "What Are BlessMe’s Pack Prices?"
+        "Six toppings and the pack price"
       ],
       [
         "p",
-        "BlessMe’s approved pack prices and minimum-order policy are:"
+        "BlessMe lists six toppings. Shops order oat and barley first. Red bean comes next. Water chestnut is back in stock. The other two are Moji Yogurt and Osmanthus Konjac. Osmanthus Konjac is konjac, not popping boba."
       ],
       [
         "ul",
         [
-          "Five flavors: 90 THB/pack.",
-          "Moji Yogurt: 120 THB/pack.",
-          "No minimum order."
+          "Oat, barley, red bean, water chestnut, and Osmanthus Konjac are 90 THB a pack.",
+          "Moji Yogurt is 120 THB a pack.",
+          "There is no minimum order."
         ]
       ],
       [
         "p",
-        "Each 500g pack contains 300g drained weight: 20 servings at 15g drained each. Actual yield depends on portioning and waste."
-      ],
-      [
-        "h2",
-        "Evaluate a Topping Offer"
-      ],
-      [
-        "p",
-        "BlessMe offers five toppings: Barley, Oat, Red Bean, Osmanthus Konjac and Moji Yogurt. Osmanthus Konjac is a konjac topping, not popping boba. These pairings are serving suggestions, not tested recipes or measured customer results."
+        "Each pack is 500g, with 300g drained weight. At 15g drained per serving, a pack gives 20 servings. The portion costs 4.50 THB on a 90 THB pack, or 6.00 THB for Moji Yogurt, before shipping, tax and waste. Weigh the drained portion. Waste changes how many servings you get."
       ],
       [
         "links",
         [
           {
-            "href": "/en/products/barley/",
-            "text": "Barley Popping Boba"
-          },
-          {
             "href": "/en/products/oat/",
             "text": "Oat Popping Boba"
           },
           {
+            "href": "/en/products/barley/",
+            "text": "Barley Popping Boba"
+          },
+          {
             "href": "/en/products/redbean/",
             "text": "Red Bean Popping Boba"
+          },
+          {
+            "href": "/en/products/chestnut/",
+            "text": "Water Chestnut Popping Boba"
+          },
+          {
+            "href": "/en/products/cheese/",
+            "text": "Moji Yogurt"
+          },
+          {
+            "href": "/en/products/osmanthus/",
+            "text": "Osmanthus Konjac"
           }
         ]
       ],
       [
         "h2",
-        "Illustrative contribution before other expenses (not net profit)"
+        "Try the topping on milk tea before you print the menu"
       ],
       [
         "p",
-        "Barley, Oat, Red Bean and Osmanthus Konjac cost 90 THB per pack; Moji Yogurt costs 120 THB. Each pack is 500g with 300g drained weight. At 15g drained per serving: 20 servings, costing 4.50 THB (90 THB pack) or 6.00 THB (Moji Yogurt), before shipping, tax and waste."
+        "Compare the drained portion cost with the price you plan to charge. Add labour, waste and the other costs of the drink before you keep the item on the menu."
       ],
       [
         "p",
-        "Illustration: 20 barley topping servings/day at a 20 THB upcharge and 4.50 THB portion cost leave 310.00 THB/day or 9,300.00 THB per 30 days before labour, tax, shipping, waste and other expenses. This is not observed customer performance or a sales guarantee."
+        "Illustration: 20 barley topping servings/day at a 20 THB upcharge and 4.50 THB portion cost leave 310.00 THB/day or 9,300.00 THB per 30 days before labour, tax, shipping, waste and other expenses."
+      ],
+      [
+        "p",
+        "Illustration: 40 barley topping servings/day at a 20 THB upcharge and 4.50 THB portion cost leave 620.00 THB/day or 18,600.00 THB per 30 days before labour, tax, shipping, waste and other expenses. Neither figure is observed customer performance or a sales guarantee."
       ],
       [
         "h2",
-        "Top 3 Menu Engineering Strategies for Popping Boba"
+        "Questions to record in the trial"
       ],
       [
         "ul",
         [
-          "Create a signature drink trial using Moji Yogurt or Osmanthus Konjac (konjac, not popping boba)",
-          "Try visual layering in clear cups",
-          "Test a combo offer and include the topping cost in your calculation"
+          "Would customers choose the topping at your proposed price?",
+          "Does a menu photo help customers understand the topping?",
+          "Do customers order it again? Write down the orders. Do not guess."
         ]
       ],
       [
         "h2",
-        "How to Manage Popping Boba Inventory to Prevent Waste"
+        "Pairings to test"
       ],
       [
         "p",
-        "Use these storage and portion details when planning stock:"
+        "These pairings are serving suggestions, not tested recipes or measured customer results."
+      ],
+      [
+        "ul",
+        [
+          "Trial idea: Thai tea + barley. Barley contains gluten.",
+          "Trial idea: milk tea + barley. Barley contains gluten.",
+          "Trial idea: classic milk tea + red bean.",
+          "Trial idea: matcha latte + red bean.",
+          "Trial idea: brown sugar milk tea + Moji Yogurt.",
+          "Trial idea: oolong tea + Osmanthus Konjac. This is konjac, not popping boba.",
+          "Trial idea: fruit tea or cold brew tea + water chestnut."
+        ]
+      ],
+      [
+        "h2",
+        "Menu trials"
+      ],
+      [
+        "ul",
+        [
+          "Trial a signature drink with Moji Yogurt or Osmanthus Konjac.",
+          "Layer the topping in a clear cup.",
+          "Price a set that includes the topping cost."
+        ]
+      ],
+      [
+        "h2",
+        "Storage and portion size"
+      ],
+      [
+        "p",
+        "Use these storage and portion details when you plan stock."
       ],
       [
         "ul",
@@ -2372,7 +2267,7 @@
       ],
       [
         "h2",
-        "Why Partner with BlessMe for Your Wholesale Ingredients?"
+        "Ask for samples"
       ],
       [
         "p",
@@ -2380,106 +2275,138 @@
       ],
       [
         "p",
-        "Barley and oat contain gluten. All five toppings are vegan and packed in syrup with sugar. Draining syrup can reduce sweetness but does not make them sugar-free. Not suitable for children under 6 because of choking risk."
+        "Barley and oat contain gluten. All six toppings are vegan and packed in syrup with sugar. Draining syrup can reduce sweetness but does not make them sugar-free. Not suitable for children under 6 because of choking risk."
       ]
     ],
     "bodyTh": [
       [
         "h2",
-        "คำนวณต้นทุนท็อปปิ้งต่อเสิร์ฟอย่างไร"
+        "ท็อปปิ้งหกรายการ ราคาแพ็คเท่าไร"
       ],
       [
         "p",
-        "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย"
-      ],
-      [
-        "h2",
-        "ราคาแพ็ค BlessMe เท่าไร"
-      ],
-      [
-        "p",
-        "ราคาแพ็คและเงื่อนไขขั้นต่ำที่ BlessMe ยืนยัน:"
+        "BlessMe มีท็อปปิ้งหกรายการ ร้านสั่งโอ๊ตกับบาร์เลย์ก่อนรสอื่น ถั่วแดงตามมา แห้วมีของอีกแล้ว ที่เหลือคือโมจิโยเกิร์ตกับบุกหอมหมื่นลี้ บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป"
       ],
       [
         "ul",
         [
-          "5 รส ราคา 90 บาท/แพ็ค",
-          "โมจิโยเกิร์ต 120 บาท/แพ็ค",
+          "โอ๊ต บาร์เลย์ ถั่วแดง แห้ว และบุกหอมหมื่นลี้ ราคา 90 บาทต่อแพ็ค",
+          "โมจิโยเกิร์ต ราคา 120 บาทต่อแพ็ค",
           "ไม่มีขั้นต่ำในการสั่งซื้อ"
         ]
       ],
       [
         "p",
-        "แพ็ค 500g มีน้ำหนักเนื้อ 300g ใช้น้ำหนักเนื้อคำนวณต้นทุนต่อเสิร์ฟ โดยเผื่อของเสียตามจริง"
-      ],
-      [
-        "h2",
-        "ประเมินข้อเสนอท็อปปิ้ง"
-      ],
-      [
-        "p",
-        "BlessMe มีท็อปปิ้งห้ารายการ: ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง บุกหอมหมื่นลี้ และโมจิโยเกิร์ต บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป การจับคู่เหล่านี้เป็นไอเดียเสิร์ฟ ไม่ใช่สูตรที่ผ่านการทดสอบหรือผลลัพธ์จริงของลูกค้า"
+        "แพ็ค 500g มีน้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย ชั่งเนื้อหลังกรองน้ำเชื่อม ของเสียทำให้จำนวนเสิร์ฟเปลี่ยนได้"
       ],
       [
         "links",
         [
           {
-            "href": "/products/barley/",
-            "text": "มุกป๊อปข้าวบาร์เลย์"
-          },
-          {
             "href": "/products/oat/",
             "text": "มุกป๊อปข้าวโอ๊ต"
           },
           {
+            "href": "/products/barley/",
+            "text": "มุกป๊อปข้าวบาร์เลย์"
+          },
+          {
             "href": "/products/redbean/",
             "text": "มุกป๊อปถั่วแดง"
+          },
+          {
+            "href": "/products/chestnut/",
+            "text": "มุกป๊อปแห้ว"
+          },
+          {
+            "href": "/products/cheese/",
+            "text": "โมจิโยเกิร์ต"
+          },
+          {
+            "href": "/products/osmanthus/",
+            "text": "บุกหอมหมื่นลี้"
           }
         ]
       ],
       [
         "h2",
-        "ตัวอย่างส่วนต่างก่อนค่าใช้จ่ายอื่น (ไม่ใช่กำไรสุทธิ)"
+        "ทดลองใส่ชานมก่อนพิมพ์เมนู"
       ],
       [
         "p",
-        "ข้าวบาร์เลย์ ข้าวโอ๊ต ถั่วแดง และบุกหอมหมื่นลี้ ราคา 90 บาท/แพ็ค โมจิโยเกิร์ต 120 บาท/แพ็ค ขนาด 500g น้ำหนักเนื้อ 300g ถ้าใช้เนื้อเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาท หรือ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมขนส่ง ภาษี และของเสีย"
+        "เอาต้นทุนเนื้อต่อเสิร์ฟไปเทียบกับราคาที่จะบวก รวมค่าแรง ของเสีย และต้นทุนเครื่องดื่ม แล้วค่อยตัดสินว่าจะคงเมนูนี้ไว้หรือไม่"
       ],
       [
         "p",
-        "สมมติขายท็อปปิ้งข้าวบาร์เลย์ 20 เสิร์ฟ/วัน บวกเพิ่มเสิร์ฟละ 20 บาท ต้นทุนเสิร์ฟละ 4.50 บาท จะเหลือส่วนต่าง 310.00 บาท/วัน หรือ 9,300.00 บาท/30 วัน ยังไม่หักค่าแรง ภาษี ขนส่ง ของเสีย และค่าใช้จ่ายอื่น ตัวเลขนี้เป็นตัวอย่าง ไม่ใช่ผลประกอบการจริงหรือการรับประกันยอดขาย"
+        "สมมติขายท็อปปิ้งข้าวบาร์เลย์ 20 เสิร์ฟ/วัน บวกเพิ่มเสิร์ฟละ 20 บาท ต้นทุนเสิร์ฟละ 4.50 บาท จะเหลือส่วนต่าง 310.00 บาท/วัน หรือ 9,300.00 บาท/30 วัน ยังไม่หักค่าแรง ภาษี ขนส่ง ของเสีย และค่าใช้จ่ายอื่น"
+      ],
+      [
+        "p",
+        "สมมติขายท็อปปิ้งข้าวบาร์เลย์ 40 เสิร์ฟ/วัน บวกเพิ่มเสิร์ฟละ 20 บาท ต้นทุนเสิร์ฟละ 4.50 บาท จะเหลือส่วนต่าง 620.00 บาท/วัน หรือ 18,600.00 บาท/30 วัน ยังไม่หักค่าแรง ภาษี ขนส่ง ของเสีย และค่าใช้จ่ายอื่น ทั้งสองตัวเลขเป็นตัวอย่าง ไม่ใช่ผลประกอบการจริงหรือการรับประกันยอดขาย"
       ],
       [
         "h2",
-        "3 แนวทางทดลองจัดเมนูมุกป๊อป"
+        "ระหว่างทดลอง ให้จดจากออเดอร์จริง"
       ],
       [
         "ul",
         [
-          "ทดลองเมนูซิกเนเจอร์ด้วยโมจิโยเกิร์ตหรือบุกหอมหมื่นลี้ ซึ่งเป็นบุกไม่ใช่มุกป๊อป",
-          "ลองจัดชั้นท็อปปิ้งในแก้วใส",
-          "ทดลองโปรโมชั่นจัดเซ็ต โดยรวมต้นทุนท็อปปิ้งในการคำนวณ"
+          "ลูกค้ายอมบวกราคานี้ไหม",
+          "รูปในเมนูทำให้เห็นท็อปปิ้งชัดไหม",
+          "มีคนสั่งซ้ำไหม ดูจากบิล ไม่ต้องเดา"
         ]
       ],
       [
         "h2",
-        "วิธีคุมสต็อก ไม่ให้กำไรหดเพราะของเสีย"
+        "คู่เครื่องดื่มที่ควรลอง"
       ],
       [
         "p",
-        "ใช้ข้อมูลการเก็บและปริมาณเสิร์ฟต่อไปนี้ในการวางแผนสต็อก:"
+        "การจับคู่เหล่านี้เป็นไอเดียเสิร์ฟ ไม่ใช่สูตรที่ผ่านการทดสอบหรือผลลัพธ์จริงของลูกค้า"
       ],
       [
         "ul",
         [
-          "ก่อนเปิด: เก็บที่อุณหภูมิห้องได้นาน 12 เดือนนับจากวันผลิต",
-          "หลังเปิด: ปิดให้สนิทและแช่เย็นที่อุณหภูมิไม่เกิน 4°C เก็บได้นานสูงสุด 1 เดือน",
-          "ตัวอย่างปริมาณเสิร์ฟ: หนึ่งแพ็คมีน้ำหนักเนื้อ 300g หากใช้เนื้อเสิร์ฟละ 25g จะได้ 12 เสิร์ฟ หรือ 15g จะได้ 20 เสิร์ฟ ควรชั่งเนื้อหลังกรองน้ำเชื่อม ไม่สมมติจากขนาดช้อน และบันทึกวันที่เปิด"
+          "ไอเดียทดลอง: ชาไทย + มุกป๊อปข้าวบาร์เลย์ ซึ่งมีกลูเตน",
+          "ไอเดียทดลอง: ชานม + มุกป๊อปข้าวบาร์เลย์ ซึ่งมีกลูเตน",
+          "ไอเดียทดลอง: ชานม + มุกป๊อปถั่วแดง",
+          "ไอเดียทดลอง: มัทฉะลาเต้ + มุกป๊อปถั่วแดง",
+          "ไอเดียทดลอง: ชานมบราวน์ชูการ์ + โมจิโยเกิร์ต",
+          "ไอเดียทดลอง: ชาอู่หลง + บุกหอมหมื่นลี้ ซึ่งเป็นบุก ไม่ใช่มุกป๊อป",
+          "ไอเดียทดลอง: ชาผลไม้หรือชา Cold Brew + มุกป๊อปแห้ว"
         ]
       ],
       [
         "h2",
-        "หาซัพพลายเออร์อยู่ ลองคุยกับ BlessMe สิครับ"
+        "วิธีลองจัดเมนู"
+      ],
+      [
+        "ul",
+        [
+          "ลองเมนูซิกเนเจอร์ด้วยโมจิโยเกิร์ต หรือบุกหอมหมื่นลี้",
+          "จัดชั้นท็อปปิ้งในแก้วใส",
+          "ตั้งราคาเซ็ตโดยบวกต้นทุนท็อปปิ้งเข้าไปด้วย"
+        ]
+      ],
+      [
+        "h2",
+        "การเก็บและปริมาณต่อเสิร์ฟ"
+      ],
+      [
+        "p",
+        "ใช้ตัวเลขนี้ตอนวางสต็อก"
+      ],
+      [
+        "ul",
+        [
+          "ก่อนเปิด เก็บที่อุณหภูมิห้องได้ 12 เดือนนับจากวันผลิต",
+          "หลังเปิด ปิดให้สนิทและแช่เย็นไม่เกิน 4°C ได้สูงสุด 1 เดือน",
+          "หนึ่งแพ็คมีน้ำหนักเนื้อ 300g หากใช้เนื้อเสิร์ฟละ 25g จะได้ 12 เสิร์ฟ หรือ 15g จะได้ 20 เสิร์ฟ ชั่งเนื้อหลังกรองน้ำเชื่อม อย่ากะจากขนาดช้อน และจดวันที่เปิด"
+        ]
+      ],
+      [
+        "h2",
+        "ขอตัวอย่างก่อนสั่ง"
       ],
       [
         "p",
@@ -2487,7 +2414,7 @@
       ],
       [
         "p",
-        "ข้าวบาร์เลย์และข้าวโอ๊ตมีกลูเตน ท็อปปิ้งทั้งห้ารายการเป็นวีแกน บรรจุในน้ำเชื่อมและมีน้ำตาล เทน้ำเชื่อมออกเพื่อลดความหวานได้ แต่ไม่ได้ทำให้ปราศจากน้ำตาล ไม่เหมาะสำหรับเด็กอายุต่ำกว่า 6 ปี เพราะเสี่ยงสำลัก"
+        "ข้าวบาร์เลย์และข้าวโอ๊ตมีกลูเตน ท็อปปิ้งทั้งหกรายการเป็นวีแกน บรรจุในน้ำเชื่อมและมีน้ำตาล เทน้ำเชื่อมออกเพื่อลดความหวานได้ แต่ไม่ได้ทำให้ปราศจากน้ำตาล ไม่เหมาะสำหรับเด็กอายุต่ำกว่า 6 ปี เพราะเสี่ยงสำลัก"
       ]
     ]
   },

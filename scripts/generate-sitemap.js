@@ -69,10 +69,13 @@ function generateSitemap() {
 // Old /th/… → Thai root. Legacy English-only paths (removed SKU, merged posts) → /en/….
 // Live former English URLs are NOT redirected: those paths now serve Thai.
 // Every target is the final slashed URL, so nothing here chains into another 301.
+// A 'live' entry was a bilingual post. /blog/ is Thai, so it stays on the Thai article.
+// Older pairs were English-only URLs at /blog/, so those still go to /en/blog/.
 const MERGED_POSTS = [
   ['popping-boba-wholesale-price-buy-bangkok', 'popping-boba-wholesale-price-thailand'],
   ['popping-boba-supplier-bangkok', 'best-popping-boba-wholesale-supplier-bangkok'],
   ['greek-yogurt-cafe-premium-popping-boba-revenue', 'popping-boba-greek-yogurt-healthy-pairing'],
+  ['milk-tea-shop-popping-boba-profit-strategy', 'popping-boba-wholesale-profit-margins', 'live'],
 ];
 
 const REMOVED_POSTS = [
@@ -99,7 +102,16 @@ function generateRedirects() {
     rules.push({ from, to: dest });
   };
 
-  for (const [fromId, toId] of MERGED_POSTS) {
+  for (const [fromId, toId, kind] of MERGED_POSTS) {
+    if (kind === 'live') {
+      add(`/blog/${fromId}`, `/blog/${toId}/`);
+      add(`/blog/${fromId}/`, `/blog/${toId}/`);
+      add(`/en/blog/${fromId}`, `/en/blog/${toId}/`);
+      add(`/en/blog/${fromId}/`, `/en/blog/${toId}/`);
+      add(`/th/blog/${fromId}`, `/blog/${toId}/`);
+      add(`/th/blog/${fromId}/`, `/blog/${toId}/`);
+      continue;
+    }
     add(`/blog/${fromId}`, `/en/blog/${toId}/`);
     add(`/blog/${fromId}/`, `/en/blog/${toId}/`);
     add(`/th/blog/${fromId}`, `/blog/${toId}/`);

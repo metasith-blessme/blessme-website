@@ -78,6 +78,27 @@ const removedPosts = [
   ['introduce-new-product', '/blog/five-muk-pop-menus-for-milk-tea-shops/', '/en/blog/five-muk-pop-menus-for-milk-tea-shops/'],
   ['shelf-life', '/blog/cold-chain/', '/en/blog/cold-chain/'],
 ];
+const liveMergedPosts = [
+  ['milk-tea-shop-popping-boba-profit-strategy', '/blog/popping-boba-wholesale-profit-margins/', '/en/blog/popping-boba-wholesale-profit-margins/'],
+];
+for (const [id, thai, english] of liveMergedPosts) {
+  for (const [from, to] of [
+    [`/blog/${id}`, thai],
+    [`/blog/${id}/`, thai],
+    [`/en/blog/${id}`, english],
+    [`/en/blog/${id}/`, english],
+    [`/th/blog/${id}`, thai],
+    [`/th/blog/${id}/`, thai],
+  ]) {
+    const redirect = await fetch(new URL(from, origin), { redirect: 'manual' });
+    assert.equal(redirect.status, 301, from);
+    const location = new URL(redirect.headers.get('location'), origin);
+    assert.equal(location.pathname, to, from);
+    assert.equal(location.search, '', from);
+    const finalResponse = await fetch(location, { redirect: 'manual' });
+    assert.equal(finalResponse.status, 200, `${from} → ${to}`);
+  }
+}
 for (const [id, thai, english] of removedPosts) {
   for (const [from, to] of [
     [`/blog/${id}`, english],
