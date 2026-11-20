@@ -55,7 +55,7 @@ export default function AboutPage({ lang }) {
           <ContactItem k="PHONE"      v="+66 (0) 82-896-5199" sub="คุณจ้า" href="tel:+66828965199" />
           <ContactItem k="LINE"       v="@blessmethailand" href="https://line.me/R/ti/p/@blessmethailand" />
           <ContactItem k="INSTAGRAM"  v="blessme_thailand" href={socialHref('instagram')} />
-          <ContactItem k="FACEBOOK"   v="@BlessMe Thailand" href={socialHref('facebook')} />
+          <ContactItem k="FACEBOOK"   v="BlessMe Thailand" href={socialHref('facebook')} />
           <ContactItem k="TIKTOK"     v="@blessme_thailand" href={socialHref('tiktok')} />
           <ContactItem k="WAREHOUSE"  v="Bangkok, Thailand" />
         </div>
