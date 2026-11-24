@@ -1,7 +1,7 @@
 # BlessMe External Listings — ARCHIVED DRAFT, NOT FOR PUBLICATION
 
 > Platform-optimized B2B marketing copy for BlessMe (Thailand) Co., Ltd.
-> Do not copy this historical draft: it contains obsolete prices, contact details, product classifications and unverified claims. Approved current facts: five SKUs 90 THB/pack; Moji Yogurt 120 THB; no MOQ; all vegan; Osmanthus is konjac; LINE @blessmethailand; free samples by email Blessme.team@gmail.com. Review each listing against current site and evidence before publication.
+> Do not copy this historical draft: it contains obsolete prices, contact details, product classifications and unverified claims. Approved current facts: five SKUs 90 THB/pack; Moji Yogurt 120 THB; no MOQ; vegan except Moji Yogurt (Moji Yogurt is not vegan); Osmanthus is konjac; LINE @blessmethailand; free samples by email Blessme.team@gmail.com. Review each listing against current site and evidence before publication.
 
 ---
 

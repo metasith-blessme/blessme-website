@@ -48,27 +48,21 @@ export default function ProductDetail({ product, onClose, lang }) {
               {displayTag}
             </span>
             <span className="text-xs font-semibold text-[#8C6A2E] bg-[#F8F4EA] px-2.5 py-0.5 rounded-full border border-[#C5A869]/30">
-              ฿{product.price || 90} / pack
+              ฿{product.price || 90} / {lang === 'th' ? 'แพ็ค' : 'pack'}
             </span>
           </div>
 
           <h1 className="bm-h1" id="product-title" ref={titleRef} tabIndex={-1} style={{ marginTop: 0 }}>{productHeading(product, lang)}</h1>
           <p className="bm-product-flavor" style={{ marginTop: 4, fontStyle: 'italic', color: '#7A6E63' }}>{displayFlavor}</p>
           <p className="bm-body" style={{ marginTop: 14 }}>{displayNote}</p>
-          {lang === 'th' && product.id === 'cheese' && (
-            <p className="bm-body" style={{ marginTop: 8 }}>ตัวนี้คือมุกป๊อปโยเกิร์ต ชื่อสินค้าคือโมจิโยเกิร์ต</p>
-          )}
-          {lang === 'th' && product.id === 'osmanthus' && (
-            <p className="bm-body" style={{ marginTop: 8 }}>บุกหอมหมื่นลี้ บางคนเรียกมุกบุกหรือเยลลี่บุก เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป</p>
-          )}
           <a className="inline-block mt-4 text-[#3B6146] underline" href={buildPath({ page: 'Wholesale', lang })}>
-            {lang === 'th' ? 'เปรียบเทียบสินค้าและราคาขายส่ง' : 'Compare products & wholesale pricing'}
+            {lang === 'th' ? 'ดูราคาส่งทุกรสเทียบกัน' : 'Compare products & wholesale pricing'}
           </a>
           
           {product.pairings && (
             <div style={{ marginTop: 14 }}>
               <div style={{ fontSize: 12, fontWeight: 600, color: '#7A6E63', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                {lang === 'th' ? 'ร้านเอาไปใส่:' : 'Recommended Menu Pairings:'}
+                {lang === 'th' ? 'เมนูที่เข้ากัน' : 'Recommended Menu Pairings:'}
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
                 {(lang === 'th' ? (product.pairingsTh || product.pairings) : product.pairings).map((p, i) => (
@@ -81,7 +75,7 @@ export default function ProductDetail({ product, onClose, lang }) {
           )}
 
           <div className="bm-spec-grid" role="list" aria-label="Product specifications" style={{ marginTop: 20 }}>
-            <div role="listitem"><div className="k">{t.modalPack}</div><div className="v">{product.packSize} ({lang === 'th' ? 'น้ำหนักเนื้อ' : 'drained'} {product.drainedWeight}; ~20 × 15g)</div></div>
+            <div role="listitem"><div className="k">{t.modalPack}</div><div className="v">{lang === 'th' ? `${product.packSize.replace('g', ' กรัม')} (เนื้อ ${product.drainedWeight.replace('g', ' กรัม')} ได้ประมาณ 20 แก้ว)` : `${product.packSize} (drained ${product.drainedWeight}; ~20 × 15g)`}</div></div>
             <div role="listitem"><div className="k">{t.modalShelf}</div><div className="v">{t.storageUnopened}</div></div>
             <div role="listitem"><div className="k">{t.modalStorage}</div><div className="v">{t.storageOpened}</div></div>
             <div role="listitem"><div className="k">{t.modalOrigin}</div><div className="v">{t.factoryOrigin}</div></div>
@@ -96,8 +90,8 @@ export default function ProductDetail({ product, onClose, lang }) {
 
           {product.id === 'osmanthus' && (
             <section id="product-faq" aria-labelledby="product-faq-title" style={{ marginTop: 20 }}>
-              <h2 id="product-faq-title" className="text-lg font-semibold">{lang === 'th' ? 'บุกหอมหมื่นลี้เป็นมุกป๊อปหรือไม่?' : 'Is Osmanthus Konjac popping boba?'}</h2>
-              <p className="bm-body" style={{ marginTop: 8 }}>{lang === 'th' ? 'บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป' : 'Osmanthus Konjac is a konjac topping, not popping boba.'}</p>
+              <h2 id="product-faq-title" className="text-lg font-semibold">{lang === 'th' ? 'บุกหอมหมื่นลี้ต่างจากมุกป๊อปยังไง' : 'Is Osmanthus Konjac popping boba?'}</h2>
+              <p className="bm-body" style={{ marginTop: 8 }}>{lang === 'th' ? 'บุกหอมหมื่นลี้เป็นท็อปปิ้งบุก ไม่ใช่มุกป๊อป กัดแล้วไม่แตก แต่เคี้ยวหนึบ ๆ แทน' : 'Osmanthus Konjac is a konjac topping, not popping boba.'}</p>
             </section>
           )}
 

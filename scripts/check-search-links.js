@@ -62,7 +62,7 @@ for (const { prefix, thai } of [{ prefix: '', thai: true }, { prefix: '/en', tha
     const price = `${p.price} ${thai ? 'บาท / แพ็ค' : 'THB / pack'}`;
     if (!card?.text.includes(name)) comparisonErrors.push(`Wholesale card missing ${name}: ${url}`);
     if (!card?.text.includes(price)) comparisonErrors.push(`Wholesale card missing ${price}: ${url}`);
-    const label = thai ? 'เปรียบเทียบสินค้าและราคาขายส่ง' : 'Compare products & wholesale pricing';
+    const label = thai ? 'ดูราคาส่งทุกรสเทียบกัน' : 'Compare products & wholesale pricing';
     if (!anchors(main(html(url))).some(a => a.href === `${prefix}/wholesale` && a.text === label)) {
       comparisonErrors.push(`Product main missing localized wholesale comparison link: ${url}`);
     }

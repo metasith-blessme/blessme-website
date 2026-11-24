@@ -16,13 +16,13 @@ const CONTENT = {
     eyebrow: 'WHOLESALE',
     h1: 'Popping Boba Wholesale in Bangkok',
     definition: 'Popping boba is a topping pearl with juice or syrup inside that pops when bitten. BlessMe wholesales it from Bangkok stock at 90–120 THB per pack, with no minimum order.',
-    lead: 'Six vegan toppings, including popping boba, Moji Yogurt and Osmanthus Konjac. 90–120 THB per pack, no minimum order. Bangkok stock, nationwide shipping. Request free samples by email.',
+    lead: 'Six toppings, including popping boba, Moji Yogurt and Osmanthus Konjac. 90–120 THB per pack, no minimum order. Bangkok stock, nationwide shipping. Request free samples by email.',
     ctaLine: 'Order on LINE',
     ctaSamples: 'Request free samples',
     whyTitle: 'Why buy popping boba wholesale from BlessMe',
     why: [
       ['Stock in Bangkok', 'No import wait — fast nationwide shipping.'],
-      ['Vegan, no gelatin', 'All six products are vegan; check individual labels for allergens.'],
+      ['Vegan options', 'All toppings except Moji Yogurt are vegan; check individual labels for allergens.'],
       ['6 signature toppings', 'Barley, Red Bean, Oat, Water Chestnut, Osmanthus Konjac, Moji Yogurt.'],
       ['Free samples', 'Request by email: Blessme.team@gmail.com.'],
       ['12-month shelf life', `${T.en.storageUnopened} ${T.en.storageOpened}`],
@@ -42,29 +42,28 @@ const CONTENT = {
   th: {
     eyebrow: 'ขายส่ง',
     h1: 'มุกป๊อป ขายส่ง กรุงเทพฯ ราคาส่ง 90 บาท/แพ็ค',
-    definition: 'มุกป๊อปคือท็อปปิ้งเม็ดกลม มีน้ำเชื่อมหรือน้ำผลไม้ข้างใน กัดแล้วแตก เบลสมีขายส่งจากสต็อกกรุงเทพฯ แพ็ค 90–120 บาท ไม่มีขั้นต่ำ',
-    lead: 'ท็อปปิ้งวีแกน 6 รายการ มีมุกป๊อป โมจิโยเกิร์ต และบุกหอมหมื่นลี้ แพ็ค 90–120 บาท ไม่มีขั้นต่ำ ของอยู่กรุงเทพฯ ส่งทั่วไทย ขอตัวอย่างฟรีทางอีเมล',
+    definition: 'แพ็คละ 90 บาท (โมจิโยเกิร์ต 120 บาท) แพ็คเดียวก็ส่ง ของพร้อมอยู่ที่กรุงเทพฯ สั่งวันนี้ไม่ต้องรอนำเข้า',
+    lead: 'ยังไม่แน่ใจว่ารสไหนเข้ากับร้าน ขอตัวอย่างไปชิมก่อนได้ฟรี ชอบแล้วค่อยสั่งจริง',
     ctaLine: 'ทัก LINE สั่งของ',
     ctaSamples: 'ขอตัวอย่างฟรี',
-    whyTitle: 'สั่งไข่มุกป๊อปขายส่งกับเบลสมี',
+    whyTitle: 'ทำไมร้านสั่งไข่มุกป๊อปกับเรา',
     why: [
-      ['มีของที่กรุงเทพฯ', 'ไม่ต้องรอของจากต่างประเทศ ส่งทั่วไทย'],
-      ['วีแกน ไม่ใส่เจลาติน', 'ทั้ง 6 รายการเป็นวีแกน สารก่อภูมิแพ้ให้ดูฉลากของแต่ละตัว'],
-      ['มี 6 รายการ', 'บาร์เลย์ ถั่วแดง ข้าวโอ๊ต แห้ว บุกหอมหมื่นลี้ โมจิโยเกิร์ต'],
+      ['ของพร้อมส่ง', 'สต็อกอยู่กรุงเทพฯ ไม่ต้องรอพรีออเดอร์จากจีน ส่งได้ทั่วไทย'],
+      ['วีแกนเกือบทุกรส', 'ทุกรสเป็นวีแกน ยกเว้นโมจิโยเกิร์ต ขายลูกค้าทานมังสวิรัติได้ ใครแพ้อาหารดูส่วนผสมบนฉลากก่อนนะ'],
       ['มีตัวอย่างฟรี', 'ขอที่อีเมล Blessme.team@gmail.com'],
-      ['อายุ 12 เดือน', `${T.th.storageUnopened} ${T.th.storageOpened}`],
-      ['ต้นทุนต่อแก้ว', '4.50–6.00 บาท เมื่อตักเนื้อ 15g ต่อแก้ว ยังไม่รวมค่าใช้จ่ายอื่น'],
+      ['เก็บได้ 12 เดือน', `${T.th.storageUnopened} ${T.th.storageOpened}`],
+      ['ต้นทุนแก้วละ 4.50–6 บาท', 'ตักแก้วละช้อน (15 กรัม) ตั้งราคาท็อปปิ้งเพิ่ม 20 บาทก็เหลือกำไรแล้ว'],
     ],
     priceTitle: 'ราคาส่ง',
     priceRows: [
-      ['5 รส ไม่รวมโมจิโยเกิร์ต (500g)', '90 บาท / แพ็ค'],
-      ['โมจิโยเกิร์ต (500g)', '120 บาท / แพ็ค'],
-      ['จำนวนที่เสิร์ฟต่อแพ็ค', '~15–20 ที่ (น้ำหนักเนื้อ 300g)'],
+      ['บาร์เลย์ · โอ๊ต · ถั่วแดง · แห้ว · บุกหอมหมื่นลี้ (500 กรัม)', '90 บาท / แพ็ค'],
+      ['โมจิโยเกิร์ต (500 กรัม)', '120 บาท / แพ็ค'],
+      ['1 แพ็คได้กี่แก้ว', 'ประมาณ 20 แก้ว (เนื้อ 300 กรัม ตักแก้วละ 15 กรัม)'],
     ],
-    flavorsTitle: '6 รายการขายส่ง',
+    flavorsTitle: 'ราคาส่งทุกรส',
     faqTitle: 'คำถามเรื่องการสั่ง',
-    finalTitle: 'สนใจไข่มุกป๊อปขายส่ง',
-    finalLead: 'ทัก LINE @blessmethailand หรือขอตัวอย่างฟรีที่ Blessme.team@gmail.com',
+    finalTitle: 'อยากลองใส่เมนู ทักมาคุยกันได้เลย',
+    finalLead: 'แอด LINE @blessmethailand หรืออยากชิมก่อน ขอตัวอย่างฟรีที่ Blessme.team@gmail.com',
   },
 };
 
@@ -121,8 +120,8 @@ export default function WholesalePage({ lang, setPage }) {
         <RoiCalculator lang={lang} />
 
         {/* Flavors */}
-        <p className="mt-8"><a className="text-[#3B6146] underline" href={buildPath({ page: 'Catalogue', lang })}>{lang === 'th' ? 'มุกป๊อป ขายส่ง ทุกรส' : 'All popping boba in stock'}</a></p>
-        <p className="mt-3"><a className="text-[#3B6146] underline" href={SHOPEE_URL} target="_blank" rel="noopener noreferrer">{lang === 'th' ? 'สั่งปลีกที่ Shopee' : 'Buy retail on Shopee'}</a></p>
+        <p className="mt-8"><a className="text-[#3B6146] underline" href={buildPath({ page: 'Catalogue', lang })}>{lang === 'th' ? 'ดูรายละเอียดทุกรส' : 'All popping boba in stock'}</a></p>
+        <p className="mt-3"><a className="text-[#3B6146] underline" href={SHOPEE_URL} target="_blank" rel="noopener noreferrer">{lang === 'th' ? 'ซื้อปลีกใน Shopee' : 'Buy retail on Shopee'}</a></p>
         <h2 className="font-['Fraunces'] text-3xl md:text-4xl font-semibold mt-20 mb-8">{c.flavorsTitle}</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {PRODUCTS.map((p) => (

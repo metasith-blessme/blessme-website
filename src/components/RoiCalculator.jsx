@@ -23,7 +23,7 @@ export default function RoiCalculator({ lang }) {
   const { costPerServing, contributionPerCup, monthlyCups, monthlyProfit, annualProfit, packsNeeded, marginPercent } = calculateUplift(product, portionGrams, dailyCups, upcharge);
 
   const lineQuoteMsg = isTh
-    ? `สั่ง ${product.nameTh} ประมาณ ${packsNeeded} แพ็ค/เดือน (${monthlyCups} แก้ว) ขอราคาขายส่ง`
+    ? `สนใจ${product.nameTh} ประมาณเดือนละ ${packsNeeded} แพ็ค (${monthlyCups} แก้ว) ขอราคาส่งหน่อย`
     : `Hello, I would like to enquire about wholesale pricing for ~${packsNeeded} packs/month of BlessMe ${product.name} (~${monthlyCups} cups/month).`;
 
   const lineUrl = `https://line.me/R/ti/p/@blessmethailand?text=${encodeURIComponent(lineQuoteMsg)}`;
@@ -41,15 +41,15 @@ export default function RoiCalculator({ lang }) {
         <div className="lg:col-span-7 flex flex-col">
           
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#3B6146]/60 border border-[#C5A869]/30 text-[#E5C378] text-xs font-semibold tracking-wider uppercase mb-4 w-fit">
-            <span>{isTh ? 'คิดต้นทุนให้ร้าน' : 'B2B Profit Uplift Calculator'}</span>
+            <span>{isTh ? 'ลองคิดกำไร' : 'B2B Profit Uplift Calculator'}</span>
           </div>
 
           <h2 className="font-['Fraunces'] text-2xl sm:text-4xl md:text-5xl font-semibold leading-tight text-white mb-3">
-            {isTh ? 'ส่วนต่างต่อเดือน ก่อนหักค่าอื่น' : 'Calculate Your Monthly Menu Uplift'}
+            {isTh ? 'ใส่ท็อปปิ้งแล้วร้านคุณได้เพิ่มเท่าไหร่' : 'Calculate Your Monthly Menu Uplift'}
           </h2>
           <p className="text-white/70 text-sm sm:text-lg mb-6 sm:mb-8 font-normal leading-relaxed">
             {isTh 
-              ? `คิดจากราคา ${product.price} บาท/แพ็ค น้ำหนักรวม ${product.packSize} น้ำหนักเนื้อ ${product.drainedWeight} ตัก ${portionGrams}g ต่อแก้ว ตัวเลขนี้ไม่ใช่กำไรสุทธิ ยังไม่หักค่าแรง ขนส่ง ภาษี ของเสีย และค่าใช้จ่ายอื่น สมมติว่าขายทุกวัน`
+              ? `เลือกรส ขนาดตัก และจำนวนแก้วต่อวันของร้าน แล้วดูว่าท็อปปิ้งช่วยเพิ่มกำไรได้เท่าไหร่ (คิดเฉพาะค่าท็อปปิ้ง ยังไม่หักค่าแรง ค่าส่ง และของเสีย)`
               : `Illustration: ${product.price} THB per ${product.packSize} pack, ${product.drainedWeight} drained, ${portionGrams}g per serving. Contribution before labour, shipping, tax, waste and other expenses — not net profit. Assumes sales every day.`}
           </p>
 
@@ -59,9 +59,9 @@ export default function RoiCalculator({ lang }) {
                 {PRODUCTS.map(p => <option key={p.id} value={p.id}>{isTh ? p.nameTh : p.name} · ฿{p.price}</option>)}
               </select>
             </label>
-            <label>{isTh ? 'น้ำหนักเนื้อต่อเสิร์ฟ' : 'Drained portion'}
+            <label>{isTh ? 'ตักแก้วละกี่กรัม' : 'Drained portion'}
               <select className="block w-full bg-[#1C3223] text-white p-3 rounded-lg mt-2" value={portionGrams} onChange={e => setPortionGrams(Number(e.target.value))}>
-                {[15, 20, 25].map(g => <option key={g} value={g}>{g}g</option>)}
+                {[15, 20, 25].map(g => <option key={g} value={g}>{g}{isTh ? ' กรัม' : 'g'}</option>)}
               </select>
             </label>
           </div>
@@ -70,7 +70,7 @@ export default function RoiCalculator({ lang }) {
           <div className="mb-5 sm:mb-7 bg-white/5 p-4 sm:p-6 rounded-2xl border border-white/10">
             <div className="flex justify-between items-baseline mb-3">
               <label htmlFor="daily-cups" className="text-xs sm:text-base font-semibold text-white/90">
-                {isTh ? 'จำนวนแก้วที่ใส่ท็อปปิ้งต่อวัน:' : 'Daily Boba Cups Sold:'}
+                {isTh ? 'ขายแก้วใส่ท็อปปิ้งวันละ:' : 'Daily Boba Cups Sold:'}
               </label>
               <span className="text-xl sm:text-3xl font-bold text-[#E5C378] font-['Fraunces']">
                 {dailyCups} <span className="text-xs sm:text-sm font-normal text-white/70">{isTh ? 'แก้ว/วัน' : 'cups/day'}</span>
@@ -97,7 +97,7 @@ export default function RoiCalculator({ lang }) {
           <div className="bg-white/5 p-4 sm:p-6 rounded-2xl border border-white/10">
             <div className="flex justify-between items-baseline mb-3">
               <div className="text-xs sm:text-base font-semibold text-white/90">
-                {isTh ? 'ราคาที่บวกเพิ่มบนเมนู:' : 'Menu Upcharge Price:'}
+                {isTh ? 'คิดค่าท็อปปิ้งเพิ่มแก้วละ:' : 'Menu Upcharge Price:'}
               </div>
               <span className="text-xl sm:text-3xl font-bold text-[#E5C378] font-['Fraunces']">
                 +{upcharge} <span className="text-xs sm:text-sm font-normal text-white/70">฿ / {isTh ? 'แก้ว' : 'cup'}</span>
@@ -128,12 +128,12 @@ export default function RoiCalculator({ lang }) {
           
           <div>
             <div className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-1">
-              {isTh ? 'ส่วนต่างก่อนหักค่าใช้จ่ายอื่น' : 'Estimated Contribution'}
+              {isTh ? 'กำไรเพิ่มจากท็อปปิ้ง' : 'Estimated Contribution'}
             </div>
             
             {/* Big Monthly Number */}
             <div className="my-3">
-              <div className="text-xs text-[#E5C378] font-medium">{isTh ? 'ต่อเดือน (30 วัน)' : 'Monthly Contribution (30 Days)'}</div>
+              <div className="text-xs text-[#E5C378] font-medium">{isTh ? 'ต่อเดือน' : 'Monthly Contribution (30 Days)'}</div>
               <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-['Fraunces'] tracking-tight">
                 +฿{monthlyProfit.toLocaleString(isTh ? 'th-TH' : 'en-US')}
               </div>
@@ -141,23 +141,23 @@ export default function RoiCalculator({ lang }) {
 
             {/* Annual Uplift */}
             <div className="pb-4 mb-5 border-b border-white/10">
-              <span className="text-xs text-white/60">{isTh ? 'ต่อปี (365 วัน): ' : 'Annual Contribution (365 Days): '}</span>
+              <span className="text-xs text-white/60">{isTh ? 'ทั้งปี: ' : 'Annual Contribution (365 Days): '}</span>
               <strong className="text-sm text-[#E5C378] font-semibold">+฿{annualProfit.toLocaleString(isTh ? 'th-TH' : 'en-US')} / {isTh ? 'ปี' : 'yr'}</strong>
             </div>
 
             {/* Breakdown Metrics */}
             <div className="space-y-3 text-xs sm:text-sm">
               <div className="flex justify-between text-white/80">
-                <span>{isTh ? `ต้นทุนต่อเสิร์ฟ (${portionGrams}g):` : `Portion Cost (${portionGrams}g):`}</span>
+                <span>{isTh ? `ต้นทุนต่อแก้ว (${portionGrams} กรัม):` : `Portion Cost (${portionGrams}g):`}</span>
                 <span className="font-semibold text-white">~฿{costPerServing.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-white/80">
-                <span>{isTh ? 'ส่วนต่างต่อแก้ว:' : 'Contribution per Cup:'}</span>
+                <span>{isTh ? 'กำไรต่อแก้ว:' : 'Contribution per Cup:'}</span>
                 <span className="font-semibold text-[#E5C378]">{isTh ? `+฿${contributionPerCup.toFixed(2)} (${marginPercent}%)` : `+฿${contributionPerCup.toFixed(2)} (${marginPercent}% Margin)`}</span>
               </div>
               <div className="flex justify-between text-white/80">
-                <span>{isTh ? 'จำนวนที่ต้องสั่งต่อเดือน:' : 'Estimated Order/Mo:'}</span>
-                <span className="font-semibold text-white">~{packsNeeded} {isTh ? 'แพ็ค (500g)' : 'packs (500g)'}</span>
+                <span>{isTh ? 'ต้องสั่งเดือนละ:' : 'Estimated Order/Mo:'}</span>
+                <span className="font-semibold text-white">~{packsNeeded} {isTh ? 'แพ็ค' : 'packs (500g)'}</span>
               </div>
             </div>
           </div>
@@ -174,7 +174,7 @@ export default function RoiCalculator({ lang }) {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C6.48 2 2 5.92 2 10.75c0 3.32 2.15 6.22 5.38 7.68-.24.88-.86 3.19-.99 3.69 0 0-.05.21.11.31.16.1.33.02.33.02.44-.06 5.1-3.34 5.86-3.88.44.06.87.09 1.31.09 5.52 0 10-3.92 10-8.75S17.52 2 12 2z"/>
               </svg>
-              <span>{isTh ? `ทัก LINE ขอราคา (${packsNeeded} แพ็ค/เดือน)` : `Enquire Wholesale (${packsNeeded} packs/mo)`}</span>
+              <span>{isTh ? `ทัก LINE สั่ง ${packsNeeded} แพ็ค/เดือน` : `Enquire Wholesale (${packsNeeded} packs/mo)`}</span>
             </a>
 
             <a 
