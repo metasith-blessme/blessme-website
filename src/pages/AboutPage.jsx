@@ -26,20 +26,20 @@ export default function AboutPage({ lang }) {
         </div>
         <div className="lg:col-span-5 grid grid-cols-2 gap-4">
           <div className="bg-[#2E4F38] text-white p-7 rounded-[24px] shadow-sm flex flex-col justify-between h-[160px]">
-            <div className="font-['Fraunces'] text-4xl font-bold">12M</div>
-            <div className="text-xs font-semibold tracking-wider uppercase text-white/80">{lang==='th'?'ก่อนเปิด: 12 เดือนนับจากวันผลิต ที่อุณหภูมิห้อง':'Unopened: 12 months from manufacture at room temperature'}</div>
+            <div className="font-['Fraunces'] text-4xl font-bold">{lang==='th'?'12':'12M'}</div>
+            <div className="text-xs font-semibold tracking-wider uppercase text-white/80">{lang==='th'?'เดือน เก็บได้ ไม่ต้องแช่เย็น (ก่อนเปิด)':'Unopened: 12 months from manufacture at room temperature'}</div>
           </div>
           <div className="bg-white border border-[#2B241E]/8 p-7 rounded-[24px] shadow-sm flex flex-col justify-between h-[160px]">
             <div className="font-['Fraunces'] text-4xl font-bold text-[#3B6146]">6</div>
-            <div className="text-xs font-semibold tracking-wider uppercase text-[#7A6E63]">{lang==='th'?'รายการสินค้า':'Signature Flavors'}</div>
+            <div className="text-xs font-semibold tracking-wider uppercase text-[#7A6E63]">{lang==='th'?'รสให้เลือก':'Signature Flavors'}</div>
           </div>
           <div className="bg-white border border-[#2B241E]/8 p-7 rounded-[24px] shadow-sm flex flex-col justify-between h-[160px]">
             <div className="font-['Fraunces'] text-4xl font-bold text-[#3B6146]">100%</div>
-            <div className="text-xs font-semibold tracking-wider uppercase text-[#7A6E63]">{lang==='th'?'สต็อกในกรุงเทพฯ':'Bangkok Stock'}</div>
+            <div className="text-xs font-semibold tracking-wider uppercase text-[#7A6E63]">{lang==='th'?'ของพร้อมที่กรุงเทพฯ':'Bangkok Stock'}</div>
           </div>
           <div className="bg-[#F8F4EA] border border-[#C5A869]/30 p-7 rounded-[24px] shadow-sm flex flex-col justify-between h-[160px]">
             <div className="font-['Fraunces'] text-4xl font-bold text-[#8C6A2E]">B2B</div>
-            <div className="text-xs font-semibold tracking-wider uppercase text-[#8C6A2E]">{lang==='th'?'ขายส่งให้ร้าน':'Wholesale Specialist'}</div>
+            <div className="text-xs font-semibold tracking-wider uppercase text-[#8C6A2E]">{lang==='th'?'ขายส่งให้ร้านโดยเฉพาะ':'Wholesale Specialist'}</div>
           </div>
         </div>
       </div>
@@ -51,13 +51,13 @@ export default function AboutPage({ lang }) {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12 border-t border-white/10 pt-8">
-          <ContactItem k="EMAIL"      v="Blessme.team@gmail.com" href="mailto:Blessme.team@gmail.com" />
-          <ContactItem k="PHONE"      v="+66 (0) 82-896-5199" sub="คุณจ้า" href="tel:+66828965199" />
+          <ContactItem k={lang==='th'?'อีเมล':'EMAIL'}      v="Blessme.team@gmail.com" href="mailto:Blessme.team@gmail.com" />
+          <ContactItem k={lang==='th'?'โทร':'PHONE'}      v="+66 (0) 82-896-5199" sub="คุณจ้า" href="tel:+66828965199" />
           <ContactItem k="LINE"       v="@blessmethailand" href="https://line.me/R/ti/p/@blessmethailand" />
           <ContactItem k="INSTAGRAM"  v="blessme_thailand" href={socialHref('instagram')} />
           <ContactItem k="FACEBOOK"   v="BlessMe Thailand" href={socialHref('facebook')} />
           <ContactItem k="TIKTOK"     v="@blessme_thailand" href={socialHref('tiktok')} />
-          <ContactItem k="WAREHOUSE"  v="Bangkok, Thailand" />
+          <ContactItem k={lang==='th'?'คลังสินค้า':'WAREHOUSE'}  v={lang==='th'?'กรุงเทพฯ':'Bangkok, Thailand'} />
         </div>
 
         {/* ===== CONTACT FORM (Web3Forms) ===== */}

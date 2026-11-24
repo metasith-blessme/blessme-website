@@ -8,9 +8,9 @@ import Breadcrumbs from '../components/Breadcrumbs';
 
 const COPY = {
   th: {
-    eyebrow: 'ร้านค้า',
+    eyebrow: 'ลูกค้า',
     h1: 'ลูกค้าของเรา',
-    lead: 'ร้านที่ใส่ท็อปปิ้งในเมนู ส่งรูปเมนูมาที่ LINE @blessmethailand ได้ เราลงรูปเมื่อร้านอนุญาต',
+    lead: 'ร้านที่เอาท็อปปิ้งของเราไปใช้และขายต่อ ร้านคุณใช้อยู่แล้วอยากมาอยู่ตรงนี้ ส่งรูปเมนูมาทาง LINE @blessmethailand ได้เลย เราจะลงให้เมื่อร้านโอเค',
     shopee: 'ดูรีวิวที่ Shopee',
     line: 'ส่งรูปเมนูทาง LINE',
     map: 'ดูแผนที่',

@@ -15,7 +15,7 @@ export default function TrustBar({ lang }) {
       ),
       title: isTh ? 'ต้นทุนต่อแก้วประมาณ 4.50–6.00 บาท' : 'High Profit Margin (~4.50–6.00฿ / Serving)',
       desc: isTh 
-        ? '1 แพ็คมีน้ำหนักเนื้อ 300g ถ้าเสิร์ฟละ 15g จะได้ 20 เสิร์ฟ ต้นทุน 4.50 บาทสำหรับแพ็ค 90 บาท และ 6.00 บาทสำหรับโมจิโยเกิร์ต ยังไม่รวมค่าใช้จ่ายอื่น'
+        ? 'แพ็คเดียวตักได้ประมาณ 20 แก้ว (แก้วละ 15 กรัม) ต้นทุนแก้วละ 4.50 บาท โมจิโยเกิร์ต 6 บาท ตั้งราคาท็อปปิ้งเพิ่ม 20 บาทก็เหลือกำไรแล้ว'
         : 'Each pack has 300g drained weight. At 15g per portion it yields 20 servings: 4.50 THB for a 90 THB pack or 6.00 THB for Moji Yogurt, before other expenses.',
       tag: isTh ? 'คิดต้นทุน' : 'High Margin'
     },
@@ -26,9 +26,9 @@ export default function TrustBar({ lang }) {
           <polyline points="12 6 12 12 16 14"/>
         </svg>
       ),
-      title: isTh ? 'ไม่ต้องต้ม ตักได้เลย' : 'Scoop & Serve (Zero Kitchen Prep)',
+      title: isTh ? 'ไม่ต้องต้ม ตักใส่แก้วได้เลย' : 'Scoop & Serve (Zero Kitchen Prep)',
       desc: isTh 
-        ? `ไม่ต้องต้ม ${T.th.storageUnopened} ${T.th.storageOpened}`
+        ? `ไม่ต้องตั้งหม้อ ไม่ต้องเฝ้า หน้าร้านยุ่งแค่ไหนก็ทันคิว ${T.th.storageUnopened} ${T.th.storageOpened}`
         : `No boiling required. ${T.en.storageUnopened} ${T.en.storageOpened}`,
       tag: isTh ? 'พร้อมใช้' : 'Zero Prep'
     },
@@ -38,9 +38,9 @@ export default function TrustBar({ lang }) {
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
         </svg>
       ),
-      title: isTh ? 'ทั้ง 6 รายการเป็นวีแกน' : 'All Six Toppings Are Vegan',
+      title: isTh ? 'ทั้ง 6 รสเป็นวีแกน' : 'All Six Toppings Are Vegan',
       desc: isTh 
-        ? 'มีมุกป๊อป โมจิโยเกิร์ต และบุกหอมหมื่นลี้ ดูฉลากแต่ละสินค้า วีแกนไม่ได้แปลว่าปลอดสารก่อภูมิแพ้'
+        ? 'ไม่ใส่เจลาติน ขายลูกค้าทานมังสวิรัติได้ ใครแพ้อาหารดูส่วนผสมบนฉลากก่อนนะ'
         : 'The range includes popping boba, Moji Yogurt and Osmanthus Konjac. Check individual labels for ingredients and allergens; vegan does not mean allergen-free.',
       tag: isTh ? 'วีแกน' : '100% Vegan'
     },
@@ -53,9 +53,9 @@ export default function TrustBar({ lang }) {
           <circle cx="18.5" cy="18.5" r="2.5"/>
         </svg>
       ),
-      title: isTh ? 'มีของที่กรุงเทพฯ ส่งทั่วไทย' : 'Bangkok Warehouse & Nationwide Delivery',
+      title: isTh ? 'ของพร้อมส่งจากกรุงเทพฯ' : 'Bangkok Warehouse & Nationwide Delivery',
       desc: isTh 
-        ? 'สต็อกที่กรุงเทพฯ ส่งทั่วประเทศ ไม่มีขั้นต่ำ ร้านทดลองสั่งได้' 
+        ? 'ส่งได้ทุกจังหวัด แพ็คเดียวก็ส่ง ร้านลองขายสักอาทิตย์ก่อนค่อยสั่งเพิ่มได้' 
         : 'Central stock maintained year-round in Bangkok with fast dispatch across Thailand. No minimum order.',
       tag: isTh ? 'ส่งทั่วไทย' : 'Fast Dispatch'
     }
@@ -68,14 +68,14 @@ export default function TrustBar({ lang }) {
       <div className="max-w-[780px] mb-14">
         <div className="inline-flex items-center gap-2.5 text-xs font-bold tracking-[0.16em] uppercase text-[#3B6146] mb-3">
           <span className="w-5 h-px bg-[#3B6146]"></span>
-          <span>{isTh ? 'ข้อมูลสำหรับร้าน' : 'B2B Wholesale Advantage'}</span>
+          <span>{isTh ? 'สำหรับร้าน' : 'B2B Wholesale Advantage'}</span>
         </div>
         <h2 className="font-['Fraunces'] text-3xl sm:text-4xl md:text-5xl font-semibold text-[#2B241E] tracking-tight mb-4">
-          {isTh ? 'ร้านสั่งกับเบลสมีเพราะอะไร' : 'Why Leading Beverage & Dessert Brands Partner with BlessMe'}
+          {isTh ? 'ทำไมร้านเลือกเบลสมี' : 'Why Leading Beverage & Dessert Brands Partner with BlessMe'}
         </h2>
         <p className="text-base sm:text-lg text-[#5C5248] leading-relaxed">
           {isTh 
-            ? 'ต้นทุนต่อแก้วชัด ไม่ต้องต้ม และมีของพร้อมส่งจากกรุงเทพฯ'
+            ? 'เราทำร้านเครื่องดื่มเองเหมือนกัน เลยเลือกแต่ของที่ใช้ง่าย ต้นทุนชัด และส่งได้ไว'
             : 'Formulated to elevate drink margins, simplify kitchen operations, and help your brand introduce viral, one-of-a-kind toppings.'}
         </p>
       </div>
@@ -122,11 +122,11 @@ export default function TrustBar({ lang }) {
             <span>{isTh ? 'ตัวอย่างฟรี' : 'Tasting Sample Kit for Cafés'}</span>
           </div>
           <h3 className="font-['Fraunces'] text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-3">
-            {isTh ? 'ขอตัวอย่างฟรีทางอีเมล ก่อนใส่เมนู' : 'Request Free Samples by Email for Your Menu'}
+            {isTh ? 'ชิมก่อน ค่อยใส่เมนู' : 'Request Free Samples by Email for Your Menu'}
           </h3>
           <p className="text-sm sm:text-base text-white/80 leading-relaxed">
             {isTh 
-              ? 'ร้านลองรสก่อนสั่งจำนวนมาก ส่งตัวอย่างถึงร้านทั่วไทย'
+              ? 'ขอตัวอย่างฟรีได้ทางอีเมล เราส่งไปให้ถึงร้าน ลองชงกับเมนูจริงก่อนตัดสินใจ'
               : 'Taste, evaluate texture, and develop signature pairings with your baristas before ordering bulk batches.'}
           </p>
         </div>

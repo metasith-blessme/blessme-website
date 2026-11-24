@@ -35,7 +35,7 @@ const ProductCard = React.memo(function ProductCard({ product, blessed, onClick,
         {/* Wholesale Price Tag */}
         <div className="absolute top-3.5 right-3.5 z-10 px-3 py-1 rounded-full bg-[#2E4F38] text-white shadow-sm flex flex-col items-center leading-none">
           <span className="text-[12px] font-bold tracking-tight">฿{product.price || 90}</span>
-          <span className="text-[9px] opacity-80 mt-0.5">{lang === 'th' ? 'ราคาส่ง/แพ็ค' : 'per pack'}</span>
+          <span className="text-[9px] opacity-80 mt-0.5">{lang === 'th' ? 'ต่อแพ็ค' : 'per pack'}</span>
         </div>
 
         {/* Product Photo */}
@@ -89,7 +89,7 @@ const ProductCard = React.memo(function ProductCard({ product, blessed, onClick,
         {/* Card Footer with Unit Metric & CTA */}
         <div className="mt-auto pt-4 border-t border-[#2B241E]/6 flex items-center justify-between">
           <div className="text-xs text-[#7A6E63]">
-            <span className="font-semibold text-[#2B241E]">~20</span> {lang === 'th' ? `ที่เสิร์ฟ (${((product.price || 90)/20).toFixed(1)}฿/แก้ว)` : `servings (${((product.price || 90)/20).toFixed(1)}฿/cup)`}
+            {lang === 'th' ? <>ได้ประมาณ <span className="font-semibold text-[#2B241E]">20</span> แก้ว (แก้วละ {((product.price || 90)/20).toFixed(2)} บาท)</> : <><span className="font-semibold text-[#2B241E]">~20</span> {`servings (${((product.price || 90)/20).toFixed(1)}฿/cup)`}</>}
           </div>
 
           <div className="text-[13px] font-semibold tracking-wider uppercase text-[#3B6146] inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
