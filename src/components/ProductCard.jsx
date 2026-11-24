@@ -89,7 +89,7 @@ const ProductCard = React.memo(function ProductCard({ product, blessed, onClick,
         {/* Card Footer with Unit Metric & CTA */}
         <div className="mt-auto pt-4 border-t border-[#2B241E]/6 flex items-center justify-between">
           <div className="text-xs text-[#7A6E63]">
-            {lang === 'th' ? <>ได้ประมาณ <span className="font-semibold text-[#2B241E]">20</span> แก้ว (แก้วละ {((product.price || 90)/20).toFixed(2)} บาท)</> : <><span className="font-semibold text-[#2B241E]">~20</span> {`servings (${((product.price || 90)/20).toFixed(1)}฿/cup)`}</>}
+            {lang === 'th' ? <><span className="font-semibold text-[#2B241E]">20</span> แก้ว · แก้วละ {((product.price || 90)/20).toFixed(2)} บาท</> : <><span className="font-semibold text-[#2B241E]">~20</span> {`servings (${((product.price || 90)/20).toFixed(1)}฿/cup)`}</>}
           </div>
 
           <div className="text-[13px] font-semibold tracking-wider uppercase text-[#3B6146] inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all">

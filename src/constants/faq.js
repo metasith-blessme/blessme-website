@@ -7,7 +7,7 @@ const PRICE_TH = 'บาร์เลย์ โอ๊ต ถั่วแดง �
 export const FAQS_EN = [
   { q: 'What serving and allergy warnings should I know?', a: `${T.en.syrupGuidance} ${T.en.childWarning} Barley and Oat: ${T.en.allergenWarning}` },
   { q: 'What products does BlessMe supply?', a: 'BlessMe wholesales six toppings: Barley, Oat, Red Bean and Water Chestnut popping boba, Moji Yogurt, and Osmanthus Konjac.' },
-  { q: 'Are the products vegan?', a: 'Yes. All six products, including Moji Yogurt and Osmanthus Konjac, are vegan. Vegan does not mean allergen-free; check the individual product label.' },
+  { q: 'Are the products vegan?', a: 'All toppings except Moji Yogurt are vegan. Check the individual product label.' },
   { q: 'What is the minimum wholesale order?', a: 'No minimum order.' },
   { q: 'Do you provide samples before purchase?', a: 'Yes. Request free samples by emailing Blessme.team@gmail.com.' },
   { q: 'How long is the shelf life?', a: `${T.en.storageUnopened} ${T.en.storageOpened}` },
@@ -23,7 +23,7 @@ export const FAQS_EN = [
   { q: 'How should I store popping boba after opening?', a: T.en.storageOpened },
   { q: 'Can I drain the syrup before serving?', a: T.en.syrupGuidance },
   { q: 'Can young children eat popping boba?', a: T.en.childWarning },
-  { q: 'Does popping boba contain gluten?', a: `Barley and Oat: ${T.en.allergenWarning} For the other toppings, check the individual product label. Vegan does not mean allergen-free.` },
+  { q: 'Does popping boba contain gluten?', a: `Barley and Oat: ${T.en.allergenWarning} For the other toppings, check the individual product label.` },
   { q: 'How many servings are in one pack?', a: 'Each pack is 500g with 300g drained weight. At 15g drained per serving that is about 20 servings. Portion cost is 4.50 THB for a 90 THB pack or 6.00 THB for Moji Yogurt, before shipping, tax and waste.' },
   { q: 'How do I order wholesale on LINE?', a: 'Message LINE @blessmethailand, call 082-896-5199, or email Blessme.team@gmail.com. There is no minimum order. BlessMe ships nationwide from Bangkok.' },
   { q: 'Can I buy retail on Shopee?', a: 'Yes. Retail orders can be placed on the Shopee shop blessme_thailand at https://shopee.co.th/blessme_thailand. For wholesale, order on LINE @blessmethailand.' },
@@ -42,7 +42,7 @@ export const FAQS_TH = [
   { q: 'ส่งต่างจังหวัดได้ไหม?', a: 'ได้ทุกจังหวัด ของอยู่ที่กรุงเทพฯ แพ็คส่งได้เลย ไม่ต้องรอนำเข้า ร้านที่อยู่ต่างประเทศทักมาคุยได้เหมือนกัน' },
   { q: 'ซื้อปลีกได้ไหม?', a: 'ได้ ซื้อปลีกที่ร้าน Shopee blessme_thailand https://shopee.co.th/blessme_thailand ถ้าสั่งไปใช้ในร้านเป็นประจำ ทัก LINE @blessmethailand จะคุ้มกว่า' },
   { q: 'เก็บได้นานแค่ไหน?', a: `${T.th.storageUnopened} ${T.th.storageOpened}` },
-  { q: 'ทานมังสวิรัติ/วีแกนได้ไหม?', a: 'ได้ ทั้ง 6 รสเป็นวีแกน ไม่ใส่เจลาติน ใครแพ้อาหารให้ดูส่วนผสมบนฉลากก่อนนะ' },
+  { q: 'ทานมังสวิรัติ/วีแกนได้ไหม?', a: 'ได้เกือบทุกรส ทุกรสเป็นวีแกน ยกเว้นโมจิโยเกิร์ต ถ้าร้านมีลูกค้าวีแกน เลือกรสอื่นแทนได้เลย ใครแพ้อาหารให้ดูส่วนผสมบนฉลากก่อนนะ' },
   { q: 'มีกลูเตนไหม ทานแล้วต้องระวังอะไร?', a: `ข้าวบาร์เลย์และข้าวโอ๊ต: ${T.th.allergenWarning} ${T.th.syrupGuidance} ${T.th.childWarning}` },
   { q: 'ใส่เมนูอะไรได้บ้าง?', a: 'ใส่ได้เกือบทุกเมนูเย็น ชานม ชาผลไม้ โซดา โยเกิร์ต สมูทตี้ บิงซู หรือโปะหน้าเค้กก็ได้ บาร์เลย์เข้ากับลาเต้ โมจิโยเกิร์ตเข้ากับสตรอว์เบอร์รี ลองดูไอเดียเมนูเพิ่มได้ในหน้าบทความ' },
   { q: 'ต่างจากเจ้าอื่นยังไง?', a: 'เราทำร้านเครื่องดื่มเองด้วย เลยเลือกแต่ของที่ใช้ง่ายหน้าร้าน ของพร้อมส่งจากกรุงเทพฯ ไม่ต้องรอพรีออเดอร์ สั่งแพ็คเดียวก็ได้ และขอชิมก่อนได้ฟรี' },
@@ -54,7 +54,7 @@ export const WHOLESALE_FAQS_EN = [
   { q: 'Where can I buy popping boba wholesale in Bangkok?', a: 'BlessMe (Thailand) Co., Ltd. stocks popping boba in Bangkok and ships nationwide — no import wait. Order via LINE @blessmethailand, email Blessme.team@gmail.com, or call 082-896-5199.' },
   { q: 'Is there a minimum order?', a: 'No minimum order.' },
   { q: 'Can I get free samples before ordering?', a: 'Yes. Request free samples by emailing Blessme.team@gmail.com.' },
-  { q: 'What flavors are available?', a: `Six vegan toppings: Barley, Oat, Red Bean and Water Chestnut popping boba, Moji Yogurt, and Osmanthus Konjac. ${T.en.storageUnopened} ${T.en.storageOpened}` },
+  { q: 'What flavors are available?', a: `Six toppings: Barley, Oat, Red Bean and Water Chestnut popping boba, Moji Yogurt, and Osmanthus Konjac. ${T.en.storageUnopened} ${T.en.storageOpened}` },
 ];
 
 export const WHOLESALE_FAQS_TH = [

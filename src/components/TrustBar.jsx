@@ -38,11 +38,11 @@ export default function TrustBar({ lang }) {
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
         </svg>
       ),
-      title: isTh ? 'ทั้ง 6 รสเป็นวีแกน' : 'All Six Toppings Are Vegan',
+      title: isTh ? 'วีแกนเกือบทุกรส' : 'Vegan Options',
       desc: isTh 
-        ? 'ไม่ใส่เจลาติน ขายลูกค้าทานมังสวิรัติได้ ใครแพ้อาหารดูส่วนผสมบนฉลากก่อนนะ'
-        : 'The range includes popping boba, Moji Yogurt and Osmanthus Konjac. Check individual labels for ingredients and allergens; vegan does not mean allergen-free.',
-      tag: isTh ? 'วีแกน' : '100% Vegan'
+        ? 'ทุกรสเป็นวีแกน ยกเว้นโมจิโยเกิร์ต ขายลูกค้าทานมังสวิรัติได้ ใครแพ้อาหารดูส่วนผสมบนฉลากก่อนนะ'
+        : 'All toppings except Moji Yogurt are vegan. Check individual labels for ingredients and allergens.',
+      tag: isTh ? 'วีแกน' : 'Vegan'
     },
     {
       icon: (

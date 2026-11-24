@@ -19,10 +19,10 @@ export const ORG_DESCRIPTION = 'BlessMe (Thailand) — specialty food wholesaler
 export const PAGE_META = {
   Products: {
     title: 'Popping Boba Wholesale Bangkok, 90 THB/pack | BlessMe',
-    description: 'Wholesale vegan toppings: popping boba, Moji Yogurt and Osmanthus Konjac. 90–120 THB/pack, no minimum order. Bangkok stock, nationwide Thailand shipping.',
+    description: 'Wholesale toppings: popping boba, Moji Yogurt and Osmanthus Konjac. 90–120 THB/pack, no minimum order. Bangkok stock, nationwide Thailand shipping.',
     canonical: `${BASE_URL}/`
   },
-  Wholesale: { title: 'Popping Boba Wholesale Bangkok — Prices & Order | BlessMe Thailand', description: 'Vegan toppings at 90 THB/pack; Moji Yogurt 120 THB. No minimum order. Order via LINE @blessmethailand; request free samples by email Blessme.team@gmail.com.', canonical: `${BASE_URL}/wholesale` },
+  Wholesale: { title: 'Popping Boba Wholesale Bangkok — Prices & Order | BlessMe Thailand', description: 'Toppings at 90 THB/pack; Moji Yogurt 120 THB. No minimum order. Order via LINE @blessmethailand; request free samples by email Blessme.team@gmail.com.', canonical: `${BASE_URL}/wholesale` },
   Customers: { title: 'Our customers | BlessMe Thailand', description: 'Cafés using BlessMe toppings can send a menu photo on LINE @blessmethailand. Shopee reviews are on the shop page.', canonical: `${BASE_URL}/customers` },
   'About us': { title: 'About BlessMe Thailand — Food Wholesaler Bangkok', description: 'BlessMe (Thailand) Co., Ltd. introduces specialty food categories to the Thai B2B market. Headquartered in Bangkok, serving cafés, restaurants, and dessert brands nationwide.', canonical: `${BASE_URL}/about` },
   Blog: { title: 'Journal — Specialty Food Insights | BlessMe Thailand', description: 'Notes from the BlessMe team on specialty food sourcing, cold-chain logistics, shelf life, and how to introduce new products to the Thai market.', canonical: `${BASE_URL}/blog` },
@@ -215,7 +215,7 @@ export function buildProductSchema(product, lang = 'en') {
   const properties = [
     { '@type': 'PropertyValue', name: 'Pack size', value: product.packSize },
     { '@type': 'PropertyValue', name: 'Drained weight', value: product.drainedWeight },
-    { '@type': 'PropertyValue', name: 'Vegan', value: 'Yes' },
+    ...(product.id === 'cheese' ? [] : [{ '@type': 'PropertyValue', name: 'Vegan', value: 'Yes' }]),
   ];
   if (product.containsGluten) properties.push({ '@type': 'PropertyValue', name: 'Gluten', value: 'Contains gluten' });
   return {

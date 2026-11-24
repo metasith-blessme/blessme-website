@@ -394,18 +394,18 @@ export const ARTICLES = [
     "title": "What Is Popping Boba Made Of?",
     "titleTh": "มุกป๊อปทำจากอะไร? ส่วนผสมและลักษณะเม็ด",
     "seoTitleTh": "มุกป๊อปทำจากอะไร? ส่วนผสมไข่มุกป๊อป",
-    "excerpt": "Popping boba is a thin gel skin around a liquid centre. BlessMe grain pearls use barley, oat or red bean. Moji Yogurt is yogurt-flavoured. All five toppings are vegan and do not use gelatin.",
+    "excerpt": "Popping boba is a thin gel skin around a liquid centre. BlessMe grain pearls use barley, oat or red bean. Moji Yogurt is yogurt-flavoured. All toppings except Moji Yogurt are vegan and do not use gelatin.",
     "excerptTh": "เปลือกบาง ๆ ที่ห่อน้ำผลไม้หรือซอสไว้ข้างในทำจากอะไร ทำไมกัดแล้วแตก และต่างจากไข่มุกแป้งยังไง",
-    "answer": "Popping boba is a thin gel skin around a liquid centre, not a chewy tapioca pearl. BlessMe grain popping boba uses barley, oat or red bean as the flavour. Moji Yogurt uses a yogurt-flavoured liquid centre. All five toppings are vegan, do not use gelatin, are imported, and are packed in syrup that contains sugar.",
-    "answerTh": "มุกป๊อปทำจากเปลือกเจลบางที่ห่อของเหลวด้านใน ไม่ใช่ไข่มุกทาปิโอกา มุกป๊อปธัญพืชของเบลสมีใช้ข้าวบาร์เลย์ ข้าวโอ๊ต หรือถั่วแดงเป็นรส โมจิโยเกิร์ตใช้ของเหลวรสโยเกิร์ต ท็อปปิ้งทั้งห้ารายการเป็นวีแกน ไม่ใช้เจลาติน เป็นสินค้านำเข้าจากโรงงานในจีน และบรรจุในน้ำเชื่อมที่มีน้ำตาล",
+    "answer": "Popping boba is a thin gel skin around a liquid centre, not a chewy tapioca pearl. BlessMe grain popping boba uses barley, oat or red bean as the flavour. Moji Yogurt uses a yogurt-flavoured liquid centre. All toppings except Moji Yogurt are vegan and gelatin-free. All are imported and packed in syrup that contains sugar.",
+    "answerTh": "มุกป๊อปทำจากเปลือกเจลบางที่ห่อของเหลวด้านใน ไม่ใช่ไข่มุกทาปิโอกา มุกป๊อปธัญพืชของเบลสมีใช้ข้าวบาร์เลย์ ข้าวโอ๊ต หรือถั่วแดงเป็นรส โมจิโยเกิร์ตใช้ของเหลวรสโยเกิร์ต ทุกรสเป็นวีแกน ยกเว้นโมจิโยเกิร์ต ไม่ใช้เจลาติน เป็นสินค้านำเข้าจากโรงงานในจีน และบรรจุในน้ำเชื่อมที่มีน้ำตาล",
     "faqs": [
-      { "q": "What is popping boba made of?", "a": "Popping boba is a thin gel skin around a liquid centre, not a chewy tapioca pearl. BlessMe grain popping boba uses barley, oat or red bean as the flavour. Moji Yogurt uses a yogurt-flavoured liquid centre. All five toppings are vegan, do not use gelatin, are imported, and are packed in syrup that contains sugar." },
-      { "q": "Do BlessMe toppings use gelatin?", "a": "No. All five toppings are vegan and do not use gelatin. Vegan does not mean allergen-free. Check each product label." },
+      { "q": "What is popping boba made of?", "a": "Popping boba is a thin gel skin around a liquid centre, not a chewy tapioca pearl. BlessMe grain popping boba uses barley, oat or red bean as the flavour. Moji Yogurt uses a yogurt-flavoured liquid centre. All toppings except Moji Yogurt are vegan and gelatin-free. All are imported and packed in syrup that contains sugar." },
+      { "q": "Do BlessMe toppings use gelatin?", "a": "The vegan toppings (all except Moji Yogurt) do not use gelatin. Moji Yogurt is not vegan; ask us for its ingredient details." },
       { "q": "Is Moji Yogurt made from mochi dough?", "a": "No. Moji Yogurt is the product name for a popping boba with a yogurt-flavoured liquid centre. The name is not a claim that the pearl contains mochi dough." }
     ],
     "faqsTh": [
-      { "q": "มุกป๊อปทำจากอะไร?", "a": "มุกป๊อปทำจากเปลือกเจลบางที่ห่อของเหลวข้างใน ไม่ใช่ไข่มุกทาปิโอกา มุกป๊อปธัญพืชของเบลสมีใช้ข้าวบาร์เลย์ ข้าวโอ๊ต หรือถั่วแดงเป็นรส โมจิโยเกิร์ตใช้น้ำรสโยเกิร์ต ท็อปปิ้งทั้งห้ารายการเป็นวีแกน ไม่ใช้เจลาติน นำเข้าจากโรงงานในจีน และบรรจุในน้ำเชื่อมที่มีน้ำตาล" },
-      { "q": "ท็อปปิ้งเบลสมีใช้เจลาตินหรือไม่?", "a": "ไม่ใช้ ทั้งห้ารายการเป็นวีแกน และไม่ใช้เจลาติน วีแกนไม่ได้แปลว่าปลอดสารก่อภูมิแพ้ ให้ดูฉลากแต่ละสินค้า" },
+      { "q": "มุกป๊อปทำจากอะไร?", "a": "มุกป๊อปทำจากเปลือกเจลบางที่ห่อของเหลวข้างใน ไม่ใช่ไข่มุกทาปิโอกา มุกป๊อปธัญพืชของเบลสมีใช้ข้าวบาร์เลย์ ข้าวโอ๊ต หรือถั่วแดงเป็นรส โมจิโยเกิร์ตใช้น้ำรสโยเกิร์ต ทุกรสเป็นวีแกน ยกเว้นโมจิโยเกิร์ต ไม่ใช้เจลาติน นำเข้าจากโรงงานในจีน และบรรจุในน้ำเชื่อมที่มีน้ำตาล" },
+      { "q": "ท็อปปิ้งเบลสมีใช้เจลาตินหรือไม่?", "a": "รสที่เป็นวีแกน (ทุกรสยกเว้นโมจิโยเกิร์ต) ไม่ใช้เจลาติน ส่วนโมจิโยเกิร์ตไม่ใช่วีแกน ให้ดูฉลากแต่ละสินค้า" },
       { "q": "โมจิโยเกิร์ตทำจากแป้งโมจิหรือไม่?", "a": "ไม่ใช่ โมจิโยเกิร์ตเป็นชื่อมุกป๊อปที่มีน้ำรสโยเกิร์ต ชื่อนี้ไม่ได้บอกว่ามีแป้งโมจิ" }
     ],
     "date": "October 26, 2026",
